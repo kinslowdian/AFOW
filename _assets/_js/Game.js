@@ -263,6 +263,8 @@
 		{
 			sound_level_background();
 		}
+
+		optionsTrigger_init();
 	}
 
 	// DEFUNCT
@@ -282,6 +284,8 @@
 		{
 			sound_level_background();
 		}
+
+		optionsTrigger_init();
 
 
 		// NOT FINAL

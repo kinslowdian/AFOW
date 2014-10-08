@@ -20,6 +20,12 @@
 			"title_1" : "When unhappiness, fear, and loneliness arise. Tap the warrior for in-game options."
 		},
 
+		"nav_options":
+		{
+			"title_0" : "Options...",
+			"title_1" : "If confused read about how to play, or enable / disable sound."
+		},
+
 		"nav_sound":
 		{
 			"title_0" : "During your quest...",

@@ -336,6 +336,33 @@
 
 	///////////////// DISPLAY
 
+function optionsTrigger_init()
+{
+	$(".options-trigger")[0].addEventListener("click", optionsTrigger_event, false);
+	$(".options-trigger")[0].addEventListener("touchend", optionsTrigger_event, false);
+}
+
+function optionsTrigger_event(event)
+{
+	var exitFrame;
+
+	$(".options-trigger")[0].removeEventListener("click", optionsTrigger_event, false);
+	$(".options-trigger")[0].removeEventListener("touchend", optionsTrigger_event, false);
+
+	html_lib_reuse();
+
+	multiUseInfoScreen_build("#options_wrapper .options-choice", "OPTIONS");
+
+	html_lib_empty();
+
+	exitFrame = setTimeout(optionsTrigger_run, 20);
+}
+
+function optionsTrigger_run()
+{
+	multiUseInfoScreen_drop();
+}
+
 
 
 /*	--------------------------------------- INFO SCREEN*/
@@ -371,6 +398,26 @@ function multiUseInfoScreen_build(plugInto, screenType)
 
 			screen_multiInfoUse.dropEndFunct = startIntro_optionsHint;
 			screen_multiInfoUse.riseEndFunct = startGame_firstEntrance;
+
+			break;
+		}
+
+		case "OPTIONS":
+		{
+			buildData.screen_html = html_lib_use("_multiUseInfo", true, true);
+			buildData.art_html = html_lib_use("_multiUseInfo_br_options", true, true);
+
+			buildData.title_0 = Logic.dat_ROM["_NAVIGATION"]["nav_options"]["title_0"];
+			buildData.title_1 = Logic.dat_ROM["_NAVIGATION"]["nav_options"]["title_1"];
+
+			$(plugInto).append(buildData.screen_html);
+			$(plugInto + " .multiUseInfo_cont_entrance").addClass("multiUseInfo_options");
+			$(plugInto + " .multiUseInfo_options .multiUseInfo_br").append(buildData.art_html);
+
+			$(plugInto + " .multiUseInfo_options .multiUseInfo_entranceLine0").text(buildData.title_0);
+			$(plugInto + " .multiUseInfo_options .multiUseInfo_entranceLine1").text(buildData.title_1);
+
+			screen_multiInfoUse.dropEndFunct = options_display;
 
 			break;
 		}
@@ -470,9 +517,121 @@ function startIntro_optionsHintComplete()
 
 // -------- START_INTRO
 
+// -------- OPTIONS
+
+function options_display()
+{
+	$(".multiUseInfo_options_option_sound")[0].addEventListener("webkitTransitionEnd", options_displayEnd, false);
+	$(".multiUseInfo_options_option_sound")[0].addEventListener("transitionend", options_displayEnd, false);
+
+	$(".multiUseInfo_entranceLine1").removeClass("tween-multiUseInfo_cont_entrance_tl_delay");
+
+	$(".multiUseInfo_options_option_about").toggleClass("multiUseInfo_options_option_hide", "multiUseInfo_options_option_show");
+
+	$(".multiUseInfo_options_option_sound").toggleClass("multiUseInfo_options_option_hide", "multiUseInfo_options_option_show");
+}
+
+function options_displayEnd(event)
+{
+	$(".multiUseInfo_options_option_sound")[0].removeEventListener("webkitTransitionEnd", options_displayEnd, false);
+	$(".multiUseInfo_options_option_sound")[0].removeEventListener("transitionend", options_displayEnd, false);
+
+	$(".multiUseInfo_options_option_sound").removeClass("tween-multiUseInfo_options_option_delay");
+
+	options_btnInit(true);
+}
+
+function options_btnInit(run)
+{
+	if(run)
+	{
+		$(".multiUseInfo_options_option_about")[0].addEventListener("click", options_btnEvent, false);
+		$(".multiUseInfo_options_option_sound")[0].addEventListener("click", options_btnEvent, false);
+
+		$(".multiUseInfo_options_option_about")[0].addEventListener("touchend", options_btnEvent, false);
+		$(".multiUseInfo_options_option_sound")[0].addEventListener("touchend", options_btnEvent, false);
+	}
+
+	else
+	{
+		$(".multiUseInfo_options_option_about")[0].removeEventListener("click", options_btnEvent, false);
+		$(".multiUseInfo_options_option_sound")[0].removeEventListener("click", options_btnEvent, false);
+
+		$(".multiUseInfo_options_option_about")[0].removeEventListener("touchend", options_btnEvent, false);
+		$(".multiUseInfo_options_option_sound")[0].removeEventListener("touchend", options_btnEvent, false);
+
+		$(".multiUseInfo_options_option_about").addClass("multiUseInfo_option_disabled");
+		$(".multiUseInfo_options_option_sound").addClass("multiUseInfo_option_disabled");
+	}
+}
+
+function options_btnEvent(event)
+{
+
+	options_btnInit(false);
+
+	$(".tween-multiUseInfo_options_option")[0].addEventListener("webkitTransitionEnd", options_btnSelected, false);
+	$(".tween-multiUseInfo_options_option")[0].addEventListener("transitionend", options_btnSelected, false);
+
+	for(var cl = 0; cl < event.target.classList.length; cl++)
+	{
+		var _cl = event.target.classList[cl];
+
+		if(_cl === "multiUseInfo_options_option_about" || _cl === "multiUseInfo_options_option_sound")
+		{
+			if(_cl === "multiUseInfo_options_option_about")
+			{
+				screen_multiInfoUse.optionSelected = "ABOUT";
+
+				$(".multiUseInfo_options_option_sound").toggleClass("multiUseInfo_options_option_hide", "multiUseInfo_options_option_show");
+			}
+
+			if(_cl === "multiUseInfo_options_option_sound")
+			{
+				screen_multiInfoUse.optionSelected = "SOUND";
+
+				$(".multiUseInfo_options_option_about").toggleClass("multiUseInfo_options_option_hide", "multiUseInfo_options_option_show");
+			}
+		}
+	}
+}
+
+function options_btnSelected(event)
+{
+	var exitFrame;
+
+	$(".tween-multiUseInfo_options_option")[0].removeEventListener("webkitTransitionEnd", options_btnSelected, false);
+	$(".tween-multiUseInfo_options_option")[0].removeEventListener("transitionend", options_btnSelected, false);
+
+	switch(screen_multiInfoUse.optionSelected)
+	{
+		case "ABOUT":
+		{
+
+			break;
+		}
+
+		case "SOUND":
+		{
+
+				html_lib_reuse();
+
+				multiUseInfoScreen_build("#options_wrapper .options-select", "SOUND_GLOBAL");
+
+				html_lib_empty();
+
+				exitFrame = setTimeout(multiUseInfoScreen_drop, 20);
+
+			break;
+		}
+	}
+}
+
+// -------- OPTIONS
+
 // -------- GLOBAL_SOUND
 
-function soundGlobalOptions_display(event)
+function soundGlobalOptions_display()
 {
 	$(".multiUseInfo_sound_option_false")[0].addEventListener("webkitTransitionEnd", soundGlobalOptions_displayEnd, false);
 	$(".multiUseInfo_sound_option_false")[0].addEventListener("transitionend", soundGlobalOptions_displayEnd, false);
