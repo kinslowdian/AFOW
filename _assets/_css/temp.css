@@ -248,6 +248,11 @@
 	background: #20202a;
 }
 
+.options-select .multiUseInfo_cont_entrance
+{
+	background: #161620;
+}
+
 .multiUseInfo_cont_entrance .multiUseInfo_deco_tr, .multiUseInfo_cont_entrance .multiUseInfo_deco_bl
 {
 	width: 40px;
@@ -544,7 +549,8 @@
 
 	position: relative;
 
-	cursor: pointer
+	cursor: pointer;
+	pointer-events: auto;
 }
 
 .multiUseInfo_sound .multiUseInfo_br p:first-of-type

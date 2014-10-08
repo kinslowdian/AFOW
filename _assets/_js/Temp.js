@@ -374,6 +374,7 @@ function multiUseInfoScreen_build(plugInto, screenType)
 	var buildData = {};
 
 	screen_multiInfoUse = {};
+	screen_multiInfoUse.screenRoot = plugInto;
 	screen_multiInfoUse.infoDisplay = screenType;
 	screen_multiInfoUse.dropEndFunct = null;
 	screen_multiInfoUse.riseEndFunct = null;
@@ -389,12 +390,12 @@ function multiUseInfoScreen_build(plugInto, screenType)
 			buildData.title_0 = Logic.dat_ROM["_NAVIGATION"]["nav_intro"]["title_0"];
 			buildData.title_1 = Logic.dat_ROM["_NAVIGATION"]["nav_intro"]["title_1"];
 
-			$(plugInto).append(buildData.screen_html);
-			$(plugInto + " .multiUseInfo_cont_entrance").addClass("multiUseInfo_intro");
-			$(plugInto + " .multiUseInfo_intro .multiUseInfo_br").append(buildData.art_html);
+			$(screen_multiInfoUse.screenRoot).append(buildData.screen_html);
+			$(screen_multiInfoUse.screenRoot + " .multiUseInfo_cont_entrance").addClass("multiUseInfo_intro");
+			$(screen_multiInfoUse.screenRoot + " .multiUseInfo_intro .multiUseInfo_br").append(buildData.art_html);
 
-			$(plugInto + " .multiUseInfo_intro .multiUseInfo_entranceLine0").text(buildData.title_0);
-			$(plugInto + " .multiUseInfo_intro .multiUseInfo_entranceLine1").text(buildData.title_1);
+			$(screen_multiInfoUse.screenRoot + " .multiUseInfo_intro .multiUseInfo_entranceLine0").text(buildData.title_0);
+			$(screen_multiInfoUse.screenRoot + " .multiUseInfo_intro .multiUseInfo_entranceLine1").text(buildData.title_1);
 
 			screen_multiInfoUse.dropEndFunct = startIntro_optionsHint;
 			screen_multiInfoUse.riseEndFunct = startGame_firstEntrance;
@@ -410,12 +411,12 @@ function multiUseInfoScreen_build(plugInto, screenType)
 			buildData.title_0 = Logic.dat_ROM["_NAVIGATION"]["nav_options"]["title_0"];
 			buildData.title_1 = Logic.dat_ROM["_NAVIGATION"]["nav_options"]["title_1"];
 
-			$(plugInto).append(buildData.screen_html);
-			$(plugInto + " .multiUseInfo_cont_entrance").addClass("multiUseInfo_options");
-			$(plugInto + " .multiUseInfo_options .multiUseInfo_br").append(buildData.art_html);
+			$(screen_multiInfoUse.screenRoot).append(buildData.screen_html);
+			$(screen_multiInfoUse.screenRoot + " .multiUseInfo_cont_entrance").addClass("multiUseInfo_options");
+			$(screen_multiInfoUse.screenRoot + " .multiUseInfo_options .multiUseInfo_br").append(buildData.art_html);
 
-			$(plugInto + " .multiUseInfo_options .multiUseInfo_entranceLine0").text(buildData.title_0);
-			$(plugInto + " .multiUseInfo_options .multiUseInfo_entranceLine1").text(buildData.title_1);
+			$(screen_multiInfoUse.screenRoot + " .multiUseInfo_options .multiUseInfo_entranceLine0").text(buildData.title_0);
+			$(screen_multiInfoUse.screenRoot + " .multiUseInfo_options .multiUseInfo_entranceLine1").text(buildData.title_1);
 
 			screen_multiInfoUse.dropEndFunct = options_display;
 
@@ -431,12 +432,12 @@ function multiUseInfoScreen_build(plugInto, screenType)
 			buildData.title_0 = Logic.dat_ROM["_NAVIGATION"]["nav_sound"]["title_0"];
 			buildData.title_1 = Logic.dat_ROM["_NAVIGATION"]["nav_sound"]["title_1"];
 
-			$(plugInto).append(buildData.screen_html);
-			$(plugInto + " .multiUseInfo_cont_entrance").addClass("multiUseInfo_sound");
-			$(plugInto + " .multiUseInfo_sound .multiUseInfo_br").append(buildData.art_html);
+			$(screen_multiInfoUse.screenRoot).append(buildData.screen_html);
+			$(screen_multiInfoUse.screenRoot + " .multiUseInfo_cont_entrance").addClass("multiUseInfo_sound");
+			$(screen_multiInfoUse.screenRoot + " .multiUseInfo_sound .multiUseInfo_br").append(buildData.art_html);
 
-			$(plugInto + " .multiUseInfo_sound .multiUseInfo_entranceLine0").text(buildData.title_0);
-			$(plugInto + " .multiUseInfo_sound .multiUseInfo_entranceLine1").text(buildData.title_1);
+			$(screen_multiInfoUse.screenRoot + " .multiUseInfo_sound .multiUseInfo_entranceLine0").text(buildData.title_0);
+			$(screen_multiInfoUse.screenRoot + " .multiUseInfo_sound .multiUseInfo_entranceLine1").text(buildData.title_1);
 
 			screen_multiInfoUse.dropEndFunct = soundGlobalOptions_display;
 
@@ -456,38 +457,41 @@ function multiUseInfoScreen_build(plugInto, screenType)
 
 function multiUseInfoScreen_drop()
 {
-	$(".tween-multiUseInfo_cont")[0].addEventListener("webkitTransitionEnd", multiUseInfoScreen_dropEnd, false);
-	$(".tween-multiUseInfo_cont")[0].addEventListener("transitionend", multiUseInfoScreen_dropEnd, false);
+	$(screen_multiInfoUse.screenRoot + " .tween-multiUseInfo_cont")[0].addEventListener("webkitTransitionEnd", multiUseInfoScreen_dropEnd, false);
+	$(screen_multiInfoUse.screenRoot + " .tween-multiUseInfo_cont")[0].addEventListener("transitionend", multiUseInfoScreen_dropEnd, false);
 
-	$(".multiUseInfo_cont_entrance").toggleClass("multiUseInfo_cont_hide", "multiUseInfo_cont_show");
+	$(screen_multiInfoUse.screenRoot + " .multiUseInfo_cont_entrance").toggleClass("multiUseInfo_cont_hide", "multiUseInfo_cont_show");
 }
 
 function multiUseInfoScreen_dropEnd(event)
 {
-	$(".tween-multiUseInfo_cont")[0].removeEventListener("webkitTransitionEnd", multiUseInfoScreen_dropEnd, false);
-	$(".tween-multiUseInfo_cont")[0].removeEventListener("transitionend", multiUseInfoScreen_dropEnd, false);
+	$(screen_multiInfoUse.screenRoot + " .tween-multiUseInfo_cont")[0].removeEventListener("webkitTransitionEnd", multiUseInfoScreen_dropEnd, false);
+	$(screen_multiInfoUse.screenRoot + " .tween-multiUseInfo_cont")[0].removeEventListener("transitionend", multiUseInfoScreen_dropEnd, false);
 
-	$(".multiUseInfo_entranceLine1")[0].addEventListener("webkitTransitionEnd", multiUseInfoScreen_dropEndNext, false);
-	$(".multiUseInfo_entranceLine1")[0].addEventListener("transitionend", multiUseInfoScreen_dropEndNext, false);
+	$(screen_multiInfoUse.screenRoot + " .multiUseInfo_entranceLine1")[0].addEventListener("webkitTransitionEnd", multiUseInfoScreen_dropEndNext, false);
+	$(screen_multiInfoUse.screenRoot + " .multiUseInfo_entranceLine1")[0].addEventListener("transitionend", multiUseInfoScreen_dropEndNext, false);
 
 	// $(".multiUseInfo_entranceLine0").removeClass("multiUseInfo_tl_hide");
 	// $(".multiUseInfo_entranceLine0").addClass("multiUseInfo_tl_show");
 
-	$(".multiUseInfo_entranceLine0").toggleClass("multiUseInfo_tl_hide", "multiUseInfo_tl_show");
+	$(screen_multiInfoUse.screenRoot + " .multiUseInfo_entranceLine0").toggleClass("multiUseInfo_tl_hide", "multiUseInfo_tl_show");
 
 	// $(".multiUseInfo_entranceLine1").removeClass("multiUseInfo_tl_hide");
 	// $(".multiUseInfo_entranceLine1").addClass("multiUseInfo_tl_show");
 
-	$(".multiUseInfo_entranceLine1").toggleClass("multiUseInfo_tl_hide", "multiUseInfo_tl_show");
+	$(screen_multiInfoUse.screenRoot + " .multiUseInfo_entranceLine1").toggleClass("multiUseInfo_tl_hide", "multiUseInfo_tl_show");
 
-	$("#preload-wrapper .preloader").remove();
+	if($("#preload-wrapper .preloader"))
+	{
+		$("#preload-wrapper .preloader").remove();
+	}
 
 }
 
 function multiUseInfoScreen_dropEndNext(event)
 {
-	$(".multiUseInfo_entranceLine1")[0].removeEventListener("webkitTransitionEnd", multiUseInfoScreen_dropEndNext, false);
-	$(".multiUseInfo_entranceLine1")[0].removeEventListener("transitionend", multiUseInfoScreen_dropEndNext, false);
+	$(screen_multiInfoUse.screenRoot + " .multiUseInfo_entranceLine1")[0].removeEventListener("webkitTransitionEnd", multiUseInfoScreen_dropEndNext, false);
+	$(screen_multiInfoUse.screenRoot + " .multiUseInfo_entranceLine1")[0].removeEventListener("transitionend", multiUseInfoScreen_dropEndNext, false);
 
 	if(screen_multiInfoUse.dropEndFunct != null || screen_multiInfoUse.dropEndFunct != undefined)
 	{
@@ -657,6 +661,8 @@ function soundGlobalOptions_displayEnd(event)
 
 	$(".multiUseInfo_sound_option_false").removeClass("tween-multiUseInfo_sound_option_delay");
 
+	$("#options_wrapper .options-choice").html("");
+
 	soundGlobalOptions_btnInit(true);
 }
 
@@ -744,31 +750,31 @@ function battleFail_displayEnd(event)
 
 function multiUseInfoScreen_removeTitle()
 {
-	$(".multiUseInfo_entranceLine0").addClass("tween-multiUseInfo_cont_entrance_tl_delay");
+	$(screen_multiInfoUse.screenRoot + " .multiUseInfo_entranceLine0").addClass("tween-multiUseInfo_cont_entrance_tl_delay");
 
-	$(".multiUseInfo_entranceLine0").removeClass("multiUseInfo_tl_show");
-	$(".multiUseInfo_entranceLine0").addClass("multiUseInfo_tl_hide");
+	$(screen_multiInfoUse.screenRoot + " .multiUseInfo_entranceLine0").removeClass("multiUseInfo_tl_show");
+	$(screen_multiInfoUse.screenRoot + " .multiUseInfo_entranceLine0").addClass("multiUseInfo_tl_hide");
 
-	$(".multiUseInfo_entranceLine1").removeClass("multiUseInfo_tl_show");
-	$(".multiUseInfo_entranceLine1").addClass("multiUseInfo_tl_hide");
+	$(screen_multiInfoUse.screenRoot + " .multiUseInfo_entranceLine1").removeClass("multiUseInfo_tl_show");
+	$(screen_multiInfoUse.screenRoot + " .multiUseInfo_entranceLine1").addClass("multiUseInfo_tl_hide");
 
-	$(".multiUseInfo_entranceLine0")[0].addEventListener("webkitTransitionEnd", multiUseInfoScreen_rise, false);
+	$(screen_multiInfoUse.screenRoot + " .multiUseInfo_entranceLine0")[0].addEventListener("webkitTransitionEnd", multiUseInfoScreen_rise, false);
 
-	$(".multiUseInfo_entranceLine0")[0].addEventListener("transitionend", multiUseInfoScreen_rise, false);
+	$(screen_multiInfoUse.screenRoot + " .multiUseInfo_entranceLine0")[0].addEventListener("transitionend", multiUseInfoScreen_rise, false);
 }
 
 function multiUseInfoScreen_rise(event)
 {
 	trace("!!!!!!! === multiUseInfoScreen_rise());");
 
-	$(".multiUseInfo_entranceLine0")[0].removeEventListener("webkitTransitionEnd", multiUseInfoScreen_rise, false);
-	$(".multiUseInfo_entranceLine0")[0].removeEventListener("transitionend", multiUseInfoScreen_rise, false);
+	$(screen_multiInfoUse.screenRoot + " .multiUseInfo_entranceLine0")[0].removeEventListener("webkitTransitionEnd", multiUseInfoScreen_rise, false);
+	$(screen_multiInfoUse.screenRoot + " .multiUseInfo_entranceLine0")[0].removeEventListener("transitionend", multiUseInfoScreen_rise, false);
 
-	$(".tween-multiUseInfo_cont")[0].addEventListener("webkitTransitionEnd", multiUseInfoScreen_riseEnd, false);
-	$(".tween-multiUseInfo_cont")[0].addEventListener("transitionend", multiUseInfoScreen_riseEnd, false);
+	$(screen_multiInfoUse.screenRoot + " .tween-multiUseInfo_cont")[0].addEventListener("webkitTransitionEnd", multiUseInfoScreen_riseEnd, false);
+	$(screen_multiInfoUse.screenRoot + " .tween-multiUseInfo_cont")[0].addEventListener("transitionend", multiUseInfoScreen_riseEnd, false);
 
-	$(".multiUseInfo_cont_entrance").removeClass("multiUseInfo_cont_show");
-	$(".multiUseInfo_cont_entrance").addClass("multiUseInfo_cont_hide");
+	$(screen_multiInfoUse.screenRoot + " .multiUseInfo_cont_entrance").removeClass("multiUseInfo_cont_show");
+	$(screen_multiInfoUse.screenRoot + " .multiUseInfo_cont_entrance").addClass("multiUseInfo_cont_hide");
 }
 
 function multiUseInfoScreen_riseEnd(event)
@@ -787,8 +793,8 @@ function multiUseInfoScreen_riseEnd(event)
 	{
 		eventSignalFound = false;
 
-		$(".tween-multiUseInfo_cont")[0].removeEventListener("webkitTransitionEnd", multiUseInfoScreen_riseEnd, false);
-		$(".tween-multiUseInfo_cont")[0].removeEventListener("transitionend", multiUseInfoScreen_riseEnd, false);
+		$(screen_multiInfoUse.screenRoot + " .tween-multiUseInfo_cont")[0].removeEventListener("webkitTransitionEnd", multiUseInfoScreen_riseEnd, false);
+		$(screen_multiInfoUse.screenRoot + " .tween-multiUseInfo_cont")[0].removeEventListener("transitionend", multiUseInfoScreen_riseEnd, false);
 
 		if(screen_multiInfoUse.riseEndFunct != null || screen_multiInfoUse.riseEndFunct != undefined)
 		{
