@@ -264,7 +264,7 @@
 			sound_level_background();
 		}
 
-		optionsTrigger_init();
+		optionsTrigger_init(true);
 	}
 
 	// DEFUNCT
