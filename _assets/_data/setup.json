@@ -23,13 +23,31 @@
 		"nav_options":
 		{
 			"title_0" : "Options...",
-			"title_1" : "If confused read about how to play, or enable / disable sound."
+			"title_1" : "If confused read about how to play, or enable / disable sound.",
+			"btn_0"		: "about",
+			"btn_1"		: "sound"
+		},
+
+		"nav_about":
+		{
+			"title_0" : "To undertand all of this...",
+			"title_1" : "For an in depth guide on this game a seperate page exists.",
+			"btn_0"		: "read",
+			"btn_1"		: "return"
 		},
 
 		"nav_sound":
 		{
 			"title_0" : "During your quest...",
-			"title_1" : "I'm an individual who appreciates audio while adventuring."
+			"title_1" : "I'm an individual who appreciates audio while adventuring.",
+			"btn_0"		: "true",
+			"btn_1"		: "false"
+		},
+
+		"nav_fail":
+		{
+			"title_0" : "Son of a...",
+			"title_1" : "Your failed past is here to defeat you. Destroy the zombie!"
 		}
 	},
 

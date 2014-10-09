@@ -1169,7 +1169,7 @@
 	{
 		// BATTLE_NAV.game.result = battleEngine.battle(MAP_PLAYER, ROM.enemy.character, false);
 
-		BATTLE_NAV.game.result = "WIN";
+		BATTLE_NAV.game.result = "LOSE";
 
 		battleNav_logicDisplay();
 	}
@@ -2654,7 +2654,12 @@ function battleEnd_return_show()
 
 	if(BATTLE_NAV.game.result === "LOSE")
 	{
+		// NEW FAIL
+		html_lib_reuse();
+		multiUseInfoScreen_build(".failScreen_wrapper", "BATTLE_FAIL");
+		html_lib_empty();
 
+		multiUseInfoScreen_forcePlace();
 	}
 
 	$(".return_wrapper").addClass("return_wrapper_show");
@@ -2687,12 +2692,18 @@ function battleEnd_return_showEnd(event)
 
 		if(BATTLE_NAV.game.result === "LOSE")
 		{
-			failScreen_showZombie();
+			// NEW FAIL
+			// failScreen_showZombie();
+			// screen_multiInfoUse.dropEndFunct();
+			// OVERRIDE - FORCE EVENT
+			multiUseInfoScreen_dropEnd(null);
+
 		}
 }
 
 
 
+		// DEAD FUNCTION
 		function failScreen_showZombie()
 		{
 			$(".failScreen_zombie")[0].addEventListener("webkitTransitionEnd", failScreen_showTitle, false);
@@ -2701,6 +2712,7 @@ function battleEnd_return_showEnd(event)
 			$(".failScreen_zombie").addClass("failScreen_zombie_show");
 		}
 
+		// DEAD FUNCTION
 		function failScreen_showTitle(event)
 		{
 			$(".failScreen_zombie")[0].removeEventListener("webkitTransitionEnd", failScreen_showTitle, false);
@@ -2712,6 +2724,7 @@ function battleEnd_return_showEnd(event)
 			$(".failScreen_title_top").addClass("failScreen_title_top_show");
 		}
 
+		// DEAD FUNCTION
 		function failScreen_end(event)
 		{
 			var fse_end_delay;
