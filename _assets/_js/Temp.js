@@ -357,11 +357,11 @@ function optionsTrigger_event(event)
 
 	optionsTrigger_init(false);
 
-	html_lib_reuse();
+	// html_lib_reuse();
 
 	multiUseInfoScreen_build("#options_wrapper .options-choice", "OPTIONS");
 
-	html_lib_empty();
+	// html_lib_empty();
 
 	exitFrame = setTimeout(optionsTrigger_run, 20);
 }
@@ -380,6 +380,8 @@ var screen_multiInfoUse;
 function multiUseInfoScreen_build(plugInto, screenType)
 {
 	var buildData = {};
+
+	html_lib_reuse();
 
 	screen_multiInfoUse = {};
 	screen_multiInfoUse.screenRoot = plugInto;
@@ -402,6 +404,25 @@ function multiUseInfoScreen_build(plugInto, screenType)
 			$(screen_multiInfoUse.screenRoot + " .multiUseInfo_intro .multiUseInfo_entranceLine1").text(buildData.title_1);
 
 			screen_multiInfoUse.dropEndFunct = startIntro_optionsHint;
+			// screen_multiInfoUse.riseEndFunct = startGame_firstEntrance;
+
+			break;
+		}
+
+		case "CONTROL":
+		{
+			buildData = multiUseInfoScreen_buildData("_multiUseInfo_br_control", "nav_control", false);
+
+			trace(buildData);
+
+			$(screen_multiInfoUse.screenRoot).append(buildData.screen_html);
+			$(screen_multiInfoUse.screenRoot + " .multiUseInfo_cont_entrance").addClass("multiUseInfo_control");
+			$(screen_multiInfoUse.screenRoot + " .multiUseInfo_control .multiUseInfo_br").append(buildData.art_html);
+
+			$(screen_multiInfoUse.screenRoot + " .multiUseInfo_control .multiUseInfo_entranceLine0").text(buildData.title_0);
+			$(screen_multiInfoUse.screenRoot + " .multiUseInfo_control .multiUseInfo_entranceLine1").text(buildData.title_1);
+
+			screen_multiInfoUse.dropEndFunct = controlIntro_hint;
 			screen_multiInfoUse.riseEndFunct = startGame_firstEntrance;
 
 			break;
@@ -482,6 +503,8 @@ function multiUseInfoScreen_build(plugInto, screenType)
 	}
 
 	delete buildData;
+
+	html_lib_empty();
 }
 
 function multiUseInfoScreen_buildData(html_br, json_text, ui)
@@ -571,10 +594,63 @@ function startIntro_optionsHint()
 function startIntro_optionsHintComplete()
 {
 	timerList_destroy();
-	multiUseInfoScreen_removeTitle();
+	// multiUseInfoScreen_removeTitle();
+
+	$(screen_multiInfoUse.screenRoot + " .multiUseInfo_entranceLine0").addClass("tween-multiUseInfo_cont_entrance_tl_delay");
+	/*
+	$(screen_multiInfoUse.screenRoot + " .multiUseInfo_entranceLine0").removeClass("multiUseInfo_tl_show");
+	$(screen_multiInfoUse.screenRoot + " .multiUseInfo_entranceLine0").addClass("multiUseInfo_tl_hide");
+
+	$(screen_multiInfoUse.screenRoot + " .multiUseInfo_entranceLine1").removeClass("multiUseInfo_tl_show");
+	$(screen_multiInfoUse.screenRoot + " .multiUseInfo_entranceLine1").addClass("multiUseInfo_tl_hide");
+	*/
+
+	$(screen_multiInfoUse.screenRoot + " .multiUseInfo_entranceLine0").toggleClass("multiUseInfo_tl_hide", "multiUseInfo_tl_show");
+	$(screen_multiInfoUse.screenRoot + " .multiUseInfo_entranceLine1").toggleClass("multiUseInfo_tl_hide", "multiUseInfo_tl_show");
+
+	$(screen_multiInfoUse.screenRoot + " .multiUseInfo_entranceLine0")[0].addEventListener("webkitTransitionEnd", startIntro_optionsHintRemove, false);
+
+	$(screen_multiInfoUse.screenRoot + " .multiUseInfo_entranceLine0")[0].addEventListener("transitionend", startIntro_optionsHintRemove, false);
+}
+
+function startIntro_optionsHintRemove(event)
+{
+	var exitFrame;
+
+	$(screen_multiInfoUse.screenRoot + " .multiUseInfo_entranceLine0")[0].removeEventListener("webkitTransitionEnd", startIntro_optionsHintRemove, false);
+
+	$(screen_multiInfoUse.screenRoot + " .multiUseInfo_entranceLine0")[0].removeEventListener("transitionend", startIntro_optionsHintRemove, false);
+
+	multiUseInfoScreen_build("#options_wrapper .options-select", "CONTROL");
+
+	exitFrame = setTimeout(multiUseInfoScreen_drop, 20);
 }
 
 // -------- START_INTRO
+
+// -------- CONTROL_INTRO
+
+function controlIntro_hint()
+{
+	var delay_startIntro;
+
+	// $(".multiUseInfo_intro .multiUseInfo_speech_40x40").toggleClass("multiUseInfo_speech_hide", "multiUseInfo_speech_show");
+
+	$("#options_wrapper .options-choice").html("");
+
+	timerList_init();
+	delay_controlIntro = new AnimationTimer();
+	timerList_add(delay_controlIntro);
+	delay_controlIntro.time(3, controlIntro_hintComplete);
+}
+
+function controlIntro_hintComplete()
+{
+	timerList_destroy();
+	multiUseInfoScreen_removeTitle();
+}
+
+// -------- CONTROL_INTRO
 
 // -------- OPTIONS
 
@@ -958,7 +1034,38 @@ function battleFail_displayEnd(event)
 	delay_failScreen = new AnimationTimer();
 
 	timerList_add(delay_failScreen);
-	delay_failScreen.time(1.5, battleEnd_battleEnd_returnToGame);
+	// delay_failScreen.time(1.5, battleEnd_battleEnd_returnToGame);
+	delay_failScreen.time(1.5, battleFail_removeInit);
+}
+
+function battleFail_removeInit()
+{
+	// timerList_destroy();
+	// multiUseInfoScreen_removeTitle();
+
+	$(screen_multiInfoUse.screenRoot + " .multiUseInfo_entranceLine0").addClass("tween-multiUseInfo_cont_entrance_tl_delay");
+
+	// TOGGLE
+	$(screen_multiInfoUse.screenRoot + " .multiUseInfo_entranceLine0").removeClass("multiUseInfo_tl_show");
+	$(screen_multiInfoUse.screenRoot + " .multiUseInfo_entranceLine0").addClass("multiUseInfo_tl_hide");
+
+	// TOGGLE
+	$(screen_multiInfoUse.screenRoot + " .multiUseInfo_entranceLine1").removeClass("multiUseInfo_tl_show");
+	$(screen_multiInfoUse.screenRoot + " .multiUseInfo_entranceLine1").addClass("multiUseInfo_tl_hide");
+
+	// FAULTY
+	$(screen_multiInfoUse.screenRoot + " .multiUseInfo_entranceLine0")[0].addEventListener("webkitTransitionEnd", battleFail_removeEnd, false);
+
+	$(screen_multiInfoUse.screenRoot + " .multiUseInfo_entranceLine0")[0].addEventListener("transitionend", battleFail_removeEnd, false);
+}
+
+function battleFail_removeEnd(event)
+{
+	$(screen_multiInfoUse.screenRoot + " .multiUseInfo_entranceLine0")[0].removeEventListener("webkitTransitionEnd", battleFail_removeEnd, false);
+
+	$(screen_multiInfoUse.screenRoot + " .multiUseInfo_entranceLine0")[0].removeEventListener("transitionend", battleFail_removeEnd, false);
+
+	battleEnd_battleEnd_returnToGame();
 }
 
 // -------- BATTLE_FAIL
@@ -966,12 +1073,15 @@ function battleFail_displayEnd(event)
 function multiUseInfoScreen_removeTitle()
 {
 	$(screen_multiInfoUse.screenRoot + " .multiUseInfo_entranceLine0").addClass("tween-multiUseInfo_cont_entrance_tl_delay");
-
+/*
 	$(screen_multiInfoUse.screenRoot + " .multiUseInfo_entranceLine0").removeClass("multiUseInfo_tl_show");
 	$(screen_multiInfoUse.screenRoot + " .multiUseInfo_entranceLine0").addClass("multiUseInfo_tl_hide");
 
 	$(screen_multiInfoUse.screenRoot + " .multiUseInfo_entranceLine1").removeClass("multiUseInfo_tl_show");
 	$(screen_multiInfoUse.screenRoot + " .multiUseInfo_entranceLine1").addClass("multiUseInfo_tl_hide");
+*/
+	$(screen_multiInfoUse.screenRoot + " .multiUseInfo_entranceLine0").toggleClass("multiUseInfo_tl_hide", "multiUseInfo_tl_show");
+	$(screen_multiInfoUse.screenRoot + " .multiUseInfo_entranceLine1").toggleClass("multiUseInfo_tl_hide", "multiUseInfo_tl_show");
 
 	$(screen_multiInfoUse.screenRoot + " .multiUseInfo_entranceLine0")[0].addEventListener("webkitTransitionEnd", multiUseInfoScreen_rise, false);
 

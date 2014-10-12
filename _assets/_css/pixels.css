@@ -486,6 +486,13 @@
 		background-size: 80px 360px;
 	}
 
+	.pixels_multiUseScreen
+	{
+		background-image: url(../_img/multiUseScreenSprite_1x.png);
+		background-repeat: no-repeat;
+		background-size: 120px 120px;
+	}
+
 /* ----------------------------------------------------------------------- GENERAL */
 
 
@@ -833,6 +840,11 @@
 		{
 			background-image: url(../_img/portalZombieSprite_1x.png);
 		}
+
+		.pixels_multiUseScreen
+		{
+			background-image: url(../_img/multiUseScreenSprite_1x.png);
+		}
 	}
 
 
@@ -1134,6 +1146,11 @@
 		.pixels_portalZombie
 		{
 			background-image: url(../_img/portalZombieSprite_2x.png);
+		}
+
+		.pixels_multiUseScreen
+		{
+			background-image: url(../_img/multiUseScreenSprite_2x.png);
 		}
 	}
 

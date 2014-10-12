@@ -169,6 +169,16 @@
 		z-index: 3;
 	}
 
+	.options-choice
+	{
+		z-index: 0;
+	}
+
+	.options-select
+	{
+		z-index: 1;
+	}
+
 	.options-trigger
 	{
 		pointer-events: auto;
@@ -492,6 +502,99 @@
 	100%	{transform: rotate(90deg);}
 }
 
+.multiUseInfo_control
+{
+
+}
+
+.multiUseInfo_control .multiUseInfo_br
+{
+	width: 120px;
+	height: 120px;
+}
+
+.multiUseInfo_control .multiUseInfo_controlDisplay
+{
+	width: 120px;
+	height: 120px;
+
+	position: absolute;
+
+	left: 0;
+	top: 0;
+}
+
+.multiUseInfo_control .multiUseInfo_goat
+{
+	width:40px;
+	height: 40px;
+
+	position: absolute;
+
+	left: 0; right: 0; top: 0; bottom: 0;
+
+	margin: 0 auto;
+}
+
+.multiUseInfo_control .multiUseInfo_keys
+{
+	width: 120px;
+	height: 80px;
+
+	background-position: 0 -40px;
+
+	position: absolute;
+
+	left: 0;
+	bottom: 0;
+}
+
+.tween-multiUseInfo_control_goat
+{
+	-webkit-animation: tweenMultiUseInfoControlGoat 1s ease-in-out infinite;
+	animation: tweenMultiUseInfoControlGoat 1s ease-in-out infinite;
+}
+
+@-webkit-keyframes tweenMultiUseInfoControlGoat
+{
+	0%		{-webkit-transform: translateY(0px);}
+	50%		{-webkit-transform: translateY(-40px);}
+	100%	{-webkit-transform: translateY(0px);}
+}
+
+@keyframes tweenMultiUseInfoControlGoat
+{
+	0%		{transform: translateY(0px);}
+	50%		{transform: translateY(-40px);}
+	100%	{transform: translateY(0px);}
+}
+
+.tween-multiUseInfo_control_keys
+{
+	-webkit-animation: tweenMultiUseInfoControlKeys 1s ease-in-out infinite;
+	animation: tweenMultiUseInfoControlKeys 1s ease-in-out infinite;
+}
+
+@-webkit-keyframes tweenMultiUseInfoControlKeys
+{
+	0%		{-webkit-transform: translateY(0px);}
+	50%		{-webkit-transform: translateY(10px);}
+	100%	{-webkit-transform: translateY(0px);}
+}
+
+@keyframes tweenMultiUseInfoControlKeys
+{
+	0%		{transform: translateY(0px);}
+	50%		{transform: translateY(10px);}
+	100%	{transform: translateY(0px);}
+}
+
+
+
+
+
+
+
 .multiUseInfo_options
 {
 
@@ -744,16 +847,6 @@
 {
 	-webkit-transition: 800ms ease-out;
 	transition: 800ms ease-out;
-}
-
-
-
-
-.pixels_multiUseScreen
-{
-	background-image: url(../_img/multiUseScreenSprite_1x.png);
-	background-repeat: no-repeat;
-	background-size: 80px 40px;
 }
 
 

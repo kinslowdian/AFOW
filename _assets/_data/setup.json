@@ -17,7 +17,13 @@
 		"nav_intro":
 		{
 			"title_0" : "Before your quest...",
-			"title_1" : "When unhappiness, fear, and loneliness arise. Tap the warrior for in-game options."
+			"title_1" : "When unhappiness, fear, and loneliness arise. Poke the wormhole hero for in-game options."
+		},
+
+		"nav_control":
+		{
+			"title_0" : "Take control of matters...",
+			"title_1" : "The arrow keys provide swift movement, so will touch on other magical devices."
 		},
 
 		"nav_options":

@@ -173,16 +173,20 @@
 		$("#preload-wrapper .preloader-message-start")[0].removeEventListener("touchend", preloader_remove_btnEvent, false);
 		$("#preload-wrapper .preloader-message-start")[0].removeEventListener("click", preloader_remove_btnEvent, false);
 
-		html_lib_reuse();
+		// html_lib_reuse();
 
 		// multiUseInfoScreen_build("#preload-wrapper", "SOUND_GLOBAL");
 
-		multiUseInfoScreen_build("#preload-wrapper", "START_INTRO");
+		// multiUseInfoScreen_build("#preload-wrapper", "START_INTRO");
+
+		// multiUseInfoScreen_build("#preload-wrapper", "CONTROL");
+
+		multiUseInfoScreen_build("#options_wrapper .options-choice", "START_INTRO");
 
 		// html_screen_soundOptions = html_lib_use("_multiUseInfo", false, false);
 		// html_soundOptions = html_lib_use("_multiUseInfo_br_sound", false, false);
 
-		html_lib_empty();
+		// html_lib_empty();
 
 		// $("#preload-wrapper").append(html_screen_soundOptions);
 		// $("#preload-wrapper .multiUseInfo_br").append(html_soundOptions);
