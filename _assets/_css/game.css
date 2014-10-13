@@ -5654,10 +5654,16 @@
 
 	background: #20202a;
 
-	-webkit-transform: translateX(100%);
-	transform: translateX(100%);
+/*	-webkit-transform: translateX(100%);
+	transform: translateX(100%);*/
 
 	z-index: 5;
+}
+
+.return_wrapper_hide
+{
+	-webkit-transform: translateX(100%);
+	transform: translateX(100%);
 }
 
 .return_wrapper_show

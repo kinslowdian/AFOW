@@ -594,23 +594,8 @@ function startIntro_optionsHint()
 function startIntro_optionsHintComplete()
 {
 	timerList_destroy();
-	// multiUseInfoScreen_removeTitle();
 
-	$(screen_multiInfoUse.screenRoot + " .multiUseInfo_entranceLine0").addClass("tween-multiUseInfo_cont_entrance_tl_delay");
-	/*
-	$(screen_multiInfoUse.screenRoot + " .multiUseInfo_entranceLine0").removeClass("multiUseInfo_tl_show");
-	$(screen_multiInfoUse.screenRoot + " .multiUseInfo_entranceLine0").addClass("multiUseInfo_tl_hide");
-
-	$(screen_multiInfoUse.screenRoot + " .multiUseInfo_entranceLine1").removeClass("multiUseInfo_tl_show");
-	$(screen_multiInfoUse.screenRoot + " .multiUseInfo_entranceLine1").addClass("multiUseInfo_tl_hide");
-	*/
-
-	$(screen_multiInfoUse.screenRoot + " .multiUseInfo_entranceLine0").toggleClass("multiUseInfo_tl_hide", "multiUseInfo_tl_show");
-	$(screen_multiInfoUse.screenRoot + " .multiUseInfo_entranceLine1").toggleClass("multiUseInfo_tl_hide", "multiUseInfo_tl_show");
-
-	$(screen_multiInfoUse.screenRoot + " .multiUseInfo_entranceLine0")[0].addEventListener("webkitTransitionEnd", startIntro_optionsHintRemove, false);
-
-	$(screen_multiInfoUse.screenRoot + " .multiUseInfo_entranceLine0")[0].addEventListener("transitionend", startIntro_optionsHintRemove, false);
+	multiUseInfoScreen_removeTitleSoft(startIntro_optionsHintRemove);
 }
 
 function startIntro_optionsHintRemove(event)
@@ -1043,6 +1028,7 @@ function battleFail_removeInit()
 	// timerList_destroy();
 	// multiUseInfoScreen_removeTitle();
 
+	/*
 	$(screen_multiInfoUse.screenRoot + " .multiUseInfo_entranceLine0").addClass("tween-multiUseInfo_cont_entrance_tl_delay");
 
 	// TOGGLE
@@ -1057,6 +1043,10 @@ function battleFail_removeInit()
 	$(screen_multiInfoUse.screenRoot + " .multiUseInfo_entranceLine0")[0].addEventListener("webkitTransitionEnd", battleFail_removeEnd, false);
 
 	$(screen_multiInfoUse.screenRoot + " .multiUseInfo_entranceLine0")[0].addEventListener("transitionend", battleFail_removeEnd, false);
+	*/
+	multiUseInfoScreen_removeTitleSoft(battleFail_removeEnd);
+
+
 }
 
 function battleFail_removeEnd(event)
@@ -1064,6 +1054,8 @@ function battleFail_removeEnd(event)
 	$(screen_multiInfoUse.screenRoot + " .multiUseInfo_entranceLine0")[0].removeEventListener("webkitTransitionEnd", battleFail_removeEnd, false);
 
 	$(screen_multiInfoUse.screenRoot + " .multiUseInfo_entranceLine0")[0].removeEventListener("transitionend", battleFail_removeEnd, false);
+
+	// alert("SAFE");
 
 	battleEnd_battleEnd_returnToGame();
 }
@@ -1073,19 +1065,25 @@ function battleFail_removeEnd(event)
 function multiUseInfoScreen_removeTitle()
 {
 	$(screen_multiInfoUse.screenRoot + " .multiUseInfo_entranceLine0").addClass("tween-multiUseInfo_cont_entrance_tl_delay");
-/*
-	$(screen_multiInfoUse.screenRoot + " .multiUseInfo_entranceLine0").removeClass("multiUseInfo_tl_show");
-	$(screen_multiInfoUse.screenRoot + " .multiUseInfo_entranceLine0").addClass("multiUseInfo_tl_hide");
 
-	$(screen_multiInfoUse.screenRoot + " .multiUseInfo_entranceLine1").removeClass("multiUseInfo_tl_show");
-	$(screen_multiInfoUse.screenRoot + " .multiUseInfo_entranceLine1").addClass("multiUseInfo_tl_hide");
-*/
 	$(screen_multiInfoUse.screenRoot + " .multiUseInfo_entranceLine0").toggleClass("multiUseInfo_tl_hide", "multiUseInfo_tl_show");
 	$(screen_multiInfoUse.screenRoot + " .multiUseInfo_entranceLine1").toggleClass("multiUseInfo_tl_hide", "multiUseInfo_tl_show");
 
 	$(screen_multiInfoUse.screenRoot + " .multiUseInfo_entranceLine0")[0].addEventListener("webkitTransitionEnd", multiUseInfoScreen_rise, false);
 
 	$(screen_multiInfoUse.screenRoot + " .multiUseInfo_entranceLine0")[0].addEventListener("transitionend", multiUseInfoScreen_rise, false);
+}
+
+function multiUseInfoScreen_removeTitleSoft(eventFunct)
+{
+	$(screen_multiInfoUse.screenRoot + " .multiUseInfo_entranceLine0").addClass("tween-multiUseInfo_cont_entrance_tl_delay");
+
+	$(screen_multiInfoUse.screenRoot + " .multiUseInfo_entranceLine0").toggleClass("multiUseInfo_tl_hide", "multiUseInfo_tl_show");
+	$(screen_multiInfoUse.screenRoot + " .multiUseInfo_entranceLine1").toggleClass("multiUseInfo_tl_hide", "multiUseInfo_tl_show");
+
+	$(screen_multiInfoUse.screenRoot + " .multiUseInfo_entranceLine0")[0].addEventListener("webkitTransitionEnd", eventFunct, false);
+
+	$(screen_multiInfoUse.screenRoot + " .multiUseInfo_entranceLine0")[0].addEventListener("transitionend", eventFunct, false);
 }
 
 function multiUseInfoScreen_rise(event)
@@ -1102,20 +1100,10 @@ function multiUseInfoScreen_rise(event)
 
 function multiUseInfoScreen_riseEnd(event)
 {
-	var eventSignalFound = false;
+	var eventCheck = EventSignal(event.target.classList, "tween-multiUseInfo_cont");
 
-	for(var i in event.target.classList)
+	if(eventCheck)
 	{
-		if(event.target.classList[i] === "tween-multiUseInfo_cont" && !eventSignalFound)
-		{
-			eventSignalFound = true;
-		}
-	}
-
-	if(eventSignalFound)
-	{
-		eventSignalFound = false;
-
 		$(screen_multiInfoUse.screenRoot + " .tween-multiUseInfo_cont")[0].removeEventListener("webkitTransitionEnd", multiUseInfoScreen_riseEnd, false);
 		$(screen_multiInfoUse.screenRoot + " .tween-multiUseInfo_cont")[0].removeEventListener("transitionend", multiUseInfoScreen_riseEnd, false);
 
@@ -1126,10 +1114,15 @@ function multiUseInfoScreen_riseEnd(event)
 
 		$(screen_multiInfoUse.screenRoot + " .multiUseInfo_wrapper").remove();
 
+		multiUseInfoScreen_purge();
+	}
+}
+
+function multiUseInfoScreen_purge()
+{
 		delete screen_multiInfoUse;
 
 		optionsTrigger_init(true);
-	}
 }
 
 

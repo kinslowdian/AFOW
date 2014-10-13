@@ -1169,7 +1169,7 @@
 	{
 		// BATTLE_NAV.game.result = battleEngine.battle(MAP_PLAYER, ROM.enemy.character, false);
 
-		BATTLE_NAV.game.result = "LOSE";
+		BATTLE_NAV.game.result = "WIN";
 
 		battleNav_logicDisplay();
 	}
@@ -2662,7 +2662,9 @@ function battleEnd_return_show()
 		multiUseInfoScreen_forcePlace();
 	}
 
-	$(".return_wrapper").addClass("return_wrapper_show");
+	// $(".return_wrapper").addClass("return_wrapper_show");
+
+	$(".return_wrapper").toggleClass("return_wrapper_hide", "return_wrapper_show");
 
 	$(".tween-return_wrapper")[0].addEventListener("webkitTransitionEnd", battleEnd_return_showEnd, false);
 	$(".tween-return_wrapper")[0].addEventListener("transitionend", battleEnd_return_showEnd, false);
@@ -2950,28 +2952,40 @@ function battleEnd_return_showEnd(event)
 
 	function battleEnd_battleOver_prepareForReturn()
 	{
+		trace("RETURN CHECK =============================== battleEnd_battleOver_prepareForReturn();");
+
+		// ADD BACK IN
 		$(".tween-return_wrapper")[0].addEventListener("webkitTransitionEnd", battleEnd_battleOver_cleanup, false);
 		$(".tween-return_wrapper")[0].addEventListener("transitionend", battleEnd_battleOver_cleanup, false);
+		// ADD BACK IN
 
-		$(".return_wrapper").removeClass("return_wrapper_show");
+		// $(".return_wrapper").removeClass("return_wrapper_show");
+		$(".return_wrapper").toggleClass("return_wrapper_hide", "return_wrapper_show");
 	}
 
 	function battleEnd_battleOver_cleanup(event)
 	{
-		$(".tween-return_wrapper")[0].removeEventListener("webkitTransitionEnd", battleEnd_battleOver_cleanup, false);
-		$(".tween-return_wrapper")[0].removeEventListener("transitionend", battleEnd_battleOver_cleanup, false);
+		var eventCheck = EventSignal(event.target.classList, "tween-return_wrapper");
 
-		$("#display_inner_info #battleScreen").html("");
-		$("#display_inner_info #battleScreen").removeAttr("style");
+		if(eventCheck)
+		{
+			$(".tween-return_wrapper")[0].removeEventListener("webkitTransitionEnd", battleEnd_battleOver_cleanup, false);
+			$(".tween-return_wrapper")[0].removeEventListener("transitionend", battleEnd_battleOver_cleanup, false);
 
-		$("#display_inner_info #battleScreenFade").removeAttr("style");
-		$("#display_inner_info #battleScreenFade").removeAttr("class");
+			$("#display_inner_info #battleScreen").html("");
+			$("#display_inner_info #battleScreen").removeAttr("style");
 
-		// REMOVE ALL TIMERS FROM THIS ANIMATION FLOW
-		timerList_stopAll();
-		timerList_destroy();
+			$("#display_inner_info #battleScreenFade").removeAttr("style");
+			$("#display_inner_info #battleScreenFade").removeAttr("class");
 
-		moveStageTest();
+			// REMOVE ALL TIMERS FROM THIS ANIMATION FLOW
+			timerList_stopAll();
+			timerList_destroy();
+
+			moveStageTest();
+
+			multiUseInfoScreen_purge();
+		}
 	}
 
 
