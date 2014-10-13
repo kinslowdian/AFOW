@@ -1,101 +1,44 @@
 @charset "UTF-8";
 
-/* PORTAL SCREEN */
-
-/* BATTLE NAV */
-
-/* LEVEL_BATTLE */
-	
-
-/* ----------------------------------------------------------------------- PHONE GENERAL */	
-	
-	/* if(screen.width <= 480) */
-	@media screen and (max-width:480px)
+/* if(screen.width >= 300 && screen.width < 500) */
+@media screen and (min-width:300px) and (max-width:500px)
+{
+	.multiUseInfo_tl
 	{
-		/* ----------------------------------------------------------------------- PORTAL SCREEN */
-		
-		#portalScreen .portalScreen_title_left
-		{
-			/* FORCE CENTER (!important) */
-			text-align: center !important;
-		}	
-
-		#portalScreen .portalScreen_title_right
-		{
-			/* FORCE CENTER (!important) */
-			text-align: center !important;
-		}		
-		
-		/* ----------------------------------------------------------------------- PORTAL SCREEN */		
-		
-		
-		/* ----------------------------------------------------------------------- PRE_BATTLE */		
-		
-		.preBattle_options
-		{
-			font-size: 22px !important;
-		}
-		
-		.preBattle_title_enemy
-		{
-			top: 6% !important;
-			left: 8% !important;
-		}
-		
-		.preBattle_title_player
-		{
-			bottom: 6% !important;
-			right: 8% !important;
-		}
-		
-		/* ----------------------------------------------------------------------- PRE_BATTLE */
-
-		/* ----------------------------------------------------------------------- BATTLE NAV */	
-
-		.microBattle_darkness_info
-		{
-			font-size: 40px !important;
-		}
-		
-		/* ----------------------------------------------------------------------- BATTLE NAV */
-		
-		
-		
-		
-		/* ----------------------------------------------------------------------- LEVEL_BATTLE */
-		
-		.microBattle_endSky
-		{
-			height: 180px;
-		}
-		
-		.microBattle_sunMoon
-		{
-			-webkit-transform: translateX(0px);
-			transform: translateX(0px);			
-		}
-		
-		.microBattle_sunMoon_sprite_rise
-		{
-			-webkit-transform: translateY(-160px);
-			transform: translateY(-160px);			
-		}		
-		
-		/* ----------------------------------------------------------------------- LEVEL_BATTLE */
-		
+		width: 76% !important;
 	}
-	
-/* ----------------------------------------------------------------------- PHONE GENERAL */
-	
-	/* if(screen.width >= 480) */
-	@media screen and (min-width:1000px)
+
+	.multiUseInfo_br
 	{
-		/* ----------------------------------------------------------------------- PRE_BATTLE */
-		
-		.preBattle_options
-		{
-			font-size: 38px !important;
-		}		
-		
-		/* ----------------------------------------------------------------------- PRE_BATTLE */	
-	}	
+		text-align: left;
+		font-size: 0.7em;
+
+		outline: 1px solid white;
+	}
+
+	.multiUseInfo_deco_tr, .multiUseInfo_deco_bl
+	{
+		visibility: hidden;
+	}
+}
+
+
+/* if(screen.width >= 500) */
+@media screen and (min-width:500px)
+{
+	.multiUseInfo_tl
+	{
+		width: 50% !important;
+	}
+
+	.multiUseInfo_br
+	{
+		text-align: right;
+		font-size: 1em;
+	}
+
+	.multiUseInfo_deco_tr, .multiUseInfo_deco_bl
+	{
+		visibility: visible;
+	}
+}

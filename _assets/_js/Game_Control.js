@@ -15,12 +15,6 @@
 
 	/* --- PORTAL */
 
-	var portalData_ARR = new Array();
-
-	var portals_ARR = new Array();
-
-	var portalsOpened = false;
-
 	var PORTAL_TRAVEL;
 
 	/* --- ENEMY */
@@ -1028,86 +1022,6 @@
 
 
 	///////////////////////////////// --- PORTAL
-
-	var portal = function(settings, container)
-	{
-		this.settings 				= settings;
-		this.buildData				= {};
-		this.buildData.html			= html_lib_use("_portal", false, true);
-		this.buildData.container 	= container;
-
-		trace(this);
-	};
-
-	portal.prototype.portal_open = function()
-	{
-		this.spawn				= this.settings.spawn;
-		this.num 				= this.settings.num;
-		this.id 				= "portal_" +  this.spawn + "_" + this.num; // PORTAL NUMBER 1 ON LEVEL 0 === #portal_0_1;
-
-		this.buildData.block_x 	= this.settings.x;
-		this.buildData.block_y 	= this.settings.y;
-		this.buildData.x		= this.buildData.block_x * 80;
-		this.buildData.y 		= this.buildData.block_y * 80;
-		this.buildData.w 		= this.settings.w * 80;
-		this.buildData.h 		= this.settings.h * 80;
-		this.buildData.pixels	= this.settings.p;
-
-		this.level				= this.settings.level;
-		this.exit				= this.settings.exit;
-		this.direction 			= this.settings.direction;
-
-		this.buildData.css	=	{
-									"-webkit-transform"	: "translate(" + this.buildData.x + "px, " + this.buildData.y + "px)",
-									"transform"			: "translate(" + this.buildData.x + "px, " + this.buildData.y + "px)"
-								};
-
-		delete this.settings;
-	};
-
-	portal.prototype.build = function(levelCheck)
-	{
-		var pixelClass = this.buildData.pixels;
-
-		$(this.buildData.container).append(this.buildData.html);
-		$(this.buildData.container + " #_portal").attr("id", this.id);
-
-		$(this.buildData.container + " #" + this.id + " .pixelPush").addClass(this.buildData.pixels);
-
-		// PORTAL CHANGE FOR LEVEL AND STAGE (LEVEL = BLACK SPACE, STAGE = PINK SPACE)
-		if(this.level != ROM.mapLevel)
-		{
-			$(this.buildData.container + " #" + this.id + " .portal_space").addClass("portal_level_warp");
-		}
-
-
-		$("#" + this.id).css(this.buildData.css);
-	}
-
-	function portalRead()
-	{
-		for(var levelData in Logic.dat_ROM["_LEVELS"])
-		{
-			for(var i in Logic.dat_ROM["_LEVELS"][levelData]["portal"])
-			{
-				portalData_ARR.push(Logic.dat_ROM["_LEVELS"][levelData]["portal"][i]);
-			}
-		}
-
-		trace("SAFE");
-		trace(portalData_ARR);
-
-		for(var j in portalData_ARR)
-		{
-			var p = new portal(portalData_ARR[j], ".portal-area");
-
-			p.portal_open();
-
-			portals_ARR.push(p);
-		}
-
-		portalsOpened = true;
-	}
 
 	function portalEntry(portal_hit)
 	{
