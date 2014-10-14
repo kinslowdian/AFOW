@@ -82,6 +82,7 @@
 								if(player_ob.rating >= this.difficulty.easy && player_ob.rating < this.difficulty.medium)
 								{
 									player_ob.sword.skill 		= "apprentice";
+									player_ob.sword.skillId		= 0;
 									player_ob.sword.fullStrike 	= 51;
 									player_ob.sword.magic 		= 5;
 								}
@@ -90,6 +91,7 @@
 								else if(player_ob.rating >= this.difficulty.medium && player_ob.rating < this.difficulty.hard)
 								{
 									player_ob.sword.skill 		= "knight";
+									player_ob.sword.skillId		= 1;
 									player_ob.sword.fullStrike 	= 71;
 									player_ob.sword.magic 		= 40;
 								}
@@ -98,6 +100,7 @@
 								else if(player_ob.rating >= this.difficulty.hard && player_ob.rating < this.difficulty.max)
 								{
 									player_ob.sword.skill 		= "master";
+									player_ob.sword.skillId		= 2;
 									player_ob.sword.fullStrike 	= 91;
 									player_ob.sword.magic 		= 60;
 								}
@@ -106,6 +109,7 @@
 								else
 								{
 									player_ob.sword.skill 		= "lord";
+									player_ob.sword.skillId		= 3;
 									player_ob.sword.fullStrike 	= 101;
 									player_ob.sword.magic 		= 80;
 								}
@@ -339,6 +343,73 @@
 
 
 /*	--------------------------------------- INFO SCREEN*/
+
+
+	function hack_preBattleOptions_build()
+	{
+		// multiUseInfoScreen_build(".somewhere", "PREBATTLE");
+
+		hack_preBattleOptions_populate();
+	}
+
+
+	function hack_preBattleOptions_populate()
+	{
+		preBattle_fullContent();
+	}
+
+
+
+	// ADD TO info.js
+
+	function preBattle_fullContent()
+	{
+		var msg_line1_a;
+		var msg_line1_b;
+		var msg_line1_final;
+
+		msg_line1_a 		= multiUseInfoScreen_selectLine("nav_prebattle", "enemy_static", 0) +  " " + ROM.enemy.character.name + " " + multiUseInfoScreen_randomLine("nav_prebattle", "enemy_dynamic");
+
+		msg_line1_b 		= multiUseInfoScreen_selectLine("nav_prebattle", "player_static" , 0) + " " + multiUseInfoScreen_randomLine("nav_prebattle", "player_dynamic");
+
+		msg_line1_final = msg_line1_a + " <br>" + msg_line1_b;
+	}
+
+	function intoBattle_fullContent()
+	{
+		var msg_value;
+		var msg_line0;
+		var msg_line1_a;
+		var msg_line1_b;
+		var msg_line1_final;
+
+		// WEAK
+		if(MAP_PLAYER.sword.skillId < ROM.enemy.character.sword.skillId)
+		{
+			msg_value = 0;
+		}
+
+		// EVEN
+		if(MAP_PLAYER.sword.skillId == ROM.enemy.character.sword.skillId)
+		{
+			msg_value = 1;
+		}
+
+		// STRONG
+		if(MAP_PLAYER.sword.skillId > ROM.enemy.character.sword.skillId)
+		{
+			msg_value = 2;
+		}
+
+		msg_line0 			= multiUseInfoScreen_selectLine("nav_intobattle", "title_0_dynamic", msg_value);
+		msg_line1_a 		= multiUseInfoScreen_selectLine("nav_intobattle", "title_1_dynamic", 3) + " " + MAP_PLAYER.sword.skill + " " + multiUseInfoScreen_selectLine("nav_intobattle", "title_1_dynamic", msg_value);
+		msg_line1_b	= multiUseInfoScreen_selectLine("nav_intobattle", "title_1_dynamic", 4);
+
+		msg_line1_final = msg_line1_a + " <br>" + msg_line1_b;
+
+		$(screen_multiInfoUse.screenRoot + " .multiUseInfo_preBattle .multiUseInfo_entranceLine0").html(msg_line0);
+		$(screen_multiInfoUse.screenRoot + " .multiUseInfo_preBattle .multiUseInfo_entranceLine1").html(msg_line1_final);
+	}
 
 
 

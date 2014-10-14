@@ -161,6 +161,22 @@
 
 				break;
 			}
+
+			case "PREBATTLE":
+			{
+				buildData = multiUseInfoScreen_buildData("_multiUseInfo_br_preFight", "nav_prebattle", false);
+
+				$(screen_multiInfoUse.screenRoot).append(buildData.screen_html);
+				$(screen_multiInfoUse.screenRoot + " .multiUseInfo_cont_entrance").addClass("multiUseInfo_preBattle");
+				$(screen_multiInfoUse.screenRoot + " .multiUseInfo_preBattle .multiUseInfo_br").append(buildData.art_html);
+
+				$(screen_multiInfoUse.screenRoot + " .multiUseInfo_preBattle .multiUseInfo_entranceLine0").html(buildData.title_0);
+				$(screen_multiInfoUse.screenRoot + " .multiUseInfo_preBattle .multiUseInfo_entranceLine1").html(multiUseInfoScreen_randomLine("nav_prebattle", "enemy"));
+
+				screen_multiInfoUse.dropEndFunct = preBattle_display;
+
+				break;
+			}
 		}
 
 		delete buildData;
@@ -187,6 +203,31 @@
 		return b;
 
 		delete b;
+	}
+
+	function multiUseInfoScreen_selectLine(json_text, json_data, i)
+	{
+		return Logic.dat_ROM["_NAVIGATION"][json_text][json_data][i];
+	}
+
+	function multiUseInfoScreen_randomLine(json_text, json_data)
+	{
+		var randomLine_data = Logic.dat_ROM["_NAVIGATION"][json_text][json_data];
+		var randomLine_length = randomLine_data.length;
+		var randomLine_final = randomLine_data[Math.floor(Math.random() * randomLine_length)];
+
+		// var randomLine = {};
+
+		// randomLine.j_node = new Array();
+		// randomLine.j_node 		= Logic.dat_ROM["_NAVIGATION"][json_text][json_data];
+		// randomLine.j_length		= Logic.dat_ROM["_NAVIGATION"][json_text][json_data].length;
+		// randomLine.j_select 	= Math.floor(Math.random * this.j_node.length);
+
+		// return randomLine.j_select;
+		// return randomLine.j_node;
+		// delete randomLine;
+
+		return randomLine_final;
 	}
 
 	function multiUseInfoScreen_forcePlace()
@@ -688,6 +729,15 @@
 	}
 
 	// -------- BATTLE_FAIL
+
+	// -------- PREBATTLE
+
+	function preBattle_display()
+	{
+
+	}
+
+	// -------- PREBATTLE
 
 	function multiUseInfoScreen_removeTitle()
 	{

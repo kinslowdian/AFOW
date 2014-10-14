@@ -73,6 +73,9 @@
 
 
 		preBattleOptions_populate();
+
+		// HACK
+		hack_preBattleOptions_build();
 	}
 
 	function preBattleOptions_populate()

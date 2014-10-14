@@ -50,6 +50,31 @@
 			"btn_1"		: "false"
 		},
 
+		"nav_prebattle":
+		{
+			"title_0" 			: "Upsetting the locals...",
+			"title_1" 			: "",
+			"btn_0"					: "fight",
+			"btn_1"					: "run",
+			"enemy_static"	: ["A"],
+
+			"enemy_dynamic"	: ["is being evil.", "is not that happy.", "is furious.", "want's blood.", "senses death.", " is sharpening an axe.", "is ready to attack.", "smiles at you.", "want's a kiss.", "screams at you.", "says a rude word.", "is keeping spiders.", "wants an argument.", "makes it rain.", "blocks your way.", "prepares a trap.", "wants to light a fire.", "is hunting a mice.", "has issues with you.", "hasn't paid the water bill.", "is sure it's going to snow.", "dreams of suicide.", "could do with a holiday.", "has slept for twenty two days.", "needs a sandwich.", "is looking forward to christmas.", "is ready to battle.", "doesn't like mayonnaise.", "is stealing trees.", "won't let you go.", "has found a box of matches.", "has eaten a box of candles.", "dreams of the after life.", "demands your sweets.", "might be eating fish and chips.", "is reading the Daily mail.", "might be voting conservative.", "has too many shoes.", "lost a jar of pickles.", "is keeping two foxes.", "has spotted a spelling mistake.", "wishes it was still 1997.", "picked apples in a river.", "knows a goldfish.", "hasn't won a goldfish.", "has been sleeping in a village hall.", "has sold the village hall.", "is a french exchange student."],
+
+			"player_static"		: ["What do you do with your"],
+
+			"player_dynamic"	:	["powers?", "set of spanners?", "collection of shells?", "last rolo?", "dead kipper?", "book of passwords?", "cabbage stew?", "attic wasp nest?", "collection of coins?", "collection of russian stamps?", "beard trimmings?", "tin of sardines?", "half eaten toast?", "blocked drain pipe?", "old keyboard?", "christmas tie?", "fridge magnets?", "telephone cables?"]
+		},
+
+		"nav_intobattle":
+		{
+			"title_0" 				: "",
+			"title_1" 				: "",
+			"btn_0"						: "attack",
+			"btn_1"						: "run",
+			"title_0_dynamic" : ["a black cloud hangs", "quiet please...", "confidence is on your side..."],
+			"title_1_dynamic"	: ["is lower than the enemy.", "matches that of the enemy.", "is higher than the enemy.", "your class of", "The king of wormholes watches on..."]
+		},
+
 		"nav_fail":
 		{
 			"title_0" : "Son of a...",
@@ -1096,7 +1121,7 @@
 					"n": "level2_crow0",
 					"t": "crow",
 					"l": 30,
-					"known" : "some mystic crow 2",
+					"known" : "mystic crow 2",
 					"spawn": 2
 				}
 			],
@@ -2035,7 +2060,7 @@
 					"n": "level4_rabbit0",
 					"t": "rabbit",
 					"l": 5,
-					"known" : "some mystic rabbit 4",
+					"known" : "mystic rabbit 4",
 					"spawn": 4
 				},
 
@@ -2047,7 +2072,7 @@
 					"n": "level4_rabbit1",
 					"t": "rabbit",
 					"l": 99,
-					"known" : "some mystic rabbit 4",
+					"known" : "mystic rabbit 4",
 					"spawn": 4
 				}
 			],
@@ -2549,7 +2574,7 @@
 					"n": "level5_rabbit0",
 					"t": "rabbit",
 					"l": 5,
-					"known" : "some mystic rabbit 4",
+					"known" : "mystic rabbit 4",
 					"spawn": 5
 				},
 
@@ -2561,7 +2586,7 @@
 					"n": "level5_rabbit1",
 					"t": "rabbit",
 					"l": 99,
-					"known" : "some mystic rabbit 4",
+					"known" : "mystic rabbit 4",
 					"spawn": 5
 				}
 			],
