@@ -1,44 +1,249 @@
 @charset "UTF-8";
 
-/* if(screen.width >= 300 && screen.width < 500) */
-@media screen and (min-width:300px) and (max-width:500px)
+/* INFO */
+
+/* PORTAL SCREEN */
+
+/* MOBILE */
+/* if(screen.width >= 300 */
+@media screen and (min-width:300px)
 {
+	/* INFO */
 	.multiUseInfo_tl
 	{
 		width: 76% !important;
 	}
 
+	.multiUseInfo_tl p br
+	{
+		/*IGNORE LINE BREAK*/
+		content: "" !important;
+	}
+
 	.multiUseInfo_br
 	{
-		text-align: left;
-		font-size: 0.7em;
+		width: 50%;
 
-		outline: 1px solid white;
+		text-align: left;
+		font-size: 0.6em;
+	}
+
+	.multiUseInfo_br p:first-of-type
+	{
+		margin-right: 0.1em !important;
 	}
 
 	.multiUseInfo_deco_tr, .multiUseInfo_deco_bl
 	{
 		visibility: hidden;
 	}
+
+	.multiUseInfo_intro .multiUseInfo_br, .multiUseInfo_control .multiUseInfo_br, .multiUseInfo_fail .multiUseInfo_br
+	{
+		right: auto !important;
+		left: 0 !important;
+	}
+	/* INFO */
+
+	/* PORTAL SCREEN */
+	#portalScreen .portalScreen_title_left
+	{
+		text-align: center !important;
+	}
+
+	#portalScreen .portalScreen_title_right
+	{
+		text-align: center !important;
+	}
+	/* PORTAL SCREEN */
+
+	/* BATTLE NAV */
+	.microBattle_darkness_info
+	{
+		font-size: 40px !important;
+	}
+	/* BATTLE NAV */
 }
 
-
-/* if(screen.width >= 500) */
-@media screen and (min-width:500px)
+/* TABLET */
+/* if(screen.width >= 600) */
+@media screen and (min-width:600px)
 {
+	/* INFO */
 	.multiUseInfo_tl
 	{
-		width: 50% !important;
+		width: 80% !important;
+	}
+
+	.multiUseInfo_tl p br
+	{
+		/*DEFAULT LINE BREAK*/
+		content: normal !important;
 	}
 
 	.multiUseInfo_br
 	{
+		width: auto;
+
 		text-align: right;
-		font-size: 1em;
+		font-size: 0.8em;
+	}
+
+	.multiUseInfo_br p:first-of-type
+	{
+		margin-right: 0.2em !important;
 	}
 
 	.multiUseInfo_deco_tr, .multiUseInfo_deco_bl
 	{
 		visibility: visible;
 	}
+
+	.multiUseInfo_intro .multiUseInfo_br, .multiUseInfo_control .multiUseInfo_br, .multiUseInfo_fail .multiUseInfo_br
+	{
+		right: 0 !important;
+		left: auto !important;
+	}
+	/* INFO */
+
+	/* PORTAL SCREEN */
+	#portalScreen .portalScreen_title_left
+	{
+		text-align: center !important;
+	}
+
+	#portalScreen .portalScreen_title_right
+	{
+		text-align: center !important;
+	}
+	/* PORTAL SCREEN */
+
+	/* BATTLE NAV */
+	.microBattle_darkness_info
+	{
+		font-size: 60px !important;
+	}
+	/* BATTLE NAV */
+}
+
+/* TABLET - LAPTOP */
+/* if(screen.width >= 900) */
+@media screen and (min-width:900px)
+{
+	/* INFO */
+	.multiUseInfo_tl
+	{
+		width: 80% !important;
+	}
+
+	.multiUseInfo_tl p br
+	{
+		/*DEFAULT LINE BREAK*/
+		content: normal !important;
+	}
+
+	.multiUseInfo_br
+	{
+		width: auto;
+
+		text-align: right;
+		font-size: 1em;
+	}
+
+	.multiUseInfo_br p:first-of-type
+	{
+		margin-right: 0.3em !important;
+	}
+
+	.multiUseInfo_deco_tr, .multiUseInfo_deco_bl
+	{
+		visibility: visible;
+	}
+
+	.multiUseInfo_intro .multiUseInfo_br, .multiUseInfo_control .multiUseInfo_br, .multiUseInfo_fail .multiUseInfo_br
+	{
+		right: 0 !important;
+		left: auto !important;
+	}
+	/* INFO */
+
+	/* PORTAL SCREEN */
+	#portalScreen .portalScreen_title_left
+	{
+		text-align: center !important;
+	}
+
+	#portalScreen .portalScreen_title_right
+	{
+		text-align: center !important;
+	}
+	/* PORTAL SCREEN */
+
+	/* BATTLE NAV */
+	.microBattle_darkness_info
+	{
+		font-size: 80px !important;
+	}
+	/* BATTLE NAV */
+}
+
+/* DESKTOP > */
+/* if(screen.width >= 1200) */
+@media screen and (min-width:1200px)
+{
+	/* INFO */
+	.multiUseInfo_tl
+	{
+		width: 80% !important;
+	}
+
+	.multiUseInfo_tl p br
+	{
+		/*DEFAULT LINE BREAK*/
+		content: normal !important;
+	}
+
+	.multiUseInfo_br
+	{
+		width: auto;
+
+		text-align: right;
+		font-size: 1.4em;
+	}
+
+	.multiUseInfo_br p:first-of-type
+	{
+		margin-right: 0.3em !important;
+	}
+
+	.multiUseInfo_deco_tr, .multiUseInfo_deco_bl
+	{
+		visibility: visible;
+	}
+
+	.multiUseInfo_intro .multiUseInfo_br, .multiUseInfo_control .multiUseInfo_br, .multiUseInfo_fail .multiUseInfo_br
+	{
+		right: 0 !important;
+		left: auto !important;
+	}
+	/* INFO */
+
+	/* PORTAL SCREEN */
+	#portalScreen .portalScreen_title_left
+	{
+		text-align: center !important;
+	}
+
+	#portalScreen .portalScreen_title_right
+	{
+		text-align: center !important;
+	}
+	/* PORTAL SCREEN */
+
+	/* BATTLE NAV */
+	.microBattle_darkness_info
+	{
+		font-size: 100px !important;
+	}
+	/* BATTLE NAV */
 }

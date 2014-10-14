@@ -17,19 +17,19 @@
 		"nav_intro":
 		{
 			"title_0" : "Before your quest...",
-			"title_1" : "When unhappiness, fear, and loneliness arise. Poke the wormhole hero for in-game options."
+			"title_1" : "When unhappiness, fear, and loneliness arise. <br>Poke the hero for some options."
 		},
 
 		"nav_control":
 		{
 			"title_0" : "Take control of matters...",
-			"title_1" : "The arrow keys provide swift movement, so will touch on other magical devices."
+			"title_1" : "The arrow keys will provide swift direction, <br>so will touch on other devices."
 		},
 
 		"nav_options":
 		{
 			"title_0" : "Options...",
-			"title_1" : "If confused read about how to play, or enable / disable sound.",
+			"title_1" : "If confused read about how to play, <br>or enable / disable sound.",
 			"btn_0"		: "about",
 			"btn_1"		: "sound"
 		},
@@ -37,7 +37,7 @@
 		"nav_about":
 		{
 			"title_0" : "To understand all of this...",
-			"title_1" : "For detailed information on this experience, an indepth guide exists.",
+			"title_1" : "For detailed information on this experience, <br>an indepth guide exists.",
 			"btn_0"		: "read",
 			"btn_1"		: "return"
 		},
@@ -45,7 +45,7 @@
 		"nav_sound":
 		{
 			"title_0" : "During your quest...",
-			"title_1" : "I'm an individual who appreciates audio while adventuring.",
+			"title_1" : "I'm an individual who appreciates <br>audio while adventuring.",
 			"btn_0"		: "true",
 			"btn_1"		: "false"
 		},
@@ -53,7 +53,7 @@
 		"nav_fail":
 		{
 			"title_0" : "Son of a...",
-			"title_1" : "Your failed past is here to defeat you. Destroy the zombie!"
+			"title_1" : "Your failed past is here to defeat you. <br>Destroy the zombie!"
 		}
 	},
 
