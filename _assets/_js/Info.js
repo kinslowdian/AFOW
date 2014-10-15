@@ -52,6 +52,8 @@
 		screen_multiInfoUse.riseEndFunct = null;
 		screen_multiInfoUse.eventTrigger = "";
 
+		screen_multiInfoUse.returnFromBattle = false;
+
 		switch(screen_multiInfoUse.infoDisplay)
 		{
 			case "START_INTRO":
@@ -164,16 +166,43 @@
 
 			case "PREBATTLE":
 			{
-				buildData = multiUseInfoScreen_buildData("_multiUseInfo_br_preFight", "nav_prebattle", false);
+				buildData = multiUseInfoScreen_buildData("_multiUseInfo_br_preFight", "nav_prebattle", true);
 
 				$(screen_multiInfoUse.screenRoot).append(buildData.screen_html);
 				$(screen_multiInfoUse.screenRoot + " .multiUseInfo_cont_entrance").addClass("multiUseInfo_preBattle");
 				$(screen_multiInfoUse.screenRoot + " .multiUseInfo_preBattle .multiUseInfo_br").append(buildData.art_html);
 
 				$(screen_multiInfoUse.screenRoot + " .multiUseInfo_preBattle .multiUseInfo_entranceLine0").html(buildData.title_0);
-				$(screen_multiInfoUse.screenRoot + " .multiUseInfo_preBattle .multiUseInfo_entranceLine1").html(multiUseInfoScreen_randomLine("nav_prebattle", "enemy"));
+				$(screen_multiInfoUse.screenRoot + " .multiUseInfo_preBattle .multiUseInfo_entranceLine1").html("");
+
+				$(screen_multiInfoUse.screenRoot + " .multiUseInfo_preBattle .multiUseInfo_preFight_option_fight").html(buildData.btn_0);
+				$(screen_multiInfoUse.screenRoot + " .multiUseInfo_preBattle .multiUseInfo_preFight_option_leave").html(buildData.btn_1);
+
+				preBattle_fullContent();
 
 				screen_multiInfoUse.dropEndFunct = preBattle_display;
+
+				break;
+			}
+
+			case "INTOBATTLE":
+			{
+				buildData = multiUseInfoScreen_buildData("_multiUseInfo_br_intoFight", "nav_intobattle", true);
+
+				$(screen_multiInfoUse.screenRoot).append(buildData.screen_html);
+				$(screen_multiInfoUse.screenRoot + " .multiUseInfo_cont_entrance").addClass("multiUseInfo_intoBattle");
+				$(screen_multiInfoUse.screenRoot + " .multiUseInfo_intoBattle .multiUseInfo_br").append(buildData.art_html);
+
+				$(screen_multiInfoUse.screenRoot + " .multiUseInfo_intoBattle .multiUseInfo_entranceLine0").html(buildData.title_0);
+				$(screen_multiInfoUse.screenRoot + " .multiUseInfo_intoBattle .multiUseInfo_entranceLine1").html("");
+
+				$(screen_multiInfoUse.screenRoot + " .multiUseInfo_intoBattle .multiUseInfo_intoFight_option_attack").html(buildData.btn_0);
+				$(screen_multiInfoUse.screenRoot + " .multiUseInfo_intoBattle .multiUseInfo_intoFight_option_escape").html(buildData.btn_1);
+
+				intoBattle_fullContent();
+
+				screen_multiInfoUse.dropEndFunct = intoBattle_display;
+				screen_multiInfoUse.riseEndFunct = microBattleSequence_init;
 
 				break;
 			}
@@ -234,7 +263,11 @@
 	{
 		$(screen_multiInfoUse.screenRoot + " .multiUseInfo_cont_entrance").removeClass("tween-multiUseInfo_cont");
 
-		$(screen_multiInfoUse.screenRoot + " .multiUseInfo_cont_entrance").removeClass("multiUseInfo_cont_hide");
+		// $(screen_multiInfoUse.screenRoot + " .multiUseInfo_cont_entrance").removeClass("multiUseInfo_cont_hide");
+
+		// $(screen_multiInfoUse.screenRoot + " .multiUseInfo_cont_entrance").toggleClass("multiUseInfo_cont_hide", "multiUseInfo_cont_show");
+
+		$(screen_multiInfoUse.screenRoot + " .multiUseInfo_cont_entrance").removeClass("multiUseInfo_cont_hide").addClass("multiUseInfo_cont_show");
 	}
 
 	function multiUseInfoScreen_drop()
@@ -242,7 +275,9 @@
 		$(screen_multiInfoUse.screenRoot + " .tween-multiUseInfo_cont")[0].addEventListener("webkitTransitionEnd", multiUseInfoScreen_dropEnd, false);
 		$(screen_multiInfoUse.screenRoot + " .tween-multiUseInfo_cont")[0].addEventListener("transitionend", multiUseInfoScreen_dropEnd, false);
 
-		$(screen_multiInfoUse.screenRoot + " .multiUseInfo_cont_entrance").toggleClass("multiUseInfo_cont_hide", "multiUseInfo_cont_show");
+		// $(screen_multiInfoUse.screenRoot + " .multiUseInfo_cont_entrance").toggleClass("multiUseInfo_cont_hide", "multiUseInfo_cont_show");
+
+		$(screen_multiInfoUse.screenRoot + " .multiUseInfo_cont_entrance").removeClass("multiUseInfo_cont_hide").addClass("multiUseInfo_cont_show");
 	}
 
 	function multiUseInfoScreen_dropEnd(event)
@@ -445,11 +480,11 @@
 		{
 			case "ABOUT":
 			{
-					html_lib_reuse();
+					// html_lib_reuse();
 
 					multiUseInfoScreen_build("#options_wrapper .options-select", "ABOUT");
 
-					html_lib_empty();
+					// html_lib_empty();
 
 					exitFrame = setTimeout(multiUseInfoScreen_drop, 20);
 
@@ -459,11 +494,11 @@
 			case "SOUND":
 			{
 
-					html_lib_reuse();
+					// html_lib_reuse();
 
 					multiUseInfoScreen_build("#options_wrapper .options-select", "SOUND_GLOBAL");
 
-					html_lib_empty();
+					// html_lib_empty();
 
 					exitFrame = setTimeout(multiUseInfoScreen_drop, 20);
 
@@ -732,12 +767,330 @@
 
 	// -------- PREBATTLE
 
+	function preBattle_fullContent()
+	{
+		var msg_line1_a;
+		var msg_line1_b;
+		var msg_line1_final;
+
+		msg_line1_a = multiUseInfoScreen_selectLine("nav_prebattle", "enemy_static", 0) +  " " + ROM.enemy.character.name + " " + multiUseInfoScreen_randomLine("nav_prebattle", "enemy_dynamic");
+
+		msg_line1_b = multiUseInfoScreen_selectLine("nav_prebattle", "player_static" , 0) + " " + multiUseInfoScreen_randomLine("nav_prebattle", "player_dynamic");
+
+		msg_line1_final = msg_line1_a + " <br>" + msg_line1_b;
+
+		$(screen_multiInfoUse.screenRoot + " .multiUseInfo_preBattle .multiUseInfo_entranceLine1").html(msg_line1_final);
+
+		// CHARACTER ADD
+		$(".multiUseInfo_preBattle .multiUseInfo_serial").html(ROM.enemy.character.buildData.html);
+	}
+
 	function preBattle_display()
 	{
+		$(".multiUseInfo_preFight_option_leave")[0].addEventListener("webkitTransitionEnd", preBattle_displayEnd, false);
+		$(".multiUseInfo_preFight_option_leave")[0].addEventListener("transitionend", preBattle_displayEnd, false);
 
+		$(".multiUseInfo_entranceLine1").removeClass("tween-multiUseInfo_cont_entrance_tl_delay");
+
+		$(".multiUseInfo_preFight_option_fight").toggleClass("multiUseInfo_option_hide", "multiUseInfo_option_show");
+
+		$(".multiUseInfo_preFight_option_leave").toggleClass("multiUseInfo_option_hide", "multiUseInfo_option_show");
+	}
+
+	function preBattle_displayEnd(event)
+	{
+		$(".multiUseInfo_preFight_option_leave")[0].removeEventListener("webkitTransitionEnd", preBattle_displayEnd, false);
+		$(".multiUseInfo_preFight_option_leave")[0].removeEventListener("transitionend", preBattle_displayEnd, false);
+
+		$(".multiUseInfo_preFight_option_leave").removeClass("tween-multiUseInfo_option_delay");
+
+		preBattle_btnInit(true);
+
+		// STAGE CLEAR
+		$("#display_wrapper #display_inner_world").html("");
+
+		/*
+		$("#options_wrapper .options-choice").html("");
+
+		soundGlobalOptions_btnInit(true);
+		*/
+	}
+
+	function preBattle_btnInit(run)
+	{
+		if(run)
+		{
+			$(".multiUseInfo_preFight_option_fight")[0].addEventListener("click", preBattle_btnEvent, false);
+			$(".multiUseInfo_preFight_option_leave")[0].addEventListener("click", preBattle_btnEvent, false);
+
+			$(".multiUseInfo_preFight_option_fight")[0].addEventListener("touchend", preBattle_btnEvent, false);
+			$(".multiUseInfo_preFight_option_leave")[0].addEventListener("touchend", preBattle_btnEvent, false);
+		}
+
+		else
+		{
+			$(".multiUseInfo_preFight_option_fight")[0].removeEventListener("click", preBattle_btnEvent, false);
+			$(".multiUseInfo_preFight_option_leave")[0].removeEventListener("click", preBattle_btnEvent, false);
+
+			$(".multiUseInfo_preFight_option_fight")[0].removeEventListener("touchend", preBattle_btnEvent, false);
+			$(".multiUseInfo_preFight_option_leave")[0].removeEventListener("touchend", preBattle_btnEvent, false);
+
+			$(".multiUseInfo_preFight_option_fight").addClass("multiUseInfo_option_disabled");
+			$(".multiUseInfo_preFight_option_leave").addClass("multiUseInfo_option_disabled");
+		}
+	}
+
+	function preBattle_btnEvent(event)
+	{
+		preBattle_btnInit(false);
+
+		for(var cl = 0; cl < event.target.classList.length; cl++)
+		{
+			var _cl = event.target.classList[cl];
+
+			if(_cl === "multiUseInfo_preFight_option_fight" || _cl === "multiUseInfo_preFight_option_leave")
+			{
+				if(_cl === "multiUseInfo_preFight_option_fight")
+				{
+					screen_multiInfoUse.optionSelected = "FIGHT";
+
+					screen_multiInfoUse.eventTrigger = ".multiUseInfo_preFight_option_leave";
+				}
+
+				if(_cl === "multiUseInfo_preFight_option_leave")
+				{
+					screen_multiInfoUse.optionSelected = "RUN";
+
+					screen_multiInfoUse.eventTrigger = ".multiUseInfo_preFight_option_fight";
+				}
+			}
+		}
+
+		$(screen_multiInfoUse.eventTrigger).toggleClass("multiUseInfo_option_hide", "multiUseInfo_option_show");
+
+		// preBattle_btnSelected();
+
+		// multiUseInfoScreen_removeTitle();
+
+		multiUseInfoScreen_removeTitleSoft(preBattle_btnSelected);
+	}
+
+	function preBattle_btnSelected()
+	{
+		var exitFrame;
+
+		switch(screen_multiInfoUse.optionSelected)
+		{
+			case "FIGHT":
+			{
+				multiUseInfoScreen_build("#options_wrapper .options-select", "INTOBATTLE");
+
+				exitFrame = setTimeout(multiUseInfoScreen_drop, 20);
+
+				break;
+			}
+
+			case "RUN":
+			{
+				screen_multiInfoUse.returnFromBattle = true;
+
+				$("#display_wrapper #display_inner_world").html(preBattleOptions.html.display_inner_world);
+
+				multiUseInfoScreen_rise(null);
+
+				break;
+			}
+		}
 	}
 
 	// -------- PREBATTLE
+
+	// -------- INTOBATTLE
+
+	function intoBattle_display()
+	{
+		$(".multiUseInfo_intoFight_option_escape")[0].addEventListener("webkitTransitionEnd", intoBattle_displayEnd, false);
+		$(".multiUseInfo_intoFight_option_escape")[0].addEventListener("transitionend", intoBattle_displayEnd, false);
+
+		$(".multiUseInfo_entranceLine1").removeClass("tween-multiUseInfo_cont_entrance_tl_delay");
+
+		$(".multiUseInfo_intoFight_option_attack").toggleClass("multiUseInfo_option_hide", "multiUseInfo_option_show");
+
+		$(".multiUseInfo_intoFight_option_escape").toggleClass("multiUseInfo_option_hide", "multiUseInfo_option_show");
+	}
+
+	function intoBattle_displayEnd(event)
+	{
+		$(".multiUseInfo_intoFight_option_escape")[0].removeEventListener("webkitTransitionEnd", intoBattle_displayEnd, false);
+		$(".multiUseInfo_intoFight_option_escape")[0].removeEventListener("transitionend", intoBattle_displayEnd, false);
+
+		$(".multiUseInfo_intoFight_option_escape").removeClass("tween-multiUseInfo_option_delay");
+
+		intoBattle_btnInit(true);
+
+		$("#options_wrapper .options-choice").html("");
+
+	}
+
+	function intoBattle_fullContent()
+	{
+		var msg_value;
+		var msg_line0;
+		var msg_line1_a;
+		var msg_line1_b;
+		var msg_line1_final;
+
+		// WEAK
+		if(MAP_PLAYER.sword.skillId < ROM.enemy.character.sword.skillId)
+		{
+			msg_value = 0;
+		}
+
+		// EVEN
+		if(MAP_PLAYER.sword.skillId == ROM.enemy.character.sword.skillId)
+		{
+			msg_value = 1;
+		}
+
+		// STRONG
+		if(MAP_PLAYER.sword.skillId > ROM.enemy.character.sword.skillId)
+		{
+			msg_value = 2;
+		}
+
+		msg_line0 = multiUseInfoScreen_selectLine("nav_intobattle", "title_0_dynamic", msg_value);
+		msg_line1_a = multiUseInfoScreen_selectLine("nav_intobattle", "title_1_dynamic", 3) + " " + MAP_PLAYER.sword.skill + " " + multiUseInfoScreen_selectLine("nav_intobattle", "title_1_dynamic", msg_value);
+		msg_line1_b	= multiUseInfoScreen_selectLine("nav_intobattle", "title_1_dynamic", 4);
+
+		msg_line1_final = msg_line1_a + " <br>" + msg_line1_b;
+
+		$(screen_multiInfoUse.screenRoot + " .multiUseInfo_intoBattle .multiUseInfo_entranceLine0").html(msg_line0);
+		$(screen_multiInfoUse.screenRoot + " .multiUseInfo_intoBattle .multiUseInfo_entranceLine1").html(msg_line1_final);
+
+		// CHARACTER ADD
+		$(".multiUseInfo_intoBattle .multiUseInfo_serial").html(ROM.enemy.character.buildData.html);
+	}
+
+	function intoBattle_btnInit(run)
+	{
+		if(run)
+		{
+			$(".multiUseInfo_intoFight_option_attack")[0].addEventListener("click", intoBattle_btnEvent, false);
+			$(".multiUseInfo_intoFight_option_escape")[0].addEventListener("click", intoBattle_btnEvent, false);
+
+			$(".multiUseInfo_intoFight_option_attack")[0].addEventListener("touchend", intoBattle_btnEvent, false);
+			$(".multiUseInfo_intoFight_option_escape")[0].addEventListener("touchend", intoBattle_btnEvent, false);
+		}
+
+		else
+		{
+			$(".multiUseInfo_intoFight_option_attack")[0].removeEventListener("click", intoBattle_btnEvent, false);
+			$(".multiUseInfo_intoFight_option_escape")[0].removeEventListener("click", intoBattle_btnEvent, false);
+
+			$(".multiUseInfo_intoFight_option_attack")[0].removeEventListener("touchend", intoBattle_btnEvent, false);
+			$(".multiUseInfo_intoFight_option_escape")[0].removeEventListener("touchend", intoBattle_btnEvent, false);
+
+			$(".multiUseInfo_intoFight_option_attack").addClass("multiUseInfo_option_disabled");
+			$(".multiUseInfo_intoFight_option_escape").addClass("multiUseInfo_option_disabled");
+		}
+	}
+
+	function intoBattle_btnEvent(event)
+	{
+		intoBattle_btnInit(false);
+
+		for(var cl = 0; cl < event.target.classList.length; cl++)
+		{
+			var _cl = event.target.classList[cl];
+
+			if(_cl === "multiUseInfo_intoFight_option_attack" || _cl === "multiUseInfo_intoFight_option_escape")
+			{
+				if(_cl === "multiUseInfo_intoFight_option_attack")
+				{
+					screen_multiInfoUse.optionSelected = "FIGHT";
+
+					screen_multiInfoUse.eventTrigger = ".multiUseInfo_intoFight_option_escape";
+				}
+
+				if(_cl === "multiUseInfo_intoFight_option_escape")
+				{
+					screen_multiInfoUse.optionSelected = "RUN";
+
+					screen_multiInfoUse.eventTrigger = ".multiUseInfo_intoFight_option_attack";
+				}
+			}
+		}
+
+		$(screen_multiInfoUse.eventTrigger).toggleClass("multiUseInfo_option_hide", "multiUseInfo_option_show");
+
+		// preBattle_btnSelected();
+
+		// multiUseInfoScreen_removeTitle();
+
+		multiUseInfoScreen_removeTitleSoft(intoBattle_btnSelected);
+	}
+
+	function intoBattle_btnSelected()
+	{
+		var exitFrame;
+
+		switch(screen_multiInfoUse.optionSelected)
+		{
+			case "FIGHT":
+			{
+				// multiUseInfoScreen_build("#options_wrapper .options-select", "INTOBATTLE");
+
+				// exitFrame = setTimeout(multiUseInfoScreen_drop, 20);
+
+				theBattle_init(preBattleOptions);
+
+				theBattle_build();
+
+				multiUseInfoScreen_rise(null);
+
+				break;
+			}
+
+			case "RUN":
+			{
+				screen_multiInfoUse.returnFromBattle = true;
+
+				$("#display_wrapper #display_inner_world").html(preBattleOptions.html.display_inner_world);
+
+				multiUseInfoScreen_rise(null);
+
+				break;
+			}
+		}
+	}
+
+	// -------- INTOBATTLE
+
+	// -------- BATTLE_OPTIONS_COMPLETE
+
+	// function battleOptions_return()
+	// {
+	// 	if(preBattleOptions.choice === "RUN")
+	// 	{
+	// 		$("#display_wrapper #display_inner_world").html(preBattleOptions.html.display_inner_world);
+
+	// 		if(CONTROL_SIGNAL.enableTouch)
+	// 		{
+	// 			// TOUCH UI DISPLAY FIX
+	// 			$("#touchPad").html("");
+	// 			$("#touchPad").html(CONTROL_SIGNAL.html.touchNav);
+
+	// 			// ENABLE TOUCH UI TO APPEAR AFTER TRANSITION OUT
+	// 			CONTROL_SIGNAL.firstTouch = true;
+	// 		}
+
+	// 		// RETURN ORIGINAL CONTROL POSITIONS
+	// 		MAP_PLAYER.pos_x = MAP_PLAYER.cur_x = preBattleOptions.playerStore.x_return;
+	// 		MAP_PLAYER.pos_y = MAP_PLAYER.cur_y = preBattleOptions.playerStore.y_return;
+	// 	}
+	// }
+
+	// -------- BATTLE_OPTIONS_COMPLETE
 
 	function multiUseInfoScreen_removeTitle()
 	{
@@ -765,14 +1118,22 @@
 
 	function multiUseInfoScreen_rise(event)
 	{
-		$(screen_multiInfoUse.screenRoot + " .multiUseInfo_entranceLine0")[0].removeEventListener("webkitTransitionEnd", multiUseInfoScreen_rise, false);
-		$(screen_multiInfoUse.screenRoot + " .multiUseInfo_entranceLine0")[0].removeEventListener("transitionend", multiUseInfoScreen_rise, false);
+		trace("!!! multiUseInfoScreen_rise(event);")
+		trace(screen_multiInfoUse);
+
+		if(event != null)
+		{
+			$(screen_multiInfoUse.screenRoot + " .multiUseInfo_entranceLine0")[0].removeEventListener("webkitTransitionEnd", multiUseInfoScreen_rise, false);
+			$(screen_multiInfoUse.screenRoot + " .multiUseInfo_entranceLine0")[0].removeEventListener("transitionend", multiUseInfoScreen_rise, false);
+		}
 
 		$(screen_multiInfoUse.screenRoot + " .tween-multiUseInfo_cont")[0].addEventListener("webkitTransitionEnd", multiUseInfoScreen_riseEnd, false);
 		$(screen_multiInfoUse.screenRoot + " .tween-multiUseInfo_cont")[0].addEventListener("transitionend", multiUseInfoScreen_riseEnd, false);
 
-		$(screen_multiInfoUse.screenRoot + " .multiUseInfo_cont_entrance").removeClass("multiUseInfo_cont_show");
-		$(screen_multiInfoUse.screenRoot + " .multiUseInfo_cont_entrance").addClass("multiUseInfo_cont_hide");
+		$(screen_multiInfoUse.screenRoot + " .multiUseInfo_cont_entrance").removeClass("multiUseInfo_cont_show").addClass("multiUseInfo_cont_hide");
+		// $(screen_multiInfoUse.screenRoot + " .multiUseInfo_cont_entrance").addClass("multiUseInfo_cont_hide");
+
+		// $(screen_multiInfoUse.screenRoot + " .multiUseInfo_cont_entrance").toggleClass("multiUseInfo_cont_hide", "multiUseInfo_cont_show");
 	}
 
 	function multiUseInfoScreen_riseEnd(event)
@@ -797,9 +1158,43 @@
 
 	function multiUseInfoScreen_purge()
 	{
-			delete screen_multiInfoUse;
+		if(screen_multiInfoUse.returnFromBattle)
+		{
+			screen_multiInfoUse.returnFromBattle = false;
 
-			optionsTrigger_init(true);
+			hack_mapReturn();
+		}
+
+		delete screen_multiInfoUse;
+
+		// ADD BACK IN
+		// optionsTrigger_init(true);
 	}
 
 	/* --- MULTI_USE_SCREEN */
+
+
+
+	function hack_mapReturn()
+	{
+		if(CONTROL_SIGNAL.enableTouch)
+		{
+			// TOUCH UI DISPLAY FIX
+			$("#touchPad").html("");
+			$("#touchPad").html(CONTROL_SIGNAL.html.touchNav);
+
+			// ENABLE TOUCH UI TO APPEAR AFTER TRANSITION OUT
+			CONTROL_SIGNAL.firstTouch = true;
+		}
+
+		// RETURN ORIGINAL CONTROL POSITIONS
+		MAP_PLAYER.pos_x = MAP_PLAYER.cur_x = preBattleOptions.playerStore.x_return;
+		MAP_PLAYER.pos_y = MAP_PLAYER.cur_y = preBattleOptions.playerStore.y_return;
+
+		// SET UP CONTROLS + HITTEST
+		hitTest_init();
+
+		MAP_PLAYER.listen = true;
+
+		control_switch(true);
+	}

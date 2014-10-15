@@ -6702,4 +6702,78 @@
 	transition: 800ms ease-out;
 }
 
+.multiUseInfo_preBattle
+{
+
+}
+
+.multiUseInfo_preBattle .multiUseInfo_serial
+{
+	width: 40px;
+	height: 40px;
+
+	position: absolute;
+
+	left: 0; right: 0; top: 0; bottom: 0;
+
+	margin: auto;
+}
+
+.multiUseInfo_preBattle .multiUseInfo_preFight_option_fight
+{
+	color: #ff0070;
+}
+
+.multiUseInfo_preBattle .multiUseInfo_preFight_option_leave
+{
+	color: #17e69d;
+}
+
+.multiUseInfo_preBattle .multiUseInfo_preFight_option_fight:hover
+{
+	color: #fff;
+}
+
+.multiUseInfo_preBattle .multiUseInfo_preFight_option_leave:hover
+{
+	color: #ffff66;
+}
+
+.multiUseInfo_intoBattle
+{
+
+}
+
+.multiUseInfo_intoBattle .multiUseInfo_serial
+{
+	width: 40px;
+	height: 40px;
+
+	position: absolute;
+
+	left: 0; right: 0; top: 0; bottom: 0;
+
+	margin: auto;
+}
+
+.multiUseInfo_intoBattle .multiUseInfo_intoFight_option_attack
+{
+	color: #ff0070;
+}
+
+.multiUseInfo_intoBattle .multiUseInfo_intoFight_option_escape
+{
+	color: #17e69d;
+}
+
+.multiUseInfo_intoBattle .multiUseInfo_intoFight_option_attack:hover
+{
+	color: #fff;
+}
+
+.multiUseInfo_intoBattle .multiUseInfo_intoFight_option_escape:hover
+{
+	color: #ffff66;
+}
+
 /* ----------------------------------------------------------------------- INFO */

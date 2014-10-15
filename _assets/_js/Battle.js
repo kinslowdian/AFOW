@@ -57,6 +57,8 @@
 
 	function preBattleOptions_build()
 	{
+		// HACK - DIVERSION
+		/*
 		var html;
 
 		html_lib_reuse();
@@ -73,8 +75,9 @@
 
 
 		preBattleOptions_populate();
-
-		// HACK
+		*/
+		
+		// HACK - DIVERTED
 		hack_preBattleOptions_build();
 	}
 
@@ -115,6 +118,8 @@
 
 	function preBattleOptions_show()
 	{
+		// HACK DIVERSION
+		/*
 		var css_screen;
 		var css_fader;
 
@@ -137,8 +142,13 @@
 		$("#display_inner_info #battleScreenFade").css(css_fader);
 
 		$("#enemyScreen .preBattle_options").css(css_screen);
-
+	
 		preBattleOptions_fallAway();
+		*/
+
+		// HACK DIVERTED
+		preBattleOptions_fallAway();
+		multiUseInfoScreen_drop(); 
 	}
 
 	function preBattleOptions_fallAway()

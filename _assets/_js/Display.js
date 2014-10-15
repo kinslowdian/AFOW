@@ -65,8 +65,9 @@
 
 			$(".stage-view-x").css(css_x);
 
-
-			DISPLAY.stageOffset = $(".stage-view-x").offset().left;
+			// ERROR HERE - TEMP REMOVAL
+			// DISPLAY.stageOffset = $(".stage-view-x").offset().left;
+			// ERROR HERE - TEMP REMOVAL
 
 			DISPLAY.viewHeight = $(document).height();
 

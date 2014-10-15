@@ -38,7 +38,7 @@
 		visibility: hidden;
 	}
 
-	.multiUseInfo_intro .multiUseInfo_br, .multiUseInfo_control .multiUseInfo_br, .multiUseInfo_fail .multiUseInfo_br
+	.multiUseInfo_intro .multiUseInfo_br, .multiUseInfo_control .multiUseInfo_br, .multiUseInfo_fail .multiUseInfo_br, .multiUseInfo_preBattle .multiUseInfo_br, .multiUseInfo_intoBattle .multiUseInfo_br
 	{
 		right: auto !important;
 		left: 0 !important;
@@ -99,7 +99,7 @@
 		visibility: visible;
 	}
 
-	.multiUseInfo_intro .multiUseInfo_br, .multiUseInfo_control .multiUseInfo_br, .multiUseInfo_fail .multiUseInfo_br
+	.multiUseInfo_intro .multiUseInfo_br, .multiUseInfo_control .multiUseInfo_br, .multiUseInfo_fail .multiUseInfo_br, .multiUseInfo_preBattle .multiUseInfo_br, .multiUseInfo_intoBattle .multiUseInfo_br
 	{
 		right: 0 !important;
 		left: auto !important;
@@ -160,7 +160,7 @@
 		visibility: visible;
 	}
 
-	.multiUseInfo_intro .multiUseInfo_br, .multiUseInfo_control .multiUseInfo_br, .multiUseInfo_fail .multiUseInfo_br
+	.multiUseInfo_intro .multiUseInfo_br, .multiUseInfo_control .multiUseInfo_br, .multiUseInfo_fail .multiUseInfo_br, .multiUseInfo_preBattle .multiUseInfo_br, .multiUseInfo_intoBattle .multiUseInfo_br
 	{
 		right: 0 !important;
 		left: auto !important;
@@ -221,7 +221,7 @@
 		visibility: visible;
 	}
 
-	.multiUseInfo_intro .multiUseInfo_br, .multiUseInfo_control .multiUseInfo_br, .multiUseInfo_fail .multiUseInfo_br
+	.multiUseInfo_intro .multiUseInfo_br, .multiUseInfo_control .multiUseInfo_br, .multiUseInfo_fail .multiUseInfo_br, .multiUseInfo_preBattle .multiUseInfo_br, .multiUseInfo_intoBattle .multiUseInfo_br
 	{
 		right: 0 !important;
 		left: auto !important;
