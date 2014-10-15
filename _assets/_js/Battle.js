@@ -76,7 +76,7 @@
 
 		preBattleOptions_populate();
 		*/
-		
+
 		// HACK - DIVERTED
 		hack_preBattleOptions_build();
 	}
@@ -142,13 +142,13 @@
 		$("#display_inner_info #battleScreenFade").css(css_fader);
 
 		$("#enemyScreen .preBattle_options").css(css_screen);
-	
+
 		preBattleOptions_fallAway();
 		*/
 
 		// HACK DIVERTED
 		preBattleOptions_fallAway();
-		multiUseInfoScreen_drop(); 
+		multiUseInfoScreen_drop();
 	}
 
 	function preBattleOptions_fallAway()
@@ -627,12 +627,14 @@
 
 	function microBattleSequence_init()
 	{
+
 		var mbs_delay;
 
 		mbs_delay = new AnimationTimer();
 
 		timerList_add(mbs_delay);
 		mbs_delay.time(1, microBattleSequence_boss);
+
 	}
 
 	function microBattleSequence_boss()
@@ -1182,7 +1184,7 @@
 	{
 		// BATTLE_NAV.game.result = battleEngine.battle(MAP_PLAYER, ROM.enemy.character, false);
 
-		BATTLE_NAV.game.result = "LOSE";
+		BATTLE_NAV.game.result = "WIN";
 
 		battleNav_logicDisplay();
 	}
