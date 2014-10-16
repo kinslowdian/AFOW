@@ -172,9 +172,9 @@
 					"transform"			: "translateY(" + y_percent + "%)"
 				};
 
-
-		$(".tween-battleScreenFade")[0].addEventListener("webkitTransitionEnd", preBattleOptions_purge, false);
-		$(".tween-battleScreenFade")[0].addEventListener("transitionend", preBattleOptions_purge, false);
+		// FIX-FADE DIRECT > preBattleOptions_purge
+		// $(".tween-battleScreenFade")[0].addEventListener("webkitTransitionEnd", preBattleOptions_purge, false);
+		// $(".tween-battleScreenFade")[0].addEventListener("transitionend", preBattleOptions_purge, false);
 
 		$("#enemyScreen .preBattle_options").css(css);
 
@@ -185,7 +185,8 @@
 
 		if(preBattleOptions.choice === "ATTACK")
 		{
-			$("#microBattle_transition").css("opacity", "0");
+			// FIX-FADE
+			// $("#microBattle_transition").css("opacity", "0");
 		}
 
 	}
@@ -350,16 +351,18 @@
 
 	function preBattleOptions_purge(event)
 	{
-		$(".tween-battleScreenFade")[0].removeEventListener("webkitTransitionEnd", preBattleOptions_purge, false);
-		$(".tween-battleScreenFade")[0].removeEventListener("transitionend", preBattleOptions_purge, false);
+		// FIX-FADE DIRECT
+		// $(".tween-battleScreenFade")[0].removeEventListener("webkitTransitionEnd", preBattleOptions_purge, false);
+		// $(".tween-battleScreenFade")[0].removeEventListener("transitionend", preBattleOptions_purge, false);
 
 		$("#display_wrapper #display_inner_info #enemyScreen").html("");
 
 
 		if(preBattleOptions.choice === "ATTACK")
 		{
-			$("#microBattle_transition").removeAttr("style");
-			$("#microBattle_transition").removeAttr("class");
+			// FIX-FADE
+			// $("#microBattle_transition").removeAttr("style");
+			// $("#microBattle_transition").removeAttr("class");
 
 			microBattleSequence_init();
 		}
@@ -593,8 +596,9 @@
 
 		html_lib_empty();
 
-		$("#microBattle_transition").addClass("battleScreenFade_use");
-		$("#microBattle_transition").addClass("tween-battleScreenFade");
+		// FIX-FADE
+		// $("#microBattle_transition").addClass("battleScreenFade_use");
+		// $("#microBattle_transition").addClass("tween-battleScreenFade");
 
 
 		screenUpdateInit(true);
@@ -769,7 +773,7 @@
 		$(".tween-microBattleWeatherFade")[0].removeEventListener("webkitTransitionEnd", microBattleSequence_startBattle, false);
 		$(".tween-microBattleWeatherFade")[0].removeEventListener("transitionend", microBattleSequence_startBattle, false);
 
-		$("#microBattle_player_wrapper").addClass("microBattle_player_wrapper_focus");
+		// $("#microBattle_player_wrapper").addClass("microBattle_player_wrapper_focus");
 
 		$("#microBattle_wrapper").html("");
 
@@ -1184,7 +1188,7 @@
 	{
 		// BATTLE_NAV.game.result = battleEngine.battle(MAP_PLAYER, ROM.enemy.character, false);
 
-		BATTLE_NAV.game.result = "WIN";
+		BATTLE_NAV.game.result = "LOSE";
 
 		battleNav_logicDisplay();
 	}
@@ -2071,8 +2075,15 @@
 		$("#microBattle_resultWipe_content").css(css);
 		*/
 
-		// temp.js
-		battleEnd_return_show();
+
+
+		// DIVERSION
+		//battleEnd_return_show();
+
+		// DIVERTED temp.js
+
+
+		hack_battleEnd_return_show();
 
 	}
 

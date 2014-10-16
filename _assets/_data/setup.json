@@ -335,6 +335,18 @@
 			"enemyPlayers":
 			[
 				{
+					"x": 0,
+					"y": 0,
+					"w": 0.5,
+					"h": 0.5,
+					"n": "level0_rabbit0",
+					"t": "rabbit",
+					"l": 0,
+					"known" : "death master",
+					"spawn": 0
+				},
+
+				{
 					"x": 1.5,
 					"y": 12.5,
 					"w": 0.5,

@@ -355,6 +355,29 @@
 		preBattle_fullContent();
 	}
 
+	function hack_fadeIntoBattle_init()
+	{
+		$("#battleScreen .tween-battleContent_fade")[0].addEventListener("webkitTransitionEnd", hack_fadeIntoBattle_end, false);
+		$("#battleScreen .tween-battleContent_fade")[0].addEventListener("transitionend", hack_fadeIntoBattle_end, false);
+
+		$("#battleScreen .battleContent_fade").addClass("battleContent_fade_hide");
+
+		// $(".microBattle_weather").css("opacity", "1");
+	}
+
+	function hack_fadeIntoBattle_end(event)
+	{
+		$("#battleScreen .tween-battleContent_fade")[0].removeEventListener("webkitTransitionEnd", hack_fadeIntoBattle_end, false);
+		$("#battleScreen .tween-battleContent_fade")[0].removeEventListener("transitionend", hack_fadeIntoBattle_end, false);
+
+		// $("#battleScreen .battleContent_fade").remove();
+
+		$("#battleScreen .battleContent_fade").css("visibility", "hidden");
+
+		microBattleSequence_init();
+
+	}
+
 
 	function hack_preBattleOptions_populate()
 	{
@@ -365,6 +388,36 @@
 
 	// ADD TO info.js
 
+
+	function hack_battleEnd_return_show()
+	{
+		$("#battleScreen .tween-battleContent_fade")[0].addEventListener("webkitTransitionEnd", hack_battleEnd_return_showInit, false);
+		$("#battleScreen .tween-battleContent_fade")[0].addEventListener("transitionend", hack_battleEnd_return_showInit, false);
+
+		$("#battleScreen .battleContent_fade").css("visibility", "visible");
+		$("#battleScreen .battleContent_fade").addClass("battleContent_fade_end").removeClass("battleContent_fade_hide");
+	}
+
+	function hack_battleEnd_return_showInit(event)
+	{
+		var exitFrame;
+
+		$("#battleScreen .tween-battleContent_fade")[0].removeEventListener("webkitTransitionEnd", hack_battleEnd_return_showInit, false);
+		$("#battleScreen .tween-battleContent_fade")[0].removeEventListener("transitionend", hack_battleEnd_return_showInit, false);
+
+		if(BATTLE_NAV.game.result === "WIN")
+		{
+
+		}
+
+		if(BATTLE_NAV.game.result === "LOSE")
+		{
+
+			multiUseInfoScreen_build("#options_wrapper .options-choice", "BATTLE_FAIL");
+
+			exitFrame = setTimeout(multiUseInfoScreen_drop, 20);
+		}
+	}
 
 
 

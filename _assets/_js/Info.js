@@ -202,7 +202,8 @@
 				intoBattle_fullContent();
 
 				screen_multiInfoUse.dropEndFunct = intoBattle_display;
-				screen_multiInfoUse.riseEndFunct = microBattleSequence_init;
+				// screen_multiInfoUse.riseEndFunct = microBattleSequence_init;
+				screen_multiInfoUse.riseEndFunct = hack_fadeIntoBattle_init;
 
 				break;
 			}
@@ -759,6 +760,8 @@
 		$(screen_multiInfoUse.screenRoot + " .multiUseInfo_entranceLine0")[0].removeEventListener("webkitTransitionEnd", battleFail_removeEnd, false);
 
 		$(screen_multiInfoUse.screenRoot + " .multiUseInfo_entranceLine0")[0].removeEventListener("transitionend", battleFail_removeEnd, false);
+
+
 
 		battleEnd_battleOver_returnPath();
 	}
