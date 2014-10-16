@@ -2735,6 +2735,8 @@ function battleEnd_return_showEnd(event)
 
 	function battleEnd_battleOver_returnPath()
 	{
+		alert("FAIL!");
+
 		$("#display_wrapper #display_inner_world").html(theBattle.html.display_inner_world);
 
 		// RETURN HOOK
@@ -2787,6 +2789,9 @@ function battleEnd_return_showEnd(event)
 
 	function battleEnd_battleOver_returnLose()
 	{
+		alert("OK ROUTE!!!");
+
+		// ????
 		$("#microBattle_player_wrapper #player1").html("");
 		$("#microBattle_player_wrapper #player1").html(theBattle.html.zombie);
 		$("#microBattle_player_wrapper #player1 #_enemy_zombie").removeAttr("id");
@@ -2928,16 +2933,39 @@ function battleEnd_return_showEnd(event)
 
 	function battleEnd_battleOver_prepareForReturn()
 	{
+		// OLD CODE
 		// ADD BACK IN
-		$(".tween-return_wrapper")[0].addEventListener("webkitTransitionEnd", battleEnd_battleOver_cleanup, false);
-		$(".tween-return_wrapper")[0].addEventListener("transitionend", battleEnd_battleOver_cleanup, false);
+		// $(".tween-return_wrapper")[0].addEventListener("webkitTransitionEnd", battleEnd_battleOver_cleanup, false);
+		// $(".tween-return_wrapper")[0].addEventListener("transitionend", battleEnd_battleOver_cleanup, false);
 		// ADD BACK IN
 
-		$(".return_wrapper").toggleClass("return_wrapper_hide", "return_wrapper_show");
+		// $(".return_wrapper").toggleClass("return_wrapper_hide", "return_wrapper_show");
+
+		battleEnd_battleOver_cleanup(null);
+
+
 	}
 
+
+	// OLD CODE
 	function battleEnd_battleOver_cleanup(event)
 	{
+			$("#display_inner_info #battleScreen").html("");
+			$("#display_inner_info #battleScreen").removeAttr("style");
+
+			// REMOVE ALL TIMERS FROM THIS ANIMATION FLOW
+			timerList_stopAll();
+			timerList_destroy();
+
+			moveStageTest();
+
+			// SAFETY
+			// multiUseInfoScreen_purge();
+
+			// CHECK USE OF $("#display_inner_info #battleScreenFade")
+
+
+		/*
 		var eventCheck = EventSignal(event.target.classList, "tween-return_wrapper");
 
 		if(eventCheck)
@@ -2959,6 +2987,7 @@ function battleEnd_return_showEnd(event)
 
 			multiUseInfoScreen_purge();
 		}
+		*/
 	}
 
 

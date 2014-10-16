@@ -160,6 +160,7 @@
 				$(screen_multiInfoUse.screenRoot + " .multiUseInfo_fail .multiUseInfo_entranceLine1").html(buildData.title_1);
 
 				screen_multiInfoUse.dropEndFunct = battleFail_display;
+				// screen_multiInfoUse.riseEndFunct = hack_battleEnd_return_end;
 
 				break;
 			}
@@ -733,6 +734,8 @@
 		$(".multiUseInfo_fail .map-enemy_40x40-legs").toggleClass("tween-map-enemy_40x40_loop", "tween-map-enemy_40x40_stop");
 
 		$(".multiUseInfo_fail .multiUseInfo_fail_character").toggleClass("multiUseInfo_fail_character_hide", "multiUseInfo_fail_character_show");
+
+		hack_battleEnd_return_end();
 	}
 
 	function battleFail_displayEnd(event)
@@ -752,7 +755,10 @@
 
 	function battleFail_removeInit()
 	{
-		multiUseInfoScreen_removeTitleSoft(battleFail_removeEnd);
+		// OLD
+		// multiUseInfoScreen_removeTitleSoft(battleFail_removeEnd);
+
+		multiUseInfoScreen_removeTitle();
 	}
 
 	function battleFail_removeEnd(event)
