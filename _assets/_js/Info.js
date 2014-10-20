@@ -735,7 +735,7 @@
 
 		$(".multiUseInfo_fail .multiUseInfo_fail_character").toggleClass("multiUseInfo_fail_character_hide", "multiUseInfo_fail_character_show");
 
-		hack_battleEnd_return_end();
+		hack_battleEnd_return_end(BATTLE_NAV.game.result);
 	}
 
 	function battleFail_displayEnd(event)

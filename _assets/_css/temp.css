@@ -172,6 +172,292 @@
 
 
 
+/*PIXELS*/
+
+.pixels_winScreen
+{
+	background-image: url(../_img/winScreenBasicSprite_1x.png);
+	background-repeat: no-repeat;
+	background-size: 120px 160px;
+}
+
+/*.pixels_winScreen
+{
+	background-image: url(../_img/winScreenBasicSprite_1x.png);
+}*/
+
+/*.pixels_winScreen
+{
+	background-image: url(../_img/winScreenBasicSprite_2x.png);
+}*/
+
+
+
+
+.oneUseInfo_wrapper
+{
+	width: 100%;
+	height: 100%;
+
+	position: absolute;
+
+	left: 0; right: 0; top: 0; bottom: 0;
+
+	margin: auto;
+}
+
+.oneUseInfo_cont_entrance
+{
+	width: 100%;
+	height: 100%;
+
+	position: absolute;
+
+	left: 0; right: 0; top: 0; bottom: 0;
+
+	margin: auto;
+
+	overflow: hidden;
+
+	background: #b7e0ca;
+}
+
+.oneUseInfo_eventFill
+{
+	width: 100%;
+	height: 100%;
+
+	position: absolute;
+
+	left: 0; right: 0; top: 0; bottom: 0;
+
+	margin: auto;
+}
+
+.oneUseInfo_eventFill_hide
+{
+	opacity: 0;
+}
+
+.oneUseInfo_eventFill_show
+{
+	opacity: 1;
+}
+
+.oneUseInfo_eventFill_win
+{
+	background: #20202a;
+}
+
+.oneUseInfo_winScreen_centerFocus
+{
+	width: 282px;
+	height: 262px;
+
+	position: absolute;
+
+	left: 0; right: 0; top: 0; bottom: 0;
+
+	margin: auto;
+}
+
+.oneUseInfo_winScreen_bossTalk
+{
+	width: inherit;
+	height: 40px;
+
+	position: absolute;
+
+	left: 0; right: 0; top: 0; bottom: 0;
+
+	margin: -40px auto 0 auto;
+}
+
+.winScreen-bossTalk_speech
+{
+	width: 40px;
+	height: 40px;
+
+	position: relative;
+
+	margin: 0 auto;
+
+	background-position: 0 0;
+
+	-webkit-transform-origin: 50% 100%;
+}
+
+.tween-winScreen-bossTalk_speech
+{
+	-webkit-animation: tweenWinScreenBossTalkSpeechFrames 1s ease-in-out infinite;
+	animation: tweenWinScreenBossTalkSpeechFrames 1s ease-in-out infinite;
+
+	-webkit-animation: tweenWinScreenBossTalkSpeechFrames 400ms linear infinite;
+	animation: tweenWinScreenBossTalkSpeechFrames 400ms linear infinite;
+}
+
+@-webkit-keyframes tweenWinScreenBossTalkSpeechFrames
+{
+	0%		{opacity: 0;}
+	40%		{opacity: 1;}
+	60%		{opacity: 1;}
+	100%	{opacity: 0;}
+}
+
+@keyframes tweenWinScreenBossTalkSpeechFrames
+{
+	0%		{opacity: 0;}
+	40%		{opacity: 1;}
+	60%		{opacity: 1;}
+	100%	{opacity: 0;}
+}
+
+
+.oneUseInfo_winScreen_ground
+{
+	width: inherit;
+
+	position: absolute;
+
+	left: 0; right: 0; top: 0; bottom: 0;
+
+	margin: 262px auto 0 auto;
+
+	visibility: hidden;
+}
+
+.tween-oneUseInfo_winScreen_ground
+{
+	-webkit-transition: 1.4s ease;
+	transition: 1.4s ease;
+}
+
+.oneUseInfo_winScreen_ground_hide
+{
+	opacity: 0;
+
+	-webkit-transform: translateY(20px);
+	transform: translateY(20px);
+}
+
+.oneUseInfo_winScreen_ground_show
+{
+	opacity: 1;
+
+	-webkit-transform: translateY(0px);
+	transform: translateY(0px);
+}
+
+.oneUseInfo_winScreen_groundGrave
+{
+	width: 120px;
+	height: 120px;
+
+	position: relative;
+
+	margin: 0 auto;
+
+	background-position: 0 -40px;
+}
+
+.oneUseInfo_winScreen_player
+{
+	width: 40px;
+	height: 40px;
+
+	position: absolute;
+
+	left: 0; right: 0; top: 0; bottom: 0;
+
+	margin: 0 auto;
+}
+
+
+.portal_bleed
+{
+	width: 44px;
+
+	position: absolute;
+
+	left: 0; right: 0; top: 0; bottom: 0;
+
+	margin: 60px auto 0 auto;
+
+	z-index: 2;
+}
+
+.portal_bleed_drop
+{
+	width: 2px;
+
+	background: #ff0070;
+
+	position: absolute;
+
+	top: 0;
+
+	-webkit-transform-origin: 50% 0%;
+	transform-origin: 50% 0%;
+}
+
+.tween-portal_drop
+{
+	-webkit-transition: 300ms linear;
+	transition: 300ms linear;
+}
+
+.portal_bleed_drop_hide
+{
+	-webkit_transform: scaleY(0);
+	transform: scaleY(0);
+}
+
+.portal_bleed_drop_show
+{
+	-webkit_transform: scaleY(1);
+	transform: scaleY(1);
+}
+
+.portal_bleed_drop0
+{
+	height: 40px;
+
+	-webkit-transition-delay: 0ms;
+	transition-delay: 0ms;
+
+	left: 0;
+}
+
+.portal_bleed_drop1
+{
+	height: 80px;
+
+	-webkit-transition-delay: 100ms;
+	transition-delay: 100ms;
+
+	left: 4px;
+}
+
+.portal_bleed_drop2
+{
+	height: 20px;
+
+	-webkit-transition-delay: 200ms;
+	transition-delay: 200ms;
+
+	left: 8px;
+}
+
+
+
+@media screen and (min-height:550px)
+{
+	.oneUseInfo_winScreen_ground
+	{
+		visibility: visible;
+	}
+}
+
 
 
 

@@ -2320,7 +2320,8 @@
 
 		position: absolute;
 
-		z-index: 1;
+		/*PORTAL Z-LOCK*/
+		/*z-index: 1;*/
 	}
 
 	.portal .portal_space
@@ -2337,7 +2338,8 @@
 
 		overflow: hidden;
 
-		z-index: 0;
+		/*PORTAL Z-LOCK*/
+		/*z-index: 0;*/
 	}
 
 	.portal_level_warp
@@ -2379,7 +2381,8 @@
 		left: -5px;
 		top: -5px;
 
-		z-index: 2;
+		/*PORTAL Z-LOCK*/
+		/*z-index: 2;*/
 	}
 
 	.portal .portal_stars1
@@ -2398,7 +2401,7 @@
 		left: -5px;
 		top: -5px;
 
-		z-index: 1;
+		/*z-index: 1;*/
 	}
 
 	.portal .portal_stars2
@@ -2417,7 +2420,7 @@
 		left: -5px;
 		top: -5px;
 
-		z-index: 0;
+		/*z-index: 0;*/
 	}
 
 /* ----------------------------------------------------------------------- PORTAL */

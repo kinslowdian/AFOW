@@ -1188,7 +1188,7 @@
 	{
 		// BATTLE_NAV.game.result = battleEngine.battle(MAP_PLAYER, ROM.enemy.character, false);
 
-		BATTLE_NAV.game.result = "LOSE";
+		BATTLE_NAV.game.result = "WIN";
 
 		battleNav_logicDisplay();
 	}
@@ -2670,6 +2670,7 @@
 	///////////////////////////////// --- BATTLE_END */
 
 
+// NO ROUTE
 
 function battleEnd_return_show()
 {
