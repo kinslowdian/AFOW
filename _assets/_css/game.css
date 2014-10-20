@@ -6439,6 +6439,16 @@
 	pointer-events: none;
 }
 
+.multiUseInfo_keyboard_select-forceState_0
+{
+	color: #fff !important;
+}
+
+.multiUseInfo_keyboard_select-forceState_1
+{
+	color: #ffff66 !important;
+}
+
 
 .multiUseInfo_intro
 {
