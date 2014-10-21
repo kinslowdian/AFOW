@@ -355,15 +355,34 @@
 		preBattle_fullContent();
 	}
 
+	function hack_battleDecide()
+	{
+		if(screen_multiInfoUse.goIntoBattle)
+		{
+			hack_fadeIntoBattle_init();
+		}
+
+		else
+		{
+
+		}
+	}
+
 	// CRASHES ON ESCAPE
 	function hack_fadeIntoBattle_init()
 	{
 		trace("ISSUES AFTER OPTIONS ??? hack_fadeIntoBattle_init();");
 
+
 		$("#battleScreen .tween-battleContent_fade")[0].addEventListener("webkitTransitionEnd", hack_fadeIntoBattle_end, false);
 		$("#battleScreen .tween-battleContent_fade")[0].addEventListener("transitionend", hack_fadeIntoBattle_end, false);
 
 		$("#battleScreen .battleContent_fade").addClass("battleContent_fade_hide");
+
+
+
+
+
 
 		// $(".microBattle_weather").css("opacity", "1");
 	}

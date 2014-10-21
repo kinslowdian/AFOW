@@ -6230,6 +6230,8 @@
 	margin: auto;
 }
 
+
+
 .multiUseInfo_cont_entrance
 {
 	width: inherit;
@@ -6309,6 +6311,8 @@
 	left: 0; right: 0; top: 0; bottom: 0;
 
 	margin: 40px auto auto 40px;
+
+	pointer-events: none;
 }
 
 .multiUseInfo_cont_entrance .multiUseInfo_tl p
@@ -6377,6 +6381,8 @@
 	left: 0; right: 0; top: auto; bottom: 0;
 
 	margin: 0 40px 40px 40px;
+
+	pointer-events: none;
 
 }
 

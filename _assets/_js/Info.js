@@ -52,6 +52,7 @@
 		screen_multiInfoUse.riseEndFunct = null;
 		screen_multiInfoUse.eventTrigger = "";
 
+		screen_multiInfoUse.goIntoBattle = false;
 		screen_multiInfoUse.returnFromBattle = false;
 
 		switch(screen_multiInfoUse.infoDisplay)
@@ -204,7 +205,8 @@
 
 				screen_multiInfoUse.dropEndFunct = intoBattle_display;
 				// screen_multiInfoUse.riseEndFunct = microBattleSequence_init;
-				screen_multiInfoUse.riseEndFunct = hack_fadeIntoBattle_init;
+				// screen_multiInfoUse.riseEndFunct = hack_fadeIntoBattle_init;
+				screen_multiInfoUse.riseEndFunct = hack_battleDecide;
 
 				break;
 			}
@@ -1106,6 +1108,8 @@
 
 				// exitFrame = setTimeout(multiUseInfoScreen_drop, 20);
 
+				screen_multiInfoUse.goIntoBattle = true;
+
 				theBattle_init(preBattleOptions);
 
 				theBattle_build();
@@ -1238,7 +1242,10 @@
 		delete screen_multiInfoUse;
 
 		// ADD BACK IN
-		// optionsTrigger_init(true);
+		if(!screen_multiInfoUse.goIntoBattle)
+		{
+			optionsTrigger_init(true);
+		}
 	}
 
 	/* --- MULTI_USE_SCREEN */
