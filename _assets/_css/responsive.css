@@ -247,3 +247,18 @@
 	}
 	/* BATTLE NAV */
 }
+
+
+
+
+@media screen and (min-height:550px)
+{
+	.oneUseInfo_winScreen_ground
+	{
+		visibility: visible !important;
+	}
+}
+
+
+
+
