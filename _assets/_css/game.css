@@ -3046,11 +3046,13 @@
 	.preBattle_title_enemy .preBattle_title_action:hover
 	{
 		color: #ff0070;
+		color: #fff;
 	}
 
 	.preBattle_title_player .preBattle_title_action:hover
 	{
 		color: #17e69d;
+		color: #fff;
 	}
 
 	.preBattle_enemy
@@ -6450,11 +6452,13 @@
 .multiUseInfo_keyboard_select-forceState_0
 {
 	color: #fff !important;
+	color: #fff !important;
 }
 
 .multiUseInfo_keyboard_select-forceState_1
 {
 	color: #ffff66 !important;
+	color: #fff !important;
 }
 
 
@@ -6654,11 +6658,13 @@
 .multiUseInfo_options .multiUseInfo_options_option_about:hover
 {
 	color: #fff;
+	color: #fff;
 }
 
 .multiUseInfo_options .multiUseInfo_options_option_sound:hover
 {
 	color: #ffff66;
+	color: #fff;
 }
 
 .multiUseInfo_about
@@ -6684,11 +6690,13 @@
 .multiUseInfo_about .multiUseInfo_about_option_read:hover
 {
 	color: #fff;
+	color: #fff;
 }
 
 .multiUseInfo_about .multiUseInfo_about_option_return:hover
 {
 	color: #ffff66;
+	color: #fff;
 }
 
 .multiUseInfo_sound
@@ -6714,16 +6722,30 @@
 .multiUseInfo_sound .multiUseInfo_sound_option_true:hover
 {
 	color: #fff;
+	color: #fff;
 }
 
 .multiUseInfo_sound .multiUseInfo_sound_option_false:hover
 {
 	color: #ffff66;
+	color: #fff;
 }
 
 .multiUseInfo_fail
 {
 
+}
+
+.multiUseInfo_fail .multiUseInfo_serial
+{
+	width: 40px;
+	height: 40px;
+
+	position: absolute;
+
+	left: 0; right: 0; top: 0; bottom: 0;
+
+	margin: auto;
 }
 
 .multiUseInfo_fail .multiUseInfo_br
@@ -6815,11 +6837,13 @@
 .multiUseInfo_preBattle .multiUseInfo_preFight_option_fight:hover
 {
 	color: #fff;
+	color: #fff;
 }
 
 .multiUseInfo_preBattle .multiUseInfo_preFight_option_leave:hover
 {
 	color: #ffff66;
+	color: #fff;
 }
 
 .multiUseInfo_intoBattle
@@ -6829,7 +6853,7 @@
 
 .multiUseInfo_intoBattle .multiUseInfo_serial
 {
-	width: 40px;
+	width: 80px;
 	height: 40px;
 
 	position: absolute;
@@ -6837,6 +6861,28 @@
 	left: 0; right: 0; top: 0; bottom: 0;
 
 	margin: auto;
+}
+
+.multiUseInfo_intoBattle .intoFightDisplay_p1
+{
+	width: 40px;
+	height: 40px;
+
+	position: absolute;
+
+	left: 0;
+	top: 0;
+}
+
+.multiUseInfo_intoBattle .intoFightDisplay_p2
+{
+	width: 40px;
+	height: 40px;
+
+	position: absolute;
+
+	right: 0;
+	top: 0;
 }
 
 .multiUseInfo_intoBattle .multiUseInfo_intoFight_option_attack
@@ -6852,11 +6898,13 @@
 .multiUseInfo_intoBattle .multiUseInfo_intoFight_option_attack:hover
 {
 	color: #fff;
+	color: #fff;
 }
 
 .multiUseInfo_intoBattle .multiUseInfo_intoFight_option_escape:hover
 {
 	color: #ffff66;
+	color: #fff;
 }
 
 /* ----------------------------------------------------------------------- INFO_MULTI */

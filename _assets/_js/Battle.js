@@ -27,8 +27,6 @@
 
 	/* --- BATTLE_END */
 
-	var battleEnd_mountains;
-
 	/* --- BATTLE_OVER */
 
 
@@ -696,7 +694,7 @@
 
 		// BATTLE_NAV.game.result = "WIN";
 
-		BATTLE_NAV.game.result = "WIN";
+		BATTLE_NAV.game.result = "LOSE";
 
 		battleNav_logicDisplay();
 	}

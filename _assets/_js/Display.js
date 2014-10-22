@@ -80,12 +80,6 @@
 				screenDivision();
 			}
 		}
-
-		// END FRAME AXE
-		// if(battleEnd_mountains != null || battleEnd_mountains != undefined)
-		// {
-		// 	battleEnd_alignMountains_measure();
-		// }
 	}
 
 	function screenDivision()
