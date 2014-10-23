@@ -1,6 +1,8 @@
 
 	var screen_multiInfoUse;
 
+	var screen_multiInfoUse_keyboard;
+
 	var screen_oneInfoUse;
 
 	/* --- OPTIONS */
@@ -23,6 +25,10 @@
 	function optionsTrigger_event(event)
 	{
 		var exitFrame;
+
+		// control_switch(false);
+
+		MAP_PLAYER.listen = false;
 
 		optionsTrigger_init(false);
 
@@ -108,6 +114,10 @@
 				$(screen_multiInfoUse.screenRoot + " .multiUseInfo_options .multiUseInfo_options_option_about").html(buildData.btn_0);
 				$(screen_multiInfoUse.screenRoot + " .multiUseInfo_options .multiUseInfo_options_option_sound").html(buildData.btn_1);
 
+				$(screen_multiInfoUse.screenRoot + " .multiUseInfo_options .multiUseInfo_options_option_about").attr("data-direct-class", "multiUseInfo_options_option_about");
+
+				$(screen_multiInfoUse.screenRoot + " .multiUseInfo_options .multiUseInfo_options_option_sound").attr("data-direct-class", "multiUseInfo_options_option_sound");
+
 				screen_multiInfoUse.dropEndFunct = options_display;
 
 				break;
@@ -127,6 +137,10 @@
 				$(screen_multiInfoUse.screenRoot + " .multiUseInfo_about .multiUseInfo_about_option_read").html(buildData.btn_0);
 				$(screen_multiInfoUse.screenRoot + " .multiUseInfo_about .multiUseInfo_about_option_return").html(buildData.btn_1);
 
+				$(screen_multiInfoUse.screenRoot + " .multiUseInfo_about .multiUseInfo_about_option_read").attr("data-direct-class", "multiUseInfo_about_option_read");
+
+				$(screen_multiInfoUse.screenRoot + " .multiUseInfo_about .multiUseInfo_about_option_return").attr("data-direct-class", "multiUseInfo_about_option_return");
+
 				screen_multiInfoUse.dropEndFunct = aboutOptions_display;
 
 				break;
@@ -145,6 +159,10 @@
 
 				$(screen_multiInfoUse.screenRoot + " .multiUseInfo_sound .multiUseInfo_sound_option_true").html(buildData.btn_0);
 				$(screen_multiInfoUse.screenRoot + " .multiUseInfo_sound .multiUseInfo_sound_option_false").html(buildData.btn_1);
+
+				$(screen_multiInfoUse.screenRoot + " .multiUseInfo_sound .multiUseInfo_sound_option_true").attr("data-direct-class", "multiUseInfo_sound_option_true");
+
+				$(screen_multiInfoUse.screenRoot + " .multiUseInfo_sound .multiUseInfo_sound_option_false").attr("data-direct-class", "multiUseInfo_sound_option_false");
 
 				screen_multiInfoUse.dropEndFunct = soundGlobalOptions_display;
 
@@ -183,6 +201,10 @@
 				$(screen_multiInfoUse.screenRoot + " .multiUseInfo_preBattle .multiUseInfo_preFight_option_fight").html(buildData.btn_0);
 				$(screen_multiInfoUse.screenRoot + " .multiUseInfo_preBattle .multiUseInfo_preFight_option_leave").html(buildData.btn_1);
 
+				$(screen_multiInfoUse.screenRoot + " .multiUseInfo_preBattle .multiUseInfo_preFight_option_fight").attr("data-direct-class", "multiUseInfo_preFight_option_fight");
+
+				$(screen_multiInfoUse.screenRoot + " .multiUseInfo_preBattle .multiUseInfo_preFight_option_leave").attr("data-direct-class", "multiUseInfo_preFight_option_leave");
+
 				preBattle_fullContent();
 
 				screen_multiInfoUse.dropEndFunct = preBattle_display;
@@ -203,6 +225,10 @@
 
 				$(screen_multiInfoUse.screenRoot + " .multiUseInfo_intoBattle .multiUseInfo_intoFight_option_attack").html(buildData.btn_0);
 				$(screen_multiInfoUse.screenRoot + " .multiUseInfo_intoBattle .multiUseInfo_intoFight_option_escape").html(buildData.btn_1);
+
+				$(screen_multiInfoUse.screenRoot + " .multiUseInfo_intoBattle .multiUseInfo_intoFight_option_attack").attr("data-direct-class", "multiUseInfo_intoFight_option_attack");
+
+				$(screen_multiInfoUse.screenRoot + " .multiUseInfo_intoBattle .multiUseInfo_intoFight_option_escape").attr("data-direct-class", "multiUseInfo_intoFight_option_escape");
 
 				intoBattle_fullContent();
 
@@ -1177,6 +1203,16 @@
 
 	function multiUseInfoScreen_purge()
 	{
+		if(screen_multiInfoUse.infoDisplay === "OPTIONS" || screen_multiInfoUse.infoDisplay === "ABOUT" || screen_multiInfoUse.infoDisplay === "SOUND_GLOBAL")
+		{
+			// hitTest_init();
+
+			MAP_PLAYER.listen = true;
+
+			// control_switch(true);
+		}
+
+
 		if(screen_multiInfoUse.returnFromBattle)
 		{
 			screen_multiInfoUse.returnFromBattle = false;
@@ -1191,6 +1227,192 @@
 		{
 			optionsTrigger_init(true);
 		}
+	}
+
+	/* --- MULTI_USE_SCREEN */
+
+	/* --- KEYBOARD CONTROLS */
+
+	/* --- KEYBOARD CONTROLS */
+
+	function keyboardSignal_multiInfoUse_init()
+	{
+		screen_multiInfoUse_keyboard = {};
+
+		screen_multiInfoUse_keyboard.countTap = "DEFAULT";
+
+		screen_multiInfoUse_keyboard.signal_0 = null;
+		screen_multiInfoUse_keyboard.signal_1 = null;
+
+		keyboardSignal_multiInfoUse_signalSet();
+
+		$(window)[0].addEventListener("keyup", keyboardSignal_multiInfoUse_event, false);
+	}
+
+	function keyboardSignal_multiInfoUse_signalSet()
+	{
+		switch(screen_multiInfoUse.infoDisplay)
+		{
+			case "OPTIONS":
+			{
+				screen_multiInfoUse_keyboard.signal_0 = screen_multiInfoUse.screenRoot + " .multiUseInfo_options .multiUseInfo_options_option_about";
+				screen_multiInfoUse_keyboard.signal_1 = screen_multiInfoUse.screenRoot + " .multiUseInfo_options .multiUseInfo_options_option_sound";
+
+				break;
+			}
+
+			case "ABOUT":
+			{
+				screen_multiInfoUse_keyboard.signal_0 = screen_multiInfoUse.screenRoot + " .multiUseInfo_about .multiUseInfo_about_option_read";
+				screen_multiInfoUse_keyboard.signal_1 = screen_multiInfoUse.screenRoot + " .multiUseInfo_about .multiUseInfo_about_option_return";
+
+				break;
+			}
+
+			case "SOUND_GLOBAL":
+			{
+				screen_multiInfoUse_keyboard.signal_0 = screen_multiInfoUse.screenRoot + " .multiUseInfo_sound .multiUseInfo_sound_option_true";
+				screen_multiInfoUse_keyboard.signal_1 = screen_multiInfoUse.screenRoot + " .multiUseInfo_sound .multiUseInfo_sound_option_false";
+
+				break;
+			}
+
+			case "PREBATTLE":
+			{
+				screen_multiInfoUse_keyboard.signal_0 = screen_multiInfoUse.screenRoot + " .multiUseInfo_preBattle .multiUseInfo_preFight_option_fight";
+				screen_multiInfoUse_keyboard.signal_1 = screen_multiInfoUse.screenRoot + " .multiUseInfo_preBattle .multiUseInfo_preFight_option_leave";
+
+				break;
+			}
+
+			case "INTOBATTLE":
+			{
+				screen_multiInfoUse_keyboard.signal_0 = screen_multiInfoUse.screenRoot + " .multiUseInfo_intoBattle .multiUseInfo_intoFight_option_attack";
+				screen_multiInfoUse_keyboard.signal_1 = screen_multiInfoUse.screenRoot + " .multiUseInfo_intoBattle .multiUseInfo_intoFight_option_escape";
+
+				break;
+			}
+		}
+	}
+
+	function keyboardSignal_multiInfoUse_event(event)
+	{
+		var signal = false;
+		var action = false;
+
+		trace(event);
+
+		// LEFT + DOWN
+		if(event.keyCode == 37 || event.keyCode == 40)
+		{
+			if(screen_multiInfoUse_keyboard.countTap === "DEFAULT")
+			{
+				screen_multiInfoUse_keyboard.countTap = 0;
+			}
+
+			else
+			{
+				screen_multiInfoUse_keyboard.countTap --;
+			}
+
+			if(screen_multiInfoUse_keyboard.countTap < 0)
+			{
+				screen_multiInfoUse_keyboard.countTap = 1;
+			}
+
+			signal = true;
+		}
+
+		// RIGHT + UP
+		if(event.keyCode == 39 || event.keyCode == 38)
+		{
+			if(screen_multiInfoUse_keyboard.countTap === "DEFAULT")
+			{
+				screen_multiInfoUse_keyboard.countTap = 0;
+			}
+
+			else
+			{
+				screen_multiInfoUse_keyboard.countTap ++;
+			}
+
+			if(screen_multiInfoUse_keyboard.countTap > 1)
+			{
+				screen_multiInfoUse_keyboard.countTap = 0;
+			}
+
+			signal = true;
+		}
+
+		// SPACE + ENTER
+		if(event.keyCode == 13 || event.keyCode == 32)
+		{
+			if(screen_multiInfoUse_keyboard.countTap === "DEFAULT")
+			{
+				screen_multiInfoUse_keyboard.countTap = 0;
+				signal = true;
+			}
+
+			action = true;
+		}
+
+		if(signal)
+		{
+			keyboardSignal_multiInfoUse_signal()
+		}
+
+		if(action)
+		{
+			keyboardSignal_multiInfoUse_action()
+		}
+	}
+
+	function keyboardSignal_multiInfoUse_signal()
+	{
+		var applyBlock = screen_multiInfoUse_keyboard["signal_" + screen_multiInfoUse_keyboard.countTap].toString();
+		var applyClass = "multiUseInfo_keyboard_select-forceState_" + screen_multiInfoUse_keyboard.countTap;
+
+		screen_multiInfoUse_keyboard.countTap == 0 ? keyboardSignal_multiInfoUse_signalClean(1) : keyboardSignal_multiInfoUse_signalClean(0);
+
+		$(applyBlock).addClass(applyClass);
+
+		trace("KEYBOARD COUNT == " + screen_multiInfoUse_keyboard.countTap);
+		trace(applyBlock);
+	}
+
+	function keyboardSignal_multiInfoUse_signalClean(signalNum)
+	{
+		var searchBlock = screen_multiInfoUse_keyboard["signal_" + signalNum].toString();
+		var searchClass = "multiUseInfo_keyboard_select-forceState_" + signalNum;
+
+		if($(searchBlock).attr("class").search(searchClass) >= 0)
+		{
+			$(searchBlock).removeClass(searchClass);
+		}
+	}
+
+	function keyboardSignal_multiInfoUse_action()
+	{
+		var triggerTargetBlock;
+		var triggerTargetClass;
+
+		triggerTargetBlock = screen_multiInfoUse_keyboard["signal_" + screen_multiInfoUse_keyboard.countTap].toString();
+
+		triggerTargetClass = $(triggerTargetBlock).attr("data-direct-class") || null;
+
+		if(triggerTargetClass != null)
+		{
+			$("." + triggerTargetClass).trigger("click");
+		}
+	}
+
+	function keyboardSignal_multiInfoUse_cancel()
+	{
+		$(window)[0].removeEventListener("keyup", keyboardSignal_multiInfoUse_event, false);
+
+		screen_multiInfoUse_keyboard = {};
+
+		delete screen_multiInfoUse_keyboard;
 	}
 
 	/* --- MULTI_USE_SCREEN */
