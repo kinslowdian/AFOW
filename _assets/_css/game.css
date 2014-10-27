@@ -934,9 +934,9 @@
 
 	@keyframes tweenMapGoatHandR_Frames
 	{
-		0%		{transform: translateX(-2px);}
-		50%		{transform: translateX(0px);}
-		100%	{transform: translateX(-2px);}
+		0%		{transform: translateY(-2px);}
+		50%		{transform: translateY(0px);}
+		100%	{transform: translateY(-2px);}
 	}
 
 	.tween-mapPlayerWalk_loop
@@ -1326,9 +1326,9 @@
 
 	@keyframes tweenMapEnemy40x40HandR_Frames
 	{
-		0%		{transform: translateX(-2px);}
-		50%		{transform: translateX(0px);}
-		100%	{transform: translateX(-2px);}
+		0%		{transform: translateY(-2px);}
+		50%		{transform: translateY(0px);}
+		100%	{transform: translateY(-2px);}
 	}
 
 	.tween-map-enemy_40x40_loop
