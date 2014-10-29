@@ -470,14 +470,6 @@
 		background-size: 40px 40px;
 	}
 
-	.pixels_keyboardHint
-	{
-		background-image: url(../_img/keyboardHint_1x.png);
-		background-repeat: no-repeat;
-		background-position: left top;
-		background-size: 240px 370px;
-	}
-
 	.pixels_portalZombie
 	{
 		background-image: url(../_img/portalZombieSprite_1x.png);
@@ -831,11 +823,6 @@
 			background-image: url(../_img/water_chars_1x.png);
 		}
 
-		.pixels_keyboardHint
-		{
-			background-image: url(../_img/keyboardHint_1x.png);
-		}
-
 		.pixels_portalZombie
 		{
 			background-image: url(../_img/portalZombieSprite_1x.png);
@@ -1136,11 +1123,6 @@
 		.pixels_waterCharacters
 		{
 			background-image: url(../_img/water_chars_2x.png);
-		}
-
-		.pixels_keyboardHint
-		{
-			background-image: url(../_img/keyboardHint_2x.png);
 		}
 
 		.pixels_portalZombie
