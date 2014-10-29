@@ -694,7 +694,7 @@
 
 		// BATTLE_NAV.game.result = "WIN";
 
-		BATTLE_NAV.game.result = "LOSE";
+		BATTLE_NAV.game.result = "WIN";
 
 		battleNav_logicDisplay();
 	}

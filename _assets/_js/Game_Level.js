@@ -403,6 +403,19 @@
 
 		if(Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["water"])
 		{
+			if(Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["water"]["FILL"] < 1)
+			{
+				$("#roam_content .water-area").css("opacity", Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["water"]["FILL"].toString());
+			}
+
+			else
+			{
+				if($("#roam_content .water-area").attr("style"));
+				{
+					$("#roam_content .water-area").removeAttr("style");
+				}
+			}
+
 			i = 0;
 
 			for(var object_waterEdge in Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["water"]["EDGE"])

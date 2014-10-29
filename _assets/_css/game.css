@@ -1710,6 +1710,11 @@
 		background: #dfdfd5;
 	}
 
+	.field-floor-ice
+	{
+		background: #b8f5eb;
+	}
+
 	.field-floor-ash
 	{
 		background: #20202a;
@@ -2316,12 +2321,20 @@
 		width: inherit;
 		height: inherit;
 
-		background-position: 0 0;
-
 		position: absolute;
 
 		/*PORTAL Z-LOCK*/
 		/*z-index: 1;*/
+	}
+
+	.portal_top_forest
+	{
+		background-position: 0px 0px;
+	}
+
+	.portal_top_ice
+	{
+		background-position: 0px -320px;
 	}
 
 	.portal .portal_space
