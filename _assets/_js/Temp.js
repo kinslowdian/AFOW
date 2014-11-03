@@ -345,6 +345,207 @@
 
 /*	--------------------------------------- INFO SCREEN*/
 
+///////////////////////////////// GOD
+///////////////////////////////// GOD
+///////////////////////////////// GOD
+
+	var level_create_god = function(settings)
+	{
+		this.settings = settings;
+		this.buildData = {};
+	};
+
+	level_create_god.prototype.create = function()
+	{
+		this.container 						= "." + this.settings.c_cl;
+		this.godType 							= this.settings.t;
+
+		this.position 						= this.settings.p;
+		this.class_show						= this.settings.display_show;
+		this.class_hide						= this.settings.display_hide;
+
+		this.buildData.block_x		= this.settings.x * 80;
+		this.buildData.block_y		= this.settings.y * 80;
+		this.buildData.block_w		= this.settings.w * 80;
+		this.buildData.block_h		= this.settings.h * 80;
+
+		this.buildData.id 				= this.settings.n;
+		this.buildData.html 			= html_lib_use("_" + this.godType, true, true);
+
+		this.buildData.css				= 	{
+																		"position"			: "absolute",
+																		"-webkit-transform"	: "translate(" + this.buildData.block_x + "px, " + this.buildData.block_y + "px)",
+																		"transform"			: "translate(" + this.buildData.block_x + "px, " + this.buildData.block_y + "px)"
+																	};
+
+		$("#roam_wrapper " + this.container).append(this.buildData.html);
+		$("#roam_wrapper " + this.container + " #_" + this.godType).attr("id", this.buildData.id);
+		$("#roam_wrapper " + this.container + " #" + this.buildData.id).css(this.buildData.css);
+
+		if(this.position === "SHOW")
+		{
+			$("#roam_wrapper " + this.container + " #" + this.buildData.id + " .god_holder").addClass(this.class_show);
+		}
+
+		if(this.position === "HIDE")
+		{
+			$("#roam_wrapper " + this.container + " #" + this.buildData.id + " .god_holder").addClass(this.class_hide);
+		}
+
+		trace(this);
+
+		delete this.settings;
+	};
+
+
+	var god_level_trigger = function(settings, num)
+	{
+			this.settings = settings;
+			this.buildData = {};
+			this.num = num;
+	};
+
+	god_level_trigger.prototype.create = function()
+	{
+			this.container 					= "." + this.settings.c_cl;
+			this.godTriggerPrefs		= this.settings.god_prefs;
+			this.instance_class 		= this.settings.instance_class;
+
+			this.buildData.block_x	= this.settings.x * 80;
+			this.buildData.block_y	= this.settings.y * 80;
+			this.buildData.block_w	= this.settings.w * 80;
+			this.buildData.block_h	= this.settings.h * 80;
+			this.buildData.id		= "level" + ROM.mapLevel + "_godTrigger_" + this.num;
+
+			this.buildData.html 	= '<div id="' + this.buildData.id + '" class="god_trigger collideCheck-field" data-npc="god"></div>';
+
+
+			this.buildData.css		= 	{
+											"width"				: this.buildData.block_w + "px",
+											"height"			: this.buildData.block_h + "px",
+											"position"			: "absolute",
+											"-webkit-transform"	: "translate(" + this.buildData.block_x + "px, " + this.buildData.block_y + "px)",
+											"transform"			: "translate(" + this.buildData.block_x + "px, " + this.buildData.block_y + "px)"
+										};
+
+			$(this.container).append(this.buildData.html);
+			$(this.container + " #" + this.buildData.id).css(this.buildData.css);
+			$(this.container + " #" + this.buildData.id).addClass(this.instance_class);
+
+			delete this.settings;
+	}
+
+	function god_eventSearch(god_hit)
+	{
+		trace("god_hit === " + god_hit);
+
+		var godTriggerItem;
+
+		var godTriggerFunction;
+		var godTriggerParameters;
+
+		for(var i in LEVEL_MAIN.spirits.godTriggers_ARR)
+		{
+			godTriggerItem = LEVEL_MAIN.spirits.godTriggers_ARR[i];
+
+			trace(godTriggerItem);
+
+			if(god_hit === godTriggerItem.buildData.id)
+			{
+				trace("GOD FIRE");
+
+				godTriggerFunction = window[godTriggerItem.godTriggerPrefs[0].call_funct];
+				godTriggerParameters = godTriggerItem.godTriggerPrefs[0].call_params;
+
+				godTriggerFunction.apply(this, godTriggerParameters);
+			}
+		}
+	}
+
+	function god_displayInit(target, position)
+	{
+		trace("god_display(" + target + ", " + position + ");");
+
+		var displayApply = god_displayCheck(target, position);
+
+		var displaySettings = {};
+
+		var positionRoute = {
+													"SHOW" : 	function()
+																		{
+																			if(displayApply)
+																			{
+																				// FAULT BUG
+																				displaySettings = god_unpackDisplay(target);
+
+																				trace(displaySettings);
+
+																				$("#" + target + " .god_holder").removeClass(displaySettings.hide).addClass(displaySettings.show);
+																			}
+
+																		},
+
+													"HIDE" : 	function()
+																		{
+																			if(displayApply)
+																			{
+																				// FAULT BUG
+																				displaySettings = god_unpackDisplay(target);
+
+																				trace(displaySettings);
+
+																				$("#" + target + " .god_holder").removeClass(displaySettings.show).addClass(displaySettings.hide);
+																			}
+																		}
+												};
+
+		if(typeof positionRoute[position] !== "function")
+		{
+			return false;
+		}
+
+		else
+		{
+			positionRoute[position]();
+		}
+	}
+
+	function god_displayCheck(target, newPosition)
+	{
+		var allowChange = false;
+
+		for(var i in LEVEL_MAIN.spirits.god_ARR)
+		{
+			if(target === LEVEL_MAIN.spirits.god_ARR[i].buildData.id)
+			{
+				if(newPosition !== LEVEL_MAIN.spirits.god_ARR[i].position)
+				{
+					allowChange = true;
+				}
+			}
+		}
+
+		return allowChange;
+	}
+
+	function god_unpackDisplay(target)
+	{
+		var displayPrefs = {};
+
+		for(var i in LEVEL_MAIN.spirits.god_ARR)
+		{
+			if(target === LEVEL_MAIN.spirits.god_ARR[i].buildData.id)
+			{
+				displayPrefs = LEVEL_MAIN.spirits.god_ARR[i].display;
+
+				return displayPrefs;
+			}
+		}
+	}
+
+///////////////////////////////// GOD
+///////////////////////////////// GOD
+///////////////////////////////// GOD
 
 
 

@@ -26,6 +26,8 @@
 		this.weather				= this.settings.weather;
 		this.landType				= this.settings.land;
 
+		this.spirits = {};
+
 		this.buildData.entry_fall	= this.settings.entry_fall;
 		this.buildData.fall_x		= this.settings.fall_x;
 		this.buildData.fall_y		= this.settings.fall_y;
@@ -467,6 +469,39 @@
 			}
 		}
 
+		if(Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["gods"])
+		{
+			LEVEL_MAIN.spirits.god_ARR = new Array();
+			LEVEL_MAIN.spirits.godTriggers_ARR = new Array();
+
+			for(var object_god in Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["gods"]["GOD"])
+			{
+				var g = new level_create_god(Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["gods"]["GOD"][object_god]);
+
+				g.create();
+
+				LEVEL_MAIN.spirits.god_ARR.push(g);
+			}
+
+			if(Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["gods"]["TRIGGERS"])
+			{
+				i = 0;
+
+				trace("!!!!!!!!!!!! GOD TRIGGERS ALERT");
+
+				for(var object_godTrigger in Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["gods"]["TRIGGERS"])
+				{
+					var gt = new god_level_trigger(Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["gods"]["TRIGGERS"][object_godTrigger], i);
+
+					gt.create();
+
+					LEVEL_MAIN.spirits.godTriggers_ARR.push(gt);
+
+					i++;
+				}
+			}
+		}
+
 
 		// PORTALS (PRE-READ)
 
@@ -621,6 +656,7 @@
 		$(".water-area").html("");
 
 		$(".woodland-areas").html("");
+		$(".god-areas").html("");
 
 		$("#space .weather-snow").html("");
 		$("#space .weather-rain").html("");

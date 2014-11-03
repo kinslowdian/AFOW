@@ -516,6 +516,13 @@
 		background-size: 80px 80px;
 	}
 
+	.pixels_monkeyKingdomIce
+	{
+		background-image: url(../_img/monkeyKingdomIceSprite_1x.png);
+		background-repeat: no-repeat;
+		background-size: 640px 960px;
+	}
+
 /* ----------------------------------------------------------------------- GENERAL */
 
 
@@ -883,6 +890,11 @@
 		{
 			background-image: url(../_img/tile_pineTrees_ice_1x.png);
 		}
+
+		.pixels_monkeyKingdomIce
+		{
+			background-image: url(../_img/monkeyKingdomIceSprite_1x.png);
+		}
 	}
 
 
@@ -1204,6 +1216,11 @@
 		.pixels_forestIce
 		{
 			background-image: url(../_img/tile_pineTrees_ice_2x.png);
+		}
+
+		.pixels_monkeyKingdomIce
+		{
+			background-image: url(../_img/monkeyKingdomIceSprite_2x.png);
 		}
 	}
 

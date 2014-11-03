@@ -742,13 +742,18 @@
 
 			$("#" + MAP_PLAYER.playerMover).css(css);
 
-			// SEE temp.js
 			if(HIT_TEST.hit_sound)
 			{
 				if(soundEffects_pedal != null)
 				{
 					sound_level_trigger_event(HIT_TEST.hit_sound_id);
 				}
+			}
+
+			// SEE temp.js
+			if(HIT_TEST.hit_god)
+			{
+				god_eventSearch(HIT_TEST.hit_god_id);
 			}
 		}
 	}
@@ -1197,10 +1202,12 @@
 		HIT_TEST.hit_portal = false;
 		HIT_TEST.hit_enemy = false;
 		HIT_TEST.hit_sound = true;
+		HIT_TEST.hit_god = false;
 
 		HIT_TEST.hit_portal_id = "";
 		HIT_TEST.hit_enemy_id = "";
 		HIT_TEST.hit_sound_id = "";
+		HIT_TEST.hit_god_id = "";
 
 		if(HIT_TEST.hits[0] != undefined || HIT_TEST.hits[0] != null)
 		{
@@ -1246,7 +1253,16 @@
 				// alert("HIT! - SD #" + hit_id + " " + $(HIT_TEST.hits[0]).html());
 			}
 
-			// alert("HIT!");
+			if($(HIT_TEST.hits[0]).attr("data-npc") === "god")
+			{
+				HIT_TEST.hit_god = true;
+
+				HIT_TEST.hit_god_id = hit_id;
+
+				trace("!!!!!!!!!! HIT_TEST GOD !!!!!!!!!!");
+				trace(HIT_TEST);
+				trace("!!!!!!!!!! HIT_TEST GOD !!!!!!!!!!");
+			}
 		}
 	}
 

@@ -196,9 +196,376 @@
 
 
 
+/* -------------------------------------------- GODS*/
+/* -------------------------------------------- GODS*/
+/* -------------------------------------------- GODS*/
+
+.monkey_king_area, .monkey_default_area
+{
+	width: 320px;
+	height: 240px;
+
+	position: absolute;
+}
+
+.monkey_king_area_forest, .monkey_default_area_forest
+{
+	background: #dfdfd5;
+}
+
+.monkey_king_area_ice, .monkey_default_area_ice
+{
+	background: #b8f5eb;
+}
+
+.monkey_king_treesBack, .monkey_default_treesBack
+{
+	width: 320px;
+	height: 240px;
+
+	position: absolute;
+}
+
+.monkey_king_treesFront, .monkey_default_treesFront
+{
+	width: 320px;
+	height: 40px;
+
+	position: absolute;
+
+	left: 0;
+	bottom: 0;
+}
+
+.monkey_king_trees_ice, .monkey_default_trees_ice
+{
+	width: 320px;
+	height: 40px;
+
+	background-position: 0px -480px;
+
+	position: relative;
+}
+
+.monkey_king_trees_forest, .monkey_default_trees_forest
+{
+	width: 320px;
+	height: 40px;
+
+	background-position: 0px -520px;
+
+	position: relative;
+}
+
+.monkey_king_ground, .monkey_default_ground
+{
+	width: 320px;
+	height: 40px;
+
+	position: absolute;
+
+	left: 0px;
+	bottom: 0px;
+}
+
+.monkey_king_ground_forest, .monkey_default_ground_forest
+{
+	background: -webkit-linear-gradient(top, rgba(223, 223, 213, 0) 0%, rgba(223, 223, 213, 1) 100%);
+	background: linear-gradient(to bottom, rgba(223, 223, 213, 0) 0%, rgba(223, 223, 213, 1) 100%);
+}
+
+.monkey_king_ground_ice, .monkey_default_ground_ice
+{
+	background: -webkit-linear-gradient(top, rgba(184, 245, 235, 0) 0%, rgba(184, 245, 235, 1) 100%);
+	background: linear-gradient(to bottom, rgba(184, 245, 235, 0) 0%, rgba(184, 245, 235, 1) 100%);
+}
+
+.monkey_king_masked, .monkey_king_holder, .monkey_default_masked, .monkey_default_holder
+{
+	width: 320px;
+	height: 240px;
+
+	position: absolute;
+
+	overflow: hidden;
+
+	left: 0;
+	top: 0;
+}
+
+.monkey_king_masked, .monkey_default_masked
+{
+	top: 0px;
+}
+
+.monkey_king_hide, .monkey_default_hide
+{
+	-webkit-transform: translateY(100%);
+	transform: translateY(100%);
+}
+
+.monkey_king_show, .monkey_default_show
+{
+	-webkit-transform: translateY(0%);
+	transform: translateY(0%);
+}
+
+.tween-monkey_king_holder, .tween-monkey_default_holder
+{
+	-webkit-transition: 1400ms ease-in-out;
+	transition: 1400ms ease-in-out;
+}
+
+.monkey_king_main, .monkey_default_main
+{
+	width: 320px;
+	height: 240px;
+
+	position: relative;
+}
+
+.tween-monkey_king_main
+{
+	-webkit-animation: tweenMonkeyKingMainFrames 2s ease-in-out infinite;
+	animation: tweenMonkeyKingMainFrames 2s ease-in-out infinite;
+}
+
+@-webkit-keyframes tweenMonkeyKingMainFrames
+{
+	0%		{ -webkit-transform: translateY(10px); }
+	50%		{ -webkit-transform: translateY(0px); }
+	100%	{ -webkit-transform: translateY(10px); }
+}
+
+@keyframes tweenMonkeyKingMainFrames
+{
+	0%		{ transform: translateY(10px); }
+	50%		{ transform: translateY(0px); }
+	100%	{ transform: translateY(10px); }
+}
+
+.tween-monkey_default_main_0
+{
+	-webkit-animation: tweenMonkeyDefaultMain0Frames 0.8s ease-in-out infinite;
+	animation: tweenMonkeyDefaultMain0Frames 0.8s ease-in-out infinite;
+}
+
+@-webkit-keyframes tweenMonkeyDefaultMain0Frames
+{
+	0%		{ -webkit-transform: translateY(30px); }
+	50%		{ -webkit-transform: translateY(0px); }
+	100%	{ -webkit-transform: translateY(30px); }
+}
+
+@keyframes tweenMonkeyDefaultMain0Frames
+{
+	0%		{ transform: translateY(30px); }
+	50%		{ transform: translateY(0px); }
+	100%	{ transform: translateY(30px); }
+}
+
+.tween-monkey_default_main_1
+{
+	-webkit-animation: tweenMonkeyDefaultMain1Frames 0.8s ease-in-out infinite;
+	animation: tweenMonkeyDefaultMain1Frames 0.8s ease-in-out infinite;
+}
+
+@-webkit-keyframes tweenMonkeyDefaultMain1Frames
+{
+	0%		{ -webkit-transform: translateY(0px); }
+	50%		{ -webkit-transform: translateY(30px); }
+	100%	{ -webkit-transform: translateY(0px); }
+}
+
+@keyframes tweenMonkeyDefaultMain1Frames
+{
+	0%		{ transform: translateY(0px); }
+	50%		{ transform: translateY(30px); }
+	100%	{ transform: translateY(0px); }
+}
 
 
+.monkey_king_main .monkey_king_body, .monkey_default_main .monkey_default_body
+{
+	width: 320px;
+	height: 240px;
 
+	background-position: 0px 0px;
+
+	position: absolute;
+
+	left: 0;
+	top: 0;
+}
+
+.tween-monkey_king_body, .tween-monkey_default_body
+{
+	-webkit-animation: tweenMonkeyKingBodyFrames 1s ease-in-out infinite;
+	animation: tweenMonkeyKingBodyFrames 1s ease-in-out infinite;
+}
+
+@-webkit-keyframes tweenMonkeyKingBodyFrames
+{
+	0%		{-webkit-transform: translateY(0px);}
+	50%		{-webkit-transform: translateY(6px);}
+	100%	{-webkit-transform: translateY(0px);}
+}
+
+@keyframes tweenMonkeyKingBodyFrames
+{
+	0%		{transform: translateY(0px);}
+	50%		{transform: translateY(6px);}
+	100%	{transform: translateY(0px);}
+}
+
+.monkey_king_main .monkey_king_head
+{
+	width: 320px;
+	height: 240px;
+
+	background-position: -320px 0px;
+
+	position: absolute;
+
+	left: 0;
+	top: 0;
+}
+
+.monkey_default_main .monkey_default_head
+{
+	width: 320px;
+	height: 240px;
+
+	background-position: -320px -480px;
+
+	position: absolute;
+
+	left: 0;
+	top: 0;
+}
+
+.tween-monkey_king_head, .tween-monkey_default_head
+{
+	-webkit-animation: tweenMonkeyKingHeadFrames 1.2s ease-in-out infinite;
+	animation: tweenMonkeyKingHeadFrames 1.2s ease-in-out infinite;
+}
+
+@-webkit-keyframes tweenMonkeyKingHeadFrames
+{
+	0%		{-webkit-transform: translateY(0px);}
+	50%		{-webkit-transform: translateY(-4px);}
+	100%	{-webkit-transform: translateY(0px);}
+}
+
+@keyframes tweenMonkeyKingHeadFrames
+{
+	0%		{transform: translateY(0px);}
+	50%		{transform: translateY(-4px);}
+	100%	{transform: translateY(0px);}
+}
+
+.monkey_king_main .monkey_king_mouth
+{
+	width: 320px;
+	height: 240px;
+
+	background-position: -320px -240px;
+
+	position: absolute;
+
+	left: 0;
+	top: 0;
+}
+
+.tween-monkey_king_mouth
+{
+	-webkit-animation: tweenMonkeyKingMouthFrames 400ms ease-in-out infinite;
+	animation: tweenMonkeyKingMouthFrames 400ms ease-in-out infinite;
+}
+
+@-webkit-keyframes tweenMonkeyKingMouthFrames
+{
+	0%		{-webkit-transform: translateY(0px);}
+	50%		{-webkit-transform: translateY(2px);}
+	100%	{-webkit-transform: translateY(0px);}
+}
+
+@keyframes tweenMonkeyKingMouthFrames
+{
+	0%		{transform: translateY(0px);}
+	50%		{transform: translateY(2px);}
+	100%	{transform: translateY(0px);}
+}
+
+.monkey_default_main .monkey_default_mouth
+{
+	width: 320px;
+	height: 240px;
+
+	background-position: -320px -720px;
+
+	position: absolute;
+
+	left: 0;
+	top: 0;
+}
+
+.tween-monkey_default_mouth
+{
+	-webkit-animation: tweenMonkeyDefaultMouthFrames 200ms ease-in-out infinite;
+	animation: tweenMonkeyDefaultMouthFrames 200ms ease-in-out infinite;
+}
+
+@-webkit-keyframes tweenMonkeyDefaultMouthFrames
+{
+	0%		{-webkit-transform: translateY(4px);}
+	50%		{-webkit-transform: translateY(-9px);}
+	100%	{-webkit-transform: translateY(4px);}
+}
+
+@keyframes tweenMonkeyDefaultMouthFrames
+{
+	0%		{transform: translateY(4px);}
+	50%		{transform: translateY(-9px);}
+	100%	{transform: translateY(4px);}
+}
+
+.monkey_king_main .monkey_king_hands, .monkey_default_main .monkey_default_hands
+{
+	width: 320px;
+	height: 240px;
+
+	background-position: 0px -240px;
+
+	position: absolute;
+
+	left: 0;
+	top: 0;
+}
+
+.tween-monkey_king_hands, .tween-monkey_default_hands
+{
+	-webkit-animation: tweenMonkeyKingHandsFrames 200ms ease-in-out infinite;
+	animation: tweenMonkeyKingHandsFrames 200ms ease-in-out infinite;
+}
+
+@-webkit-keyframes tweenMonkeyKingHandsFrames
+{
+	0%		{-webkit-transform: translateY(0px);}
+	50%		{-webkit-transform: translateY(10px);}
+	100%	{-webkit-transform: translateY(0px);}
+}
+
+@keyframes tweenMonkeyKingHandsFrames
+{
+	0%		{transform: translateY(0px);}
+	50%		{transform: translateY(10px);}
+	100%	{transform: translateY(0px);}
+}
+
+/* -------------------------------------------- GODS*/
+/* -------------------------------------------- GODS*/
+/* -------------------------------------------- GODS*/
 
 
 

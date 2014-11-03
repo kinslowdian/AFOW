@@ -337,18 +337,6 @@
 			"enemyPlayers":
 			[
 				{
-					"x": 0,
-					"y": 0,
-					"w": 0.5,
-					"h": 0.5,
-					"n": "level0_rabbit0",
-					"t": "rabbit",
-					"l": 0,
-					"known" : "death master",
-					"spawn": 0
-				},
-
-				{
 					"x": 1.5,
 					"y": 12.5,
 					"w": 0.5,
@@ -486,6 +474,20 @@
 					"level": 1,
 					"exit": 0,
 					"direction": "UP",
+					"spawn": 0,
+					"p": "portal_top_forest"
+				},
+
+
+				{
+					"num": 7,
+					"x": 0,
+					"y": 0,
+					"w": 1,
+					"h": 1,
+					"level": 5,
+					"exit": 0,
+					"direction": "DOWN",
 					"spawn": 0,
 					"p": "portal_top_forest"
 				}
@@ -878,6 +880,27 @@
 			[
 
 			],
+
+			"gods":
+			{
+				"GOD":
+				[
+					{
+						"x": 0,
+						"y": 6.5,
+						"w": 4,
+						"h": 3,
+						"n": "level4_god_monkeyKingIce",
+						"c_cl": "god-areas",
+						"t": "god_monkey_king_ice"
+					}
+				],
+
+				"TRIGGERS":
+				[
+
+				]
+			},
 
 			"portal":
 			[
@@ -1882,6 +1905,27 @@
 
 			],
 
+			"gods":
+			{
+				"GOD":
+				[
+					{
+						"x": 0,
+						"y": 6.5,
+						"w": 4,
+						"h": 3,
+						"n": "level4_god_monkeyKingIce",
+						"c_cl": "god-areas",
+						"t": "god_monkey_king_ice"
+					}
+				],
+
+				"TRIGGERS":
+				[
+
+				]
+			},
+
 			"portal":
 			[
 				{
@@ -1968,7 +2012,7 @@
 					"y": 24,
 					"w": 1,
 					"h": 1,
-					"level": 2,
+					"level": 5,
 					"exit": 0,
 					"direction": "UP",
 					"spawn": 4,
@@ -1999,458 +2043,164 @@
 		{
 			"levelSettings":
 			{
-				"n": 0,
-				"weather": "RAIN",
-				"land": "ash",
-				"entry_fall": "YES",
-				"fall_x": 2,
-				"fall_y": -0.5,
+				"n": 5,
+				"weather": "SNOW",
+				"land": "ice",
+				"entry_fall": "NO",
+				"fall_x": 0,
+				"fall_y": 0,
 				"fall_d": "DOWN",
 				"title_top": "level number 5",
-				"title_btm": "zomg!!!"
+				"title_btm": "The court of gods"
 			},
 
 			"texture":
 			{
+				"WALLS" :
+				[
+
+				],
+
+				"PLANTS":
+				[
+
+				],
+
+				"CLEARING":
+				[
+
+				],
+
 				"FLOOR":
 				{
-					"class" : "field-floor-ash"
+					"class" : "field-floor-ice"
 				},
 
 				"OUTER":
 				{
-					"class" : "pixels_forestMassFire"
-				},
-
-				"BUSH":
-				{
-					"BUSH_0":
-					{
-						"x": 1.5,
-						"y": 1.5,
-						"w": 1,
-						"h": 1,
-						"p": "pixels_forestFire collideCheck-field"
-					},
-
-					"BUSH_1":
-					{
-						"x": 1,
-						"y": 6,
-						"w": 2,
-						"h": 0.5,
-						"p": "pixels_forestFire collideCheck-field"
-					},
-
-					"BUSH_2":
-					{
-						"x": 0,
-						"y": 7,
-						"w": 1,
-						"h": 1,
-						"p": "pixels_forestFire collideCheck-field"
-					},
-
-					"BUSH_3":
-					{
-						"x": 1,
-						"y": 7,
-						"w": 0.5,
-						"h": 0.5,
-						"p": "pixels_forestFire collideCheck-field"
-					},
-
-					"BUSH_4":
-					{
-						"x": 2.5,
-						"y": 7,
-						"w": 0.5,
-						"h": 0.5,
-						"p": "pixels_forestFire collideCheck-field"
-					},
-
-					"BUSH_5":
-					{
-						"x": 3,
-						"y": 7,
-						"w": 1,
-						"h": 1,
-						"p": "pixels_forestFire collideCheck-field"
-					},
-
-					"BUSH_6":
-					{
-						"x": 0,
-						"y": 8,
-						"w": 1,
-						"h": 1,
-						"p": "pixels_forestFire collideCheck-field"
-					},
-
-					"BUSH_7":
-					{
-						"x": 3,
-						"y": 8,
-						"w": 1,
-						"h": 1,
-						"p": "pixels_forestFire collideCheck-field"
-					},
-
-					"BUSH_8":
-					{
-						"x": 1,
-						"y": 8.5,
-						"w": 0.5,
-						"h": 0.5,
-						"p": "pixels_forestFire collideCheck-field"
-					},
-
-					"BUSH_9":
-					{
-						"x": 2.5,
-						"y": 8.5,
-						"w": 0.5,
-						"h": 0.5,
-						"p": "pixels_forestFire collideCheck-field"
-					},
-
-					"BUSH_10":
-					{
-						"x": 0,
-						"y": 14,
-						"w": 0.5,
-						"h": 0.5,
-						"p": "pixels_forestFire collideCheck-field"
-					},
-
-					"BUSH_11":
-					{
-						"x": 3.5,
-						"y": 14,
-						"w": 0.5,
-						"h": 0.5,
-						"p": "pixels_forestFire collideCheck-field"
-					},
-
-					"BUSH_12":
-					{
-						"x": 0,
-						"y": 14.5,
-						"w": 1,
-						"h": 0.5,
-						"p": "pixels_forestFire collideCheck-field"
-					},
-
-					"BUSH_13":
-					{
-						"x": 3,
-						"y": 14.5,
-						"w": 1,
-						"h": 0.5,
-						"p": "pixels_forestFire collideCheck-field"
-					},
-
-					"BUSH_14":
-					{
-						"x": 0,
-						"y": 15,
-						"w": 4,
-						"h": 1,
-						"p": "pixels_forestFire collideCheck-field"
-					},
-
-					"BUSH_15":
-					{
-						"x": 0,
-						"y": 16,
-						"w": 1,
-						"h": 4,
-						"p": "pixels_forestFire collideCheck-field"
-					},
-
-					"BUSH_16":
-					{
-						"x": 3,
-						"y": 16,
-						"w": 1,
-						"h": 2,
-						"p": "pixels_forestFire collideCheck-field"
-					},
-
-					"BUSH_17":
-					{
-						"x": 1,
-						"y": 19,
-						"w": 2,
-						"h": 1,
-						"p": "pixels_forestFire collideCheck-field"
-					},
-
-					"BUSH_18":
-					{
-						"x": 1,
-						"y": 21,
-						"w": 3,
-						"h": 1,
-						"p": "pixels_forestFire collideCheck-field"
-					},
-
-					"BUSH_19":
-					{
-						"x": 0,
-						"y": 23,
-						"w": 3,
-						"h": 1,
-						"p": "pixels_forestFire collideCheck-field"
-					}
-
-
-				},
-
-				"FLOWER_LIGHT":
-				{
-					"FLOWER_0":
-					{
-						"x": 3,
-						"y": 19,
-						"w": 1,
-						"h": 1,
-						"p": "pixels_flowerLightFire"
-					},
-
-					"FLOWER_1":
-					{
-						"x": 0,
-						"y": 20,
-						"w": 4,
-						"h": 1,
-						"p": "pixels_flowerLightFire"
-					},
-
-					"FLOWER_2":
-					{
-						"x": 0,
-						"y": 21,
-						"w": 1,
-						"h": 1,
-						"p": "pixels_flowerLightFire"
-					},
-
-					"FLOWER_3":
-					{
-						"x": 0,
-						"y": 22,
-						"w": 4,
-						"h": 1,
-						"p": "pixels_flowerLightFire"
-					},
-
-					"FLOWER_4":
-					{
-						"x": 3,
-						"y": 23,
-						"w": 1,
-						"h": 1,
-						"p": "pixels_flowerLightFire"
-					},
-
-					"FLOWER_5":
-					{
-						"x": 1,
-						"y": 24,
-						"w": 3,
-						"h": 1,
-						"p": "pixels_flowerLightFire"
-					},
-
-					"FLOWER_CROSS_0":
-					{
-						"x": 0,
-						"y": 3,
-						"w": 1.5,
-						"h": 1.5,
-						"p": "pixels_flowerRichCrossFire"
-					},
-
-					"FLOWER_CROSS_1":
-					{
-						"x": 2.5,
-						"y": 3,
-						"w": 1.5,
-						"h": 1.5,
-						"p": "pixels_flowerRichCrossFire"
-					},
-
-					"FLOWER_HEAVY_0":
-					{
-						"x": 0,
-						"y": 5,
-						"w": 4,
-						"h": 0.5,
-						"p": "pixels_flowerHeavyFire"
-					},
-
-					"FLOWER_HEAVY_1":
-					{
-						"x": 0,
-						"y": 5.5,
-						"w": 0.5,
-						"h": 0.5,
-						"p": "pixels_flowerHeavyFire"
-					},
-
-					"FLOWER_HEAVY_2":
-					{
-						"x": 3.5,
-						"y": 5.5,
-						"w": 0.5,
-						"h": 0.5,
-						"p": "pixels_flowerHeavyFire"
-					},
-
-					"FLOWER_HEAVY_3":
-					{
-						"x": 1,
-						"y": 7.5,
-						"w": 0.5,
-						"h": 0.5,
-						"p": "pixels_flowerHeavyFire"
-					},
-
-					"FLOWER_HEAVY_4":
-					{
-						"x": 2.5,
-						"y": 7.5,
-						"w": 0.5,
-						"h": 0.5,
-						"p": "pixels_flowerHeavyFire"
-					},
-
-					"FLOWER_HEAVY_5":
-					{
-						"x": 1.5,
-						"y": 9.5,
-						"w": 1,
-						"h": 3.5,
-						"p": "pixels_flowerHeavyFire"
-					},
-
-					"FLOWER_HEAVY_6":
-					{
-						"x": 0.5,
-						"y": 11.5,
-						"w": 1,
-						"h": 0.5,
-						"p": "pixels_flowerHeavyFire"
-					},
-
-					"FLOWER_HEAVY_7":
-					{
-						"x": 2.5,
-						"y": 11.5,
-						"w": 1,
-						"h": 0.5,
-						"p": "pixels_flowerHeavyFire"
-					},
-
-					"FLOWER_HEAVY_8":
-					{
-						"x": 1,
-						"y": 12,
-						"w": 0.5,
-						"h": 0.5,
-						"p": "pixels_flowerHeavyFire"
-					},
-
-					"FLOWER_HEAVY_9":
-					{
-						"x": 2.5,
-						"y": 12,
-						"w": 0.5,
-						"h": 0.5,
-						"p": "pixels_flowerHeavyFire"
-					}
+					"class" : "pixels_forestMassIce"
 				}
+			},
+
+			"water":
+			{
+
 			},
 
 			"enemyPlayers":
 			[
-				{
-					"x": 0,
-					"y": 9,
-					"w": 0.5,
-					"h": 0.5,
-					"n": "level5_rabbit0",
-					"t": "rabbit",
-					"l": 5,
-					"known" : "mystic rabbit 4",
-					"spawn": 5
-				},
 
-				{
-					"x": 3,
-					"y": 9,
-					"w": 0.5,
-					"h": 0.5,
-					"n": "level5_rabbit1",
-					"t": "rabbit",
-					"l": 99,
-					"known" : "mystic rabbit 4",
-					"spawn": 5
-				}
 			],
 
-			"clearing":
+			"gods":
 			{
-				"CLEARING_0":
-				{
-					"x": -3,
-					"y": 3,
-					"w": 2,
-					"h": 2,
-					"n": "level5_clearing0",
-					"t": "clearing_cross_fire"
-				},
+				"GOD":
+				[
+					{
+						"x": 0,
+						"y": 4,
+						"w": 4,
+						"h": 3,
+						"n": "level5_god_monkeyDefaultIce0",
+						"c_cl": "god-areas",
+						"t": "god_monkey_king_ice",
+						"p": "HIDE",
+						"display":
+						{
+							"show": "monkey_king_show",
+							"hide": "monkey_king_hide"
+						},
+						"display_show": "monkey_king_show",
+						"display_hide": "monkey_king_hide"
+					},
 
-				"CLEARING_1":
-				{
-					"x": 5,
-					"y": 3,
-					"w": 2,
-					"h": 2,
-					"n": "level5_clearing1",
-					"t": "clearing_cross_fire"
-				},
+					{
+						"x": 0,
+						"y": 11,
+						"w": 4,
+						"h": 3,
+						"n": "level5_god_monkeydefaultIce1",
+						"c_cl": "god-areas",
+						"t": "god_monkey_king_ice",
+						"p": "SHOW",
+						"display":
+						{
+							"show": "monkey_king_show",
+							"hide": "monkey_king_hide"
+						},
+						"display_show": "monkey_king_show",
+						"display_hide": "monkey_king_hide"
+					},
 
-				"CLEARING_2":
-				{
-					"x": 5,
-					"y": 5,
-					"w": 2,
-					"h": 2,
-					"n": "level5_clearing2",
-					"t": "clearing_cross_fire"
-				},
+					{
+						"x": 0,
+						"y": 18,
+						"w": 4,
+						"h": 3,
+						"n": "level5_god_monkeyKingIce",
+						"c_cl": "god-areas",
+						"t": "god_monkey_king_ice",
+						"p": "SHOW",
+						"display":
+						{
+							"show": "monkey_king_show",
+							"hide": "monkey_king_hide"
+						},
+						"display_show": "monkey_king_show",
+						"display_hide": "monkey_king_hide"
+					}
+				],
 
-				"CLEARING_3":
-				{
-					"x": -3,
-					"y": 5,
-					"w": 2,
-					"h": 2,
-					"n": "level5_clearing3",
-					"t": "clearing_cross_fire"
-				},
+				"TRIGGERS":
+				[
+					{
+						"x": 0,
+						"y": 2,
+						"w": 4,
+						"h": 1,
+						"c_cl": "god-areas",
+						"instance_class": "god_trigger_hide",
+						"god_prefs":
+						[
+							{
+								"call_funct" : "god_displayInit",
+								"call_params": ["level5_god_monkeyDefaultIce0", "HIDE"]
+							}
+						]
+					},
 
-				"CLEARING_4":
-				{
-					"x": 5,
-					"y": 23,
-					"w": 2,
-					"h": 2,
-					"n": "level5_clearing4",
-					"t": "clearing_cross_fire"
-				}
+					{
+						"x": 0,
+						"y": 3,
+						"w": 1.5,
+						"h": 1,
+						"c_cl": "god-areas",
+						"instance_class": "god_trigger_show",
+						"god_prefs":
+						[
+							{
+								"call_funct" : "god_displayInit",
+								"call_params": ["level5_god_monkeyDefaultIce0", "SHOW"]
+							}
+						]
+					},
+
+					{
+						"x": 2.5,
+						"y": 3,
+						"w": 1.5,
+						"h": 1,
+						"c_cl": "god-areas",
+						"instance_class": "god_trigger_show",
+						"god_prefs":
+						[
+							{
+								"call_funct" : "god_displayInit",
+								"call_params": ["level5_god_monkeyDefaultIce0", "SHOW"]
+							}
+						]
+					}
+				]
 			},
 
 			"portal":
@@ -2458,56 +2208,125 @@
 				{
 					"num": 0,
 					"x": 1.5,
-					"y": 13.5,
+					"y": 0,
 					"w": 1,
 					"h": 1,
-					"level": 5,
-					"exit": 1,
-					"direction": "UP",
+					"level": 4,
+					"exit": 6,
+					"direction": "DOWN",
 					"spawn": 5,
-					"p": "portal_top_forestFire"
+					"p": "portal_top_ice"
 				},
 
 				{
 					"num": 1,
 					"x": 1.5,
-					"y": 16.5,
+					"y": 3,
 					"w": 1,
 					"h": 1,
 					"level": 5,
-					"exit": 0,
-					"direction": "DOWN",
+					"exit": 2,
+					"direction": "UP",
 					"spawn": 5,
-					"p": "portal_top_forestFire"
+					"p": "portal_top_ice"
 				},
 
 				{
 					"num": 2,
-					"x": 0,
-					"y": 24,
+					"x": 1.5,
+					"y": 7,
 					"w": 1,
 					"h": 1,
-					"level": 4,
-					"exit": 2,
-					"direction": "RIGHT",
+					"level": 5,
+					"exit": 1,
+					"direction": "DOWN",
 					"spawn": 5,
-					"p": "portal_top_forestFire"
+					"p": "portal_top_ice"
 				},
 
 				{
 					"num": 3,
-					"x": 0,
-					"y": 0,
+					"x": 1.5,
+					"y": 10,
+					"w": 1,
+					"h": 1,
+					"level": 5,
+					"exit": 4,
+					"direction": "UP",
+					"spawn": 5,
+					"p": "portal_top_ice"
+				},
+
+				{
+					"num": 4,
+					"x": 1.5,
+					"y": 14,
+					"w": 1,
+					"h": 1,
+					"level": 5,
+					"exit": 3,
+					"direction": "DOWN",
+					"spawn": 5,
+					"p": "portal_top_ice"
+				},
+
+				{
+					"num": 5,
+					"x": 1.5,
+					"y": 17,
+					"w": 1,
+					"h": 1,
+					"level": 5,
+					"exit": 6,
+					"direction": "UP",
+					"spawn": 5,
+					"p": "portal_top_ice"
+				},
+
+				{
+					"num": 6,
+					"x": 1.5,
+					"y": 21,
+					"w": 1,
+					"h": 1,
+					"level": 5,
+					"exit": 5,
+					"direction": "DOWN",
+					"spawn": 5,
+					"p": "portal_top_ice"
+				},
+
+				{
+					"num": 7,
+					"x": 1.5,
+					"y": 24,
 					"w": 1,
 					"h": 1,
 					"level": 4,
-					"exit": 2,
-					"direction": "DOWN",
+					"exit": 0,
+					"direction": "UP",
 					"spawn": 5,
-					"p": "portal_top_forestFire"
+					"p": "portal_top_ice"
+				}
+			],
+
+			"sound_level":
+			[
+				{
+					"call_funct" : "sound_play",
+					"call_params": ["level_bg_forest"]
+				},
+
+				{
+					"call_funct" : "sound_volume",
+					"call_params": ["level_bg_forest", "0.01"]
+				},
+
+				{
+					"call_funct" : "sound_fadeInitGlobal",
+					"call_params" : [1]
 				}
 			]
 		}
-
 	}
 }
