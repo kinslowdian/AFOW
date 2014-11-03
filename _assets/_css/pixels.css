@@ -17,14 +17,23 @@
 
 	div[class*='tween-']
 	{
-		-webkit-backface-visibility	: hidden;
-		backface-visibility			: hidden;
+/*		-webkit-backface-visibility	: hidden;
+		backface-visibility			: hidden;*/
 	}
 
 	.tweenFlickerFixManual
 	{
 		-webkit-backface-visibility	: hidden;
 		backface-visibility			: hidden;
+	}
+
+	.tweenFlickerFixManualAll *
+	{
+		-webkit-backface-visibility	: hidden;
+		backface-visibility			: hidden;
+
+		-webkit-transform-style: preserve-3d;
+		transform-style: preserve-3d;
 	}
 
 /* ----------------------------------------------------------------------- GFX-FIX */

@@ -2103,15 +2103,14 @@
 						"h": 3,
 						"n": "level5_god_monkeyDefaultIce0",
 						"c_cl": "god-areas",
-						"t": "god_monkey_king_ice",
+						"t": "god_monkey_default_ice",
+						"a": "tween-monkey_default_main_0",
 						"p": "HIDE",
 						"display":
 						{
 							"show": "monkey_king_show",
 							"hide": "monkey_king_hide"
-						},
-						"display_show": "monkey_king_show",
-						"display_hide": "monkey_king_hide"
+						}
 					},
 
 					{
@@ -2121,15 +2120,14 @@
 						"h": 3,
 						"n": "level5_god_monkeydefaultIce1",
 						"c_cl": "god-areas",
-						"t": "god_monkey_king_ice",
+						"t": "god_monkey_default_ice",
+						"a": "tween-monkey_default_main_1",
 						"p": "SHOW",
 						"display":
 						{
 							"show": "monkey_king_show",
 							"hide": "monkey_king_hide"
-						},
-						"display_show": "monkey_king_show",
-						"display_hide": "monkey_king_hide"
+						}
 					},
 
 					{
@@ -2140,14 +2138,13 @@
 						"n": "level5_god_monkeyKingIce",
 						"c_cl": "god-areas",
 						"t": "god_monkey_king_ice",
+						"a": "tween-monkey_king_main",
 						"p": "SHOW",
 						"display":
 						{
 							"show": "monkey_king_show",
 							"hide": "monkey_king_hide"
-						},
-						"display_show": "monkey_king_show",
-						"display_hide": "monkey_king_hide"
+						}
 					}
 				],
 

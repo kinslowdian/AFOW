@@ -303,6 +303,8 @@
 		this.buildData.block_w		= this.settings.w * 80;
 		this.buildData.block_h		= this.settings.h * 80;
 
+		this.buildData.mainAmbience = this.settings.a;
+
 		this.buildData.id 				= this.settings.n;
 		this.buildData.html 			= html_lib_use("_" + this.godType, true, true);
 
@@ -315,6 +317,8 @@
 		$("#roam_wrapper " + this.container).append(this.buildData.html);
 		$("#roam_wrapper " + this.container + " #_" + this.godType).attr("id", this.buildData.id);
 		$("#roam_wrapper " + this.container + " #" + this.buildData.id).css(this.buildData.css);
+
+		$("#roam_wrapper " + this.container + " #" + this.buildData.id + " .god_main").addClass(this.buildData.mainAmbience);
 
 		if(this.position === "SHOW")
 		{
