@@ -2108,8 +2108,8 @@
 						"p": "HIDE",
 						"display":
 						{
-							"show": "monkey_king_show",
-							"hide": "monkey_king_hide"
+							"show": "monkey_default_show",
+							"hide": "monkey_default_hide"
 						}
 					},
 
@@ -2122,11 +2122,11 @@
 						"c_cl": "god-areas",
 						"t": "god_monkey_default_ice",
 						"a": "tween-monkey_default_main_1",
-						"p": "SHOW",
+						"p": "HIDE",
 						"display":
 						{
-							"show": "monkey_king_show",
-							"hide": "monkey_king_hide"
+							"show": "monkey_default_show",
+							"hide": "monkey_default_hide"
 						}
 					},
 
@@ -2139,7 +2139,7 @@
 						"c_cl": "god-areas",
 						"t": "god_monkey_king_ice",
 						"a": "tween-monkey_king_main",
-						"p": "SHOW",
+						"p": "HIDE",
 						"display":
 						{
 							"show": "monkey_king_show",
@@ -2152,11 +2152,10 @@
 				[
 					{
 						"x": 0,
-						"y": 2,
+						"y": 1,
 						"w": 4,
 						"h": 1,
 						"c_cl": "god-areas",
-						"instance_class": "god_trigger_hide",
 						"god_prefs":
 						[
 							{
@@ -2168,11 +2167,10 @@
 
 					{
 						"x": 0,
-						"y": 3,
-						"w": 1.5,
+						"y": 2,
+						"w": 4,
 						"h": 1,
 						"c_cl": "god-areas",
-						"instance_class": "god_trigger_show",
 						"god_prefs":
 						[
 							{
@@ -2183,17 +2181,101 @@
 					},
 
 					{
-						"x": 2.5,
-						"y": 3,
-						"w": 1.5,
+						"x": 0,
+						"y": 8,
+						"w": 4,
 						"h": 1,
 						"c_cl": "god-areas",
-						"instance_class": "god_trigger_show",
 						"god_prefs":
 						[
 							{
 								"call_funct" : "god_displayInit",
-								"call_params": ["level5_god_monkeyDefaultIce0", "SHOW"]
+								"call_params": ["level5_god_monkeyDefaultIce0", "HIDE"]
+							},
+
+							{
+								"call_funct" : "god_displayInit",
+								"call_params": ["level5_god_monkeydefaultIce1", "HIDE"]
+							}
+						]
+					},
+
+					{
+						"x": 0,
+						"y": 9,
+						"w": 4,
+						"h": 1,
+						"c_cl": "god-areas",
+						"god_prefs":
+						[
+							{
+								"call_funct" : "god_displayInit",
+								"call_params": ["level5_god_monkeydefaultIce1", "SHOW"]
+							}
+						]
+					},
+
+					{
+						"x": 0,
+						"y": 15,
+						"w": 4,
+						"h": 1,
+						"c_cl": "god-areas",
+						"god_prefs":
+						[
+							{
+								"call_funct" : "god_displayInit",
+								"call_params": ["level5_god_monkeydefaultIce1", "HIDE"]
+							},
+
+							{
+								"call_funct" : "god_displayInit",
+								"call_params": ["level5_god_monkeyKingIce", "HIDE"]
+							}
+						]
+					},
+
+					{
+						"x": 0,
+						"y": 16,
+						"w": 4,
+						"h": 1,
+						"c_cl": "god-areas",
+						"god_prefs":
+						[
+							{
+								"call_funct" : "god_displayInit",
+								"call_params": ["level5_god_monkeyKingIce", "SHOW"]
+							}
+						]
+					},
+
+					{
+						"x": 0,
+						"y": 22,
+						"w": 4,
+						"h": 1,
+						"c_cl": "god-areas",
+						"god_prefs":
+						[
+							{
+								"call_funct" : "god_displayInit",
+								"call_params": ["level5_god_monkeyKingIce", "SHOW"]
+							}
+						]
+					},
+
+					{
+						"x": 0,
+						"y": 23,
+						"w": 4,
+						"h": 1,
+						"c_cl": "god-areas",
+						"god_prefs":
+						[
+							{
+								"call_funct" : "god_displayInit",
+								"call_params": ["level5_god_monkeyKingIce", "HIDE"]
 							}
 						]
 					}

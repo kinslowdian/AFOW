@@ -344,7 +344,6 @@
 	{
 			this.container 					= "." + this.settings.c_cl;
 			this.godTriggerPrefs		= this.settings.god_prefs;
-			this.instance_class 		= this.settings.instance_class;
 
 			this.buildData.block_x	= this.settings.x * 80;
 			this.buildData.block_y	= this.settings.y * 80;
@@ -365,7 +364,6 @@
 
 			$(this.container).append(this.buildData.html);
 			$(this.container + " #" + this.buildData.id).css(this.buildData.css);
-			$(this.container + " #" + this.buildData.id).addClass(this.instance_class);
 
 			delete this.settings;
 	}
@@ -719,10 +717,13 @@
 
 			if(god_hit === godTriggerItem.buildData.id)
 			{
-				godTriggerFunction = window[godTriggerItem.godTriggerPrefs[0].call_funct];
-				godTriggerParameters = godTriggerItem.godTriggerPrefs[0].call_params;
+				for(var prefObject in godTriggerItem.godTriggerPrefs)
+				{
+					godTriggerFunction = window[godTriggerItem.godTriggerPrefs[prefObject].call_funct];
+					godTriggerParameters = godTriggerItem.godTriggerPrefs[prefObject].call_params;
 
-				godTriggerFunction.apply(this, godTriggerParameters);
+					godTriggerFunction.apply(this, godTriggerParameters);
+				}
 			}
 		}
 	}

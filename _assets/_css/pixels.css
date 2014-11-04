@@ -17,23 +17,46 @@
 
 	div[class*='tween-']
 	{
-/*		-webkit-backface-visibility	: hidden;
-		backface-visibility			: hidden;*/
+		-webkit-backface-visibility	: hidden;
+		backface-visibility			: hidden;
+
+		/*ADDED NOV 2014*/
+		-webkit-transform-style: preserve-3d;
+		transform-style: preserve-3d;
+
+/*		-webkit-transform: translateZ(0);
+		transform: translateZ(0);*/
 	}
 
 	.tweenFlickerFixManual
 	{
 		-webkit-backface-visibility	: hidden;
 		backface-visibility			: hidden;
+
+		/*ADDED NOV 2014*/
+		-webkit-transform-style: preserve-3d;
+		transform-style: preserve-3d;
+
+
+/*		-webkit-transform-style: preserve-3d;
+		transform-style: preserve-3d;
+
+		-webkit-transform: translateZ(0);
+		transform: translateZ(0);*/
 	}
 
-	.tweenFlickerFixManualAll *
+	/*ADDED NOV 2014 HARD FORCE FIX*/
+	.tweenFlickerFixManualAll, .tweenFlickerFixManualAll *
 	{
 		-webkit-backface-visibility	: hidden;
 		backface-visibility			: hidden;
 
 		-webkit-transform-style: preserve-3d;
 		transform-style: preserve-3d;
+/*
+		-webkit-transform: translateZ(0);
+		transform: translateZ(0);*/
+
 	}
 
 /* ----------------------------------------------------------------------- GFX-FIX */
