@@ -23,9 +23,6 @@
 		/*ADDED NOV 2014*/
 		-webkit-transform-style: preserve-3d;
 		transform-style: preserve-3d;
-
-/*		-webkit-transform: translateZ(0);
-		transform: translateZ(0);*/
 	}
 
 	.tweenFlickerFixManual
@@ -36,13 +33,6 @@
 		/*ADDED NOV 2014*/
 		-webkit-transform-style: preserve-3d;
 		transform-style: preserve-3d;
-
-
-/*		-webkit-transform-style: preserve-3d;
-		transform-style: preserve-3d;
-
-		-webkit-transform: translateZ(0);
-		transform: translateZ(0);*/
 	}
 
 	/*ADDED NOV 2014 HARD FORCE FIX*/
@@ -53,9 +43,6 @@
 
 		-webkit-transform-style: preserve-3d;
 		transform-style: preserve-3d;
-/*
-		-webkit-transform: translateZ(0);
-		transform: translateZ(0);*/
 
 	}
 
@@ -555,6 +542,13 @@
 		background-size: 640px 960px;
 	}
 
+	.pixels_monkeyKingdomForest
+	{
+		background-image: url(../_img/monkeyKingdomSprite_1x.png);
+		background-repeat: no-repeat;
+		background-size: 640px 960px;
+	}
+
 /* ----------------------------------------------------------------------- GENERAL */
 
 
@@ -927,6 +921,11 @@
 		{
 			background-image: url(../_img/monkeyKingdomIceSprite_1x.png);
 		}
+
+		.pixels_monkeyKingdomForest
+		{
+			background-image: url(../_img/monkeyKingdomSprite_1x.png);
+		}
 	}
 
 
@@ -1253,6 +1252,11 @@
 		.pixels_monkeyKingdomIce
 		{
 			background-image: url(../_img/monkeyKingdomIceSprite_2x.png);
+		}
+
+		.pixels_monkeyKingdomForest
+		{
+			background-image: url(../_img/monkeyKingdomSprite_2x.png);
 		}
 	}
 

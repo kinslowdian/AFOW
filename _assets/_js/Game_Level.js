@@ -302,6 +302,10 @@
 		this.buildData.block_y		= this.settings.y * 80;
 		this.buildData.block_w		= this.settings.w * 80;
 		this.buildData.block_h		= this.settings.h * 80;
+		this.buildData.bg					= this.settings.b_cl;
+		this.buildData.trees			= this.settings.t_cl;
+		this.buildData.ground			= this.settings.g_cl;
+		this.buildData.pixels			= this.settings.p_cl;
 
 		this.buildData.mainAmbience = this.settings.a;
 
@@ -329,6 +333,11 @@
 		{
 			$("#roam_wrapper " + this.container + " #" + this.buildData.id + " .god_holder").addClass(this.class_display.hide);
 		}
+
+		$("#roam_wrapper " + this.container + " #" + this.buildData.id).addClass(this.buildData.bg);
+		$("#roam_wrapper " + this.container + " #" + this.buildData.id + " .treePush").addClass(this.buildData.trees);
+		$("#roam_wrapper " + this.container + " #" + this.buildData.id + " .god_ground").addClass(this.buildData.ground);
+		$("#roam_wrapper " + this.container + " #" + this.buildData.id + " .pixelPush").addClass(this.buildData.pixels);
 
 		delete this.settings;
 	};
