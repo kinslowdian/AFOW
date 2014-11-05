@@ -191,6 +191,13 @@
 /* if(screen.width >= 1200) */
 @media screen and (min-width:1200px)
 {
+	/* WALK ANIMATION DESKTOP ONLY */
+	.tween-mapPlayerWalk_loop
+	{
+		-webkit-animation	: tweenMapPlayerWalkLoopFrames 0.09s steps(8) 0 infinite; /* QUICK- 0.12s */
+		animation			: tweenMapPlayerWalkLoopFrames 0.09s steps(8) 0 infinite; /* QUICK- 0.12s */
+	}
+
 	/* INFO */
 	.multiUseInfo_tl
 	{

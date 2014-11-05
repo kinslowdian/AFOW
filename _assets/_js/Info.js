@@ -1444,6 +1444,7 @@
 				// $(screen_oneInfoUse.screenRoot + " .oneUseInfo_win .oneUseInfo_winScreen_centerFocus").append(buildData.art_html);
 
 				screen_oneInfoUse.dropEndFunct = battleWin_display;
+				screen_oneInfoUse.riseEndFunct = battleWin_backToNormal;
 
 				break;
 			}
@@ -1510,6 +1511,11 @@
 
 		timerList_add(delay_rise);
 		delay_rise.time(4, onUseInfoScreen_rise);
+	}
+
+	function battleWin_backToNormal()
+	{
+		optionsTrigger_init(true);
 	}
 
 	// -------- BATTLE_WIN

@@ -782,8 +782,11 @@
 
 	.tween-player-block
 	{
-		-webkit-transition	: -webkit-transform 0.18s ease-in-out; /* QUICK- 0.24s */
-		transition			: transform 0.18s ease-in-out; /* QUICK- 0.24s */
+		/*-webkit-transition	: -webkit-transform 0.18s ease-in-out;*/ /* QUICK- 0.24s */
+		/*transition			: transform 0.18s ease-in-out;*/ /* QUICK- 0.24s */
+
+		-webkit-transition	: -webkit-transform 140ms linear;
+		transition			: transform 140ms linear;
 	}
 
 	.mapPlayer_head_default
@@ -945,8 +948,8 @@
 
 	.tween-mapPlayerWalk_loop
 	{
-		-webkit-animation	: tweenMapPlayerWalkLoopFrames 0.09s steps(8) 0 infinite; /* QUICK- 0.12s */
-		animation			: tweenMapPlayerWalkLoopFrames 0.09s steps(8) 0 infinite; /* QUICK- 0.12s */
+		/*-webkit-animation	: tweenMapPlayerWalkLoopFrames 0.09s steps(8) 0 infinite;*/ /* QUICK- 0.12s */
+		/*animation			: tweenMapPlayerWalkLoopFrames 0.09s steps(8) 0 infinite;*/ /* QUICK- 0.12s */
 	}
 
 	.tween-mapPlayerWalk_stop
@@ -968,50 +971,89 @@
 
 	.tween-player-walkX
 	{
-		-webkit-animation	: tweenPlayerWalkX_Frames 0.18s linear infinite; /* QUICK- 0.24s */ /* 0.6s */
-		animation			: tweenPlayerWalkX_Frames 0.18s linear infinite; /* QUICK- 0.24s */ /* 0.6s */
+		/*-webkit-animation	: tweenPlayerWalkX_Frames 0.18s linear infinite;*/ /* QUICK- 0.24s */ /* 0.6s */
+		/*animation			: tweenPlayerWalkX_Frames 0.18s linear infinite;*/ /* QUICK- 0.24s */ /* 0.6s */
+
+/*		-webkit-transform-origin: 50% 50%;
+		transform-origin: 50% 50%;*/
+
+		-webkit-transform-origin: 50% 100%;
+		transform-origin: 50% 100%;
+
+		-webkit-animation	: tweenPlayerWalkX_Frames 270ms linear infinite;
+		animation			: tweenPlayerWalkX_Frames 270ms linear infinite;
 	}
 
 	@-webkit-keyframes tweenPlayerWalkX_Frames
 	{
-		0%		{-webkit-transform: translateX(0px);}
+/*		0%		{-webkit-transform: translateX(0px);}
 		25%		{-webkit-transform: translateX(-2px);}
 		50% 	{-webkit-transform: translateX(0px);}
 		75%		{-webkit-transform: translateX(2px);}
-		100% 	{-webkit-transform: translateX(0px);}
+		100% 	{-webkit-transform: translateX(0px);}*/
+
+		0%		{-webkit-transform: translateX(0px) rotate(0deg);}
+		25%		{-webkit-transform: translateX(-4px) rotate(-10deg);}
+		50% 	{-webkit-transform: translateX(0px) rotate(0deg);}
+		75%		{-webkit-transform: translateX(4px) rotate(10deg);}
+		100% 	{-webkit-transform: translateX(0px) rotate(0deg);}
 	}
 
 	@keyframes tweenPlayerWalkX_Frames
 	{
-		0%		{transform: translateX(0px);}
+/*		0%		{transform: translateX(0px);}
 		25%		{transform: translateX(-2px);}
 		50% 	{transform: translateX(0px);}
 		75%		{transform: translateX(2px);}
-		100% 	{transform: translateX(0px);}
+		100% 	{transform: translateX(0px);}*/
+
+		0%		{transform: translateX(0px) rotate(0deg);}
+		25%		{transform: translateX(-4px) rotate(-10deg);}
+		50% 	{transform: translateX(0px) rotate(0deg);}
+		75%		{transform: translateX(4px) rotate(10deg);}
+		100% 	{transform: translateX(0px) rotate(0deg);}
 	}
 
 	.tween-player-walkY
 	{
-		-webkit-animation	: tweenPlayerWalkY_Frames 0.18s linear infinite; /* QUICK- 0.24s */ /* 0.6s */
-		animation			: tweenPlayerWalkY_Frames 0.18s linear infinite; /* QUICK- 0.24s */ /* 0.6s */
+		/*-webkit-animation	: tweenPlayerWalkY_Frames 0.18s linear infinite;*/ /* QUICK- 0.24s */ /* 0.6s */
+		/*animation			: tweenPlayerWalkY_Frames 0.18s linear infinite;*/ /* QUICK- 0.24s */ /* 0.6s */
+
+		-webkit-transform-origin: 50% 100%;
+		transform-origin: 50% 100%;
+
+		-webkit-animation	: tweenPlayerWalkY_Frames 270ms linear infinite; /* QUICK- 0.24s */ /* 0.6s */
+		animation			: tweenPlayerWalkY_Frames 270ms linear infinite; /* QUICK- 0.24s */ /* 0.6s */
 	}
 
 	@-webkit-keyframes tweenPlayerWalkY_Frames
 	{
-		0%		{-webkit-transform: translateY(0px);}
+/*		0%		{-webkit-transform: translateY(0px);}
 		25%		{-webkit-transform: translateY(-2px);}
 		50% 	{-webkit-transform: translateY(0px);}
 		75%		{-webkit-transform: translateY(2px);}
-		100% 	{-webkit-transform: translateY(0px);}
+		100% 	{-webkit-transform: translateY(0px);}*/
+
+		0%		{-webkit-transform: translateY(0px) rotate(0deg);}
+		25%		{-webkit-transform: translateY(-4px) rotate(-10deg);}
+		50% 	{-webkit-transform: translateY(0px) rotate(0deg);}
+		75%		{-webkit-transform: translateY(4px) rotate(10deg);}
+		100% 	{-webkit-transform: translateY(0px) rotate(0deg);}
 	}
 
 	@keyframes tweenPlayerWalkY_Frames
 	{
-		0%		{transform: translateY(0px);}
+/*		0%		{transform: translateY(0px);}
 		25%		{transform: translateY(-2px);}
 		50% 	{transform: translateY(0px);}
 		75%		{transform: translateY(2px);}
-		100% 	{transform: translateY(0px);}
+		100% 	{transform: translateY(0px);}*/
+
+		0%		{transform: translateY(0px) rotate(0deg);}
+		25%		{transform: translateY(-4px) rotate(-10deg);}
+		50% 	{transform: translateY(0px) rotate(0deg);}
+		75%		{transform: translateY(4px) rotate(10deg);}
+		100% 	{transform: translateY(0px) rotate(0deg);}
 	}
 
 	.actionCloud
@@ -6915,13 +6957,13 @@
 
 .portal_bleed_drop_hide
 {
-	-webkit_transform: scaleY(0);
+	-webkit-transform: scaleY(0);
 	transform: scaleY(0);
 }
 
 .portal_bleed_drop_show
 {
-	-webkit_transform: scaleY(1);
+	-webkit-transform: scaleY(1);
 	transform: scaleY(1);
 }
 
