@@ -193,8 +193,8 @@
 
 	#displayErrorWrapper .tween-displayError
 	{
-		-webkit-transition	: -webkit-transform 0.6s ease-in-out;
-		transition			: transform 0.6s ease-in-out;
+		-webkit-transition	: -webkit-transform 600ms ease-in-out;
+		transition			: transform 600ms ease-in-out;
 	}
 
 	#displayErrorWrapper .displayErrorShow
@@ -292,8 +292,8 @@
 
 	#displayErrorWrapper .tween-displayError-base
 	{
-		-webkit-transition	: opacity 0.3s linear 0s;
-		transition			: opacity 0.3s linear 0s;
+		-webkit-transition	: opacity 300ms linear 0s;
+		transition			: opacity 300ms linear 0s;
 	}
 
 	#displayErrorWrapper .displayError-btm .boss-head-fullBleed
@@ -489,8 +489,8 @@
 		-webkit-transform-origin	: 0% 60px;
 		transform-origin			: 0% 60px;
 
-		-webkit-transition			: -webkit-transform 0.2s ease-in-out;
-		transition					: transform 0.2s ease-in-out;
+		-webkit-transition			: -webkit-transform 200ms ease-in-out;
+		transition					: transform 200ms ease-in-out;
 	}
 
 	.boss-armR-Cont
@@ -498,8 +498,8 @@
 		-webkit-transform-origin	: 0% 60px;
 		transform-origin			: 0% 60px;
 
-		-webkit-transition			: -webkit-transform 0.2s ease-in-out;
-		transition					: transform 0.2s ease-in-out;
+		-webkit-transition			: -webkit-transform 200ms ease-in-out;
+		transition					: transform 200ms ease-in-out;
 	}
 
 	.boss-armL-Cont-UP
@@ -817,8 +817,8 @@
 
 		opacity: 0;
 
-		-webkit-transition	: opacity 0.2s linear;
-		transition			: opacity 0.2s linear;
+		-webkit-transition	: opacity 200ms linear;
+		transition			: opacity 200ms linear;
 	}
 
 	.player-sprite
@@ -888,8 +888,8 @@
 
 	.tween-map-goat-head
 	{
-		-webkit-animation	: tweenMapGoatHeadFrames 0.4s ease-in-out infinite;
-		animation			: tweenMapGoatHeadFrames 0.4s ease-in-out infinite;
+		-webkit-animation	: tweenMapGoatHeadFrames 400ms ease-in-out infinite;
+		animation			: tweenMapGoatHeadFrames 400ms ease-in-out infinite;
 	}
 
 	@-webkit-keyframes tweenMapGoatHeadFrames
@@ -908,8 +908,8 @@
 
 	.tween-map-goat-hand-L
 	{
-		-webkit-animation	: tweenMapGoatHandL_Frames 0.6s linear infinite;
-		animation			: tweenMapGoatHandL_Frames 0.6s linear infinite;
+		-webkit-animation	: tweenMapGoatHandL_Frames 600ms linear infinite;
+		animation			: tweenMapGoatHandL_Frames 600ms linear infinite;
 	}
 
 	@-webkit-keyframes tweenMapGoatHandL_Frames
@@ -928,8 +928,8 @@
 
 	.tween-map-goat-hand-R
 	{
-		-webkit-animation	: tweenMapGoatHandR_Frames 0.6s linear infinite;
-		animation			: tweenMapGoatHandR_Frames 0.6s linear infinite;
+		-webkit-animation	: tweenMapGoatHandR_Frames 600ms linear infinite;
+		animation			: tweenMapGoatHandR_Frames 600ms linear infinite;
 	}
 
 	@-webkit-keyframes tweenMapGoatHandR_Frames
@@ -1068,8 +1068,8 @@
 
 	.tween-actionCloud
 	{
-		-webkit-transition: opacity 0.2s linear;
-		transition: opacity 0.2s linear;
+		-webkit-transition: opacity 200ms linear;
+		transition: opacity 200ms linear;
 	}
 
 	.actionCloudMain
@@ -1126,8 +1126,8 @@
 	{
 		visibility: visible;
 
-		-webkit-animation: tweenActionCloudSpriteOuterFrames 0.3s ease-in-out forwards;
-		animation: tweenActionCloudSpriteOuterFrames 0.3s ease-in-out forwards;
+		-webkit-animation: tweenActionCloudSpriteOuterFrames 300ms ease-in-out forwards;
+		animation: tweenActionCloudSpriteOuterFrames 300ms ease-in-out forwards;
 	}
 
 	@-webkit-keyframes tweenActionCloudSpriteOuterFrames
@@ -1148,8 +1148,8 @@
 	{
 		visibility: visible;
 
-		-webkit-animation: tweenActionCloudSpriteOuterAltFrames 0.6s ease-in-out forwards;
-		animation: tweenActionCloudSpriteOuterAltFrames 0.6s ease-in-out forwards;
+		-webkit-animation: tweenActionCloudSpriteOuterAltFrames 600ms ease-in-out forwards;
+		animation: tweenActionCloudSpriteOuterAltFrames 600ms ease-in-out forwards;
 	}
 
 	@-webkit-keyframes tweenActionCloudSpriteOuterAltFrames
@@ -1170,8 +1170,8 @@
 	{
 		visibility: visible;
 
-		-webkit-animation: tweenActionCloudSpriteInnerFrames 0.2s ease-in-out infinite;
-		animation: tweenActionCloudSpriteInnerFrames 0.2s ease-in-out inherit;
+		-webkit-animation: tweenActionCloudSpriteInnerFrames 200ms ease-in-out infinite;
+		animation: tweenActionCloudSpriteInnerFrames 200ms ease-in-out inherit;
 	}
 
 	@-webkit-keyframes tweenActionCloudSpriteInnerFrames
@@ -1203,8 +1203,8 @@
 		-webkit-transform-origin: 50% 50%;
 		transform-origin: 50% 50%;
 
-		-webkit-animation: tweenFieldSmashFrames 0.2s linear forwards;
-		animation: tweenFieldSmashFrames 0.2s linear forwards;
+		-webkit-animation: tweenFieldSmashFrames 200ms linear forwards;
+		animation: tweenFieldSmashFrames 200ms linear forwards;
 	}
 
 	@-webkit-keyframes tweenFieldSmashFrames
@@ -1319,8 +1319,8 @@
 
 	.tween-map-enemy_40x40-head
 	{
-		-webkit-animation	: tweenMapEnemy40x40HeadFrames 0.4s ease-in-out infinite;
-		animation			: tweenMapEnemy40x40HeadFrames 0.4s ease-in-out infinite;
+		-webkit-animation	: tweenMapEnemy40x40HeadFrames 400ms ease-in-out infinite;
+		animation			: tweenMapEnemy40x40HeadFrames 400ms ease-in-out infinite;
 	}
 
 	@-webkit-keyframes tweenMapEnemy40x40HeadFrames
@@ -1339,8 +1339,8 @@
 
 	.tween-map-enemy_40x40-hand-L
 	{
-		-webkit-animation	: tweenMapEnemy40x40HandL_Frames 0.6s linear infinite;
-		animation			: tweenMapEnemy40x40HandL_Frames 0.6s linear infinite;
+		-webkit-animation	: tweenMapEnemy40x40HandL_Frames 600ms linear infinite;
+		animation			: tweenMapEnemy40x40HandL_Frames 600ms linear infinite;
 	}
 
 	@-webkit-keyframes tweenMapEnemy40x40HandL_Frames
@@ -1359,8 +1359,8 @@
 
 	.tween-map-enemy_40x40-hand-R
 	{
-		-webkit-animation	: tweenMapEnemy40x40HandR_Frames 0.6s linear infinite;
-		animation			: tweenMapEnemy40x40HandR_Frames 0.6s linear infinite;
+		-webkit-animation	: tweenMapEnemy40x40HandR_Frames 600ms linear infinite;
+		animation			: tweenMapEnemy40x40HandR_Frames 600ms linear infinite;
 	}
 
 	@-webkit-keyframes tweenMapEnemy40x40HandR_Frames
@@ -1379,8 +1379,8 @@
 
 	.tween-map-enemy_40x40_loop
 	{
-		-webkit-animation	: tweenMapEnemy40x40WalkLoopFrames 0.12s steps(8) 0 infinite;
-		animation			: tweenMapEnemy40x40WalkLoopFrames 0.12s steps(8) 0 infinite;
+		-webkit-animation	: tweenMapEnemy40x40WalkLoopFrames 120ms steps(8) 0 infinite;
+		animation			: tweenMapEnemy40x40WalkLoopFrames 120ms steps(8) 0 infinite;
 	}
 
 	.tween-map-enemy_40x40_stop
@@ -1941,8 +1941,8 @@
 
 	.tween-waterEdge
 	{
-		-webkit-animation: tweenWaterEdgeFrames 0.1s linear infinite;
-		animation: tweenWaterEdgeFrames 0.1s linear infinite;
+		-webkit-animation: tweenWaterEdgeFrames 100ms linear infinite;
+		animation: tweenWaterEdgeFrames 100ms linear infinite;
 	}
 
 	@-webkit-keyframes tweenWaterEdgeFrames
@@ -1961,8 +1961,8 @@
 
 	.tween-waterFishSpritePixels
 	{
-		-webkit-animation: tweenWaterFishSpritePixelsFrames 0.6s ease-in-out infinite;
-		animation: tweenWaterFishSpritePixelsFrames 0.6s ease-in-out infinite;
+		-webkit-animation: tweenWaterFishSpritePixelsFrames 600ms ease-in-out infinite;
+		animation: tweenWaterFishSpritePixelsFrames 600ms ease-in-out infinite;
 	}
 
 	@-webkit-keyframes tweenWaterFishSpritePixelsFrames
@@ -2181,24 +2181,24 @@
 
 	.rain-0
 	{
-		-webkit-animation-duration: 0.6s;
-		animation-duration: 0.6s;
+		-webkit-animation-duration: 600ms;
+		animation-duration: 600ms;
 
 		z-index: 0;
 	}
 
 	.rain-1
 	{
-		-webkit-animation-duration: 0.4s;
-		animation-duration:0.4s;
+		-webkit-animation-duration: 400ms;
+		animation-duration: 400ms;
 
 		z-index: 1;
 	}
 
 	.rain-2
 	{
-		-webkit-animation-duration: 0.2s;
-		animation-duration: 0.2s;
+		-webkit-animation-duration: 200ms;
+		animation-duration: 200ms;
 
 		z-index: 2;
 	}
@@ -2587,14 +2587,14 @@
 
 	.tween-portalScreen_wrapper
 	{
-		-webkit-transition	: -webkit-transform 0.6s ease-in-out;
-		transition 			: transform 0.6s ease-in-out;
+		-webkit-transition	: -webkit-transform 600ms ease-in-out;
+		transition 			: transform 600ms ease-in-out;
 	}
 
 	.tween-portalScreen_bleedFill
 	{
-		-webkit-transition: opacity 0.3s linear;
-		transition: opacity 0.3s linear;
+		-webkit-transition: opacity 300ms linear;
+		transition: opacity 300ms linear;
 	}
 
 	#portalScreen .portalScreen_fade
@@ -2611,8 +2611,8 @@
 
 	.tween-portalScreen_fade
 	{
-		-webkit-transition	: opacity 0.3s ease-in-out 0s;
-		transition 			: opacity 0.3s ease-in-out 0s;
+		-webkit-transition	: opacity 300ms ease-in-out 0s;
+		transition 			: opacity 300ms ease-in-out 0s;
 	}
 
 	#portalScreen .portalScreen_header
@@ -2634,8 +2634,8 @@
 
 	.tween-portalScreen_header
 	{
-		-webkit-transition	: opacity 0.5s ease;
-		transition			: opacity 0.5s ease;
+		-webkit-transition	: opacity 500ms ease;
+		transition			: opacity 500ms ease;
 	}
 
 	#portalScreen .portalScreen_header h1
@@ -2755,8 +2755,8 @@
 
 	.tween-portalScreen_weird
 	{
-		-webkit-animation: tweenPortalScreenWeirdFrames 0.5s linear infinite;
-		animation: tweenPortalScreenWeirdFrames 0.5s linear infinite;
+		-webkit-animation: tweenPortalScreenWeirdFrames 500ms linear infinite;
+		animation: tweenPortalScreenWeirdFrames 500ms linear infinite;
 	}
 
 	@-webkit-keyframes tweenPortalScreenWeirdFrames
@@ -2798,8 +2798,8 @@
 
 	.tween-portalScreen_miniMoon
 	{
-		-webkit-transition: opacity 0.6s ease;
-		transition: opacity 0.6s ease;
+		-webkit-transition: opacity 600ms ease;
+		transition: opacity 600ms ease;
 
 /*
 		-webkit-transition: -webkit-filter 0.4s ease-in-out 0.4s;
@@ -2844,8 +2844,8 @@
 
 		z-index: 100;
 
-		-webkit-transition: opacity 0.5s ease;
-		transition: opacity 0.5s ease;
+		-webkit-transition: opacity 500ms ease;
+		transition: opacity 500ms ease;
 	}
 
 	#touchPad div
@@ -2896,8 +2896,8 @@
 /*		-webkit-transform: scale(0);
 		transform: scale(0);*/
 
-		-webkit-transition	: all 0.5s ease;
-		transition			: all 0.5s ease;
+		-webkit-transition	: all 500ms ease;
+		transition			: all 500ms ease;
 
 		left: 0;
 		top: 0;
@@ -2943,8 +2943,8 @@
 
 		/*opacity: 0;*/
 
-		-webkit-transition: opacity 0.2s linear;
-		transition: opacity 0.2s linear;
+		-webkit-transition: opacity 200ms linear;
+		transition: opacity 200ms linear;
 
 		z-index: 0;
 	}
@@ -3005,8 +3005,8 @@
 		-webkit-transform	: scale(1);
 		transform			: scale(1);
 
-		-webkit-transition	: all 0.5s ease;
-		transition			: all 0.5s ease;
+		-webkit-transition	: all 500ms ease;
+		transition			: all 500ms ease;
 
 		z-index: 0;
 	}
@@ -3035,8 +3035,8 @@
 
 	.tween-preBattle_options
 	{
-		-webkit-transition: -webkit-transform 0.6s ease-in-out;
-		transition: transform 0.6s ease-in-out;
+		-webkit-transition: -webkit-transform 600ms ease-in-out;
+		transition: transform 600ms ease-in-out;
 	}
 
 	.preBattle_options h1
@@ -3119,8 +3119,8 @@
 
 		display: inline-block;
 
-		-webkit-transition: color 0.2s ease, -webkit-transform 0.2s ease;
-		transition: color 0.2s ease, transform 0.2s ease;
+		-webkit-transition: color 200ms ease, -webkit-transform 200ms ease;
+		transition: color 200ms ease, transform 200ms ease;
 	}
 
 	.preBattle_title_enemy .preBattle_title_action:hover
@@ -3182,8 +3182,8 @@
 
 	.tween-info-cloud
 	{
-		-webkit-transition	: opacity 0.2s ease;
-		transition 			: opacity 0.2s ease;
+		-webkit-transition	: opacity 200ms ease;
+		transition 			: opacity 200ms ease;
 	}
 
 	#info-cloud p
@@ -3294,8 +3294,8 @@
 
 	.tween-battle-hint
 	{
-		-webkit-transition: -webkit-transform 0.2s ease-in-out;
-		transition: transform 0.2s ease-in-out;
+		-webkit-transition: -webkit-transform 200ms ease-in-out;
+		transition: transform 200ms ease-in-out;
 	}
 
 	#battle-nav
@@ -3314,8 +3314,8 @@
 
 	.tween-battle-nav
 	{
-		-webkit-transition	: -webkit-transform 0.4s ease-in-out;
-		transition			: transform 0.4s ease-in-out;
+		-webkit-transition	: -webkit-transform 400ms ease-in-out;
+		transition			: transform 400ms ease-in-out;
 	}
 
 	.tween-battle-nav-transition
@@ -3360,8 +3360,8 @@
 		-webkit-transform-origin	: 50% 50%;
 		transform-origin			: 50% 50%;
 
-		-webkit-transition	: -webkit-transform 0.2s linear, opacity 0.2s linear;
-		transition			: transform 0.2s linear, opacity 0.2s linear;
+		-webkit-transition	: -webkit-transform 200ms linear, opacity 200ms linear;
+		transition			: transform 200ms linear, opacity 200ms linear;
 
 		background-position: 0 0;
 	}
@@ -3385,8 +3385,8 @@
 
 		opacity: 0;
 
-		-webkit-transition	: opacity 0.4s linear;
-		transition			: opacity 0.4s linear;
+		-webkit-transition	: opacity 400ms linear;
+		transition			: opacity 400ms linear;
 
 		z-index: 1;
 	}
@@ -3410,14 +3410,14 @@
 
 	.battleNavSprite-mouseEvents
 	{
-		-webkit-transition	: opacity 0.2s linear;
-		transition			: opacity 0.2s linear;
+		-webkit-transition	: opacity 200ms linear;
+		transition			: opacity 200ms linear;
 	}
 
 	.tween-battle-selected
 	{
-		-webkit-animation	: tweenBattleSelectedFrames 0.4s ease-in-out infinite;
-		animation			: tweenBattleSelectedFrames 0.4s ease-in-out infinite;
+		-webkit-animation	: tweenBattleSelectedFrames 400ms ease-in-out infinite;
+		animation			: tweenBattleSelectedFrames 400ms ease-in-out infinite;
 	}
 
 	@-webkit-keyframes tweenBattleSelectedFrames
@@ -3456,8 +3456,8 @@
 
 	.tween-battle-nav-fight
 	{
-		-webkit-transition	: -webkit-transform 0.4s ease-in-out;
-		transition			: transform 0.4s ease-in-out;
+		-webkit-transition	: -webkit-transform 400ms ease-in-out;
+		transition			: transform 400ms ease-in-out;
 	}
 
 	/* PLAYER1 & PLAYER2 */
@@ -3509,8 +3509,8 @@
 
 	.tween-battleNav-player-StartPos
 	{
-		-webkit-transition: -webkit-transform 0.2s ease;
-		transition: transform 0.2s ease;
+		-webkit-transition: -webkit-transform 200ms ease;
+		transition: transform 200ms ease;
 	}
 
 	.battleNav-player-head-main
@@ -3541,8 +3541,8 @@
 
 	.tween-battleNav-player-head
 	{
-		-webkit-animation	: tweenBattleNavPlayerHeadFrames 0.4s ease-in-out infinite;
-		animation			: tweenBattleNavPlayerHeadFrames 0.4s ease-in-out infinite;
+		-webkit-animation	: tweenBattleNavPlayerHeadFrames 400ms ease-in-out infinite;
+		animation			: tweenBattleNavPlayerHeadFrames 400ms ease-in-out infinite;
 	}
 
 	@-webkit-keyframes tweenBattleNavPlayerHeadFrames
@@ -3561,8 +3561,8 @@
 
 	.tween-battleNav-player-headWeak
 	{
-		-webkit-animation	: tweenBattleNavPlayerHeadWeakFrames 0.1s ease-in-out infinite;
-		animation			: tweenBattleNavPlayerHeadWeakFrames 0.1s ease-in-out infinite;
+		-webkit-animation	: tweenBattleNavPlayerHeadWeakFrames 100ms ease-in-out infinite;
+		animation			: tweenBattleNavPlayerHeadWeakFrames 100ms ease-in-out infinite;
 	}
 
 	@-webkit-keyframes tweenBattleNavPlayerHeadWeakFrames
@@ -3596,8 +3596,8 @@
 
 	.tween-battleNav-player-eyes
 	{
-		-webkit-transition: -webkit-transform 0.4s ease;
-		transition: transform 0.4s ease;
+		-webkit-transition: -webkit-transform 400ms ease;
+		transition: transform 400ms ease;
 	}
 
 	.battleNav-player-eyes-lookF
@@ -3671,14 +3671,14 @@
 
 	.tween-battleNav-player-hands
 	{
-		-webkit-animation	: tweenBattleNavPlayerHandsFrames 0.4s ease-in-out infinite;
-		animation			: tweenBattleNavPlayerHandsFrames 0.4s ease-in-out infinite;
+		-webkit-animation	: tweenBattleNavPlayerHandsFrames 400ms ease-in-out infinite;
+		animation			: tweenBattleNavPlayerHandsFrames 400ms ease-in-out infinite;
 	}
 
 	.tween-battleNav-player-handsSuper
 	{
-		-webkit-animation	: tweenBattleNavPlayerHandsFrames 0.1s ease-in-out infinite;
-		animation			: tweenBattleNavPlayerHandsFrames 0.1s ease-in-out infinite;
+		-webkit-animation	: tweenBattleNavPlayerHandsFrames 100ms ease-in-out infinite;
+		animation			: tweenBattleNavPlayerHandsFrames 100ms ease-in-out infinite;
 	}
 
 	@-webkit-keyframes tweenBattleNavPlayerHandsFrames
@@ -3697,8 +3697,8 @@
 
 	.tween-battleNav-player-handsWeak
 	{
-		-webkit-animation	: tweenBattleNavPlayerHandsWeakFrames 0.1s ease-in-out infinite;
-		animation			: tweenBattleNavPlayerHandsWeakFrames 0.1s ease-in-out infinite;
+		-webkit-animation	: tweenBattleNavPlayerHandsWeakFrames 100ms ease-in-out infinite;
+		animation			: tweenBattleNavPlayerHandsWeakFrames 100ms ease-in-out infinite;
 	}
 
 	@-webkit-keyframes tweenBattleNavPlayerHandsWeakFrames
@@ -3791,8 +3791,8 @@
 
 	.tween-battleNav-player-speech
 	{
-		-webkit-transition: all 0.1s linear;
-		transition: all 0.1s linear;
+		-webkit-transition: all 100ms linear;
+		transition: all 100ms linear;
 	}
 
 
@@ -3902,8 +3902,8 @@
 
 	.tween-battleNav-superPunchSprite
 	{
-		-webkit-transition: -webkit-transform 0.2s ease-in-out, opacity 0s linear;
-		transition: transform 0.2s ease-in-out, opacity 0s linear;
+		-webkit-transition: -webkit-transform 200ms ease-in-out, opacity 0s linear;
+		transition: transform 200ms ease-in-out, opacity 0s linear;
 	}
 
 
@@ -3929,8 +3929,8 @@
 	{
 		opacity: 0.4;
 
-		-webkit-transition-delay: 0.1s;
-		transition-delay: 0.1s;
+		-webkit-transition-delay: 100ms;
+		transition-delay: 100ms;
 
 		-webkit-transform: translateX(0px);
 		transform: translateX(0px);
@@ -3956,8 +3956,8 @@
 
 	.tween-superPunchSpriteAmbient
 	{
-		-webkit-animation: tweenSuperPunchSpriteAmbientFrames 0.1s steps(3) 0 infinite;
-		animation: tweenSuperPunchSpriteAmbientFrames 0.1s steps(3) 0 infinite;
+		-webkit-animation: tweenSuperPunchSpriteAmbientFrames 100ms steps(3) 0 infinite;
+		animation: tweenSuperPunchSpriteAmbientFrames 100ms steps(3) 0 infinite;
 	}
 
 	@-webkit-keyframes tweenSuperPunchSpriteAmbientFrames
@@ -3980,8 +3980,8 @@
 
 	.battleNav-smash-head-KILLER
 	{
-		-webkit-transition-duration: 0.3s;
-		transition-duration: 0.3s;
+		-webkit-transition-duration: 300ms;
+		transition-duration: 300ms;
 
 		-webkit-transform: rotate(-30deg) translateY(-30px);
 		transform: rotate(-30deg) translateY(-30px);
@@ -3995,8 +3995,8 @@
 
 	.battleNav-smash-body-KILLER
 	{
-		-webkit-transition-duration: 0.3s;
-		transition-duration: 0.3s;
+		-webkit-transition-duration: 300ms;
+		transition-duration: 300ms;
 
 		-webkit-transform: rotate(-14deg) translateX(-24px) translateY(-10px);
 		transform: rotate(-14deg) translateX(-24px) translateY(-10px);
@@ -4004,8 +4004,8 @@
 
 	.battleNav-smash-legs-KILLER
 	{
-		-webkit-transition-duration: 0.3s;
-		transition-duration: 0.3s;
+		-webkit-transition-duration: 300ms;
+		transition-duration: 300ms;
 
 		-webkit-transform: rotate(-4deg) translateX(-4px) translateY(-6px);
 		transform: rotate(-4deg) translateX(-4px) translateY(-6px);
@@ -4013,8 +4013,8 @@
 
 	.tween-battleNav-smash
 	{
-		-webkit-transition: -webkit-transform 0.1s linear;
-		transition: transform 0.1s linear;
+		-webkit-transition: -webkit-transform 100ms linear;
+		transition: transform 100ms linear;
 	}
 
 	.battleNav-player-shock
@@ -4066,8 +4066,8 @@
 		-webkit-transform-origin: 50% 50%;
 		transform-origin: 50% 50%;
 
-		-webkit-animation: tweenBattleNavPlayerShockSpriteFrames 0.3s steps(3) 0 infinite;
-		animation: tweenBattleNavPlayerShockSpriteFrames 0.3s steps(3) 0 infinite;
+		-webkit-animation: tweenBattleNavPlayerShockSpriteFrames 300ms steps(3) 0 infinite;
+		animation: tweenBattleNavPlayerShockSpriteFrames 300ms steps(3) 0 infinite;
 	}
 
 	@-webkit-keyframes tweenBattleNavPlayerShockSpriteFrames
@@ -4143,8 +4143,8 @@
 
  	.tween-battleCute-bird-body
  	{
-	 	-webkit-animation	: tweenBattleCuteBirdBodyFrames 0.4s ease-in-out infinite;
-	 	animation			: tweenBattleCuteBirdBodyFrames 0.4s ease-in-out infinite;
+	 	-webkit-animation	: tweenBattleCuteBirdBodyFrames 400ms ease-in-out infinite;
+	 	animation			: tweenBattleCuteBirdBodyFrames 400ms ease-in-out infinite;
  	}
 
  	@-webkit-keyframes tweenBattleCuteBirdBodyFrames
@@ -4190,8 +4190,8 @@
 
  	.tween-battleCute-bird-arm-main-intoFly
  	{
-	 	-webkit-animation	: tweenBattleCuteBirdArmMainIntoFlyFrames 0.2s ease-out forwards;
-	 	animation			: tweenBattleCuteBirdArmMainIntoFlyFrames 0.2s ease-out forwards;
+	 	-webkit-animation	: tweenBattleCuteBirdArmMainIntoFlyFrames 200ms ease-out forwards;
+	 	animation			: tweenBattleCuteBirdArmMainIntoFlyFrames 200ms ease-out forwards;
  	}
 
  	@-webkit-keyframes tweenBattleCuteBirdArmMainIntoFlyFrames
@@ -4209,8 +4209,8 @@
 
  	.tween-battleCute-bird-arm-main
  	{
-	 	-webkit-animation	: tweenBattleCuteBirdArmMainFrames 0.4s ease-in-out infinite;
-	 	animation			: tweenBattleCuteBirdArmMainFrames 0.4s ease-in-out infinite;
+	 	-webkit-animation	: tweenBattleCuteBirdArmMainFrames 400ms ease-in-out infinite;
+	 	animation			: tweenBattleCuteBirdArmMainFrames 400ms ease-in-out infinite;
  	}
 
  	@-webkit-keyframes tweenBattleCuteBirdArmMainFrames
@@ -4267,8 +4267,8 @@
 
  	.tween-battleCute-bird-arm-main-fire
  	{
-	 	-webkit-animation	: tweenBattleCuteBirdArmMainFireFrames 0.2s steps(5) infinite;
-	 	animation			: tweenBattleCuteBirdArmMainFireFrames 0.2s steps(5) infinite;
+	 	-webkit-animation	: tweenBattleCuteBirdArmMainFireFrames 200ms steps(5) infinite;
+	 	animation			: tweenBattleCuteBirdArmMainFireFrames 200ms steps(5) infinite;
  	}
 
  	@-webkit-keyframes tweenBattleCuteBirdArmMainFireFrames
@@ -4350,8 +4350,8 @@
 
   	.battleCute-bird-eyes-sprite
  	{
-	 	-webkit-transition	: -webkit-transform 0.2s ease;
-	 	transition			: transform 0.2s ease;
+	 	-webkit-transition	: -webkit-transform 200ms ease;
+	 	transition			: transform 200ms ease;
  	}
 
  	.battleCute-bird-eyes-look-C
@@ -4409,8 +4409,8 @@
 
 	.tween-microBattle_fade_flash
 	{
-		-webkit-transition: opacity 0.1s linear;
-		transition: opacity 0.1s linear;
+		-webkit-transition: opacity 100ms linear;
+		transition: opacity 100ms linear;
 	}
 
 	.microBattle_darkness_lightning
@@ -4432,8 +4432,8 @@
 
 	.tween-microBattle_darkness_lightning
 	{
-		-webkit-animation	: tweenMicroBattleDarknessLightningFrames 0.3s linear forwards;
-		animation			: tweenMicroBattleDarknessLightningFrames 0.3s linear forwards;
+		-webkit-animation	: tweenMicroBattleDarknessLightningFrames 300ms linear forwards;
+		animation			: tweenMicroBattleDarknessLightningFrames 300ms linear forwards;
 	}
 
 	@-webkit-keyframes tweenMicroBattleDarknessLightningFrames
@@ -4524,8 +4524,8 @@
 
 	.tween-microBattle_darkness_mega
 	{
-		-webkit-animation	: tweenMicroBattleDarknessMegaFrames 0.2s linear infinite;
-		animation			: tweenMicroBattleDarknessMegaFrames 0.2s linear infinite;
+		-webkit-animation	: tweenMicroBattleDarknessMegaFrames 200ms linear infinite;
+		animation			: tweenMicroBattleDarknessMegaFrames 200ms linear infinite;
 	}
 
 	@-webkit-keyframes tweenMicroBattleDarknessMegaFrames
@@ -4544,8 +4544,8 @@
 
 	.tween-microBattle_darkness_megaFranticR
 	{
-		-webkit-animation	: tweenMicroBattleDarknessMegaFranticRFrames 0.2s linear infinite;
-		animation			: tweenMicroBattleDarknessMegaFranticRFrames 0.2s linear infinite;
+		-webkit-animation	: tweenMicroBattleDarknessMegaFranticRFrames 200ms linear infinite;
+		animation			: tweenMicroBattleDarknessMegaFranticRFrames 200ms linear infinite;
 	}
 
 	@-webkit-keyframes tweenMicroBattleDarknessMegaFranticRFrames
@@ -4564,8 +4564,8 @@
 
 	.tween-microBattle_darkness_megaFranticL
 	{
-		-webkit-animation	: tweenMicroBattleDarknessMegaFranticLFrames 0.2s linear infinite;
-		animation			: tweenMicroBattleDarknessMegaFranticLFrames 0.2s linear infinite;
+		-webkit-animation	: tweenMicroBattleDarknessMegaFranticLFrames 200ms linear infinite;
+		animation			: tweenMicroBattleDarknessMegaFranticLFrames 200ms linear infinite;
 	}
 
 	@-webkit-keyframes tweenMicroBattleDarknessMegaFranticLFrames
@@ -4612,8 +4612,8 @@
 
 	.tween-microBattle_darkness_crowd_main_40x40
 	{
-		-webkit-transition: -webkit-transform 0.1s ease-in-out;
-		transition: transform 0.1s ease-in-out;
+		-webkit-transition: -webkit-transform 100ms ease-in-out;
+		transition: transform 100ms ease-in-out;
 	}
 
 	.microBattle_darkness_crowd_sprite_40x40
@@ -4847,8 +4847,8 @@
 
 	.tween-spaceSquidFace
 	{
-		-webkit-animation	: tweenSpaceSquidFaceFrames 0.4s ease-in-out infinite;
-		animation			: tweenSpaceSquidFaceFrames 0.4s ease-in-out infinite;
+		-webkit-animation	: tweenSpaceSquidFaceFrames 400ms ease-in-out infinite;
+		animation			: tweenSpaceSquidFaceFrames 400ms ease-in-out infinite;
 	}
 
 	@-webkit-keyframes tweenSpaceSquidFaceFrames
@@ -4939,8 +4939,8 @@
 
 	.tween-SpaceSquid_legs0
 	{
-		-webkit-animation: tweenSpaceSquidLegs0 0.4s ease-in-out infinite;
-		animation: tweenSpaceSquidLegs0 0.4s ease-in-out infinite;
+		-webkit-animation: tweenSpaceSquidLegs0 400ms ease-in-out infinite;
+		animation: tweenSpaceSquidLegs0 400ms ease-in-out infinite;
 	}
 
 	@-webkit-keyframes tweenSpaceSquidLegs0
@@ -4959,8 +4959,8 @@
 
 	.tween-SpaceSquid_legs1
 	{
-		-webkit-animation: tweenSpaceSquidLegs1 0.4s ease-in-out infinite;
-		animation: tweenSpaceSquidLegs1 0.4s ease-in-out infinite;
+		-webkit-animation: tweenSpaceSquidLegs1 400ms ease-in-out infinite;
+		animation: tweenSpaceSquidLegs1 400ms ease-in-out infinite;
 	}
 
 	@-webkit-keyframes tweenSpaceSquidLegs1
@@ -5009,8 +5009,8 @@
 
 	.tween-SpaceSquidBody
 	{
-		-webkit-animation: tweenSpaceSquidBodyFrames 0.4s linear infinite;
-		animation: tweenSpaceSquidBodyFrames 0.4s linear infinite;
+		-webkit-animation: tweenSpaceSquidBodyFrames 400ms linear infinite;
+		animation: tweenSpaceSquidBodyFrames 400ms linear infinite;
 	}
 
 	@-webkit-keyframes tweenSpaceSquidBodyFrames
@@ -5413,8 +5413,8 @@
 		-webkit-transform-origin	: 50% 28px;
 		transform-origin			: 50% 28px;
 
-		-webkit-animation: tweenFireFlame2Frames 0.1s linear infinite;
-		animation: tweenFireFlame2Frames 0.1s linear infinite;
+		-webkit-animation: tweenFireFlame2Frames 100ms linear infinite;
+		animation: tweenFireFlame2Frames 100ms linear infinite;
 	}
 
 	@-webkit-keyframes tweenFireFlame2Frames
@@ -5436,8 +5436,8 @@
 		-webkit-transform-origin	: 50% 28px;
 		transform-origin			: 50% 28px;
 
-		-webkit-animation: tweenFireFlame1Frames 0.1s linear infinite;
-		animation: tweenFireFlame1Frames 0.1s linear infinite;
+		-webkit-animation: tweenFireFlame1Frames 100ms linear infinite;
+		animation: tweenFireFlame1Frames 100ms linear infinite;
 	}
 
 	@-webkit-keyframes tweenFireFlame1Frames
@@ -5482,8 +5482,8 @@
 
 	.tween-fireFlame_0
 	{
-		-webkit-animation: tweenFireFlame0Frames 0.1s ease-in-out infinite;
-		animation: tweenFireFlame0Frames 0.1s ease-in-out infinite;
+		-webkit-animation: tweenFireFlame0Frames 100ms ease-in-out infinite;
+		animation: tweenFireFlame0Frames 100ms ease-in-out infinite;
 	}
 
 	@-webkit-keyframes tweenFireFlame0Frames
@@ -5668,8 +5668,8 @@
 
 	.tween-microBattle_darkness
 	{
-		-webkit-transition: opacity 0.6s linear;
-		transition: opacity 0.6s linear;
+		-webkit-transition: opacity 600ms linear;
+		transition: opacity 600ms linear;
 	}
 
 
@@ -5769,8 +5769,8 @@
 		transition: transform 1s ease-in-out;
 */
 
-		-webkit-transition: -webkit-transform 0.6s ease-in-out;
-		transition: transform 0.6s ease-in-out;
+		-webkit-transition: -webkit-transform 600ms ease-in-out;
+		transition: transform 600ms ease-in-out;
 	}
 
 	.battleScreenFade_first
@@ -5790,8 +5790,8 @@
 		transition: opacity 0.5s linear 1s;
 */
 
-		-webkit-transition: opacity 0.3s linear 0.6s;
-		transition: opacity 0.3s linear 0.6s;
+		-webkit-transition: opacity 300ms linear 600ms;
+		transition: opacity 300ms linear 600ms;
 	}
 
 /* ----------------------------------------------------------------------- LEVEL_BATTLE */
@@ -5866,8 +5866,8 @@
 
 .tween-failScreen_title_top
 {
-	-webkit-transition: 0.6s linear;
-	transition: 0.6s linear;
+	-webkit-transition: 600ms linear;
+	transition: 600ms linear;
 }
 
 .failScreen_title_top_show
@@ -5933,8 +5933,8 @@
 
 .tween-failScreen_zombie
 {
-	-webkit-transition: 0.4s ease-in-out;
-	transition: 0.4s ease-in-out;
+	-webkit-transition: 400ms ease-in-out;
+	transition: 400ms ease-in-out;
 }
 
 .failScreen_zombie .enemy_zombie
@@ -6362,8 +6362,8 @@
 
 .tween-multiUseInfo_speech_cog
 {
-	-webkit-animation: tweenMultiUseInfoSpeechCogFrames 0.8s linear infinite;
-	animation: tweenMultiUseInfoSpeechCogFrames 0.8s linear infinite;
+	-webkit-animation: tweenMultiUseInfoSpeechCogFrames 800ms linear infinite;
+	animation: tweenMultiUseInfoSpeechCogFrames 800ms linear infinite;
 }
 
 @-webkit-keyframes tweenMultiUseInfoSpeechCogFrames
@@ -7150,8 +7150,8 @@
 
 .tween-monkey_default_main_0
 {
-	-webkit-animation: tweenMonkeyDefaultMain0Frames 0.8s ease-in-out infinite;
-	animation: tweenMonkeyDefaultMain0Frames 0.8s ease-in-out infinite;
+	-webkit-animation: tweenMonkeyDefaultMain0Frames 800ms ease-in-out infinite;
+	animation: tweenMonkeyDefaultMain0Frames 800ms ease-in-out infinite;
 }
 
 @-webkit-keyframes tweenMonkeyDefaultMain0Frames
@@ -7170,8 +7170,8 @@
 
 .tween-monkey_default_main_1
 {
-	-webkit-animation: tweenMonkeyDefaultMain1Frames 0.8s ease-in-out infinite;
-	animation: tweenMonkeyDefaultMain1Frames 0.8s ease-in-out infinite;
+	-webkit-animation: tweenMonkeyDefaultMain1Frames 800ms ease-in-out infinite;
+	animation: tweenMonkeyDefaultMain1Frames 800ms ease-in-out infinite;
 }
 
 @-webkit-keyframes tweenMonkeyDefaultMain1Frames

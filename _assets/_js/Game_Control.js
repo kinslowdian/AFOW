@@ -276,16 +276,6 @@
 
 	function touchFirstTransition()
 	{
-		var css_touch;
-
-		css_touch = 	{
-							"-webkit-transform"	: "scale(1)",
-							"transform"			: "scale(1)",
-							"opacity"			: "1"
-						};
-
-		// $("#touchPad_C .touchPad-cont").css(css_touch);
-
 		$("#touchPad_C .touchPad-cont").removeClass("touchPad_C_hide").addClass("touchPad_C_show");
 	}
 
@@ -312,35 +302,11 @@
 
 			if(event.type === "touchstart" && DISPLAY._width <= 480)
 			{
-				css_max = 	{
-								"-webkit-transform"	: "scale(1)",
-								"transform"			: "scale(1)",
-								"opacity"			: "1"
-							};
-
-				css_min = 	{
-								"-webkit-transform"	: "scale(0)",
-								"transform"			: "scale(0)",
-								"opacity"			: "0"
-							};
-
 				$("#touchPad_C .touchPad-cont").removeClass("touchPad_C_hide").addClass("touchPad_C_show");
 			}
 
 			if(event.type === "touchend" && DISPLAY._width <= 480)
 			{
-				css_max = 	{
-								"-webkit-transform"	: "scale(0)",
-								"transform"			: "scale(0)",
-								"opacity"			: "0"
-							};
-
-				css_min = 	{
-								"-webkit-transform"	: "scale(1)",
-								"transform"			: "scale(1)",
-								"opacity"			: "1"
-							};
-
 				$("#touchPad_C .touchPad-cont").removeClass("touchPad_C_show").addClass("touchPad_C_hide");
 			}
 
@@ -352,45 +318,13 @@
 			{
 				CONTROL_SIGNAL.firstTouch = false;
 
-				css_max = 	{
-								"-webkit-transform"	: "scale(1)",
-								"transform"			: "scale(1)",
-								"opacity"			: "1"
-							};
-
-				css_min = 	{
-								"-webkit-transform"	: "scale(0)",
-								"transform"			: "scale(0)",
-								"opacity"			: "0"
-							};
-
 				$("#touchPad_C .touchPad-cont").removeClass("touchPad_C_hide").addClass("touchPad_C_show");
 			}
 
 			else
 			{
-				css_max = 	{
-								"-webkit-transform"	: "scale(0)",
-								"transform"			: "scale(0)",
-								"opacity"			: "0"
-							};
-
-				css_min = 	{
-								"-webkit-transform"	: "scale(1)",
-								"transform"			: "scale(1)",
-								"opacity"			: "1"
-							};
-
 				$("#touchPad_C .touchPad-cont").removeClass("touchPad_C_show").addClass("touchPad_C_hide");
 			}
-		}
-
-		if(css_max && css_min)
-		{
-			// $("#touchPad_C .touchPad-cont").css(css_max);
-			// $("#touchPad_C .touchPad-min").css(css_min);
-
-			// $("#touchPad_C .touchPad-cont").removeClass("touchPad_C_hide").addClass("touchPad_C_show");
 		}
 	}
 
@@ -513,8 +447,6 @@
 
 		if(CONTROL_SIGNAL.data.moveDirection === "STILL")
 		{
-			// $("#" + CONTROL_SIGNAL.data.indicator).css("opacity", 0);
-
 			$("#" + CONTROL_SIGNAL.data.indicator).removeClass("touchPad_C_signal_show").addClass("touchPad_C_signal_hide");
 
 			CONTROL_SIGNAL.data.indicator = "";
@@ -525,10 +457,6 @@
 		{
 			if(ind !== CONTROL_SIGNAL.data.indicator)
 			{
-				// $("#" + CONTROL_SIGNAL.data.indicator).css("opacity", 0);
-
-				// $("#" + ind).css("opacity", 1);
-
 				$("#" + CONTROL_SIGNAL.data.indicator).removeClass("touchPad_C_signal_show").addClass("touchPad_C_signal_hide");
 
 				$("#" + ind).removeClass("touchPad_C_signal_hide").addClass("touchPad_C_signal_show");

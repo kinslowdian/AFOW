@@ -2415,11 +2415,392 @@
 					"y": 24,
 					"w": 1,
 					"h": 1,
-					"level": 4,
+					"level": 6,
 					"exit": 0,
 					"direction": "UP",
 					"spawn": 5,
 					"p": "portal_top_ice"
+				}
+			],
+
+			"sound_level":
+			[
+				{
+					"call_funct" : "sound_play",
+					"call_params": ["level_bg_forest"]
+				},
+
+				{
+					"call_funct" : "sound_volume",
+					"call_params": ["level_bg_forest", "0.01"]
+				},
+
+				{
+					"call_funct" : "sound_fadeInitGlobal",
+					"call_params" : [1]
+				}
+			]
+		},
+
+		"level6":
+		{
+			"levelSettings":
+			{
+				"n": 6,
+				"weather": "SNOW",
+				"land": "forest",
+				"entry_fall": "NO",
+				"fall_x": 0,
+				"fall_y": 0,
+				"fall_d": "DOWN",
+				"title_top": "level number 6",
+				"title_btm": "The court of gods"
+			},
+
+			"texture":
+			{
+				"WALLS" :
+				[
+
+				],
+
+				"PLANTS":
+				[
+
+				],
+
+				"CLEARING":
+				[
+
+				],
+
+				"FLOOR":
+				{
+					"class" : "field-floor-forest"
+				},
+
+				"OUTER":
+				{
+					"class" : "pixels_forestMass"
+				}
+			},
+
+			"water":
+			{
+
+			},
+
+			"enemyPlayers":
+			[
+
+			],
+
+			"gods":
+			{
+				"GOD":
+				[
+					{
+						"x": 0,
+						"y": 4,
+						"w": 4,
+						"h": 3,
+						"n": "level6_god_monkeyDefault0",
+						"c_cl": "god-areas",
+						"b_cl": "field-floor-forest",
+						"t_cl": "monkey_default_trees_forest",
+						"g_cl": "monkey_default_ground_forest",
+						"p_cl": "pixels_monkeyKingdomForest",
+						"t": "god_monkey_default",
+						"a": "tween-monkey_default_main_0",
+						"p": "HIDE",
+						"display":
+						{
+							"show": "monkey_default_show",
+							"hide": "monkey_default_hide"
+						}
+					},
+
+					{
+						"x": 0,
+						"y": 11,
+						"w": 4,
+						"h": 3,
+						"n": "level6_god_monkeydefault1",
+						"c_cl": "god-areas",
+						"b_cl": "field-floor-forest",
+						"t_cl": "monkey_default_trees_forest",
+						"g_cl": "monkey_default_ground_forest",
+						"p_cl": "pixels_monkeyKingdomForest",
+						"t": "god_monkey_default",
+						"a": "tween-monkey_default_main_1",
+						"p": "HIDE",
+						"display":
+						{
+							"show": "monkey_default_show",
+							"hide": "monkey_default_hide"
+						}
+					},
+
+					{
+						"x": 0,
+						"y": 18,
+						"w": 4,
+						"h": 3,
+						"n": "level6_god_monkeyKing",
+						"c_cl": "god-areas",
+						"b_cl": "field-floor-forest",
+						"t_cl": "monkey_king_trees_forest",
+						"g_cl": "monkey_king_ground_forest",
+						"p_cl": "pixels_monkeyKingdomForest",
+						"t": "god_monkey_king",
+						"a": "tween-monkey_king_main",
+						"p": "HIDE",
+						"display":
+						{
+							"show": "monkey_king_show",
+							"hide": "monkey_king_hide"
+						}
+					}
+				],
+
+				"TRIGGERS":
+				[
+					{
+						"x": 0,
+						"y": 1,
+						"w": 4,
+						"h": 1,
+						"c_cl": "god-areas",
+						"god_prefs":
+						[
+							{
+								"call_funct" : "god_displayInit",
+								"call_params": ["level6_god_monkeyDefault0", "HIDE"]
+							}
+						]
+					},
+
+					{
+						"x": 0,
+						"y": 2,
+						"w": 4,
+						"h": 1,
+						"c_cl": "god-areas",
+						"god_prefs":
+						[
+							{
+								"call_funct" : "god_displayInit",
+								"call_params": ["level6_god_monkeyDefault0", "SHOW"]
+							}
+						]
+					},
+
+					{
+						"x": 0,
+						"y": 8,
+						"w": 4,
+						"h": 1,
+						"c_cl": "god-areas",
+						"god_prefs":
+						[
+							{
+								"call_funct" : "god_displayInit",
+								"call_params": ["level6_god_monkeyDefault0", "HIDE"]
+							},
+
+							{
+								"call_funct" : "god_displayInit",
+								"call_params": ["level6_god_monkeyDefault1", "HIDE"]
+							}
+						]
+					},
+
+					{
+						"x": 0,
+						"y": 9,
+						"w": 4,
+						"h": 1,
+						"c_cl": "god-areas",
+						"god_prefs":
+						[
+							{
+								"call_funct" : "god_displayInit",
+								"call_params": ["level6_god_monkeyDefault1", "SHOW"]
+							}
+						]
+					},
+
+					{
+						"x": 0,
+						"y": 15,
+						"w": 4,
+						"h": 1,
+						"c_cl": "god-areas",
+						"god_prefs":
+						[
+							{
+								"call_funct" : "god_displayInit",
+								"call_params": ["level6_god_monkeyDefault1", "HIDE"]
+							},
+
+							{
+								"call_funct" : "god_displayInit",
+								"call_params": ["level6_god_monkeyKing", "HIDE"]
+							}
+						]
+					},
+
+					{
+						"x": 0,
+						"y": 16,
+						"w": 4,
+						"h": 1,
+						"c_cl": "god-areas",
+						"god_prefs":
+						[
+							{
+								"call_funct" : "god_displayInit",
+								"call_params": ["level6_god_monkeyKing", "SHOW"]
+							}
+						]
+					},
+
+					{
+						"x": 0,
+						"y": 22,
+						"w": 4,
+						"h": 1,
+						"c_cl": "god-areas",
+						"god_prefs":
+						[
+							{
+								"call_funct" : "god_displayInit",
+								"call_params": ["level6_god_monkeyKing", "SHOW"]
+							}
+						]
+					},
+
+					{
+						"x": 0,
+						"y": 23,
+						"w": 4,
+						"h": 1,
+						"c_cl": "god-areas",
+						"god_prefs":
+						[
+							{
+								"call_funct" : "god_displayInit",
+								"call_params": ["level6_god_monkeyKing", "HIDE"]
+							}
+						]
+					}
+				]
+			},
+
+			"portal":
+			[
+				{
+					"num": 0,
+					"x": 1.5,
+					"y": 0,
+					"w": 1,
+					"h": 1,
+					"level": 5,
+					"exit": 7,
+					"direction": "DOWN",
+					"spawn": 6,
+					"p": "portal_top_forest"
+				},
+
+				{
+					"num": 1,
+					"x": 1.5,
+					"y": 3,
+					"w": 1,
+					"h": 1,
+					"level": 6,
+					"exit": 2,
+					"direction": "UP",
+					"spawn": 6,
+					"p": "portal_top_forest"
+				},
+
+				{
+					"num": 2,
+					"x": 1.5,
+					"y": 7,
+					"w": 1,
+					"h": 1,
+					"level": 6,
+					"exit": 1,
+					"direction": "DOWN",
+					"spawn": 6,
+					"p": "portal_top_forest"
+				},
+
+				{
+					"num": 3,
+					"x": 1.5,
+					"y": 10,
+					"w": 1,
+					"h": 1,
+					"level": 6,
+					"exit": 4,
+					"direction": "UP",
+					"spawn": 6,
+					"p": "portal_top_forest"
+				},
+
+				{
+					"num": 4,
+					"x": 1.5,
+					"y": 14,
+					"w": 1,
+					"h": 1,
+					"level": 6,
+					"exit": 3,
+					"direction": "DOWN",
+					"spawn": 6,
+					"p": "portal_top_forest"
+				},
+
+				{
+					"num": 5,
+					"x": 1.5,
+					"y": 17,
+					"w": 1,
+					"h": 1,
+					"level": 6,
+					"exit": 6,
+					"direction": "UP",
+					"spawn": 6,
+					"p": "portal_top_forest"
+				},
+
+				{
+					"num": 6,
+					"x": 1.5,
+					"y": 21,
+					"w": 1,
+					"h": 1,
+					"level": 6,
+					"exit": 5,
+					"direction": "DOWN",
+					"spawn": 6,
+					"p": "portal_top_forest"
+				},
+
+				{
+					"num": 7,
+					"x": 1.5,
+					"y": 24,
+					"w": 1,
+					"h": 1,
+					"level": 4,
+					"exit": 0,
+					"direction": "UP",
+					"spawn": 6,
+					"p": "portal_top_forest"
 				}
 			],
 
