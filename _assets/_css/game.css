@@ -778,6 +778,8 @@
 
 		-webkit-transform	: translate(0px, 0px);
 		transform			: translate(0px, 0px);
+
+		outline: 1px solid black;
 	}
 
 	.tween-player-block
@@ -3009,6 +3011,30 @@
 		transition			: all 500ms ease;
 
 		z-index: 0;
+	}
+
+	.touchPad_C_show
+	{
+		-webkit-transform: scale(1);
+		transform: scale(1);
+		opacity: 1;
+	}
+
+	.touchPad_C_hide
+	{
+		-webkit-transform: scale(0);
+		transform: scale(0);
+		opacity: 0;
+	}
+
+	.touchPad_C_signal_show
+	{
+		opacity: 1;
+	}
+
+	.touchPad_C_signal_hide
+	{
+		opacity: 0;
 	}
 
 /* ----------------------------------------------------------------------- TOUCH UI */

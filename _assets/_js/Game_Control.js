@@ -41,7 +41,7 @@
 		MAP_PLAYER.cur_x = 120;
 		MAP_PLAYER.cur_y = 120;
 		MAP_PLAYER.dir = "STILL";
-		MAP_PLAYER.move_default = 40;
+		MAP_PLAYER.move_default = 20; // 40
 		MAP_PLAYER.move = MAP_PLAYER.move_default;
 		MAP_PLAYER.walking = false;
 
@@ -187,6 +187,8 @@
 		HIT_TEST.hit_edge = false;
 		HIT_TEST.hit_portal = false;
 		HIT_TEST.hit_enemy = false;
+
+		HIT_TEST.listen = true;
 	}
 
 	function mapPlayer_ready()
@@ -554,18 +556,44 @@
 
 		$("#" + MAP_PLAYER.playerMover).css(css);
 
-
 		if(moveExtra)
 		{
-			// MAP_PLAYER.move += MAP_PLAYER.move;
+			if(moveExtra === "FULL")
+			{
+				MAP_PLAYER.move = MAP_PLAYER.placement.block_full;
+			}
 
-			MAP_PLAYER.move = (MAP_PLAYER.move_default * 2);
+			if(moveExtra === "HALF")
+			{
+				MAP_PLAYER.move = MAP_PLAYER.placement.block_full * 0.5;
+			}
+
+			if(moveExtra === "HALF_EXTRA")
+			{
+				MAP_PLAYER.move = (MAP_PLAYER.placement.block_full * 0.5) + (MAP_PLAYER.move_default / MAP_PLAYER.placement.block_full);
+			}
 		}
 
 		else
 		{
-			MAP_PLAYER.move = MAP_PLAYER.move_default;
+			MAP_PLAYER.move = MAP_PLAYER.placement.block_full * 0.5;
 		}
+
+		// if(moveExtra)
+		// {
+			// MAP_PLAYER.move += MAP_PLAYER.move;
+
+			// MAP_PLAYER.move = (MAP_PLAYER.move_default * 2);
+
+		// 	MAP_PLAYER.move = MAP_PLAYER.placement.block_full;
+		// }
+
+		// else
+		// {
+			// MAP_PLAYER.move = MAP_PLAYER.move_default;
+
+		// 	MAP_PLAYER.move = MAP_PLAYER.placement.block_full * 0.5;
+		// }
 	}
 
 	function mapPlayer_headCheck()
@@ -677,7 +705,8 @@
 
 			if(HIT_TEST.hit_portal)
 			{
-				$("." + MAP_PLAYER.playerFadeTarget).css("opacity", 0);
+				// PORTAL CENTER FIX
+				// $("." + MAP_PLAYER.playerFadeTarget).css("opacity", 0);
 			}
 
 			$("#" + MAP_PLAYER.playerMover + " .player-sprite .map-goat-legs").removeClass(MAP_PLAYER.playerWalkStop).addClass(MAP_PLAYER.playerWalkLoop);
@@ -721,22 +750,34 @@
 
 		if(MAP_PLAYER.placement.enterMap)
 		{
+			trace("!!!!!!! ---------  PORTAL EXIT CATCH");
+
 			MAP_PLAYER.placement.enterMap = false;
 
-			if(MAP_PLAYER.move != 40)
+			if(MAP_PLAYER.move != MAP_PLAYER.move_default) // 40
 			{
-				MAP_PLAYER.move = 40;
+				MAP_PLAYER.move = MAP_PLAYER.move_default; // 40
 			}
 
 			mapPlayer_storeEntry(MAP_PLAYER.cur_x, MAP_PLAYER.cur_y);
 
 			mapPlayer_ready();
+
+			// HIT_TEST.listen = true;
 		}
+
+		// if(HIT_TEST.hit_portal && HIT_TEST.listen)
+		// {
+		// 	HIT_TEST.listen = false;
+
+		// 	gameStateChange("PORTAL");
+		// }
 
 		if(HIT_TEST.hit_portal)
 		{
 			gameStateChange("PORTAL");
 		}
+
 
 		if(HIT_TEST.hit_enemy)
 		{
@@ -1031,18 +1072,49 @@
 
 	function portalExit()
 	{
+		var moveMeasure = "";
+
 		trace("!----- portalExit(); === ");
 		trace(PORTAL_TRAVEL);
 
+		// OLD MOVEMENT
+		/*
 		if(PORTAL_TRAVEL.direction === "LEFT" || PORTAL_TRAVEL.direction === "UP")
 		{
-			mapPlayer_spawn(PORTAL_TRAVEL.buildData.block_x, PORTAL_TRAVEL.buildData.block_y, PORTAL_TRAVEL.direction, false);
+			mapPlayer_spawn((PORTAL_TRAVEL.buildData.block_x + (MAP_PLAYER.move_default / 80)), PORTAL_TRAVEL.buildData.block_y, PORTAL_TRAVEL.direction, false); // false;
 		}
 
 		else
 		{
-			mapPlayer_spawn(PORTAL_TRAVEL.buildData.block_x, PORTAL_TRAVEL.buildData.block_y, PORTAL_TRAVEL.direction, true); // true;
+			mapPlayer_spawn((PORTAL_TRAVEL.buildData.block_x + (MAP_PLAYER.move_default / 80)), PORTAL_TRAVEL.buildData.block_y, PORTAL_TRAVEL.direction, true); // true;
 		}
+		*/
+
+		// NEW MOVEMENT
+
+		if(PORTAL_TRAVEL.direction === "UP")
+		{
+			moveMeasure = "HALF";
+
+			// mapPlayer_spawn((PORTAL_TRAVEL.buildData.block_x + (MAP_PLAYER.move_default / MAP_PLAYER.placement.block_full)), PORTAL_TRAVEL.buildData.block_y, PORTAL_TRAVEL.direction, "HALF");
+		}
+
+		if(PORTAL_TRAVEL.direction === "DOWN")
+		{
+			moveMeasure = "FULL";
+
+			// mapPlayer_spawn((PORTAL_TRAVEL.buildData.block_x + (MAP_PLAYER.move_default / MAP_PLAYER.placement.block_full)), PORTAL_TRAVEL.buildData.block_y, PORTAL_TRAVEL.direction, "FULL");
+		}
+
+		if(PORTAL_TRAVEL.direction === "LEFT" || PORTAL_TRAVEL.direction === "RIGHT")
+		{
+			moveMeasure = "FULL";
+
+			// mapPlayer_spawn((PORTAL_TRAVEL.buildData.block_x + (MAP_PLAYER.move_default / MAP_PLAYER.placement.block_full)), PORTAL_TRAVEL.buildData.block_y, PORTAL_TRAVEL.direction, "HALF_EXTRA");
+		}
+
+
+		mapPlayer_spawn((PORTAL_TRAVEL.buildData.block_x + (MAP_PLAYER.move_default / MAP_PLAYER.placement.block_full)), PORTAL_TRAVEL.buildData.block_y, PORTAL_TRAVEL.direction, moveMeasure);
 
 
 		// if(PORTAL_TRAVEL.direction === "LEFT" || PORTAL_TRAVEL.direction === "UP")
