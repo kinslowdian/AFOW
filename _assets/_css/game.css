@@ -2893,8 +2893,8 @@
 		-webkit-transform-origin	: 50% 50%;
 		transform-origin			: 50% 50%;
 
-		-webkit-transform: scale(0);
-		transform: scale(0);
+/*		-webkit-transform: scale(0);
+		transform: scale(0);*/
 
 		-webkit-transition	: all 0.5s ease;
 		transition			: all 0.5s ease;
@@ -2941,7 +2941,7 @@
 
 		background: rgba(218, 255, 0, 0.5);
 
-		opacity: 0;
+		/*opacity: 0;*/
 
 		-webkit-transition: opacity 0.2s linear;
 		transition: opacity 0.2s linear;
@@ -2985,6 +2985,7 @@
 		border-radius: 0 80px 0 0;
 	}
 
+	/*DEAD??*/
 	#touchPad #touchPad_C .touchPad-min
 	{
 		width: 40px;
