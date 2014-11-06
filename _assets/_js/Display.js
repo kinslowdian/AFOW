@@ -137,7 +137,10 @@
 		// ALLOWS CONTROL SHOULD EVENT LISTENERS NOT FIRE IN THIS FUCTION
 		// FIX TO SOLVE ISSUE OF SCREEN MOVE ON IMPACT WITH ENEMY
 
-		controlsAfterBattleExit();
+		if(BATTLE_NAV != null)
+		{
+			controlsAfterBattleExit();
+		}
 
 
 		// DEFAULT
@@ -166,53 +169,56 @@
 
 		DISPLAY.current_y = DISPLAY.y;
 
-		moveStageScreenTerminal();
+		if(PORTAL_TRAVEL != null || BATTLE_NAV != null)
+		{
+			moveStageScreenTerminal();
+		}
 	}
 
 	function moveStageScreenTerminal()
 	{
-		appearFromPortal();
+		if(PORTAL_TRAVEL != null)
+		{
+			appearFromPortal();
+		}
 
-		controlsAfterBattleExit();
+		if(BATTLE_NAV != null)
+		{
+			controlsAfterBattleExit();
+		}
 	}
 
 	function appearFromPortal()
 	{
-		if(PORTAL_TRAVEL != null || PORTAL_TRAVEL != undefined)
+		if(!game_levelChange)
 		{
-			if(!game_levelChange)
+			if(PortalScreen.displayed)
 			{
-				if(PortalScreen.displayed)
-				{
-					PortalScreen.displayed = false;
+				PortalScreen.displayed = false;
 
-					exitFrame = setTimeout(mapPlayer_entry, 100);
-				}
-
-				else
-				{
-					exitFrame = setTimeout(mapPlayer_entry, 1000);
-				}
-
-				PORTAL_TRAVEL = null;
+				exitFrame = setTimeout(mapPlayer_entry, 100);
 			}
+
+			else
+			{
+				exitFrame = setTimeout(mapPlayer_entry, 1000);
+			}
+
+			PORTAL_TRAVEL = null;
 		}
 	}
 
 	function controlsAfterBattleExit()
 	{
-		if(BATTLE_NAV != null || BATTLE_NAV != undefined)
+		if(BATTLE_NAV.game.result === "LOSE" || BATTLE_NAV.game.result === "WIN")
 		{
-			if(BATTLE_NAV.game.result === "LOSE" || BATTLE_NAV.game.result === "WIN")
-			{
-				// SET UP CONTROLS + HITTEST
-				hitTest_init();
+			// SET UP CONTROLS + HITTEST
+			hitTest_init();
 
-				MAP_PLAYER.listen = true;
+			MAP_PLAYER.listen = true;
 
-				control_switch(true);
+			control_switch(true);
 
-				BATTLE_NAV = null;
-			}
+			BATTLE_NAV = null;
 		}
 	}
