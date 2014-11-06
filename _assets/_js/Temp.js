@@ -568,6 +568,37 @@ function gate_control(cmd)
 }
 
 
+var gates;
+
+function quick_buildGate()
+{
+	gates = {};
+
+	gates.list = new Array();
+
+	var g = new Gate(120, 1760, 80, 80, "gate_0_0");
+
+	gates.list.push(g);
+}
+
+var Gate = function(_x, _y, _w, _h, _id)
+{
+	this.x = _x;
+	this.y = _y;
+	this.w = _w;
+	this.h = _h;
+
+	this.id = _id;
+
+	this.css = 	{
+								"-webkit-transform" : "translate(" + this.x + "px, " + this.y + "px);",
+								"transform" : "translate(" + this.x + "px, " + this.y + "px);"
+							};
+
+	$("#" + this.id).css(this.css);
+}
+
+
 
 
 

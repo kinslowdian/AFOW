@@ -165,6 +165,39 @@
 	}
 
 
+/* ----------------------------------------------------------------------- GATES */
+
+	.gate-areas
+	{
+		width: inherit;
+		height: 2000px;
+
+		position: absolute;
+
+		left: 0;
+		top: 0;
+
+		z-index: 1;
+	}
+
+	.gate
+	{
+		width: 80px;
+		height: 80px;
+
+		position: absolute;
+
+		background: #fff;
+	}
+
+	#gate_0_0
+	{
+
+	}
+
+/* ----------------------------------------------------------------------- GATES */
+
+
 
 
 
