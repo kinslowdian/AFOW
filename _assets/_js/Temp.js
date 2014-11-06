@@ -405,7 +405,7 @@
 
 var displayZoom;
 
-function displayZoom_init(run)
+function displayZoom_init(run, plugControl)
 {
 	if(run)
 	{
@@ -415,6 +415,15 @@ function displayZoom_init(run)
 	else
 	{
 		delete displayZoom;
+
+		if(plugControl)
+		{
+				hitTest_init();
+
+				MAP_PLAYER.listen = true;
+
+				control_switch(true);
+		}
 	}
 }
 
@@ -487,7 +496,7 @@ function displayZoom_return()
 {
 	moveStageScreen();
 
-	displayZoom_init(false);
+	displayZoom_init(false, true);
 }
 
 
@@ -496,6 +505,38 @@ function demo(msg)
 	alert(msg);
 
 	displayZoom_return();
+}
+
+function gate_check()
+{
+	trace("!!!!!!!!!!!!!! ------- gate_check();");
+	trace(ROM.enemy.character);
+
+	var defeatTriggerFunction;
+	var defeatTriggerParameters;
+
+	for(var defeatObject in ROM.enemy.character.defeatPrefs)
+	{
+		defeatTriggerFunction = window[ROM.enemy.character.defeatPrefs[defeatObject].call_funct];
+		defeatTriggerParameters = ROM.enemy.character.defeatPrefs[defeatObject].call_params;
+
+		defeatTriggerFunction.apply(this, defeatTriggerParameters);
+	}
+}
+
+function gate_control(cmd)
+{
+	switch(cmd)
+	{
+		case "TEST":
+		{
+			// displayZoom_init(true, false);
+			// displayZoom_create(3, {call_funct: demo, call_params: ["SENT MESSAGE"]});
+			// displayZoom_to(-1200, 0);
+
+			break;
+		}
+	}
 }
 
 

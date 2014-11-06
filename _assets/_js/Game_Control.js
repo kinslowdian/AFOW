@@ -673,6 +673,8 @@
 
 	function mapPlayer_move()
 	{
+		trace("CLASS CHECK === " + MAP_PLAYER.playerTween);
+
 		var css;
 
 		css = 	{

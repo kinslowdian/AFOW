@@ -133,6 +133,8 @@
 		this.rating				= this.settings.l;
 		this.name				= this.settings.known;
 
+		this.defeatPrefs = this.settings.defeat;
+
 		this.buildData.block_x 	= this.settings.x;
 		this.buildData.block_y 	= this.settings.y;
 		this.buildData.x		= this.buildData.block_x * 80;

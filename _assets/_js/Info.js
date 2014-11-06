@@ -1516,6 +1516,8 @@
 	function battleWin_backToNormal()
 	{
 		optionsTrigger_init(true);
+
+		gate_check();
 	}
 
 	// -------- BATTLE_WIN

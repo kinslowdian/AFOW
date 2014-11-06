@@ -345,7 +345,13 @@
 					"t": "rabbit",
 					"l": 10,
 					"known" : "the bastard",
-					"spawn": 0
+					"spawn": 0,
+					"defeat":[
+										{
+											"call_funct": "gate_control",
+											"call_params": ["TEST"]
+										}
+									]
 				},
 
 				{
