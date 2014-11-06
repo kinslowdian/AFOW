@@ -1517,7 +1517,21 @@
 	{
 		optionsTrigger_init(true);
 
-		gate_check();
+		if(ROM.enemy.character.defeatPrefs)
+		{
+			gate_check();
+		}
+
+		else
+		{
+			// ENABLE CONTROL - FUNCTION ALREADY WRITTEN IN Game_Control.js?
+
+			hitTest_init();
+
+			MAP_PLAYER.listen = true;
+
+			control_switch(true);
+		}
 	}
 
 	// -------- BATTLE_WIN

@@ -407,6 +407,23 @@ var displayZoom;
 
 function displayZoom_init(run, plugControl)
 {
+	if(plugControl)
+	{
+		// MAP_PLAYER.listen = true;
+
+		hitTest_init();
+
+		MAP_PLAYER.listen = true;
+
+		control_switch(true);
+	}
+
+	else
+	{
+		MAP_PLAYER.listen = false;
+	}
+
+
 	if(run)
 	{
 		displayZoom = {};
@@ -416,14 +433,14 @@ function displayZoom_init(run, plugControl)
 	{
 		delete displayZoom;
 
-		if(plugControl)
-		{
-				hitTest_init();
+		// if(plugControl)
+		// {
+		// 		// hitTest_init();
 
-				MAP_PLAYER.listen = true;
+		// 		MAP_PLAYER.listen = true;
 
-				control_switch(true);
-		}
+		// 		// control_switch(true);
+		// }
 	}
 }
 
@@ -441,24 +458,30 @@ function displayZoom_to(displayTarget_y, extra_y)
 	var y_zoom = displayTarget_y + extra_y;
 
 	// CONTROL BREAK
-	if(MAP_PLAYER.listen)
-	{
-		MAP_PLAYER.listen = false;
+	// if(MAP_PLAYER.listen)
+	// {
+		// MAP_PLAYER.listen = false;
 
-		control_switch(false);
+		// control_switch(false);
+	// }
+
+	if(y_zoom == 0)
+	{
+		displayZoom_over();
 	}
 
+	else
+	{
+		css =	{
+					"-webkit-transform"		: "translateY(" + y_zoom + "px)",
+					"transform"				: "translateY(" + y_zoom + "px)"
+				};
 
-	css =	{
-				"-webkit-transform"		: "translateY(" + y_zoom + "px)",
-				"transform"				: "translateY(" + y_zoom + "px)"
-			};
+		$(".stage-view-y")[0].addEventListener("webkitTransitionEnd", displayZoom_event, false);
+		$(".stage-view-y")[0].addEventListener("transitionend", displayZoom_event, false);
 
-	$(".stage-view-y")[0].addEventListener("webkitTransitionEnd", displayZoom_event, false);
-	$(".stage-view-y")[0].addEventListener("transitionend", displayZoom_event, false);
-
-	$(".stage-view-y").css(css);
-
+		$(".stage-view-y").css(css);
+	}
 }
 
 function displayZoom_event(event)
@@ -466,6 +489,13 @@ function displayZoom_event(event)
 	$(".stage-view-y")[0].removeEventListener("webkitTransitionEnd", displayZoom_event, false);
 	$(".stage-view-y")[0].removeEventListener("transitionend", displayZoom_event, false);
 
+	displayZoom_over();
+
+	trace("ZOOM OK");
+}
+
+function displayZoom_over()
+{
 	if(displayZoom.waitTime > 0)
 	{
 		displayZoom.wait = setTimeout(displayZoom_action, displayZoom.waitTime * 1000);
@@ -475,8 +505,6 @@ function displayZoom_event(event)
 	{
 		displayZoom_action();
 	}
-
-	trace("ZOOM OK");
 }
 
 function displayZoom_action()
@@ -530,9 +558,9 @@ function gate_control(cmd)
 	{
 		case "TEST":
 		{
-			// displayZoom_init(true, false);
-			// displayZoom_create(3, {call_funct: demo, call_params: ["SENT MESSAGE"]});
-			// displayZoom_to(-1200, 0);
+			displayZoom_init(true, false);
+			displayZoom_create(3, {call_funct: demo, call_params: ["SENT MESSAGE"]});
+			displayZoom_to(0, 0);
 
 			break;
 		}
