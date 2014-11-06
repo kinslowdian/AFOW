@@ -1131,20 +1131,20 @@
 
 	@-webkit-keyframes tweenPlayerWalkX_Frames
 	{
-		0%		{-webkit-transform: translateX(0px) rotate(0deg);}
-		25%		{-webkit-transform: translateX(-4px) rotate(-10deg);}
-		50% 	{-webkit-transform: translateX(0px) rotate(0deg);}
-		75%		{-webkit-transform: translateX(4px) rotate(10deg);}
-		100% 	{-webkit-transform: translateX(0px) rotate(0deg);}
+		0%		{-webkit-transform: rotate(0deg);}
+		25%		{-webkit-transform: rotate(-10deg);}
+		50% 	{-webkit-transform: rotate(0deg);}
+		75%		{-webkit-transform: rotate(10deg);}
+		100% 	{-webkit-transform: rotate(0deg);}
 	}
 
 	@keyframes tweenPlayerWalkX_Frames
 	{
-		0%		{transform: translateX(0px) rotate(0deg);}
-		25%		{transform: translateX(-4px) rotate(-10deg);}
-		50% 	{transform: translateX(0px) rotate(0deg);}
-		75%		{transform: translateX(4px) rotate(10deg);}
-		100% 	{transform: translateX(0px) rotate(0deg);}
+		0%		{transform: rotate(0deg);}
+		25%		{transform: rotate(-10deg);}
+		50% 	{transform: rotate(0deg);}
+		75%		{transform: rotate(10deg);}
+		100% 	{transform: rotate(0deg);}
 	}
 
 	.tween-player-walkY
@@ -1158,20 +1158,20 @@
 
 	@-webkit-keyframes tweenPlayerWalkY_Frames
 	{
-		0%		{-webkit-transform: translateY(0px) rotate(0deg);}
-		25%		{-webkit-transform: translateY(-4px) rotate(-10deg);}
-		50% 	{-webkit-transform: translateY(0px) rotate(0deg);}
-		75%		{-webkit-transform: translateY(4px) rotate(10deg);}
-		100% 	{-webkit-transform: translateY(0px) rotate(0deg);}
+		0%		{-webkit-transform: translateY(0px);}
+		25%		{-webkit-transform: translateY(-4px);}
+		50% 	{-webkit-transform: translateY(0px);}
+		75%		{-webkit-transform: translateY(4px);}
+		100% 	{-webkit-transform: translateY(0px);}
 	}
 
 	@keyframes tweenPlayerWalkY_Frames
 	{
-		0%		{transform: translateY(0px) rotate(0deg);}
-		25%		{transform: translateY(-4px) rotate(-10deg);}
-		50% 	{transform: translateY(0px) rotate(0deg);}
-		75%		{transform: translateY(4px) rotate(10deg);}
-		100% 	{transform: translateY(0px) rotate(0deg);}
+		0%		{transform: translateY(0px);}
+		25%		{transform: translateY(-4px);}
+		50% 	{transform: translateY(0px);}
+		75%		{transform: translateY(4px);}
+		100% 	{transform: translateY(0px);}
 	}
 
 	.tween-mapPlayerWalk_loop
