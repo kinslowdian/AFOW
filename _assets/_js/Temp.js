@@ -345,9 +345,158 @@
 
 /*	--------------------------------------- INFO SCREEN*/
 
-///////////////////////////////// GOD
-///////////////////////////////// GOD
-///////////////////////////////// GOD
+
+
+///////////////////////////////// DISPLAY_ZOOM
+///////////////////////////////// DISPLAY_ZOOM
+///////////////////////////////// DISPLAY_ZOOM
+
+// var displayZoom;
+
+// function displayZoom_init(run)
+// {
+// 	if(run)
+// 	{
+// 		displayZoom = {
+// 										zoomTo : function(displayTarget_y, extra_y)
+// 										{
+// 											this.css;
+// 											this.y_zoom = displayTarget_y + extra_y;
+
+// 											// DEFAULT
+
+// 											this.css =	{
+// 																		"-webkit-transform"		: "translateY(" + this.y_zoom + "px)",
+// 																		"transform"				: "translateY(" + this.y_zoom + "px)"
+// 																	};
+
+// 											$(".stage-view-y")[0].addEventListener("webkitTransitionEnd", this.zoomEvent, false);
+// 											$(".stage-view-y")[0].addEventListener("transitionend", this.zoomEvent, false);
+
+// 											$(".stage-view-y").css(this.css);
+// 										},
+
+// 										zoomEvent: function(event)
+// 										{
+// 											$(".stage-view-y")[0].removeEventListener("webkitTransitionEnd", this, false);
+// 											$(".stage-view-y")[0].removeEventListener("transitionend", this, false);
+
+// 											trace("ZOOM OK " + window.displayZoom.zoomEvent);
+// 										},
+
+// 										zoomReturn: function()
+// 										{
+// 											moveStageScreen();
+// 										}
+// 									};
+// 	}
+
+// 	else
+// 	{
+// 		delete displayZoom;
+// 	}
+// }
+
+
+// USAGE
+// displayZoom_init(true);
+// displayZoom_create(3, {call_funct: demo, call_params: ["SENT MESSAGE"]});
+// displayZoom_to(-1200, 0);
+
+var displayZoom;
+
+function displayZoom_init(run)
+{
+	if(run)
+	{
+		displayZoom = {};
+	}
+
+	else
+	{
+		delete displayZoom;
+	}
+}
+
+function displayZoom_create(zoomHold, zoomEnd)
+{
+	displayZoom.wait 						= null;
+	displayZoom.waitTime 				= zoomHold;
+	displayZoom.call_funct 			= zoomEnd.call_funct;
+	displayZoom.call_params 		= zoomEnd.call_params|| null;
+}
+
+function displayZoom_to(displayTarget_y, extra_y)
+{
+	var css;
+	var y_zoom = displayTarget_y + extra_y;
+
+	// CONTROL BREAK
+	if(MAP_PLAYER.listen)
+	{
+		MAP_PLAYER.listen = false;
+
+		control_switch(false);
+	}
+
+
+	css =	{
+				"-webkit-transform"		: "translateY(" + y_zoom + "px)",
+				"transform"				: "translateY(" + y_zoom + "px)"
+			};
+
+	$(".stage-view-y")[0].addEventListener("webkitTransitionEnd", displayZoom_event, false);
+	$(".stage-view-y")[0].addEventListener("transitionend", displayZoom_event, false);
+
+	$(".stage-view-y").css(css);
+
+}
+
+function displayZoom_event(event)
+{
+	$(".stage-view-y")[0].removeEventListener("webkitTransitionEnd", displayZoom_event, false);
+	$(".stage-view-y")[0].removeEventListener("transitionend", displayZoom_event, false);
+
+	if(displayZoom.waitTime > 0)
+	{
+		displayZoom.wait = setTimeout(displayZoom_action, displayZoom.waitTime * 1000);
+	}
+
+	else
+	{
+		displayZoom_action();
+	}
+
+	trace("ZOOM OK");
+}
+
+function displayZoom_action()
+{
+	if(displayZoom.call_params != null)
+	{
+		displayZoom.call_funct.apply(this, displayZoom.call_params);
+	}
+
+	else
+	{
+		displayZoom.call_funct();
+	}
+}
+
+function displayZoom_return()
+{
+	moveStageScreen();
+
+	displayZoom_init(false);
+}
+
+
+function demo(msg)
+{
+	alert(msg);
+
+	displayZoom_return();
+}
 
 
 
@@ -358,9 +507,9 @@
 
 
 
-///////////////////////////////// GOD
-///////////////////////////////// GOD
-///////////////////////////////// GOD
+///////////////////////////////// DISPLAY_ZOOM
+///////////////////////////////// DISPLAY_ZOOM
+///////////////////////////////// DISPLAY_ZOOM
 
 
 
