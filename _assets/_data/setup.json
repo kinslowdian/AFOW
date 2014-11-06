@@ -215,7 +215,7 @@
 				"weather": "SNOW",
 				"land": "forest",
 				"entry_fall": "YES",
-				"fall_x": 2,
+				"fall_x": 1.75,
 				"fall_y": -0.5,
 				"fall_d": "DOWN",
 				"title_top": "level number 0",
@@ -1336,7 +1336,7 @@
 					"w": 1,
 					"h": 1,
 					"level": 2,
-					"exit": 8,
+					"exit": 9,
 					"direction": "DOWN",
 					"spawn": 2,
 					"p": "portal_top_forest"

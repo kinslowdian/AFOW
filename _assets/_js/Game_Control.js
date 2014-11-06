@@ -618,7 +618,9 @@
 
 		$("#" + MAP_PLAYER.playerMover).addClass(MAP_PLAYER.playerTween);
 
-		$("." + MAP_PLAYER.playerFadeTarget).css("opacity", 1);
+		// $("." + MAP_PLAYER.playerFadeTarget).css("opacity", 1);
+
+		$("." + MAP_PLAYER.playerFadeTarget).removeClass("portal_suck_in").addClass("portal_suck_out");
 
 		mapPlayer_update();
 	}
@@ -705,8 +707,8 @@
 
 			if(HIT_TEST.hit_portal)
 			{
-				// PORTAL CENTER FIX
 				// $("." + MAP_PLAYER.playerFadeTarget).css("opacity", 0);
+				$("." + MAP_PLAYER.playerFadeTarget).removeClass("portal_suck_out").addClass("portal_suck_in");
 			}
 
 			$("#" + MAP_PLAYER.playerMover + " .player-sprite .map-goat-legs").removeClass(MAP_PLAYER.playerWalkStop).addClass(MAP_PLAYER.playerWalkLoop);
@@ -750,8 +752,6 @@
 
 		if(MAP_PLAYER.placement.enterMap)
 		{
-			trace("!!!!!!! ---------  PORTAL EXIT CATCH");
-
 			MAP_PLAYER.placement.enterMap = false;
 
 			if(MAP_PLAYER.move != MAP_PLAYER.move_default) // 40
@@ -765,13 +765,6 @@
 
 			// HIT_TEST.listen = true;
 		}
-
-		// if(HIT_TEST.hit_portal && HIT_TEST.listen)
-		// {
-		// 	HIT_TEST.listen = false;
-
-		// 	gameStateChange("PORTAL");
-		// }
 
 		if(HIT_TEST.hit_portal)
 		{
@@ -1073,60 +1066,45 @@
 	function portalExit()
 	{
 		var moveMeasure = "";
-
-		trace("!----- portalExit(); === ");
-		trace(PORTAL_TRAVEL);
-
-		// OLD MOVEMENT
-		/*
-		if(PORTAL_TRAVEL.direction === "LEFT" || PORTAL_TRAVEL.direction === "UP")
-		{
-			mapPlayer_spawn((PORTAL_TRAVEL.buildData.block_x + (MAP_PLAYER.move_default / 80)), PORTAL_TRAVEL.buildData.block_y, PORTAL_TRAVEL.direction, false); // false;
-		}
-
-		else
-		{
-			mapPlayer_spawn((PORTAL_TRAVEL.buildData.block_x + (MAP_PLAYER.move_default / 80)), PORTAL_TRAVEL.buildData.block_y, PORTAL_TRAVEL.direction, true); // true;
-		}
-		*/
+		var x_spawn;
+		var y_spawn;
+		var axisCenter = MAP_PLAYER.move_default / MAP_PLAYER.placement.block_full;
 
 		// NEW MOVEMENT
 
 		if(PORTAL_TRAVEL.direction === "UP")
 		{
-			moveMeasure = "HALF";
+			x_spawn = PORTAL_TRAVEL.buildData.block_x + axisCenter;
+			y_spawn = PORTAL_TRAVEL.buildData.block_y;
 
-			// mapPlayer_spawn((PORTAL_TRAVEL.buildData.block_x + (MAP_PLAYER.move_default / MAP_PLAYER.placement.block_full)), PORTAL_TRAVEL.buildData.block_y, PORTAL_TRAVEL.direction, "HALF");
+			moveMeasure = "HALF";
 		}
 
 		if(PORTAL_TRAVEL.direction === "DOWN")
 		{
-			moveMeasure = "FULL";
+			x_spawn = PORTAL_TRAVEL.buildData.block_x + axisCenter;
+			y_spawn = PORTAL_TRAVEL.buildData.block_y;
 
-			// mapPlayer_spawn((PORTAL_TRAVEL.buildData.block_x + (MAP_PLAYER.move_default / MAP_PLAYER.placement.block_full)), PORTAL_TRAVEL.buildData.block_y, PORTAL_TRAVEL.direction, "FULL");
+			moveMeasure = "FULL";
 		}
 
-		if(PORTAL_TRAVEL.direction === "LEFT" || PORTAL_TRAVEL.direction === "RIGHT")
+		if(PORTAL_TRAVEL.direction === "LEFT")
 		{
-			moveMeasure = "FULL";
+			x_spawn = PORTAL_TRAVEL.buildData.block_x;
+			y_spawn = PORTAL_TRAVEL.buildData.block_y + axisCenter;
 
-			// mapPlayer_spawn((PORTAL_TRAVEL.buildData.block_x + (MAP_PLAYER.move_default / MAP_PLAYER.placement.block_full)), PORTAL_TRAVEL.buildData.block_y, PORTAL_TRAVEL.direction, "HALF_EXTRA");
+			moveMeasure = "HALF_EXTRA";
 		}
 
+		if(PORTAL_TRAVEL.direction === "RIGHT")
+		{
+			x_spawn = PORTAL_TRAVEL.buildData.block_x;
+			y_spawn = PORTAL_TRAVEL.buildData.block_y + axisCenter;
 
-		mapPlayer_spawn((PORTAL_TRAVEL.buildData.block_x + (MAP_PLAYER.move_default / MAP_PLAYER.placement.block_full)), PORTAL_TRAVEL.buildData.block_y, PORTAL_TRAVEL.direction, moveMeasure);
+			moveMeasure = "FULL";
+		}
 
-
-		// if(PORTAL_TRAVEL.direction === "LEFT" || PORTAL_TRAVEL.direction === "UP")
-		// {
-		// 	mapPlayer_spawn(PORTAL_TRAVEL.buildData.block_x, PORTAL_TRAVEL.buildData.block_y, PORTAL_TRAVEL.direction, false);
-		// }
-
-		// else
-		// {
-		// 	mapPlayer_spawn(PORTAL_TRAVEL.buildData.block_x, PORTAL_TRAVEL.buildData.block_y, PORTAL_TRAVEL.direction, true); // true;
-		// }
-
+		mapPlayer_spawn(x_spawn, y_spawn, PORTAL_TRAVEL.direction, moveMeasure);
 	}
 
 	///////////////////////////////// --- PORTAL
