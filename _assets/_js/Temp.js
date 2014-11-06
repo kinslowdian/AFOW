@@ -560,7 +560,7 @@ function gate_control(cmd)
 		{
 			displayZoom_init(true, false);
 			displayZoom_create(3, {call_funct: demo, call_params: ["SENT MESSAGE"]});
-			displayZoom_to(0, 0);
+			displayZoom_to(-1920, 0);
 
 			break;
 		}
