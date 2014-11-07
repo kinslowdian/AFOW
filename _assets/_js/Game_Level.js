@@ -644,6 +644,16 @@
 			}
 		}
 
+		// TEST > Temp.js
+
+		if(ROM.mapLevel == 0)
+		{
+			quick_buildGate();
+		}
+
+		// TEST > Temp.js
+
+
 		html_lib_empty();
 
 		// SHIFT TO PORTAL SCREEN

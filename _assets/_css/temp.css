@@ -182,17 +182,48 @@
 
 	.gate
 	{
-		width: 80px;
-		height: 80px;
+		width: 160px;
+		height: 160px;
 
 		position: absolute;
+	}
 
-		background: #fff;
+	.gate_show
+	{
+		opacity: 1;
+
+		-webkit-transform: scale(1);
+		transform: scale(1);
+	}
+
+	.gate_hide
+	{
+		opacity: 0;
+
+		-webkit-transform: scale(0);
+		transform: scale(0);
+	}
+
+	.tween-gate
+	{
+		-webkit-transform-origin: 50% 50%;
+		transform-origin: 50% 50%;
+
+		-webkit-transition: 500ms ease-in-out;
+		transition: 500ms ease-in-out;
 	}
 
 	#gate_0_0
 	{
 
+	}
+
+	.pixels_gateGuard
+	{
+		background-image: url(../_img/_gateGuard.png);
+		background-repeat: no-repeat;
+		background-position: 0 0;
+		background-size: 160px 160px;
 	}
 
 /* ----------------------------------------------------------------------- GATES */

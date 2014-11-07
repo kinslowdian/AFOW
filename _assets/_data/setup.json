@@ -348,8 +348,12 @@
 					"spawn": 0,
 					"defeat":[
 										{
-											"call_funct": "gate_control",
-											"call_params": ["TEST"]
+											"call_funct": "quick_focusGate",
+											"call_params": [
+																				"gate_0_0",
+																				1,
+																				{"call_funct" : "quick_fadeGate", "call_params": ["gate_0_0"]}
+																			]
 										}
 									]
 				},

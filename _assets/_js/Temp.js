@@ -457,14 +457,6 @@ function displayZoom_to(displayTarget_y, extra_y)
 	var css;
 	var y_zoom = displayTarget_y + extra_y;
 
-	// CONTROL BREAK
-	// if(MAP_PLAYER.listen)
-	// {
-		// MAP_PLAYER.listen = false;
-
-		// control_switch(false);
-	// }
-
 	if(y_zoom == 0)
 	{
 		displayZoom_over();
@@ -509,14 +501,17 @@ function displayZoom_over()
 
 function displayZoom_action()
 {
-	if(displayZoom.call_params != null)
+	z_action = window[displayZoom.call_funct];
+	z_params = displayZoom.call_params || null;
+
+	if(z_params != null)
 	{
-		displayZoom.call_funct.apply(this, displayZoom.call_params);
+		z_action.apply(this, z_params);
 	}
 
 	else
 	{
-		displayZoom.call_funct();
+		z_action();
 	}
 }
 
@@ -548,9 +543,15 @@ function gate_check()
 		defeatTriggerFunction = window[ROM.enemy.character.defeatPrefs[defeatObject].call_funct];
 		defeatTriggerParameters = ROM.enemy.character.defeatPrefs[defeatObject].call_params;
 
+		trace(defeatTriggerParameters);
+
 		defeatTriggerFunction.apply(this, defeatTriggerParameters);
 	}
 }
+
+
+
+
 
 function gate_control(cmd)
 {
@@ -576,9 +577,74 @@ function quick_buildGate()
 
 	gates.list = new Array();
 
-	var g = new Gate(120, 1760, 80, 80, "gate_0_0");
+	var g = new Gate(80, 1720, 160, 160, "gate_0_0");
+
+	g.create();
 
 	gates.list.push(g);
+}
+
+function quick_focusGate(gateID, gateDelay, gateActions)
+{
+	var gateTarget;
+
+	for(var gateObject in gates.list)
+	{
+		if(gates.list[gateObject].id === gateID)
+		{
+			gateTarget = gates.list[gateObject];
+
+			gateTarget.findCenter();
+
+			displayZoom_init(true, false);
+			displayZoom_create(gateDelay, gateActions);
+			displayZoom_to(gateTarget.cy, 0);
+
+			break;
+		}
+	}
+}
+
+function quick_fadeGate(gateID)
+{
+	$("#" + gateID).addClass("gate_hide");
+
+	$(".tween-gate")[0].addEventListener("webkitTransitionEnd", quick_destoryGate, false);
+	$(".tween-gate")[0].addEventListener("transitionend", quick_destoryGate, false);
+}
+
+function quick_destoryGate(event)
+{
+	$(".tween-gate")[0].removeEventListener("webkitTransitionEnd", quick_destoryGate, false);
+	$(".tween-gate")[0].removeEventListener("transitionend", quick_destoryGate, false);
+
+	// REMOVE GATE HARSH WILL FAIL IF NO ID
+	// $("#" + event.target.id).remove();
+
+	quick_updateGateList(event.target.id);
+
+	displayZoom_return();
+}
+
+function quick_updateGateList(gateID)
+{
+	var gateTarget;
+
+	for(var gateObject in gates.list)
+	{
+		if(gates.list[gateObject].id === gateID)
+		{
+			gateTarget = gates.list[gateObject];
+
+			gateTarget.closed = false;
+
+			$("#" + gateTarget.id).remove();
+
+			break;
+		}
+	}
+
+	trace(gates.list);
 }
 
 var Gate = function(_x, _y, _w, _h, _id)
@@ -587,15 +653,36 @@ var Gate = function(_x, _y, _w, _h, _id)
 	this.y = _y;
 	this.w = _w;
 	this.h = _h;
+	this.cy = 0;
 
 	this.id = _id;
 
+	this.closed = true;
+}
+
+Gate.prototype.create = function()
+{
+	/*
 	this.css = 	{
-								"-webkit-transform" : "translate(" + this.x + "px, " + this.y + "px);",
-								"transform" : "translate(" + this.x + "px, " + this.y + "px);"
+								"-webkit-transform" : "translate(" + this.x + "px, " + this.y + "px)",
+								"transform" : "translate(" + this.x + "px, " + this.y + "px)"
+							};*/
+
+	this.css = 	{
+								"-webkit-transform" : "translate(" + this.x + "px, " + this.y + "px)",
+								"transform" : "translate(" + this.x + "px, " + this.y + "px)"
 							};
 
 	$("#" + this.id).css(this.css);
+}
+
+Gate.prototype.findCenter = function()
+{
+	alert(DISPLAY.viewHeight * 0.5);
+
+	this.cy = -(this.y) + ((DISPLAY.viewHeight * 0.5) - (this.h * 0.5));
+
+	alert(this.cy);
 }
 
 
