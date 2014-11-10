@@ -450,6 +450,9 @@ function displayZoom_create(zoomHold, zoomEnd)
 	displayZoom.waitTime 				= zoomHold;
 	displayZoom.call_funct 			= zoomEnd.call_funct;
 	displayZoom.call_params 		= zoomEnd.call_params|| null;
+
+	displayZoom.waitReturn			= null;
+	displayZoom.waitReturnTime	= 0.5;
 }
 
 function displayZoom_to(displayTarget_y, extra_y)
@@ -577,7 +580,7 @@ function quick_buildGate()
 
 	gates.list = new Array();
 
-	var g = new Gate(80, 1720, 160, 160, "gate_0_0");
+	var g = new Gate(0, 1720, 320, 160, "gate_0_0");
 
 	g.create();
 
@@ -607,23 +610,51 @@ function quick_focusGate(gateID, gateDelay, gateActions)
 
 function quick_fadeGate(gateID)
 {
-	$("#" + gateID).addClass("gate_hide");
+	$("#" + gateID + " .gate-outer").addClass("gate_hide");
 
-	$(".tween-gate")[0].addEventListener("webkitTransitionEnd", quick_destoryGate, false);
-	$(".tween-gate")[0].addEventListener("transitionend", quick_destoryGate, false);
+	// $("#" + gateID + " .gate-inner-light").addClass("tween-gate-inner-light");
+
+	$("#" + gateID + " .gate-inner-light").addClass("tween-gate");
+
+	$("#" + gateID + " .tween-gate")[0].addEventListener("webkitTransitionEnd", quick_destoryGate, false);
+	$("#" + gateID + " .tween-gate")[0].addEventListener("transitionend", quick_destoryGate, false);
 }
 
 function quick_destoryGate(event)
 {
-	$(".tween-gate")[0].removeEventListener("webkitTransitionEnd", quick_destoryGate, false);
-	$(".tween-gate")[0].removeEventListener("transitionend", quick_destoryGate, false);
+	var gateTarget = event.target.parentNode.id;
+
+	trace(event);
+
+	$("#" + gateTarget + " .tween-gate")[0].removeEventListener("webkitTransitionEnd", quick_destoryGate, false);
+	$("#" + gateTarget + " .tween-gate")[0].removeEventListener("transitionend", quick_destoryGate, false);
 
 	// REMOVE GATE HARSH WILL FAIL IF NO ID
 	// $("#" + event.target.id).remove();
 
-	quick_updateGateList(event.target.id);
+	// quick_updateGateList(event.target.id);
 
-	displayZoom_return();
+	quick_updateGateList(gateTarget);
+
+	// ADD SECOND DELAY
+	// displayZoom_return();
+
+	$("#" + gateTarget + " .gate-inner-light")[0].addEventListener("webkitTransitionEnd", quick_gateDeactive, false);
+	$("#" + gateTarget + " .gate-inner-light")[0].addEventListener("transitionend", quick_gateDeactive, false);
+
+	$("#" + gateTarget + " .gate-inner-light").removeClass("gate-inner-light-on").addClass("gate-inner-light-off");
+
+	// displayZoom.waitReturn = setTimeout(displayZoom_return, displayZoom.waitReturnTime * 1000);
+}
+
+function quick_gateDeactive(event)
+{
+	// var gateTarget = event.target.parentNode.id;
+
+	// $("#" + gateTarget + " .gate-inner-light")[0].removeEventListener("webkitTransitionEnd", quick_gateDeactive, false);
+	// $("#" + gateTarget + " .gate-inner-light")[0].removeEventListener("transitionend", quick_gateDeactive, false);
+
+	displayZoom.waitReturn = setTimeout(displayZoom_return, displayZoom.waitReturnTime * 1000);
 }
 
 function quick_updateGateList(gateID)
@@ -638,7 +669,7 @@ function quick_updateGateList(gateID)
 
 			gateTarget.closed = false;
 
-			$("#" + gateTarget.id).remove();
+			$("#" + gateTarget.id + " .gate-outer").remove();
 
 			break;
 		}
@@ -662,16 +693,14 @@ var Gate = function(_x, _y, _w, _h, _id)
 
 Gate.prototype.create = function()
 {
-	/*
-	this.css = 	{
-								"-webkit-transform" : "translate(" + this.x + "px, " + this.y + "px)",
-								"transform" : "translate(" + this.x + "px, " + this.y + "px)"
-							};*/
-
 	this.css = 	{
 								"-webkit-transform" : "translate(" + this.x + "px, " + this.y + "px)",
 								"transform" : "translate(" + this.x + "px, " + this.y + "px)"
 							};
+
+	$("#" + this.id + " .gate-outer-floor").addClass("field-floor-" + LEVEL_MAIN.landType);
+
+	$("#" + this.id + " .gate-inner-floor").addClass("field-floor-" + LEVEL_MAIN.landType);
 
 	$("#" + this.id).css(this.css);
 }
@@ -682,7 +711,7 @@ Gate.prototype.findCenter = function()
 
 	this.cy = -(this.y) + ((DISPLAY.viewHeight * 0.5) - (this.h * 0.5));
 
-	alert(this.cy);
+	// alert(this.cy);
 }
 
 
