@@ -579,6 +579,7 @@ function quick_buildGate()
 	gates = {};
 
 	gates.list = new Array();
+	gates.gateTarget = null;
 
 	var g = new Gate(0, 1720, 320, 160, "gate_0_0");
 
@@ -589,60 +590,69 @@ function quick_buildGate()
 
 function quick_focusGate(gateID, gateDelay, gateActions)
 {
-	var gateTarget;
-
 	for(var gateObject in gates.list)
 	{
 		if(gates.list[gateObject].id === gateID)
 		{
-			gateTarget = gates.list[gateObject];
+			gates.gateTarget = gates.list[gateObject];
 
-			gateTarget.findCenter();
+			gates.gateTarget.findCenter();
 
 			displayZoom_init(true, false);
 			displayZoom_create(gateDelay, gateActions);
-			displayZoom_to(gateTarget.cy, 0);
+			displayZoom_to(gates.gateTarget.cy, 0);
 
 			break;
 		}
 	}
 }
 
-function quick_fadeGate(gateID)
+function quick_targetGate(gateID)
 {
-	$("#" + gateID + " .gate-outer").addClass("gate_hide");
+	for(var gateObject in gates.list)
+	{
+		if(gates.list[gateObject].id === gateID)
+		{
+			gates.gateTarget = gates.list[gateObject];
+		}
+	}
+}
+
+function quick_fadeGate()
+{
+	$("#" + gates.gateTarget.id + " .gate-outer").addClass("gate_hide");
 
 	// $("#" + gateID + " .gate-inner-light").addClass("tween-gate-inner-light");
 
-	$("#" + gateID + " .gate-inner-light").addClass("tween-gate");
+	$("#" + gates.gateTarget.id + " .gate-inner-light").addClass("tween-gate");
 
-	$("#" + gateID + " .tween-gate")[0].addEventListener("webkitTransitionEnd", quick_destoryGate, false);
-	$("#" + gateID + " .tween-gate")[0].addEventListener("transitionend", quick_destoryGate, false);
+	$("#" + gates.gateTarget.id + " .tween-gate")[0].addEventListener("webkitTransitionEnd", quick_destoryGate, false);
+	$("#" + gates.gateTarget.id + " .tween-gate")[0].addEventListener("transitionend", quick_destoryGate, false);
 }
 
 function quick_destoryGate(event)
 {
-	var gateTarget = event.target.parentNode.id;
+	// var gateTarget = event.target.parentNode.id;
 
-	trace(event);
+	// trace(event);
 
-	$("#" + gateTarget + " .tween-gate")[0].removeEventListener("webkitTransitionEnd", quick_destoryGate, false);
-	$("#" + gateTarget + " .tween-gate")[0].removeEventListener("transitionend", quick_destoryGate, false);
+	$("#" + gates.gateTarget.id + " .tween-gate")[0].removeEventListener("webkitTransitionEnd", quick_destoryGate, false);
+	$("#" + gates.gateTarget.id + " .tween-gate")[0].removeEventListener("transitionend", quick_destoryGate, false);
 
 	// REMOVE GATE HARSH WILL FAIL IF NO ID
 	// $("#" + event.target.id).remove();
 
 	// quick_updateGateList(event.target.id);
 
-	quick_updateGateList(gateTarget);
+	quick_updateGateList();
 
 	// ADD SECOND DELAY
 	// displayZoom_return();
 
-	$("#" + gateTarget + " .gate-inner-light")[0].addEventListener("webkitTransitionEnd", quick_gateDeactive, false);
-	$("#" + gateTarget + " .gate-inner-light")[0].addEventListener("transitionend", quick_gateDeactive, false);
+	$("#" + gates.gateTarget.id + " .gate-inner-light")[0].addEventListener("webkitTransitionEnd", quick_gateDeactive, false);
+	$("#" + gates.gateTarget.id + " .gate-inner-light")[0].addEventListener("transitionend", quick_gateDeactive, false);
 
-	$("#" + gateTarget + " .gate-inner-light").removeClass("gate-inner-light-on").addClass("gate-inner-light-off");
+	$("#" + gates.gateTarget.id + " .gate-inner-light").removeClass("gate-inner-light-on").addClass("gate-inner-light-off");
 
 	// displayZoom.waitReturn = setTimeout(displayZoom_return, displayZoom.waitReturnTime * 1000);
 }
@@ -657,25 +667,32 @@ function quick_gateDeactive(event)
 	displayZoom.waitReturn = setTimeout(displayZoom_return, displayZoom.waitReturnTime * 1000);
 }
 
-function quick_updateGateList(gateID)
+// function quick_updateGateList(gateID)
+// {
+// 	var gateTarget;
+
+// 	for(var gateObject in gates.list)
+// 	{
+// 		if(gates.list[gateObject].id === gateID)
+// 		{
+// 			gateTarget = gates.list[gateObject];
+
+// 			gateTarget.closed = false;
+
+// 			$("#" + gateTarget.id + " .gate-outer").remove();
+
+// 			break;
+// 		}
+// 	}
+
+// 	trace(gates.list);
+// }
+
+function quick_updateGateList()
 {
-	var gateTarget;
+	gates.gateTarget.closed = false;
 
-	for(var gateObject in gates.list)
-	{
-		if(gates.list[gateObject].id === gateID)
-		{
-			gateTarget = gates.list[gateObject];
-
-			gateTarget.closed = false;
-
-			$("#" + gateTarget.id + " .gate-outer").remove();
-
-			break;
-		}
-	}
-
-	trace(gates.list);
+	$("#" + gates.gateTarget.id + " .gate-outer").remove();
 }
 
 var Gate = function(_x, _y, _w, _h, _id)

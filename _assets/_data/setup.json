@@ -352,7 +352,7 @@
 											"call_params": [
 																				"gate_0_0",
 																				1,
-																				{"call_funct" : "quick_fadeGate", "call_params": ["gate_0_0"]}
+																				{"call_funct" : "quick_fadeGate"}
 																			]
 										}
 									]
