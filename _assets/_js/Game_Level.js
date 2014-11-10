@@ -13,6 +13,14 @@
 
 	var portalsOpened = false;
 
+	var gateControl = {};
+
+	var gateData_ARR = new Array();
+
+	var gates_ARR = new Array();
+
+	var gatesBorn = false;
+
 	var LEVEL = function(settings)
 	{
 		this.settings = settings;
@@ -379,6 +387,88 @@
 			delete this.settings;
 	}
 
+	var gate = function(settings, container)
+	{
+		this.settings							= settings;
+		this.buildData						= {};
+		this.buildData.container 	= container;
+
+		this.closed = true;
+	}
+
+	gate.prototype.create = function()
+	{
+		this.id 								= this.settings.n;
+		this.spawn							= this.settings.spawn;
+		this.center_y						= 0;
+
+		this.buildData.block_x	= this.settings.x;
+		this.buildData.block_y	= this.settings.y;
+		this.buildData.x				= this.buildData.block_x * 80;
+		this.buildData.y				= this.buildData.block_y * 80;
+		this.buildData.w				= this.settings.w * 80;
+		this.buildData.h				= this.settings.h * 80;
+
+		this.buildData.html			= html_lib_use("_gate", true, true);
+
+		this.buildData.css 			= {
+																"-webkit-transform"	: "translate(" + this.buildData.x + "px, " + this.buildData.y + "px)",
+																"transform"			: "translate(" + this.buildData.x + "px, " + this.buildData.y + "px)"
+															};
+
+		delete this.settings;
+	}
+
+	gate.prototype.build = function()
+	{
+		$(this.buildData.container).append(this.buildData.html);
+		$(this.buildData.container + " #_gate").attr("id", this.id);
+
+		$("#" + this.id + " .gate-outer-floor").addClass("field-floor-" + LEVEL_MAIN.landType);
+
+		$("#" + this.id + " .gate-inner-floor").addClass("field-floor-" + LEVEL_MAIN.landType);
+
+		if(!this.closed)
+		{
+			$("#" + this.id + " .gate-outer").remove();
+
+			$("#" + this.id + " .gate-inner-light").removeClass("gate-inner-light-on").addClass("gate-inner-light-off");
+		}
+
+		$("#" + this.id).css(this.buildData.css);
+	}
+
+	gate.prototype.findCenter = function()
+	{
+		this.center_y = -(this.buildData.y) + ((DISPLAY.viewHeight * 0.5) - (this.buildData.h * 0.5));
+	}
+
+	function gateRead()
+	{
+		for(var levelData in Logic.dat_ROM["_LEVELS"])
+		{
+			for(var i in Logic.dat_ROM["_LEVELS"][levelData]["gates"])
+			{
+				gateData_ARR.push(Logic.dat_ROM["_LEVELS"][levelData]["gates"][i]);
+			}
+		}
+
+		var gate_count = 0;
+
+		for(var j in gateData_ARR)
+		{
+			var g = new gate(gateData_ARR[j], ".gate-areas");
+
+			g.create();
+
+			gates_ARR.push(g);
+
+			gate_count++;
+		}
+
+		gatesBorn = true;
+	}
+
 
 
 	function level_init()
@@ -644,14 +734,22 @@
 			}
 		}
 
-		// TEST > Temp.js
+		// GATES (PRE-READ)
 
-		if(ROM.mapLevel == 0)
+		if(!gatesBorn)
 		{
-			quick_buildGate();
+			gatesBorn = true;
+
+			gateRead();
 		}
 
-		// TEST > Temp.js
+		for(var object_gate in gates_ARR)
+		{
+			if(ROM.mapLevel == gates_ARR[object_gate].spawn)
+			{
+				gates_ARR[object_gate].build();
+			}
+		}
 
 
 		html_lib_empty();
@@ -828,6 +926,82 @@
 		}
 	}
 
+	function gateAccess_focusGate(gateID, gateDelay, gateActions)
+	{
+		for(var gateObject in gates_ARR)
+		{
+			if(gates_ARR[gateObject].id === gateID)
+			{
+				gateControl.gateTarget = gates_ARR[gateObject];
+
+				gateControl.gateTarget.findCenter();
+
+				displayZoom_init(true, false);
+				displayZoom_create(gateDelay, gateActions);
+				displayZoom_to(gateControl.gateTarget.center_y, 0);
+
+				break;
+			}
+		}
+	}
+
+	function gateAccess_targetGate(gateID)
+	{
+		for(var gateObject in gates_ARR)
+		{
+			if(gates_ARR[gateObject].id === gateID)
+			{
+				gateControl.gateTarget = gates_ARR[gateObject];
+			}
+		}
+	}
+
+	function gateAccess_fadeGate()
+	{
+		$("#" + gateControl.gateTarget.id + " .gate-outer").addClass("gate_hide");
+
+		$("#" + gateControl.gateTarget.id + " .gate-inner-light").addClass("tween-gate");
+
+		$("#" + gateControl.gateTarget.id + " .tween-gate")[0].addEventListener("webkitTransitionEnd", gateAccess_destoryGate, false);
+		$("#" + gateControl.gateTarget.id + " .tween-gate")[0].addEventListener("transitionend", gateAccess_destoryGate, false);
+	}
+
+	function gateAccess_destoryGate(event)
+	{
+		$("#" + gateControl.gateTarget.id + " .tween-gate")[0].removeEventListener("webkitTransitionEnd", gateAccess_destoryGate, false);
+		$("#" + gateControl.gateTarget.id + " .tween-gate")[0].removeEventListener("transitionend", gateAccess_destoryGate, false);
+
+		gateAccess_updateGateList();
+
+		$("#" + gateControl.gateTarget.id + " .gate-inner-light")[0].addEventListener("webkitTransitionEnd", gateAccess_gateDeactivated, false);
+		$("#" + gateControl.gateTarget.id + " .gate-inner-light")[0].addEventListener("transitionend", gateAccess_gateDeactivated, false);
+
+		$("#" + gateControl.gateTarget.id + " .gate-inner-light").removeClass("gate-inner-light-on").addClass("gate-inner-light-off");
+	}
+
+	function gateAccess_updateGateList()
+	{
+		gateControl.gateTarget.closed = false;
+
+		$("#" + gateControl.gateTarget.id + " .gate-outer").remove();
+	}
+
+	function gateAccess_gateDeactivated(event)
+	{
+		$("#" + gateControl.gateTarget.id + " .gate-inner-light")[0].removeEventListener("webkitTransitionEnd", gateAccess_gateDeactivated, false);
+		$("#" + gateControl.gateTarget.id + " .gate-inner-light")[0].removeEventListener("transitionend", gateAccess_gateDeactivated, false);
+
+		if(DISPLAY.displayZoom.waitReturnTime > 0)
+		{
+			DISPLAY.displayZoom.waitReturn = setTimeout(displayZoom_return, DISPLAY.displayZoom.waitReturnTime * 1000);
+		}
+
+		else
+		{
+			displayZoom_return();
+		}
+	}
+
 	function level_player_setup()
 	{
 		trace("level_player_setup();");
@@ -868,6 +1042,7 @@
 
 		$(".woodland-areas").html("");
 		$(".god-areas").html("");
+		$(".gate-areas").html("");
 
 		$("#space .weather-snow").html("");
 		$("#space .weather-rain").html("");

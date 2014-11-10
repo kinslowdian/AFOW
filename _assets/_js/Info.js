@@ -1519,7 +1519,7 @@
 
 		if(ROM.enemy.character.defeatPrefs)
 		{
-			gate_check();
+			enemyDefeat_check();
 		}
 
 		else
@@ -1572,6 +1572,20 @@
 	}
 
 	/* --- ONE_USE_SCREEN */
+
+	function enemyDefeat_check()
+	{
+		var defeatTriggerFunction;
+		var defeatTriggerParameters;
+
+		for(var defeatObject in ROM.enemy.character.defeatPrefs)
+		{
+			defeatTriggerFunction = window[ROM.enemy.character.defeatPrefs[defeatObject].call_funct];
+			defeatTriggerParameters = ROM.enemy.character.defeatPrefs[defeatObject].call_params;
+
+			defeatTriggerFunction.apply(this, defeatTriggerParameters);
+		}
+	}
 
 
 

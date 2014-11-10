@@ -1,5 +1,7 @@
 	var DISPLAY;
 
+	var displayZoom;
+
 	function display_init()
 	{
 		DISPLAY = {};
@@ -227,4 +229,114 @@
 		{
 			BATTLE_NAV = null;
 		}
+	}
+
+	// ZOOM
+
+	function displayZoom_init(run, plugControl)
+	{
+		if(plugControl)
+		{
+			hitTest_init();
+
+			MAP_PLAYER.listen = true;
+
+			control_switch(true);
+		}
+
+		else
+		{
+			MAP_PLAYER.listen = false;
+		}
+
+		if(run)
+		{
+			DISPLAY.displayZoom = {};
+		}
+
+		else
+		{
+			delete DISPLAY.displayZoom;
+		}
+	}
+
+	function displayZoom_create(zoomHold, zoomEnd)
+	{
+		DISPLAY.displayZoom.wait 						= null;
+		DISPLAY.displayZoom.waitTime 				= zoomHold;
+		DISPLAY.displayZoom.call_funct 			= zoomEnd.call_funct;
+		DISPLAY.displayZoom.call_params 		= zoomEnd.call_params|| null;
+
+		DISPLAY.displayZoom.waitReturn			= null;
+		DISPLAY.displayZoom.waitReturnTime	= 0.5;
+	}
+
+	function displayZoom_to(displayTarget_y, extra_y)
+	{
+		var css;
+		var y_zoom = displayTarget_y + extra_y;
+
+		if(y_zoom == 0)
+		{
+			displayZoom_over();
+		}
+
+		else
+		{
+			css =	{
+						"-webkit-transform"		: "translateY(" + y_zoom + "px)",
+						"transform"				: "translateY(" + y_zoom + "px)"
+					};
+
+			$(".stage-view-y")[0].addEventListener("webkitTransitionEnd", displayZoom_event, false);
+			$(".stage-view-y")[0].addEventListener("transitionend", displayZoom_event, false);
+
+			$(".stage-view-y").css(css);
+		}
+	}
+
+	function displayZoom_event(event)
+	{
+		$(".stage-view-y")[0].removeEventListener("webkitTransitionEnd", displayZoom_event, false);
+		$(".stage-view-y")[0].removeEventListener("transitionend", displayZoom_event, false);
+
+		displayZoom_over();
+
+		trace("ZOOM OK");
+	}
+
+	function displayZoom_over()
+	{
+		if(DISPLAY.displayZoom.waitTime > 0)
+		{
+			DISPLAY.displayZoom.wait = setTimeout(displayZoom_action, DISPLAY.displayZoom.waitTime * 1000);
+		}
+
+		else
+		{
+			displayZoom_action();
+		}
+	}
+
+	function displayZoom_action()
+	{
+		z_action = window[DISPLAY.displayZoom.call_funct];
+		z_params = DISPLAY.displayZoom.call_params || null;
+
+		if(z_params != null)
+		{
+			z_action.apply(this, z_params);
+		}
+
+		else
+		{
+			z_action();
+		}
+	}
+
+	function displayZoom_return()
+	{
+		moveStageScreen();
+
+		displayZoom_init(false, true);
 	}
