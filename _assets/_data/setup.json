@@ -337,14 +337,32 @@
 			"enemyPlayers":
 			[
 				{
+					"x": 1.5,
+					"y": 21,
+					"w": 0.5,
+					"h": 0.5,
+					"n": "level0_test0",
+					"t": "rabbit",
+					"l": 10,
+					"known" : "the bastard",
+					"spawn": 0,
+					"defeat":[
+										{
+											"call_funct": "gateAccess_focusGate",
+											"call_params": ["level0_gate0", 1, {"call_funct" : "gateAccess_fadeGate"}]
+										}
+									]
+				},
+
+				{
 					"x": 0,
 					"y": 1.5,
 					"w": 0.5,
 					"h": 0.5,
-					"n": "level0_test",
+					"n": "level0_test1",
 					"t": "rabbit",
 					"l": 10,
-					"known" : "the bastard",
+					"known" : "the other bastard",
 					"spawn": 0,
 					"defeat":[
 										{

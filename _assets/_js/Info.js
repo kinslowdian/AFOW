@@ -1526,11 +1526,7 @@
 		{
 			// ENABLE CONTROL - FUNCTION ALREADY WRITTEN IN Game_Control.js?
 
-			hitTest_init();
-
-			MAP_PLAYER.listen = true;
-
-			control_switch(true);
+			control_relink();
 		}
 	}
 
@@ -1572,20 +1568,6 @@
 	}
 
 	/* --- ONE_USE_SCREEN */
-
-	function enemyDefeat_check()
-	{
-		var defeatTriggerFunction;
-		var defeatTriggerParameters;
-
-		for(var defeatObject in ROM.enemy.character.defeatPrefs)
-		{
-			defeatTriggerFunction = window[ROM.enemy.character.defeatPrefs[defeatObject].call_funct];
-			defeatTriggerParameters = ROM.enemy.character.defeatPrefs[defeatObject].call_params;
-
-			defeatTriggerFunction.apply(this, defeatTriggerParameters);
-		}
-	}
 
 
 

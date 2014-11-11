@@ -13,6 +13,10 @@
 		DISPLAY.screenSectionStore = 0;
 
 		DISPLAY.gameHeight = 2000;
+
+		// ISSUES
+		// DISPLAY.y = 0;
+		// DISPLAY.current_y = 0;
 	}
 
 	function screenUpdateInit(forceEvent)
@@ -73,6 +77,7 @@
 
 			DISPLAY.viewHeight = $(document).height();
 
+			// ISSUES
 			DISPLAY.y = 0;
 			DISPLAY.current_y = 0;
 
@@ -216,11 +221,8 @@
 		if(BATTLE_NAV.game.result === "LOSE")
 		{
 			// SET UP CONTROLS + HITTEST
-			hitTest_init();
 
-			MAP_PLAYER.listen = true;
-
-			control_switch(true);
+			control_relink();
 
 			BATTLE_NAV = null;
 		}
@@ -237,11 +239,7 @@
 	{
 		if(plugControl)
 		{
-			hitTest_init();
-
-			MAP_PLAYER.listen = true;
-
-			control_switch(true);
+			control_relink();
 		}
 
 		else
@@ -336,6 +334,11 @@
 
 	function displayZoom_return()
 	{
+		// if(DISPLAY.y > 0)
+		// {
+		// 	moveStageScreen();
+		// }
+
 		moveStageScreen();
 
 		displayZoom_init(false, true);

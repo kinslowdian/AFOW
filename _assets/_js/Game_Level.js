@@ -393,6 +393,8 @@
 		this.buildData						= {};
 		this.buildData.container 	= container;
 
+		this.needCenterFocus = false;
+
 		this.closed = true;
 	}
 
@@ -441,6 +443,11 @@
 	gate.prototype.findCenter = function()
 	{
 		this.center_y = -(this.buildData.y) + ((DISPLAY.viewHeight * 0.5) - (this.buildData.h * 0.5));
+
+		if(Math.abs(this.center_y + MAP_PLAYER.pos_y) > 180)
+		{
+			this.needCenterFocus = true;
+		}
 	}
 
 	function gateRead()
@@ -928,17 +935,50 @@
 
 	function gateAccess_focusGate(gateID, gateDelay, gateActions)
 	{
+		var noZoom_funct;
+		var noZoom_params;
+
 		for(var gateObject in gates_ARR)
 		{
 			if(gates_ARR[gateObject].id === gateID)
 			{
 				gateControl.gateTarget = gates_ARR[gateObject];
 
-				gateControl.gateTarget.findCenter();
+				if(gateControl.gateTarget.closed)
+				{
+					gateControl.gateTarget.findCenter();
 
-				displayZoom_init(true, false);
-				displayZoom_create(gateDelay, gateActions);
-				displayZoom_to(gateControl.gateTarget.center_y, 0);
+					if(gateControl.gateTarget.needCenterFocus)
+					{
+						displayZoom_init(true, false);
+						displayZoom_create(gateDelay, gateActions);
+						displayZoom_to(gateControl.gateTarget.center_y, 0);
+					}
+
+					else
+					{
+						MAP_PLAYER.listen = false;
+
+						noZoom_funct = window[gateActions.call_funct];
+						noZoom_params = gateActions.call_params || null;
+
+						if(noZoom_params != null)
+						{
+							noZoom_funct.apply(this, noZoom_params);
+						}
+
+						else
+						{
+							noZoom_funct();
+						}
+					}
+				}
+
+				else
+				{
+					// GATE OPEN NORMAL RETURN
+					control_relink();
+				}
 
 				break;
 			}
@@ -991,14 +1031,24 @@
 		$("#" + gateControl.gateTarget.id + " .gate-inner-light")[0].removeEventListener("webkitTransitionEnd", gateAccess_gateDeactivated, false);
 		$("#" + gateControl.gateTarget.id + " .gate-inner-light")[0].removeEventListener("transitionend", gateAccess_gateDeactivated, false);
 
-		if(DISPLAY.displayZoom.waitReturnTime > 0)
+		if(DISPLAY.displayZoom)
 		{
-			DISPLAY.displayZoom.waitReturn = setTimeout(displayZoom_return, DISPLAY.displayZoom.waitReturnTime * 1000);
+			if(DISPLAY.displayZoom.waitReturnTime > 0)
+			{
+				DISPLAY.displayZoom.waitReturn = setTimeout(displayZoom_return, DISPLAY.displayZoom.waitReturnTime * 1000);
+			}
+
+			else
+			{
+				displayZoom_return();
+			}
 		}
 
 		else
 		{
-			displayZoom_return();
+			// CONTINUE WITHOUT ZOOM
+
+			control_relink();
 		}
 	}
 

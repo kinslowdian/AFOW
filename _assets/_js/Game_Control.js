@@ -276,6 +276,15 @@
 		mapPlayer_update();
 	}
 
+	function control_relink()
+	{
+		hitTest_init();
+
+		MAP_PLAYER.listen = true;
+
+		control_switch(true);
+	}
+
 	function touchFirstTransition()
 	{
 		$("#touchPad_C .touchPad-cont").removeClass("touchPad_C_hide").addClass("touchPad_C_show");
