@@ -381,7 +381,7 @@ function hack_hitTest()
 
 	}
 
-	$(".status p").html(HIT_TEST.hit_edge.toString());
+	// $(".status p").html(HIT_TEST.hit_edge.toString());
 
 	hack_hitTest_update();
 }

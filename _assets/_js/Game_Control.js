@@ -1219,6 +1219,60 @@
 		HIT_TEST.hit_sound_id = "";
 		HIT_TEST.hit_god_id = "";
 
+		if(HIT_TEST.hits > 0)
+		{
+			for(var smashObject in HIT_TEST.hits)
+			{
+				var smash = HIT_TEST.hits[smashObject];
+
+				if($(smash).attr("id"))
+				{
+					hit_id = $(smash).attr("id");
+				}
+
+				if($(smash).attr("data-npc") === "edge")
+				{
+					HIT_TEST.hit_edge = true;
+				}
+
+				if($(smash).attr("data-npc") === "portal")
+				{
+					HIT_TEST.hit_portal = true;
+
+					HIT_TEST.hit_portal_id = hit_id;
+				}
+
+				if($(smash).attr("data-npc") === "enemy")
+				{
+					HIT_TEST.hit_enemy = true;
+
+					HIT_TEST.hit_enemy_id = hit_id;
+				}
+
+				if($(smash).attr("data-npc") === "sound")
+				{
+					HIT_TEST.hit_sound = true;
+
+					HIT_TEST.hit_sound_id = hit_id;
+				}
+
+				if($(smash).attr("data-npc") === "god")
+				{
+					HIT_TEST.hit_god = true;
+
+					HIT_TEST.hit_god_id = hit_id;
+
+					trace("!!!!!!!!!! HIT_TEST GOD !!!!!!!!!!");
+					trace(HIT_TEST);
+					trace("!!!!!!!!!! HIT_TEST GOD !!!!!!!!!!");
+				}
+			}
+		}
+
+
+
+
+
 		if(HIT_TEST.hits[0] != undefined || HIT_TEST.hits[0] != null)
 		{
 			// trace(HIT_TEST);
