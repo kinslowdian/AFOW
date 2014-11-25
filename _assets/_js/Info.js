@@ -11,14 +11,20 @@
 	{
 		if(run)
 		{
+			// BREAK
+			/*
 			$(".options-trigger")[0].addEventListener("click", optionsTrigger_event, false);
 			$(".options-trigger")[0].addEventListener("touchend", optionsTrigger_event, false);
+			*/
 		}
 
 		else
 		{
+			// BREAK
+			/*
 			$(".options-trigger")[0].removeEventListener("click", optionsTrigger_event, false);
 			$(".options-trigger")[0].removeEventListener("touchend", optionsTrigger_event, false);
+			*/
 		}
 	}
 
@@ -1516,6 +1522,18 @@
 	function battleWin_backToNormal()
 	{
 		optionsTrigger_init(true);
+
+		if(ROM.enemy.character.defeatPrefs)
+		{
+			enemyDefeat_check();
+		}
+
+		else
+		{
+			// ENABLE CONTROL - FUNCTION ALREADY WRITTEN IN Game_Control.js?
+
+			control_relink();
+		}
 	}
 
 	// -------- BATTLE_WIN

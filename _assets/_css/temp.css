@@ -165,11 +165,240 @@
 	}
 
 
+/* ----------------------------------------------------------------------- GATES */
+
+	.gate-areas
+	{
+		width: inherit;
+		height: 2000px;
+
+		position: absolute;
+
+		left: 0;
+		top: 0;
+
+		z-index: 1;
+	}
+
+
+	.pixels_gate
+	{
+		background-image: url(../_img/_gate_1x.png);
+		background-repeat: no-repeat;
+		background-position: 0 0;
+		background-size: 320px 240px;
+	}
+
+
+	.gate
+	{
+		width: 320px;
+		height: 160px;
+
+		position: absolute;
+	}
+
+	.gate-outer
+	{
+		width: 320px;
+		height: 160px;
+
+		position: absolute;
+
+		left: 0;
+		top: 0;
+	}
+
+	.gate-outer-floor, .gate-outer-tile
+	{
+		width: inherit;
+		height: inherit;
+
+		position: absolute;
+
+		left: 0;
+		top: 0;
+	}
+
+	.gate-outer-tile
+	{
+		background-position: 0 -80px;
+	}
+
+	.gate-inner
+	{
+		width: 80px;
+		height: 80px;
+
+		position: absolute;
+
+		-webkit-transform: translate(120px, 40px);
+		transform: translate(120px, 40px);
+	}
+
+	.gate-inner-floor, .gate-inner-tile
+	{
+		width: inherit;
+		height: inherit;
+
+		position: absolute;
+
+		left: 0;
+		top: 0;
+	}
+
+	.gate-inner-light
+	{
+		width:78px;
+		height: 78px;
+
+
+
+		position: absolute;
+
+		left: 1px;
+		top: 1px;
+	}
+
+	.gate-inner-light-on
+	{
+		background: #17e69d;
+	}
+
+	.gate-inner-light-off
+	{
+		background: #336c75;
+	}
+
+	.tween-gate-inner-light
+	{
+		-webkit-animation: tweenGateInnterLightFrames 600ms ease-in-out infinite;
+		animation: tweenGateInnterLightFrames 600ms ease-in-out infinite;
+	}
+
+	@-webkit-keyframes tweenGateInnterLightFrames
+	{
+		0%		{opacity: 1;}
+		40%		{opacity: 0;}
+		60%		{opacity: 0;}
+		100%	{opacity: 1;}
+	}
+
+	@keyframes tweenGateInnterLightFrames
+	{
+		0%		{opacity: 1;}
+		40%		{opacity: 0;}
+		60%		{opacity: 0;}
+		100%	{opacity: 1;}
+	}
+
+	.gate-inner-tile
+	{
+		background-position: 0 0;
+	}
+
+	.gate_show
+	{
+		opacity: 1;
+	}
+
+	.gate_hide
+	{
+		opacity: 0;
+	}
+
+	.tween-gate
+	{
+		-webkit-transition: 500ms ease-in-out;
+		transition: 500ms ease-in-out;
+	}
+
+	#gate_0_0
+	{
+
+	}
+
+/* ----------------------------------------------------------------------- GATES */
+
+
 
 
 
 /*	--------------------------------------- INFO SCREEN*/
 
+
+.player, .hitTest
+{
+	width: 40px;
+	height: 40px;
+
+/*	background: #F38630;*/
+
+	position: absolute;
+
+
+	-webkit-transform-origin: 50% 50%;
+	transform-origin: 50% 50%;
+}
+
+.hitTest
+{
+	background: rgba(0, 255, 0, 0.4);
+}
+
+.tween-player-XX
+{
+	-webkit-transform: translate(0px, 0px);
+	transform: translate(0px, 0px);
+}
+
+.tween-player-UD
+{
+/*	-webkit-animation: tweenPlayerUDFrames 200ms linear infinite;
+	animation: tweenPlayerUDFrames 200ms linear infinite;*/
+}
+
+.tween-player-LR
+{
+	-webkit-animation: tweenPlayerLRFrames 200ms linear infinite;
+	animation: tweenPlayerLRFrames 200ms linear infinite;
+}
+
+@-webkit-keyframes tweenPlayerUDFrames
+{
+	0%		{-webkit-transform: translateX(0px);}
+	25%		{-webkit-transform: translateX(-4px);}
+	50%		{-webkit-transform: translateX(0px);}
+	75%		{-webkit-transform: translateX(4px);}
+	100%	{-webkit-transform: translateX(0px);}
+}
+
+@keyframes tweenPlayerUDFrames
+{
+	0%		{transform: translateX(0px);}
+	25%		{transform: translateX(-4px);}
+	50%		{transform: translateX(0px);}
+	75%		{transform: translateX(4px);}
+	100%	{transform: translateX(0px);}
+}
+
+@-webkit-keyframes tweenPlayerLRFrames
+{
+	0%		{-webkit-transform: translateY(0px);}
+	25%		{-webkit-transform: translateY(-4px);}
+	50%		{-webkit-transform: translateY(0px);}
+	75%		{-webkit-transform: translateY(4px);}
+	100%	{-webkit-transform: translateY(0px);}
+}
+
+@keyframes tweenPlayerLRFrames
+{
+	0%		{transform: translateY(0px);}
+	25%		{transform: translateY(-4px);}
+	50%		{transform: translateY(0px);}
+	75%		{transform: translateY(4px);}
+	100%	{transform: translateY(0px);}
+}
 
 
 /*PIXELS*/

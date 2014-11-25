@@ -239,8 +239,97 @@
 
 	<!-- ENEMY -->
 
+
+
 <!-- LEVEL_GAME -->
 <div class="_level_game">
+
+	<div id="" class="" data-static-id="roam_wrapper" data-static-class="stage-main">
+
+		<div class="" data-static-class="field">
+
+			<div class="layer-field-fill layer-field">
+
+				<div class="bgFill-l collideCheck-field" data-npc="edge"></div>
+				<div class="bgFill-r collideCheck-field" data-npc="edge"></div>
+
+				<div class="bgFill-t collideCheck-field" data-npc="edge"></div>
+				<div class="bgFill-b collideCheck-field" data-npc="edge"></div>
+
+			</div>
+
+			<div class="layer-field-floor layer-field">
+
+				<div></div>
+
+			</div>
+
+			<div class="layer-field-sound-area layer-field">
+
+			</div>
+
+			<div class="layer-field-gate-area layer-field">
+
+			</div>
+
+			<div class="layer-field-god-area layer-field">
+
+			</div>
+
+			<div class="layer-field-water-area layer-field">
+
+			</div>
+
+			<div class="layer-field-walls layer-field">
+
+			</div>
+
+			<div class="layer-field-portal-area layer-field">
+
+			</div>
+
+			<div class="layer-field-enemy-area layer-field">
+
+			</div>
+
+			<div class="layer-field-player-area layer-field">
+
+				<div class="hitTest collideCheck-player debug"></div> <!-- RECIEVES CONTROL -->
+
+				<div class="player tweenFlickerFixManualAll"> <!-- RECIEVES CONTROL -->
+
+					<div class="player-sprite tween-player-XX">
+
+						<div class="map-goat-legs pixels_map_player tween-mapPlayerWalk_loop"></div>
+
+						<div class="map-goat-body pixels_map_player"></div>
+
+						<div class="map-goat-head pixels_map_player tween-map-goat-head"></div>
+
+						<div class="map-goat-hand-L pixels_map_player tween-map-goat-hand-L"></div>
+						<div class="map-goat-hand-R pixels_map_player tween-map-goat-hand-R"></div>
+
+					</div>
+
+				</div> <!-- .player -->
+
+			</div> <!-- .layer-field-player-area -->
+
+		</div> <!-- .field -->
+
+	</div> <!-- #roam_wrapper -->
+
+</div> <!-- ._level_game -->
+
+
+
+
+
+
+
+
+<!-- LEVEL_GAME -->
+<div class="_level_game_old">
 <div id="" data-static-id="display_inner_info">
 
 	<div id="" data-static-id="enemyScreen">
@@ -458,6 +547,10 @@
 					<div class="" data-static-class="god-areas">
 
 					</div> <!-- .god-areas -->
+
+					<div class="" data-static-class="gate-areas">
+
+					</div> <!-- .gate-areas -->
 
 					<div class="" data-static-class="sound-area">
 
@@ -1783,6 +1876,33 @@
 </div> <!-- .monkey_default_area -->
 </div>
 <!-- GOD_MONKEY_DEFAULT -->
+
+
+<!-- GATE -->
+<div class="_gate">
+<div id="" class="" data-static-id="_gate" data-static-class="gate tweenFlickerFixManualAll">
+
+	<div class="" data-static-class="gate-outer collideCheck-field tween-gate" data-npc="edge">
+
+		<div class="" data-static-class="gate-outer-floor"></div>
+
+		<div class="" data-static-class="gate-outer-tile pixels_gate"></div>
+
+	</div>
+
+	<div class="" data-static-class="gate-inner collideCheck-field" data-npc="edge">
+
+			<div class="" data-static-class="gate-inner-floor"></div>
+
+			<div class="" data-static-class="gate-inner-light gate-inner-light-on"></div>
+
+			<div class="" data-static-class="gate-inner-tile pixels_gate"></div>
+
+	</div>
+
+</div>
+</div>
+<!-- GATE -->
 
 
 

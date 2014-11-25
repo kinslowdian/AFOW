@@ -7,6 +7,8 @@
 @import url(temp.css);
 /* DELETE THIS */
 
+@import url(cleaner.css);
+
 /* MUST BE LAST */
 @import url(responsive.css);
 
@@ -141,7 +143,7 @@
 		left: 0; top:0; right:0; bottom:0;
 		margin: 0 auto;
 
-		z-index: 0;
+		/*z-index: 0;*/
 
 		/* background: #FFBE40; */
 	}
@@ -176,7 +178,7 @@
 
 		/*z-index: 1000;*/
 		/*z-index: 1;*/
-		z-index: 4;
+		/*z-index: 4;*/
 	}
 
 	#displayErrorWrapper .displayError
@@ -831,7 +833,7 @@
 
 		position: absolute;
 
-		z-index: 2;
+		/*z-index: 2;*/
 	}
 
 	.player-sprite .map-goat-hand-L
@@ -843,7 +845,7 @@
 
 		position: absolute;
 
-		z-index: 3;
+		/*z-index: 3;*/
 	}
 
 	.player-sprite .map-goat-hand-R
@@ -855,7 +857,7 @@
 
 		position: absolute;
 
-		z-index: 3;
+		/*z-index: 3;*/
 	}
 
 	.player-sprite .map-goat-body
@@ -867,7 +869,7 @@
 
 		position: absolute;
 
-		z-index: 1;
+		/*z-index: 1;*/
 	}
 
 	.player-sprite .map-goat-legs
@@ -879,7 +881,7 @@
 
 		position: absolute;
 
-		z-index: 0;
+		/*z-index: 0;*/
 	}
 
 
@@ -950,7 +952,7 @@
 
 		position: absolute;
 
-		z-index: 4;
+		/*z-index: 4;*/
 	}
 
 	.tween-actionCloud
@@ -974,12 +976,12 @@
 
 	.actionCloudMain-0
 	{
-		z-index: 1;
+		/*z-index: 1;*/
 	}
 
 	.actionCloudMain-1
 	{
-		z-index: 0;
+		/*z-index: 0;*/
 	}
 
 	.actionCloudSprite-outer
@@ -1235,7 +1237,7 @@
 
 		position: absolute;
 
-		z-index: 1;
+		/*z-index: 1;*/
 	}
 
 	.map-enemy
@@ -1557,17 +1559,17 @@
 
 /* ----------------------------------------------------------------------- LEVEL_GAME */
 
-	#roam_wrapper
+/*	#roam_wrapper
 	{
 		width: 100%;
 		height: 100%;
 
-		/* overflow: hidden; */
+		 overflow: hidden;
 
 		position: absolute;
 
 		z-index: 0;
-	}
+	}*/
 
 	#roam_content
 	{
@@ -1592,7 +1594,7 @@
 	}
 
 
-	.field
+/*	.field
 	{
 		width: 320px;
 		height: 0px;
@@ -1602,7 +1604,7 @@
 		margin: 0 auto;
 
 		z-index: 4;
-	}
+	}*/
 
 	.field-area, .enemy-area, .portal-area, .player-area, .fieldEdge, .match-area, .sound-area
 	{
@@ -1881,21 +1883,21 @@
 	{
 		position: absolute;
 
-		z-index: 0;
+		/*z-index: 0;*/
 	}
 
 	.waterEdge
 	{
 		position: absolute;
 
-		z-index: 1;
+		/*z-index: 1;*/
 	}
 
 	.waterIsland
 	{
 		position: absolute;
 
-		z-index: 2;
+		/*z-index: 2;*/
 	}
 
 	.waterFish
@@ -1905,7 +1907,7 @@
 
 		position: absolute;
 
-		z-index: 2;
+		/*z-index: 2;*/
 	}
 
 	.waterFishSprite
@@ -6033,17 +6035,17 @@
 
 	#options_wrapper
 	{
-		z-index: 3;
+		/*z-index: 3;*/
 	}
 
 	.options-choice
 	{
-		z-index: 0;
+		/*z-index: 0;*/
 	}
 
 	.options-select
 	{
-		z-index: 1;
+		/*z-index: 1;*/
 	}
 
 	.options-trigger
@@ -6617,14 +6619,14 @@
 {
 	bottom: 0;
 
-	z-index: 0;
+	/*z-index: 0;*/
 }
 
 .multiUseInfo_fail .multiUseInfo_fail_character
 {
 	top: 0;
 
-	z-index: 1;
+	/*z-index: 1;*/
 }
 
 .multiUseInfo_fail .enemy_zombie

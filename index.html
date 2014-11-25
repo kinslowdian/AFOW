@@ -33,7 +33,7 @@
 
 			font-size: 20px;
 
-			z-index: 2;
+			/*z-index: 2;*/
 		}
 
 		#preload-wrapper .preloader
@@ -121,18 +121,20 @@
 		<script type="text/javascript" src="_assets/_js/_libs/_SoundJS/src/createjs/utils/IndexOf.js"></script>
 		<script type="text/javascript" src="_assets/_js/_libs/_SoundJS/src/createjs/events/Event.js"></script>
 		<script type="text/javascript" src="_assets/_js/_libs/_SoundJS/src/createjs/events/EventDispatcher.js"></script>
-	    <script type="text/javascript" src="_assets/_js/_libs/_SoundJS/src/soundjs/Sound.js"></script>
-	    <script type="text/javascript" src="_assets/_js/_libs/_SoundJS/src/soundjs/WebAudioPlugin.js"></script>
-	    <script type="text/javascript" src="_assets/_js/_libs/_SoundJS/src/soundjs/HTMLAudioPlugin.js"></script>
+	  <script type="text/javascript" src="_assets/_js/_libs/_SoundJS/src/soundjs/Sound.js"></script>
+	  <script type="text/javascript" src="_assets/_js/_libs/_SoundJS/src/soundjs/WebAudioPlugin.js"></script>
+	  <script type="text/javascript" src="_assets/_js/_libs/_SoundJS/src/soundjs/HTMLAudioPlugin.js"></script>
 
 
 		<script type="text/javascript" src="_assets/_js/Game.js"></script>
 		<script type="text/javascript" src="_assets/_js/Game_Level.js"></script>
-		<script type="text/javascript" src="_assets/_js/Game_Control.js"></script>
+		<!-- <script type="text/javascript" src="_assets/_js/Game_Control.js"></script> -->
+		<script type="text/javascript" src="_assets/_js/ControlNew.js"></script>
 		<script type="text/javascript" src="_assets/_js/Battle.js"></script>
 
 		<script type="text/javascript" src="_assets/_js/Data.js"></script>
-		<script type="text/javascript" src="_assets/_js/Display.js"></script>
+		<!-- <script type="text/javascript" src="_assets/_js/Display.js"></script> -->
+		<script type="text/javascript" src="_assets/_js/DisplayNew.js"></script>
 		<script type="text/javascript" src="_assets/_js/AnimationEventManager.js"></script>
 
 		<script type="text/javascript" src="_assets/_js/Sound.js"></script>
@@ -142,11 +144,44 @@
 
 
 
+		<script type="text/javascript">
+
+			$(document).ready( function(){ gameFirstInit(); /* Game.js */ } );
+
+		</script>
+
+
 	</head>
 
-	<body onorientationchange="phoneRotate(event);">
+	<body onorientationchange="display_rotate(event);">
 
-		<div id="debug"><p>test</p></div>
+		<div id="memory"></div>
+
+		<div id="display_wrapper" class="edgeBleed-forest">
+
+		</div> <!-- #display_wrapper -->
+
+		<div id="preload-wrapper">
+
+			<div class="preloader">
+
+				<div class="preloader-message-group tween-preload">
+
+					<p class="preloader-message font-dosis preloader-message-start">begin quest</p>
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<div id="options_wrapper" class="options-holder tweenFlickerFixManualAll">
+
+			<div class="options-choice options-holder"></div>
+
+			<div class="options-select options-holder"></div>
+
+		</div> <!-- #options_wrapper -->
 
 		<!-- REMOVE .hack-hide WHEN COMPLETE -->
 		<div id="displayErrorWrapper" class="hack-hide">
@@ -176,39 +211,9 @@
 
 			<div class="displayError-base tween-displayError-base"></div>
 
-		</div>
+		</div> <!-- #displayErrorWrapper -->
 
-		<div id="display_wrapper" class="edgeBleed-forest">
-
-		</div> <!-- #display_wrapper -->
-
-		<div id="options_wrapper" class="options-holder tweenFlickerFixManualAll">
-
-			<div class="options-choice options-holder"></div>
-
-			<div class="options-select options-holder"></div>
-
-		</div>
-
-		<div id="memory"></div>
-
-		<div id="preload-wrapper">
-
-			<div class="preloader">
-
-				<div class="preloader-message-group tween-preload">
-
-					<p class="preloader-message font-dosis preloader-message-sound hack-hide">. start with sound .</p>
-
-					<p class="preloader-message font-dosis preloader-message-silence hack-hide">. i love silence .</p>
-
-					<p class="preloader-message font-dosis preloader-message-start">begin quest</p>
-
-				</div>
-
-			</div>
-
-		</div>
+		<div id="debug"><p>test</p></div>
 
 	</body>
 

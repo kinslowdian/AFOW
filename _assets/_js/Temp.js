@@ -345,9 +345,98 @@
 
 /*	--------------------------------------- INFO SCREEN*/
 
-///////////////////////////////// GOD
-///////////////////////////////// GOD
-///////////////////////////////// GOD
+
+
+///////////////////////////////// DISPLAY_ZOOM
+///////////////////////////////// DISPLAY_ZOOM
+///////////////////////////////// DISPLAY_ZOOM
+
+// var displayZoom;
+
+// function displayZoom_init(run)
+// {
+// 	if(run)
+// 	{
+// 		displayZoom = {
+// 										zoomTo : function(displayTarget_y, extra_y)
+// 										{
+// 											this.css;
+// 											this.y_zoom = displayTarget_y + extra_y;
+
+// 											// DEFAULT
+
+// 											this.css =	{
+// 																		"-webkit-transform"		: "translateY(" + this.y_zoom + "px)",
+// 																		"transform"				: "translateY(" + this.y_zoom + "px)"
+// 																	};
+
+// 											$(".stage-view-y")[0].addEventListener("webkitTransitionEnd", this.zoomEvent, false);
+// 											$(".stage-view-y")[0].addEventListener("transitionend", this.zoomEvent, false);
+
+// 											$(".stage-view-y").css(this.css);
+// 										},
+
+// 										zoomEvent: function(event)
+// 										{
+// 											$(".stage-view-y")[0].removeEventListener("webkitTransitionEnd", this, false);
+// 											$(".stage-view-y")[0].removeEventListener("transitionend", this, false);
+
+// 											trace("ZOOM OK " + window.displayZoom.zoomEvent);
+// 										},
+
+// 										zoomReturn: function()
+// 										{
+// 											moveStageScreen();
+// 										}
+// 									};
+// 	}
+
+// 	else
+// 	{
+// 		delete displayZoom;
+// 	}
+// }
+
+
+// USAGE
+// displayZoom_init(true);
+// displayZoom_create(3, {call_funct: demo, call_params: ["SENT MESSAGE"]});
+// displayZoom_to(-1200, 0);
+
+
+
+
+
+// function quick_updateGateList(gateID)
+// {
+// 	var gateTarget;
+
+// 	for(var gateObject in gates.list)
+// 	{
+// 		if(gates.list[gateObject].id === gateID)
+// 		{
+// 			gateTarget = gates.list[gateObject];
+
+// 			gateTarget.closed = false;
+
+// 			$("#" + gateTarget.id + " .gate-outer").remove();
+
+// 			break;
+// 		}
+// 	}
+
+// 	trace(gates.list);
+// }
+
+
+
+
+
+
+
+
+
+	// IN GAME
 
 
 
@@ -358,9 +447,98 @@
 
 
 
-///////////////////////////////// GOD
-///////////////////////////////// GOD
-///////////////////////////////// GOD
+// DIRTY REMOVE
+
+// var Gate = function(_x, _y, _w, _h, _id)
+// {
+// 	this.x = _x;
+// 	this.y = _y;
+// 	this.w = _w;
+// 	this.h = _h;
+// 	this.cy = 0;
+
+// 	this.id = _id;
+
+// 	this.closed = true;
+// }
+
+// Gate.prototype.create = function()
+// {
+// 	this.css = 	{
+// 								"-webkit-transform" : "translate(" + this.x + "px, " + this.y + "px)",
+// 								"transform" : "translate(" + this.x + "px, " + this.y + "px)"
+// 							};
+
+// 	$("#" + this.id + " .gate-outer-floor").addClass("field-floor-" + LEVEL_MAIN.landType);
+
+// 	$("#" + this.id + " .gate-inner-floor").addClass("field-floor-" + LEVEL_MAIN.landType);
+
+// 	$("#" + this.id).css(this.css);
+// }
+
+// Gate.prototype.findCenter = function()
+// {
+// 	alert(DISPLAY.viewHeight * 0.5);
+
+// 	this.cy = -(this.y) + ((DISPLAY.viewHeight * 0.5) - (this.h * 0.5));
+
+// 	// alert(this.cy);
+// }
+
+// function demo(msg)
+// {
+// 	alert(msg);
+
+// 	displayZoom_return();
+// }
+
+
+
+
+
+// function gate_control(cmd)
+// {
+// 	switch(cmd)
+// 	{
+// 		case "TEST":
+// 		{
+// 			displayZoom_init(true, false);
+// 			displayZoom_create(3, {call_funct: demo, call_params: ["SENT MESSAGE"]});
+// 			displayZoom_to(-1920, 0);
+
+// 			break;
+// 		}
+// 	}
+// }
+
+
+// var gates;
+
+// function quick_buildGate()
+// {
+// 	gates = {};
+
+// 	gates.list = new Array();
+// 	gates.gateTarget = null;
+
+// 	var g = new Gate(0, 1720, 320, 160, "gate_0_0");
+
+// 	g.create();
+
+// 	gates.list.push(g);
+// }
+
+
+
+
+
+
+
+
+
+///////////////////////////////// DISPLAY_ZOOM
+///////////////////////////////// DISPLAY_ZOOM
+///////////////////////////////// DISPLAY_ZOOM
 
 
 

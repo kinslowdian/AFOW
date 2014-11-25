@@ -692,9 +692,9 @@
 	{
 		// BATTLE_NAV.game.result = battleEngine.battle(MAP_PLAYER, ROM.enemy.character, false);
 
-		// BATTLE_NAV.game.result = "WIN";
+		BATTLE_NAV.game.result = "WIN";
 
-		BATTLE_NAV.game.result = "LOSE";
+		// BATTLE_NAV.game.result = "LOSE";
 
 		battleNav_logicDisplay();
 	}
@@ -2413,6 +2413,20 @@
 		MAP_PLAYER.listen = true;
 
 		control_switch(true);
+	}
+
+	function enemyDefeat_check()
+	{
+		var defeatTriggerFunction;
+		var defeatTriggerParameters;
+
+		for(var defeatObject in ROM.enemy.character.defeatPrefs)
+		{
+			defeatTriggerFunction = window[ROM.enemy.character.defeatPrefs[defeatObject].call_funct];
+			defeatTriggerParameters = ROM.enemy.character.defeatPrefs[defeatObject].call_params;
+
+			defeatTriggerFunction.apply(this, defeatTriggerParameters);
+		}
 	}
 
 

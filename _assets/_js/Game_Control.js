@@ -276,6 +276,15 @@
 		mapPlayer_update();
 	}
 
+	function control_relink()
+	{
+		hitTest_init();
+
+		MAP_PLAYER.listen = true;
+
+		control_switch(true);
+	}
+
 	function touchFirstTransition()
 	{
 		$("#touchPad_C .touchPad-cont").removeClass("touchPad_C_hide").addClass("touchPad_C_show");
@@ -608,6 +617,8 @@
 
 	function mapPlayer_entry()
 	{
+		// BREAK
+		/*
 		trace("mapPlayer_entry();");
 
 		hitTest_init();
@@ -617,12 +628,15 @@
 		MAP_PLAYER.placement.entry = "";
 
 		$("#" + MAP_PLAYER.playerMover).addClass(MAP_PLAYER.playerTween);
+		*/
 
 		// $("." + MAP_PLAYER.playerFadeTarget).css("opacity", 1);
 
+		/*
 		$("." + MAP_PLAYER.playerFadeTarget).removeClass("portal_suck_in").addClass("portal_suck_out");
 
 		mapPlayer_update();
+		*/
 	}
 
 	function mapPlayer_update()

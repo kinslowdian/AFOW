@@ -13,6 +13,14 @@
 
 	var portalsOpened = false;
 
+	var gateControl = {};
+
+	var gateData_ARR = new Array();
+
+	var gates_ARR = new Array();
+
+	var gatesBorn = false;
+
 	var LEVEL = function(settings)
 	{
 		this.settings = settings;
@@ -133,6 +141,8 @@
 		this.rating				= this.settings.l;
 		this.name				= this.settings.known;
 
+		this.defeatPrefs = this.settings.defeat;
+
 		this.buildData.block_x 	= this.settings.x;
 		this.buildData.block_y 	= this.settings.y;
 		this.buildData.x		= this.buildData.block_x * 80;
@@ -157,7 +167,7 @@
 		$(this.buildData.container).append(this.buildData.html);
 		$(this.buildData.container + " #_enemy_" + this.enemyType).attr("id", this.id);
 
-		$("#" + this.id).css(this.buildData.css);
+		$(this.buildData.container + " #" + this.id).css(this.buildData.css);
 
 		trace("RENDER ISSUE :: " + "#" + this.id);
 		trace(this.buildData.css);
@@ -179,7 +189,7 @@
 
 		for(var j in enemyData_ARR)
 		{
-			var e = new enemy(enemyData_ARR[j], ".enemy-area", enemy_count);
+			var e = new enemy(enemyData_ARR[j], ".layer-field-enemy-area", enemy_count);
 
 			e.create();
 
@@ -254,7 +264,7 @@
 		}
 
 
-		$("#" + this.id).css(this.buildData.css);
+		$(this.buildData.container + " #" + this.id).css(this.buildData.css);
 	}
 
 	function portalRead()
@@ -272,7 +282,7 @@
 
 		for(var j in portalData_ARR)
 		{
-			var p = new portal(portalData_ARR[j], ".portal-area");
+			var p = new portal(portalData_ARR[j], ".layer-field-portal-area");
 
 			p.portal_open();
 
@@ -377,6 +387,95 @@
 			delete this.settings;
 	}
 
+	var gate = function(settings, container)
+	{
+		this.settings							= settings;
+		this.buildData						= {};
+		this.buildData.container 	= container;
+
+		this.needCenterFocus = false;
+
+		this.closed = true;
+	}
+
+	gate.prototype.create = function()
+	{
+		this.id 								= this.settings.n;
+		this.spawn							= this.settings.spawn;
+		this.center_y						= 0;
+
+		this.buildData.block_x	= this.settings.x;
+		this.buildData.block_y	= this.settings.y;
+		this.buildData.x				= this.buildData.block_x * 80;
+		this.buildData.y				= this.buildData.block_y * 80;
+		this.buildData.w				= this.settings.w * 80;
+		this.buildData.h				= this.settings.h * 80;
+
+		this.buildData.html			= html_lib_use("_gate", true, true);
+
+		this.buildData.css 			= {
+																"-webkit-transform"	: "translate(" + this.buildData.x + "px, " + this.buildData.y + "px)",
+																"transform"			: "translate(" + this.buildData.x + "px, " + this.buildData.y + "px)"
+															};
+
+		delete this.settings;
+	}
+
+	gate.prototype.build = function()
+	{
+		$(this.buildData.container).append(this.buildData.html);
+		$(this.buildData.container + " #_gate").attr("id", this.id);
+
+		$("#" + this.id + " .gate-outer-floor").addClass("field-floor-" + LEVEL_MAIN.landType);
+
+		$("#" + this.id + " .gate-inner-floor").addClass("field-floor-" + LEVEL_MAIN.landType);
+
+		if(!this.closed)
+		{
+			$("#" + this.id + " .gate-outer").remove();
+
+			$("#" + this.id + " .gate-inner-light").removeClass("gate-inner-light-on").addClass("gate-inner-light-off");
+		}
+
+		$("#" + this.id).css(this.buildData.css);
+	}
+
+	gate.prototype.findCenter = function()
+	{
+		this.center_y = -(this.buildData.y) + ((DISPLAY.viewHeight * 0.5) - (this.buildData.h * 0.5));
+
+		if(Math.abs(this.center_y + MAP_PLAYER.pos_y) > 180)
+		{
+			this.needCenterFocus = true;
+		}
+	}
+
+	function gateRead()
+	{
+		for(var levelData in Logic.dat_ROM["_LEVELS"])
+		{
+			for(var i in Logic.dat_ROM["_LEVELS"][levelData]["gates"])
+			{
+				gateData_ARR.push(Logic.dat_ROM["_LEVELS"][levelData]["gates"][i]);
+			}
+		}
+
+		var gate_count = 0;
+
+		for(var j in gateData_ARR)
+		{
+			var g = new gate(gateData_ARR[j], ".gate-areas");
+
+			g.create();
+
+			gates_ARR.push(g);
+
+			gate_count++;
+		}
+
+		gatesBorn = true;
+	}
+
 
 
 	function level_init()
@@ -412,6 +511,7 @@
 	{
 		var i;
 
+		display_setBG();
 
 		if(Graphics.html.data)
 		{
@@ -422,11 +522,16 @@
 
 		// FLOOR COLOUR
 
-		$(".field-floor > div").addClass(Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["texture"]["FLOOR"]["class"]);
+		$(".layer-field-floor > div").addClass(Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["texture"]["FLOOR"]["class"]);
 
 		// OUTER BACKGROUND
 
-		$("#roam_content").addClass(Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["texture"]["OUTER"]["class"]);
+		// $("#roam_content").addClass(Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["texture"]["OUTER"]["class"]);
+
+		$(".bgFill-l").addClass(Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["texture"]["OUTER"]["class"]);
+		$(".bgFill-r").addClass(Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["texture"]["OUTER"]["class"]);
+		$(".bgFill-t").addClass(Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["texture"]["OUTER"]["class"]);
+		$(".bgFill-b").addClass(Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["texture"]["OUTER"]["class"]);
 
 		// TREES BUSHES
 
@@ -445,7 +550,7 @@
 
 		for(var object_walls in Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["texture"]["WALLS"])
 		{
-			var b = new level_create_basic(Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["texture"]["WALLS"][object_walls], i, "BUSH", ".field-area");
+			var b = new level_create_basic(Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["texture"]["WALLS"][object_walls], i, "BUSH", ".layer-field-walls");
 
 			b.create();
 
@@ -458,7 +563,7 @@
 
 		for(var object_plants in Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["texture"]["PLANTS"])
 		{
-			var f = new level_create_basic(Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["texture"]["PLANTS"][object_plants], i, "FLOWER_LIGHT", ".field-area");
+			var f = new level_create_basic(Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["texture"]["PLANTS"][object_plants], i, "FLOWER_LIGHT", ".layer-field-walls");
 
 			f.create();
 
@@ -484,7 +589,7 @@
 
 			for(var object_soundTrigger in Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["sound_trigger"])
 			{
-				var s = new sound_level_trigger(Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["sound_trigger"][object_soundTrigger], i, ".sound-area");
+				var s = new sound_level_trigger(Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["sound_trigger"][object_soundTrigger], i, ".layer-field-sound-area");
 
 				s.create();
 
@@ -501,51 +606,37 @@
 		{
 			if(Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["water"]["FILL"] < 1)
 			{
-				$("#roam_content .water-area").css("opacity", Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["water"]["FILL"].toString());
+				$("#roam_content .layer-field-water-area").css("opacity", Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["water"]["FILL"].toString());
 			}
 
 			else
 			{
-				if($("#roam_content .water-area").attr("style"));
+				if($("#roam_content .layer-field-water-area").attr("style"));
 				{
-					$("#roam_content .water-area").removeAttr("style");
+					$("#roam_content .layer-field-water-area").removeAttr("style");
 				}
-			}
-
-			i = 0;
-
-			for(var object_waterEdge in Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["water"]["EDGE"])
-			{
-				var w = new level_create_basic(Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["water"]["EDGE"][object_waterEdge], i, "WATER_EDGE", ".water-area");
-
-				w.create();
-
-				i++;
 			}
 
 			i = 0;
 
 			for(var object_waterBase in Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["water"]["BASE"])
 			{
-				var w = new level_create_basic(Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["water"]["BASE"][object_waterBase], i, "WATER_BASE", ".water-area");
+				var w = new level_create_basic(Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["water"]["BASE"][object_waterBase], i, "WATER_BASE", ".layer-field-water-area");
 
 				w.create();
 
 				i++;
 			}
 
-			if(Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["water"]["ISLAND"])
+			i = 0;
+
+			for(var object_waterEdge in Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["water"]["EDGE"])
 			{
-				i = 0;
+				var w = new level_create_basic(Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["water"]["EDGE"][object_waterEdge], i, "WATER_EDGE", ".layer-field-water-area");
 
-				for(var object_waterIsland in Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["water"]["ISLAND"])
-				{
-					var w = new level_create_basic(Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["water"]["ISLAND"][object_waterIsland], i, "WATER_ISLAND", ".water-area");
+				w.create();
 
-					w.create();
-
-					i++;
-				}
+				i++;
 			}
 
 			if(Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["water"]["FISH"])
@@ -559,6 +650,20 @@
 					w.create();
 
 					// i++;
+				}
+			}
+
+			if(Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["water"]["ISLAND"])
+			{
+				i = 0;
+
+				for(var object_waterIsland in Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["water"]["ISLAND"])
+				{
+					var w = new level_create_basic(Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["water"]["ISLAND"][object_waterIsland], i, "WATER_ISLAND", ".layer-field-water-area");
+
+					w.create();
+
+					i++;
 				}
 			}
 		}
@@ -611,6 +716,8 @@
 			if(ROM.mapLevel == portals_ARR[object_portal].spawn)
 			{
 				portals_ARR[object_portal].build();
+
+				trace("PORTAL BUILD!!!");
 			}
 		}
 
@@ -641,6 +748,24 @@
 				}
 			}
 		}
+
+		// GATES (PRE-READ)
+
+		if(!gatesBorn)
+		{
+			gatesBorn = true;
+
+			gateRead();
+		}
+
+		for(var object_gate in gates_ARR)
+		{
+			if(ROM.mapLevel == gates_ARR[object_gate].spawn)
+			{
+				gates_ARR[object_gate].build();
+			}
+		}
+
 
 		html_lib_empty();
 
@@ -816,8 +941,129 @@
 		}
 	}
 
+	function gateAccess_focusGate(gateID, gateDelay, gateActions)
+	{
+		var noZoom_funct;
+		var noZoom_params;
+
+		for(var gateObject in gates_ARR)
+		{
+			if(gates_ARR[gateObject].id === gateID)
+			{
+				gateControl.gateTarget = gates_ARR[gateObject];
+
+				if(gateControl.gateTarget.closed)
+				{
+					gateControl.gateTarget.findCenter();
+
+					if(gateControl.gateTarget.needCenterFocus)
+					{
+						displayZoom_init(true, false);
+						displayZoom_create(gateDelay, gateActions);
+						displayZoom_to(gateControl.gateTarget.center_y, 0);
+					}
+
+					else
+					{
+						MAP_PLAYER.listen = false;
+
+						noZoom_funct = window[gateActions.call_funct];
+						noZoom_params = gateActions.call_params || null;
+
+						if(noZoom_params != null)
+						{
+							noZoom_funct.apply(this, noZoom_params);
+						}
+
+						else
+						{
+							noZoom_funct();
+						}
+					}
+				}
+
+				else
+				{
+					// GATE OPEN NORMAL RETURN
+					control_relink();
+				}
+
+				break;
+			}
+		}
+	}
+
+	function gateAccess_targetGate(gateID)
+	{
+		for(var gateObject in gates_ARR)
+		{
+			if(gates_ARR[gateObject].id === gateID)
+			{
+				gateControl.gateTarget = gates_ARR[gateObject];
+			}
+		}
+	}
+
+	function gateAccess_fadeGate()
+	{
+		$("#" + gateControl.gateTarget.id + " .gate-outer").addClass("gate_hide");
+
+		$("#" + gateControl.gateTarget.id + " .gate-inner-light").addClass("tween-gate");
+
+		$("#" + gateControl.gateTarget.id + " .tween-gate")[0].addEventListener("webkitTransitionEnd", gateAccess_destoryGate, false);
+		$("#" + gateControl.gateTarget.id + " .tween-gate")[0].addEventListener("transitionend", gateAccess_destoryGate, false);
+	}
+
+	function gateAccess_destoryGate(event)
+	{
+		$("#" + gateControl.gateTarget.id + " .tween-gate")[0].removeEventListener("webkitTransitionEnd", gateAccess_destoryGate, false);
+		$("#" + gateControl.gateTarget.id + " .tween-gate")[0].removeEventListener("transitionend", gateAccess_destoryGate, false);
+
+		gateAccess_updateGateList();
+
+		$("#" + gateControl.gateTarget.id + " .gate-inner-light")[0].addEventListener("webkitTransitionEnd", gateAccess_gateDeactivated, false);
+		$("#" + gateControl.gateTarget.id + " .gate-inner-light")[0].addEventListener("transitionend", gateAccess_gateDeactivated, false);
+
+		$("#" + gateControl.gateTarget.id + " .gate-inner-light").removeClass("gate-inner-light-on").addClass("gate-inner-light-off");
+	}
+
+	function gateAccess_updateGateList()
+	{
+		gateControl.gateTarget.closed = false;
+
+		$("#" + gateControl.gateTarget.id + " .gate-outer").remove();
+	}
+
+	function gateAccess_gateDeactivated(event)
+	{
+		$("#" + gateControl.gateTarget.id + " .gate-inner-light")[0].removeEventListener("webkitTransitionEnd", gateAccess_gateDeactivated, false);
+		$("#" + gateControl.gateTarget.id + " .gate-inner-light")[0].removeEventListener("transitionend", gateAccess_gateDeactivated, false);
+
+		if(DISPLAY.displayZoom)
+		{
+			if(DISPLAY.displayZoom.waitReturnTime > 0)
+			{
+				DISPLAY.displayZoom.waitReturn = setTimeout(displayZoom_return, DISPLAY.displayZoom.waitReturnTime * 1000);
+			}
+
+			else
+			{
+				displayZoom_return();
+			}
+		}
+
+		else
+		{
+			// CONTINUE WITHOUT ZOOM
+
+			control_relink();
+		}
+	}
+
 	function level_player_setup()
 	{
+		// BREAK
+		/*
 		trace("level_player_setup();");
 
 		if(LEVEL_MAIN.buildData.entry_fall === "YES" && game_introEntrance)
@@ -825,8 +1071,6 @@
 			trace("CATCH");
 
 			game_introEntrance = false;
-
-			//mapPlayer_spawn(LEVEL_MAIN.buildData.fall_x, LEVEL_MAIN.buildData.fall_y, LEVEL_MAIN.buildData.direction, true);
 
 			mapPlayer_spawn(LEVEL_MAIN.buildData.fall_x, LEVEL_MAIN.buildData.fall_y, LEVEL_MAIN.buildData.direction, "FULL");
 
@@ -837,6 +1081,7 @@
 		{
 			portalExit();
 		}
+		*/
 	}
 
 	function level_clear()
@@ -856,6 +1101,7 @@
 
 		$(".woodland-areas").html("");
 		$(".god-areas").html("");
+		$(".gate-areas").html("");
 
 		$("#space .weather-snow").html("");
 		$("#space .weather-rain").html("");

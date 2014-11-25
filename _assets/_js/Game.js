@@ -1,54 +1,9 @@
-
-	$(document).ready( function(){ gameFirstInit(); } );
-
 	var ROM;
 
 	var errorMessages = {};
 
 
-	function phoneRotate(event)
-	{
-		var base_css;
-
-		if(event != null || event != undefined)
-		{
-			touchOffsetUpdate();
-		}
-
-		if(window.innerWidth < window.innerHeight)
-		{
-			trace("DISPLAY_OK");
-
-			$("#displayErrorWrapper .displayError").removeClass("displayErrorShow").addClass("displayErrorHide");
-
-			base_css = 	{
-							"-webkit-transition-delay"	: "0.6s",
-							"transition-delay" 			: "0.6s",
-							"opacity"					: "0"
-						};
-		}
-
-		else
-		{
-			if($("#displayErrorWrapper .message p").text() !== errorMessages.touch)
-			{
-				$("#displayErrorWrapper .message p").text(errorMessages.touch);
-			}
-
-			trace("DISPLAY_FAIL");
-
-			$("#displayErrorWrapper .displayError").removeClass("displayErrorHide").addClass("displayErrorShow");
-
-			base_css = 	{
-							"-webkit-transition-delay"	: "0s",
-							"transition-delay" 			: "0s",
-							"opacity"					: "1"
-						};
-		}
-
-		$("#displayErrorWrapper .displayError-base").css(base_css);
-	}
-
+	// CALLED FIRST FROM index.html
 	function gameFirstInit()
 	{
 		ROM = {};
@@ -65,6 +20,7 @@
 		debug_init();
 		//////////// debug.js
 	}
+	// CALLED FIRST FROM index.html
 
 	function gameData_found()
 	{
@@ -95,6 +51,9 @@
 
 	function soundData_found()
 	{
+		// BREAK
+		//display_init();
+
 		display_init();
 
 		init_startScreen();
@@ -134,15 +93,22 @@
 
 	function init_mainGame()
 	{
-		mapPlayer_init("player-block", "tween-player-block", "tween-player-walkX", "tween-player-walkY", "tween-mapPlayerWalk_stop", "tween-mapPlayerWalk_loop", "map-goat", "preHitTest");
+		// BREAK
+		// mapPlayer_init("player-block", "tween-player-block", "tween-player-walkX", "tween-player-walkY", "tween-mapPlayerWalk_stop", "tween-mapPlayerWalk_loop", "map-goat", "preHitTest");
+		// BREAK
 
-		trace(MAP_PLAYER);
+		// trace(MAP_PLAYER);
 
 		level_init();
 
-		controlSignal_init();
+		// BREAK
+		// controlSignal_init();
 
-		screenUpdateInit(true);
+		// BREAK
+		// screenUpdateInit(true);
+
+		control_init();
+		loop_init();
 
 		var temp = setTimeout(preloader_remove_step0, 1000);
 
@@ -194,6 +160,7 @@
 
 		// multiUseInfoScreen_drop("SOUND_GLOBAL");
 
+		// QUICK BREAK
 		$(".tween-preload")[0].addEventListener("webkitTransitionEnd", test_soundOptions, false);
 		$(".tween-preload")[0].addEventListener("transitionend", test_soundOptions, false);
 
@@ -259,8 +226,12 @@
 		$("#preload-wrapper").remove();
 
 		// FLOW CHANGE
-		mapPlayer_entry();
-		portalScreen_init();
+
+		// BREAK
+		// mapPlayer_entry();
+		// portalScreen_init();
+		// BREAK
+
 		// FLOW CHANGE
 
 		if(soundEffects_pedal != null)
@@ -280,8 +251,12 @@
 		$("#preload-wrapper").remove();
 
 		// FLOW CHANGE
-		mapPlayer_entry();
-		portalScreen_init();
+
+		// BREAK
+		// mapPlayer_entry();
+		// portalScreen_init();
+		// BREAK
+
 		// FLOW CHANGE
 
 		if(soundEffects_pedal != null)

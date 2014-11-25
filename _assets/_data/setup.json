@@ -337,15 +337,39 @@
 			"enemyPlayers":
 			[
 				{
+					"x": 1.5,
+					"y": 21,
+					"w": 0.5,
+					"h": 0.5,
+					"n": "level0_test0",
+					"t": "rabbit",
+					"l": 10,
+					"known" : "the bastard",
+					"spawn": 0,
+					"defeat":[
+										{
+											"call_funct": "gateAccess_focusGate",
+											"call_params": ["level0_gate0", 1, {"call_funct" : "gateAccess_fadeGate"}]
+										}
+									]
+				},
+
+				{
 					"x": 0,
 					"y": 1.5,
 					"w": 0.5,
 					"h": 0.5,
-					"n": "level0_test",
+					"n": "level0_test1",
 					"t": "rabbit",
 					"l": 10,
-					"known" : "the bastard",
-					"spawn": 0
+					"known" : "the other bastard",
+					"spawn": 0,
+					"defeat":[
+										{
+											"call_funct": "gateAccess_focusGate",
+											"call_params": ["level0_gate0", 1, {"call_funct" : "gateAccess_fadeGate"}]
+										}
+									]
 				},
 
 				{
@@ -393,6 +417,18 @@
 					"t": "crow",
 					"l": 10,
 					"known" : "lost crow of birch",
+					"spawn": 0
+				}
+			],
+
+			"gates":
+			[
+				{
+					"x": 0,
+					"y": 21.5,
+					"w": 4,
+					"h": 2,
+					"n": "level0_gate0",
 					"spawn": 0
 				}
 			],
@@ -494,7 +530,7 @@
 				{
 					"num": 7,
 					"x": 0,
-					"y": 0,
+					"y": 4,
 					"w": 1,
 					"h": 1,
 					"level": 5,
