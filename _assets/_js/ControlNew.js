@@ -5,7 +5,13 @@ var loopList;
 
 var HIT_TEST;
 
+// CLEANER CODE ?
+var portalTarget; // PREV = PORTAL_TRAVEL
+var enemyTarget; // PREV = ROM.enemy.character
+
 // MERGED
+
+var PORTAL_TRAVEL;
 
 var game_levelChange = false;
 var game_introEntrance = true;
@@ -535,36 +541,44 @@ function temp_findEnemy()
 
 function temp_findPortalEnter()
 {
-	/*
-	for(var i in portalArr)
+	for(var i in portals_ARR)
 	{
-		if(HIT_TEST.hit_portal_id === portalArr[i].id)
+		if(portals_ARR[i].id === HIT_TEST.hit_portal_id)
 		{
-			portalTarget = portalArr[i];
+			portalTarget = {};
+			portalTarget = portals_ARR[i];
 
 			break;
 		}
 	}
 
 	temp_autoMove_init("PORTAL_ENTER");
-	*/
 }
 
 function temp_findPortalExit()
 {
-	/*
-	for(var i in portalArr)
+	// STAGE TRAVEL
+	if(portalTarget.level == ROM.mapLevel)
 	{
-		if(portalTarget.e == portalArr[i].n)
+		for(var i in portals_ARR)
 		{
-			portalTarget = portalArr[i];
+			if(portalTarget.exit == portals_ARR[i].num)
+			{
+				portalTarget = {};
+				portalTarget = portals_ARR[i];
 
-			break;
+				temp_autoMove_init("PORTAL_PLACE");
+
+				break;
+			}
 		}
 	}
 
-	temp_autoMove_init("PORTAL_PLACE");
-	*/
+	// LEVEL TRAVEL
+	else
+	{
+
+	}
 }
 
 function temp_autoMove_init(moveRequest)
@@ -609,7 +623,9 @@ function temp_autoMove_init(moveRequest)
 
 			// HACKY EXIT AFTER SCREEN PLACEMENT
 
-			temp_delay = setTimeout(temp_autoMove_init, 600, "PORTAL_EXIT");
+			// temp_delay = setTimeout(temp_autoMove_init, 600, "PORTAL_EXIT");
+
+			temp_autoMove_tweenStage();
 
 		},
 
@@ -620,19 +636,19 @@ function temp_autoMove_init(moveRequest)
 
 			// tween.x 				= portalTarget.x_mid;
 			// tween.y 				= portalTarget.y_mid;
-			tween.x 				= portalTarget.x;
-			tween.y 				= portalTarget.y;
+			tween.x 				= portalTarget.buildData.x;
+			tween.y 				= portalTarget.buildData.y;
 			tween.a 				= "1";
 			tween.pushX 		= 0;
 			tween.pushY 		= 0;
 			tween.onEnd 		= temp_autoMove_event_portalExit;
 
-			switch(portalTarget.d)
+			switch(portalTarget.direction)
 			{
-				case "UP"			:{ tween.pushY = -(portalTarget.h); break; }
-				case "DOWN"		:{ tween.pushY = portalTarget.h * 1.5; 		break; }
-				case "LEFT"		:{ tween.pushX = -(portalTarget.w); break; }
-				case "RIGHT"	:{ tween.pushX = portalTarget.w * 1.5; 		break; }
+				case "UP"			:{ tween.pushY = -(portalTarget.buildData.h); break; }
+				case "DOWN"		:{ tween.pushY = portalTarget.buildData.h * 1.5; 		break; }
+				case "LEFT"		:{ tween.pushX = -(portalTarget.buildData.w); break; }
+				case "RIGHT"	:{ tween.pushX = portalTarget.buildData.w * 1.5; 		break; }
 			}
 
 			tween.x += tween.pushX;
@@ -646,6 +662,9 @@ function temp_autoMove_init(moveRequest)
 			$(".hitTest").css(css);
 
 			control.writePosition({x:tween.x, y:tween.y, d:"STILL"});
+
+			// SWAP
+			// onEnterFrame_init(true);
 
 			temp_autoMove_tween(tween, true);
 
@@ -738,6 +757,45 @@ function temp_autoMove_tween(settings, animate)
 	}
 }
 
+function temp_autoMove_tweenStage()
+{
+	var css;
+
+	var delay_exit;
+
+	display.centerPlayer();
+	// display_centerLevel();
+
+	$(".field").addClass("tween-fieldShift");
+
+	css = 	{
+						"-webkit-transform"	: "translateY(" + display.focus_y + "px)",
+						"transform"					: "translateY(" + display.focus_y + "px)"
+					};
+
+	display.setPosition();
+
+	// $(".field")[0].addEventListener("webkitTransitionEnd", temp_autoMove_tweenStageEvent, false);
+	// $(".field")[0].addEventListener("transitionend", temp_autoMove_tweenStageEvent, false);
+
+	$(".field").css(css);
+
+	delay_exit = setTimeout(temp_autoMove_tweenStageEvent, 1000, null);
+
+	trace("CHECK FAULT");
+	trace(loopRun);
+}
+
+function temp_autoMove_tweenStageEvent(event)
+{
+	// $(".field")[0].removeEventListener("webkitTransitionEnd", temp_autoMove_tweenStageEvent, false);
+	// $(".field")[0].removeEventListener("transitionend", temp_autoMove_tweenStageEvent, false);
+
+	$(".field").removeClass("tween-fieldShift");
+
+	temp_autoMove_init("PORTAL_EXIT");
+}
+
 function temp_autoMove_event_portalEnter(event)
 {
 	$(".player")[0].removeEventListener("webkitTransitionEnd", temp_autoMove_event_portalEnter, false);
@@ -770,3 +828,143 @@ function temp_autoMove_enemyAttack()
 
 	// DO STUFF
 }
+
+
+
+
+	///////////////////////////////// --- PORTAL
+
+	function portalEntry(portal_hit)
+	{
+		for(var i in portals_ARR)
+		{
+			if(portals_ARR[i].id === portal_hit)
+			{
+				trace(portals_ARR[i].id + " " + portal_hit);
+
+				// STAGE TRAVEL
+
+				if(portals_ARR[i].level == ROM.mapLevel)
+				{
+					for(var j in portals_ARR)
+					{
+						if(portals_ARR[i].level == portals_ARR[j].spawn)
+						{
+							if(portals_ARR[i].exit == portals_ARR[j].num)
+							{
+								portalTarget = {};
+								portalTarget = portals_ARR[j];
+
+								// BREAK
+								// portalExit();
+
+								// NOT FINAL
+								if(soundEffects_pedal != null)
+								{
+									sound_play("fx_crow");
+								}
+
+								break;
+							}
+						}
+					}
+
+					break;
+				}
+
+				// LEVEL TRAVEL
+
+				else
+				{
+					for(var k in portals_ARR)
+					{
+						if(portals_ARR[i].level == portals_ARR[k].spawn)
+						{
+							if(portals_ARR[i].exit == portals_ARR[k].num)
+							{
+								game_levelChange = true;
+
+								portalTarget = {};
+								portalTarget = portals_ARR[k];
+
+								ROM.mapLevel = portals_ARR[i].level;
+
+								trace("!!!! GOING TO: " + ROM.mapLevel);
+								trace(portalTarget);
+
+								// NEEDS TO BE IN OWN FUNCTION AND CALLED AFTER FADE:
+								// level_clear();
+
+								// level_init();
+
+								// BREAK
+								// portalScreen_request();
+
+								// portalExit();
+
+								// NOT FINAL
+								// sound_play("fx_trees");
+
+								// NOT FINAL
+								if(soundEffects_pedal != null)
+								{
+									sound_fadeInitGlobal(0, {call_funct: sound_levelClear});
+								}
+
+								break;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	// DEAD???
+	function portalExit()
+	{
+		var moveMeasure = "";
+		var x_spawn;
+		var y_spawn;
+		var axisCenter = MAP_PLAYER.move_default / MAP_PLAYER.placement.block_full;
+
+		// NEW MOVEMENT
+
+		if(portalTarget.direction === "UP")
+		{
+			x_spawn = portalTarget.buildData.block_x + axisCenter;
+			y_spawn = portalTarget.buildData.block_y;
+
+			moveMeasure = "HALF";
+		}
+
+		if(portalTarget.direction === "DOWN")
+		{
+			x_spawn = portalTarget.buildData.block_x + axisCenter;
+			y_spawn = portalTarget.buildData.block_y;
+
+			moveMeasure = "FULL";
+		}
+
+		if(portalTarget.direction === "LEFT")
+		{
+			x_spawn = portalTarget.buildData.block_x;
+			y_spawn = portalTarget.buildData.block_y + axisCenter;
+
+			moveMeasure = "HALF_EXTRA";
+		}
+
+		if(portalTarget.direction === "RIGHT")
+		{
+			x_spawn = portalTarget.buildData.block_x;
+			y_spawn = portalTarget.buildData.block_y + axisCenter;
+
+			moveMeasure = "FULL";
+		}
+
+		mapPlayer_spawn(x_spawn, y_spawn, portalTarget.direction, moveMeasure);
+	}
+
+	///////////////////////////////// --- PORTAL
+
+

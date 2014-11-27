@@ -346,6 +346,12 @@
 	background: rgba(0, 255, 0, 0.4);
 }
 
+.tween-player
+{
+	-webkit-transition 	: 400ms ease-in-out;
+	transition 					: 400ms ease-in-out;
+}
+
 .tween-player-XX
 {
 	-webkit-transform: translate(0px, 0px);
@@ -398,6 +404,14 @@
 	50%		{transform: translateY(0px);}
 	75%		{transform: translateY(4px);}
 	100%	{transform: translateY(0px);}
+}
+
+
+
+.tween-fieldShift
+{
+	-webkit-transition: 600ms ease-in-out;
+	transition: 600ms ease-in-out;
 }
 
 

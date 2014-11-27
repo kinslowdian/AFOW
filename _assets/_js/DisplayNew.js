@@ -53,6 +53,17 @@ Display.prototype.hack = function()
 	this.stageY.fl.easing = 0.01;
 }
 
+Display.prototype.setPosition = function()
+{
+	this.focusCurrent_y = this.focus_y;
+
+	this.stageY.fl.ty = this.focus_y;
+	this.stageY.fl.y = this.focus_y;
+
+	this.stageY.fl.vy = 0;
+	this.stageY.fl.dy = 0;
+}
+
 function display_init()
 {
 	display = new Display(320, 2000, "field");

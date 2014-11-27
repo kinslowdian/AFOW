@@ -240,6 +240,9 @@
 		this.exit				= this.settings.exit;
 		this.direction 			= this.settings.direction;
 
+		this.x_mid = this.buildData.x + 20;
+		this.y_mid = this.buildData.y + 20;
+
 		this.buildData.css	=	{
 									"-webkit-transform"	: "translate(" + this.buildData.x + "px, " + this.buildData.y + "px)",
 									"transform"			: "translate(" + this.buildData.x + "px, " + this.buildData.y + "px)"
