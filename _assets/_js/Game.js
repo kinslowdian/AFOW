@@ -232,6 +232,10 @@
 		// portalScreen_init();
 		// BREAK
 
+		portalScreen_init();
+
+
+
 		// FLOW CHANGE
 
 		if(soundEffects_pedal != null)

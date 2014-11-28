@@ -1089,14 +1089,28 @@
 
 	function level_clear()
 	{
+		// REMOVES PIXEL CLASS FROM FOREST BG REWRITE NEEDED
+		/*
 		var find_bgPixels 		= $("#roam_content").attr("class");
 
 		var get_bgPixels_BEG 	= find_bgPixels.search("pixels");
 		var get_bgPixels_END 	= find_bgPixels.length;
 		var get_bgPixels 		= find_bgPixels.substr(get_bgPixels_BEG, get_bgPixels_END);
+		*/
 
-		$(".field-floor > div").removeAttr("class");
+		$(".layer-field-floor > div").removeAttr("class");
 
+		$(".layer-field-gate-area").html("");
+		$(".layer-field-god-area").html("");
+		$(".layer-field-water-area").html("");
+		$(".layer-field-walls").html("");
+		$(".layer-field-portal-area").html("");
+		$(".layer-field-enemy-area").html("");
+		$(".layer-field-sound-area").html("");
+
+
+
+		/*
 		$(".enemy-area").html("");
 		$(".portal-area").html("");
 		$(".field-area").html("");
@@ -1113,6 +1127,7 @@
 
 		$("#roam_content").removeClass(get_bgPixels);
 		$(".field-floor > div").removeAttr("class");
+		*/
 
 
 		for(var object_enemy in enemies_ARR)

@@ -2064,7 +2064,7 @@
 
 		position: absolute;
 
-		z-index: 1;
+		/*z-index: 1;*/
 	}
 
 	#space .weather-wind
@@ -2565,7 +2565,7 @@
 		-webkit-transform	: translateY(-100%);
 		transform			: translateY(-100%);
 
-		z-index: 1;
+		/*z-index: 1;*/
 	}
 
 	#portalScreen .portalScreen_bleedFill
@@ -2579,7 +2579,7 @@
 
 		position: absolute;
 
-		z-index: 0;
+		/*z-index: 0;*/
 	}
 
 	.tween-portalScreen_wrapper
@@ -2603,7 +2603,7 @@
 
 		background: #b8e0ca;
 
-		z-index: 4;
+		/*z-index: 4;*/
 	}
 
 	.tween-portalScreen_fade
@@ -2626,7 +2626,7 @@
 
 		opacity: 0;
 
-		z-index: 3;
+		/*z-index: 3;*/
 	}
 
 	.tween-portalScreen_header
@@ -2653,7 +2653,7 @@
 
 		top: 25%;
 
-		z-index: 1;
+		/*z-index: 1;*/
 	}
 
 
@@ -2665,7 +2665,7 @@
 
 		bottom: 25%;
 
-		z-index: 1;
+		/*z-index: 1;*/
 	}
 
 	#portalScreen .portalScreen_field
@@ -2678,7 +2678,7 @@
 		left:0; right:0; top:0; bottom:0;
 		margin: 0 auto;
 
-		z-index: 2;
+		/*z-index: 2;*/
 	}
 
 	#portalScreen .portalScreen_player
@@ -2691,7 +2691,7 @@
 		left:0; right:0; top:0; bottom:0;
 		margin: auto;
 
-		z-index: 1;
+		/*z-index: 1;*/
 	}
 
 	#portalScreen .portalScreen_player .portalScreen_map-goat
@@ -2711,7 +2711,7 @@
 
 		opacity: 0;
 
-		z-index: 1;
+		/*z-index: 1;*/
 	}
 
 	.tween-portalScreen_green
@@ -2728,7 +2728,7 @@
 
 		position: absolute;
 
-		z-index: 0;
+		/*z-index: 0;*/
 	}
 
 	#portalScreen .portalScreen_bg .portalScreen_field
@@ -2736,7 +2736,7 @@
 		background: #b8e0ca;
 
 
-		z-index: 1;
+		/*z-index: 1;*/
 	}
 
 	#portalScreen .portalScreen_bg .portalScreen_weird
@@ -2747,7 +2747,7 @@
 		position: absolute;
 		left: 0; right: 0; top: 0; bottom:0;
 
-		z-index: 0;
+		/*z-index: 0;*/
 	}
 
 	.tween-portalScreen_weird
@@ -2790,7 +2790,7 @@
 
 		margin: auto;
 
-		z-index: 0;
+		/*z-index: 0;*/
 	}
 
 	.tween-portalScreen_miniMoon

@@ -1,0 +1,89 @@
+<div id="" data-static-id="portalScreen">
+
+<div class="" data-static-class="portalScreen_bleedFill tween-portalScreen_bleedFill"></div>
+
+<div class="" data-static-class="portalScreen_wrapper tween-portalScreen_wrapper">
+
+	<div class="" data-static-class="portalScreen_bg">
+
+		<div class="" data-static-class="portalScreen_weird pixels_portalScreen tween-portalScreen_weird"></div>
+		<div class="" data-static-class="portalScreen_field"></div>
+
+	</div>
+
+	<div class="" data-static-class="portalScreen_green tween-portalScreen_green"></div>
+
+	<div class="" data-static-class="portalScreen_miniMoon tween-portalScreen_miniMoon"></div>
+
+	<div class="" data-static-class="portalScreen_field">
+
+	</div>
+
+	<div class="" data-static-class="portalScreen_header font-dosis tween-portalScreen_header">
+
+		<div class="" data-static-class="portalScreen_title_left">
+
+			<h1>ABC-XYZ</h1>
+
+		</div>
+
+
+		<div class="" data-static-class="portalScreen_title_right">
+
+			<h1>ABC-XYZ</h1>
+
+		</div>
+
+	</div>
+
+</div>
+
+
+
+</div>
+
+
+
+
+<div id="" data-static-id="portalScreen">
+
+	<div class="" data-static-class="portalScreen_wrapper tween-portalScreen_wrapper">
+
+
+
+		<div class="" data-static-class="portalScreen_field">
+
+			<div class="" data-static-class="portalScreen_player">
+
+				<div class="" data-static-class="portalScreen_map-goat">
+
+					<div class="" data-static-class="player-sprite tween-player-walkX">
+
+						<div class="" data-static-class="map-goat-head pixels_map_player tween-map-goat-head mapPlayer_head_default"></div>
+
+						<div class="" data-static-class="map-goat-hand-L pixels_map_player tween-map-goat-hand-L"></div>
+						<div class="" data-static-class="map-goat-hand-R pixels_map_player tween-map-goat-hand-R"></div>
+
+						<div class="" data-static-class="map-goat-body pixels_map_player"></div>
+
+						<div class="" data-static-class="map-goat-legs pixels_map_player tween-mapPlayerWalk_loop"></div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+
+
+		</div>
+
+
+
+
+
+	</div> <!-- .portalScreen_wrapper -->
+
+
+
+</div> <!-- #portalScreen -->

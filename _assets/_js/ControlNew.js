@@ -535,7 +535,7 @@ function temp_findEnemy()
 		}
 	}
 
-	temp_autoMove_init("ENEMY_ATTACK");
+	autoMove_init("ENEMY_ATTACK");
 	*/
 }
 
@@ -552,13 +552,64 @@ function temp_findPortalEnter()
 		}
 	}
 
-	temp_autoMove_init("PORTAL_ENTER");
+	autoMove_init("PORTAL_ENTER");
 }
 
 function temp_findPortalExit()
 {
+	for(var i in portals_ARR)
+	{
+		if(portals_ARR[i].id === HIT_TEST.hit_portal_id)
+		{
+			// STAGE TRAVEL
+
+			if(portals_ARR[i].level == ROM.mapLevel)
+			{
+				for(var j in portals_ARR)
+				{
+					if(portals_ARR[i].level == portals_ARR[j].spawn)
+					{
+						if(portals_ARR[i].exit == portals_ARR[j].num)
+						{
+							portalTarget = {};
+							portalTarget = portals_ARR[j];
+
+							autoMove_init("PORTAL_PLACE");
+						}
+					}
+				}
+			}
+
+			// LEVEL TRAVEL
+
+			else
+			{
+				for(var k in portals_ARR)
+				{
+					if(portals_ARR[i].level == portals_ARR[k].spawn)
+					{
+						if(portals_ARR[i].exit == portals_ARR[k].num)
+						{
+							portalTarget = {};
+							portalTarget = portals_ARR[k];
+
+							ROM.mapLevel = portals_ARR[i].level;
+
+							// MAY NEED TO ADD
+							game_levelChange = true;
+
+							portalScreen_request();
+						}
+					}
+				}
+			}
+		}
+	}
+
+
 	// STAGE TRAVEL
-	if(portalTarget.level == ROM.mapLevel)
+	/*
+	(portalTarget.level == ROM.mapLevel)
 	{
 		for(var i in portals_ARR)
 		{
@@ -567,21 +618,49 @@ function temp_findPortalExit()
 				portalTarget = {};
 				portalTarget = portals_ARR[i];
 
-				temp_autoMove_init("PORTAL_PLACE");
+				autoMove_init("PORTAL_PLACE");
 
 				break;
 			}
 		}
 	}
+	*/
 
 	// LEVEL TRAVEL
+	/*
 	else
 	{
+		trace("READ:");
+		console.table(portalTarget);
 
+		for(var j in portals_ARR)
+		{
+			if(portalTarget.level == portals_ARR[j].spawn)
+			{
+				if(portalTarget.exit == portals_ARR[j].num)
+				{
+					portalTarget = {};
+					portalTarget = portals_ARR[j];
+
+					ROM.mapLevel = portalTarget.level;
+
+					// MAY NEED TO ADD
+					game_levelChange = true;
+
+					portalScreen_request();
+
+					// trace("GO TO:");
+					// console.table(portalTarget);
+
+					break;
+				}
+			}
+		}
 	}
+	*/
 }
 
-function temp_autoMove_init(moveRequest)
+function autoMove_init(moveRequest)
 {
 	var tween;
 	var css;
@@ -596,11 +675,11 @@ function temp_autoMove_init(moveRequest)
 			tween.x 		= portalTarget.x_mid;
 			tween.y 		= portalTarget.y_mid;
 			tween.a 		= "0";
-			tween.onEnd = temp_autoMove_event_portalEnter;
+			tween.onEnd = autoMove_event_portalEnter;
 
 			control.walkClassUpdate("tween-player-XX");
 
-			temp_autoMove_tween(tween, true);
+			autoMove_tween(tween, true);
 
 			delete tween;
 		},
@@ -615,17 +694,11 @@ function temp_autoMove_init(moveRequest)
 
 			control.writePosition({x:tween.x, y:tween.y, d:"STILL"});
 
-			// display_centerLevel();
+			autoMove_tween(tween, false);
 
-			temp_autoMove_tween(tween, false);
+			autoMove_tweenStage({call_funct:autoMove_init, call_params:["PORTAL_EXIT"]});
 
 			delete tween;
-
-			// HACKY EXIT AFTER SCREEN PLACEMENT
-
-			// temp_delay = setTimeout(temp_autoMove_init, 600, "PORTAL_EXIT");
-
-			temp_autoMove_tweenStage();
 
 		},
 
@@ -641,7 +714,7 @@ function temp_autoMove_init(moveRequest)
 			tween.a 				= "1";
 			tween.pushX 		= 0;
 			tween.pushY 		= 0;
-			tween.onEnd 		= temp_autoMove_event_portalExit;
+			tween.onEnd 		= autoMove_event_portalExit;
 
 			switch(portalTarget.direction)
 			{
@@ -655,18 +728,15 @@ function temp_autoMove_init(moveRequest)
 			tween.y += tween.pushY;
 
 			css = 	{
-								"-webkit-transform"	: "translate(" + tween.x + "px, " + tween.y + "px)",
-								"transform"					: "translate(" + tween.x + "px, " + tween.y + "px)"
-							};
+						"-webkit-transform"	: "translate(" + tween.x + "px, " + tween.y + "px)",
+						"transform"					: "translate(" + tween.x + "px, " + tween.y + "px)"
+					};
 
 			$(".hitTest").css(css);
 
 			control.writePosition({x:tween.x, y:tween.y, d:"STILL"});
 
-			// SWAP
-			// onEnterFrame_init(true);
-
-			temp_autoMove_tween(tween, true);
+			autoMove_tween(tween, true);
 
 			delete tween;
 		},
@@ -678,11 +748,11 @@ function temp_autoMove_init(moveRequest)
 			tween.x 		= enemyTarget.x;
 			tween.y 		= enemyTarget.y;
 			tween.a 		= "1";
-			tween.onEnd = temp_autoMove_enemyAttack;
+			tween.onEnd = autoMove_enemyAttack;
 
 			control.walkClassUpdate("tween-player-XX");
 
-			temp_autoMove_tween(tween, true);
+			autoMove_tween(tween, true);
 
 			delete tween;
 		},
@@ -696,7 +766,7 @@ function temp_autoMove_init(moveRequest)
 
 			control.writePosition({x:tween.x, y:tween.y, d:"STILL"});
 
-			temp_autoMove_tween(tween, false);
+			autoMove_tween(tween, false);
 
 			delete tween;
 		},
@@ -712,7 +782,7 @@ function temp_autoMove_init(moveRequest)
 
 			control.walkClassUpdate("tween-player-XX");
 
-			temp_autoMove_tween(tween, false);
+			autoMove_tween(tween, false);
 
 			delete tween;
 		},
@@ -732,7 +802,7 @@ function temp_autoMove_init(moveRequest)
 	}
 }
 
-function temp_autoMove_tween(settings, animate)
+function autoMove_tween(settings, animate)
 {
 	var css = settings;
 
@@ -745,9 +815,9 @@ function temp_autoMove_tween(settings, animate)
 	}
 
 	css.write = 	{
-										"-webkit-transform"	: "translate(" + css.x + "px, " + css.y + "px)",
-										"transform"					: "translate(" + css.x + "px, " + css.y + "px)"
-								};
+						"-webkit-transform"	: "translate(" + css.x + "px, " + css.y + "px)",
+						"transform"			: "translate(" + css.x + "px, " + css.y + "px)"
+					};
 
 	$(".player").css(css.write);
 
@@ -757,59 +827,59 @@ function temp_autoMove_tween(settings, animate)
 	}
 }
 
-function temp_autoMove_tweenStage()
+function autoMove_tweenStage(onEnd)
 {
 	var css;
 
 	var delay_exit;
 
 	display.centerPlayer();
-	// display_centerLevel();
 
 	$(".field").addClass("tween-fieldShift");
 
 	css = 	{
-						"-webkit-transform"	: "translateY(" + display.focus_y + "px)",
-						"transform"					: "translateY(" + display.focus_y + "px)"
-					};
+				"-webkit-transform"	: "translateY(" + display.focus_y + "px)",
+				"transform"					: "translateY(" + display.focus_y + "px)"
+			};
 
 	display.setPosition();
 
-	// $(".field")[0].addEventListener("webkitTransitionEnd", temp_autoMove_tweenStageEvent, false);
-	// $(".field")[0].addEventListener("transitionend", temp_autoMove_tweenStageEvent, false);
-
 	$(".field").css(css);
 
-	delay_exit = setTimeout(temp_autoMove_tweenStageEvent, 1000, null);
-
-	trace("CHECK FAULT");
-	trace(loopRun);
+	delay_exit = setTimeout(autoMove_tweenStageComplete, 1000, onEnd);
 }
 
-function temp_autoMove_tweenStageEvent(event)
+function autoMove_tweenStageComplete(onEnd)
 {
-	// $(".field")[0].removeEventListener("webkitTransitionEnd", temp_autoMove_tweenStageEvent, false);
-	// $(".field")[0].removeEventListener("transitionend", temp_autoMove_tweenStageEvent, false);
-
 	$(".field").removeClass("tween-fieldShift");
 
-	temp_autoMove_init("PORTAL_EXIT");
+	trace(onEnd);
+
+	if(onEnd.call_params)
+	{
+		onEnd.call_funct.apply(this, onEnd.call_params);
+	}
+
+	else
+	{
+		onEnd.call_funct();
+	}
 }
 
-function temp_autoMove_event_portalEnter(event)
+function autoMove_event_portalEnter(event)
 {
-	$(".player")[0].removeEventListener("webkitTransitionEnd", temp_autoMove_event_portalEnter, false);
-	$(".player")[0].removeEventListener("transitionend", temp_autoMove_event_portalEnter, false);
+	$(".player")[0].removeEventListener("webkitTransitionEnd", autoMove_event_portalEnter, false);
+	$(".player")[0].removeEventListener("transitionend", autoMove_event_portalEnter, false);
 
 	$(".player").removeClass("tween-player");
 
 	temp_findPortalExit();
 }
 
-function temp_autoMove_event_portalExit(event)
+function autoMove_event_portalExit(event)
 {
-	$(".player")[0].removeEventListener("webkitTransitionEnd", temp_autoMove_event_portalExit, false);
-	$(".player")[0].removeEventListener("transitionend", temp_autoMove_event_portalExit, false);
+	$(".player")[0].removeEventListener("webkitTransitionEnd", autoMove_event_portalExit, false);
+	$(".player")[0].removeEventListener("transitionend", autoMove_event_portalExit, false);
 
 	$(".player").removeClass("tween-player");
 
@@ -819,10 +889,10 @@ function temp_autoMove_event_portalExit(event)
 	move_reset();
 }
 
-function temp_autoMove_enemyAttack()
+function autoMove_enemyAttack()
 {
-	$(".player")[0].removeEventListener("webkitTransitionEnd", temp_autoMove_enemyAttack, false);
-	$(".player")[0].removeEventListener("transitionend", temp_autoMove_enemyAttack, false);
+	$(".player")[0].removeEventListener("webkitTransitionEnd", autoMove_enemyAttack, false);
+	$(".player")[0].removeEventListener("transitionend", autoMove_enemyAttack, false);
 
 	$(".player").removeClass("tween-player");
 
