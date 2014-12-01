@@ -172,10 +172,14 @@ function hitTest_init()
 
 	HIT_TEST.hit_portal_id = "";
 	HIT_TEST.hit_enemy_id = "";
+	HIT_TEST.hit_sound_id = "";
+	HIT_TEST.hit_god_id = "";
 
 	HIT_TEST.hit_edge = false;
 	HIT_TEST.hit_portal = false;
 	HIT_TEST.hit_enemy = false;
+	HIT_TEST.hit_sound = false;
+	HIT_TEST.hit_god = false;
 }
 
 function move_init(run)
@@ -387,12 +391,16 @@ function hack_hitTest()
 
 		if($(HIT_TEST.hits[0]).attr("data-npc") === "sound")
 		{
+			HIT_TEST.hit_sound = true;
 
+			HIT_TEST.hit_sound_id = HIT_TEST.hits[0].id;
 		}
 
 		if($(HIT_TEST.hits[0]).attr("data-npc") === "god")
 		{
+			HIT_TEST.hit_god = true;
 
+			HIT_TEST.hit_god_id = HIT_TEST.hits[0].id;
 		}
 	}
 
@@ -463,14 +471,32 @@ function hack_hitTest_update()
 	{
 		onEnterFrame_init(false);
 
-
-
 		temp_findEnemy();
 	}
 
 	else
 	{
 
+	}
+
+	if(HIT_TEST.hit_sound)
+	{
+		if(soundEffects_pedal != null)
+		{
+			if(soundEffects_pedal.triggerTargetID !== HIT_TEST.hit_sound_id)
+			{
+				sound_level_trigger_event(HIT_TEST.hit_sound_id);
+
+				soundEffects_pedal.triggerTargetID = HIT_TEST.hit_sound_id;
+			}
+		}
+	}
+
+	// SEE temp.js
+	if(HIT_TEST.hit_god)
+	{
+		// WHEN BUILT - OPTIMISE THIS THE SAME AS THE SOUND
+		// god_eventSearch(HIT_TEST.hit_god_id);
 	}
 }
 

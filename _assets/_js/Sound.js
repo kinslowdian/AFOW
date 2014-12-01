@@ -76,6 +76,8 @@
 		soundEffects_pedal.main.fadeType = "";
 
 		soundEffects_pedal.soundListLevel = new Array();
+
+		soundEffects_pedal.triggerTargetID = "";
 	}
 
 	function sound_loaded(event)
@@ -544,6 +546,8 @@
 
 	function sound_level_trigger_event(sound_hit)
 	{
+		trace("sound_level_trigger_event(" + sound_hit + ");");
+
 		var levelSoundItem;
 
 		soundEffects_pedal.soundListLevel = new Array();
