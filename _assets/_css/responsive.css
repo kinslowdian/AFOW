@@ -194,8 +194,8 @@
 	/* WALK ANIMATION DESKTOP ONLY */
 	.tween-mapPlayerWalk_loop
 	{
-		-webkit-animation	: tweenMapPlayerWalkLoopFrames 70ms steps(8) 0 infinite; /* 90ms */
-		animation			: tweenMapPlayerWalkLoopFrames 70ms steps(8) 0 infinite; /* 90ms */
+		-webkit-animation	: tweenMapPlayerWalkLoopFrames 140ms steps(8) 0 infinite; /* 90ms */
+		animation			: tweenMapPlayerWalkLoopFrames 140ms steps(8) 0 infinite; /* 90ms */
 	}
 
 	/* INFO */

@@ -46,6 +46,8 @@ Control.prototype.init = function()
 	this.signal = false;
 
 	this.dir = "";
+
+	this.walkLegs = false;
 }
 
 Control.prototype.writePosition = function(placement)
@@ -78,6 +80,18 @@ Control.prototype.walkClassUpdate = function(newClass)
 	$(".player .player-sprite").removeClass(this.walkClass).addClass(newClass);
 
 	this.walkClass = newClass;
+
+	if(this.walkClass === "tween-player-XX")
+	{
+		this.walkLegs = false;
+		$(".player .map-goat-legs").removeClass("tween-mapPlayerWalk_loop").addClass("tween-mapPlayerWalk_stop");
+	}
+
+	else
+	{
+		this.walkLegs = true;
+		$(".player .map-goat-legs").removeClass("tween-mapPlayerWalk_stop").addClass("tween-mapPlayerWalk_loop");
+	}
 }
 
 Control.prototype.touch_initPad = function(touchArea)
@@ -605,59 +619,6 @@ function temp_findPortalExit()
 			}
 		}
 	}
-
-
-	// STAGE TRAVEL
-	/*
-	(portalTarget.level == ROM.mapLevel)
-	{
-		for(var i in portals_ARR)
-		{
-			if(portalTarget.exit == portals_ARR[i].num)
-			{
-				portalTarget = {};
-				portalTarget = portals_ARR[i];
-
-				autoMove_init("PORTAL_PLACE");
-
-				break;
-			}
-		}
-	}
-	*/
-
-	// LEVEL TRAVEL
-	/*
-	else
-	{
-		trace("READ:");
-		console.table(portalTarget);
-
-		for(var j in portals_ARR)
-		{
-			if(portalTarget.level == portals_ARR[j].spawn)
-			{
-				if(portalTarget.exit == portals_ARR[j].num)
-				{
-					portalTarget = {};
-					portalTarget = portals_ARR[j];
-
-					ROM.mapLevel = portalTarget.level;
-
-					// MAY NEED TO ADD
-					game_levelChange = true;
-
-					portalScreen_request();
-
-					// trace("GO TO:");
-					// console.table(portalTarget);
-
-					break;
-				}
-			}
-		}
-	}
-	*/
 }
 
 function autoMove_init(moveRequest)
@@ -718,10 +679,17 @@ function autoMove_init(moveRequest)
 
 			switch(portalTarget.direction)
 			{
+				/*
 				case "UP"			:{ tween.pushY = -(portalTarget.buildData.h); break; }
 				case "DOWN"		:{ tween.pushY = portalTarget.buildData.h * 1.5; 		break; }
 				case "LEFT"		:{ tween.pushX = -(portalTarget.buildData.w); break; }
 				case "RIGHT"	:{ tween.pushX = portalTarget.buildData.w * 1.5; 		break; }
+				*/
+
+				case "UP"			:{ tween.pushY = -(portalTarget.buildData.h * 0.5); break; }
+				case "DOWN"		:{ tween.pushY = portalTarget.buildData.h * 1; 		break; }
+				case "LEFT"		:{ tween.pushX = -(portalTarget.buildData.w * 0.5); break; }
+				case "RIGHT"	:{ tween.pushX = portalTarget.buildData.w * 1; 		break; }
 			}
 
 			tween.x += tween.pushX;

@@ -1263,7 +1263,7 @@
 
 		/* background-position: 0px 0px; */
 
-		z-index: 2;
+		/*z-index: 2;*/
 	}
 
 	.enemy-sprite .map-enemy_40x40-hand-L
@@ -1275,7 +1275,7 @@
 
 		position: absolute;
 
-		z-index: 3;
+		/*z-index: 3;*/
 	}
 
 	.enemy-sprite .map-enemy_40x40-hand-R
@@ -1287,7 +1287,7 @@
 
 		position: absolute;
 
-		z-index: 3;
+		/*z-index: 3;*/
 	}
 
 	.enemy-sprite .map-enemy_40x40-body
@@ -1299,7 +1299,7 @@
 
 		position: absolute;
 
-		z-index: 1;
+		/*z-index: 1;*/
 	}
 
 	.enemy-sprite .map-enemy_40x40-legs
@@ -1311,7 +1311,7 @@
 
 		position: absolute;
 
-		z-index: 0;
+		/*z-index: 0;*/
 	}
 
 	.tween-map-enemy_40x40-head
@@ -1507,7 +1507,7 @@
 
 		position: absolute;
 
-		z-index: 0;
+		/*z-index: 0;*/
 	}
 
 	.enemy_grave_sprite
