@@ -235,6 +235,8 @@
 		portalScreen_init();
 
 
+		gameEventTriggers_init();
+
 
 		// FLOW CHANGE
 

@@ -2160,7 +2160,7 @@
 						"w": 4,
 						"h": 3,
 						"n": "level5_god_monkeyDefaultIce0",
-						"c_cl": "god-areas",
+						"c_cl": "layer-field-god-area",
 						"b_cl": "field-floor-ice",
 						"t_cl": "monkey_default_trees_ice",
 						"g_cl": "monkey_default_ground_ice",
@@ -2181,7 +2181,7 @@
 						"w": 4,
 						"h": 3,
 						"n": "level5_god_monkeydefaultIce1",
-						"c_cl": "god-areas",
+						"c_cl": "layer-field-god-area",
 						"b_cl": "field-floor-ice",
 						"t_cl": "monkey_default_trees_ice",
 						"g_cl": "monkey_default_ground_ice",
@@ -2202,7 +2202,7 @@
 						"w": 4,
 						"h": 3,
 						"n": "level5_god_monkeyKingIce",
-						"c_cl": "god-areas",
+						"c_cl": "layer-field-god-area",
 						"b_cl": "field-floor-ice",
 						"t_cl": "monkey_king_trees_ice",
 						"g_cl": "monkey_king_ground_ice",
@@ -2225,7 +2225,7 @@
 						"y": 1,
 						"w": 4,
 						"h": 1,
-						"c_cl": "god-areas",
+						"c_cl": "layer-field-god-area",
 						"god_prefs":
 						[
 							{
@@ -2240,7 +2240,7 @@
 						"y": 2,
 						"w": 4,
 						"h": 1,
-						"c_cl": "god-areas",
+						"c_cl": "layer-field-god-area",
 						"god_prefs":
 						[
 							{
@@ -2255,7 +2255,7 @@
 						"y": 8,
 						"w": 4,
 						"h": 1,
-						"c_cl": "god-areas",
+						"c_cl": "layer-field-god-area",
 						"god_prefs":
 						[
 							{
@@ -2275,7 +2275,7 @@
 						"y": 9,
 						"w": 4,
 						"h": 1,
-						"c_cl": "god-areas",
+						"c_cl": "layer-field-god-area",
 						"god_prefs":
 						[
 							{
@@ -2290,7 +2290,7 @@
 						"y": 15,
 						"w": 4,
 						"h": 1,
-						"c_cl": "god-areas",
+						"c_cl": "layer-field-god-area",
 						"god_prefs":
 						[
 							{
@@ -2310,7 +2310,7 @@
 						"y": 16,
 						"w": 4,
 						"h": 1,
-						"c_cl": "god-areas",
+						"c_cl": "layer-field-god-area",
 						"god_prefs":
 						[
 							{
@@ -2325,7 +2325,7 @@
 						"y": 22,
 						"w": 4,
 						"h": 1,
-						"c_cl": "god-areas",
+						"c_cl": "layer-field-god-area",
 						"god_prefs":
 						[
 							{
@@ -2340,7 +2340,7 @@
 						"y": 23,
 						"w": 4,
 						"h": 1,
-						"c_cl": "god-areas",
+						"c_cl": "layer-field-god-area",
 						"god_prefs":
 						[
 							{
@@ -2541,7 +2541,7 @@
 						"w": 4,
 						"h": 3,
 						"n": "level6_god_monkeyDefault0",
-						"c_cl": "god-areas",
+						"c_cl": "layer-field-god-area",
 						"b_cl": "field-floor-forest",
 						"t_cl": "monkey_default_trees_forest",
 						"g_cl": "monkey_default_ground_forest",
@@ -2562,7 +2562,7 @@
 						"w": 4,
 						"h": 3,
 						"n": "level6_god_monkeydefault1",
-						"c_cl": "god-areas",
+						"c_cl": "layer-field-god-area",
 						"b_cl": "field-floor-forest",
 						"t_cl": "monkey_default_trees_forest",
 						"g_cl": "monkey_default_ground_forest",
@@ -2583,7 +2583,7 @@
 						"w": 4,
 						"h": 3,
 						"n": "level6_god_monkeyKing",
-						"c_cl": "god-areas",
+						"c_cl": "layer-field-god-area",
 						"b_cl": "field-floor-forest",
 						"t_cl": "monkey_king_trees_forest",
 						"g_cl": "monkey_king_ground_forest",
@@ -2606,7 +2606,7 @@
 						"y": 1,
 						"w": 4,
 						"h": 1,
-						"c_cl": "god-areas",
+						"c_cl": "layer-field-god-area",
 						"god_prefs":
 						[
 							{
@@ -2621,7 +2621,7 @@
 						"y": 2,
 						"w": 4,
 						"h": 1,
-						"c_cl": "god-areas",
+						"c_cl": "layer-field-god-area",
 						"god_prefs":
 						[
 							{
@@ -2636,7 +2636,7 @@
 						"y": 8,
 						"w": 4,
 						"h": 1,
-						"c_cl": "god-areas",
+						"c_cl": "layer-field-god-area",
 						"god_prefs":
 						[
 							{
@@ -2656,7 +2656,7 @@
 						"y": 9,
 						"w": 4,
 						"h": 1,
-						"c_cl": "god-areas",
+						"c_cl": "layer-field-god-area",
 						"god_prefs":
 						[
 							{
@@ -2671,7 +2671,7 @@
 						"y": 15,
 						"w": 4,
 						"h": 1,
-						"c_cl": "god-areas",
+						"c_cl": "layer-field-god-area",
 						"god_prefs":
 						[
 							{
@@ -2691,7 +2691,7 @@
 						"y": 16,
 						"w": 4,
 						"h": 1,
-						"c_cl": "god-areas",
+						"c_cl": "layer-field-god-area",
 						"god_prefs":
 						[
 							{
@@ -2706,7 +2706,7 @@
 						"y": 22,
 						"w": 4,
 						"h": 1,
-						"c_cl": "god-areas",
+						"c_cl": "layer-field-god-area",
 						"god_prefs":
 						[
 							{
@@ -2721,7 +2721,7 @@
 						"y": 23,
 						"w": 4,
 						"h": 1,
-						"c_cl": "god-areas",
+						"c_cl": "layer-field-god-area",
 						"god_prefs":
 						[
 							{

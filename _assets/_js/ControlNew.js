@@ -483,11 +483,11 @@ function hack_hitTest_update()
 	{
 		if(soundEffects_pedal != null)
 		{
-			if(soundEffects_pedal.triggerTargetID !== HIT_TEST.hit_sound_id)
+			if(gameEventTriggers.hitList.sound_id !== HIT_TEST.hit_sound_id)
 			{
 				sound_level_trigger_event(HIT_TEST.hit_sound_id);
 
-				soundEffects_pedal.triggerTargetID = HIT_TEST.hit_sound_id;
+				gameEventTriggers.hitList.sound_id = HIT_TEST.hit_sound_id;
 			}
 		}
 	}
@@ -495,6 +495,13 @@ function hack_hitTest_update()
 	// SEE temp.js
 	if(HIT_TEST.hit_god)
 	{
+		if(gameEventTriggers.hitList.god_id !== HIT_TEST.hit_god_id)
+		{
+			gameEventTriggers.hitList.god_id = HIT_TEST.hit_god_id;
+
+			trace("godTrigger == " + HIT_TEST.hit_god_id);
+		}
+
 		// WHEN BUILT - OPTIMISE THIS THE SAME AS THE SOUND
 		// god_eventSearch(HIT_TEST.hit_god_id);
 	}

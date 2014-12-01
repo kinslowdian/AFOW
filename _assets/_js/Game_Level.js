@@ -311,6 +311,8 @@
 
 		this.class_display				= this.settings.display;
 
+		this.triggerTargetID 			= "";
+
 		this.buildData.block_x		= this.settings.x * 80;
 		this.buildData.block_y		= this.settings.y * 80;
 		this.buildData.block_w		= this.settings.w * 80;
