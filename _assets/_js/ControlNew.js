@@ -77,20 +77,20 @@ Control.prototype.writeSpawn = function(placement)
 
 Control.prototype.walkClassUpdate = function(newClass)
 {
-	$(".player .player-sprite").removeClass(this.walkClass).addClass(newClass);
+	$(".layer-field-player-area .player .player-sprite").removeClass(this.walkClass).addClass(newClass);
 
 	this.walkClass = newClass;
 
 	if(this.walkClass === "tween-player-XX")
 	{
 		this.walkLegs = false;
-		$(".player .map-goat-legs").removeClass("tween-mapPlayerWalk_loop").addClass("tween-mapPlayerWalk_stop");
+		$(".layer-field-player-area .player .map-goat-legs").removeClass("tween-mapPlayerWalk_loop").addClass("tween-mapPlayerWalk_stop");
 	}
 
 	else
 	{
 		this.walkLegs = true;
-		$(".player .map-goat-legs").removeClass("tween-mapPlayerWalk_stop").addClass("tween-mapPlayerWalk_loop");
+		$(".layer-field-player-area .player .map-goat-legs").removeClass("tween-mapPlayerWalk_stop").addClass("tween-mapPlayerWalk_loop");
 	}
 }
 
@@ -497,9 +497,9 @@ function hack_hitTest_update()
 	{
 		if(gameEventTriggers.hitList.god_id !== HIT_TEST.hit_god_id)
 		{
-			gameEventTriggers.hitList.god_id = HIT_TEST.hit_god_id;
+			god_eventSearch(HIT_TEST.hit_god_id);
 
-			trace("godTrigger == " + HIT_TEST.hit_god_id);
+			gameEventTriggers.hitList.god_id = HIT_TEST.hit_god_id;
 		}
 
 		// WHEN BUILT - OPTIMISE THIS THE SAME AS THE SOUND
@@ -561,7 +561,7 @@ function onEnterFrame_move()
 						"transform"					: "translate(" + control.fl.x + "px, " + control.fl.y + "px)"
 					};
 
-		$(".player").css(css);
+		$(".layer-field-player-area .player").css(css);
 	}
 }
 
@@ -809,7 +809,7 @@ function autoMove_tween(settings, animate)
 
 	if(animate)
 	{
-			$(".player").addClass("tween-player");
+			$(".layer-field-player-area .player").addClass("tween-player");
 
 			$(".tween-player")[0].addEventListener("webkitTransitionEnd", css.onEnd, false);
 			$(".tween-player")[0].addEventListener("transitionend", css.onEnd, false);
@@ -820,11 +820,11 @@ function autoMove_tween(settings, animate)
 						"transform"			: "translate(" + css.x + "px, " + css.y + "px)"
 					};
 
-	$(".player").css(css.write);
+	$(".layer-field-player-area .player").css(css.write);
 
 	if(css.a)
 	{
-		$(".player").css("opacity", css.a);
+		$(".layer-field-player-area .player").css("opacity", css.a);
 	}
 }
 
@@ -869,20 +869,20 @@ function autoMove_tweenStageComplete(onEnd)
 
 function autoMove_event_portalEnter(event)
 {
-	$(".player")[0].removeEventListener("webkitTransitionEnd", autoMove_event_portalEnter, false);
-	$(".player")[0].removeEventListener("transitionend", autoMove_event_portalEnter, false);
+	$(".layer-field-player-area .player")[0].removeEventListener("webkitTransitionEnd", autoMove_event_portalEnter, false);
+	$(".layer-field-player-area .player")[0].removeEventListener("transitionend", autoMove_event_portalEnter, false);
 
-	$(".player").removeClass("tween-player");
+	$(".layer-field-player-area .player").removeClass("tween-player");
 
 	temp_findPortalExit();
 }
 
 function autoMove_event_portalExit(event)
 {
-	$(".player")[0].removeEventListener("webkitTransitionEnd", autoMove_event_portalExit, false);
-	$(".player")[0].removeEventListener("transitionend", autoMove_event_portalExit, false);
+	$(".layer-field-player-area .player")[0].removeEventListener("webkitTransitionEnd", autoMove_event_portalExit, false);
+	$(".layer-field-player-area .player")[0].removeEventListener("transitionend", autoMove_event_portalExit, false);
 
-	$(".player").removeClass("tween-player");
+	$(".layer-field-player-area .player").removeClass("tween-player");
 
 	control.writeSpawn({x:control.fl.x, y:control.fl.y});
 
@@ -892,10 +892,10 @@ function autoMove_event_portalExit(event)
 
 function autoMove_enemyAttack()
 {
-	$(".player")[0].removeEventListener("webkitTransitionEnd", autoMove_enemyAttack, false);
-	$(".player")[0].removeEventListener("transitionend", autoMove_enemyAttack, false);
+	$(".layer-field-player-area .player")[0].removeEventListener("webkitTransitionEnd", autoMove_enemyAttack, false);
+	$(".layer-field-player-area .player")[0].removeEventListener("transitionend", autoMove_enemyAttack, false);
 
-	$(".player").removeClass("tween-player");
+	$(".layer-field-player-area .player").removeClass("tween-player");
 
 	// DO STUFF
 }

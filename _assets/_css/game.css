@@ -2074,7 +2074,7 @@
 
 		position: absolute;
 
-		z-index: 0;
+		/*z-index: 0;*/
 	}
 
 	#space .weather-rain
@@ -2084,7 +2084,7 @@
 
 		position: absolute;
 
-		z-index: 0;
+		/*z-index: 0;*/
 
 	}
 
@@ -2095,7 +2095,7 @@
 
 		position: absolute;
 
-		z-index: 0;
+		/*z-index: 0;*/
 	}
 
 	.windy
@@ -2129,7 +2129,7 @@
 		-webkit-animation-duration: 2.2s;
 		animation-duration: 2.2s;
 
-		z-index: 0;
+		/*z-index: 0;*/
 	}
 
 	.windy-1
@@ -2137,7 +2137,7 @@
 		-webkit-animation-duration: 1.6s;
 		animation-duration: 1.6s;
 
-		z-index: 1;
+		/*z-index: 1;*/
 	}
 
 	.windy-2
@@ -2145,7 +2145,7 @@
 		-webkit-animation-duration: 1s;
 		animation-duration: 1s;
 
-		z-index: 2;
+		/*z-index: 2;*/
 	}
 
 	.rain
@@ -2181,7 +2181,7 @@
 		-webkit-animation-duration: 600ms;
 		animation-duration: 600ms;
 
-		z-index: 0;
+		/*z-index: 0;*/
 	}
 
 	.rain-1
@@ -2189,7 +2189,7 @@
 		-webkit-animation-duration: 400ms;
 		animation-duration: 400ms;
 
-		z-index: 1;
+		/*z-index: 1;*/
 	}
 
 	.rain-2
@@ -2197,7 +2197,7 @@
 		-webkit-animation-duration: 200ms;
 		animation-duration: 200ms;
 
-		z-index: 2;
+		/*z-index: 2;*/
 	}
 
 
@@ -2235,7 +2235,7 @@
 		-webkit-animation-duration: 2s;
 		animation-duration: 2s;
 
-		z-index: 0;
+		/*z-index: 0;*/
 	}
 
 	.snow-1
@@ -2243,7 +2243,7 @@
 		-webkit-animation-duration: 4s;
 		animation-duration: 4s;
 
-		z-index: 1;
+		/*z-index: 1;*/
 	}
 
 	.snow-2
@@ -2251,7 +2251,7 @@
 		-webkit-animation-duration: 6s;
 		animation-duration: 6s;
 
-		z-index: 2;
+		/*z-index: 2;*/
 	}
 
 /* ----------------------------------------------------------------------- WEATHER */

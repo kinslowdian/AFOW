@@ -311,8 +311,6 @@
 
 		this.class_display				= this.settings.display;
 
-		this.triggerTargetID 			= "";
-
 		this.buildData.block_x		= this.settings.x * 80;
 		this.buildData.block_y		= this.settings.y * 80;
 		this.buildData.block_w		= this.settings.w * 80;
@@ -916,7 +914,7 @@
 
 		for(var i in LEVEL_MAIN.spirits.god_ARR)
 		{
-			trace(LEVEL_MAIN.spirits.god_ARR[i]);
+			// trace(LEVEL_MAIN.spirits.god_ARR[i]);
 
 			if(target === LEVEL_MAIN.spirits.god_ARR[i].buildData.id)
 			{
@@ -1091,16 +1089,22 @@
 
 	function level_clear()
 	{
-		// REMOVES PIXEL CLASS FROM FOREST BG REWRITE NEEDED
-		/*
-		var find_bgPixels 		= $("#roam_content").attr("class");
+		var find_bgPixels = {};
 
-		var get_bgPixels_BEG 	= find_bgPixels.search("pixels");
-		var get_bgPixels_END 	= find_bgPixels.length;
-		var get_bgPixels 		= find_bgPixels.substr(get_bgPixels_BEG, get_bgPixels_END);
-		*/
+		find_bgPixels.target 			= $(".bgFill-l").attr("class");
+		find_bgPixels.searchBeg 	= find_bgPixels.target.search("pixels");
+		find_bgPixels.searchEnd		= find_bgPixels.target.length;
+		find_bgPixels.classString	= find_bgPixels.target.substr(find_bgPixels.searchBeg, find_bgPixels.searchEnd);
+
+		$(".bgFill-l").removeClass(find_bgPixels.classString);
+		$(".bgFill-r").removeClass(find_bgPixels.classString);
+		$(".bgFill-t").removeClass(find_bgPixels.classString);
+		$(".bgFill-b").removeClass(find_bgPixels.classString);
+
+		delete find_bgPixels;
 
 		$(".layer-field-floor > div").removeAttr("class");
+
 
 		$(".layer-field-gate-area").html("");
 		$(".layer-field-god-area").html("");
@@ -1109,27 +1113,6 @@
 		$(".layer-field-portal-area").html("");
 		$(".layer-field-enemy-area").html("");
 		$(".layer-field-sound-area").html("");
-
-
-
-		/*
-		$(".enemy-area").html("");
-		$(".portal-area").html("");
-		$(".field-area").html("");
-		$(".water-area").html("");
-
-		$(".woodland-areas").html("");
-		$(".god-areas").html("");
-		$(".gate-areas").html("");
-
-		$("#space .weather-snow").html("");
-		$("#space .weather-rain").html("");
-		$("#space .weather-wind").html("");
-
-
-		$("#roam_content").removeClass(get_bgPixels);
-		$(".field-floor > div").removeAttr("class");
-		*/
 
 
 		for(var object_enemy in enemies_ARR)

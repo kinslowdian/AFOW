@@ -1,4 +1,4 @@
-=
+
 	/* --- CONTROL */
 
 	var CONTROL_SIGNAL;

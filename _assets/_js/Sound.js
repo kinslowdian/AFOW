@@ -544,7 +544,7 @@
 
 	function sound_level_trigger_event(sound_hit)
 	{
-		trace("sound_level_trigger_event(" + sound_hit + ");");
+		// trace("sound_level_trigger_event(" + sound_hit + ");");
 
 		var levelSoundItem;
 
