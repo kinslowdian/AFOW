@@ -11,20 +11,14 @@
 	{
 		if(run)
 		{
-			// BREAK
-			/*
 			$(".options-trigger")[0].addEventListener("click", optionsTrigger_event, false);
 			$(".options-trigger")[0].addEventListener("touchend", optionsTrigger_event, false);
-			*/
 		}
 
 		else
 		{
-			// BREAK
-			/*
 			$(".options-trigger")[0].removeEventListener("click", optionsTrigger_event, false);
 			$(".options-trigger")[0].removeEventListener("touchend", optionsTrigger_event, false);
-			*/
 		}
 	}
 
@@ -34,7 +28,10 @@
 
 		// control_switch(false);
 
-		MAP_PLAYER.listen = false;
+		// CONTROL CANCEL
+		// BREAK
+		// MAP_PLAYER.listen = false;
+		move_init(false);
 
 		optionsTrigger_init(false);
 
@@ -1213,7 +1210,10 @@
 		{
 			// hitTest_init();
 
-			MAP_PLAYER.listen = true;
+			// CONTROL ALLOW
+			// BREAK
+			// MAP_PLAYER.listen = true;
+			move_init(true);
 
 			// control_switch(true);
 		}

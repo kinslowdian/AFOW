@@ -5,6 +5,8 @@ var Display = function(w, h, target)
 	this.gameWidth = w;
 	this.gameHeight = h;
 	this.centerTarget = target;
+
+	this.record = false;
 }
 
 Display.prototype.init = function()
@@ -29,6 +31,7 @@ Display.prototype.updateScreenVals = function()
 Display.prototype.centerPlayer = function()
 {
 	// 	center_y = -(player_y) + ((screen_h * 0.5) - (player_h * 0.5));
+
 	this.focus_y = Math.round(-(control.fl.target_safe_y) + ((this.h * 0.5) - (40 * 0.5)));
 }
 
@@ -129,8 +132,18 @@ function display_centerLevel()
 		{
 			display.stageY.fl.vy = display.stageY.fl.dy * display.stageY.fl.easing;
 			display.stageY.fl.y += display.stageY.fl.vy;
+
+			css = {
+							"-webkit-transform" : "translateY(" + display.stageY.fl.y + "px)",
+							"transform" 				: "translateY(" + display.stageY.fl.y + "px)"
+						};
+
+			$(".screen").css(css);
+
+			$("." + display.centerTarget).css(css);
 		}
 
+		/*
 		css = {
 						"-webkit-transform" : "translateY(" + display.stageY.fl.y + "px)",
 						"transform" 				: "translateY(" + display.stageY.fl.y + "px)"
@@ -139,6 +152,7 @@ function display_centerLevel()
 		$(".screen").css(css);
 
 		$("." + display.centerTarget).css(css);
+		*/
 	}
 }
 

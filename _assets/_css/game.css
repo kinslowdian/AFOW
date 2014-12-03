@@ -16,6 +16,8 @@
 
 /* EXTRA RESET */
 
+/* UTILS */
+
 /* FONT */
 
 /* MAIN */
@@ -100,6 +102,17 @@
 	}
 
 /* ----------------------------------------------------------------------- EXTRA RESET */
+
+
+/* ----------------------------------------------------------------------- UTILS */
+
+.ignoreMouseEvents, .ignoreMouseEvents *
+{
+	pointer-events: none !important;
+}
+
+/* ----------------------------------------------------------------------- UTILS */
+
 
 
 
@@ -2066,6 +2079,11 @@
 
 		/*z-index: 1;*/
 	}
+
+/*	#space div
+	{
+		pointer-events: none;
+	}*/
 
 	#space .weather-wind
 	{
