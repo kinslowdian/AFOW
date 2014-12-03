@@ -465,7 +465,35 @@
 /*--------------- RESPONSIVE*/
 
 
+.test-sky
+{
+	width: 320px;
+	height: 2000px;
 
+	/*background: rgba(255, 0, 0, 0.5);*/
+
+	position: absolute;
+
+	left: 0; right: 0; top: 0; bottom: 0;
+
+	margin: 0 auto;
+}
+
+.test-island
+{
+	width: 240px;
+	height: 240px;
+
+	background: url(../_img/_island.png);
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	background-size: 240px 240px;
+
+	position: absolute;
+
+	-webkit-transform: translate(-280px, 640px);
+	transform: translate(-280px, 640px);
+}
 
 
 

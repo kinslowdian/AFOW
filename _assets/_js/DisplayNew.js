@@ -138,9 +138,11 @@ function display_centerLevel()
 							"transform" 				: "translateY(" + display.stageY.fl.y + "px)"
 						};
 
-			$(".screen").css(css);
+			// $(".screen").css(css);
 
 			$("." + display.centerTarget).css(css);
+
+			testy();
 		}
 
 		/*
@@ -194,4 +196,18 @@ function display_setBG()
 
 	$(".bgFill-t").css(css.t);
 	$(".bgFill-b").css(css.b);
+}
+
+function testy()
+{
+	var css;
+
+	css = {
+					"-webkit-transform" : "translateY(" + (display.stageY.fl.y * 0.75) + "px)",
+					"transform" 				: "translateY(" + (display.stageY.fl.y * 0.75) + "px)"
+				};
+
+	// $(".screen").css(css);
+
+	$(".test-sky").css(css);
 }

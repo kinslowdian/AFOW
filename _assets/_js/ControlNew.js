@@ -838,14 +838,23 @@ function autoMove_tweenStage(onEnd)
 
 	$(".field").addClass("tween-fieldShift");
 
+	$(".test-sky").addClass("tween-fieldShift");
+
 	css = 	{
 				"-webkit-transform"	: "translateY(" + display.focus_y + "px)",
 				"transform"					: "translateY(" + display.focus_y + "px)"
 			};
 
+	css_hack = 	{
+				"-webkit-transform"	: "translateY(" + (display.focus_y * 0.75) + "px)",
+				"transform"					: "translateY(" + (display.focus_y * 0.75) + "px)"
+			};
+
 	display.setPosition();
 
 	$(".field").css(css);
+
+	$(".test-sky").css(css_hack);
 
 	delay_exit = setTimeout(autoMove_tweenStageComplete, 1000, onEnd);
 }
@@ -853,6 +862,8 @@ function autoMove_tweenStage(onEnd)
 function autoMove_tweenStageComplete(onEnd)
 {
 	$(".field").removeClass("tween-fieldShift");
+
+	$(".test-sky").removeClass("tween-fieldShift");
 
 	trace(onEnd);
 
