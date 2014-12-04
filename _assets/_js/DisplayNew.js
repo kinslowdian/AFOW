@@ -54,6 +54,9 @@ Display.prototype.hack = function()
 
 	this.stageY.fl.move = 40;
 	this.stageY.fl.easing = 0.01;
+
+	this.sky0_offset = 0.75;
+	this.sky1_offset = 0.5;
 }
 
 Display.prototype.setPosition = function()
@@ -142,7 +145,7 @@ function display_centerLevel()
 
 			$("." + display.centerTarget).css(css);
 
-			testy();
+			sky_paralax();
 		}
 
 		/*
@@ -198,16 +201,21 @@ function display_setBG()
 	$(".bgFill-b").css(css.b);
 }
 
-function testy()
+function sky_paralax()
 {
-	var css;
+	var css_sky0;
+	var css_sky1;
 
-	css = {
-					"-webkit-transform" : "translateY(" + (display.stageY.fl.y * 0.75) + "px)",
-					"transform" 				: "translateY(" + (display.stageY.fl.y * 0.75) + "px)"
-				};
+	css_sky0 = 	{
+								"-webkit-transform" : "translateY(" + (display.stageY.fl.y * display.sky0_offset) + "px)",
+								"transform" 				: "translateY(" + (display.stageY.fl.y * display.sky0_offset) + "px)"
+							};
 
-	// $(".screen").css(css);
+	css_sky1 = {
+								"-webkit-transform" : "translateY(" + (display.stageY.fl.y * display.sky1_offset) + "px)",
+								"transform" 				: "translateY(" + (display.stageY.fl.y * display.sky1_offset) + "px)"
+							};
 
-	$(".test-sky").css(css);
+	$(".sky0").css(css_sky0);
+	$(".sky1").css(css_sky1);
 }

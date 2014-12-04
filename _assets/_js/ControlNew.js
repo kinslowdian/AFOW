@@ -832,29 +832,39 @@ function autoMove_tweenStage(onEnd)
 {
 	var css;
 
+	var css_sky0;
+	var css_sky1;
+
 	var delay_exit;
 
 	display.centerPlayer();
 
 	$(".field").addClass("tween-fieldShift");
 
-	$(".test-sky").addClass("tween-fieldShift");
+	$(".sky0").addClass("tween-fieldShift");
+	$(".sky1").addClass("tween-fieldShift");
 
 	css = 	{
-				"-webkit-transform"	: "translateY(" + display.focus_y + "px)",
-				"transform"					: "translateY(" + display.focus_y + "px)"
-			};
+						"-webkit-transform"	: "translateY(" + display.focus_y + "px)",
+						"transform"					: "translateY(" + display.focus_y + "px)"
+					};
 
-	css_hack = 	{
-				"-webkit-transform"	: "translateY(" + (display.focus_y * 0.75) + "px)",
-				"transform"					: "translateY(" + (display.focus_y * 0.75) + "px)"
-			};
+	css_sky0 = 	{
+								"-webkit-transform"	: "translateY(" + (display.focus_y * display.sky0_offset) + "px)",
+								"transform"					: "translateY(" + (display.focus_y * display.sky0_offset) + "px)"
+							};
+
+	css_sky1 = 	{
+								"-webkit-transform"	: "translateY(" + (display.focus_y * display.sky1_offset) + "px)",
+								"transform"					: "translateY(" + (display.focus_y * display.sky1_offset) + "px)"
+							};
 
 	display.setPosition();
 
 	$(".field").css(css);
 
-	$(".test-sky").css(css_hack);
+	$(".sky0").css(css_sky0);
+	$(".sky1").css(css_sky1);
 
 	delay_exit = setTimeout(autoMove_tweenStageComplete, 1000, onEnd);
 }
@@ -863,7 +873,8 @@ function autoMove_tweenStageComplete(onEnd)
 {
 	$(".field").removeClass("tween-fieldShift");
 
-	$(".test-sky").removeClass("tween-fieldShift");
+	$(".sky0").removeClass("tween-fieldShift");
+	$(".sky1").removeClass("tween-fieldShift");
 
 	trace(onEnd);
 

@@ -1114,6 +1114,9 @@
 		$(".layer-field-enemy-area").html("");
 		$(".layer-field-sound-area").html("");
 
+		$(".sky0").html("");
+		$(".sky1").html("");
+
 
 		for(var object_enemy in enemies_ARR)
 		{
