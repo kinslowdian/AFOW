@@ -8,6 +8,13 @@
 /* if(screen.width >= 300 */
 @media screen and (min-width:300px)
 {
+	/* WALK ANIMATION DESKTOP ONLY */
+	.tween-mapPlayerWalk_loop
+	{
+		-webkit-animation	: tweenMapPlayerWalkLoopFrames 140ms steps(8) 0 infinite; /* 90ms */
+		animation			: tweenMapPlayerWalkLoopFrames 140ms steps(8) 0 infinite; /* 90ms */
+	}
+
 	/* INFO */
 	.multiUseInfo_tl
 	{
@@ -69,6 +76,13 @@
 /* if(screen.width >= 600) */
 @media screen and (min-width:600px)
 {
+	/* WALK ANIMATION DESKTOP ONLY */
+	.tween-mapPlayerWalk_loop
+	{
+		-webkit-animation	: tweenMapPlayerWalkLoopFrames 140ms steps(8) 0 infinite; /* 90ms */
+		animation			: tweenMapPlayerWalkLoopFrames 140ms steps(8) 0 infinite; /* 90ms */
+	}
+
 	/* INFO */
 	.multiUseInfo_tl
 	{
@@ -130,6 +144,13 @@
 /* if(screen.width >= 900) */
 @media screen and (min-width:900px)
 {
+	/* WALK ANIMATION DESKTOP ONLY */
+	.tween-mapPlayerWalk_loop
+	{
+		-webkit-animation	: tweenMapPlayerWalkLoopFrames 140ms steps(8) 0 infinite; /* 90ms */
+		animation			: tweenMapPlayerWalkLoopFrames 140ms steps(8) 0 infinite; /* 90ms */
+	}
+
 	/* INFO */
 	.multiUseInfo_tl
 	{

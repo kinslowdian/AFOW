@@ -521,7 +521,17 @@
 			html_lib_reuse();
 		}
 
-		level_weather();
+		if(touchSupported)
+		{
+
+		}
+
+		else
+		{
+			level_weather();
+			$(".layer-ui").remove();
+		}
+
 
 		// FLOOR COLOUR
 

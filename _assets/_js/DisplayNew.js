@@ -1,5 +1,7 @@
 var display;
 
+// var raw_displayEls;
+
 var Display = function(w, h, target)
 {
 	this.gameWidth = w;
@@ -77,6 +79,12 @@ function display_init()
 
 	display.hack();
 
+	// raw_displayEls = {};
+
+	// raw_displayEls.field 	= document.querySelector(".field");
+	// raw_displayEls.sky0 	= document.querySelector(".sky0");
+	// raw_displayEls.sky1 	= document.querySelector(".sky1");
+
 	display_screenUpdate(true);
 }
 
@@ -114,7 +122,7 @@ function display_screenUpdateEvent(event)
 
 function display_centerLevel()
 {
-	var css;
+	// var css;
 
 	display.centerPlayer();
 
@@ -136,14 +144,20 @@ function display_centerLevel()
 			display.stageY.fl.vy = display.stageY.fl.dy * display.stageY.fl.easing;
 			display.stageY.fl.y += display.stageY.fl.vy;
 
+			/*
 			css = {
 							"-webkit-transform" : "translateY(" + display.stageY.fl.y + "px)",
 							"transform" 				: "translateY(" + display.stageY.fl.y + "px)"
 						};
 
-			// $(".screen").css(css);
-
 			$("." + display.centerTarget).css(css);
+			*/
+
+			$("." + display.centerTarget)[0].style.webkitTransform 	= "translateY(" + display.stageY.fl.y + "px)";
+			$("." + display.centerTarget)[0].style.transform				= "translateY(" + display.stageY.fl.y + "px)";
+
+			// raw_displayEls.field.style.webkitTransform 	= "translateY(" + display.stageY.fl.y + "px)";
+			// raw_displayEls.field.style.transform				= "translateY(" + display.stageY.fl.y + "px)";
 
 			sky_paralax();
 		}
@@ -203,6 +217,7 @@ function display_setBG()
 
 function sky_paralax()
 {
+	/*
 	var css_sky0;
 	var css_sky1;
 
@@ -218,4 +233,16 @@ function sky_paralax()
 
 	$(".sky0").css(css_sky0);
 	$(".sky1").css(css_sky1);
+	*/
+
+
+	$(".sky0")[0].style.webkitTransform 	= "translateY(" + (display.stageY.fl.y * display.sky0_offset) + "px)";
+	$(".sky0")[0].style.transform					= "translateY(" + (display.stageY.fl.y * display.sky0_offset) + "px)";
+
+	$(".sky1")[0].style.webkitTransform 	= "translateY(" + (display.stageY.fl.y * display.sky1_offset) + "px)";
+	$(".sky1")[0].style.transform					= "translateY(" + (display.stageY.fl.y * display.sky1_offset) + "px)";
+
+	// raw_displayEls.sky0.style.webkitTransform 	= "translateY(" + (display.stageY.fl.y * display.sky1_offset) + "px)";
+	// raw_displayEls.sky1.style.transform					= "translateY(" + (display.stageY.fl.y * display.sky1_offset) + "px)";
+
 }

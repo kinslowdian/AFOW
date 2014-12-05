@@ -2,6 +2,7 @@ var control;
 
 var loopRun;
 var loopList;
+var loopInt;
 
 var HIT_TEST;
 
@@ -132,6 +133,11 @@ function control_init()
 	// TouchUI.js CHECK DEVICE TYPE THEN CALL
 	// touch_init();
 
+	if(touchSupported)
+	{
+		touch_init();
+	}
+
 	// DELAY CALL
 	move_init(true);
 }
@@ -156,13 +162,31 @@ function onEnterFrame_init(run)
 	if(run)
 	{
 		loopRun = true;
-		window.requestAnimationFrame(onEnterFrame);
+		//
+		if(touchSupported)
+		{
+			loopInt = setInterval(onEnterFrame, 20); // SET TO 10 FOR TURBO
+		}
+
+		else
+		{
+			window.requestAnimationFrame(onEnterFrame);
+		}
+
 	}
 
 	else
 	{
 		loopRun = false;
-		window.cancelAnimationFrame(onEnterFrame);
+		if(touchSupported)
+		{
+			clearInterval(loopInt);
+		}
+
+		else
+		{
+			window.cancelAnimationFrame(onEnterFrame);
+		}
 	}
 }
 
@@ -191,6 +215,15 @@ function move_init(run)
 		$(window)[0].addEventListener("keydown", move_event, false);
 		$(window)[0].addEventListener("keyup", move_event, false);
 
+		if(touchSupported)
+		{
+			$(window)[0].addEventListener("touchstart", touch_lock, false);
+
+			$("#touchPad-full")[0].addEventListener("touchstart", touch_find, false);
+			$("#touchPad-full")[0].addEventListener("touchmove", touch_find, false);
+			$("#touchPad-full")[0].addEventListener("touchend", touch_find, false);
+		}
+
 		// TouchUI.js
 		// ADD WHEN HTML UPDATED
 		// $(window)[0].addEventListener("touchstart", touch_lock, false);
@@ -207,6 +240,15 @@ function move_init(run)
 
 		$(window)[0].removeEventListener("keydown", move_event, false);
 		$(window)[0].removeEventListener("keyup", move_event, false);
+
+		if(touchSupported)
+		{
+			$(window)[0].removeEventListener("touchstart", touch_lock, false);
+
+			$("#touchPad-full")[0].removeEventListener("touchstart", touch_find, false);
+			$("#touchPad-full")[0].removeEventListener("touchmove", touch_find, false);
+			$("#touchPad-full")[0].removeEventListener("touchend", touch_find, false);
+		}
 
 		// TouchUI.js
 		// ADD WHEN HTML UPDATED
@@ -305,7 +347,7 @@ function onEnterFrame()
 		loopList[i]();
 	}
 
-	if(loopRun)
+	if(loopRun && !touchSupported)
 	{
 		window.requestAnimationFrame(onEnterFrame);
 	}
@@ -509,7 +551,7 @@ function hack_hitTest_update()
 
 function onEnterFrame_stepper()
 {
-	var css;
+	// var css;
 
 	var finalMoveX;
 	var finalMoveY;
@@ -530,17 +572,22 @@ function onEnterFrame_stepper()
 		finalMoveY = control.fl.target_safe_y;
 	}
 
+	/*
 	css = {
 					"-webkit-transform"	: "translate(" + finalMoveX + "px, " + finalMoveY + "px)",
 					"transform"					: "translate(" + finalMoveX + "px, " + finalMoveY + "px)"
 				};
 
 	$(".hitTest").css(css);
+	*/
+
+	$(".hitTest")[0].style.webkitTransform 	= "translate(" + finalMoveX + "px, " + finalMoveY + "px)";
+	$(".hitTest")[0].style.transform 				= "translate(" + finalMoveX + "px, " + finalMoveY + "px)";
 }
 
 function onEnterFrame_move()
 {
-	var css;
+	// var css;
 
 	if(!HIT_TEST.hit_portal && !HIT_TEST.hit_enemy)
 	{
@@ -556,12 +603,17 @@ function onEnterFrame_move()
 			control.fl.y += control.fl.moveY;
 		}
 
+		/*
 		css = {
 						"-webkit-transform"	: "translate(" + control.fl.x + "px, " + control.fl.y + "px)",
 						"transform"					: "translate(" + control.fl.x + "px, " + control.fl.y + "px)"
 					};
 
 		$(".layer-field-player-area .player").css(css);
+		*/
+
+		$(".layer-field-player-area .player")[0].style.webkitTransform 	= "translate(" + control.fl.x + "px, " + control.fl.y + "px)";
+		$(".layer-field-player-area .player")[0].style.transform				= "translate(" + control.fl.x + "px, " + control.fl.y + "px)";
 	}
 }
 
@@ -622,6 +674,12 @@ function temp_findPortalExit()
 							portalTarget = portals_ARR[j];
 
 							autoMove_init("PORTAL_PLACE");
+
+							// NOT FINAL SOUND FX TEST
+							if(soundEffects_pedal != null)
+							{
+								sound_play("fx_crow");
+							}
 						}
 					}
 				}
@@ -646,6 +704,12 @@ function temp_findPortalExit()
 							game_levelChange = true;
 
 							portalScreen_request();
+
+							// NOT FINAL SOUND FADE OUT FOR LEVEL
+							if(soundEffects_pedal != null)
+							{
+								sound_fadeInitGlobal(0, {call_funct: sound_levelClear});
+							}
 						}
 					}
 				}
@@ -925,139 +989,153 @@ function autoMove_enemyAttack()
 
 
 
-	///////////////////////////////// --- PORTAL
+// TOUCH UI
 
-	function portalEntry(portal_hit)
+function touch_init()
+{
+	control.touch_initPad("touchPad-full");
+}
+
+function touch_lock(event)
+{
+	event.preventDefault();
+}
+
+function touch_find(event)
+{
+	event.preventDefault();
+
+	if(event.type === "touchstart" || event.type === "touchmove")
 	{
-		for(var i in portals_ARR)
+		if(!control.touchData.offset)
 		{
-			if(portals_ARR[i].id === portal_hit)
-			{
-				trace(portals_ARR[i].id + " " + portal_hit);
+			control.touch_setOffset();
+		}
 
-				// STAGE TRAVEL
+		control.touchData.x = event.targetTouches[0].pageX - control.touchData.offset.left;
+		control.touchData.y = event.targetTouches[0].pageY - control.touchData.offset.top;
 
-				if(portals_ARR[i].level == ROM.mapLevel)
-				{
-					for(var j in portals_ARR)
-					{
-						if(portals_ARR[i].level == portals_ARR[j].spawn)
-						{
-							if(portals_ARR[i].exit == portals_ARR[j].num)
-							{
-								portalTarget = {};
-								portalTarget = portals_ARR[j];
+		if(control.touchData.x >= 0 && control.touchData.x <= control.touchData.x_measure)
+		{
+			control.touchData.x_percent = Math.round((control.touchData.x / control.touchData.x_measure) * 100);
+		}
 
-								// BREAK
-								// portalExit();
+		if(control.touchData.y >= 0 && control.touchData.y <= control.touchData.y_measure)
+		{
+			control.touchData.y_percent = Math.round((control.touchData.y / control.touchData.y_measure) * 100);
+		}
 
-								// NOT FINAL
-								if(soundEffects_pedal != null)
-								{
-									sound_play("fx_crow");
-								}
+		touch_controlSignal();
+	}
 
-								break;
-							}
-						}
-					}
+	if(event.type === "touchend")
+	{
+		control.touch_reset();
 
-					break;
-				}
+		touch_feedback();
+	}
+}
 
-				// LEVEL TRAVEL
-
-				else
-				{
-					for(var k in portals_ARR)
-					{
-						if(portals_ARR[i].level == portals_ARR[k].spawn)
-						{
-							if(portals_ARR[i].exit == portals_ARR[k].num)
-							{
-								game_levelChange = true;
-
-								portalTarget = {};
-								portalTarget = portals_ARR[k];
-
-								ROM.mapLevel = portals_ARR[i].level;
-
-								trace("!!!! GOING TO: " + ROM.mapLevel);
-								trace(portalTarget);
-
-								// NEEDS TO BE IN OWN FUNCTION AND CALLED AFTER FADE:
-								// level_clear();
-
-								// level_init();
-
-								// BREAK
-								// portalScreen_request();
-
-								// portalExit();
-
-								// NOT FINAL
-								// sound_play("fx_trees");
-
-								// NOT FINAL
-								if(soundEffects_pedal != null)
-								{
-									sound_fadeInitGlobal(0, {call_funct: sound_levelClear});
-								}
-
-								break;
-							}
-						}
-					}
-				}
-			}
+function touch_controlSignal()
+{
+	if(control.touchData.x_percent >= 33 && control.touchData.x_percent < 66)
+	{
+		if(control.touchData.y_percent >= 0 && control.touchData.y_percent < 33)
+		{
+			control.dir = "UP";
 		}
 	}
 
-	// DEAD???
-	function portalExit()
+	if(control.touchData.x_percent >= 33 && control.touchData.x_percent < 66)
 	{
-		var moveMeasure = "";
-		var x_spawn;
-		var y_spawn;
-		var axisCenter = MAP_PLAYER.move_default / MAP_PLAYER.placement.block_full;
-
-		// NEW MOVEMENT
-
-		if(portalTarget.direction === "UP")
+		if(control.touchData.y_percent >= 66 && control.touchData.y_percent <= 100)
 		{
-			x_spawn = portalTarget.buildData.block_x + axisCenter;
-			y_spawn = portalTarget.buildData.block_y;
-
-			moveMeasure = "HALF";
+			control.dir = "DOWN";
 		}
-
-		if(portalTarget.direction === "DOWN")
-		{
-			x_spawn = portalTarget.buildData.block_x + axisCenter;
-			y_spawn = portalTarget.buildData.block_y;
-
-			moveMeasure = "FULL";
-		}
-
-		if(portalTarget.direction === "LEFT")
-		{
-			x_spawn = portalTarget.buildData.block_x;
-			y_spawn = portalTarget.buildData.block_y + axisCenter;
-
-			moveMeasure = "HALF_EXTRA";
-		}
-
-		if(portalTarget.direction === "RIGHT")
-		{
-			x_spawn = portalTarget.buildData.block_x;
-			y_spawn = portalTarget.buildData.block_y + axisCenter;
-
-			moveMeasure = "FULL";
-		}
-
-		mapPlayer_spawn(x_spawn, y_spawn, portalTarget.direction, moveMeasure);
 	}
 
-	///////////////////////////////// --- PORTAL
+	if(control.touchData.x_percent >= 0 && control.touchData.x_percent < 33)
+	{
+		if(control.touchData.y_percent >= 33 && control.touchData.y_percent < 66)
+		{
+			control.dir = "LEFT";
+		}
+	}
+
+	if(control.touchData.x_percent >= 66 && control.touchData.x_percent <= 100)
+	{
+		if(control.touchData.y_percent >= 33 && control.touchData.y_percent < 66)
+		{
+			control.dir = "RIGHT";
+		}
+	}
+
+	touch_feedback();
+}
+
+function touch_feedback()
+{
+	var ind;
+
+	var walkClass;
+
+	switch(control.dir)
+	{
+		case "UP":
+		{
+			ind = "touchPad-U-ind";
+			walkClass = "tween-player-UD";
+
+			break;
+		}
+
+		case "DOWN":
+		{
+			ind = "touchPad-D-ind";
+			walkClass = "tween-player-UD";
+
+			break;
+		}
+
+		case "LEFT":
+		{
+			ind = "touchPad-L-ind";
+			walkClass = "tween-player-LR";
+
+			break;
+		}
+
+		case "RIGHT":
+		{
+			ind = "touchPad-R-ind";
+			walkClass = "tween-player-LR";
+
+			break;
+		}
+	}
+
+	if(control.dir === "STILL")
+	{
+		$("#" + control.touchData.indicator).removeClass("touchPad_C_signal_show").addClass("touchPad_C_signal_hide");
+
+		control.touchData.indicator = "";
+
+		control.walkClassUpdate("tween-player-XX");
+	}
+
+	else
+	{
+		if(ind !== control.touchData.indicator)
+		{
+			$("#" + control.touchData.indicator).removeClass("touchPad_C_signal_show").addClass("touchPad_C_signal_hide");
+
+			$("#" + ind).removeClass("touchPad_C_signal_hide").addClass("touchPad_C_signal_show");
+
+			control.touchData.indicator = ind;
+
+			control.walkClassUpdate(walkClass);
+		}
+	}
+}
 
 
