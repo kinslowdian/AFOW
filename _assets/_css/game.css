@@ -401,7 +401,7 @@
 		-webkit-transform: translate(0px, 80px);
 		transform: translate(0px, 80px);
 
-		z-index: 0;
+		/*z-index: 0;*/
 	}
 
 
@@ -426,7 +426,7 @@
 	{
 		position: absolute;
 
-		z-index: 1;
+		/*z-index: 1;*/
 	}
 
 	.boss-head
@@ -441,7 +441,7 @@
 		-webkit-transform	: translate(126px, 0);
 		transform			: translate(126px, 0);
 
-		z-index: 2;
+		/*z-index: 2;*/
 	}
 
 	.boss-head .boss-face
@@ -451,7 +451,7 @@
 
 		position: absolute;
 
-		z-index: 1;
+		/*z-index: 1;*/
 	}
 
 	.boss-face-default
@@ -498,7 +498,7 @@
 		-webkit-transform	: translate(41px, 17px);
 		transform			: translate(41px, 17px);
 
-		z-index: 1;
+		/*z-index: 1;*/
 	}
 
 	.boss-armL-Cont
@@ -546,7 +546,7 @@
 
 		background-position: -200px -35px;
 
-		z-index: 1;
+		/*z-index: 1;*/
 	}
 
 	.boss-lowerArmL
@@ -561,7 +561,7 @@
 		-webkit-transform	: translate(0px, 70px);
 		transform			: translate(0px, 70px);
 
-		z-index: 0;
+		/*z-index: 0;*/
 	}
 
 	.boss-armR
@@ -579,7 +579,7 @@
 
 		background-position: -200px -115px;
 
-		z-index: 1;
+		/*z-index: 1;*/
 	}
 
 
@@ -596,7 +596,7 @@
 		-webkit-transform	: translate(11px, 70px);
 		transform			: translate(11px, 70px);
 
-		z-index: 0;
+		/*z-index: 0;*/
 	}
 
 	.boss-legs
@@ -1677,22 +1677,22 @@
 
 	.player-area
 	{
-		z-index: 3;
+		/*z-index: 3;*/
 	}
 
 	.field-area
 	{
-		z-index: 1;
+		/*z-index: 1;*/
 	}
 
 	.portal-area
 	{
-		z-index: 2;
+		/*z-index: 2;*/
 	}
 
 	.enemy-area
 	{
-		z-index: 2;
+		/*z-index: 2;*/
 	}
 
 	.woodland
@@ -1754,7 +1754,7 @@
 
 		position: absolute;
 
-		z-index: 0;
+		/*z-index: 0;*/
 	}
 
 	.field-floor > div
@@ -1782,7 +1782,7 @@
 
 	/* FIELD FLOOR TYPES */
 
-	.landDecayBlock
+/*	.landDecayBlock
 	{
 		width: 240px;
 		height: 400px;
@@ -1843,7 +1843,7 @@
 	.landDecay_r_4
 	{
 		background-position: -960px -400px;
-	}
+	}*/
 
 	.stage-view-y
 	{
@@ -1856,7 +1856,7 @@
 		transition: transform 1s ease-in-out;
 	}
 
-	.woodland-bottom
+/*	.woodland-bottom
 	{
 		width: inherit;
 		height: 160px;
@@ -1873,7 +1873,7 @@
 		background: -webkit-linear-gradient(top, rgba(32,32,42,0) 0%, rgba(32,32,42,1) 100%);
 
 		background: linear-gradient(to bottom, rgba(32,32,42,0) 0%,rgba(32,32,42,1) 100%);
-	}
+	}*/
 
 /* ----------------------------------------------------------------------- LEVEL_GAME */
 
@@ -4893,7 +4893,7 @@
 		/*background: #20202a;*/
 		background: rgba(32, 32, 42, 0.86);
 
-		z-index: 1;
+		/*z-index: 1;*/
 	}
 
 	.battleContent_fade_show
@@ -5149,7 +5149,7 @@
 
 		position: absolute;
 
-		z-index: 0;
+		/*z-index: 0;*/
 	}
 
 	.microBattle_forest_320x80
@@ -5159,7 +5159,7 @@
 
 		position: absolute;
 
-		z-index: 0;
+		/*z-index: 0;*/
 	}
 
 	.microBattle_forest_320x1360
@@ -5169,7 +5169,7 @@
 
 		position: absolute;
 
-		z-index: 0;
+		/*z-index: 0;*/
 	}
 
 	.microBattle_forest_80x200
@@ -5179,7 +5179,7 @@
 
 		position: absolute;
 
-		z-index: 0;
+		/*z-index: 0;*/
 	}
 
 	.microBattle_forestMass_0
@@ -5219,7 +5219,7 @@
 
 		position: relative;
 
-		z-index: 0;
+		/*z-index: 0;*/
 	}
 
 	.fire div
@@ -5233,19 +5233,19 @@
 	.fireFlame_0
 	{
 		background-position: -80px 0;
-		z-index: 2;
+		/*z-index: 2;*/
 	}
 
 	.fireFlame_1
 	{
 		background-position: -40px 0;
-		z-index: 1;
+		/*z-index: 1;*/
 	}
 
 	.fireFlame_2
 	{
 		background-position: 0 0;
-		z-index: 0;
+		/*z-index: 0;*/
 	}
 
 	.tween-fireFlame_2
@@ -5393,7 +5393,7 @@
 
 		position: absolute;
 
-		z-index: 0;
+		/*z-index: 0;*/
 	}
 
 	.fireLine_4x1
@@ -5403,7 +5403,7 @@
 
 		position: absolute;
 
-		z-index: 0;
+		/*z-index: 0;*/
 	}
 
 	.fireLine_6x1
@@ -5413,7 +5413,7 @@
 
 		position: absolute;
 
-		z-index: 0;
+		/*z-index: 0;*/
 	}
 
 	.fireLine_2x1 .fire, .fireLine_4x1 .fire, .fireLine_6x1 .fire
@@ -5428,7 +5428,7 @@
 
 		position: absolute;
 
-		z-index: 0;
+		/*z-index: 0;*/
 	}
 
 	.microBattle_neonGrass
@@ -5438,7 +5438,7 @@
 
 		position: absolute;
 
-		z-index: 0;
+		/*z-index: 0;*/
 	}
 
 	.microBattle_neonGrass0
@@ -5555,7 +5555,7 @@
 		-webkit-transform: translate(120px, 1800px);
 		transform: translate(120px, 1800px);
 
-		z-index: 1;
+		/*z-index: 1;*/
 	}
 
 	#player2
@@ -5563,7 +5563,7 @@
 		-webkit-transform: translate(160px, 1800px);
 		transform: translate(160px, 1800px);
 
-		z-index: 0;
+		/*z-index: 0;*/
 	}
 
 	.tween-microBattleFade
