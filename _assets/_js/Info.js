@@ -30,7 +30,7 @@
 
 		// CONTROL CANCEL
 		// BREAK
-		// MAP_PLAYER.listen = false;
+		// playerTarget.listen = false;
 		move_init(false);
 
 		optionsTrigger_init(false);
@@ -826,7 +826,7 @@
 		var msg_line1_b;
 		var msg_line1_final;
 
-		msg_line1_a = multiUseInfoScreen_selectLine("nav_prebattle", "enemy_static", 0) +  " " + ROM.enemy.character.name + " " + multiUseInfoScreen_randomLine("nav_prebattle", "enemy_dynamic");
+		msg_line1_a = multiUseInfoScreen_selectLine("nav_prebattle", "enemy_static", 0) +  " " + enemyTarget.name + " " + multiUseInfoScreen_randomLine("nav_prebattle", "enemy_dynamic");
 
 		msg_line1_b = multiUseInfoScreen_selectLine("nav_prebattle", "player_static" , 0) + " " + multiUseInfoScreen_randomLine("nav_prebattle", "player_dynamic");
 
@@ -835,7 +835,7 @@
 		$(screen_multiInfoUse.screenRoot + " .multiUseInfo_preBattle .multiUseInfo_entranceLine1").html(msg_line1_final);
 
 		// CHARACTER ADD
-		$(".multiUseInfo_preBattle .multiUseInfo_serial").html(ROM.enemy.character.buildData.html);
+		$(".multiUseInfo_preBattle .multiUseInfo_serial").html(enemyTarget.buildData.html);
 	}
 
 	function preBattle_display()
@@ -848,6 +848,11 @@
 		$(".multiUseInfo_preFight_option_fight").toggleClass("multiUseInfo_option_hide", "multiUseInfo_option_show");
 
 		$(".multiUseInfo_preFight_option_leave").toggleClass("multiUseInfo_option_hide", "multiUseInfo_option_show");
+
+		// TIDY UP
+		control.writeSpawn({x:control.fl.x, y:control.fl.y});
+		autoMove_init("SPAWN");
+		$(".layer-field-player-area .player").removeClass("tween-player");
 	}
 
 	function preBattle_displayEnd(event)
@@ -1006,25 +1011,25 @@
 		trace(player_html);
 
 		// WEAK
-		if(MAP_PLAYER.sword.skillId < ROM.enemy.character.sword.skillId)
+		if(playerTarget.sword.skillId < enemyTarget.sword.skillId)
 		{
 			msg_value = 0;
 		}
 
 		// EVEN
-		if(MAP_PLAYER.sword.skillId == ROM.enemy.character.sword.skillId)
+		if(playerTarget.sword.skillId == enemyTarget.sword.skillId)
 		{
 			msg_value = 1;
 		}
 
 		// STRONG
-		if(MAP_PLAYER.sword.skillId > ROM.enemy.character.sword.skillId)
+		if(playerTarget.sword.skillId > enemyTarget.sword.skillId)
 		{
 			msg_value = 2;
 		}
 
 		msg_line0 = multiUseInfoScreen_selectLine("nav_intobattle", "title_0_dynamic", msg_value);
-		msg_line1_a = multiUseInfoScreen_selectLine("nav_intobattle", "title_1_dynamic", 3) + " " + MAP_PLAYER.sword.skill + " " + multiUseInfoScreen_selectLine("nav_intobattle", "title_1_dynamic", msg_value);
+		msg_line1_a = multiUseInfoScreen_selectLine("nav_intobattle", "title_1_dynamic", 3) + " " + playerTarget.sword.skill + " " + multiUseInfoScreen_selectLine("nav_intobattle", "title_1_dynamic", msg_value);
 		msg_line1_b	= multiUseInfoScreen_selectLine("nav_intobattle", "title_1_dynamic", 4);
 
 		msg_line1_final = msg_line1_a + " <br>" + msg_line1_b;
@@ -1035,7 +1040,7 @@
 		// CHARACTER ADD
 		$(".multiUseInfo_intoBattle .multiUseInfo_serial").html(serial_html);
 		$(".multiUseInfo_intoBattle .multiUseInfo_serial .intoFightDisplay_p1").html(player_html);
-		$(".multiUseInfo_intoBattle .multiUseInfo_serial .intoFightDisplay_p2").html(ROM.enemy.character.buildData.html);
+		$(".multiUseInfo_intoBattle .multiUseInfo_serial .intoFightDisplay_p2").html(enemyTarget.buildData.html);
 	}
 
 	function intoBattle_btnInit(run)
@@ -1212,7 +1217,7 @@
 
 			// CONTROL ALLOW
 			// BREAK
-			// MAP_PLAYER.listen = true;
+			// playerTarget.listen = true;
 			move_init(true);
 
 			// control_switch(true);
@@ -1523,7 +1528,7 @@
 	{
 		optionsTrigger_init(true);
 
-		if(ROM.enemy.character.defeatPrefs)
+		if(enemyTarget.defeatPrefs)
 		{
 			enemyDefeat_check();
 		}

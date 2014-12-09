@@ -36,7 +36,9 @@
 		errorMessages.touch 	= Logic.dat_ROM["_ERRORS"]["touch"]["txt"];
 		errorMessages.keyboard 	= Logic.dat_ROM["_ERRORS"]["keyboard"]["txt"];
 
+		playerTarget = {};
 		battleEngine.init(levelCount, diff.easy, diff.medium, diff.hard, diff.max);
+		battleEngine.playerLevelSort(playerTarget);
 
 
 		html_lib_init(gameHTML_found);

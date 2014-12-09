@@ -7,6 +7,7 @@ var loopInt;
 var HIT_TEST;
 
 // CLEANER CODE ?
+var playerTarget;
 var portalTarget; // PREV = PORTAL_TRAVEL
 var enemyTarget; // PREV = ROM.enemy.character
 
@@ -100,6 +101,8 @@ Control.prototype.touch_initPad = function(touchArea)
 	this.touchArea = touchArea;
 	this.firstTouch = true;
 	this.enableTouch = true;
+
+	this.touchHTML = $("#layer-ui").html();
 
 	this.touchData = {};
 
@@ -513,6 +516,8 @@ function hack_hitTest_update()
 	{
 		onEnterFrame_init(false);
 
+		preBattleOptions_init();
+
 		temp_findEnemy();
 	}
 
@@ -623,6 +628,25 @@ function onEnterFrame_move()
 
 function temp_findEnemy()
 {
+
+
+	for(var enemyObj in enemies_ARR)
+	{
+		if(enemies_ARR[enemyObj].id === HIT_TEST.hit_enemy_id)
+		{
+			enemyTarget = enemies_ARR[enemyObj];
+
+			break;
+		}
+	}
+
+	trace(enemyTarget);
+
+	preBattleOptions_build();
+
+	autoMove_init("ENEMY_ATTACK");
+
+
 	/*
 	for(var i in enemyArr)
 	{
@@ -810,8 +834,8 @@ function autoMove_init(moveRequest)
 		{
 			tween = {};
 
-			tween.x 		= enemyTarget.x;
-			tween.y 		= enemyTarget.y;
+			tween.x 		= enemyTarget.buildData.x;
+			tween.y 		= enemyTarget.buildData.y;
 			tween.a 		= "1";
 			tween.onEnd = autoMove_enemyAttack;
 
@@ -846,6 +870,13 @@ function autoMove_init(moveRequest)
 			control.writePosition({x:tween.x, y:tween.y, d:"STILL"});
 
 			control.walkClassUpdate("tween-player-XX");
+
+			css = 	{
+								"-webkit-transform"	: "translate(" + tween.x + "px, " + tween.y + "px)",
+								"transform"					: "translate(" + tween.x + "px, " + tween.y + "px)"
+							};
+
+			$(".hitTest").css(css);
 
 			autoMove_tween(tween, false);
 
@@ -984,6 +1015,25 @@ function autoMove_enemyAttack()
 	$(".layer-field-player-area .player").removeClass("tween-player");
 
 	// DO STUFF
+
+	attack_cloudInit();
+}
+
+function attack_cloudInit()
+{
+	attack_cloudOpen();
+}
+
+function attack_cloudOpen()
+{
+	attack_cloudAnimate();
+}
+
+function attack_cloudAnimate()
+{
+	var delay_sequence;
+
+	delay_sequence = setTimeout(preBattleOptions_show, 1.2 * 1000);
 }
 
 

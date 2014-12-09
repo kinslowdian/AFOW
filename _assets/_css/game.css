@@ -2544,22 +2544,22 @@
 
 	#portalScreen
 	{
-		z-index: 0;
+		/*z-index: 0;*/
 	}
 
 	#battleScreenFade
 	{
-		z-index: 0;
+		/*z-index: 0;*/
 	}
 
 	#battleScreen
 	{
-		z-index: 1;
+		/*z-index: 1;*/
 	}
 
 	#enemyScreen
 	{
-		z-index: 2;
+		/*z-index: 2;*/
 	}
 
 /* ----------------------------------------------------------------------- SCREENS */
@@ -4227,7 +4227,7 @@
 
 		background: #20202a;
 
-		z-index: 0;
+		/*z-index: 0;*/
 	}
 
 	.microBattle_fade_flash
