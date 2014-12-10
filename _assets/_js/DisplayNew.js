@@ -21,7 +21,8 @@ Display.prototype.init = function()
 
 	this.focus_y = 0;
 	this.focusCurrent_y = 0;
-	this.focusAllow = false;
+	this.focusMove = false;
+	this.focusHasEvent = false;
 }
 
 Display.prototype.updateScreenVals = function()
@@ -76,6 +77,8 @@ function display_init()
 {
 	display = new Display(320, 2000, "field");
 	display.init();
+
+	// $("." + display.centerTarget).addClass("tween-fieldShift");
 
 	display.hack();
 
@@ -141,38 +144,26 @@ function display_centerLevel()
 
 		else
 		{
+			// display.stageY.fl.vy = ((display.stageY.fl.dy * 0.1) / 4) * 2;
+			// display.stageY.fl.y += display.stageY.fl.vy;
+
 			display.stageY.fl.vy = display.stageY.fl.dy * display.stageY.fl.easing;
 			display.stageY.fl.y += display.stageY.fl.vy;
 
-			/*
-			css = {
-							"-webkit-transform" : "translateY(" + display.stageY.fl.y + "px)",
-							"transform" 				: "translateY(" + display.stageY.fl.y + "px)"
-						};
 
-			$("." + display.centerTarget).css(css);
-			*/
+			$("." + display.centerTarget)[0].style.webkitTransform 	= "translateY(" + display.stageY.fl.y.toFixed(1) + "px)";
+			$("." + display.centerTarget)[0].style.transform				= "translateY(" + display.stageY.fl.y.toFixed(1) + "px)";
 
-			$("." + display.centerTarget)[0].style.webkitTransform 	= "translateY(" + display.stageY.fl.y + "px)";
-			$("." + display.centerTarget)[0].style.transform				= "translateY(" + display.stageY.fl.y + "px)";
-
-			// raw_displayEls.field.style.webkitTransform 	= "translateY(" + display.stageY.fl.y + "px)";
-			// raw_displayEls.field.style.transform				= "translateY(" + display.stageY.fl.y + "px)";
 
 			sky_paralax();
 		}
-
-		/*
-		css = {
-						"-webkit-transform" : "translateY(" + display.stageY.fl.y + "px)",
-						"transform" 				: "translateY(" + display.stageY.fl.y + "px)"
-					};
-
-		$(".screen").css(css);
-
-		$("." + display.centerTarget).css(css);
-		*/
 	}
+}
+
+function display_centerLevelEnd(event)
+{
+	display.focusCurrent_y = display.focus_y;
+	display.focusMove = false;
 }
 
 
@@ -236,11 +227,11 @@ function sky_paralax()
 	*/
 
 
-	$(".sky0")[0].style.webkitTransform 	= "translateY(" + (display.stageY.fl.y * display.sky0_offset) + "px)";
-	$(".sky0")[0].style.transform					= "translateY(" + (display.stageY.fl.y * display.sky0_offset) + "px)";
+	$(".sky0")[0].style.webkitTransform 	= "translateY(" + (display.stageY.fl.y * display.sky0_offset).toFixed(1) + "px)";
+	$(".sky0")[0].style.transform					= "translateY(" + (display.stageY.fl.y * display.sky0_offset).toFixed(1) + "px)";
 
-	$(".sky1")[0].style.webkitTransform 	= "translateY(" + (display.stageY.fl.y * display.sky1_offset) + "px)";
-	$(".sky1")[0].style.transform					= "translateY(" + (display.stageY.fl.y * display.sky1_offset) + "px)";
+	$(".sky1")[0].style.webkitTransform 	= "translateY(" + (display.stageY.fl.y * display.sky1_offset).toFixed(1) + "px)";
+	$(".sky1")[0].style.transform					= "translateY(" + (display.stageY.fl.y * display.sky1_offset).toFixed(1) + "px)";
 
 	// raw_displayEls.sky0.style.webkitTransform 	= "translateY(" + (display.stageY.fl.y * display.sky1_offset) + "px)";
 	// raw_displayEls.sky1.style.transform					= "translateY(" + (display.stageY.fl.y * display.sky1_offset) + "px)";

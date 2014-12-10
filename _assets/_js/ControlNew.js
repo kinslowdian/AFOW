@@ -171,6 +171,7 @@ function onEnterFrame_init(run)
 		if(touchSupported)
 		{
 			loopInt = setInterval(onEnterFrame, 20); // SET TO 10 FOR TURBO
+			// window.requestAnimationFrame(onEnterFrame);
 		}
 
 		else
@@ -183,9 +184,11 @@ function onEnterFrame_init(run)
 	else
 	{
 		loopRun = false;
+
 		if(touchSupported)
 		{
 			clearInterval(loopInt);
+			// window.cancelAnimationFrame(onEnterFrame);
 		}
 
 		else
