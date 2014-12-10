@@ -111,8 +111,9 @@
 		// BREAK
 		// screenUpdateInit(true);
 
-		control_init();
-		loop_init();
+		// PUSHED BACK
+		// control_init();
+		// loop_init();
 
 		var temp = setTimeout(preloader_remove_step0, 1000);
 

@@ -2257,8 +2257,15 @@
 		if(touchSupported)
 		{
 			// TOUCH UI DISPLAY FIX
-			$("#touchPad").html("");
-			$("#touchPad").html(control.touchHTML);
+			// $("#touchPad").html("");
+			// $("#touchPad").html(control.touchHTML);
+
+			// $("#display_wrapper .layer-ui").html("");
+			// $("#display_wrapper .layer-ui").html(control.html_touch);
+			if(touchSupported)
+			{
+				touch_render();
+			}
 
 			// ENABLE TOUCH UI TO APPEAR AFTER TRANSITION OUT
 			control.firstTouch = true;
@@ -2301,9 +2308,12 @@
 
 	function battleEnd_battleOver_prepareForReturn()
 	{
+
+
 			// HTML FIX CHANGE
-			$("#display_inner_info #battleScreen").html("");
-			$("#display_inner_info #battleScreen").removeAttr("style");
+			// alert("BAD JS");
+			// $("#display_inner_info #battleScreen").html("");
+			// $("#display_inner_info #battleScreen").removeAttr("style");
 
 			// REMOVE ALL TIMERS FROM THIS ANIMATION FLOW
 			timerList_stopAll();
@@ -2390,6 +2400,17 @@
 		$("#display_wrapper .player").html("");
 		$("#display_wrapper .player").html(control.html_player);
 
+		/*
+		if(touchSupported)
+		{
+			alert("ADDED");
+			$("#display_wrapper .layer-ui").html("");
+			var s = setInterval(function()
+			                    {
+			                    	$("#display_wrapper .layer-ui").html(control.html_touch);
+			                    }, 20);
+		}
+		*/
 
 		if(route === "WIN")
 		{
@@ -2411,8 +2432,10 @@
 		if(touchSupported)
 		{
 			// TOUCH UI DISPLAY FIX
-			$("#layer-ui").html("");
-			$("#layer-ui").html(control.touchHTML);
+			// $("#display_wrapper .layer-ui").html("");
+			// $("#display_wrapper .layer-ui").html(control.html_touch);
+			// $("#layer-ui").html(control.touchHTML);
+
 
 			// BREAK (OLD METHOD)
 			// ENABLE TOUCH UI TO APPEAR AFTER TRANSITION OUT

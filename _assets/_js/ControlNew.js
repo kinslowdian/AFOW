@@ -104,7 +104,7 @@ Control.prototype.touch_initPad = function(touchArea)
 	this.firstTouch = true;
 	this.enableTouch = true;
 
-	this.touchHTML = $("#layer-ui").html();
+	this.html_touch = $(".layer-ui").html();
 
 	this.touchData = {};
 
@@ -1191,6 +1191,14 @@ function touch_feedback()
 			control.walkClassUpdate(walkClass);
 		}
 	}
+}
+
+function touch_render()
+{
+	$("#display_wrapper .layer-ui").html("");
+	$("#display_wrapper .layer-ui").html(control.html_touch);
+
+	control.touch_reset();
 }
 
 

@@ -510,6 +510,9 @@
 		}
 */
 
+
+
+
 		level_player_setup();
 	}
 

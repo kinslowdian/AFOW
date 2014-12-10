@@ -385,6 +385,9 @@
 	{
 		timerList_destroy();
 		multiUseInfoScreen_removeTitle();
+
+		control_init();
+		loop_init();
 	}
 
 	// -------- CONTROL_INTRO
@@ -967,6 +970,13 @@
 				$("#display_wrapper .player").html("");
 				$("#display_wrapper .player").html(control.html_player);
 
+				if(touchSupported)
+				{
+					touch_render();
+
+					move_reset();
+				}
+
 				multiUseInfoScreen_rise(null);
 
 				break;
@@ -1142,6 +1152,13 @@
 				$("#display_wrapper .player").html("");
 				$("#display_wrapper .player").html(control.html_player);
 
+				if(touchSupported)
+				{
+					touch_render();
+
+					move_reset();
+				}
+
 				multiUseInfoScreen_rise(null);
 
 				break;
@@ -1227,6 +1244,7 @@
 			// BREAK
 			// playerTarget.listen = true;
 			move_init(true);
+
 
 			// control_switch(true);
 		}
@@ -1546,6 +1564,11 @@
 			// ENABLE CONTROL - FUNCTION ALREADY WRITTEN IN Game_Control.js?
 
 			// control_relink();
+
+			alert("RUN");
+
+			// THROWS FAULT ON TOUCH
+
 			move_init(true);
 			move_reset();
 		}
