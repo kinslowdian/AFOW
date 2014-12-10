@@ -445,12 +445,15 @@
 
 	gate.prototype.findCenter = function()
 	{
+		// REWRITE
+		/*
 		this.center_y = -(this.buildData.y) + ((DISPLAY.viewHeight * 0.5) - (this.buildData.h * 0.5));
 
 		if(Math.abs(this.center_y + MAP_PLAYER.pos_y) > 180)
 		{
 			this.needCenterFocus = true;
 		}
+		*/
 	}
 
 	function gateRead()
@@ -978,7 +981,8 @@
 
 					else
 					{
-						MAP_PLAYER.listen = false;
+						// REWRITE
+						// MAP_PLAYER.listen = false;
 
 						noZoom_funct = window[gateActions.call_funct];
 						noZoom_params = gateActions.call_params || null;
@@ -1052,6 +1056,8 @@
 		$("#" + gateControl.gateTarget.id + " .gate-inner-light")[0].removeEventListener("webkitTransitionEnd", gateAccess_gateDeactivated, false);
 		$("#" + gateControl.gateTarget.id + " .gate-inner-light")[0].removeEventListener("transitionend", gateAccess_gateDeactivated, false);
 
+		// REWRITE
+		/*
 		if(DISPLAY.displayZoom)
 		{
 			if(DISPLAY.displayZoom.waitReturnTime > 0)
@@ -1071,6 +1077,7 @@
 
 			control_relink();
 		}
+		*/
 	}
 
 	function level_player_setup()

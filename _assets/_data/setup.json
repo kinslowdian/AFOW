@@ -363,13 +363,7 @@
 					"t": "rabbit",
 					"l": 10,
 					"known" : "the other bastard",
-					"spawn": 0,
-					"defeat":[
-										{
-											"call_funct": "gateAccess_focusGate",
-											"call_params": ["level0_gate0", 1, {"call_funct" : "gateAccess_fadeGate"}]
-										}
-									]
+					"spawn": 0
 				},
 
 				{

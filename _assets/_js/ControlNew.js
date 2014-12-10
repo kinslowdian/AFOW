@@ -50,6 +50,8 @@ Control.prototype.init = function()
 	this.dir = "";
 
 	this.walkLegs = false;
+
+	this.html_player = $("#display_wrapper .player").html();
 }
 
 Control.prototype.writePosition = function(placement)

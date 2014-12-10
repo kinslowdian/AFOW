@@ -82,13 +82,15 @@
 	function plug_mainGame()
 	{
 		var html_gameLevel;
+		var html_player;
 
 		html_lib_reuse();
 
 		html_gameLevel = html_lib_use("_level_game", true, true);
-
+		html_player = html_lib_use("_player_goat", false, true);
 
 		$("#display_wrapper").html(html_gameLevel);
+		$("#display_wrapper .player").html(html_player);
 
 		init_mainGame();
 	}

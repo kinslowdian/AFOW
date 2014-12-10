@@ -42,7 +42,7 @@
 
 		preBattleOptions.html = {};
 		// preBattleOptions.html.display_inner_world = $("#display_wrapper #display_inner_world").html();
-		preBattleOptions.html.display_inner_world = $("#display_wrapper > div").html();
+		preBattleOptions.html.display_inner_world = $("#display_wrapper").html();
 
 		preBattleOptions.playerStore = {};
 
@@ -128,6 +128,7 @@
 		// $("#display_wrapper #display_inner_info #battleScreen").html(html);
 
 		$("#display_wrapper").html(html);
+		display_setBG();
 
 		theBattle.grave.html = html_lib_use(theBattle.grave.ref, false, true);
 
@@ -2101,7 +2102,7 @@
 
 		css	=	{
 					"-webkit-transform" : "translateY(" + display.screen_h + "px)",
-					"transform" 		: "translateY(" + display.screen_h + "px)"
+					"transform" 				: "translateY(" + display.screen_h + "px)"
 				};
 
 		$("#spaceSquid0 .spaceSquid_legs0").removeClass("tween-SpaceSquid_legsStop").addClass("tween-SpaceSquid_legsPlay");
@@ -2271,23 +2272,31 @@
 
 		if(BATTLE_NAV.game.result === "LOSE")
 		{
+			// REWRITE
+			/*
 			edit_x = MAP_PLAYER.storeEntryPos.x;
 			edit_y = MAP_PLAYER.storeEntryPos.y;
+			*/
 		}
 
 
 
+		// REWRITE
+		/*
 		player_css = 	{
 							"-webkit-transform"	: "translate(" + edit_x + "px, " + edit_y + "px)",
 							"transform"			: "translate(" + edit_x + "px, " + edit_y + "px)"
 						};
 
 		$("#" + MAP_PLAYER.playerMover).css(player_css);
-
+		*/
 
 		// RETURN ORIGINAL CONTROL POSITIONS
-		MAP_PLAYER.pos_x = MAP_PLAYER.cur_x = edit_x;
-		MAP_PLAYER.pos_y = MAP_PLAYER.cur_y = edit_y;
+		// REWRITE
+		/*
+		// MAP_PLAYER.pos_x = MAP_PLAYER.cur_x = edit_x;
+		// MAP_PLAYER.pos_y = MAP_PLAYER.cur_y = edit_y;
+		*/
 	}
 
 	function battleEnd_battleOver_prepareForReturn()
@@ -2300,7 +2309,7 @@
 			timerList_stopAll();
 			timerList_destroy();
 
-			moveStageTest();
+			// moveStageTest();
 	}
 
 
@@ -2377,7 +2386,9 @@
 	// IMPORTANT CALLED IN DISPLAY FUNCTION AFTER SCREEN DROP
 	function allBattleOver_battleEnd_return_end(route)
 	{
-		$("#display_wrapper #display_inner_world").html(theBattle.html.display_inner_world);
+		$("#display_wrapper").html(theBattle.html.display_inner_world);
+		$("#display_wrapper .player").html("");
+		$("#display_wrapper .player").html(control.html_player);
 
 
 		if(route === "WIN")
@@ -2414,6 +2425,7 @@
 
 		// move_init(true);
 
+		// BREAK NEEDED?
 		move_reset();
 
 		// BREAK (OLD METHOD)

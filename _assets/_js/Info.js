@@ -865,7 +865,9 @@
 		preBattle_btnInit(true);
 
 		// STAGE CLEAR
-		$("#display_wrapper #display_inner_world").html("");
+		// $("#display_wrapper #display_inner_world").html("");
+
+		$("#display_wrapper").html("");
 
 		/*
 		$("#options_wrapper .options-choice").html("");
@@ -959,7 +961,11 @@
 			{
 				screen_multiInfoUse.returnFromBattle = true;
 
-				$("#display_wrapper #display_inner_world").html(preBattleOptions.html.display_inner_world);
+				// $("#display_wrapper #display_inner_world").html(preBattleOptions.html.display_inner_world);
+
+				$("#display_wrapper").html(preBattleOptions.html.display_inner_world);
+				$("#display_wrapper .player").html("");
+				$("#display_wrapper .player").html(control.html_player);
 
 				multiUseInfoScreen_rise(null);
 
@@ -1132,7 +1138,9 @@
 			{
 				screen_multiInfoUse.returnFromBattle = true;
 
-				$("#display_wrapper #display_inner_world").html(preBattleOptions.html.display_inner_world);
+				$("#display_wrapper").html(preBattleOptions.html.display_inner_world);
+				$("#display_wrapper .player").html("");
+				$("#display_wrapper .player").html(control.html_player);
 
 				multiUseInfoScreen_rise(null);
 
@@ -1537,7 +1545,9 @@
 		{
 			// ENABLE CONTROL - FUNCTION ALREADY WRITTEN IN Game_Control.js?
 
-			control_relink();
+			// control_relink();
+			move_init(true);
+			move_reset();
 		}
 	}
 
