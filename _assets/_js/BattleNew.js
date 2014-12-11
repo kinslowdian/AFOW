@@ -36,6 +36,11 @@
 	{
 		preBattleOptions = {};
 
+		if(touchSupported)
+		{
+			touch_render();
+		}
+
 		preBattleOptions.choice = "";
 
 		preBattleOptions.delay = null;
@@ -2262,10 +2267,8 @@
 
 			// $("#display_wrapper .layer-ui").html("");
 			// $("#display_wrapper .layer-ui").html(control.html_touch);
-			if(touchSupported)
-			{
-				touch_render();
-			}
+
+			// touch_render();
 
 			// ENABLE TOUCH UI TO APPEAR AFTER TRANSITION OUT
 			control.firstTouch = true;
@@ -2449,7 +2452,7 @@
 		// move_init(true);
 
 		// BREAK NEEDED?
-		// move_reset();
+		//move_reset();
 
 		// BREAK (OLD METHOD)
 

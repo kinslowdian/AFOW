@@ -1137,6 +1137,10 @@
 		$(".sky0").html("");
 		$(".sky1").html("");
 
+		$(".weather-snow").html("");
+		$(".weather-rain").html("");
+		$(".weather-wind").html("");
+
 
 		for(var object_enemy in enemies_ARR)
 		{

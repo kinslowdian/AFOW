@@ -354,6 +354,12 @@ function move_reset()
 	console.log("!!!!!!----------- move_reset");
 }
 
+function move_plugIn()
+{
+	move_reset();
+	move_init(true);
+}
+
 function onEnterFrame()
 {
 	for(var i in loopList)
@@ -656,6 +662,7 @@ function temp_findEnemy()
 		}
 	}
 
+	trace("temp_findEnemy();");
 	trace(enemyTarget);
 
 	preBattleOptions_build();

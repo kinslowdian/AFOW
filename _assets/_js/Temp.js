@@ -632,6 +632,8 @@ function gameEventTriggers_init()
 
 		$("#portalScreen").html(PortalScreen.html);
 
+		$("#portalScreen .portalScreen_player .map-goat-legs").removeClass("tween-mapPlayerWalk_stop").addClass("tween-mapPlayerWalk_loop");
+
 		// EXIT FRAME
 		PortalScreen.delay = setTimeout(portalScreen_run, 20);
 	}
@@ -689,7 +691,6 @@ function gameEventTriggers_init()
 */
 		$("#portalScreen .portalScreen_green").css("opacity", "1");
 
-
 		$(".tween-portalScreen_green")[0].addEventListener("webkitTransitionEnd", portalScreen_screen2, false);
 		$(".tween-portalScreen_green")[0].addEventListener("transitionend", portalScreen_screen2, false);
 	}
@@ -700,8 +701,8 @@ function gameEventTriggers_init()
 		$(".tween-portalScreen_green")[0].removeEventListener("transitionend", portalScreen_screen2, false);
 
 		// $("#portalScreen .player .player-sprite").removeClass("tween-player-walkX");
-		$("#portalScreen .player .map-goat-head").removeClass("mapPlayer_head_default").addClass("mapPlayer_head_fear");
-		$("#portalScreen .player .map-goat-legs").removeClass("tween-mapPlayerWalk_loop").addClass("tween-mapPlayerWalk_stop");
+		$("#portalScreen .portalScreen_player .map-goat-head").removeClass("mapPlayer_head_default").addClass("mapPlayer_head_fear");
+		$("#portalScreen .portalScreen_player .map-goat-legs").removeClass("tween-mapPlayerWalk_loop").addClass("tween-mapPlayerWalk_stop");
 
 		$("#portalScreen .portalScreen_header").css("opacity", 1);
 

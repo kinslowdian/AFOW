@@ -66,6 +66,8 @@
 		screen_multiInfoUse.goIntoBattle = false;
 		screen_multiInfoUse.returnFromBattle = false;
 
+		screen_multiInfoUse.plugControl = false;
+
 		switch(screen_multiInfoUse.infoDisplay)
 		{
 			case "START_INTRO":
@@ -970,12 +972,16 @@
 				$("#display_wrapper .player").html("");
 				$("#display_wrapper .player").html(control.html_player);
 
-				if(touchSupported)
-				{
-					touch_render();
+				screen_multiInfoUse.plugControl = true;
 
-					move_reset();
-				}
+				// if(touchSupported)
+				// {
+				// 	touch_render();
+
+				// 	// move_reset();
+				// }
+
+				// setbackUp();
 
 				multiUseInfoScreen_rise(null);
 
@@ -1152,12 +1158,19 @@
 				$("#display_wrapper .player").html("");
 				$("#display_wrapper .player").html(control.html_player);
 
-				if(touchSupported)
-				{
-					touch_render();
+				screen_multiInfoUse.plugControl = true;
 
-					move_reset();
-				}
+				// if(touchSupported)
+				// {
+				// 	touch_render();
+
+				// 	// move_reset();
+				// }
+
+				// // LATER
+				// move_init(true);
+
+				// setbackUp();
 
 				multiUseInfoScreen_rise(null);
 
@@ -1243,8 +1256,12 @@
 			// CONTROL ALLOW
 			// BREAK
 			// playerTarget.listen = true;
+
+			// OPTIMISED???
 			move_init(true);
 
+
+			// move_plugIn();
 
 			// control_switch(true);
 		}
@@ -1255,6 +1272,13 @@
 			screen_multiInfoUse.returnFromBattle = false;
 
 			allBattleOver_mapReturn();
+		}
+
+		if(screen_multiInfoUse.plugControl)
+		{
+			screen_multiInfoUse.plugControl = false;
+
+			move_plugIn();
 		}
 
 		delete screen_multiInfoUse;
@@ -1565,12 +1589,12 @@
 
 			// control_relink();
 
-			alert("RUN");
-
 			// THROWS FAULT ON TOUCH
 
-			move_init(true);
-			move_reset();
+			// move_init(true);
+			// move_reset();
+
+			move_plugIn();
 		}
 	}
 
@@ -1612,6 +1636,20 @@
 	}
 
 	/* --- ONE_USE_SCREEN */
+
+
+function setbackUp()
+{
+	if(touchSupported)
+	{
+		touch_render();
+
+		move_reset();
+	}
+
+	// LATER
+	move_init(true);
+}
 
 
 
