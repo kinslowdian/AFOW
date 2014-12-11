@@ -413,8 +413,8 @@
 /*	-webkit-transition: 600ms ease-in-out;
 	transition: 600ms ease-in-out;*/
 
-	-webkit-transition: 1000ms ease;
-	transition: 1000ms ease;
+	-webkit-transition: 800ms ease-in-out;
+	transition: 800ms ease-in-out;
 }
 
 

@@ -3,6 +3,7 @@ var control;
 var loopRun;
 var loopList;
 var loopInt;
+var loopSlowInt;
 
 var HIT_TEST;
 
@@ -155,7 +156,7 @@ function loop_init()
 	loopList.push(onEnterFrame_stepper);
 	loopList.push(hack_hitTest);
 	loopList.push(onEnterFrame_move);
-	loopList.push(display_centerLevel);
+	// loopList.push(display_centerLevel);
 
 	loopRun = false;
 
@@ -179,6 +180,7 @@ function onEnterFrame_init(run)
 			window.requestAnimationFrame(onEnterFrame);
 		}
 
+		loopSlowInt = setInterval(onEnterSlow, 1400);
 	}
 
 	else
@@ -195,6 +197,8 @@ function onEnterFrame_init(run)
 		{
 			window.cancelAnimationFrame(onEnterFrame);
 		}
+
+		clearInterval(loopSlowInt);
 	}
 }
 
@@ -346,6 +350,8 @@ function move_reset()
 	control.signal = true;
 
 	onEnterFrame_init(true);
+
+	console.log("!!!!!!----------- move_reset");
 }
 
 function onEnterFrame()
@@ -359,6 +365,11 @@ function onEnterFrame()
 	{
 		window.requestAnimationFrame(onEnterFrame);
 	}
+}
+
+function onEnterSlow()
+{
+	display_centerLevel();
 }
 
 function onEnterFrame_direction()
@@ -939,10 +950,10 @@ function autoMove_tweenStage(onEnd)
 
 	display.centerPlayer();
 
-	$(".field").addClass("tween-fieldShift");
+	// $(".field").addClass("tween-fieldShift");
 
-	$(".sky0").addClass("tween-fieldShift");
-	$(".sky1").addClass("tween-fieldShift");
+	// $(".sky0").addClass("tween-fieldShift");
+	// $(".sky1").addClass("tween-fieldShift");
 
 	css = 	{
 						"-webkit-transform"	: "translateY(" + display.focus_y + "px)",
@@ -950,13 +961,13 @@ function autoMove_tweenStage(onEnd)
 					};
 
 	css_sky0 = 	{
-								"-webkit-transform"	: "translateY(" + (display.focus_y * display.sky0_offset) + "px)",
-								"transform"					: "translateY(" + (display.focus_y * display.sky0_offset) + "px)"
+								"-webkit-transform"	: "translateY(" + (display.focus_y * display.sky0_offset).toFixed(0) + "px)",
+								"transform"					: "translateY(" + (display.focus_y * display.sky0_offset).toFixed(0) + "px)"
 							};
 
 	css_sky1 = 	{
-								"-webkit-transform"	: "translateY(" + (display.focus_y * display.sky1_offset) + "px)",
-								"transform"					: "translateY(" + (display.focus_y * display.sky1_offset) + "px)"
+								"-webkit-transform"	: "translateY(" + (display.focus_y * display.sky1_offset).toFixed(0) + "px)",
+								"transform"					: "translateY(" + (display.focus_y * display.sky1_offset).toFixed(0) + "px)"
 							};
 
 	display.setPosition();
@@ -971,10 +982,10 @@ function autoMove_tweenStage(onEnd)
 
 function autoMove_tweenStageComplete(onEnd)
 {
-	$(".field").removeClass("tween-fieldShift");
+	// $(".field").removeClass("tween-fieldShift");
 
-	$(".sky0").removeClass("tween-fieldShift");
-	$(".sky1").removeClass("tween-fieldShift");
+	// $(".sky0").removeClass("tween-fieldShift");
+	// $(".sky1").removeClass("tween-fieldShift");
 
 	trace(onEnd);
 
@@ -1198,7 +1209,9 @@ function touch_render()
 	$("#display_wrapper .layer-ui").html("");
 	$("#display_wrapper .layer-ui").html(control.html_touch);
 
-	control.touch_reset();
+	// control.touch_reset();
+
+	// move_reset();
 }
 
 

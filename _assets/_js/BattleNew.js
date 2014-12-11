@@ -2449,7 +2449,7 @@
 		// move_init(true);
 
 		// BREAK NEEDED?
-		move_reset();
+		// move_reset();
 
 		// BREAK (OLD METHOD)
 

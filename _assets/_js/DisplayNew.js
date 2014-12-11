@@ -125,39 +125,42 @@ function display_screenUpdateEvent(event)
 
 function display_centerLevel()
 {
-	// var css;
+	var css;
 
 	display.centerPlayer();
 
-	if(display.focus_y != display.focusCurrent_y)
-	{
-		display.stageY.fl.ty = display.focus_y;
+	$("." + display.centerTarget)[0].style.webkitTransform 	= "translateY(" + display.focus_y.toFixed(0) + "px)";
+	$("." + display.centerTarget)[0].style.transform				= "translateY(" + display.focus_y.toFixed(0) + "px)";
 
-		display.stageY.fl.dy = display.stageY.fl.ty - display.stageY.fl.y;
-
-		if(Math.abs(display.stageY.fl.dy) < 1)
-		{
-			display.stageY.fl.y = display.stageY.fl.ty;
-
-			display.focusCurrent_y = display.focus_y;
-		}
-
-		else
-		{
-			// display.stageY.fl.vy = ((display.stageY.fl.dy * 0.1) / 4) * 2;
-			// display.stageY.fl.y += display.stageY.fl.vy;
-
-			display.stageY.fl.vy = display.stageY.fl.dy * display.stageY.fl.easing;
-			display.stageY.fl.y += display.stageY.fl.vy;
+	sky_paralax();
 
 
-			$("." + display.centerTarget)[0].style.webkitTransform 	= "translateY(" + display.stageY.fl.y.toFixed(1) + "px)";
-			$("." + display.centerTarget)[0].style.transform				= "translateY(" + display.stageY.fl.y.toFixed(1) + "px)";
+	// if(display.focus_y != display.focusCurrent_y)
+	// {
+	// 	display.stageY.fl.ty = display.focus_y;
+
+	// 	display.stageY.fl.dy = display.stageY.fl.ty - display.stageY.fl.y;
+
+	// 	if(Math.abs(display.stageY.fl.dy) < 1)
+	// 	{
+	// 		display.stageY.fl.y = display.stageY.fl.ty;
+
+	// 		display.focusCurrent_y = display.focus_y;
+	// 	}
+
+	// 	else
+	// 	{
+	// 		display.stageY.fl.vy = display.stageY.fl.dy * display.stageY.fl.easing;
+	// 		display.stageY.fl.y += display.stageY.fl.vy;
 
 
-			sky_paralax();
-		}
-	}
+	// 		$("." + display.centerTarget)[0].style.webkitTransform 	= "translateY(" + display.stageY.fl.y.toFixed(0) + "px)";
+	// 		$("." + display.centerTarget)[0].style.transform				= "translateY(" + display.stageY.fl.y.toFixed(0) + "px)";
+
+
+	// 		sky_paralax();
+	// 	}
+	// }
 }
 
 function display_centerLevelEnd(event)
@@ -208,6 +211,14 @@ function display_setBG()
 
 function sky_paralax()
 {
+	$(".sky0")[0].style.webkitTransform 	= "translateY(" + (display.focus_y * display.sky0_offset).toFixed(0) + "px)";
+	$(".sky0")[0].style.transform					= "translateY(" + (display.focus_y * display.sky0_offset).toFixed(0) + "px)";
+
+	$(".sky1")[0].style.webkitTransform 	= "translateY(" + (display.focus_y * display.sky1_offset).toFixed(0) + "px)";
+	$(".sky1")[0].style.transform					= "translateY(" + (display.focus_y * display.sky1_offset).toFixed(0) + "px)";
+
+
+
 	/*
 	var css_sky0;
 	var css_sky1;
@@ -227,11 +238,11 @@ function sky_paralax()
 	*/
 
 
-	$(".sky0")[0].style.webkitTransform 	= "translateY(" + (display.stageY.fl.y * display.sky0_offset).toFixed(1) + "px)";
-	$(".sky0")[0].style.transform					= "translateY(" + (display.stageY.fl.y * display.sky0_offset).toFixed(1) + "px)";
+	// $(".sky0")[0].style.webkitTransform 	= "translateY(" + (display.stageY.fl.y * display.sky0_offset).toFixed(0) + "px)";
+	// $(".sky0")[0].style.transform					= "translateY(" + (display.stageY.fl.y * display.sky0_offset).toFixed(0) + "px)";
 
-	$(".sky1")[0].style.webkitTransform 	= "translateY(" + (display.stageY.fl.y * display.sky1_offset).toFixed(1) + "px)";
-	$(".sky1")[0].style.transform					= "translateY(" + (display.stageY.fl.y * display.sky1_offset).toFixed(1) + "px)";
+	// $(".sky1")[0].style.webkitTransform 	= "translateY(" + (display.stageY.fl.y * display.sky1_offset).toFixed(0) + "px)";
+	// $(".sky1")[0].style.transform					= "translateY(" + (display.stageY.fl.y * display.sky1_offset).toFixed(0) + "px)";
 
 	// raw_displayEls.sky0.style.webkitTransform 	= "translateY(" + (display.stageY.fl.y * display.sky1_offset) + "px)";
 	// raw_displayEls.sky1.style.transform					= "translateY(" + (display.stageY.fl.y * display.sky1_offset) + "px)";
