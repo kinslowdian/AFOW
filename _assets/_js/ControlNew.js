@@ -49,6 +49,8 @@ Control.prototype.init = function()
 	this.fl.moveX = 0;
 	this.fl.moveY = 0;
 
+	this.fl.tween = "";
+
 	this.signal = false;
 
 	this.dir = "";
@@ -89,6 +91,7 @@ Control.prototype.writeEntry = function(placement)
 	this.fl.enter_y = placement.y;
 }
 
+/*
 Control.prototype.walkClassUpdate = function(newClass)
 {
 	$(".layer-field-player-area .player .player-sprite").removeClass(this.walkClass).addClass(newClass);
@@ -107,6 +110,48 @@ Control.prototype.walkClassUpdate = function(newClass)
 		$(".layer-field-player-area .player .map-goat-legs").removeClass("tween-mapPlayerWalk_stop").addClass("tween-mapPlayerWalk_loop");
 	}
 }
+*/
+
+Control.prototype.walkClassUpdate = function(newClass)
+{
+	$(".layer-field-player-area .player .player-sprite").removeClass("tween-player-UD");
+	$(".layer-field-player-area .player .player-sprite").removeClass("tween-player-LR");
+	$(".layer-field-player-area .player .player-sprite").removeClass("tween-player-XX");
+
+	$(".layer-field-player-area .player .player-sprite").addClass(newClass);
+
+	if(newClass === "tween-player-XX" && this.walkLegs)
+	{
+		this.walkLegs = false;
+		$(".layer-field-player-area .player .map-goat-legs").removeClass("tween-mapPlayerWalk_loop").addClass("tween-mapPlayerWalk_stop");
+	}
+
+	else if(newClass !== "tween-player-XX" && !this.walkLegs)
+	{
+		this.walkLegs = true;
+		$(".layer-field-player-area .player .map-goat-legs").removeClass("tween-mapPlayerWalk_stop").addClass("tween-mapPlayerWalk_loop");
+	}
+
+	/*
+	$(".layer-field-player-area .player .player-sprite").removeClass(this.walkClass).addClass(newClass);
+
+	this.walkClass = newClass;
+
+	if(this.walkClass === "tween-player-XX")
+	{
+		this.walkLegs = false;
+		$(".layer-field-player-area .player .map-goat-legs").removeClass("tween-mapPlayerWalk_loop").addClass("tween-mapPlayerWalk_stop");
+	}
+
+	else
+	{
+		this.walkLegs = true;
+		$(".layer-field-player-area .player .map-goat-legs").removeClass("tween-mapPlayerWalk_stop").addClass("tween-mapPlayerWalk_loop");
+	}
+	*/
+}
+
+
 
 Control.prototype.touch_initPad = function(touchArea)
 {
@@ -786,10 +831,11 @@ function autoMove_init(moveRequest)
 		{
 			tween = {};
 
-			tween.x 		= portalTarget.x_mid;
-			tween.y 		= portalTarget.y_mid;
-			tween.a 		= "0";
-			tween.onEnd = autoMove_event_portalEnter;
+			tween.x 					= portalTarget.x_mid;
+			tween.y 					= portalTarget.y_mid;
+			tween.a 					= "0";
+			tween.tweenClass 	= "tween-player-portal";
+			tween.onEnd 			= autoMove_event_portalEnter;
 
 			control.walkClassUpdate("tween-player-XX");
 
@@ -823,12 +869,14 @@ function autoMove_init(moveRequest)
 
 			// tween.x 				= portalTarget.x_mid;
 			// tween.y 				= portalTarget.y_mid;
-			tween.x 				= portalTarget.buildData.x;
-			tween.y 				= portalTarget.buildData.y;
-			tween.a 				= "1";
-			tween.pushX 		= 0;
-			tween.pushY 		= 0;
-			tween.onEnd 		= autoMove_event_portalExit;
+			tween.x 					= portalTarget.buildData.x;
+			tween.y 					= portalTarget.buildData.y;
+			tween.a 					= "1";
+			tween.pushX 			= 0;
+			tween.pushY 			= 0;
+			tween.tweenClass 	= "tween-player-portal";
+			tween.onEnd 			= autoMove_event_portalExit;
+
 
 			switch(portalTarget.direction)
 			{
@@ -867,10 +915,11 @@ function autoMove_init(moveRequest)
 		{
 			tween = {};
 
-			tween.x 		= enemyTarget.buildData.x;
-			tween.y 		= enemyTarget.buildData.y;
-			tween.a 		= "1";
-			tween.onEnd = autoMove_enemyAttack;
+			tween.x 					= enemyTarget.buildData.x;
+			tween.y 					= enemyTarget.buildData.y;
+			tween.a 					= "1";
+			tween.tweenClass 	= "tween-player-enemy";
+			tween.onEnd 			= autoMove_enemyAttack;
 
 			control.walkClassUpdate("tween-player-XX");
 
@@ -937,16 +986,23 @@ function autoMove_tween(settings, animate)
 
 	if(animate)
 	{
-			$(".layer-field-player-area .player").addClass("tween-player");
+		control.fl.tween = css.tweenClass;
 
-			$(".tween-player")[0].addEventListener("webkitTransitionEnd", css.onEnd, false);
-			$(".tween-player")[0].addEventListener("transitionend", css.onEnd, false);
+		$(".layer-field-player-area .player").addClass(control.fl.tween);
+
+		$("." + control.fl.tween)[0].addEventListener("webkitTransitionEnd", css.onEnd, false);
+		$("." + control.fl.tween)[0].addEventListener("transitionend", css.onEnd, false);
+
+		// $(".layer-field-player-area .player").addClass("tween-player");
+
+		// $(".tween-player")[0].addEventListener("webkitTransitionEnd", css.onEnd, false);
+		// $(".tween-player")[0].addEventListener("transitionend", css.onEnd, false);
 	}
 
 	css.write = 	{
-						"-webkit-transform"	: "translate(" + css.x + "px, " + css.y + "px)",
-						"transform"			: "translate(" + css.x + "px, " + css.y + "px)"
-					};
+										"-webkit-transform"					: "translate(" + css.x + "px, " + css.y + "px)",
+										"transform"									: "translate(" + css.x + "px, " + css.y + "px)"
+								};
 
 	$(".layer-field-player-area .player").css(css.write);
 
@@ -1022,7 +1078,10 @@ function autoMove_event_portalEnter(event)
 	$(".layer-field-player-area .player")[0].removeEventListener("webkitTransitionEnd", autoMove_event_portalEnter, false);
 	$(".layer-field-player-area .player")[0].removeEventListener("transitionend", autoMove_event_portalEnter, false);
 
-	$(".layer-field-player-area .player").removeClass("tween-player");
+	// $(".layer-field-player-area .player").removeClass("tween-player");
+	// $(".layer-field-player-area .player").removeClass(control.fl.tween);
+	// control.fl.tween = "";
+	autoMove_cleanPlayer();
 
 	temp_findPortalExit();
 }
@@ -1032,7 +1091,10 @@ function autoMove_event_portalExit(event)
 	$(".layer-field-player-area .player")[0].removeEventListener("webkitTransitionEnd", autoMove_event_portalExit, false);
 	$(".layer-field-player-area .player")[0].removeEventListener("transitionend", autoMove_event_portalExit, false);
 
-	$(".layer-field-player-area .player").removeClass("tween-player");
+	// $(".layer-field-player-area .player").removeClass("tween-player");
+	// $(".layer-field-player-area .player").removeClass(control.fl.tween);
+	// control.fl.tween = "";
+	autoMove_cleanPlayer();
 
 	control.writeSpawn({x:control.fl.x, y:control.fl.y});
 
@@ -1045,11 +1107,18 @@ function autoMove_enemyAttack()
 	$(".layer-field-player-area .player")[0].removeEventListener("webkitTransitionEnd", autoMove_enemyAttack, false);
 	$(".layer-field-player-area .player")[0].removeEventListener("transitionend", autoMove_enemyAttack, false);
 
-	$(".layer-field-player-area .player").removeClass("tween-player");
+	// $(".layer-field-player-area .player").removeClass("tween-player");
+	autoMove_cleanPlayer();
 
 	// DO STUFF
 
 	attack_cloudInit();
+}
+
+function autoMove_cleanPlayer()
+{
+	$(".layer-field-player-area .player").removeClass(control.fl.tween);
+	control.fl.tween = "";
 }
 
 function attack_cloudInit()

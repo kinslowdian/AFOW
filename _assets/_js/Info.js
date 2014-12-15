@@ -1272,8 +1272,6 @@
 		if(screen_multiInfoUse.returnFromBattle)
 		{
 			screen_multiInfoUse.returnFromBattle = false;
-
-			allBattleOver_mapReturn();
 		}
 
 		if(screen_multiInfoUse.plugControl)

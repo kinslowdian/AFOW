@@ -346,10 +346,24 @@
 	background: rgba(0, 255, 0, 0.4);
 }
 
+/*DEAD?*/
 .tween-player
 {
 	-webkit-transition 	: 400ms ease-in-out;
 	transition 					: 400ms ease-in-out;
+}
+/*DEAD?*/
+
+.tween-player-portal
+{
+	-webkit-transition 	: 400ms ease-in-out;
+	transition 					: 400ms ease-in-out;
+}
+
+.tween-player-enemy
+{
+	-webkit-transition 	: 140ms linear;
+	transition 					: 140ms linear;
 }
 
 .tween-player-XX
@@ -416,6 +430,8 @@
 	-webkit-transition: 800ms ease-in-out;
 	transition: 800ms ease-in-out;
 }
+
+
 
 
 /*PIXELS*/

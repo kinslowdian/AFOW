@@ -701,9 +701,9 @@
 	{
 		// BATTLE_NAV.game.result = battleEngine.battle(MAP_PLAYER, enemyTarget, false);
 
-		// BATTLE_NAV.game.result = "WIN";
+		BATTLE_NAV.game.result = "WIN";
 
-		BATTLE_NAV.game.result = "LOSE";
+		// BATTLE_NAV.game.result = "LOSE";
 
 		battleNav_logicDisplay();
 	}
@@ -2261,16 +2261,6 @@
 
 		if(touchSupported)
 		{
-			// TOUCH UI DISPLAY FIX
-			// $("#touchPad").html("");
-			// $("#touchPad").html(control.touchHTML);
-
-			// $("#display_wrapper .layer-ui").html("");
-			// $("#display_wrapper .layer-ui").html(control.html_touch);
-
-			// touch_render();
-
-			// ENABLE TOUCH UI TO APPEAR AFTER TRANSITION OUT
 			control.firstTouch = true;
 		}
 
@@ -2286,48 +2276,13 @@
 			control.writeSpawn({x:control.fl.enter_x, y:control.fl.enter_y});
 
 			autoMove_init("SPAWN");
-
-			// REWRITE
-			/*
-			edit_x = MAP_PLAYER.storeEntryPos.x;
-			edit_y = MAP_PLAYER.storeEntryPos.y;
-			*/
 		}
-
-
-
-		// REWRITE
-		/*
-		player_css = 	{
-							"-webkit-transform"	: "translate(" + edit_x + "px, " + edit_y + "px)",
-							"transform"			: "translate(" + edit_x + "px, " + edit_y + "px)"
-						};
-
-		$("#" + MAP_PLAYER.playerMover).css(player_css);
-		*/
-
-		// RETURN ORIGINAL CONTROL POSITIONS
-		// REWRITE
-		/*
-		// MAP_PLAYER.pos_x = MAP_PLAYER.cur_x = edit_x;
-		// MAP_PLAYER.pos_y = MAP_PLAYER.cur_y = edit_y;
-		*/
 	}
 
 	function battleEnd_battleOver_prepareForReturn()
 	{
-
-
-			// HTML FIX CHANGE
-			// alert("BAD JS");
-			// $("#display_inner_info #battleScreen").html("");
-			// $("#display_inner_info #battleScreen").removeAttr("style");
-
-			// REMOVE ALL TIMERS FROM THIS ANIMATION FLOW
 			timerList_stopAll();
 			timerList_destroy();
-
-			// moveStageTest();
 	}
 
 
@@ -2408,18 +2363,6 @@
 		$("#display_wrapper .player").html("");
 		$("#display_wrapper .player").html(control.html_player);
 
-		/*
-		if(touchSupported)
-		{
-			alert("ADDED");
-			$("#display_wrapper .layer-ui").html("");
-			var s = setInterval(function()
-			                    {
-			                    	$("#display_wrapper .layer-ui").html(control.html_touch);
-			                    }, 20);
-		}
-		*/
-
 		if(route === "WIN")
 		{
 			enemies_ARR[enemyTarget.array_index].alive = false;
@@ -2433,44 +2376,6 @@
 		{
 			battleEnd_battleOver_returnLose();
 		}
-	}
-
-	function allBattleOver_mapReturn()
-	{
-		if(touchSupported)
-		{
-			// TOUCH UI DISPLAY FIX
-			// $("#display_wrapper .layer-ui").html("");
-			// $("#display_wrapper .layer-ui").html(control.html_touch);
-			// $("#layer-ui").html(control.touchHTML);
-
-
-			// BREAK (OLD METHOD)
-			// ENABLE TOUCH UI TO APPEAR AFTER TRANSITION OUT
-			// CONTROL_SIGNAL.firstTouch = true;
-
-			// control.touch_setOffset();
-			// control.touch_reset();
-		}
-
-
-		// move_init(true);
-
-		// BREAK NEEDED?
-		//move_reset();
-
-		// BREAK (OLD METHOD)
-
-		// RETURN ORIGINAL CONTROL POSITIONS
-		// MAP_PLAYER.pos_x = MAP_PLAYER.cur_x = preBattleOptions.playerStore.x_return;
-		// MAP_PLAYER.pos_y = MAP_PLAYER.cur_y = preBattleOptions.playerStore.y_return;
-
-		// SET UP CONTROLS + HITTEST
-		// hitTest_init();
-
-		// MAP_PLAYER.listen = true;
-
-		// control_switch(true);
 	}
 
 	function enemyDefeat_check()
