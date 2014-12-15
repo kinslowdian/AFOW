@@ -42,6 +42,9 @@ Control.prototype.init = function()
 	this.fl.spawn_x = 0;
 	this.fl.spawn_y = 0;
 
+	this.fl.enter_x = 0;
+	this.fl.enter_y = 0;
+
 	this.fl.move = 4;
 	this.fl.moveX = 0;
 	this.fl.moveY = 0;
@@ -78,6 +81,12 @@ Control.prototype.writeSpawn = function(placement)
 {
 	this.fl.spawn_x = placement.x;
 	this.fl.spawn_y = placement.y;
+}
+
+Control.prototype.writeEntry = function(placement)
+{
+	this.fl.enter_x = placement.x;
+	this.fl.enter_y = placement.y;
 }
 
 Control.prototype.walkClassUpdate = function(newClass)
@@ -847,6 +856,7 @@ function autoMove_init(moveRequest)
 			$(".hitTest").css(css);
 
 			control.writePosition({x:tween.x, y:tween.y, d:"STILL"});
+			control.writeEntry({x:tween.x, y:tween.y});
 
 			autoMove_tween(tween, true);
 

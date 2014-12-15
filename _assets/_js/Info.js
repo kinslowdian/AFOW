@@ -809,6 +809,8 @@
 
 	function battleFail_removeInit()
 	{
+		screen_multiInfoUse.plugControl = true;
+
 		multiUseInfoScreen_removeTitle();
 	}
 

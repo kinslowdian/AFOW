@@ -701,9 +701,9 @@
 	{
 		// BATTLE_NAV.game.result = battleEngine.battle(MAP_PLAYER, enemyTarget, false);
 
-		BATTLE_NAV.game.result = "WIN";
+		// BATTLE_NAV.game.result = "WIN";
 
-		// BATTLE_NAV.game.result = "LOSE";
+		BATTLE_NAV.game.result = "LOSE";
 
 		battleNav_logicDisplay();
 	}
@@ -2224,7 +2224,7 @@
 
 			html_lib_reuse();
 
-			var nz = new enemy(new_zombie, ".enemy-area", enemies_ARR.length);
+			var nz = new enemy(new_zombie, ".layer-field-enemy-area", enemies_ARR.length);
 
 			nz.create();
 
@@ -2276,12 +2276,17 @@
 
 		if(BATTLE_NAV.game.result === "WIN")
 		{
-			edit_x = theBattle.playerStore.x_return;
-			edit_y = theBattle.playerStore.y_return;
+			// TODO WRITE POSITIONS?
+			// edit_x = theBattle.playerStore.x_return;
+			// edit_y = theBattle.playerStore.y_return;
 		}
 
 		if(BATTLE_NAV.game.result === "LOSE")
 		{
+			control.writeSpawn({x:control.fl.enter_x, y:control.fl.enter_y});
+
+			autoMove_init("SPAWN");
+
 			// REWRITE
 			/*
 			edit_x = MAP_PLAYER.storeEntryPos.x;
