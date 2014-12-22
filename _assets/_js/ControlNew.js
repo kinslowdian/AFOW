@@ -854,6 +854,13 @@ function autoMove_init(moveRequest)
 
 			control.writePosition({x:tween.x, y:tween.y, d:"STILL"});
 
+			$(".layer-field-player-area .player .map-goat-hide").removeClass("map-goat-hide-default");
+
+			$(".layer-field-player-area .player .map-goat-hide").addClass("map-goat-hide-show");
+			$(".layer-field-player-area .player .map-goat-hide").addClass("tween-map-goat-hide");
+
+			$(".layer-field-player-area .player .map-goat-hide-inner").addClass("tween-map-goat-hide-inner");
+
 			autoMove_tween(tween, false);
 
 			autoMove_tweenStage({call_funct:autoMove_init, call_params:["PORTAL_EXIT"]});
@@ -902,6 +909,10 @@ function autoMove_init(moveRequest)
 					};
 
 			$(".hitTest").css(css);
+
+			// display.waitForStage.track 				= true;
+			// display.waitForStage.call_funct 	= move_reset;
+			// display.waitForStage.call_params 	= null;
 
 			control.writePosition({x:tween.x, y:tween.y, d:"STILL"});
 			control.writeEntry({x:tween.x, y:tween.y});
@@ -1014,6 +1025,8 @@ function autoMove_tween(settings, animate)
 
 function autoMove_tweenStage(onEnd)
 {
+	trace("!!!!!! -------- MOVE DETECTED HERE");
+
 	var css;
 
 	var css_sky0;
@@ -1088,6 +1101,8 @@ function autoMove_event_portalEnter(event)
 
 function autoMove_event_portalExit(event)
 {
+	var delay_opt;
+
 	$(".layer-field-player-area .player")[0].removeEventListener("webkitTransitionEnd", autoMove_event_portalExit, false);
 	$(".layer-field-player-area .player")[0].removeEventListener("transitionend", autoMove_event_portalExit, false);
 
@@ -1099,6 +1114,34 @@ function autoMove_event_portalExit(event)
 	control.writeSpawn({x:control.fl.x, y:control.fl.y});
 
 	// PLUG CONTROLS
+	// HOLD MOVE UNTIL STAGE MOVE
+	// move_reset();
+	// display.waitForStage.track 				= true;
+	// display.waitForStage.call_funct 	= move_reset;
+	// display.waitForStage.call_params 	= null;
+
+	// display_centerLevel();
+
+	// delay_opt = setTimeout(move_reset, 100);
+
+	$(".tween-map-goat-hide")[0].addEventListener("webkitTransitionEnd", autoMove_event_portalExit_event, false);
+	$(".tween-map-goat-hide")[0].addEventListener("transitionend", autoMove_event_portalExit_event, false);
+
+	$(".layer-field-player-area .player .map-goat-hide").removeClass("map-goat-hide-show").addClass("map-goat-hide-hide");
+}
+
+function autoMove_event_portalExit_event(event)
+{
+	$(".tween-map-goat-hide")[0].removeEventListener("webkitTransitionEnd", autoMove_event_portalExit_event, false);
+	$(".tween-map-goat-hide")[0].removeEventListener("transitionend", autoMove_event_portalExit_event, false);
+
+	$(".layer-field-player-area .player .map-goat-hide").removeClass("tween-map-goat-hide");
+	$(".layer-field-player-area .player .map-goat-hide").removeClass("map-goat-hide-hide");
+	$(".layer-field-player-area .player .map-goat-hide-inner").removeClass("tween-map-goat-hide-inner");
+
+	$(".layer-field-player-area .player .map-goat-hide").addClass("map-goat-hide-default");
+
+
 	move_reset();
 }
 
@@ -1137,8 +1180,6 @@ function attack_cloudAnimate()
 
 	delay_sequence = setTimeout(preBattleOptions_show, 1.2 * 1000);
 }
-
-
 
 
 // TOUCH UI

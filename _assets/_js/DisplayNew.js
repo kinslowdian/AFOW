@@ -23,6 +23,11 @@ Display.prototype.init = function()
 	this.focusCurrent_y = 0;
 	this.focusMove = false;
 	this.focusHasEvent = false;
+
+	this.waitForStage = {};
+	this.waitForStage.track = false;
+	this.waitForStage.call_funct = "";
+	this.waitForStage.call_params = [];
 }
 
 Display.prototype.updateScreenVals = function()
@@ -167,6 +172,22 @@ function display_centerLevelEnd(event)
 {
 	display.focusCurrent_y = display.focus_y;
 	display.focusMove = false;
+
+	if(display.waitForStage.track)
+	{
+		display.waitForStage.track = false;
+
+		if(display.waitForStage.call_params && display.waitForStage.call_params != null)
+		{
+			display.waitForStage.call_funct.apply(this, display.waitForStage.call_params);
+		}
+
+		else
+		{
+			display.waitForStage.call_funct();
+		}
+
+	}
 }
 
 
