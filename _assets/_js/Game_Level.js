@@ -214,10 +214,11 @@
 
 	var portal = function(settings, container)
 	{
-		this.settings 				= settings;
-		this.buildData				= {};
-		this.buildData.html			= html_lib_use("_portal", false, true);
+		this.settings 						= settings;
+		this.buildData						= {};
+		this.buildData.html				= html_lib_use("_portal", false, true);
 		this.buildData.container 	= container;
+		this.visited 							= false;
 
 		trace(this);
 	};
@@ -547,10 +548,10 @@
 
 		// $("#roam_content").addClass(Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["texture"]["OUTER"]["class"]);
 
-		$(".bgFill-l").addClass(Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["texture"]["OUTER"]["class"]);
-		$(".bgFill-r").addClass(Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["texture"]["OUTER"]["class"]);
-		$(".bgFill-t").addClass(Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["texture"]["OUTER"]["class"]);
-		$(".bgFill-b").addClass(Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["texture"]["OUTER"]["class"]);
+		$(".layer-field-fill .bgFill-l").addClass(Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["texture"]["OUTER"]["class"]);
+		$(".layer-field-fill .bgFill-r").addClass(Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["texture"]["OUTER"]["class"]);
+		$(".layer-field-fill .bgFill-t").addClass(Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["texture"]["OUTER"]["class"]);
+		$(".layer-field-fill .bgFill-b").addClass(Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["texture"]["OUTER"]["class"]);
 
 		// TREES BUSHES
 

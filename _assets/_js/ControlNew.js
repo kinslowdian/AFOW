@@ -884,6 +884,11 @@ function autoMove_init(moveRequest)
 			tween.tweenClass 	= "tween-player-portal";
 			tween.onEnd 			= autoMove_event_portalExit;
 
+			if(!portalTarget.visited)
+			{
+				$(".layer-field-player-area .player .map-goat-hide-aware").addClass("map-goat-hide-aware-display");
+			}
+
 
 			switch(portalTarget.direction)
 			{
@@ -1091,6 +1096,11 @@ function autoMove_event_portalEnter(event)
 	$(".layer-field-player-area .player")[0].removeEventListener("webkitTransitionEnd", autoMove_event_portalEnter, false);
 	$(".layer-field-player-area .player")[0].removeEventListener("transitionend", autoMove_event_portalEnter, false);
 
+	if(!portalTarget.visited)
+	{
+		portalTarget.visited = true;
+	}
+
 	// $(".layer-field-player-area .player").removeClass("tween-player");
 	// $(".layer-field-player-area .player").removeClass(control.fl.tween);
 	// control.fl.tween = "";
@@ -1141,6 +1151,12 @@ function autoMove_event_portalExit_event(event)
 
 	$(".layer-field-player-area .player .map-goat-hide").addClass("map-goat-hide-default");
 
+	if(!portalTarget.visited)
+	{
+		portalTarget.visited = true;
+		$(".layer-field-player-area .player .map-goat-hide-aware").removeClass("map-goat-hide-aware-display");
+	}
+
 
 	move_reset();
 }
@@ -1155,7 +1171,27 @@ function autoMove_enemyAttack()
 
 	// DO STUFF
 
-	attack_cloudInit();
+	// DIVERSION
+	// attack_cloudInit();
+
+	// NEW
+	$(".layer-field-player-area .player .map-goat-battleFace").addClass("map-goat-battleFace-display");
+
+	$(".layer-field-event-color").addClass("tween-color-event");
+	$(".layer-field-event-color div").addClass("color-event-battle");
+
+	$(".tween-color-event")[0].addEventListener("webkitTransitionEnd", autoMove_enemyAttack_event, false);
+	$(".tween-color-event")[0].addEventListener("transitionend", autoMove_enemyAttack_event, false);
+
+	$(".layer-field-event-color").addClass("color-event-show");
+}
+
+function autoMove_enemyAttack_event(event)
+{
+	$(".layer-field-event-color")[0].removeEventListener("webkitTransitionEnd", autoMove_enemyAttack_event, false);
+	$(".layer-field-event-color")[0].removeEventListener("transitionend", autoMove_enemyAttack_event, false);
+
+	preBattleOptions_show();
 }
 
 function autoMove_cleanPlayer()

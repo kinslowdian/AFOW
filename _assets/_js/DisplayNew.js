@@ -28,6 +28,11 @@ Display.prototype.init = function()
 	this.waitForStage.track = false;
 	this.waitForStage.call_funct = "";
 	this.waitForStage.call_params = [];
+
+	this.fill 			= {};
+	this.fill.val_x = 0;
+	this.fill.val_y = 0;
+	this.fill.css 	= {};
 }
 
 Display.prototype.updateScreenVals = function()
@@ -193,41 +198,59 @@ function display_centerLevelEnd(event)
 
 function display_setBG()
 {
-	var css = {};
-	var fill_x = Math.round((display.screen_w * 0.5) / 40) * 40;
-	var fill_y = Math.round((display.screen_h * 0.5) / 40) * 40;
+	// display.fill 			= {};
+	// display.fill.val_x = 0;
+	// display.fill.val_y = 0;
+	// display.fill.css 	= {};
 
-	css.l	= {
-						"width"							: fill_x + "px",
-						"height"						: (display.gameHeight + (fill_y * 2)) + "px",
-						"-webkit-transform" : "translate(" + -fill_x + "px, " + -fill_y + "px)",
-						"transform" 				: "translate(" + -fill_x + "px, " + -fill_y + "px)"
-					};
 
-	css.r	= {
-						"width"							: fill_x + "px",
-						"height"						: (display.gameHeight + (fill_y * 2)) + "px",
-						"-webkit-transform" : "translate(" + display.gameWidth + "px, " + -fill_y + "px)",
-						"transform" 				: "translate(" + display.gameWidth + "px, " + -fill_y + "px)"
-					};
+	display.fill.css 		= {};
+	display.fill.val_x 	= Math.round((display.screen_w * 0.5) / 40) * 40;
+	display.fill.val_y 	= Math.round((display.screen_h * 0.5) / 40) * 40;
 
-	css.t	= {
-						"height"						: fill_y + "px",
-						"-webkit-transform" : "translateY(" + -fill_y + "px)",
-						"transform" 				: "translateY(" + -fill_y + "px)"
-					};
+	display.fill.css.l =
+	{
+		"width"							: display.fill.val_x + "px",
+		"height"						: (display.gameHeight + (display.fill.val_y * 2)) + "px",
+		"-webkit-transform" : "translate(" + -display.fill.val_x + "px, " + -display.fill.val_y + "px)",
+		"transform" 				: "translate(" + -display.fill.val_x + "px, " + -display.fill.val_y + "px)"
+	};
 
-	css.b	= {
-						"height"						: fill_y + "px",
-						"-webkit-transform" : "translateY(" + display.gameHeight + "px)",
-						"transform" 				: "translateY(" + display.gameHeight + "px)"
-					};
+	display.fill.css.r =
+	{
+		"width"							: display.fill.val_x + "px",
+		"height"						: (display.gameHeight + (display.fill.val_y * 2)) + "px",
+		"-webkit-transform" : "translate(" + display.gameWidth + "px, " + -display.fill.val_y + "px)",
+		"transform" 				: "translate(" + display.gameWidth + "px, " + -display.fill.val_y + "px)"
+	};
 
-	$(".bgFill-l").css(css.l);
-	$(".bgFill-r").css(css.r);
+	display.fill.css.c =
+	{
+		"width"							: display.gameWidth + "px",
+		"height"						: display.gameHeight + "px"
+	};
 
-	$(".bgFill-t").css(css.t);
-	$(".bgFill-b").css(css.b);
+	display.fill.css.t =
+	{
+		"height"						: display.fill.val_y + "px",
+		"-webkit-transform" : "translateY(" + -display.fill.val_y + "px)",
+		"transform" 				: "translateY(" + -display.fill.val_y + "px)"
+	};
+
+	display.fill.css.b	=
+	{
+		"height"						: display.fill.val_y + "px",
+		"-webkit-transform" : "translateY(" + display.gameHeight + "px)",
+		"transform" 				: "translateY(" + display.gameHeight + "px)"
+	};
+
+	$(".bgFill-l").css(display.fill.css.l);
+	$(".bgFill-r").css(display.fill.css.r);
+
+	$(".bgFill-c").css(display.fill.css.c);
+
+	$(".bgFill-t").css(display.fill.css.t);
+	$(".bgFill-b").css(display.fill.css.b);
 }
 
 function sky_paralax()
