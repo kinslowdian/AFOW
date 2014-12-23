@@ -1184,14 +1184,32 @@ function autoMove_enemyAttack()
 	$(".tween-color-event")[0].addEventListener("transitionend", autoMove_enemyAttack_event, false);
 
 	$(".layer-field-event-color").addClass("color-event-show");
+
+	$("#bossObserve .bossObserve-mountain").addClass("tween-bossObserve");
+	$("#bossObserve .bossObserve-boss").addClass("tween-bossObserve");
+
+	$("#bossObserve .bossObserve-mountain").addClass("bossObserve-show");
+	$("#bossObserve .bossObserve-boss").addClass("bossObserve-show");
 }
 
 function autoMove_enemyAttack_event(event)
 {
+	var delay_sequence;
+
 	$(".layer-field-event-color")[0].removeEventListener("webkitTransitionEnd", autoMove_enemyAttack_event, false);
 	$(".layer-field-event-color")[0].removeEventListener("transitionend", autoMove_enemyAttack_event, false);
 
-	preBattleOptions_show();
+	/*
+	$("#bossObserve .bossObserve-mountain").addClass("tween-bossObserve");
+	$("#bossObserve .bossObserve-boss").addClass("tween-bossObserve");
+
+	$("#bossObserve .bossObserve-mountain").addClass("bossObserve-show");
+	$("#bossObserve .bossObserve-boss").addClass("bossObserve-show");
+	*/
+
+	// preBattleOptions_show();
+
+	delay_sequence = setTimeout(preBattleOptions_show, 1.2 * 1000);
 }
 
 function autoMove_cleanPlayer()

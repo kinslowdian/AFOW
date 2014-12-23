@@ -929,6 +929,67 @@
 	background: rgba(0, 233, 160, 0.6);
 }
 
+.pixels_bossObserveMoutains
+{
+	background-image: url(../_img/bossBattleWatchCorner_mountain.png);
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	background-size: 280px 180px;
+}
+
+.pixels_bossObserveBoss
+{
+	background-image: url(../_img/bossBattleWatchCorner_boss.png);
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	background-size: 280px 180px;
+}
+
+#bossObserve
+{
+	width: 280px;
+	height: 180px;
+
+	position: absolute;
+
+	overflow: hidden;
+
+	right: 0;
+	bottom: 0;
+}
+
+.bossObserve-mountain, .bossObserve-boss
+{
+	width: 280px;
+	height: 180px;
+
+	position: absolute;
+
+	left: 0;
+	top: 0;
+
+	-webkit-transform: translateY(180px);
+	transform: translateY(180px);
+}
+
+.bossObserve-boss
+{
+	-webkit-transition-delay: 400ms !important;
+	transition-delay: 400ms !important;
+}
+
+.bossObserve-show
+{
+	-webkit-transform: translateY(0px);
+	transform: translateY(0px);
+}
+
+.tween-bossObserve
+{
+	-webkit-transition: 800ms ease-in-out;
+	transition: 800ms ease-in-out;
+}
+
 
 
 
