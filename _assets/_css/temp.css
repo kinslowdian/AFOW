@@ -903,8 +903,9 @@
 
 .color-event
 {
-	visibility: hidden;
 	opacity: 0;
+/*	visibility: hidden;
+	opacity: 0;*/
 }
 
 .color-event div
@@ -918,16 +919,40 @@
 	transition: opacity 800ms ease-in;
 }
 
+.color-event-default
+{
+	visibility: hidden;
+}
+
 .color-event-show
 {
-	visibility: visible;
 	opacity: 1;
+}
+
+.color-event-hide
+{
+	opacity: 0;
 }
 
 .color-event-battle
 {
 	background: rgba(0, 233, 160, 0.6);
 }
+
+.color-event-portalStage
+{
+	background: rgba(20, 20, 20, 0.6);
+
+	background: rgba(0, 233, 160, 0.6);
+}
+
+.color-event-portalLevel
+{
+	background: rgba(255, 255, 255, 0.6);
+
+	background: rgba(0, 233, 160, 0.6);
+}
+
 
 .pixels_bossObserveMoutains
 {
@@ -989,6 +1014,81 @@
 	-webkit-transition: 800ms ease-in-out;
 	transition: 800ms ease-in-out;
 }
+
+
+.pixels_monkeyObserve
+{
+	background-image: url(../_img/monkeyLookSprite.png);
+	background-repeat: no-repeat;
+	background-size: 280px 720px;
+}
+
+.monkeyObserve-look-U
+{
+	background-position: 0px 0px;
+}
+
+.monkeyObserve-look-C
+{
+	background-position: 0px -180px;
+}
+
+.monkeyObserve-look-D
+{
+	background-position: 0px -360px;
+}
+
+.monkeyObserve-look-H
+{
+	background-position: 0px -540px;
+}
+
+#monkeyObserve
+{
+	width: 280px;
+	height: 180px;
+
+	position: absolute;
+
+	overflow: hidden;
+
+	right: 0;
+	bottom: 0;
+}
+
+.monkeyObserve-monkey
+{
+	width: 280px;
+	height: 180px;
+
+	position: absolute;
+
+	left: 0;
+	top: 0;
+
+	-webkit-transform: translateY(180px);
+	transform: translateY(180px);
+}
+
+.monkeyObserve-monkeyInner
+{
+	width: inherit;
+	height: inherit;
+}
+
+.monkeyObserve-show
+{
+	-webkit-transform: translateY(0px);
+	transform: translateY(0px);
+}
+
+.tween-monkeyObserve
+{
+	-webkit-transition: 400ms ease-in-out;
+	transition: 400ms ease-in-out;
+}
+
+
 
 
 

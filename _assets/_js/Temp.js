@@ -777,7 +777,175 @@ function gameEventTriggers_init()
 
 
 
+//////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////
 
+function eventColor_add(colorClass, onComplete)
+{
+	$(".layer-field-event-color").addClass("tween-color-event");
+	$(".layer-field-event-color div").addClass("color-event-" + colorClass);
+
+	$(".layer-field-event-color").attr("data-color", colorClass);
+
+	if(onComplete && onComplete != null)
+	{
+		$(".tween-color-event")[0].addEventListener("webkitTransitionEnd", onComplete, false);
+		$(".tween-color-event")[0].addEventListener("transitionend", onComplete, false);
+	}
+
+	$(".layer-field-event-color").removeClass("color-event-default");
+	$(".layer-field-event-color").addClass("color-event-show");
+}
+
+function eventColor_remove()
+{
+	$(".tween-color-event")[0].addEventListener("webkitTransitionEnd", eventColor_purge, false);
+	$(".tween-color-event")[0].addEventListener("transitionend", eventColor_purge, false);
+
+
+	// $(".layer-field-event-color").removeClass("color-event-show");
+
+	$(".layer-field-event-color").removeClass("color-event-show");
+}
+
+function eventColor_purge(event)
+{
+	var usedColorClass = $(".layer-field-event-color").attr("data-color");
+
+	$(".tween-color-event")[0].removeEventListener("webkitTransitionEnd", eventColor_purge, false);
+	$(".tween-color-event")[0].removeEventListener("transitionend", eventColor_purge, false);
+
+	$(".layer-field-event-color").removeClass("tween-color-event");
+
+	if(usedColorClass !== "none")
+	{
+		if(usedColorClass === "portalLevel")
+		{
+			// move_reset();
+			move_plugIn();
+		}
+
+		$(".layer-field-event-color div").removeClass("color-event-" + usedColorClass);
+
+		$(".layer-field-event-color").attr("data-color", "none");
+	}
+
+	$(".layer-field-event-color").addClass("color-event-default");
+}
+
+function observe_init(theObserver)
+{
+	var observeTypes = {
+
+		"BOSS"	: function()
+		{
+			$("#bossObserve .bossObserve-mountain").addClass("tween-bossObserve");
+			$("#bossObserve .bossObserve-boss").addClass("tween-bossObserve");
+
+			$("#bossObserve .bossObserve-mountain").addClass("bossObserve-show");
+			$("#bossObserve .bossObserve-boss").addClass("bossObserve-show");
+		},
+
+		"MONKEY"	: function()
+		{
+			if(portalTarget.spawn != portalTarget.level)
+			{
+				observe_monkeyLook("H");
+			}
+
+			else
+			{
+				if(control.rem_y < portalTarget.y_mid)
+				{
+					observe_monkeyLook("D");
+				}
+
+				else if(control.rem_y > portalTarget.y_mid)
+				{
+					observe_monkeyLook("U");
+				}
+
+				else if(control.rem_y == portalTarget.y_mid)
+				{
+					observe_monkeyLook("C");
+				}
+			}
+
+			observe_monkeyShow();
+
+			// trace("DIFF == Portal = " + portalTarget.y_mid + " player = " + control.rem_y);
+
+			//
+
+			trace(portalTarget);
+			trace(control);
+		}
+
+	};
+
+	if(typeof observeTypes[theObserver] === "function")
+	{
+		return observeTypes[theObserver]();
+	}
+}
+
+function observe_monkeyLook(dir)
+{
+	var currentLook = $("#monkeyObserve .monkeyObserve-monkeyInner").attr("data-look");
+
+	if(currentLook.length > 0)
+	{
+		$("#monkeyObserve .monkeyObserve-monkeyInner").removeClass("monkeyObserve-look-" + currentLook);
+	}
+
+	$("#monkeyObserve .monkeyObserve-monkeyInner").addClass("monkeyObserve-look-" + dir);
+	$("#monkeyObserve .monkeyObserve-monkeyInner").attr("data-look", dir);
+}
+
+function observe_monkeyShow()
+{
+	$("#monkeyObserve .monkeyObserve-monkey").addClass("tween-monkeyObserve");
+
+	if(game_levelChange)
+	{
+		$(".tween-monkeyObserve")[0].addEventListener("webkitTransitionEnd", observe_monkeyShowEvent, false);
+		$(".tween-monkeyObserve")[0].addEventListener("transitionend", observe_monkeyShowEvent, false);
+	}
+
+	$("#monkeyObserve .monkeyObserve-monkey").addClass("monkeyObserve-show");
+}
+
+function observe_monkeyShowEvent(event)
+{
+	var delay_portalScreen_request;
+
+	$(".tween-monkeyObserve")[0].removeEventListener("webkitTransitionEnd", observe_monkeyShowEvent, false);
+	$(".tween-monkeyObserve")[0].removeEventListener("transitionend", observe_monkeyShowEvent, false);
+
+	delay_portalScreen_request = setTimeout(portalScreen_request, 800);
+}
+
+function observe_monkeyHide()
+{
+	$(".tween-monkeyObserve")[0].addEventListener("webkitTransitionEnd", observe_monkeyHideEvent, false);
+	$(".tween-monkeyObserve")[0].addEventListener("transitionend", observe_monkeyHideEvent, false);
+
+	$("#monkeyObserve .monkeyObserve-monkey").removeClass("monkeyObserve-show");
+}
+
+function observe_monkeyHideEvent(event)
+{
+	var currentLook = $("#monkeyObserve .monkeyObserve-monkeyInner").attr("data-look");
+
+	$(".tween-monkeyObserve")[0].removeEventListener("webkitTransitionEnd", observe_monkeyHideEvent, false);
+	$(".tween-monkeyObserve")[0].removeEventListener("transitionend", observe_monkeyHideEvent, false);
+
+	$("#monkeyObserve .monkeyObserve-monkey").removeClass("tween-monkeyObserve");
+
+	$("#monkeyObserve .monkeyObserve-monkeyInner").removeClass("monkeyObserve-look-" + currentLook);
+	$("#monkeyObserve .monkeyObserve-monkeyInner").attr("data-look", "");
+}
 
 
 

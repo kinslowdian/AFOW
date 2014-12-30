@@ -58,6 +58,9 @@ Control.prototype.init = function()
 	this.walkLegs = false;
 
 	this.html_player = $("#display_wrapper .player").html();
+
+	this.rem_x = 0;
+	this.rem_y = 0;
 }
 
 Control.prototype.writePosition = function(placement)
@@ -89,6 +92,12 @@ Control.prototype.writeEntry = function(placement)
 {
 	this.fl.enter_x = placement.x;
 	this.fl.enter_y = placement.y;
+}
+
+Control.prototype.writeRem = function(placement)
+{
+	this.rem_x = placement.x;
+	this.rem_y = placement.y;
 }
 
 /*
@@ -329,6 +338,8 @@ function move_init(run)
 
 function move_event(event)
 {
+	trace("move_event();");
+
 	var tempSignal = "";
 
 	if(event.type === "keyup")
@@ -406,6 +417,15 @@ function move_reset()
 	onEnterFrame_init(true);
 
 	console.log("!!!!!!----------- move_reset");
+}
+
+function move_cancel()
+{
+	control.signal = false;
+
+	onEnterFrame_init(false);
+
+	move_init(false);
 }
 
 function move_plugIn()
@@ -578,7 +598,9 @@ function hack_hitTest_update()
 
 	if(HIT_TEST.hit_portal)
 	{
-		onEnterFrame_init(false);
+		// AMEND
+		// onEnterFrame_init(false);
+		move_cancel();
 
 		temp_findPortalEnter();
 	}
@@ -590,7 +612,9 @@ function hack_hitTest_update()
 
 	if(HIT_TEST.hit_enemy)
 	{
-		onEnterFrame_init(false);
+		// AMEND
+		// onEnterFrame_init(false);
+		move_cancel();
 
 		preBattleOptions_init();
 
@@ -804,7 +828,7 @@ function temp_findPortalExit()
 							// MAY NEED TO ADD
 							game_levelChange = true;
 
-							portalScreen_request();
+							// portalScreen_request();
 
 							// NOT FINAL SOUND FADE OUT FOR LEVEL
 							if(soundEffects_pedal != null)
@@ -838,6 +862,7 @@ function autoMove_init(moveRequest)
 			tween.onEnd 			= autoMove_event_portalEnter;
 
 			control.walkClassUpdate("tween-player-XX");
+			control.writeRem({x:control.fl.x, y:control.fl.y});
 
 			autoMove_tween(tween, true);
 
@@ -1106,7 +1131,13 @@ function autoMove_event_portalEnter(event)
 	// control.fl.tween = "";
 	autoMove_cleanPlayer();
 
+	// observe_init("MONKEY");
+
 	temp_findPortalExit();
+
+	eventColor_add("portalLevel", null);
+
+	observe_init("MONKEY");
 }
 
 function autoMove_event_portalExit(event)
@@ -1138,6 +1169,10 @@ function autoMove_event_portalExit(event)
 	$(".tween-map-goat-hide")[0].addEventListener("transitionend", autoMove_event_portalExit_event, false);
 
 	$(".layer-field-player-area .player .map-goat-hide").removeClass("map-goat-hide-show").addClass("map-goat-hide-hide");
+
+	// $("#monkeyObserve .monkeyObserve-monkeyInner").addClass("monkeyObserve-look-C");
+
+	observe_monkeyLook("C");
 }
 
 function autoMove_event_portalExit_event(event)
@@ -1157,8 +1192,12 @@ function autoMove_event_portalExit_event(event)
 		$(".layer-field-player-area .player .map-goat-hide-aware").removeClass("map-goat-hide-aware-display");
 	}
 
+	eventColor_remove();
 
-	move_reset();
+	// $("#monkeyObserve .monkeyObserve-monkey").removeClass("monkeyObserve-show");
+	observe_monkeyHide();
+
+	// move_reset();
 }
 
 function autoMove_enemyAttack()
@@ -1177,27 +1216,19 @@ function autoMove_enemyAttack()
 	// NEW
 	$(".layer-field-player-area .player .map-goat-battleFace").addClass("map-goat-battleFace-display");
 
+	/*
 	$(".layer-field-event-color").addClass("tween-color-event");
 	$(".layer-field-event-color div").addClass("color-event-battle");
+
+	$(".layer-field-event-color").attr("data-color", "battle");
 
 	$(".tween-color-event")[0].addEventListener("webkitTransitionEnd", autoMove_enemyAttack_event, false);
 	$(".tween-color-event")[0].addEventListener("transitionend", autoMove_enemyAttack_event, false);
 
 	$(".layer-field-event-color").addClass("color-event-show");
+	*/
 
-	$("#bossObserve .bossObserve-mountain").addClass("tween-bossObserve");
-	$("#bossObserve .bossObserve-boss").addClass("tween-bossObserve");
-
-	$("#bossObserve .bossObserve-mountain").addClass("bossObserve-show");
-	$("#bossObserve .bossObserve-boss").addClass("bossObserve-show");
-}
-
-function autoMove_enemyAttack_event(event)
-{
-	var delay_sequence;
-
-	$(".layer-field-event-color")[0].removeEventListener("webkitTransitionEnd", autoMove_enemyAttack_event, false);
-	$(".layer-field-event-color")[0].removeEventListener("transitionend", autoMove_enemyAttack_event, false);
+	eventColor_add("battle", autoMove_enemyAttack_event);
 
 	/*
 	$("#bossObserve .bossObserve-mountain").addClass("tween-bossObserve");
@@ -1207,7 +1238,15 @@ function autoMove_enemyAttack_event(event)
 	$("#bossObserve .bossObserve-boss").addClass("bossObserve-show");
 	*/
 
-	// preBattleOptions_show();
+	observe_init("BOSS");
+}
+
+function autoMove_enemyAttack_event(event)
+{
+	var delay_sequence;
+
+	$(".tween-color-event")[0].removeEventListener("webkitTransitionEnd", autoMove_enemyAttack_event, false);
+	$(".tween-color-event")[0].removeEventListener("transitionend", autoMove_enemyAttack_event, false);
 
 	delay_sequence = setTimeout(preBattleOptions_show, 1.2 * 1000);
 }
@@ -1216,23 +1255,6 @@ function autoMove_cleanPlayer()
 {
 	$(".layer-field-player-area .player").removeClass(control.fl.tween);
 	control.fl.tween = "";
-}
-
-function attack_cloudInit()
-{
-	attack_cloudOpen();
-}
-
-function attack_cloudOpen()
-{
-	attack_cloudAnimate();
-}
-
-function attack_cloudAnimate()
-{
-	var delay_sequence;
-
-	delay_sequence = setTimeout(preBattleOptions_show, 1.2 * 1000);
 }
 
 
