@@ -685,37 +685,37 @@
 /*--------------- RESPONSIVE*/
 
 
-.pixels_travelHide
+/*.pixels_travelHide
 {
 	background-image: url(../_img/travelHide.png);
 	background-repeat: no-repeat;
 	background-position: left top;
 	background-size: 50px 50px;
-}
+}*/
 
-.pixels-travelHideAware
+/*.pixels-travelHideAware
 {
 	background-image: url(../_img/travelHideAware.png);
 	background-repeat: no-repeat;
 	background-position: left top;
 	background-size: 40px 40px;
-}
+}*/
 
-.pixels-battleFace
+/*.pixels-battleFace
 {
 	background-image: url(../_img/travelBattleHide.png);
 	background-repeat: no-repeat;
 	background-position: left top;
 	background-size: 120px 120px;
-}
+}*/
 
-.pixels-battleSpeech
+/*.pixels-battleSpeech
 {
 	background-image: url(../_img/travelBattleHideSpeech.png);
 	background-repeat: no-repeat;
 	background-position: left top;
 	background-size: 120px 120px;
-}
+}*/
 
 .map-goat-hide
 {
@@ -738,35 +738,37 @@
 	width: 50px;
 	height: 50px;
 
+	background-position: -280px -360px;
+
 	position: absolute;
 
 	-webkit-transform-origin: 50% 50%;
 	transform-origin: 50% 50%;
 }
 
-.tween-map-goat-hide-inner
+/*.tween-map-goat-hide-inner
 {
 	-webkit-animation: tweenMapGoatHideInnerFrames 100ms ease-in-out infinite;
 	animation: tweenMapGoatHideInnerFrames 100ms ease-in-out infinite;
-}
+}*/
 
-@-webkit-keyframes tweenMapGoatHideInnerFrames
+/*@-webkit-keyframes tweenMapGoatHideInnerFrames
 {
 	0%		{-webkit-transform: scale(1);}
 	25%		{-webkit-transform: scale(0.8);}
 	50%		{-webkit-transform: scale(1);}
 	75%		{-webkit-transform: scale(0.8);}
 	100%	{-webkit-transform: scale(1);}
-}
+}*/
 
-@keyframes tweenMapGoatHideInnerFrames
+/*@keyframes tweenMapGoatHideInnerFrames
 {
 	0%		{transform: scale(0.8);}
 	25%		{transform: scale(1);}
 	50%		{transform: scale(0.8);}
 	75%		{transform: scale(1);}
 	100%	{transform: scale(0.8);}
-}
+}*/
 
 .map-goat-hide-default
 {
@@ -798,6 +800,8 @@
 {
 	width: 40px;
 	height: 40px;
+
+	background-position: -280px -410px;
 
 	position: absolute;
 
@@ -849,6 +853,16 @@
 
 	-webkit-transform-origin: 50% 50%;
 	transform-origin: 50% 50%;
+}
+
+.map-goat-battleFace-inner
+{
+	background-position: -330px -360px;
+}
+
+.map-goat-battleSpeech
+{
+	background-position: -330px -480px;
 }
 
 .map-goat-battleFace-display
@@ -954,21 +968,22 @@
 }
 
 
-.pixels_bossObserveMoutains
+
+/*.pixels_bossObserveMoutains
 {
 	background-image: url(../_img/bossBattleWatchCorner_mountain.png);
 	background-repeat: no-repeat;
 	background-position: 0 0;
 	background-size: 280px 180px;
-}
+}*/
 
-.pixels_bossObserveBoss
+/*.pixels_bossObserveBoss
 {
 	background-image: url(../_img/bossBattleWatchCorner_boss.png);
 	background-repeat: no-repeat;
 	background-position: 0 0;
 	background-size: 280px 180px;
-}
+}*/
 
 #bossObserve
 {
@@ -999,8 +1014,15 @@
 
 .bossObserve-boss
 {
+	background-position: -280px 0px;
+
 	-webkit-transition-delay: 400ms !important;
 	transition-delay: 400ms !important;
+}
+
+.bossObserve-mountain
+{
+	background-position: -280px -180px;
 }
 
 .bossObserve-show
@@ -1016,12 +1038,12 @@
 }
 
 
-.pixels_monkeyObserve
+/*.pixels_monkeyObserve
 {
 	background-image: url(../_img/monkeyLookSprite.png);
 	background-repeat: no-repeat;
 	background-size: 280px 720px;
-}
+}*/
 
 .monkeyObserve-look-U
 {

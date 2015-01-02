@@ -884,7 +884,7 @@ function autoMove_init(moveRequest)
 			$(".layer-field-player-area .player .map-goat-hide").addClass("map-goat-hide-show");
 			$(".layer-field-player-area .player .map-goat-hide").addClass("tween-map-goat-hide");
 
-			$(".layer-field-player-area .player .map-goat-hide-inner").addClass("tween-map-goat-hide-inner");
+			// $(".layer-field-player-area .player .map-goat-hide-inner").addClass("tween-map-goat-hide-inner");
 
 			autoMove_tween(tween, false);
 
@@ -1182,7 +1182,7 @@ function autoMove_event_portalExit_event(event)
 
 	$(".layer-field-player-area .player .map-goat-hide").removeClass("tween-map-goat-hide");
 	$(".layer-field-player-area .player .map-goat-hide").removeClass("map-goat-hide-hide");
-	$(".layer-field-player-area .player .map-goat-hide-inner").removeClass("tween-map-goat-hide-inner");
+	// $(".layer-field-player-area .player .map-goat-hide-inner").removeClass("tween-map-goat-hide-inner");
 
 	$(".layer-field-player-area .player .map-goat-hide").addClass("map-goat-hide-default");
 

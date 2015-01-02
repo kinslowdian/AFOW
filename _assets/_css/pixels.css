@@ -549,6 +549,13 @@
 		background-size: 640px 960px;
 	}
 
+.pixels_travelEvent
+{
+	background-image: url(../_img/travelEvent_1x.png);
+	background-repeat: no-repeat;
+	background-size: 560px 720px;
+}
+
 /* ----------------------------------------------------------------------- GENERAL */
 
 
@@ -926,6 +933,11 @@
 		{
 			background-image: url(../_img/monkeyKingdomSprite_1x.png);
 		}
+
+		.pixels_travelEvent
+		{
+			background-image: url(../_img/travelEvent_1x.png);
+		}
 	}
 
 
@@ -1257,6 +1269,11 @@
 		.pixels_monkeyKingdomForest
 		{
 			background-image: url(../_img/monkeyKingdomSprite_2x.png);
+		}
+
+		.pixels_travelEvent
+		{
+			background-image: url(../_img/travelEvent_2x.png);
 		}
 	}
 
