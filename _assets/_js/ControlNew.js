@@ -1011,6 +1011,21 @@ function autoMove_init(moveRequest)
 			tween = {};
 
 			delete tween;
+		},
+
+		"GATE_GOTO"	: function()
+		{
+			tween = {};
+
+			tween.x = levelGateTarget.buildData.x;
+			tween.y = levelGateTarget.buildData.cy;
+		},
+
+		"GATE_RETURN" : function()
+		{
+			tween = {};
+
+			delete tween;
 		}
 
 	};

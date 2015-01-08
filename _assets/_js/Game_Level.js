@@ -416,7 +416,7 @@
 		this.buildData.w					= this.settings.w * 80;
 		this.buildData.h					= this.settings.h * 80;
 
-		this.buildData.cy					= this.buildData.y + (this.buildData.h * 0.5);
+		// this.buildData.cy					= this.buildData.y + (this.buildData.h * 0.5);
 
 		this.buildData.html	= html_lib_use("_gate", true, true);
 
@@ -447,8 +447,12 @@
 		$("#" + this.id).css(this.buildData.css);
 	}
 
-	gate.prototype.findCenter = function()
+	gate.prototype.centerGate = function()
 	{
+		this.center_y = -(this.buildData.y) + ((display.h * 0.5) - (this.buildData.h * 0.5));
+
+
+
 		// REWRITE
 
 		/*

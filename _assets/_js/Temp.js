@@ -644,6 +644,8 @@ function levelGate_checkStatus(gateID, enemyList)
 		{
 			if(gates_ARR[gateObject].id === gateID)
 			{
+				gates_ARR[gateObject].closed = false;
+
 				levelGate_init(gates_ARR[gateObject]);
 			}
 		}
@@ -665,80 +667,115 @@ function levelGate_init(gateOb)
 
 function levelGate_zoom()
 {
-	trace("levelGate_zoom();");
-	trace(levelGateTarget);
+	var css;
 
-	// TODO
+	var css_sky0;
+	var css_sky1;
 
-	// WORK OUT ZOOM AMOUNT AND WHERE.
-	// CREATE EVENT LISTENERS TO CALL levelGate_zoomEvent
-	// OR FIRE THROUGH AUTO TWEEN
+	levelGateTarget.centerGate();
+
+	css = 	{
+						"-webkit-transform"	: "translateY(" + levelGateTarget.center_y + "px)",
+						"transform"					: "translateY(" + levelGateTarget.center_y + "px)"
+					};
+
+	css_sky0 = 	{
+								"-webkit-transform"	: "translateY(" + (levelGateTarget.center_y * display.sky0_offset).toFixed(0) + "px)",
+								"transform"					: "translateY(" + (levelGateTarget.center_y * display.sky0_offset).toFixed(0) + "px)"
+							};
+
+	css_sky1 = 	{
+								"-webkit-transform"	: "translateY(" + (levelGateTarget.center_y * display.sky1_offset).toFixed(0) + "px)",
+								"transform"					: "translateY(" + (levelGateTarget.center_y * display.sky1_offset).toFixed(0) + "px)"
+							};
+
+	$(".tween-fieldShift")[0].addEventListener("webkitTransitionEnd", levelGate_zoomEvent, false);
+	$(".tween-fieldShift")[0].addEventListener("transitionend", levelGate_zoomEvent, false);
+
+	$(".field").css(css);
+
+	$(".sky0").css(css_sky0);
+	$(".sky1").css(css_sky1);
 }
 
 function levelGate_zoomEvent(event)
 {
-	// TODO
+	var delay_hide;
 
-	// REMOVE EVENT LISTENERS
+	$(".tween-fieldShift")[0].removeEventListener("webkitTransitionEnd", levelGate_zoomEvent, false);
+	$(".tween-fieldShift")[0].removeEventListener("transitionend", levelGate_zoomEvent, false);
 
-	levelGate_hide();
+	delay_hide = setTimeout(levelGate_hide, 500);
 }
 
 function levelGate_hide()
 {
-	// TODO
+	$(".tween-gate")[0].addEventListener("webkitTransitionEnd", levelGate_hideEvent, false);
+	$(".tween-gate")[0].addEventListener("transitionend", levelGate_hideEvent, false);
 
-	// CREATE EVENT LISTENERS TO CALL levelGate_hideEvent
-	// FADE OUT GATE WITH CSS
+	$("#" + levelGateTarget.id + " .gate-outer").addClass("gate_hide");
 }
 
 function levelGate_hideEvent(event)
 {
-	// TODO
+	var delay_return;
 
-	// REMOVE EVENT LISTENERS
-	// REMOVE GATE FROM STAGE
-	// UPDATE OBJECT SO IT WONT BE WRITTEN ON REVISIT TO LEVEL
+	$(".tween-gate")[0].removeEventListener("webkitTransitionEnd", levelGate_hideEvent, false);
+	$(".tween-gate")[0].removeEventListener("transitionend", levelGate_hideEvent, false);
 
-	// TIMER ?
-	levelGate_return();
+	$("#" + levelGateTarget.id + " .gate-outer").remove();
+
+	// levelGate_return();
+	delay_return = setTimeout(levelGate_return, 500);
 }
 
 function levelGate_return()
 {
-	// TODO
+	var css;
 
-	// WORK OUT PLAYER POSITION
-	// CREATE EVENT LISTENERS TO CALL levelGate_returnEvent
-	// OR FIRE THROUGH AUTO TWEEN
+	var css_sky0;
+	var css_sky1;
+
+	levelGateTarget.centerGate();
+
+	css = 	{
+						"-webkit-transform"	: "translateY(" + display.focus_y + "px)",
+						"transform"					: "translateY(" + display.focus_y + "px)"
+					};
+
+	css_sky0 = 	{
+								"-webkit-transform"	: "translateY(" + (display.focus_y * display.sky0_offset).toFixed(0) + "px)",
+								"transform"					: "translateY(" + (display.focus_y * display.sky0_offset).toFixed(0) + "px)"
+							};
+
+	css_sky1 = 	{
+								"-webkit-transform"	: "translateY(" + (display.focus_y * display.sky1_offset).toFixed(0) + "px)",
+								"transform"					: "translateY(" + (display.focus_y * display.sky1_offset).toFixed(0) + "px)"
+							};
+
+	$(".tween-fieldShift")[0].addEventListener("webkitTransitionEnd", levelGate_returnEvent, false);
+	$(".tween-fieldShift")[0].addEventListener("transitionend", levelGate_returnEvent, false);
+
+	$(".field").css(css);
+
+	$(".sky0").css(css_sky0);
+	$(".sky1").css(css_sky1);
 }
 
 function levelGate_returnEvent(event)
 {
-	// TODO
-
-	// REMOVE EVENT LISTENERS
+	$(".tween-fieldShift")[0].removeEventListener("webkitTransitionEnd", levelGate_returnEvent, false);
+	$(".tween-fieldShift")[0].removeEventListener("transitionend", levelGate_returnEvent, false);
 
 	levelGate_cleanUp();
 }
 
 function levelGate_cleanUp()
 {
-	// TODO
+	delete levelGateTarget;
 
-	// KILL OBJECT?
-	// REMOVE TWEENS
-	// FIX BOOLEANS?
 
-	levelGate_end();
-}
-
-function levelGate_end()
-{
-	// TODO
-
-	// ADD CONTROL BACK TO PLAYER / RESET
-
+	move_plugIn();
 }
 
 
