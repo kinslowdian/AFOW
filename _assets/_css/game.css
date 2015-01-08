@@ -1627,6 +1627,7 @@
 		z-index: 4;
 	}*/
 
+	/*TODO CHECK IF NEEDED*/
 	.field-area, .enemy-area, .portal-area, .player-area, .fieldEdge, .match-area, .sound-area
 	{
 		width: 320px;
@@ -1635,12 +1636,14 @@
 		position: absolute;
 	}
 
+	/*TODO CHECK IF NEEDED*/
 	.fieldEdge
 	{
 		width: inherit;
 		z-index: 3;
 	}
 
+	/*TODO CHECK IF NEEDED*/
 	.fieldEdge-T, .fieldEdge-B
 	{
 		width: inherit;
@@ -1651,6 +1654,7 @@
 		left: 0px;
 	}
 
+	/*TODO CHECK IF NEEDED*/
 	.fieldEdge-R, .fieldEdge-L
 	{
 		width: 40px;
@@ -1661,26 +1665,31 @@
 		top: 0px;
 	}
 
+	/*TODO CHECK IF NEEDED*/
 	.fieldEdge-T
 	{
 		top: -40px;
 	}
 
+	/*TODO CHECK IF NEEDED*/
 	.fieldEdge-B
 	{
 		bottom: -40px;
 	}
 
+	/*TODO CHECK IF NEEDED*/
 	.fieldEdge-R
 	{
 		right: -40px;
 	}
 
+	/*TODO CHECK IF NEEDED*/
 	.fieldEdge-L
 	{
 		left: -40px;
 	}
 
+	/*TODO CHECK IF NEEDED*/
 	.player-area
 	{
 		/*z-index: 3;*/

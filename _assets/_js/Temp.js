@@ -613,6 +613,135 @@ function gameEventTriggers_init()
 //////////////////////////////////////////////////////////////////////////
 
 
+var levelGateTarget;
+
+
+function levelGate_checkStatus(gateID, enemyList)
+{
+	var statusMet = true;
+
+	for(var enemyObject in enemies_ARR)
+	{
+		for(var enemyListID in enemyList)
+		{
+			if(enemies_ARR[enemyObject].id === enemyList[enemyListID])
+			{
+				var statusTarget = enemies_ARR[enemyObject];
+
+				if(statusTarget.alive)
+				{
+					statusMet = false;
+
+					break;
+				}
+			}
+		}
+	}
+
+	if(statusMet)
+	{
+		for(var gateObject in gates_ARR)
+		{
+			if(gates_ARR[gateObject].id === gateID)
+			{
+				levelGate_init(gates_ARR[gateObject]);
+			}
+		}
+	}
+
+	else
+	{
+		move_plugIn();
+	}
+}
+
+function levelGate_init(gateOb)
+{
+	levelGateTarget = {};
+	levelGateTarget = gateOb;
+
+	levelGate_zoom();
+}
+
+function levelGate_zoom()
+{
+	trace("levelGate_zoom();");
+	trace(levelGateTarget);
+
+	// TODO
+
+	// WORK OUT ZOOM AMOUNT AND WHERE.
+	// CREATE EVENT LISTENERS TO CALL levelGate_zoomEvent
+	// OR FIRE THROUGH AUTO TWEEN
+}
+
+function levelGate_zoomEvent(event)
+{
+	// TODO
+
+	// REMOVE EVENT LISTENERS
+
+	levelGate_hide();
+}
+
+function levelGate_hide()
+{
+	// TODO
+
+	// CREATE EVENT LISTENERS TO CALL levelGate_hideEvent
+	// FADE OUT GATE WITH CSS
+}
+
+function levelGate_hideEvent(event)
+{
+	// TODO
+
+	// REMOVE EVENT LISTENERS
+	// REMOVE GATE FROM STAGE
+	// UPDATE OBJECT SO IT WONT BE WRITTEN ON REVISIT TO LEVEL
+
+	// TIMER ?
+	levelGate_return();
+}
+
+function levelGate_return()
+{
+	// TODO
+
+	// WORK OUT PLAYER POSITION
+	// CREATE EVENT LISTENERS TO CALL levelGate_returnEvent
+	// OR FIRE THROUGH AUTO TWEEN
+}
+
+function levelGate_returnEvent(event)
+{
+	// TODO
+
+	// REMOVE EVENT LISTENERS
+
+	levelGate_cleanUp();
+}
+
+function levelGate_cleanUp()
+{
+	// TODO
+
+	// KILL OBJECT?
+	// REMOVE TWEENS
+	// FIX BOOLEANS?
+
+	levelGate_end();
+}
+
+function levelGate_end()
+{
+	// TODO
+
+	// ADD CONTROL BACK TO PLAYER / RESET
+
+}
+
+
 
 
 

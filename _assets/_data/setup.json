@@ -348,8 +348,8 @@
 					"spawn": 0,
 					"defeat":[
 										{
-											"call_funct": "gateAccess_focusGate",
-											"call_params": ["level0_gate0", 1, {"call_funct" : "gateAccess_fadeGate"}]
+											"call_funct": "levelGate_checkStatus",
+											"call_params": ["level0_gate0", ["level0_test0", "level0_test1"]]
 										}
 									]
 				},
@@ -363,7 +363,13 @@
 					"t": "rabbit",
 					"l": 10,
 					"known" : "the other bastard",
-					"spawn": 0
+					"spawn": 0,
+					"defeat":[
+										{
+											"call_funct": "levelGate_checkStatus",
+											"call_params": ["level0_gate0", ["level0_test0", "level0_test1"]]
+										}
+									]
 				},
 
 				{
@@ -422,6 +428,7 @@
 					"y": 21.5,
 					"w": 4,
 					"h": 2,
+					"c_cl": "layer-gates",
 					"n": "level0_gate0",
 					"spawn": 0
 				}

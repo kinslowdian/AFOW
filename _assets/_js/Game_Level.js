@@ -391,44 +391,47 @@
 			delete this.settings;
 	}
 
-	var gate = function(settings, container)
+	var gate = function(settings)
 	{
 		this.settings							= settings;
 		this.buildData						= {};
-		this.buildData.container 	= container;
 
-		this.needCenterFocus = false;
+		// this.needCenterFocus = false;
 
 		this.closed = true;
 	}
 
 	gate.prototype.create = function()
 	{
-		this.id 								= this.settings.n;
-		this.spawn							= this.settings.spawn;
-		this.center_y						= 0;
+		this.id 									= this.settings.n;
+		this.spawn								= this.settings.spawn;
+		this.center_y							= 0;
 
-		this.buildData.block_x	= this.settings.x;
-		this.buildData.block_y	= this.settings.y;
-		this.buildData.x				= this.buildData.block_x * 80;
-		this.buildData.y				= this.buildData.block_y * 80;
-		this.buildData.w				= this.settings.w * 80;
-		this.buildData.h				= this.settings.h * 80;
+		this.buildData.container	= this.settings.c_cl;
 
-		this.buildData.html			= html_lib_use("_gate", true, true);
+		this.buildData.block_x		= this.settings.x;
+		this.buildData.block_y		= this.settings.y;
+		this.buildData.x					= this.buildData.block_x * 80;
+		this.buildData.y					= this.buildData.block_y * 80;
+		this.buildData.w					= this.settings.w * 80;
+		this.buildData.h					= this.settings.h * 80;
 
-		this.buildData.css 			= {
-																"-webkit-transform"	: "translate(" + this.buildData.x + "px, " + this.buildData.y + "px)",
-																"transform"			: "translate(" + this.buildData.x + "px, " + this.buildData.y + "px)"
-															};
+		this.buildData.cy					= this.buildData.y + (this.buildData.h * 0.5);
+
+		this.buildData.html	= html_lib_use("_gate", true, true);
+
+		this.buildData.css 	= {
+														"-webkit-transform"	: "translate(" + this.buildData.x + "px, " + this.buildData.y + "px)",
+														"transform"			: "translate(" + this.buildData.x + "px, " + this.buildData.y + "px)"
+													};
 
 		delete this.settings;
 	}
 
 	gate.prototype.build = function()
 	{
-		$(this.buildData.container).append(this.buildData.html);
-		$(this.buildData.container + " #_gate").attr("id", this.id);
+		$("." + this.buildData.container).append(this.buildData.html);
+		$("." + this.buildData.container + " #_gate").attr("id", this.id);
 
 		$("#" + this.id + " .gate-outer-floor").addClass("field-floor-" + LEVEL_MAIN.landType);
 
@@ -447,6 +450,7 @@
 	gate.prototype.findCenter = function()
 	{
 		// REWRITE
+
 		/*
 		this.center_y = -(this.buildData.y) + ((DISPLAY.viewHeight * 0.5) - (this.buildData.h * 0.5));
 
@@ -471,7 +475,7 @@
 
 		for(var j in gateData_ARR)
 		{
-			var g = new gate(gateData_ARR[j], ".gate-areas");
+			var g = new gate(gateData_ARR[j]);
 
 			g.create();
 
