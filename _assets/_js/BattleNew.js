@@ -2363,6 +2363,9 @@
 		$("#display_wrapper .player").html("");
 		$("#display_wrapper .player").html(control.html_player);
 
+		// TODO
+		$("#display_wrapper").addClass("event-slide");
+
 		if(route === "WIN")
 		{
 			enemies_ARR[enemyTarget.array_index].alive = false;
@@ -2382,11 +2385,12 @@
 	{
 		var defeatTriggerFunction;
 		var defeatTriggerParameters;
+		var functionList = LEVEL_MAIN.levelFunctions[enemyTarget.defeatPrefs.link_funct];
 
-		for(var defeatObject in enemyTarget.defeatPrefs)
+		for(var listObject in functionList)
 		{
-			defeatTriggerFunction = window[enemyTarget.defeatPrefs[defeatObject].call_funct];
-			defeatTriggerParameters = enemyTarget.defeatPrefs[defeatObject].call_params;
+			defeatTriggerFunction 	= window[functionList[listObject].call_funct];
+			defeatTriggerParameters	= functionList[listObject].call_params;
 
 			defeatTriggerFunction.apply(this, defeatTriggerParameters);
 		}

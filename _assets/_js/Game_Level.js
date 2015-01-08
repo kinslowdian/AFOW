@@ -44,6 +44,8 @@
 		this.titleData.top			= this.settings.title_top;
 		this.titleData.btm			= this.settings.title_btm;
 
+		this.levelFunctions = this.settings.levelFunctions;
+
 		delete this.settings;
 	}
 
@@ -1142,6 +1144,7 @@
 		$(".layer-field-portal-area").html("");
 		$(".layer-field-enemy-area").html("");
 		$(".layer-field-sound-area").html("");
+		$(".layer-field-gate-area").html("");
 
 		$(".sky0").html("");
 		$(".sky1").html("");

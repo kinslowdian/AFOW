@@ -780,6 +780,26 @@ function levelGate_cleanUp()
 
 
 
+function temp_slideReturn()
+{
+	$("#display_wrapper").addClass("tween-event-slide");
+
+	$(".tween-event-slide")[0].addEventListener("webkitTransitionEnd", temp_slideReturnEvent, false);
+	$(".tween-event-slide")[0].addEventListener("transitionend", temp_slideReturnEvent, false);
+
+	$("#display_wrapper").removeClass("event-slide");
+}
+
+function temp_slideReturnEvent(event)
+{
+	$(".tween-event-slide")[0].removeEventListener("webkitTransitionEnd", temp_slideReturnEvent, false);
+	$(".tween-event-slide")[0].removeEventListener("transitionend", temp_slideReturnEvent, false);
+
+	$("#display_wrapper").removeClass("tween-event-slide");
+}
+
+
+
 
 
 

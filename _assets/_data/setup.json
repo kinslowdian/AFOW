@@ -219,7 +219,17 @@
 				"fall_y": -0.5,
 				"fall_d": "DOWN",
 				"title_top": "level number 0",
-				"title_btm": "bums!!!"
+				"title_btm": "bums!!!",
+				"levelFunctions":
+				{
+					"gate0_unlock":
+					[
+						{
+							"call_funct"	: "levelGate_checkStatus",
+							"call_params"	: ["level0_gate0", ["level0_test0", "level0_test1"]]
+						}
+					]
+				}
 			},
 
 			"texture":
@@ -346,12 +356,10 @@
 					"l": 10,
 					"known" : "the bastard",
 					"spawn": 0,
-					"defeat":[
-										{
-											"call_funct": "levelGate_checkStatus",
-											"call_params": ["level0_gate0", ["level0_test0", "level0_test1"]]
+					"defeat":	{
+											"link_funct": "gate0_unlock"
 										}
-									]
+
 				},
 
 				{
@@ -364,12 +372,9 @@
 					"l": 10,
 					"known" : "the other bastard",
 					"spawn": 0,
-					"defeat":[
-										{
-											"call_funct": "levelGate_checkStatus",
-											"call_params": ["level0_gate0", ["level0_test0", "level0_test1"]]
+					"defeat":	{
+											"link_funct": "gate0_unlock"
 										}
-									]
 				},
 
 				{
@@ -428,7 +433,7 @@
 					"y": 21.5,
 					"w": 4,
 					"h": 2,
-					"c_cl": "layer-gates",
+					"c_cl": "layer-field-gate-area",
 					"n": "level0_gate0",
 					"spawn": 0
 				}

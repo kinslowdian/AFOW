@@ -758,7 +758,7 @@
 			{
 				// NOT FINAL
 				createjs.Sound.setVolume(1); // GLOBAL SOUND
-				
+
 				break;
 			}
 
@@ -766,7 +766,7 @@
 			{
 				// NOT FINAL
 				createjs.Sound.setVolume(0); // GLOBAL SOUND
-				
+
 				break;
 			}
 		}
@@ -1602,6 +1602,9 @@
 
 			move_plugIn();
 		}
+
+		// TODO
+		temp_slideReturn();
 	}
 
 	// -------- BATTLE_WIN
