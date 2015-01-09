@@ -13,7 +13,9 @@
 
 	var portalsOpened = false;
 
-	var gateControl = {};
+	// var gateControl = {};
+
+	var levelGateTarget;
 
 	var gateData_ARR = new Array();
 
@@ -442,8 +444,6 @@
 		if(!this.closed)
 		{
 			$("#" + this.id + " .gate-outer").remove();
-
-			$("#" + this.id + " .gate-inner-light").removeClass("gate-inner-light-on").addClass("gate-inner-light-off");
 		}
 
 		$("#" + this.id).css(this.buildData.css);
@@ -452,19 +452,6 @@
 	gate.prototype.centerGate = function()
 	{
 		this.center_y = -(this.buildData.y) + ((display.h * 0.5) - (this.buildData.h * 0.5));
-
-
-
-		// REWRITE
-
-		/*
-		this.center_y = -(this.buildData.y) + ((DISPLAY.viewHeight * 0.5) - (this.buildData.h * 0.5));
-
-		if(Math.abs(this.center_y + MAP_PLAYER.pos_y) > 180)
-		{
-			this.needCenterFocus = true;
-		}
-		*/
 	}
 
 	function gateRead()
@@ -971,128 +958,169 @@
 		}
 	}
 
-	function gateAccess_focusGate(gateID, gateDelay, gateActions)
+// GATES
+
+function levelGate_checkStatus(gateID, enemyList)
+{
+	var statusMet = true;
+
+	for(var enemyObject in enemies_ARR)
 	{
-		var noZoom_funct;
-		var noZoom_params;
-
-		for(var gateObject in gates_ARR)
+		for(var enemyListID in enemyList)
 		{
-			if(gates_ARR[gateObject].id === gateID)
+			if(enemies_ARR[enemyObject].id === enemyList[enemyListID])
 			{
-				gateControl.gateTarget = gates_ARR[gateObject];
+				var statusTarget = enemies_ARR[enemyObject];
 
-				if(gateControl.gateTarget.closed)
+				if(statusTarget.alive)
 				{
-					gateControl.gateTarget.findCenter();
+					statusMet = false;
 
-					if(gateControl.gateTarget.needCenterFocus)
-					{
-						displayZoom_init(true, false);
-						displayZoom_create(gateDelay, gateActions);
-						displayZoom_to(gateControl.gateTarget.center_y, 0);
-					}
-
-					else
-					{
-						// REWRITE
-						// MAP_PLAYER.listen = false;
-
-						noZoom_funct = window[gateActions.call_funct];
-						noZoom_params = gateActions.call_params || null;
-
-						if(noZoom_params != null)
-						{
-							noZoom_funct.apply(this, noZoom_params);
-						}
-
-						else
-						{
-							noZoom_funct();
-						}
-					}
+					break;
 				}
-
-				else
-				{
-					// GATE OPEN NORMAL RETURN
-					control_relink();
-				}
-
-				break;
 			}
 		}
 	}
 
-	function gateAccess_targetGate(gateID)
+	if(statusMet)
 	{
 		for(var gateObject in gates_ARR)
 		{
 			if(gates_ARR[gateObject].id === gateID)
 			{
-				gateControl.gateTarget = gates_ARR[gateObject];
+				gates_ARR[gateObject].closed = false;
+
+				levelGate_init(gates_ARR[gateObject]);
 			}
 		}
 	}
 
-	function gateAccess_fadeGate()
+	else
 	{
-		$("#" + gateControl.gateTarget.id + " .gate-outer").addClass("gate_hide");
-
-		$("#" + gateControl.gateTarget.id + " .gate-inner-light").addClass("tween-gate");
-
-		$("#" + gateControl.gateTarget.id + " .tween-gate")[0].addEventListener("webkitTransitionEnd", gateAccess_destoryGate, false);
-		$("#" + gateControl.gateTarget.id + " .tween-gate")[0].addEventListener("transitionend", gateAccess_destoryGate, false);
+		move_plugIn();
 	}
+}
 
-	function gateAccess_destoryGate(event)
-	{
-		$("#" + gateControl.gateTarget.id + " .tween-gate")[0].removeEventListener("webkitTransitionEnd", gateAccess_destoryGate, false);
-		$("#" + gateControl.gateTarget.id + " .tween-gate")[0].removeEventListener("transitionend", gateAccess_destoryGate, false);
+function levelGate_init(gateOb)
+{
+	levelGateTarget = {};
+	levelGateTarget = gateOb;
 
-		gateAccess_updateGateList();
+	levelGate_zoom();
+}
 
-		$("#" + gateControl.gateTarget.id + " .gate-inner-light")[0].addEventListener("webkitTransitionEnd", gateAccess_gateDeactivated, false);
-		$("#" + gateControl.gateTarget.id + " .gate-inner-light")[0].addEventListener("transitionend", gateAccess_gateDeactivated, false);
+function levelGate_zoom()
+{
+	var css;
 
-		$("#" + gateControl.gateTarget.id + " .gate-inner-light").removeClass("gate-inner-light-on").addClass("gate-inner-light-off");
-	}
+	var css_sky0;
+	var css_sky1;
 
-	function gateAccess_updateGateList()
-	{
-		gateControl.gateTarget.closed = false;
+	levelGateTarget.centerGate();
 
-		$("#" + gateControl.gateTarget.id + " .gate-outer").remove();
-	}
+	css = 	{
+						"-webkit-transform"	: "translateY(" + levelGateTarget.center_y + "px)",
+						"transform"					: "translateY(" + levelGateTarget.center_y + "px)"
+					};
 
-	function gateAccess_gateDeactivated(event)
-	{
-		$("#" + gateControl.gateTarget.id + " .gate-inner-light")[0].removeEventListener("webkitTransitionEnd", gateAccess_gateDeactivated, false);
-		$("#" + gateControl.gateTarget.id + " .gate-inner-light")[0].removeEventListener("transitionend", gateAccess_gateDeactivated, false);
+	css_sky0 = 	{
+								"-webkit-transform"	: "translateY(" + (levelGateTarget.center_y * display.sky0_offset).toFixed(0) + "px)",
+								"transform"					: "translateY(" + (levelGateTarget.center_y * display.sky0_offset).toFixed(0) + "px)"
+							};
 
-		// REWRITE
-		/*
-		if(DISPLAY.displayZoom)
-		{
-			if(DISPLAY.displayZoom.waitReturnTime > 0)
-			{
-				DISPLAY.displayZoom.waitReturn = setTimeout(displayZoom_return, DISPLAY.displayZoom.waitReturnTime * 1000);
-			}
+	css_sky1 = 	{
+								"-webkit-transform"	: "translateY(" + (levelGateTarget.center_y * display.sky1_offset).toFixed(0) + "px)",
+								"transform"					: "translateY(" + (levelGateTarget.center_y * display.sky1_offset).toFixed(0) + "px)"
+							};
 
-			else
-			{
-				displayZoom_return();
-			}
-		}
+	$(".tween-fieldShift")[0].addEventListener("webkitTransitionEnd", levelGate_zoomEvent, false);
+	$(".tween-fieldShift")[0].addEventListener("transitionend", levelGate_zoomEvent, false);
 
-		else
-		{
-			// CONTINUE WITHOUT ZOOM
+	$(".field").css(css);
 
-			control_relink();
-		}
-		*/
-	}
+	$(".sky0").css(css_sky0);
+	$(".sky1").css(css_sky1);
+}
+
+function levelGate_zoomEvent(event)
+{
+	var delay_hide;
+
+	$(".tween-fieldShift")[0].removeEventListener("webkitTransitionEnd", levelGate_zoomEvent, false);
+	$(".tween-fieldShift")[0].removeEventListener("transitionend", levelGate_zoomEvent, false);
+
+	delay_hide = setTimeout(levelGate_hide, 500);
+}
+
+function levelGate_hide()
+{
+	$(".tween-gate")[0].addEventListener("webkitTransitionEnd", levelGate_hideEvent, false);
+	$(".tween-gate")[0].addEventListener("transitionend", levelGate_hideEvent, false);
+
+	$("#" + levelGateTarget.id + " .gate-outer").addClass("gate_hide");
+}
+
+function levelGate_hideEvent(event)
+{
+	var delay_return;
+
+	$(".tween-gate")[0].removeEventListener("webkitTransitionEnd", levelGate_hideEvent, false);
+	$(".tween-gate")[0].removeEventListener("transitionend", levelGate_hideEvent, false);
+
+	$("#" + levelGateTarget.id + " .gate-outer").remove();
+
+	// levelGate_return();
+	delay_return = setTimeout(levelGate_return, 500);
+}
+
+function levelGate_return()
+{
+	var css;
+
+	var css_sky0;
+	var css_sky1;
+
+	levelGateTarget.centerGate();
+
+	css = 	{
+						"-webkit-transform"	: "translateY(" + display.focus_y + "px)",
+						"transform"					: "translateY(" + display.focus_y + "px)"
+					};
+
+	css_sky0 = 	{
+								"-webkit-transform"	: "translateY(" + (display.focus_y * display.sky0_offset).toFixed(0) + "px)",
+								"transform"					: "translateY(" + (display.focus_y * display.sky0_offset).toFixed(0) + "px)"
+							};
+
+	css_sky1 = 	{
+								"-webkit-transform"	: "translateY(" + (display.focus_y * display.sky1_offset).toFixed(0) + "px)",
+								"transform"					: "translateY(" + (display.focus_y * display.sky1_offset).toFixed(0) + "px)"
+							};
+
+	$(".tween-fieldShift")[0].addEventListener("webkitTransitionEnd", levelGate_returnEvent, false);
+	$(".tween-fieldShift")[0].addEventListener("transitionend", levelGate_returnEvent, false);
+
+	$(".field").css(css);
+
+	$(".sky0").css(css_sky0);
+	$(".sky1").css(css_sky1);
+}
+
+function levelGate_returnEvent(event)
+{
+	$(".tween-fieldShift")[0].removeEventListener("webkitTransitionEnd", levelGate_returnEvent, false);
+	$(".tween-fieldShift")[0].removeEventListener("transitionend", levelGate_returnEvent, false);
+
+	levelGate_cleanUp();
+}
+
+function levelGate_cleanUp()
+{
+	delete levelGateTarget;
+
+
+	move_plugIn();
+}
 
 	function level_player_setup()
 	{

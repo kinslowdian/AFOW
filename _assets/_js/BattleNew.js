@@ -1182,6 +1182,8 @@
 		var removeBlow;
 		var lastPunchFired = false;
 
+		var delay_punch;
+
 		if(event.propertyName !== "opacity")
 		{
 			$(event.target)[0].removeEventListener("webkitTransitionEnd", battleMini_punchAttackFireEnd, false);
@@ -1273,12 +1275,19 @@
 
 					// removeBlow = setTimeout(battleMini_puchAttackReturn, 900, event);
 
-					BATTLE_NAV.animation.playheadDelay.time(0.8, battleMini_puchAttackReturn, event);
+
+					// punchTarget = event.target;
+					delay_punch = setTimeout(battleMini_puchAttackReturn, 0.8 * 1000, event);
+
+					// BATTLE_NAV.animation.playheadDelay.time(0.8, battleMini_puchAttackReturn, event);
 				}
 
 				else
 				{
-					BATTLE_NAV.animation.playheadDelay.time(0.4, battleMini_puchAttackReturn, event);
+					// punchTarget = event.target;
+					delay_punch = setTimeout(battleMini_puchAttackReturn, 0.4 * 1000, event);
+
+					// BATTLE_NAV.animation.playheadDelay.time(0.4, battleMini_puchAttackReturn, event);
 				}
 			}
 
@@ -1293,13 +1302,37 @@
 
 	// FAULTY WITH PASSING THE EVENT
 
+
 	function battleMini_puchAttackReturn(event)
 	{
 		$(event.target)[0].addEventListener("webkitTransitionEnd", battleMini_punchAttackComplete, false);
 		$(event.target)[0].addEventListener("transitionend", battleMini_punchAttackComplete, false);
 
-		$(event.target).removeClass("battleNav-superPunchAttack").addClass("battleNav-superPunchReturn");
+		// $(event.target).removeClass("battleNav-superPunchAttack").addClass("battleNav-superPunchReturn");
+		$(event.target).removeClass("battleNav-superPunchAttack");
+		$(event.target).addClass("battleNav-superPunchReturn");
 	}
+
+	/*
+	function battleMini_blowAttackReturn()
+	{
+		$(".SUPER-PUNCH" + BATTLE_NAV.animation.punchTotal)[0].addEventListener("webkitTransitionEnd", battleMini_punchAttackComplete, false);
+		$(".SUPER-PUNCH" + BATTLE_NAV.animation.punchTotal)[0].addEventListener("transitionend", battleMini_punchAttackComplete, false);
+
+		$(".SUPER-PUNCH" + BATTLE_NAV.animation.punchTotal).removeClass("battleNav-superPunchAttack");
+		$(".SUPER-PUNCH" + BATTLE_NAV.animation.punchTotal).addClass("battleNav-superPunchReturn");
+	}
+	*/
+
+	// function battleMini_puchAttackReturn(target)
+	// {
+	// 	$(target)[0].addEventListener("webkitTransitionEnd", battleMini_punchAttackComplete, false);
+	// 	$(target)[0].addEventListener("transitionend", battleMini_punchAttackComplete, false);
+
+	// 	$(target).removeClass("battleNav-superPunchAttack").addClass("battleNav-superPunchReturn");
+	// }
+
+
 
 	function battleMini_punchAttackComplete(event)
 	{
@@ -1402,6 +1435,7 @@
 		battleMini_punchAttackReplay();
 	}
 
+	// TODO FORCE THIS TO GET OUT OF PUNCH ISSUE
 	function battleMini_punchAttackReplay()
 	{
 		BATTLE_NAV.animation.playheadDelay.time(0.4, battleMini_punchAttackControl, "FINISH");

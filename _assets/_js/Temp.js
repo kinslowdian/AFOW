@@ -613,170 +613,7 @@ function gameEventTriggers_init()
 //////////////////////////////////////////////////////////////////////////
 
 
-var levelGateTarget;
 
-
-function levelGate_checkStatus(gateID, enemyList)
-{
-	var statusMet = true;
-
-	for(var enemyObject in enemies_ARR)
-	{
-		for(var enemyListID in enemyList)
-		{
-			if(enemies_ARR[enemyObject].id === enemyList[enemyListID])
-			{
-				var statusTarget = enemies_ARR[enemyObject];
-
-				if(statusTarget.alive)
-				{
-					statusMet = false;
-
-					break;
-				}
-			}
-		}
-	}
-
-	if(statusMet)
-	{
-		for(var gateObject in gates_ARR)
-		{
-			if(gates_ARR[gateObject].id === gateID)
-			{
-				gates_ARR[gateObject].closed = false;
-
-				levelGate_init(gates_ARR[gateObject]);
-			}
-		}
-	}
-
-	else
-	{
-		move_plugIn();
-	}
-}
-
-function levelGate_init(gateOb)
-{
-	levelGateTarget = {};
-	levelGateTarget = gateOb;
-
-	levelGate_zoom();
-}
-
-function levelGate_zoom()
-{
-	var css;
-
-	var css_sky0;
-	var css_sky1;
-
-	levelGateTarget.centerGate();
-
-	css = 	{
-						"-webkit-transform"	: "translateY(" + levelGateTarget.center_y + "px)",
-						"transform"					: "translateY(" + levelGateTarget.center_y + "px)"
-					};
-
-	css_sky0 = 	{
-								"-webkit-transform"	: "translateY(" + (levelGateTarget.center_y * display.sky0_offset).toFixed(0) + "px)",
-								"transform"					: "translateY(" + (levelGateTarget.center_y * display.sky0_offset).toFixed(0) + "px)"
-							};
-
-	css_sky1 = 	{
-								"-webkit-transform"	: "translateY(" + (levelGateTarget.center_y * display.sky1_offset).toFixed(0) + "px)",
-								"transform"					: "translateY(" + (levelGateTarget.center_y * display.sky1_offset).toFixed(0) + "px)"
-							};
-
-	$(".tween-fieldShift")[0].addEventListener("webkitTransitionEnd", levelGate_zoomEvent, false);
-	$(".tween-fieldShift")[0].addEventListener("transitionend", levelGate_zoomEvent, false);
-
-	$(".field").css(css);
-
-	$(".sky0").css(css_sky0);
-	$(".sky1").css(css_sky1);
-}
-
-function levelGate_zoomEvent(event)
-{
-	var delay_hide;
-
-	$(".tween-fieldShift")[0].removeEventListener("webkitTransitionEnd", levelGate_zoomEvent, false);
-	$(".tween-fieldShift")[0].removeEventListener("transitionend", levelGate_zoomEvent, false);
-
-	delay_hide = setTimeout(levelGate_hide, 500);
-}
-
-function levelGate_hide()
-{
-	$(".tween-gate")[0].addEventListener("webkitTransitionEnd", levelGate_hideEvent, false);
-	$(".tween-gate")[0].addEventListener("transitionend", levelGate_hideEvent, false);
-
-	$("#" + levelGateTarget.id + " .gate-outer").addClass("gate_hide");
-}
-
-function levelGate_hideEvent(event)
-{
-	var delay_return;
-
-	$(".tween-gate")[0].removeEventListener("webkitTransitionEnd", levelGate_hideEvent, false);
-	$(".tween-gate")[0].removeEventListener("transitionend", levelGate_hideEvent, false);
-
-	$("#" + levelGateTarget.id + " .gate-outer").remove();
-
-	// levelGate_return();
-	delay_return = setTimeout(levelGate_return, 500);
-}
-
-function levelGate_return()
-{
-	var css;
-
-	var css_sky0;
-	var css_sky1;
-
-	levelGateTarget.centerGate();
-
-	css = 	{
-						"-webkit-transform"	: "translateY(" + display.focus_y + "px)",
-						"transform"					: "translateY(" + display.focus_y + "px)"
-					};
-
-	css_sky0 = 	{
-								"-webkit-transform"	: "translateY(" + (display.focus_y * display.sky0_offset).toFixed(0) + "px)",
-								"transform"					: "translateY(" + (display.focus_y * display.sky0_offset).toFixed(0) + "px)"
-							};
-
-	css_sky1 = 	{
-								"-webkit-transform"	: "translateY(" + (display.focus_y * display.sky1_offset).toFixed(0) + "px)",
-								"transform"					: "translateY(" + (display.focus_y * display.sky1_offset).toFixed(0) + "px)"
-							};
-
-	$(".tween-fieldShift")[0].addEventListener("webkitTransitionEnd", levelGate_returnEvent, false);
-	$(".tween-fieldShift")[0].addEventListener("transitionend", levelGate_returnEvent, false);
-
-	$(".field").css(css);
-
-	$(".sky0").css(css_sky0);
-	$(".sky1").css(css_sky1);
-}
-
-function levelGate_returnEvent(event)
-{
-	$(".tween-fieldShift")[0].removeEventListener("webkitTransitionEnd", levelGate_returnEvent, false);
-	$(".tween-fieldShift")[0].removeEventListener("transitionend", levelGate_returnEvent, false);
-
-	levelGate_cleanUp();
-}
-
-function levelGate_cleanUp()
-{
-	delete levelGateTarget;
-
-
-	move_plugIn();
-}
 
 
 
@@ -793,8 +630,6 @@ function worldReturn_slideReturn()
 	$("#display_wrapper").append(html_fx);
 
 	html_lib_empty();
-
-	$(".sun_static .sun_inner").addClass("tween-sunLight_light");
 
 	delay_apply = setTimeout(worldReturn_slideReturnApply, 400);
 }
@@ -836,8 +671,6 @@ function worldReturn_slideReturnPurge(event)
 	$(".tween-sunLight_beam")[0].removeEventListener("transitionend", worldReturn_slideReturnPurge, false);
 
 	$(".sunLight_beam").remove();
-
-	$(".sun_static .sun_inner").removeClass("tween-sunLight_light");
 }
 
 
