@@ -556,6 +556,21 @@
 	background-size: 560px 720px;
 }
 
+.pixels_gate
+{
+	background-image: url(../_img/gate_1x.png);
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	background-size: 320px 240px;
+}
+
+.pixels_backgroundSun
+{
+	background-image: url(../_img/backgroundSun_1x.png);
+	background-repeat: no-repeat;
+	background-size: 384px 384px;
+}
+
 /* ----------------------------------------------------------------------- GENERAL */
 
 
@@ -601,6 +616,13 @@
 		background-image: url(../_img/puchSmashShock.svg);
 		background-repeat: no-repeat;
 		background-position: 0 0;
+	}
+
+	.vectors_gate
+	{
+		background-image: url(../_img/gate.svg);
+		background-repeat: no-repeat;
+		background-size: 320px 240px;
 	}
 
 /* ----------------------------------------------------------------------- VECTOR */
@@ -938,6 +960,11 @@
 		{
 			background-image: url(../_img/travelEvent_1x.png);
 		}
+
+		.pixels_gate
+		{
+			background-image: url(../_img/gate_1x.png);
+		}
 	}
 
 
@@ -1274,6 +1301,11 @@
 		.pixels_travelEvent
 		{
 			background-image: url(../_img/travelEvent_2x.png);
+		}
+
+		.pixels_gate
+		{
+			background-image: url(../_img/gate_2x.png);
 		}
 	}
 

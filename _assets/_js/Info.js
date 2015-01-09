@@ -1584,6 +1584,7 @@
 	{
 		optionsTrigger_init(true);
 
+		/*
 		if(enemyTarget.defeatPrefs)
 		{
 			enemyDefeat_check();
@@ -1591,20 +1592,12 @@
 
 		else
 		{
-			// ENABLE CONTROL - FUNCTION ALREADY WRITTEN IN Game_Control.js?
-
-			// control_relink();
-
-			// THROWS FAULT ON TOUCH
-
-			// move_init(true);
-			// move_reset();
-
 			move_plugIn();
 		}
+		*/
 
 		// TODO
-		temp_slideReturn();
+		worldReturn_slideReturn();
 	}
 
 	// -------- BATTLE_WIN

@@ -780,22 +780,64 @@ function levelGate_cleanUp()
 
 
 
-function temp_slideReturn()
+function worldReturn_slideReturn()
 {
+	var html_fx;
+	var delay_apply;
+
 	$("#display_wrapper").addClass("tween-event-slide");
 
-	$(".tween-event-slide")[0].addEventListener("webkitTransitionEnd", temp_slideReturnEvent, false);
-	$(".tween-event-slide")[0].addEventListener("transitionend", temp_slideReturnEvent, false);
+	html_lib_reuse();
+
+	html_fx = html_lib_use("_sunLight_beam", false, true);
+	$("#display_wrapper").append(html_fx);
+
+	html_lib_empty();
+
+	$(".sun_static .sun_inner").addClass("tween-sunLight_light");
+
+	delay_apply = setTimeout(worldReturn_slideReturnApply, 400);
+}
+
+function worldReturn_slideReturnApply()
+{
+	$(".tween-event-slide")[0].addEventListener("webkitTransitionEnd", worldReturn_slideReturnEvent, false);
+	$(".tween-event-slide")[0].addEventListener("transitionend", worldReturn_slideReturnEvent, false);
 
 	$("#display_wrapper").removeClass("event-slide");
 }
 
-function temp_slideReturnEvent(event)
+function worldReturn_slideReturnEvent(event)
 {
-	$(".tween-event-slide")[0].removeEventListener("webkitTransitionEnd", temp_slideReturnEvent, false);
-	$(".tween-event-slide")[0].removeEventListener("transitionend", temp_slideReturnEvent, false);
+	$(".tween-event-slide")[0].removeEventListener("webkitTransitionEnd", worldReturn_slideReturnEvent, false);
+	$(".tween-event-slide")[0].removeEventListener("transitionend", worldReturn_slideReturnEvent, false);
 
 	$("#display_wrapper").removeClass("tween-event-slide");
+
+	$(".tween-sunLight_beam")[0].addEventListener("webkitTransitionEnd", worldReturn_slideReturnPurge, false);
+	$(".tween-sunLight_beam")[0].addEventListener("transitionend", worldReturn_slideReturnPurge, false);
+
+	$(".sunLight_beam").addClass("sunLight_beam_hide");
+
+	if(enemyTarget.defeatPrefs)
+	{
+		enemyDefeat_check();
+	}
+
+	else
+	{
+		move_plugIn();
+	}
+}
+
+function worldReturn_slideReturnPurge(event)
+{
+	$(".tween-sunLight_beam")[0].removeEventListener("webkitTransitionEnd", worldReturn_slideReturnPurge, false);
+	$(".tween-sunLight_beam")[0].removeEventListener("transitionend", worldReturn_slideReturnPurge, false);
+
+	$(".sunLight_beam").remove();
+
+	$(".sun_static .sun_inner").removeClass("tween-sunLight_light");
 }
 
 
