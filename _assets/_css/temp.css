@@ -674,8 +674,8 @@
 
 .tween-event-slide
 {
-	-webkit-transition	: -webkit-transform 600ms ease-out;
-	transition					: transform 600ms ease-out;
+	-webkit-transition	: -webkit-transform 600ms ease-in-out;
+	transition					: transform 600ms ease-in-out;
 }
 
 .sunLight_beam

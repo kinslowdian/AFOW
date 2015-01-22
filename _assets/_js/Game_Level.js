@@ -161,7 +161,7 @@
 										"transform"			: "translate(" + this.buildData.x + "px, " + this.buildData.y + "px)"
 									};
 
-		battleEngine.playerLevelSort(this);
+		// battleEngine.playerLevelSort(this);
 
 		delete this.settings;
 	};
@@ -998,6 +998,8 @@ function levelGate_checkStatus(gateID, enemyList)
 	else
 	{
 		move_plugIn();
+
+		eventColor_remove();
 	}
 }
 
@@ -1118,6 +1120,7 @@ function levelGate_cleanUp()
 {
 	delete levelGateTarget;
 
+	eventColor_remove();
 
 	move_plugIn();
 }

@@ -37,8 +37,13 @@
 		errorMessages.keyboard 	= Logic.dat_ROM["_ERRORS"]["keyboard"]["txt"];
 
 		playerTarget = {};
-		battleEngine.init(levelCount, diff.easy, diff.medium, diff.hard, diff.max);
-		battleEngine.playerLevelSort(playerTarget);
+
+ 		battleEngine = new BattleEngine();
+  	battleEngine.setDifficulty({e:diff.easy, m:diff.medium, h:diff.hard, s:diff.max});
+
+
+		// battleEngine.init(levelCount, diff.easy, diff.medium, diff.hard, diff.max);
+		// battleEngine.playerLevelSort(playerTarget);
 
 
 		html_lib_init(gameHTML_found);

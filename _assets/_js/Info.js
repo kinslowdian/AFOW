@@ -1040,6 +1040,10 @@
 
 		trace(player_html);
 
+		// SETS PLAYER 1 + 2
+		battleEngine_setPlayers(playerTarget, enemyTarget);
+
+
 		// WEAK
 		if(playerTarget.sword.skillId < enemyTarget.sword.skillId)
 		{

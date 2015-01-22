@@ -699,9 +699,16 @@
 
 	function battleNav_logicRequest()
 	{
+		// battleEngine_setPlayers(playerTarget, enemyTarget);
+
+		battleEngine_battleStart();
+
+
+
+
 		// BATTLE_NAV.game.result = battleEngine.battle(MAP_PLAYER, enemyTarget, false);
 
-		BATTLE_NAV.game.result = "WIN";
+		// BATTLE_NAV.game.result = "WIN";
 
 		// BATTLE_NAV.game.result = "LOSE";
 
@@ -2404,7 +2411,8 @@
 		{
 			enemies_ARR[enemyTarget.array_index].alive = false;
 
-			ROM.game.statusInfo = battleEngine.levelClearedCheck(enemies_ARR, ROM.mapLevel);
+			// Need TO CHECK ALL ENEMIES DEFEATED
+			// ROM.game.statusInfo = battleEngine.levelClearedCheck(enemies_ARR, ROM.mapLevel);
 
 			battleEnd_battleOver_returnWin();
 		}
