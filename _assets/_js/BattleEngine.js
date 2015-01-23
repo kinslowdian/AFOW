@@ -78,7 +78,7 @@ BattleEngine.prototype.levelSort = function(player_ob)
 	}
 
 	// SUPER
-	else
+	else if(player_ob.rating >= this.difficulty.super)
 	{
 		sword.skill 		= "lord";
 		sword.skillId		= 3;
@@ -248,6 +248,9 @@ function _howToSetUpinit(event)
 
 function battleEngine_setPlayers(p1, p2)
 {
+	trace("battleEngine_setPlayers();");
+	trace(p1);
+
 	player1 = {};
 	player2 = {};
 

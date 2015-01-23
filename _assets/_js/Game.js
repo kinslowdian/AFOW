@@ -37,6 +37,7 @@
 		errorMessages.keyboard 	= Logic.dat_ROM["_ERRORS"]["keyboard"]["txt"];
 
 		playerTarget = {};
+		playerTarget.rating = 0;
 
  		battleEngine = new BattleEngine();
   	battleEngine.setDifficulty({e:diff.easy, m:diff.medium, h:diff.hard, s:diff.max});
