@@ -70,6 +70,13 @@
 		font-size: 40px !important;
 	}
 	/* BATTLE NAV */
+
+	/* TRAVEL_OBSERVE */
+	#monkeyObserve, #bossObserve
+	{
+		visibility: hidden;
+	}
+	/* TRAVEL_OBSERVE */
 }
 
 /* TABLET */
@@ -138,6 +145,13 @@
 		font-size: 60px !important;
 	}
 	/* BATTLE NAV */
+
+	/* TRAVEL_OBSERVE */
+	#monkeyObserve, #bossObserve
+	{
+		visibility: visible;
+	}
+	/* TRAVEL_OBSERVE */
 }
 
 /* TABLET - LAPTOP */
