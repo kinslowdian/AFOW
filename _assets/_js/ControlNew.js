@@ -415,7 +415,6 @@ function move_reset()
 	control.signal = true;
 
 	onEnterFrame_init(true);
-
 	console.log("!!!!!!----------- move_reset");
 }
 

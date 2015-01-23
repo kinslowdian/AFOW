@@ -358,10 +358,6 @@ function gameEventTriggers_init()
 //////////////////////////////////////////////////////////////////////////
 
 
-
-
-
-
 function worldReturn_slideReturn()
 {
 	var html_fx;
@@ -383,35 +379,21 @@ function worldReturn_slideReturn()
 
 function worldReturn_slideReturnApply()
 {
-	$(".tween-event-slide")[0].addEventListener("webkitTransitionEnd", worldReturn_slideReturnEvent, false);
-	$(".tween-event-slide")[0].addEventListener("transitionend", worldReturn_slideReturnEvent, false);
+	var delay_worldReturn_slideReturnComplete;
 
 	$("#display_wrapper").removeClass("event-slide");
+
+	delay_worldReturn_slideReturnComplete = setTimeout(worldReturn_slideReturnComplete, 700);
 }
 
-function worldReturn_slideReturnEvent(event)
+function worldReturn_slideReturnComplete()
 {
-	$(".tween-event-slide")[0].removeEventListener("webkitTransitionEnd", worldReturn_slideReturnEvent, false);
-	$(".tween-event-slide")[0].removeEventListener("transitionend", worldReturn_slideReturnEvent, false);
-
 	$("#display_wrapper").removeClass("tween-event-slide");
 
 	$(".tween-sunLight_beam")[0].addEventListener("webkitTransitionEnd", worldReturn_slideReturnPurge, false);
 	$(".tween-sunLight_beam")[0].addEventListener("transitionend", worldReturn_slideReturnPurge, false);
 
 	$(".sunLight_beam").addClass("sunLight_beam_hide");
-
-	/*
-	if(enemyTarget.defeatPrefs)
-	{
-		enemyDefeat_check();
-	}
-
-	else
-	{
-		move_plugIn();
-	}
-	*/
 }
 
 function worldReturn_slideReturnPurge(event)

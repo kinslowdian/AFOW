@@ -30,6 +30,7 @@
 	/* --- BATTLE_OVER */
 
 
+
 	///////////////////////////////// --- PRE_BATTLE_OPTIONS
 
 	function preBattleOptions_init()
