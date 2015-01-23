@@ -815,11 +815,14 @@
 
 	function battleFail_removeInit()
 	{
-		screen_multiInfoUse.plugControl = true;
+		// REMOVED FOR NEW TRANSITION
+		// screen_multiInfoUse.plugControl = true;
 
 		multiUseInfoScreen_removeTitle();
 	}
 
+
+	// TODO (DEAD)
 	function battleFail_removeEnd(event)
 	{
 		$(screen_multiInfoUse.screenRoot + " .multiUseInfo_entranceLine0")[0].removeEventListener("webkitTransitionEnd", battleFail_removeEnd, false);
@@ -1276,6 +1279,16 @@
 			// move_plugIn();
 
 			// control_switch(true);
+		}
+
+		if(screen_multiInfoUse.infoDisplay === "BATTLE_FAIL")
+		{
+			// TODO WRITE LEVEL BACK IN
+
+			optionsTrigger_init(true);
+
+			// TODO
+			worldReturn_slideReturn();
 		}
 
 
