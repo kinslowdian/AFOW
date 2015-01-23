@@ -297,6 +297,8 @@ function move_init(run)
 			$("#touchPad-full")[0].addEventListener("touchstart", touch_find, false);
 			$("#touchPad-full")[0].addEventListener("touchmove", touch_find, false);
 			$("#touchPad-full")[0].addEventListener("touchend", touch_find, false);
+
+			$("#touchPad .touchPad-cont").removeClass("touchPad_C_hide").addClass("touchPad_C_show");
 		}
 
 		// TouchUI.js
@@ -323,6 +325,10 @@ function move_init(run)
 			$("#touchPad-full")[0].removeEventListener("touchstart", touch_find, false);
 			$("#touchPad-full")[0].removeEventListener("touchmove", touch_find, false);
 			$("#touchPad-full")[0].removeEventListener("touchend", touch_find, false);
+
+			$("#touchPad .touchPad-cont").removeClass("touchPad_C_show").addClass("touchPad_C_hide");
+
+			$("#" + control.touchData.indicator).removeClass("touchPad_C_signal_show").addClass("touchPad_C_signal_hide");
 		}
 
 		// TouchUI.js
@@ -511,7 +517,7 @@ function hack_hitTest()
 			control.signal = false;
 		}
 
-		if($(HIT_TEST.hits[0]).attr("data-npc") === "portal")
+		else if($(HIT_TEST.hits[0]).attr("data-npc") === "portal")
 		{
 			HIT_TEST.hit_portal = true;
 
@@ -520,7 +526,7 @@ function hack_hitTest()
 			HIT_TEST.hit_portal_id = HIT_TEST.hits[0].id;
 		}
 
-		if($(HIT_TEST.hits[0]).attr("data-npc") === "enemy")
+		else if($(HIT_TEST.hits[0]).attr("data-npc") === "enemy")
 		{
 			HIT_TEST.hit_enemy = true;
 
@@ -529,14 +535,14 @@ function hack_hitTest()
 			HIT_TEST.hit_enemy_id = HIT_TEST.hits[0].id;
 		}
 
-		if($(HIT_TEST.hits[0]).attr("data-npc") === "sound")
+		else if($(HIT_TEST.hits[0]).attr("data-npc") === "sound")
 		{
 			HIT_TEST.hit_sound = true;
 
 			HIT_TEST.hit_sound_id = HIT_TEST.hits[0].id;
 		}
 
-		if($(HIT_TEST.hits[0]).attr("data-npc") === "god")
+		else if($(HIT_TEST.hits[0]).attr("data-npc") === "god")
 		{
 			HIT_TEST.hit_god = true;
 
