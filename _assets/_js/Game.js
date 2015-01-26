@@ -257,6 +257,8 @@
 		}
 
 		optionsTrigger_init(true);
+
+		control_request();
 	}
 
 	// DEFUNCT

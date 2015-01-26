@@ -191,6 +191,13 @@ Control.prototype.touch_reset = function()
 	this.touchData.y_percent 		= 0;
 }
 
+// CALL ONLY ONCE
+function control_request()
+{
+	control_init();
+	loop_init();
+}
+
 function control_init()
 {
 	control = new Control();

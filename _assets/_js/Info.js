@@ -33,9 +33,15 @@
 		// CONTROL CANCEL
 		// BREAK
 		// playerTarget.listen = false;
+
+		// OPT 26 01 2014
+		/*
 		move_init(false);
 
 		optionsTrigger_init(false);
+		*/
+		move_cancel();
+		// OPT 26 01 2014
 
 		multiUseInfoScreen_build("#options_wrapper .options-choice", "OPTIONS");
 
@@ -390,8 +396,12 @@
 		timerList_destroy();
 		multiUseInfoScreen_removeTitle();
 
+		// OPT 26 01 2015
+		/*
 		control_init();
 		loop_init();
+		*/
+		// OPT 26 01 2015
 	}
 
 	// -------- CONTROL_INTRO
@@ -1273,8 +1283,13 @@
 			// playerTarget.listen = true;
 
 			// OPTIMISED???
-			move_init(true);
 
+			// OPT 26 01 2014
+			/*
+			move_init(true);
+			*/
+			move_plugIn();
+			// OPT 26 01 2014
 
 			// move_plugIn();
 
@@ -1659,6 +1674,8 @@
 
 function setbackUp()
 {
+	alert("SETBACKUP");
+
 	if(touchSupported)
 	{
 		touch_render();

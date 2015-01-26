@@ -760,6 +760,33 @@
 /*--------------- RESPONSIVE*/
 
 
+.foggyEdge
+{
+	width: 100%;
+	height: 100%;
+
+	position: absolute;
+
+	/*
+	background: -webkit-radial-gradient(center, ellipse cover, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.8) 100%);
+	background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.8) 100%);
+	*/
+
+	/*
+	background: -webkit-radial-gradient(center, ellipse cover, rgba(255, 2, 115, 0) 50%, rgba(255, 2, 115, 0.8) 100%);
+	background: radial-gradient(ellipse at center, rgba(255, 2, 115, 0) 50%, rgba(255, 2, 115, 0.8) 100%);
+	*/
+
+
+	background: -webkit-radial-gradient(center, ellipse cover, rgba(218, 255, 0, 0) 60%, rgba(218, 255, 0, 0.5) 100%);
+	background: radial-gradient(ellipse at center, rgba(218, 255, 0, 0) 60%, rgba(218, 255, 0, 0.4) 100%);
+
+
+/*	background: -webkit-radial-gradient(center, ellipse cover, rgba(218, 255, 0, 0) 50%, rgba(218, 255, 0, 0.5) 80%, rgba(255, 255, 255, 0.6) 100%);
+	background: radial-gradient(ellipse at center, rgba(218, 255, 0, 0) 50%, rgba(218, 255, 0, 0.5) 80%, rgba(255, 255, 255, 0.6) 100%);*/
+}
+
+
 
 
 
