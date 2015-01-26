@@ -797,55 +797,63 @@ function temp_findPortalExit()
 	{
 		if(portals_ARR[i].id === HIT_TEST.hit_portal_id)
 		{
-			// STAGE TRAVEL
-
-			if(portals_ARR[i].level == ROM.mapLevel)
+			if(portals_ARR[i].bossEntrance)
 			{
-				for(var j in portals_ARR)
+				alert("FINAL LEVEL");
+			}
+
+			else
+			{
+				// STAGE TRAVEL
+
+				if(portals_ARR[i].level == ROM.mapLevel)
 				{
-					if(portals_ARR[i].level == portals_ARR[j].spawn)
+					for(var j in portals_ARR)
 					{
-						if(portals_ARR[i].exit == portals_ARR[j].num)
+						if(portals_ARR[i].level == portals_ARR[j].spawn)
 						{
-							portalTarget = {};
-							portalTarget = portals_ARR[j];
-
-							autoMove_init("PORTAL_PLACE");
-
-							// NOT FINAL SOUND FX TEST
-							if(soundEffects_pedal != null)
+							if(portals_ARR[i].exit == portals_ARR[j].num)
 							{
-								sound_play("fx_crow");
+								portalTarget = {};
+								portalTarget = portals_ARR[j];
+
+								autoMove_init("PORTAL_PLACE");
+
+								// NOT FINAL SOUND FX TEST
+								if(soundEffects_pedal != null)
+								{
+									sound_play("fx_crow");
+								}
 							}
 						}
 					}
 				}
-			}
 
-			// LEVEL TRAVEL
+				// LEVEL TRAVEL
 
-			else
-			{
-				for(var k in portals_ARR)
+				else
 				{
-					if(portals_ARR[i].level == portals_ARR[k].spawn)
+					for(var k in portals_ARR)
 					{
-						if(portals_ARR[i].exit == portals_ARR[k].num)
+						if(portals_ARR[i].level == portals_ARR[k].spawn)
 						{
-							portalTarget = {};
-							portalTarget = portals_ARR[k];
-
-							ROM.mapLevel = portals_ARR[i].level;
-
-							// MAY NEED TO ADD
-							game_levelChange = true;
-
-							// portalScreen_request();
-
-							// NOT FINAL SOUND FADE OUT FOR LEVEL
-							if(soundEffects_pedal != null)
+							if(portals_ARR[i].exit == portals_ARR[k].num)
 							{
-								sound_fadeInitGlobal(0, {call_funct: sound_levelClear});
+								portalTarget = {};
+								portalTarget = portals_ARR[k];
+
+								ROM.mapLevel = portals_ARR[i].level;
+
+								// MAY NEED TO ADD
+								game_levelChange = true;
+
+								// portalScreen_request();
+
+								// NOT FINAL SOUND FADE OUT FOR LEVEL
+								if(soundEffects_pedal != null)
+								{
+									sound_fadeInitGlobal(0, {call_funct: sound_levelClear});
+								}
 							}
 						}
 					}

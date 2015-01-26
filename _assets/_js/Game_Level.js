@@ -233,6 +233,16 @@
 		this.num 				= this.settings.num;
 		this.id 				= "portal_" +  this.spawn + "_" + this.num; // PORTAL NUMBER 1 ON LEVEL 0 === #portal_0_1;
 
+		if(this.settings.bossLevel)
+		{
+			this.bossEntrance = true;
+		}
+
+		else
+		{
+			this.bossEntrance = false;
+		}
+
 		this.buildData.block_x 	= this.settings.x;
 		this.buildData.block_y 	= this.settings.y;
 		this.buildData.x		= this.buildData.block_x * 80;

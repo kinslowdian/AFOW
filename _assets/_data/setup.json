@@ -544,6 +544,20 @@
 					"direction": "DOWN",
 					"spawn": 0,
 					"p": "portal_top_forest"
+				},
+
+				{
+					"num": 8,
+					"x": 3,
+					"y": 0,
+					"w": 1,
+					"h": 1,
+					"level": 5,
+					"exit": 0,
+					"direction": "DOWN",
+					"spawn": 0,
+					"bossLevel": true,
+					"p": "portal_top_forest"
 				}
 			],
 
