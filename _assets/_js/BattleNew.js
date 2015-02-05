@@ -149,6 +149,10 @@
 		timerList_init();
 
 		microBattleSequence_storeData();
+
+
+		// FOGGY EDGE
+		$(".foggyEdge").removeClass("foggyEdge-" + LEVEL_MAIN.landType).addClass("foggyEdge-battle");
 	}
 
 	///////////////////////////////// --- THE_BATTLE
@@ -2422,6 +2426,8 @@
 		{
 			battleEnd_battleOver_returnLose();
 		}
+
+		$(".foggyEdge").removeClass("foggyEdge-battle").addClass("foggyEdge-" + LEVEL_MAIN.landType);
 	}
 
 	function enemyDefeat_check()

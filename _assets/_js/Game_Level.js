@@ -1,6 +1,8 @@
 
 	var LEVEL_MAIN;
 
+	var foggy = {};
+
 	var enemyData_ARR = new Array();
 
 	var enemies_ARR = new Array();
@@ -546,6 +548,8 @@
 			$(".layer-ui").remove();
 		}
 
+		// FOGGY EDGE
+		$(".foggyEdge").addClass("foggyEdge-" + LEVEL_MAIN.landType);
 
 		// FLOOR COLOUR
 
@@ -1175,6 +1179,9 @@ function levelGate_cleanUp()
 
 		delete find_bgPixels;
 
+		// FOGGY EDGE
+		$(".foggyEdge").removeClass("foggyEdge-" + LEVEL_MAIN.landType);
+
 		$(".layer-field-floor > div").removeAttr("class");
 
 
@@ -1203,3 +1210,4 @@ function levelGate_cleanUp()
 			}
 		}
 	}
+

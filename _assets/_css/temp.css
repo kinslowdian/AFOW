@@ -760,30 +760,52 @@
 /*--------------- RESPONSIVE*/
 
 
-.foggyEdge
+.foggyEdge, .foggyEdge_portalScreen
 {
 	width: 100%;
 	height: 100%;
 
 	position: absolute;
+}
 
-	/*
-	background: -webkit-radial-gradient(center, ellipse cover, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.8) 100%);
-	background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.8) 100%);
-	*/
+.foggyEdge_hide
+{
+	opacity: 0;
+}
 
-	/*
-	background: -webkit-radial-gradient(center, ellipse cover, rgba(255, 2, 115, 0) 50%, rgba(255, 2, 115, 0.8) 100%);
-	background: radial-gradient(ellipse at center, rgba(255, 2, 115, 0) 50%, rgba(255, 2, 115, 0.8) 100%);
-	*/
+.foggyEdge_show
+{
+	opacity: 1;
+}
 
+.tween-foggyEdge
+{
+	-webkit-transition 	: 400ms linear;
+	transition 					: 400ms linear;
+}
 
-	background: -webkit-radial-gradient(center, ellipse cover, rgba(218, 255, 0, 0) 60%, rgba(218, 255, 0, 0.5) 100%);
+.foggyEdge-portal
+{
+	background: -webkit-radial-gradient(center, ellipse cover, rgba(255, 255, 255, 0) 60%, rgba(255, 255, 255, 0.4) 100%);
+	background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0) 60%, rgba(255, 255, 255, 0.4) 100%);
+}
+
+.foggyEdge-battle
+{
+	background: -webkit-radial-gradient(center, ellipse cover, rgba(0, 71, 83, 0) 60%, rgba(0, 71, 83, 0.4) 100%);
+	background: radial-gradient(ellipse at center, rgba(0, 71, 83, 0) 60%, rgba(0, 71, 83, 0.4) 100%);
+}
+
+.foggyEdge-forest
+{
+	background: -webkit-radial-gradient(center, ellipse cover, rgba(240, 190, 0, 0) 60%, rgba(240, 190, 0, 0.5) 100%);
+	background: radial-gradient(ellipse at center, rgba(240, 190, 0, 0) 60%, rgba(240, 190, 0, 0.5) 100%);
+}
+
+.foggyEdge-ice
+{
+	background: -webkit-radial-gradient(center, ellipse cover, rgba(218, 255, 0, 0) 60%, rgba(218, 255, 0, 0.4) 100%);
 	background: radial-gradient(ellipse at center, rgba(218, 255, 0, 0) 60%, rgba(218, 255, 0, 0.4) 100%);
-
-
-/*	background: -webkit-radial-gradient(center, ellipse cover, rgba(218, 255, 0, 0) 50%, rgba(218, 255, 0, 0.5) 80%, rgba(255, 255, 255, 0.6) 100%);
-	background: radial-gradient(ellipse at center, rgba(218, 255, 0, 0) 50%, rgba(218, 255, 0, 0.5) 80%, rgba(255, 255, 255, 0.6) 100%);*/
 }
 
 

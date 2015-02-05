@@ -1696,9 +1696,12 @@ function portalScreen_init()
 	PortalScreen.displayed = false;
 	PortalScreen.delay = null;
 
-	PortalScreen.html = $("#portalScreen").html();
+	// PortalScreen.html = $("#portalScreen").html();
+	PortalScreen.html = $("#portalScreenData").html();
 
-	$("#portalScreen").html("");
+	// $("#portalScreen").html("");
+
+	$("#portalScreenData").remove();
 }
 
 function portalScreen_request()

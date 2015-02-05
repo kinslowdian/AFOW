@@ -84,6 +84,13 @@
 		background-size: 80px 400px;
 	}
 
+	.pixels_portalArea
+	{
+		background-image: url(../_img/portalAreaSprite_1x.png);
+		background-repeat: no-repeat;
+		background-size: 320px 320px;
+	}
+
 	.pixels_portalBoss
 	{
 		background-image: url(../_img/portalBossSprite_1x.png);
@@ -654,6 +661,11 @@
 			background-image: url(../_img/portalSprite_1x.png);
 		}
 
+		.pixels_portalArea
+		{
+			background-image: url(../_img/portalAreaSprite_1x.png);
+		}
+
 		.pixels_portalBoss
 		{
 			background-image: url(../_img/portalBossSprite_1x.png);
@@ -994,6 +1006,11 @@
 		.pixels_portal
 		{
 			background-image: url(../_img/portalSprite_2x.png);
+		}
+
+		.pixels_portalArea
+		{
+			background-image: url(../_img/portalAreaSprite_2x.png);
 		}
 
 		.pixels_portalBoss

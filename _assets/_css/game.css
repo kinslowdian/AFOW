@@ -2440,10 +2440,9 @@
 		height: inherit;
 
 		position: absolute;
-
-		/*PORTAL Z-LOCK*/
-		/*z-index: 1;*/
 	}
+
+	/*PORTAL TEXTURES*/
 
 	.portal_top_forest
 	{
@@ -2452,8 +2451,10 @@
 
 	.portal_top_ice
 	{
-		background-position: 0px -320px;
+		background-position: -80px 0px;
 	}
+
+	/*PORTAL TEXTURES*/
 
 	.portal .portal_space
 	{
@@ -2562,7 +2563,7 @@
 
 /* ----------------------------------------------------------------------- SCREENS */
 
-	#portalScreen, #enemyScreen, #battleScreen, #battleScreenFade
+	#portalScreen, #portalScreenComp, #enemyScreen, #battleScreen, #battleScreenFade
 	{
 		width: 100%;
 		height: 100%;
