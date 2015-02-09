@@ -98,6 +98,8 @@
 
 /* BEHIND WORLD */
 
+/* GATES */
+
 
 /* ----------------------------------------------------------------------- EXTRA RESET */
 
@@ -7786,4 +7788,97 @@
 }
 
 /* ----------------------------------------------------------------------- BEHIND WORLD */
+
+/* ----------------------------------------------------------------------- GATES */
+
+	.gate-areas
+	{
+		width: inherit;
+		height: 2000px;
+
+		position: absolute;
+
+		left: 0;
+		top: 0;
+
+		z-index: 1;
+	}
+
+
+	.gate
+	{
+		width: 320px;
+		height: 160px;
+
+		position: absolute;
+	}
+
+	.gate-outer
+	{
+		width: 320px;
+		height: 160px;
+
+		position: absolute;
+
+		left: 0;
+		top: 0;
+	}
+
+	.gate-outer-tile
+	{
+		width: inherit;
+		height: inherit;
+
+		background-position: 0 -80px;
+
+		position: absolute;
+
+		left: 0;
+		top: 0;
+	}
+
+	.gate-inner
+	{
+		width: 80px;
+		height: 80px;
+
+		position: absolute;
+
+		-webkit-transform: translate(120px, 40px);
+		transform: translate(120px, 40px);
+	}
+
+	.gate-inner-tile
+	{
+		width: inherit;
+		height: inherit;
+
+		position: absolute;
+
+		left: 0;
+		top: 0;
+	}
+
+	.gate-inner-tile
+	{
+		background-position: 0 0;
+	}
+
+	.gate_show
+	{
+		opacity: 1;
+	}
+
+	.gate_hide
+	{
+		opacity: 0;
+	}
+
+	.tween-gate
+	{
+		-webkit-transition: 500ms ease-in-out;
+		transition: 500ms ease-in-out;
+	}
+
+/* ----------------------------------------------------------------------- GATES */
 

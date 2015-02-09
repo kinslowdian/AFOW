@@ -1,3 +1,4 @@
+
 var control;
 
 var loopRun;
@@ -1618,6 +1619,9 @@ function observe_monkeyHideEvent(event)
 	$("#monkeyObserve .monkeyObserve-monkeyInner").removeClass("monkeyObserve-look-" + currentLook);
 	$("#monkeyObserve .monkeyObserve-monkeyInner").attr("data-look", "");
 }
+
+
+//
 
 
 
