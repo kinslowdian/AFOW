@@ -28,13 +28,17 @@
 
 /* PLAYER */
 
+/* PLAYER MOVE */
+
 /* ENEMY */
 
 /* SCREEN MGMT */
 
 /* LEVEL_GAME */
 
-/* LEVEL_COLORS */
+/* LEVEL_GAME_TEXTURES */
+
+/* LEVEL_GAME_MOVE */
 
 /* WATER */
 
@@ -45,6 +49,8 @@
 /* CLEARING */
 
 /* PORTAL */
+
+/* PORTAL TEXTURE */
 
 /* SCREENS */
 
@@ -70,6 +76,8 @@
 
 /* SOUND */
 
+/* MENU TAB */
+
 /* OPTIONS */
 
 /* INFO_MULTI */
@@ -85,6 +93,10 @@
 /* TRAVEL_HIDE */
 
 /* TRAVEL_OBSERVE */
+
+/* FOGGY */
+
+/* BEHIND WORLD */
 
 
 /* ----------------------------------------------------------------------- EXTRA RESET */
@@ -102,11 +114,6 @@
 
 		-webkit-user-select: none;
 		user-select: none;
-
-/*
-		-webkit-backface-visibility	: hidden;
-		backface-visibility			: hidden;
-*/
 	}
 
 /* ----------------------------------------------------------------------- EXTRA RESET */
@@ -138,14 +145,6 @@
 		font-smoothing			: antialiased;
 	}
 
-/*
-	.font-dosis, p
-	{
-		-webkit-font-smoothing	: antialiased;
-		font-smoothing			: antialiased;
-	}
-*/
-
 /* ----------------------------------------------------------------------- FONT */
 
 
@@ -176,10 +175,6 @@
 
 		left: 0; top:0; right:0; bottom:0;
 		margin: 0 auto;
-
-		/*z-index: 0;*/
-
-		/* background: #FFBE40; */
 	}
 
 	#memory
@@ -209,10 +204,6 @@
 		pointer-events: none;
 
 		position: absolute;
-
-		/*z-index: 1000;*/
-		/*z-index: 1;*/
-		/*z-index: 4;*/
 	}
 
 	#displayErrorWrapper .displayError
@@ -250,8 +241,6 @@
 		width: inherit;
 		height: 50%;
 
-		/* background: #17e69d; */
-
 		background: #b7e0ca;
 
 		position: absolute;
@@ -284,12 +273,6 @@
 		line-height: 1;
 		text-align: center;
 		letter-spacing: 0.1em;
-
-		/* color: #e5ffb2; */
-
-		/* color: #fff; */
-
-		/* color: #ff0070; */
 
 		color: #004752;
 
@@ -373,8 +356,6 @@
 
 		position: absolute;
 
-		/* bottom: 55%; */
-
 		bottom: 16%;
 
 		z-index: 1;
@@ -402,7 +383,6 @@
 
 	.#displayErrorWrapper .bossFullBleed
 	{
-		/* background: #1a004d; */
 		background: #004752;
 	}
 
@@ -419,8 +399,6 @@
 
 		-webkit-transform: translate(0px, 80px);
 		transform: translate(0px, 80px);
-
-		/*z-index: 0;*/
 	}
 
 
@@ -444,8 +422,6 @@
 	.boss
 	{
 		position: absolute;
-
-		/*z-index: 1;*/
 	}
 
 	.boss-head
@@ -459,8 +435,6 @@
 
 		-webkit-transform	: translate(126px, 0);
 		transform			: translate(126px, 0);
-
-		/*z-index: 2;*/
 	}
 
 	.boss-head .boss-face
@@ -469,8 +443,6 @@
 		height: 35px;
 
 		position: absolute;
-
-		/*z-index: 1;*/
 	}
 
 	.boss-face-default
@@ -516,8 +488,6 @@
 
 		-webkit-transform	: translate(41px, 17px);
 		transform			: translate(41px, 17px);
-
-		/*z-index: 1;*/
 	}
 
 	.boss-body .portal_space
@@ -569,8 +539,6 @@
 		position: absolute;
 
 		background-position: -200px -35px;
-
-		/*z-index: 1;*/
 	}
 
 	.boss-lowerArmL
@@ -584,8 +552,6 @@
 
 		-webkit-transform	: translate(0px, 70px);
 		transform			: translate(0px, 70px);
-
-		/*z-index: 0;*/
 	}
 
 	.boss-armR
@@ -602,8 +568,6 @@
 		position: absolute;
 
 		background-position: -200px -115px;
-
-		/*z-index: 1;*/
 	}
 
 
@@ -619,8 +583,6 @@
 
 		-webkit-transform	: translate(11px, 70px);
 		transform			: translate(11px, 70px);
-
-		/*z-index: 0;*/
 	}
 
 	.boss-legs
@@ -846,15 +808,10 @@
 	{
 		width: inherit;
 		height: inherit;
-
-		/*opacity: 0;*/
 	}
 
 	.tween-map-goat
 	{
-/*		-webkit-transition	: opacity 200ms linear;
-		transition			: opacity 200ms linear;*/
-
 		-webkit-transition	: 200ms linear;
 		transition			: 200ms linear;
 	}
@@ -871,8 +828,6 @@
 		height: inherit;
 
 		position: absolute;
-
-		/*z-index: 2;*/
 	}
 
 	.player-sprite .map-goat-hand-L
@@ -883,8 +838,6 @@
 		background-position: 0px -40px;
 
 		position: absolute;
-
-		/*z-index: 3;*/
 	}
 
 	.player-sprite .map-goat-hand-R
@@ -895,8 +848,6 @@
 		background-position: -40px -40px;
 
 		position: absolute;
-
-		/*z-index: 3;*/
 	}
 
 	.player-sprite .map-goat-body
@@ -907,8 +858,6 @@
 		background-position: -160px 0px;
 
 		position: absolute;
-
-		/*z-index: 1;*/
 	}
 
 	.player-sprite .map-goat-legs
@@ -919,8 +868,6 @@
 		background-position: 0 -80px;
 
 		position: absolute;
-
-		/*z-index: 0;*/
 	}
 
 
@@ -990,8 +937,6 @@
 		height: 40px;
 
 		position: absolute;
-
-		/*z-index: 4;*/
 	}
 
 	.tween-actionCloud
@@ -1015,12 +960,12 @@
 
 	.actionCloudMain-0
 	{
-		/*z-index: 1;*/
+
 	}
 
 	.actionCloudMain-1
 	{
-		/*z-index: 0;*/
+
 	}
 
 	.actionCloudSprite-outer
@@ -1266,6 +1211,90 @@
 
 
 
+/* ----------------------------------------------------------------------- PLAYER MOVE */
+
+.player, .hitTest
+{
+	width: 40px;
+	height: 40px;
+
+	position: absolute;
+
+	-webkit-transform-origin: 50% 50%;
+	transform-origin: 50% 50%;
+}
+
+.hitTest
+{
+	background: rgba(0, 255, 0, 0.4);
+}
+
+/*DEAD?*/
+.tween-player
+{
+	-webkit-transition 	: 400ms ease-in-out;
+	transition 					: 400ms ease-in-out;
+}
+/*DEAD?*/
+
+.tween-player-portal
+{
+	-webkit-transition 	: 400ms ease-in-out;
+	transition 					: 400ms ease-in-out;
+}
+
+.tween-player-enemy
+{
+	-webkit-transition 	: 140ms linear;
+	transition 					: 140ms linear;
+}
+
+.tween-player-XX
+{
+	-webkit-transform: translate(0px, 0px);
+	transform: translate(0px, 0px);
+}
+
+.tween-player-UD
+{
+
+}
+
+.tween-player-LR
+{
+	-webkit-animation: tweenPlayerLRFrames 200ms linear infinite;
+	animation: tweenPlayerLRFrames 200ms linear infinite;
+}
+
+@-webkit-keyframes tweenPlayerLRFrames
+{
+	0%		{-webkit-transform: translateY(0px);}
+	25%		{-webkit-transform: translateY(-4px);}
+	50%		{-webkit-transform: translateY(0px);}
+	75%		{-webkit-transform: translateY(4px);}
+	100%	{-webkit-transform: translateY(0px);}
+}
+
+@keyframes tweenPlayerLRFrames
+{
+	0%		{transform: translateY(0px);}
+	25%		{transform: translateY(-4px);}
+	50%		{transform: translateY(0px);}
+	75%		{transform: translateY(4px);}
+	100%	{transform: translateY(0px);}
+}
+
+.tween-fieldShift
+{
+	-webkit-transition: 800ms ease-in-out;
+	transition: 800ms ease-in-out;
+}
+
+/* ----------------------------------------------------------------------- PLAYER MOVE */
+
+
+
+
 
 /* ----------------------------------------------------------------------- ENEMY */
 
@@ -1299,10 +1328,6 @@
 		height: inherit;
 
 		position: absolute;
-
-		/* background-position: 0px 0px; */
-
-		/*z-index: 2;*/
 	}
 
 	.enemy-sprite .map-enemy_40x40-hand-L
@@ -1313,8 +1338,6 @@
 		background-position: 0px -40px;
 
 		position: absolute;
-
-		/*z-index: 3;*/
 	}
 
 	.enemy-sprite .map-enemy_40x40-hand-R
@@ -1325,8 +1348,6 @@
 		background-position: -40px -40px;
 
 		position: absolute;
-
-		/*z-index: 3;*/
 	}
 
 	.enemy-sprite .map-enemy_40x40-body
@@ -1337,8 +1358,6 @@
 		background-position: -160px 0px;
 
 		position: absolute;
-
-		/*z-index: 1;*/
 	}
 
 	.enemy-sprite .map-enemy_40x40-legs
@@ -1349,8 +1368,6 @@
 		background-position: 0 -80px;
 
 		position: absolute;
-
-		/*z-index: 0;*/
 	}
 
 	.tween-map-enemy_40x40-head
@@ -1545,8 +1562,6 @@
 		height: 40px;
 
 		position: absolute;
-
-		/*z-index: 0;*/
 	}
 
 	.enemy_grave_sprite
@@ -1598,18 +1613,6 @@
 
 /* ----------------------------------------------------------------------- LEVEL_GAME */
 
-/*	#roam_wrapper
-	{
-		width: 100%;
-		height: 100%;
-
-		 overflow: hidden;
-
-		position: absolute;
-
-		z-index: 0;
-	}*/
-
 	#roam_content
 	{
 		width: 140%; /* 1280px */
@@ -1623,27 +1626,6 @@
 
 		z-index: 1;
 	}
-
-	.edgeBleed-forest
-	{
-		/* background: #17e69d; */
-		/* background: #000; */
-		/* background: #ff0070; */
-		background: #20202a;
-	}
-
-
-/*	.field
-	{
-		width: 320px;
-		height: 0px;
-
-		position: relative;
-
-		margin: 0 auto;
-
-		z-index: 4;
-	}*/
 
 	/*TODO CHECK IF NEEDED*/
 	.field-area, .enemy-area, .portal-area, .player-area, .fieldEdge, .match-area, .sound-area
@@ -1730,7 +1712,7 @@
 
 	.woodland
 	{
-		width: inherit; /* 1280px */
+		width: inherit;
 		height: inherit;
 
 		position: absolute;
@@ -1748,7 +1730,6 @@
 		height: inherit;
 
 		position: absolute;
-/* 		left:0; top:0; right:0; bottom:0; */
 
 		left: 0;
 		top: 0;
@@ -1786,8 +1767,6 @@
 		height: 2000px;
 
 		position: absolute;
-
-		/*z-index: 0;*/
 	}
 
 	.field-floor > div
@@ -1796,131 +1775,60 @@
 		height: inherit;
 	}
 
-	/* FIELD FLOOR TYPES */
-
-	.field-floor-forest
-	{
-		background: #dfdfd5;
-	}
-
-	.field-floor-ice
-	{
-		background: #b8f5eb;
-	}
-
-	.field-floor-ash
-	{
-		background: #20202a;
-	}
-
-	/* FIELD FLOOR TYPES */
-
-/*	.landDecayBlock
-	{
-		width: 240px;
-		height: 400px;
-
-		position: relative;
-
-		margin: 0;
-		padding: 0;
-
-		z-index: 2;
-	}
-
-	.landDecay_l_0
-	{
-		background-position: 0 0;
-	}
-
-	.landDecay_l_1
-	{
-		background-position: -240px 0;
-	}
-
-	.landDecay_l_2
-	{
-		background-position: -480px 0;
-	}
-
-	.landDecay_l_3
-	{
-		background-position: -720px 0;
-	}
-
-	.landDecay_l_4
-	{
-		background-position: -960px 0;
-	}
-
-	.landDecay_r_0
-	{
-		background-position: 0 -400px;
-	}
-
-	.landDecay_r_1
-	{
-		background-position: -240px -400px;
-	}
-
-	.landDecay_r_2
-	{
-		background-position: -480px -400px;
-	}
-
-	.landDecay_r_3
-	{
-		background-position: -720px -400px;
-	}
-
-	.landDecay_r_4
-	{
-		background-position: -960px -400px;
-	}*/
-
 	.stage-view-y
 	{
-/*
-		-webkit-transition: -webkit-transform 0.5s ease-in-out;
-		transition: transform 0.5s ease-in-out;
-*/
-
 		-webkit-transition: -webkit-transform 1s ease-in-out;
 		transition: transform 1s ease-in-out;
 	}
 
-/*	.woodland-bottom
-	{
-		width: inherit;
-		height: 160px;
-
-		position: absolute;
-
-		left: 0;
-		bottom: 0;
-
-		z-index: 1;
-
-		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(32,32,42,0)), color-stop(100%, rgba(32,32,42,1)));
-
-		background: -webkit-linear-gradient(top, rgba(32,32,42,0) 0%, rgba(32,32,42,1) 100%);
-
-		background: linear-gradient(to bottom, rgba(32,32,42,0) 0%,rgba(32,32,42,1) 100%);
-	}*/
 
 /* ----------------------------------------------------------------------- LEVEL_GAME */
 
 
 
 
-/* ----------------------------------------------------------------------- LEVEL_COLORS */
+/* ----------------------------------------------------------------------- LEVEL_GAME_TEXTURES */
 
-	.colorBleed-forest
-	{
+.edgeBleed-forest
+{
+	background: #20202a;
+}
 
-	}
+.field-floor-forest
+{
+	background: #dfdfd5;
+}
 
-/* ----------------------------------------------------------------------- LEVEL_COLORS */
+.field-floor-ice
+{
+	background: #b8f5eb;
+}
+
+.field-floor-ash
+{
+	background: #20202a;
+}
+
+/* ----------------------------------------------------------------------- LEVEL_GAME_TEXTURES */
+
+
+
+
+/* ----------------------------------------------------------------------- LEVEL_GAME_MOVE */
+
+.event-slide
+{
+	-webkit-transform: translateY(100%);
+	transform: translateY(100%);
+}
+
+.tween-event-slide
+{
+	-webkit-transition	: -webkit-transform 600ms linear;
+	transition					: transform 600ms linear;
+}
+
+/* ----------------------------------------------------------------------- LEVEL_GAME_MOVE */
 
 
 
@@ -1930,22 +1838,17 @@
 	.waterBase
 	{
 		position: absolute;
-
-		/*z-index: 0;*/
 	}
 
 	.waterEdge
 	{
 		position: absolute;
-
-		/*z-index: 1;*/
 	}
 
 	.waterIsland
 	{
 		position: absolute;
 
-		/*z-index: 2;*/
 	}
 
 	.waterFish
@@ -1954,8 +1857,6 @@
 		height: 40px;
 
 		position: absolute;
-
-		/*z-index: 2;*/
 	}
 
 	.waterFishSprite
@@ -2067,7 +1968,6 @@
 		height: 2000px;
 
 		position: absolute;
-/* 		left:0; top:0; right:0; bottom:0; */
 
 		left: 0;
 		top: 0;
@@ -2111,14 +2011,7 @@
 		overflow: hidden;
 
 		position: absolute;
-
-		/*z-index: 1;*/
 	}
-
-/*	#space div
-	{
-		pointer-events: none;
-	}*/
 
 	#space .weather-wind
 	{
@@ -2126,8 +2019,6 @@
 		height: inherit;
 
 		position: absolute;
-
-		/*z-index: 0;*/
 	}
 
 	#space .weather-rain
@@ -2136,9 +2027,6 @@
 		height: inherit;
 
 		position: absolute;
-
-		/*z-index: 0;*/
-
 	}
 
 	#space .weather-snow
@@ -2147,8 +2035,6 @@
 		height: inherit;
 
 		position: absolute;
-
-		/*z-index: 0;*/
 	}
 
 	.windy
@@ -2181,24 +2067,18 @@
 	{
 		-webkit-animation-duration: 2.2s;
 		animation-duration: 2.2s;
-
-		/*z-index: 0;*/
 	}
 
 	.windy-1
 	{
 		-webkit-animation-duration: 1.6s;
 		animation-duration: 1.6s;
-
-		/*z-index: 1;*/
 	}
 
 	.windy-2
 	{
 		-webkit-animation-duration: 1s;
 		animation-duration: 1s;
-
-		/*z-index: 2;*/
 	}
 
 	.rain
@@ -2233,24 +2113,18 @@
 	{
 		-webkit-animation-duration: 600ms;
 		animation-duration: 600ms;
-
-		/*z-index: 0;*/
 	}
 
 	.rain-1
 	{
 		-webkit-animation-duration: 400ms;
 		animation-duration: 400ms;
-
-		/*z-index: 1;*/
 	}
 
 	.rain-2
 	{
 		-webkit-animation-duration: 200ms;
 		animation-duration: 200ms;
-
-		/*z-index: 2;*/
 	}
 
 
@@ -2287,24 +2161,18 @@
 	{
 		-webkit-animation-duration: 2s;
 		animation-duration: 2s;
-
-		/*z-index: 0;*/
 	}
 
 	.snow-1
 	{
 		-webkit-animation-duration: 4s;
 		animation-duration: 4s;
-
-		/*z-index: 1;*/
 	}
 
 	.snow-2
 	{
 		-webkit-animation-duration: 6s;
 		animation-duration: 6s;
-
-		/*z-index: 2;*/
 	}
 
 /* ----------------------------------------------------------------------- WEATHER */
@@ -2336,8 +2204,6 @@
 	{
 		width: inherit;
 		height: inherit;
-
-		/* background: #dfdfd5; */
 
 		position: absolute;
 
@@ -2426,14 +2292,6 @@
 		position: absolute;
 	}
 
-/*
-	.portal div
-	{
-		-webkit-backface-visibility	: hidden;
-		backface-visibility			: hidden;
-	}
-*/
-
 	.portal .portal_top
 	{
 		width: inherit;
@@ -2441,20 +2299,6 @@
 
 		position: absolute;
 	}
-
-	/*PORTAL TEXTURES*/
-
-	.portal_top_forest
-	{
-		background-position: 0px 0px;
-	}
-
-	.portal_top_ice
-	{
-		background-position: -80px 0px;
-	}
-
-	/*PORTAL TEXTURES*/
 
 	.portal .portal_space
 	{
@@ -2557,6 +2401,23 @@
 	}
 
 /* ----------------------------------------------------------------------- PORTAL */
+
+
+
+
+/* ----------------------------------------------------------------------- PORTAL TEXTURE */
+
+.portal_top_forest
+{
+	background-position: 0px 0px;
+}
+
+.portal_top_ice
+{
+	background-position: -80px 0px;
+}
+
+/* ----------------------------------------------------------------------- PORTAL TEXTURE */
 
 
 
@@ -2884,7 +2745,192 @@
 
 /* ----------------------------------------------------------------------- TOUCH UI */
 
+	.layer-ui
+	{
+		width: 160px;
+		height: 160px;
 
+		position: absolute;
+
+		right: 20px;
+		bottom: 20px;
+	}
+
+	#touchPad
+	{
+		width: 160px;
+		height: 160px;
+
+		position: absolute;
+
+		-webkit-transition: opacity 500ms ease;
+		transition: opacity 500ms ease;
+	}
+
+	.touchPad_C
+	{
+		width: 160px;
+		height: 160px;
+
+		position: absolute;
+
+		top: 0; bottom: 0; left: 0; right: 0;
+
+		margin: 0 0 0 auto;
+	}
+
+	/*TOP*/
+	#touchPad-full
+	{
+		width: inherit;
+		height: inherit;
+
+		position: absolute;
+
+		left: 0;
+		top: 0;
+	}
+
+	/*MID*/
+	.touchPad-cont
+	{
+		width: 160px;
+		height: 160px;
+
+		position: absolute;
+
+		-webkit-transform-origin	: 50% 50%;
+		transform-origin			: 50% 50%;
+
+		-webkit-transition	: all 500ms ease;
+		transition			: all 500ms ease;
+
+		left: 0;
+		top: 0;
+	}
+
+	.touchPad-inner
+	{
+		width: inherit;
+		height: inherit;
+
+		position: relative;
+
+		-webkit-transform-origin	: 50% 50%;
+		transform-origin			: 50% 50%;
+
+		-webkit-transform	: rotate(45deg);
+		transform			: rotate(45deg);
+	}
+
+	/*MID*/
+	.touchPad-base
+	{
+		width: 160px;
+		height: 160px;
+
+		opacity: 0.6;
+
+		position: absolute;
+	}
+
+	/*BTM*/
+	.touchPad-feedback
+	{
+		width: 80px;
+		height: 80px;
+
+		position: absolute;
+
+		background: rgba(218, 255, 0, 0.5);
+
+		-webkit-transition: opacity 200ms linear;
+		transition: opacity 200ms linear;
+	}
+
+	#touchPad-U-ind
+	{
+		left: 0;
+		top: 0;
+
+		-webkit-border-radius: 80px 0 0 0;
+		border-radius: 80px 0 0 0;
+	}
+
+	#touchPad-D-ind
+	{
+		left: 80px;
+		top: 80px;
+
+		-webkit-border-radius: 0 0 80px 0;
+		border-radius: 0 0 80px 0;
+	}
+
+	#touchPad-L-ind
+	{
+		left: 0;
+		top: 80px;
+
+		-webkit-border-radius: 0 0 0 80px;
+		border-radius: 0 0 0 80px;
+	}
+
+	#touchPad-R-ind
+	{
+		left: 80px;
+		top: 0;
+
+		-webkit-border-radius: 0 80px 0 0;
+		border-radius: 0 80px 0 0;
+	}
+
+	/*DEAD??*/
+	.touchPad-min
+	{
+		width: 40px;
+		height: 40px;
+
+		position: absolute;
+
+		left: 0; right: 0; top: 0; bottom: 0;
+
+		margin: auto;
+
+		opacity: 1;
+
+		-webkit-transform-origin	: 50% 50%;
+		transform-origin			: 50% 50%;
+
+		-webkit-transform	: scale(1);
+		transform			: scale(1);
+
+		-webkit-transition	: all 500ms ease;
+		transition			: all 500ms ease;
+	}
+
+	.touchPad_C_show
+	{
+		-webkit-transform: scale(1);
+		transform: scale(1);
+		opacity: 1;
+	}
+
+	.touchPad_C_hide
+	{
+		-webkit-transform: scale(0);
+		transform: scale(0);
+		opacity: 0;
+	}
+
+	.touchPad_C_signal_show
+	{
+		opacity: 1;
+	}
+
+	.touchPad_C_signal_hide
+	{
+		opacity: 0;
+	}
 
 /* ----------------------------------------------------------------------- TOUCH UI */
 
@@ -2932,7 +2978,6 @@
 	{
 		width: 80%;
 
-		/* color: #ff0070; */
 		color: #17e69d;
 
 		text-align: left;
@@ -2952,7 +2997,6 @@
 	{
 		width: 80%;
 
-		/* color: #17e69d; */
 		color: #ff0070;
 
 		text-align: right;
@@ -3311,7 +3355,6 @@
 
 	#battle-nav-fight
 	{
-		/* width: 296px; */
 		width: 320px;
 		height: 90px;
 
@@ -3320,8 +3363,6 @@
 		top: 0; bottom: 0; left: 0; right: 0;
 
 		margin: 50px auto 0 auto;
-
-		/* visibility: hidden; */
 
 		-webkit-transform	: translateY(-211px);
 		transform			: translateY(-211px);
@@ -3790,11 +3831,6 @@
 	.battleNav-superPunchAttack
 	{
 		opacity: 1;
-
-/*
-		-webkit-transform: translateX(150px);
-		transform: translateX(150px);
-*/
 
 		-webkit-transform: translateX(130px);
 		transform: translateX(130px);
@@ -4382,13 +4418,11 @@
 
 	.microBattle_darkness_info_text_WIN
 	{
-		/* color: #17e69d; */
 		color: #ff0070;
 	}
 
 	.microBattle_darkness_info_text_LOSE
 	{
-		/* color: #ff0070; */
 		color: #17e69d;
 	}
 
@@ -4749,8 +4783,6 @@
 
 		left: 0;
 		top: 0;
-
-		/*z-index: 2;*/
 	}
 
 	.spaceSquid .spaceSquid_hands .spaceSquid_handL, .spaceSquid .spaceSquid_hands .spaceSquid_handR
@@ -4762,8 +4794,6 @@
 
 		left: 0;
 		top: 0;
-
-		/*z-index: 0;*/
 	}
 
 	.spaceSquid .spaceSquid_hands .spaceSquid_handL
@@ -4785,8 +4815,6 @@
 
 		left: 0;
 		top: 0;
-
-		/*z-index: 1;*/
 	}
 
 	.spaceSquid .spaceSquid_legs .spaceSquid_legs0, .spaceSquid .spaceSquid_legs .spaceSquid_legs1
@@ -4798,8 +4826,6 @@
 
 		left: 0;
 		top: 0;
-
-		/*z-index: 0;*/
 	}
 
 	.spaceSquid .spaceSquid_legs .spaceSquid_legs0
@@ -4878,8 +4904,6 @@
 
 		left: 0;
 		top: 0;
-
-		/*z-index: 0;*/
 	}
 
 	.tween-SpaceSquidBody
@@ -4925,10 +4949,7 @@
 
 		margin: auto;
 
-		/*background: #20202a;*/
 		background: rgba(32, 32, 42, 0.86);
-
-		/*z-index: 1;*/
 	}
 
 	.battleContent_fade_show
@@ -4948,14 +4969,6 @@
 
 	.tween-battleContent_fade
 	{
-/*
-		-webkit-transition: opacity 0.5s linear 1s;
-		transition: opacity 0.5s linear 1s;
-*/
-
-/*		-webkit-transition: opacity 0.3s linear 0.6s;
-		transition: opacity 0.3s linear 0.6s;*/
-
 		-webkit-transition: opacity 800ms linear 300ms;
 		transition: opacity 800ms linear 300ms;
 	}
@@ -4968,9 +4981,6 @@
 		overflow: hidden;
 
 		position: absolute;
-
-		/* Z LOCK */
-		/*z-index: 0;*/
 	}
 
 	#microBattle_fade_wrapper
@@ -4981,10 +4991,6 @@
 		overflow: hidden;
 
 		position: absolute;
-
-		/* Z LOCK */
-/*		z-index: 1;
-		z-index: 2;*/
 	}
 
 /* !!!!!!!!!!!!!! IN temp.css */
@@ -5131,24 +5137,11 @@
 		overflow: hidden;
 
 		position: absolute;
-
-		/* Z LOCK */
-		/*z-index: 2;*/	/* 3 */	/*  QUICK- 2 */
 	}
-
-/*	.microBattle_player_wrapper_focus
-	{
-		z-index: 4;
-	}*/
 
 
 	#microBattle_wrapper .stage-view-y, #microBattle_player_wrapper .stage-view-y
 	{
-/*
-		-webkit-transition-duration: 4s;
-		transition-duration: 4s;
-*/
-
 		-webkit-transition-duration: 1s;
 		transition-duration: 1s;
 	}
@@ -5183,8 +5176,6 @@
 		height: 80px;
 
 		position: absolute;
-
-		/*z-index: 0;*/
 	}
 
 	.microBattle_forest_320x80
@@ -5193,8 +5184,6 @@
 		height: 80px;
 
 		position: absolute;
-
-		/*z-index: 0;*/
 	}
 
 	.microBattle_forest_320x1360
@@ -5203,8 +5192,6 @@
 		height: 1360px;
 
 		position: absolute;
-
-		/*z-index: 0;*/
 	}
 
 	.microBattle_forest_80x200
@@ -5213,8 +5200,6 @@
 		height: 200px;
 
 		position: absolute;
-
-		/*z-index: 0;*/
 	}
 
 	.microBattle_forestMass_0
@@ -5268,19 +5253,16 @@
 	.fireFlame_0
 	{
 		background-position: -80px 0;
-		/*z-index: 2;*/
 	}
 
 	.fireFlame_1
 	{
 		background-position: -40px 0;
-		/*z-index: 1;*/
 	}
 
 	.fireFlame_2
 	{
 		background-position: 0 0;
-		/*z-index: 0;*/
 	}
 
 	.tween-fireFlame_2
@@ -5328,32 +5310,6 @@
 		50%		{transform: scaleY(1);}
 		100%	{transform: scaleY(0.4);}
 	}
-
-/*
-	.tween-fireFlame_0
-	{
-		-webkit-animation: tweenFireFlame0Frames 2s ease-in-out infinite;
-		animation: tweenFireFlame0Frames 2s ease-in-out infinite;
-	}
-
-	@-webkit-keyframes tweenFireFlame0Frames
-	{
-		0%		{-webkit-transform: translateX(0px);}
-		25%		{-webkit-transform: translateX(-2px);}
-		50%		{-webkit-transform: translateX(0px);}
-		75%		{-webkit-transform: translateX(2px);}
-		100%	{-webkit-transform: translateX(0px);}
-	}
-
-	@keyframes tweenFireFlame0Frames
-	{
-		0%		{transform: translateX(0px);}
-		25%		{transform: translateX(-2px);}
-		50%		{transform: translateX(0px);}
-		75%		{transform: translateX(2px);}
-		100%	{transform: translateX(0px);}
-	}
-*/
 
 	.tween-fireFlame_0
 	{
@@ -5427,8 +5383,6 @@
 		height: 40px;
 
 		position: absolute;
-
-		/*z-index: 0;*/
 	}
 
 	.fireLine_4x1
@@ -5437,8 +5391,6 @@
 		height: 40px;
 
 		position: absolute;
-
-		/*z-index: 0;*/
 	}
 
 	.fireLine_6x1
@@ -5447,8 +5399,6 @@
 		height: 40px;
 
 		position: absolute;
-
-		/*z-index: 0;*/
 	}
 
 	.fireLine_2x1 .fire, .fireLine_4x1 .fire, .fireLine_6x1 .fire
@@ -5462,8 +5412,6 @@
 		height: 120px;
 
 		position: absolute;
-
-		/*z-index: 0;*/
 	}
 
 	.microBattle_neonGrass
@@ -5472,8 +5420,6 @@
 		height: inherit;
 
 		position: absolute;
-
-		/*z-index: 0;*/
 	}
 
 	.microBattle_neonGrass0
@@ -5502,11 +5448,6 @@
 		overflow: hidden;
 
 		position: absolute;
-
-		/*Z LOCK*/
-		/*z-index: 5;*/ /* 4 */
-		/*z-index: 0;*/
-		/*z-index: 3;*/
 	}
 
 	#microBattle_transition
@@ -5518,10 +5459,6 @@
 
 		left: 0;
 		top: 0;
-
-		/*Z LOCK*/
-/*		z-index: 6;
-		z-index: 0;*/
 	}
 
 	#microBattle_darkness
@@ -5536,9 +5473,6 @@
 		visibility: hidden;
 
 		opacity: 0;
-
-		/* Z LOCK */
-		/*z-index: 2;*/ /* QUICK- 4 */
 	}
 
 	.tween-microBattle_darkness
@@ -5556,10 +5490,6 @@
 		overflow: hidden;
 
 		position: absolute;
-
-		/* Z LOCK */
-/*		z-index: 3;
-		z-index: 1;*/
 	}
 
 	#microBattle_space_wrapper .microBattle_weather
@@ -5568,10 +5498,6 @@
 		height: inherit;
 
 		position: absolute;
-
-		/*opacity: 0;*/
-
-/*		z-index: 0;*/
 	}
 
 
@@ -5581,24 +5507,18 @@
 		height: 40px;
 
 		position: absolute;
-
-		/* z-index: 1; */
 	}
 
 	#player1
 	{
 		-webkit-transform: translate(120px, 1800px);
 		transform: translate(120px, 1800px);
-
-		/*z-index: 1;*/
 	}
 
 	#player2
 	{
 		-webkit-transform: translate(160px, 1800px);
 		transform: translate(160px, 1800px);
-
-		/*z-index: 0;*/
 	}
 
 	.tween-microBattleFade
@@ -5609,9 +5529,6 @@
 
 	.tween-microBattleWeatherFade
 	{
-/*		-webkit-transition: 1s opacity 1s ease-in-out;
-		transition: 1s opacity 1s ease-in-out;*/
-
 		-webkit-transition: opacity 1s linear;
 		transition: opacity 1s linear;
 	}
@@ -5639,11 +5556,6 @@
 
 	.tween-battleScreen
 	{
-/*
-		-webkit-transition: -webkit-transform 1s ease-in-out;
-		transition: transform 1s ease-in-out;
-*/
-
 		-webkit-transition: -webkit-transform 600ms ease-in-out;
 		transition: transform 600ms ease-in-out;
 	}
@@ -5660,11 +5572,6 @@
 
 	.tween-battleScreenFade
 	{
-/*
-		-webkit-transition: opacity 0.5s linear 1s;
-		transition: opacity 0.5s linear 1s;
-*/
-
 		-webkit-transition: opacity 300ms linear 600ms;
 		transition: opacity 300ms linear 600ms;
 	}
@@ -5684,11 +5591,6 @@
 	position: absolute;
 
 	left: 0; right: 0; top: 0; bottom: 0;
-
-	/*background: #20202a;*/
-
-/*	-webkit-transform: translateX(100%);
-	transform: translateX(100%);*/
 
 	z-index: 5;
 }
@@ -5710,9 +5612,6 @@
 	-webkit-transition	: -webkit-transform 1s ease;
 	transition 			: transform 1s ease;
 }
-
-
-
 
 .failScreen_wrapper
 {
@@ -5881,6 +5780,129 @@
 
 
 /* ----------------------------------------------------------------------- TRIGGERS */
+
+
+
+
+/* ----------------------------------------------------------------------- MENU TAB */
+
+#menu_strip
+{
+	width: 100%;
+	height: 60px;
+
+	position: absolute;
+
+	left: 0; top: 0;
+}
+
+.menu_tab
+{
+	width: 160px;
+	height: 80px;
+
+	position: relative;
+
+	margin: 0 auto;
+}
+
+.menuTab_show
+{
+	opacity: 1;
+
+	-webkit-transform: translateY(0px);
+	transform: translateY(0px);
+}
+
+.menuTab_hide
+{
+	opacity: 0;
+
+	-webkit-transform: translateY(-60px);
+	transform: translateY(-60px);
+}
+
+.tween-menuTab
+{
+	-webkit-transition: 400ms ease-in-out;
+	transition: 400ms ease-in-out;
+}
+
+.menu_bg
+{
+	width: 120px;
+	height: 60px;
+
+	background: rgba(255, 255, 255, 0.9);
+
+  border-radius: 0 0 60px 60px;
+	box-shadow: 0px 0px 60px rgba(218, 255, 0, 0.4);
+
+	position: absolute;
+
+	left: 0; right: 0; top: 0; bottom: 0;
+
+	margin: 0 auto;
+
+	-webkit-transform: translateY(-10px);
+	transform: translateY(-10px);
+}
+
+.tween-menuBG
+{
+	-webkit-transition: 200ms linear;
+	transition: 200ms linear;
+}
+
+.menu_hit
+{
+	width: 120px;
+	height: 60px;
+
+	position: absolute;
+
+	left: 0; right:0; top:0; bottom: 0;
+	margin: 0 auto;
+
+	pointer-events: auto;
+	cursor: pointer;
+}
+
+#menu_strip .menu_tab:hover .menu_bg
+{
+	-webkit-transform: translateY(0px);
+	transform: translateY(0px);
+}
+
+.menu_sprite
+{
+	width: 160px;
+	height: 60px;
+
+	position: absolute;
+}
+
+.tween-menuSprite
+{
+	-webkit-animation: tweenMenuSpriteFrames 400ms linear infinite;
+	animation: tweenMenuSpriteFrames 400ms linear infinite;
+}
+
+@-webkit-keyframes tweenMenuSpriteFrames
+{
+	0%		{-webkit-transform: translateY(0px);}
+	50%		{-webkit-transform: translateY(-4px);}
+	100%	{-webkit-transform: translateY(0px);}
+}
+
+@keyframes tweenMenuSpriteFrames
+{
+	0%		{transform: translateY(0px);}
+	50%		{transform: translateY(-4px);}
+	100%	{transform: translateY(0px);}
+}
+
+/* ----------------------------------------------------------------------- MENU TAB */
 
 
 
@@ -6072,17 +6094,6 @@
 	transition-delay: 200ms;
 }
 
-
-/*.multiUseInfo_cont_entrance .multiUseInfo_br
-{
-	position: absolute;
-
-	right: 0; bottom: 0;
-
-	margin: 0 40px 40px 0;
-
-}*/
-
 .multiUseInfo_cont_entrance .multiUseInfo_br
 {
 	position: absolute;
@@ -6097,7 +6108,7 @@
 
 .multiUseInfo_br p:first-of-type
 {
-	/*margin-right: 0.4em;*/
+
 }
 
 .multiUseInfo_br .multiUseInfo_option
@@ -6345,11 +6356,6 @@
 
 }
 
-/*.multiUseInfo_options .multiUseInfo_br p:first-of-type
-{
-	margin-right: 0.4em;
-}
-*/
 .multiUseInfo_options .multiUseInfo_options_option_about
 {
 	color: #ff0070;
@@ -6377,11 +6383,6 @@
 
 }
 
-/*.multiUseInfo_about .multiUseInfo_br p:first-of-type
-{
-	margin-right: 0.4em;
-}*/
-
 .multiUseInfo_about .multiUseInfo_about_option_read
 {
 	color: #17e69d;
@@ -6408,11 +6409,6 @@
 {
 
 }
-
-/*.multiUseInfo_sound .multiUseInfo_br p:first-of-type
-{
-	margin-right: 0.4em;
-}*/
 
 .multiUseInfo_sound .multiUseInfo_sound_option_false
 {
@@ -6472,15 +6468,11 @@
 .multiUseInfo_fail .multiUseInfo_fail_portal
 {
 	bottom: 0;
-
-	/*z-index: 0;*/
 }
 
 .multiUseInfo_fail .multiUseInfo_fail_character
 {
 	top: 0;
-
-	/*z-index: 1;*/
 }
 
 .multiUseInfo_fail .enemy_zombie
@@ -7253,8 +7245,6 @@
 	width: 320px;
 	height: 2000px;
 
-	/*background: rgba(255, 0, 0, 0.5);*/
-
 	position: absolute;
 
 	left: 0; right: 0; top: 0; bottom: 0;
@@ -7325,8 +7315,6 @@
 .color-event
 {
 	opacity: 0;
-/*	visibility: hidden;
-	opacity: 0;*/
 }
 
 .color-event div
@@ -7672,3 +7660,130 @@
 }
 
 /* ----------------------------------------------------------------------- TRAVEL_OBSERVE */
+
+
+
+/* ----------------------------------------------------------------------- FOGGY */
+
+.foggyEdge, .foggyEdge_portalScreen
+{
+	width: 100%;
+	height: 100%;
+
+	position: absolute;
+}
+
+.foggyEdge_hide
+{
+	opacity: 0;
+}
+
+.foggyEdge_show
+{
+	opacity: 1;
+}
+
+.tween-foggyEdge
+{
+	-webkit-transition 	: 400ms linear;
+	transition 					: 400ms linear;
+}
+
+.foggyEdge-portal
+{
+	background: -webkit-radial-gradient(center, ellipse cover, rgba(255, 255, 255, 0) 60%, rgba(255, 255, 255, 0.4) 100%);
+	background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0) 60%, rgba(255, 255, 255, 0.4) 100%);
+}
+
+.foggyEdge-battle
+{
+	background: -webkit-radial-gradient(center, ellipse cover, rgba(0, 71, 83, 0) 60%, rgba(0, 71, 83, 0.4) 100%);
+	background: radial-gradient(ellipse at center, rgba(0, 71, 83, 0) 60%, rgba(0, 71, 83, 0.4) 100%);
+}
+
+.foggyEdge-forest
+{
+	background: -webkit-radial-gradient(center, ellipse cover, rgba(240, 190, 0, 0) 60%, rgba(240, 190, 0, 0.5) 100%);
+	background: radial-gradient(ellipse at center, rgba(240, 190, 0, 0) 60%, rgba(240, 190, 0, 0.5) 100%);
+}
+
+.foggyEdge-ice
+{
+	background: -webkit-radial-gradient(center, ellipse cover, rgba(218, 255, 0, 0) 60%, rgba(218, 255, 0, 0.4) 100%);
+	background: radial-gradient(ellipse at center, rgba(218, 255, 0, 0) 60%, rgba(218, 255, 0, 0.4) 100%);
+}
+
+/* ----------------------------------------------------------------------- FOGGY */
+
+
+
+
+/* ----------------------------------------------------------------------- BEHIND WORLD */
+
+.sunLight_beam
+{
+	width: 100%;
+	height: 160px;
+
+	position: absolute;
+}
+
+.sunLight_beam_hide
+{
+	opacity: 0;
+}
+
+.tween-sunLight_beam
+{
+	-webkit-transition: opacity 250ms ease-out;
+	transition: opacity 250ms ease-out;
+}
+
+.sunLight_light
+{
+	width: inherit;
+	height: inherit;
+
+	background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+	background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+}
+
+.tween-sunLight_light
+{
+	-webkit-animation: tweenSunLightLightFrames 200ms linear infinite;
+	animation: tweenSunLightLightFrames 200ms linear infinite;
+}
+
+@-webkit-keyframes tweenSunLightLightFrames
+{
+	0%		{opacity: 1;}
+	50%		{opacity: 0.8;}
+	100%	{opacity: 1;}
+}
+
+@keyframes tweenSunLightLightFrames
+{
+	0%		{opacity: 1;}
+	50%		{opacity: 0.8;}
+	100%	{opacity: 1;}
+}
+
+.sun_static
+{
+	width: 384px;
+	height: 384px;
+
+	position: absolute;
+
+	right: -10px;
+	top: -10px;
+}
+
+.sun_inner
+{
+	width: inherit;
+	height: inherit;
+}
+
+/* ----------------------------------------------------------------------- BEHIND WORLD */
+

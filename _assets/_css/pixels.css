@@ -578,6 +578,14 @@
 	background-size: 384px 384px;
 }
 
+.pixels_menu
+{
+	background-image: url(../_img/optionsTab_1x.png);
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	background-size: 160px 60px;
+}
+
 /* ----------------------------------------------------------------------- GENERAL */
 
 
@@ -977,6 +985,11 @@
 		{
 			background-image: url(../_img/gate_1x.png);
 		}
+
+		.pixels_menu
+		{
+			background-image: url(../_img/optionsTab_1x.png);
+		}
 	}
 
 
@@ -1323,6 +1336,11 @@
 		.pixels_gate
 		{
 			background-image: url(../_img/gate_2x.png);
+		}
+
+		.pixels_menu
+		{
+			background-image: url(../_img/optionsTab_2x.png);
 		}
 	}
 

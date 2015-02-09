@@ -308,6 +308,8 @@ function move_init(run)
 			$("#touchPad .touchPad-cont").removeClass("touchPad_C_hide").addClass("touchPad_C_show");
 		}
 
+		$("#menu_strip .menu_tab").removeClass("menuTab_hide").addClass("menuTab_show");
+
 		// TouchUI.js
 		// ADD WHEN HTML UPDATED
 		// $(window)[0].addEventListener("touchstart", touch_lock, false);
@@ -337,6 +339,8 @@ function move_init(run)
 
 			$("#" + control.touchData.indicator).removeClass("touchPad_C_signal_show").addClass("touchPad_C_signal_hide");
 		}
+
+		$("#menu_strip .menu_tab").removeClass("menuTab_show").addClass("menuTab_hide");
 
 		// TouchUI.js
 		// ADD WHEN HTML UPDATED

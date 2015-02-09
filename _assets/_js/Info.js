@@ -13,14 +13,24 @@
 	{
 		if(run)
 		{
+			// $("#menu_strip .menu_tab").removeClass("menuTab_hide").addClass("menuTab_show");
+
 			$(".options-trigger")[0].addEventListener("click", optionsTrigger_event, false);
 			$(".options-trigger")[0].addEventListener("touchend", optionsTrigger_event, false);
+
+			$("#menu_strip .options-trigger")[0].addEventListener("click", optionsTrigger_event, false);
+			$("#menu_strip .options-trigger")[0].addEventListener("touchend", optionsTrigger_event, false);
 		}
 
 		else
 		{
+			// $("#menu_strip .menu_tab").removeClass("menuTab_show").addClass("menuTab_hide");
+
 			$(".options-trigger")[0].removeEventListener("click", optionsTrigger_event, false);
 			$(".options-trigger")[0].removeEventListener("touchend", optionsTrigger_event, false);
+
+			$("#menu_strip .options-trigger")[0].removeEventListener("click", optionsTrigger_event, false);
+			$("#menu_strip .options-trigger")[0].removeEventListener("touchend", optionsTrigger_event, false);
 		}
 	}
 
