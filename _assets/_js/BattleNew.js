@@ -2327,6 +2327,8 @@ function battleEnd_battleOver_setControlsBasic()
 
 	if(BATTLE_NAV.game.result === "LOSE")
 	{
+		behindWorld_outcome("BAD_SKY");
+
 		control.writeSpawn({x:control.fl.enter_x, y:control.fl.enter_y});
 
 		autoMove_init("SPAWN");
@@ -2486,6 +2488,8 @@ function worldReturn_slideReturnApply()
 function worldReturn_slideReturnComplete()
 {
 	$("#display_wrapper").removeClass("tween-event-slide");
+
+	behindWorld_outcome("RESET_SKY");
 
 	$(".tween-sunLight_beam")[0].addEventListener("webkitTransitionEnd", worldReturn_slideReturnPurge, false);
 	$(".tween-sunLight_beam")[0].addEventListener("transitionend", worldReturn_slideReturnPurge, false);

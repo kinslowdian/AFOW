@@ -1211,3 +1211,26 @@ function level_clear()
 	}
 }
 
+function behindWorld_outcome(outcomeType)
+{
+	switch(outcomeType)
+	{
+		case "BAD_SKY":
+		{
+			$(".behindWorld .behindWorld_bad").removeClass("behindWorldBadHide");
+
+			break;
+		}
+
+		case "RESET_SKY":
+		{
+			if(!$(".behindWorld .behindWorldBadHide"))
+			{
+				$(".behindWorld .behindWorld_bad").addClass("behindWorldBadHide");
+			}
+
+			break;
+		}
+	}
+}
+
