@@ -792,30 +792,37 @@ function battleNav_removeSelectionEnd(event)
 	$("." + BATTLE_NAV.settings.options_tween)[0].removeEventListener("webkitTransitionEnd", battleNav_removeSelectionEnd, false);
 	$("." + BATTLE_NAV.settings.options_tween)[0].removeEventListener("transitionend", battleNav_removeSelectionEnd, false);
 
+
 	if(BATTLE_NAV.html.navBattle == 0)
 	{
-		battleNav_populate();
+		trace("battleNav_removeSelectionEnd IF");
+
+		battleNav_populate(true);
 	}
 
 	else
 	{
+		trace("battleNav_removeSelectionEnd ELSE");
+
 		$("#battle-nav-fight").html(BATTLE_NAV.html.navBattle);
 
-		battleNav_speechBubbles();
+		battleNav_populate(false);
 	}
 }
 
-function battleNav_populate()
+function battleNav_populate(saveHTML)
 {
 	$("#battle-nav").html("");
 
-	$("#battle-nav-fight").addClass("tween-battle-nav-fight");
+	if(saveHTML)
+	{
+		$("#battle-nav-fight").addClass("tween-battle-nav-fight");
 
-	BATTLE_NAV.html.navBattle = $("#battle-nav-fight").html();
+		$("#battleNav-player1 .battleNav-player-head").addClass("battleNav-player-head-" + BATTLE_NAV.player_1.headType);
+		$("#battleNav-player2 .battleNav-player-head").addClass("battleNav-player-head-" + BATTLE_NAV.player_2.headType);
 
-	// HEADS
-	$("#battleNav-player1 .battleNav-player-head").addClass("battleNav-player-head-" + BATTLE_NAV.player_1.headType);
-	$("#battleNav-player2 .battleNav-player-head").addClass("battleNav-player-head-" + BATTLE_NAV.player_2.headType);
+		BATTLE_NAV.html.navBattle = $("#battle-nav-fight").html();
+	}
 
 	// SPEECH
 	$("#battleNav-player1 .battleNav-player-choice").addClass("battleNav-player-choice-" + BATTLE_NAV.player_1.selection.toUpperCase());
@@ -1556,6 +1563,7 @@ function battleNav_anotherRound(event)
 	$(".tween-battle-nav-fight")[0].removeEventListener("transitionend", battleNav_anotherRound, false);
 
 	trace("ANOTHER-ROUND --- function2()");
+
 
 	$("#battle-nav-fight").html("");
 

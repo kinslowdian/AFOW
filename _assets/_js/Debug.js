@@ -1,29 +1,29 @@
-	/* REMOVE trace(); FROM ALL SCRIPTS WHEN BUILT */
+/* REMOVE trace(); FROM ALL SCRIPTS WHEN BUILT */
 
-	var trace = function(str)
-				{
-					console.log(str);
-				};
+var trace = function(str)
+			{
+				console.log(str);
+			};
 
-	var debug = {};
+var debug = {};
 
-	debug.touch = false;
-	debug.hitTest = false
-	debug.forceBreak = false;
-	debug.useHard = false;
+debug.touch = false;
+debug.hitTest = false
+debug.forceBreak = false;
+debug.useHard = false;
 
-	var traceHard = function(str)
+var traceHard = function(str)
+{
+	if($("#debug"))
 	{
-		if($("#debug"))
-		{
-			$("#debug p").text(str);
-		}
-	};
-
-	function debug_init()
-	{
-		if(!debug.useHard)
-		{
-			$("#debug").remove();
-		}
+		$("#debug p").text(str);
 	}
+};
+
+function debug_init()
+{
+	if(!debug.useHard)
+	{
+		$("#debug").remove();
+	}
+}
