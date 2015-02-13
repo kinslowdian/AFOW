@@ -19,6 +19,7 @@ var PORTAL_TRAVEL;
 
 var game_levelChange = false;
 var game_introEntrance = true;
+var game_levelFinal = false;
 
 // MERGED
 
@@ -804,7 +805,13 @@ function temp_findPortalExit()
 		{
 			if(portals_ARR[i].bossEntrance)
 			{
-				alert("FINAL LEVEL");
+				// FINAL_LEVEL
+				if(!game_levelFinal)
+				{
+					game_levelFinal = true;
+
+					finalLevelTriggered();
+				}
 			}
 
 			else
@@ -1584,6 +1591,15 @@ function observe_monkeyShow()
 	{
 		$(".tween-monkeyObserve")[0].addEventListener("webkitTransitionEnd", observe_monkeyShowEvent, false);
 		$(".tween-monkeyObserve")[0].addEventListener("transitionend", observe_monkeyShowEvent, false);
+	}
+
+	if(game_levelFinal)
+	{
+		game_levelFinal = false;
+
+		// FINAL_LEVEL
+		$(".tween-monkeyObserve")[0].addEventListener("webkitTransitionEnd", finalLevelAfterPortalFX, false);
+		$(".tween-monkeyObserve")[0].addEventListener("transitionend", finalLevelAfterPortalFX, false);
 	}
 
 	$("#monkeyObserve .monkeyObserve-monkey").addClass("monkeyObserve-show");
