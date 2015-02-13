@@ -125,15 +125,22 @@ function theBattle_init(obj)
 
 function theBattle_build()
 {
-	var html;
+	var html_lev;
+	var html_nav;
 
 	html_lib_reuse();
 
-	html = html_lib_use("_level_battle", true, true);
+	html_lev = html_lib_use("_level_battle", true, true);
+	html_nav = html_lib_use("_battleNavUItext", true, true);
 
 	// $("#display_wrapper #display_inner_info #battleScreen").html(html);
 
-	$("#display_wrapper").html(html);
+	// LEVEL HTML PLUG
+	$("#display_wrapper").html(html_lev);
+
+	// NAV HTML PLUG
+	$("#display_wrapper .battleNav_UI_TEXT").html(html_nav);
+
 	display_setBG();
 
 	theBattle.grave.html = html_lib_use(theBattle.grave.ref, false, true);
