@@ -265,6 +265,9 @@ function battleEngine_battleStart()
 {
 	BATTLE_NAV.game.result = battleEngine.attack(player1, player2);
 
+	//TODO HACK WIN
+	BATTLE_NAV.game.result = "WIN";
+
   battleEngine_battleResults();
 }
 

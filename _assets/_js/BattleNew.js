@@ -1609,7 +1609,10 @@ function battleNav_anotherRoundInPlace(event)
 
 function battleNav_battleOver()
 {
-	$("#microBattle_resultWipe_wrapper").html(theBattle.html.wipeWrapper);
+	if(!game_levelFinal)
+	{
+		$("#microBattle_resultWipe_wrapper").html(theBattle.html.wipeWrapper);
+	}
 
 	// battleEnd_setup();
 
@@ -1638,8 +1641,18 @@ function battleNav_outView(event)
 	$(".tween-battle-cloud")[0].removeEventListener("webkitTransitionEnd", battleNav_outView, false);
 	$(".tween-battle-cloud")[0].removeEventListener("transitionend", battleNav_outView, false);
 
-	allBattleOver_battleEnd_return_show();
+	// FINAL LEVEL ROUTE
+	if(game_levelFinal)
+	{
+		// TODO Temp.js
+		test_finalBattle_result();
+	}
 
+	// DEFAULT ROUTE
+	else
+	{
+		allBattleOver_battleEnd_return_show();
+	}
 }
 
 ///////////////////////////////// --- BATTLE_NAV */

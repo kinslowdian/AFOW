@@ -1595,8 +1595,6 @@ function observe_monkeyShow()
 
 	if(game_levelFinal)
 	{
-		game_levelFinal = false;
-
 		// FINAL_LEVEL
 		$(".tween-monkeyObserve")[0].addEventListener("webkitTransitionEnd", finalLevelAfterPortalFX, false);
 		$(".tween-monkeyObserve")[0].addEventListener("transitionend", finalLevelAfterPortalFX, false);

@@ -18,7 +18,7 @@ function finalLevelTriggered()
 	$("#display_finalLevel").html(html_lev);
 
 	// NAV HTML PLUG
-	// $("#display_finalLevel .battleNav_UI_TEXT").html(html_nav);
+	$("#display_finalLevel .battleNav_UI_TEXT").html(html_nav);
 
 	html_lib_empty();
 }
@@ -206,15 +206,15 @@ function finalLevlSeq_storm(event)
 
 function finalLevSeq_stormEvent(event)
 {
-	var delay_demo;
-
 	trace(event);
 
 	$("#display_finalLevel #finalLevel_wrapper .finalLevel_part1 .tween-cloudySky")[0].removeEventListener("webkitTransitionEnd", finalLevSeq_stormEvent, false);
 
 	$("#display_finalLevel #finalLevel_wrapper .finalLevel_part1 .tween-cloudySky")[0].removeEventListener("transitionend", finalLevSeq_stormEvent, false);
 
-	delay_demo = setTimeout(finalLevelSeq_bossDefeat, 1 * 1000);
+	// RECYCLE BATTLE NAV
+	// TODO Temp.js
+	test_finalBattle_intoBattle();
 }
 
 function finalLevelSeq_bossDefeat()
