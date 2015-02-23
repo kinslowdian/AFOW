@@ -710,6 +710,20 @@ div[class*='tween-']
 	background-size: 320px 240px;
 }
 
+.vectors_lightningForkTile
+{
+	background-image: url(../_img/lightningForkTile.svg);
+	background-position: left bottom;
+	background-repeat: repeat-y;
+}
+
+.vectors_lightningCloud
+{
+	background-image: url(../_img/lightningCloud.svg);
+	background-position: 0 0;
+	background-repeat: no-repeat;
+}
+
 /* ----------------------------------------------------------------------- VECTOR */
 
 

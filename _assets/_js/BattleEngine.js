@@ -265,8 +265,11 @@ function battleEngine_battleStart()
 {
 	BATTLE_NAV.game.result = battleEngine.attack(player1, player2);
 
-	//TODO HACK WIN
-	BATTLE_NAV.game.result = "WIN";
+	// TODO HACK WIN
+	// BATTLE_NAV.game.result = "WIN";
+
+	// TODO HACK LOSE
+	BATTLE_NAV.game.result = "LOSE";
 
   battleEngine_battleResults();
 }

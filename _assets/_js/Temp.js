@@ -38,6 +38,6 @@ function test_finalBattle_result()
 
 	if(BATTLE_NAV.game.result === "LOSE")
 	{
-
+		finalLevelSeq_bossWin();
 	}
 }
