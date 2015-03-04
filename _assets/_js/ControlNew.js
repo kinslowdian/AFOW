@@ -790,6 +790,13 @@ function temp_findPortalEnter()
 			portalTarget = {};
 			portalTarget = portals_ARR[i];
 
+			// TODO
+			if(portalTarget.bossEntrance)
+			{
+				// FIRED JUST TO STORE HTML AND X AND Y POSITIONS OF PLAYER
+				preBattleOptions_init();
+			}
+
 			break;
 		}
 	}

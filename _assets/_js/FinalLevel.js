@@ -64,8 +64,10 @@ function finalLevelSeq_showEvent(event)
 
 	$("#display_finalLevel #finalLevel_wrapper .foggyEdge").removeClass("foggyEdge_hide").addClass("foggyEdge_show");
 
-	// TODO FLUSH LEVEL OUT FOR OPTIMISATION
-	// MAY REQUIRE THE HTML STATE TO BE STORED FOR RETURNING TO THE GAME
+	// TODO MAY REQUIRE THE HTML STATE TO BE STORED FOR RETURNING TO THE GAME
+
+	// FLUSH LEVEL OUT FOR OPTIMISATION
+	$("#display_wrapper").html("");
 
 	delay = setTimeout(finalLevelSeq_zoom, 0.5 * 1000);
 }
@@ -341,10 +343,47 @@ function finalLevelSeq_lightningCloudEvent(event)
 
 function finalLevelSeq_lightningSecondStrike(event)
 {
+	var delay;
+
 	$("#display_finalLevel #finalLevel_wrapper .finalLevel_lightning")[0].removeEventListener("webkitAnimationEnd", finalLevelSeq_lightningSecondStrike, false);
 	$("#display_finalLevel #finalLevel_wrapper .finalLevel_lightning")[0].removeEventListener("animationend", finalLevelSeq_lightningSecondStrike, false);
 
 	$("#display_finalLevel #finalLevel_wrapper .finalLevel_lightningCloudSprite").removeClass("finalLevelLightningCloudSprite_show").addClass("finalLevelLightningCloudSprite_rise");
+
+	// TODO
+	delay = setTimeout(finalLevelSeq_returnAfterLose, 4 * 1000);
+}
+
+// TODO
+
+function finalLevelSeq_returnAfterLose()
+{
+	$("#display_wrapper").html(preBattleOptions.html.display_inner_world);
+	$("#display_wrapper .player").html("");
+	$("#display_wrapper .player").html(control.html_player);
+
+	$("#display_wrapper .hitTest").removeAttr("style");
+
+	bossTaunt_init();
+
+	$("#display_finalLevel #finalLevel_wrapper .finalLevel_part1").removeClass("tween-finalLevelPart").addClass("tween-finalLevelPartEnd");
+
+	$("#display_finalLevel #finalLevel_wrapper .tween-finalLevelPartEnd")[0].addEventListener("webkitTransitionEnd", finalLevelSeq_returnAfterLoseEvent, false);
+	$("#display_finalLevel #finalLevel_wrapper .tween-finalLevelPartEnd")[0].addEventListener("transitionend", finalLevelSeq_returnAfterLoseEvent, false);
+
+	$("#display_finalLevel #finalLevel_wrapper .finalLevel_part1").removeClass("finalLevelPart_showX").addClass("finalLevelPart_hideX");
+
+
+}
+
+function finalLevelSeq_returnAfterLoseEvent(event)
+{
+	$("#display_finalLevel #finalLevel_wrapper .tween-finalLevelPartEnd")[0].removeEventListener("webkitTransitionEnd", finalLevelSeq_returnAfterLoseEvent, false);
+	$("#display_finalLevel #finalLevel_wrapper .tween-finalLevelPartEnd")[0].removeEventListener("transitionend", finalLevelSeq_returnAfterLoseEvent, false);
+
+	$("#display_finalLevel #finalLevel_wrapper .finalLevel_part1").remove();
+
+	bossTaunt_wait();
 }
 
 ////////////////////// BOSS BATTLE RESULT == LOSE

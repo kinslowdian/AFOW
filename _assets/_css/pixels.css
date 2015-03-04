@@ -656,6 +656,13 @@ div[class*='tween-']
 	background-size: 320px 320px;
 }
 
+.pixels_bossTauntScreen
+{
+	background-image: url(../_img/bossTauntScreen_1x.png);
+	background-repeat: no-repeat;
+	background-size: 564px 120px;
+}
+
 /* ----------------------------------------------------------------------- GENERAL */
 
 
@@ -1109,6 +1116,11 @@ div[class*='tween-']
 	{
 		background-image: url(../_img/blossom_2_1x.png);
 	}
+
+	.pixels_bossTauntScreen
+	{
+		background-image: url(../_img/bossTauntScreen_1x.png);
+	}
 }
 
 
@@ -1495,6 +1507,11 @@ div[class*='tween-']
 	.pixels_blossom2
 	{
 		background-image: url(../_img/blossom_2_2x.png);
+	}
+
+	.pixels_bossTauntScreen
+	{
+		background-image: url(../_img/bossTauntScreen_2x.png);
 	}
 }
 
