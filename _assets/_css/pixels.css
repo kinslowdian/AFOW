@@ -656,11 +656,20 @@ div[class*='tween-']
 	background-size: 320px 320px;
 }
 
-.pixels_bossTauntScreen
+.pixels_resultOutcomeScreen
 {
-	background-image: url(../_img/bossTauntScreen_1x.png);
 	background-repeat: no-repeat;
-	background-size: 564px 120px;
+	background-size: 604px 120px;
+}
+
+.pixels_resultOutcomeScreenLose
+{
+	background-image: url(../_img/outcomeSprite_lose_1x.png);
+}
+
+.pixels_resultOutcomeScreenWin
+{
+	background-image: url(../_img/outcomeSprite_win_1x.png);
 }
 
 /* ----------------------------------------------------------------------- GENERAL */
@@ -1117,9 +1126,14 @@ div[class*='tween-']
 		background-image: url(../_img/blossom_2_1x.png);
 	}
 
-	.pixels_bossTauntScreen
+	.pixels_resultOutcomeScreenLose
 	{
-		background-image: url(../_img/bossTauntScreen_1x.png);
+		background-image: url(../_img/outcomeSprite_lose_1x.png);
+	}
+
+	.pixels_resultOutcomeScreenWin
+	{
+		background-image: url(../_img/outcomeSprite_win_1x.png);
 	}
 }
 
@@ -1512,6 +1526,16 @@ div[class*='tween-']
 	.pixels_bossTauntScreen
 	{
 		background-image: url(../_img/bossTauntScreen_2x.png);
+	}
+
+	.pixels_resultOutcomeScreenLose
+	{
+		background-image: url(../_img/outcomeSprite_lose_2x.png);
+	}
+
+	.pixels_resultOutcomeScreenWin
+	{
+		background-image: url(../_img/outcomeSprite_win_2x.png);
 	}
 }
 

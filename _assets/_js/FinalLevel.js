@@ -65,6 +65,19 @@ function finalLevelSeq_showEvent(event)
 	$("#display_finalLevel #finalLevel_wrapper .foggyEdge").removeClass("foggyEdge_hide").addClass("foggyEdge_show");
 
 	// TODO MAY REQUIRE THE HTML STATE TO BE STORED FOR RETURNING TO THE GAME
+	theBattle = {};
+
+	theBattle.html = {};
+	theBattle.html.display_inner_world = $("#display_wrapper").html();
+
+	theBattle.html.navWrapper = "";
+	theBattle.html.fadeWrapper = "";
+	theBattle.html.wipeWrapper = "";
+
+	theBattle.playerStore = {};
+
+	theBattle.playerStore.x_return = control.fl.target_safe_x;
+	theBattle.playerStore.y_return = control.fl.target_safe_y;
 
 	// FLUSH LEVEL OUT FOR OPTIMISATION
 	$("#display_wrapper").html("");
@@ -358,11 +371,15 @@ function finalLevelSeq_lightningSecondStrike(event)
 
 function finalLevelSeq_returnAfterLose()
 {
-	$("#display_wrapper").html(preBattleOptions.html.display_inner_world);
-	$("#display_wrapper .player").html("");
-	$("#display_wrapper .player").html(control.html_player);
+	allBattleOver_battleEnd_return_end("BOSS_FAIL");
 
-	$("#display_wrapper .hitTest").removeAttr("style");
+
+
+	// $("#display_wrapper").html(preBattleOptions.html.display_inner_world);
+	// $("#display_wrapper .player").html("");
+	// $("#display_wrapper .player").html(control.html_player);
+
+	// $("#display_wrapper .hitTest").removeAttr("style");
 
 	bossTaunt_init();
 
@@ -382,6 +399,8 @@ function finalLevelSeq_returnAfterLoseEvent(event)
 	$("#display_finalLevel #finalLevel_wrapper .tween-finalLevelPartEnd")[0].removeEventListener("transitionend", finalLevelSeq_returnAfterLoseEvent, false);
 
 	$("#display_finalLevel #finalLevel_wrapper .finalLevel_part1").remove();
+
+	game_levelFinal = false;
 
 	bossTaunt_wait();
 }

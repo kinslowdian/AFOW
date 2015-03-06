@@ -820,6 +820,8 @@ function battleFail_display()
 
 function battleFail_displayEnd(event)
 {
+	var delay;
+
 	var delay_failScreen;
 
 	$(".multiUseInfo_fail .multiUseInfo_fail_character")[0].removeEventListener("webkitTransitionEnd", battleFail_displayEnd, false);
@@ -829,8 +831,13 @@ function battleFail_displayEnd(event)
 
 	delay_failScreen = new AnimationTimer();
 
-	timerList_add(delay_failScreen);
-	delay_failScreen.time(1.5, battleFail_removeInit);
+	// TODO BREAK
+	// timerList_add(delay_failScreen);
+	// delay_failScreen.time(1.5, battleFail_removeInit);
+
+	resultOutcome_init();
+
+	delay = setTimeout(resultOutcome_request, 2 * 1000);
 }
 
 function battleFail_removeInit()

@@ -23,6 +23,8 @@ var BattleEngine = function()
 	this.difficulty.super		= 0;
 
 	this.playerStore 				= {};
+
+	this.firstZombie = true;
 };
 
 BattleEngine.prototype.setDifficulty = function(diff)

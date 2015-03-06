@@ -2422,12 +2422,26 @@ function allBattleOver_battleEnd_return_showInit(event)
 		exitFrame = setTimeout(oneUseInfoScreen_drop, 20);
 	}
 
+	// TODO FIRST SHOW ZOMBIE SCREEN THEN DEFAULT FAIL SCREEN
 	if(BATTLE_NAV.game.result === "LOSE")
 	{
+		if(battleEngine.firstZombie && !game_levelFinal)
+		{
+			// TODO
+			// battleEngine.firstZombie = false;
 
-		multiUseInfoScreen_build("#options_wrapper .options-choice", "BATTLE_FAIL");
+			multiUseInfoScreen_build("#options_wrapper .options-choice", "BATTLE_FAIL");
 
-		exitFrame = setTimeout(multiUseInfoScreen_drop, 20);
+			exitFrame = setTimeout(multiUseInfoScreen_drop, 20);
+		}
+
+		// TODO
+		else
+		{
+			resultOutcome_init();
+
+			exitFrame = setTimeout(resultOutcome_request, 20);
+		}
 	}
 }
 
@@ -2455,6 +2469,12 @@ function allBattleOver_battleEnd_return_end(route)
 	if(route === "LOSE")
 	{
 		battleEnd_battleOver_returnLose();
+	}
+
+	// TODO
+	if(route === "BOSS_FAIL")
+	{
+		battleEnd_battleOver_setControlsBasic();
 	}
 
 	$(".foggyEdge").removeClass("foggyEdge-battle").addClass("foggyEdge-" + LEVEL_MAIN.landType);

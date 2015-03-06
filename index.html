@@ -112,45 +112,6 @@
 
 		<link href="_assets/_css/game.css" rel="stylesheet" type="text/css">
 
-		<script type="text/javascript" src="_assets/_js/Debug.js"></script>
-
-		<script type="text/javascript" src="_assets/_js/_libs/_jquery/jquery-2.0.3.js"></script>
-		<script type="text/javascript" src="_assets/_js/_libs/_collision/jquery-collision.js"></script>
-
-		<script type="text/javascript" src="_assets/_js/_libs/_SoundJS/src/createjs/utils/Proxy.js"></script>
-		<script type="text/javascript" src="_assets/_js/_libs/_SoundJS/src/createjs/utils/IndexOf.js"></script>
-		<script type="text/javascript" src="_assets/_js/_libs/_SoundJS/src/createjs/events/Event.js"></script>
-		<script type="text/javascript" src="_assets/_js/_libs/_SoundJS/src/createjs/events/EventDispatcher.js"></script>
-	  <script type="text/javascript" src="_assets/_js/_libs/_SoundJS/src/soundjs/Sound.js"></script>
-	  <script type="text/javascript" src="_assets/_js/_libs/_SoundJS/src/soundjs/WebAudioPlugin.js"></script>
-	  <script type="text/javascript" src="_assets/_js/_libs/_SoundJS/src/soundjs/HTMLAudioPlugin.js"></script>
-
-
-		<script type="text/javascript" src="_assets/_js/Game.js"></script>
-		<script type="text/javascript" src="_assets/_js/Game_Level.js"></script>
-		<script type="text/javascript" src="_assets/_js/ControlNew.js"></script>
-		<script type="text/javascript" src="_assets/_js/BattleEngine.js"></script>
-		<script type="text/javascript" src="_assets/_js/BattleNew.js"></script>
-		<script type="text/javascript" src="_assets/_js/Data.js"></script>
-		<script type="text/javascript" src="_assets/_js/DisplayNew.js"></script>
-		<script type="text/javascript" src="_assets/_js/AnimationEventManager.js"></script>
-		<script type="text/javascript" src="_assets/_js/Sound.js"></script>
-		<script type="text/javascript" src="_assets/_js/Info.js"></script>
-		<script type="text/javascript" src="_assets/_js/Triggers.js"></script>
-		<script type="text/javascript" src="_assets/_js/FinalLevel.js"></script>
-
-		<script type="text/javascript" src="_assets/_js/Temp.js"></script>
-
-
-
-		<script type="text/javascript">
-
-			// START
-			$(document).ready( function(){ gameFirstInit(); /* Game.js */ } );
-
-		</script>
-
-
 	</head>
 
 	<body onorientationchange="display_rotate(event);">
@@ -221,6 +182,8 @@
 
 		</div> <!-- #options_wrapper -->
 
+		<div id="outcomeScreen" class="ignoreMouseEvents"></div>
+
 		<!-- REMOVE .hack-hide WHEN COMPLETE -->
 		<div id="displayErrorWrapper" class="hack-hide">
 
@@ -252,6 +215,41 @@
 		</div> <!-- #displayErrorWrapper -->
 
 		<div id="debug"><p>test</p></div>
+
+		<script type="text/javascript" src="_assets/_js/Debug.js"></script>
+
+		<script type="text/javascript" src="_assets/_js/_libs/_jquery/jquery-2.0.3.js"></script>
+		<script type="text/javascript" src="_assets/_js/_libs/_collision/jquery-collision.js"></script>
+
+		<script type="text/javascript" src="_assets/_js/_libs/_SoundJS/src/createjs/utils/Proxy.js"></script>
+		<script type="text/javascript" src="_assets/_js/_libs/_SoundJS/src/createjs/utils/IndexOf.js"></script>
+		<script type="text/javascript" src="_assets/_js/_libs/_SoundJS/src/createjs/events/Event.js"></script>
+		<script type="text/javascript" src="_assets/_js/_libs/_SoundJS/src/createjs/events/EventDispatcher.js"></script>
+	  <script type="text/javascript" src="_assets/_js/_libs/_SoundJS/src/soundjs/Sound.js"></script>
+	  <script type="text/javascript" src="_assets/_js/_libs/_SoundJS/src/soundjs/WebAudioPlugin.js"></script>
+	  <script type="text/javascript" src="_assets/_js/_libs/_SoundJS/src/soundjs/HTMLAudioPlugin.js"></script>
+
+		<script type="text/javascript" src="_assets/_js/Game.js"></script>
+		<script type="text/javascript" src="_assets/_js/Game_Level.js"></script>
+		<script type="text/javascript" src="_assets/_js/ControlNew.js"></script>
+		<script type="text/javascript" src="_assets/_js/BattleEngine.js"></script>
+		<script type="text/javascript" src="_assets/_js/BattleNew.js"></script>
+		<script type="text/javascript" src="_assets/_js/Data.js"></script>
+		<script type="text/javascript" src="_assets/_js/DisplayNew.js"></script>
+		<script type="text/javascript" src="_assets/_js/AnimationEventManager.js"></script>
+		<script type="text/javascript" src="_assets/_js/Sound.js"></script>
+		<script type="text/javascript" src="_assets/_js/Info.js"></script>
+		<script type="text/javascript" src="_assets/_js/Triggers.js"></script>
+		<script type="text/javascript" src="_assets/_js/FinalLevel.js"></script>
+
+		<script type="text/javascript" src="_assets/_js/Temp.js"></script>
+
+		<script type="text/javascript">
+
+			// START
+			gameFirstInit();
+
+		</script>
 
 	</body>
 

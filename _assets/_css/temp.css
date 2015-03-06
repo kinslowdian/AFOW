@@ -319,10 +319,41 @@
 }
 
 
+#outcomeScreen
+{
+	width: 100%;
+	height: 100%;
+
+	position: absolute;
+
+	left: 0; right: 0; top: 0; bottom: 0;
+}
+
+.resultOutcome_player
+{
+	width: 100%;
+	height: 50px;
+
+	position: absolute;
+
+	bottom: 0; left: 0; right: 0;
+}
+
+.resultOutcome_player_sprite
+{
+	width: 40px;
+	height: 50px;
+
+	position: relative;
+
+	margin: 0 auto;
+
+	background-position: -564px 0px;
+}
 
 
 
-.bossFailTaunt_wrapper
+.outcomeScreen
 {
 	width: 100%;
 	height: 100%;
@@ -336,7 +367,7 @@
 	overflow: hidden;
 }
 
-.bossFailTaunt_content
+.resultOutcome_content
 {
 	width: inherit;
 	height: inherit;
@@ -345,31 +376,34 @@
 
 	top: 0; bottom: 0; left: 0; right: 0;
 
-	background: #20202a;
+	overflow: hidden;
 }
 
-.tween-bossFailtTauntContent
+.tween-resultOutcomeContent
 {
-/*	-webkit-transition: -webkit-transform 400ms ease-in;
-	transition: -webkit-transform 400ms ease-in;*/
-
-	-webkit-transition: 400ms ease-in;
-	transition: 400ms ease-in;
+	-webkit-transition: 600ms ease-in;
+	transition: 600ms ease-in;
 }
 
-.bossFailtTauntContent_hide
+.resultOutcomeContent_hide
 {
-	-webkit-transform: translateY(100%);
-	transform: translateY(100%);
+/*	-webkit-transform: translateY(-100%);
+	transform: translateY(-100%);*/
+
+	-webkit-transform: translateX(100%);
+	transform: translateX(100%);
 }
 
-.bossFailtTauntContent_show
+.resultOutcomeContent_show
 {
-	-webkit-transform: translateY(0%);
-	transform: translateY(0%);
+/*	-webkit-transform: translateY(0%);
+	transform: translateY(0%);*/
+
+	-webkit-transform: translateX(0%);
+	transform: translateX(0%);
 }
 
-.bossFailTaunt_focus
+.resultOutcome_focus
 {
 	width: 320px;
 	height: 100%;
@@ -379,7 +413,7 @@
 	margin: 0 auto;
 }
 
-.bossFailTaunt_header
+.resultOutcome_header
 {
 	width: 100%;
 	height: 130px;
@@ -387,10 +421,31 @@
 	position: relative;
 
 	font-size: 68px;
-	color: #dfdfd5;
 }
 
-.bossFailTaunt_header h1
+.tween-resultOutcomeInner
+{
+	-webkit-transition: 600ms ease-out;
+	transition: 600ms ease-out;
+}
+
+.resultOutcomeHeader_hide
+{
+	opacity: 0;
+
+	-webkit-transform: translateY(20px);
+	transform: translateY(20px);
+}
+
+.resultOutcomeHeader_show
+{
+	opacity: 1;
+
+	-webkit-transform: translateY(0px);
+	transform: translateY(0px);
+}
+
+.resultOutcome_header h1
 {
 	height: 1em;
 	font-size: 1em;
@@ -405,7 +460,7 @@
 	margin: auto;
 }
 
-.bossFailTaunt_boss
+.resultOutcome_boss
 {
 	width: 100%;
 	height: 100%;
@@ -433,7 +488,7 @@
 	100%	{transform: translateY(0px);}
 }
 
-.bossFailTaunt_bossHead
+.resultOutcome_bossHead
 {
 	width: 282px;
 	height: 120px;
@@ -445,7 +500,7 @@
 	background-position: 0 0;
 }
 
-.bossFailTaunt_bossBody
+.resultOutcome_bossBody
 {
 	width: 282px;
 	height: 100%;
@@ -458,10 +513,62 @@
 	background-repeat: repeat-y;
 }
 
-.tween-finalLevelPartEnd
+.resultOutcome_fill
 {
-	-webkit-transition: -webkit-transform 1200ms ease-out;
-	transition: transform 1200ms ease-out;
+	width: inherit;
+	height: inherit;
+
+	position: absolute;
+
+	left: 0; right: 0; top: 0; bottom: 0;
+}
+
+.bossFailTauntFill_hide
+{
+	opacity: 0;
+}
+
+/*VARIATIONS*/
+
+.outcome_win
+{
+
+}
+
+.outcome_win .resultOutcome_content
+{
+	background: #e5eaa4;
+}
+
+.outcome_win .resultOutcome_header
+{
+	color: #66245b;
+}
+
+.outcome_win .resultOutcome_fill
+{
+	background: #e5eaa4;
+}
+
+
+.outcome_lose
+{
+
+}
+
+.outcome_lose .resultOutcome_content
+{
+	background: #66245b;
+}
+
+.outcome_lose .resultOutcome_header
+{
+	color: #e5eaa4;
+}
+
+.outcome_lose .resultOutcome_fill
+{
+	background: #66245b;
 }
 
 

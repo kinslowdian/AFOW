@@ -44,43 +44,138 @@ function test_finalBattle_result()
 
 
 
-// BOSS TAUNT
+// OUTCOME SCREEN
 
-function bossTaunt_init()
+
+var resultOutcome;
+
+
+function resultOutcome_init()
 {
-	$(".bossFailTaunt_wrapper .bossFailTaunt_content").removeClass("bossFailtTauntContent_hide").addClass("bossFailtTauntContent_show");
+	resultOutcome = {};
 
-	$(".bossFailTaunt_wrapper .bossFailTaunt_boss").addClass("tween-bossFailTauntBoss");
+	resultOutcome.html 		= {};
+	resultOutcome.header 	= {};
 
+	html_lib_reuse();
+
+	resultOutcome.html.taunt_main = html_lib_use("_resultOutcome", false, true);
+
+	resultOutcome.header.taunt_win = "nice!";
+	resultOutcome.header.taunt_lose = "fail!";
+
+	html_lib_empty();
+
+	$("#outcomeScreen").html(resultOutcome.html.taunt_main);
+
+	if(BATTLE_NAV.game.result === "WIN")
+	{
+		$("#outcomeScreen").addClass("outcome_win");
+
+		$("#outcomeScreen .resultOutcome_header h1").html(resultOutcome.header.taunt_win);
+
+		$("#outcomeScreen .pixels_resultOutcomeScreen").addClass("pixels_resultOutcomeScreenWin");
+	}
+
+	if(BATTLE_NAV.game.result === "LOSE")
+	{
+		$("#outcomeScreen").addClass("outcome_lose");
+
+		$("#outcomeScreen .resultOutcome_header h1").html(resultOutcome.header.taunt_lose);
+
+		$("#outcomeScreen .pixels_resultOutcomeScreen").addClass("pixels_resultOutcomeScreenLose");
+	}
 }
 
-function bossTaunt_wait()
+function resultOutcome_request()
+{
+	$("#outcomeScreen .tween-resultOutcomeContent")[0].addEventListener("webkitTransitionEnd", resultOutcome_requestEvent, false);
+	$("#outcomeScreen .tween-resultOutcomeContent")[0].addEventListener("transitionend", resultOutcome_requestEvent, false);
+
+	$("#outcomeScreen .resultOutcome_content").removeClass("resultOutcomeContent_hide").addClass("resultOutcomeContent_show");
+}
+
+function resultOutcome_requestEvent(event)
+{
+	$("#outcomeScreen .tween-resultOutcomeContent")[0].removeEventListener("webkitTransitionEnd", resultOutcome_requestEvent, false);
+	$("#outcomeScreen .tween-resultOutcomeContent")[0].removeEventListener("transitionend", resultOutcome_requestEvent, false);
+
+
+	$("#outcomeScreen .tween-resultOutcomeContent")[0].addEventListener("webkitTransitionEnd", resultOutcome_revealEvent, false);
+	$("#outcomeScreen .tween-resultOutcomeContent")[0].addEventListener("transitionend", resultOutcome_revealEvent, false);
+
+
+	$("#outcomeScreen .resultOutcome_boss").addClass("tween-bossFailTauntBoss");
+
+	$("#outcomeScreen .resultOutcome_fill").addClass("bossFailTauntFill_hide");
+}
+
+function resultOutcome_revealEvent(event)
 {
 	var delay;
 
-	$(".bossFailTaunt_wrapper .bossFailTaunt_content").addClass("tween-bossFailtTauntContent");
+	$("#outcomeScreen .tween-resultOutcomeContent")[0].removeEventListener("webkitTransitionEnd", resultOutcome_revealEvent, false);
+	$("#outcomeScreen .tween-resultOutcomeContent")[0].removeEventListener("transitionend", resultOutcome_revealEvent, false);
 
-	delay = setTimeout(bossTaunt_drop, 4 * 1000);
+	$("#outcomeScreen .resultOutcome_fill").remove();
+
+	delay = setTimeout(resultOutcome_showOutcome, 1 * 1000);
 }
 
-function bossTaunt_drop()
+function resultOutcome_showOutcome()
 {
-	$(".bossFailTaunt_wrapper .tween-bossFailtTauntContent")[0].addEventListener("webkitTransitionEnd", bossTaunt_purge, false);
-	$(".bossFailTaunt_wrapper .tween-bossFailtTauntContent")[0].addEventListener("transitionend", bossTaunt_purge, false);
+	var delay;
 
-	$(".bossFailTaunt_wrapper .bossFailTaunt_content").removeClass("bossFailtTauntContent_show").addClass("bossFailtTauntContent_hide");
+	$("#outcomeScreen .resultOutcome_header").removeClass("resultOutcomeHeader_hide").addClass("resultOutcomeHeader_show");
+
+	if(battleEngine.firstZombie)
+	{
+		$(screen_multiInfoUse.screenRoot + " .multiUseInfo_wrapper").remove();
+	}
+
+	else if(!game_levelFinal)
+	{
+		delete screen_multiInfoUse;
+
+		allBattleOver_battleEnd_return_end(BATTLE_NAV.game.result);
+	}
+
+	delay = setTimeout(resultOutcome_hideAll, 3 * 1000);
 }
 
-function bossTaunt_purge(event)
+function resultOutcome_hideAll()
 {
-	$(".bossFailTaunt_wrapper .tween-bossFailtTauntContent")[0].removeEventListener("webkitTransitionEnd", bossTaunt_purge, false);
-	$(".bossFailTaunt_wrapper .tween-bossFailtTauntContent")[0].removeEventListener("transitionend", bossTaunt_purge, false);
+	$("#outcomeScreen .tween-resultOutcomeContent")[0].addEventListener("webkitTransitionEnd", resultOutcome_hideAllEvent, false);
+	$("#outcomeScreen .tween-resultOutcomeContent")[0].addEventListener("transitionend", resultOutcome_hideAllEvent, false);
 
-	$("#display_finalLevel").html("");
-
-	// TODO FAULTY
-	move_plugIn();
+	$("#outcomeScreen .resultOutcome_content").removeClass("resultOutcomeContent_show").addClass("resultOutcomeContent_hide");
 }
+
+function resultOutcome_hideAllEvent(event)
+{
+	$("#outcomeScreen .tween-resultOutcomeContent")[0].removeEventListener("webkitTransitionEnd", resultOutcome_hideAllEvent, false);
+	$("#outcomeScreen .tween-resultOutcomeContent")[0].removeEventListener("transitionend", resultOutcome_hideAllEvent, false);
+
+	// FLUSH
+	$("#outcomeScreen").html("");
+
+	if(battleEngine.firstZombie)
+	{
+		battleEngine.firstZombie = false;
+
+		multiUseInfoScreen_purge();
+	}
+
+	else
+	{
+		optionsTrigger_init(true);
+
+		// TODO
+		worldReturn_slideReturn();
+	}
+}
+
+
 
 
 
