@@ -128,9 +128,11 @@ function resultOutcome_showOutcome()
 
 	$("#outcomeScreen .resultOutcome_header").removeClass("resultOutcomeHeader_hide").addClass("resultOutcomeHeader_show");
 
-	if(battleEngine.firstZombie)
+	if(BATTLE_NAV.game.result === "LOSE" && battleEngine.firstZombie)
 	{
 		$(screen_multiInfoUse.screenRoot + " .multiUseInfo_wrapper").remove();
+
+		alert("IF");
 	}
 
 	else if(!game_levelFinal)
@@ -138,6 +140,13 @@ function resultOutcome_showOutcome()
 		delete screen_multiInfoUse;
 
 		allBattleOver_battleEnd_return_end(BATTLE_NAV.game.result);
+
+		alert("ELSE IF");
+	}
+
+	else
+	{
+		alert("ELSE");
 	}
 
 	delay = setTimeout(resultOutcome_hideAll, 3 * 1000);
@@ -159,7 +168,7 @@ function resultOutcome_hideAllEvent(event)
 	// FLUSH
 	$("#outcomeScreen").html("");
 
-	if(battleEngine.firstZombie)
+	if(BATTLE_NAV.game.result === "LOSE" && battleEngine.firstZombie)
 	{
 		battleEngine.firstZombie = false;
 
@@ -171,7 +180,9 @@ function resultOutcome_hideAllEvent(event)
 		optionsTrigger_init(true);
 
 		// TODO
-		worldReturn_slideReturn();
+		// worldReturn_slideReturn();
+
+		worldReturn_slideReturnApply();
 	}
 }
 

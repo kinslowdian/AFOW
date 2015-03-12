@@ -2417,9 +2417,14 @@ function allBattleOver_battleEnd_return_showInit(event)
 
 	if(BATTLE_NAV.game.result === "WIN")
 	{
-		oneUseInfoScreen_build("#options_wrapper .options-choice", "BATTLE_WIN");
+		// TODO
+		resultOutcome_init();
 
-		exitFrame = setTimeout(oneUseInfoScreen_drop, 20);
+		exitFrame = setTimeout(resultOutcome_request, 20);
+
+		// oneUseInfoScreen_build("#options_wrapper .options-choice", "BATTLE_WIN");
+
+		// exitFrame = setTimeout(oneUseInfoScreen_drop, 20);
 	}
 
 	// TODO FIRST SHOW ZOMBIE SCREEN THEN DEFAULT FAIL SCREEN
@@ -2449,9 +2454,13 @@ function allBattleOver_battleEnd_return_showInit(event)
 // IMPORTANT CALLED IN DISPLAY FUNCTION AFTER SCREEN DROP
 function allBattleOver_battleEnd_return_end(route)
 {
+	alert("HIT");
+
 	$("#display_wrapper").html(theBattle.html.display_inner_world);
 	$("#display_wrapper .player").html("");
 	$("#display_wrapper .player").html(control.html_player);
+
+	worldReturn_slideReturn();
 
 	// TODO
 	$("#display_wrapper").addClass("event-slide");
@@ -2496,7 +2505,6 @@ function enemyDefeat_check()
 }
 
 ///////////// WORLD SLIDE RETURN
-
 function worldReturn_slideReturn()
 {
 	var html_fx;
@@ -2509,11 +2517,14 @@ function worldReturn_slideReturn()
 	html_fx = html_lib_use("_sunLight_beam", false, true);
 	$("#display_wrapper").append(html_fx);
 
+
+
 	html_lib_empty();
 
 	eventColor_add("returnLevel", null);
 
-	delay_apply = setTimeout(worldReturn_slideReturnApply, 400);
+	// TODO
+	// delay_apply = setTimeout(worldReturn_slideReturnApply, 400);
 }
 
 function worldReturn_slideReturnApply()

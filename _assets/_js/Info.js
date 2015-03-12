@@ -1320,7 +1320,8 @@ function multiUseInfoScreen_purge()
 		optionsTrigger_init(true);
 
 		// TODO
-		worldReturn_slideReturn();
+		// worldReturn_slideReturn();
+		worldReturn_slideReturnApply();
 	}
 
 
