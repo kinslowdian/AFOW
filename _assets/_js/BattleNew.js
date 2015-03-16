@@ -2349,7 +2349,15 @@ function battleEnd_battleOver_setControlsBasic()
 	{
 		behindWorld_outcome("BAD_SKY");
 
-		control.writeSpawn({x:control.fl.enter_x, y:control.fl.enter_y});
+		if(game_levelFinal)
+		{
+			control.writeSpawn({x:control.rem_x, y:control.rem_y});
+		}
+
+		else
+		{
+			control.writeSpawn({x:control.fl.enter_x, y:control.fl.enter_y});
+		}
 
 		autoMove_init("SPAWN");
 	}

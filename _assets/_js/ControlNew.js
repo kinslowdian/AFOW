@@ -1189,9 +1189,20 @@ function autoMove_event_portalEnter(event)
 
 	temp_findPortalExit();
 
-	eventColor_add("portalLevel", null);
+	// TODO
+	if(game_levelFinal)
+	{
+		// finalLevelSeq_init();
 
-	observe_init("MONKEY");
+		finalLevelAfterPortalFX(null);
+	}
+
+	else
+	{
+		eventColor_add("portalLevel", null);
+
+		observe_init("MONKEY");
+	}
 }
 
 function autoMove_event_portalExit(event)

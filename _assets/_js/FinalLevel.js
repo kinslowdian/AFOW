@@ -27,8 +27,12 @@ function finalLevelAfterPortalFX(event)
 {
 	var delay;
 
-	$(".tween-monkeyObserve")[0].removeEventListener("webkitTransitionEnd", finalLevelAfterPortalFX, false);
-	$(".tween-monkeyObserve")[0].removeEventListener("transitionend", finalLevelAfterPortalFX, false);
+	// TODO
+	if(event != null)
+	{
+		$(".tween-monkeyObserve")[0].removeEventListener("webkitTransitionEnd", finalLevelAfterPortalFX, false);
+		$(".tween-monkeyObserve")[0].removeEventListener("transitionend", finalLevelAfterPortalFX, false);
+	}
 
 	delay = setTimeout(finalLevelSeq_init, 800);
 }

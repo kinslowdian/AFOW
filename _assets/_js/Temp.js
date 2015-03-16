@@ -148,6 +148,10 @@ function resultOutcome_showOutcome()
 	{
 		delete screen_multiInfoUse;
 
+		// TODO
+		// control.fl.spawn_x = control.rem_x;
+		// control.fl.spawn_y = control.rem_y;
+
 		$("#display_finalLevel").html("");
 
 		allBattleOver_battleEnd_return_end("BOSS_FAIL");
@@ -174,11 +178,25 @@ function resultOutcome_hideAllEvent(event)
 	// FLUSH
 	$("#outcomeScreen").html("");
 
-	if(BATTLE_NAV.game.result === "LOSE" && battleEngine.firstZombie)
+	if(BATTLE_NAV.game.result === "LOSE" && !game_levelFinal && battleEngine.firstZombie)
 	{
 		battleEngine.firstZombie = false;
 
 		multiUseInfoScreen_purge();
+	}
+
+	// TODO
+	else if(BATTLE_NAV.game.result === "LOSE" && game_levelFinal)
+	{
+		$("#display_wrapper #roam_wrapper .player").css("opacity", "1");
+
+		optionsTrigger_init(true);
+
+		worldReturn_slideReturnApply();
+
+		$("#display_finalLevel").addClass("ignoreMouseEvents");
+
+		game_levelFinal = false;
 	}
 
 	else
