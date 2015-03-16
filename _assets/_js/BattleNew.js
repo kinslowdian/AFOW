@@ -2423,8 +2423,6 @@ function allBattleOver_battleEnd_return_showInit(event)
 // IMPORTANT CALLED IN DISPLAY FUNCTION AFTER SCREEN DROP
 function allBattleOver_battleEnd_return_end(route)
 {
-	alert("HIT");
-
 	$("#display_wrapper").html(theBattle.html.display_inner_world);
 	$("#display_wrapper .player").html("");
 	$("#display_wrapper .player").html(control.html_player);
@@ -2486,7 +2484,17 @@ function worldReturn_slideReturn()
 	html_fx = html_lib_use("_sunLight_beam", false, true);
 	$("#display_wrapper").append(html_fx);
 
+	if(BATTLE_NAV.game.result === "WIN")
+	{
+		$("#display_wrapper .sunLight_beam .sunLight_light").addClass("lightFX_win");
+	}
 
+	if(BATTLE_NAV.game.result === "LOSE")
+	{
+		$("#display_wrapper .sunLight_beam .sunLight_light").addClass("lightFX_lose");
+	}
+
+	$(".behindWorld .shineLevelTopFX").addClass("shine_" + BATTLE_NAV.game.result);
 
 	html_lib_empty();
 
@@ -2524,6 +2532,8 @@ function worldReturn_slideReturnPurge(event)
 
 	$(".sunLight_beam").remove();
 
+	$(".behindWorld .shineLevelTopFX").removeClass("shine_" + BATTLE_NAV.game.result);
+
 
 	if(enemyTarget.defeatPrefs)
 	{
@@ -2536,6 +2546,9 @@ function worldReturn_slideReturnPurge(event)
 
 		eventColor_remove();
 	}
+
+	// TODO CHECK
+	BATTLE_NAV.game.result = "";
 }
 
 

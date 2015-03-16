@@ -1676,8 +1676,6 @@ function resultOutcome_showOutcome()
 	if(BATTLE_NAV.game.result === "LOSE" && battleEngine.firstZombie && !game_levelFinal)
 	{
 		$(screen_multiInfoUse.screenRoot + " .multiUseInfo_wrapper").remove();
-
-		alert("IF");
 	}
 
 	else if(!game_levelFinal)
@@ -1685,8 +1683,6 @@ function resultOutcome_showOutcome()
 		delete screen_multiInfoUse;
 
 		allBattleOver_battleEnd_return_end(BATTLE_NAV.game.result);
-
-		alert("ELSE IF 1");
 	}
 
 	else if(game_levelFinal)
@@ -1696,11 +1692,9 @@ function resultOutcome_showOutcome()
 		$("#display_finalLevel").html("");
 
 		allBattleOver_battleEnd_return_end("BOSS_FAIL");
-
-		alert("ELSE IF 2");
 	}
 
-	delay = setTimeout(resultOutcome_hideAll, 3 * 1000);
+	delay = setTimeout(resultOutcome_hideAll, 1.5 * 1000);
 }
 
 function resultOutcome_hideAll()

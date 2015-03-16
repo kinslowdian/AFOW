@@ -7855,8 +7855,20 @@
 	width: inherit;
 	height: inherit;
 
+/*	background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+	background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);*/
+}
+
+.lightFX_win
+{
 	background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
 	background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+}
+
+.lightFX_lose
+{
+	background: -webkit-linear-gradient(top, rgba(60, 60, 60, 1) 0%, rgba(60, 60, 60, 0) 100%);
+	background: linear-gradient(to bottom, rgba(60, 60, 60, 1) 0%, rgba(60, 60, 60, 0) 100%);
 }
 
 .tween-sunLight_light
@@ -7906,8 +7918,20 @@
 	top: 50%;
 	bottom: 0;
 	margin: -80px 0 0 0;
+/*	background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.6) 100%);
+	background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.6) 100%);*/
+}
+
+.shine_WIN
+{
 	background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.6) 100%);
 	background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.6) 100%);
+}
+
+.shine_LOSE
+{
+	background: -webkit-linear-gradient(top, rgba(60, 60, 60, 0) 0%, rgba(60, 60, 60, 0.6) 100%);
+	background: linear-gradient(to bottom, rgba(60, 60, 60, 0) 0%, rgba(60, 60, 60, 0.6) 100%);
 }
 
 /* ----------------------------------------------------------------------- BEHIND WORLD */
