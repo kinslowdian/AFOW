@@ -1,4 +1,4 @@
-	trace("Temp.js being used -- remove from final build / release");
+trace("Temp.js being used -- remove from final build / release");
 
 
 function test_finalBattle_intoBattle()
@@ -128,7 +128,7 @@ function resultOutcome_showOutcome()
 
 	$("#outcomeScreen .resultOutcome_header").removeClass("resultOutcomeHeader_hide").addClass("resultOutcomeHeader_show");
 
-	if(BATTLE_NAV.game.result === "LOSE" && battleEngine.firstZombie)
+	if(BATTLE_NAV.game.result === "LOSE" && battleEngine.firstZombie && !game_levelFinal)
 	{
 		$(screen_multiInfoUse.screenRoot + " .multiUseInfo_wrapper").remove();
 
@@ -141,12 +141,18 @@ function resultOutcome_showOutcome()
 
 		allBattleOver_battleEnd_return_end(BATTLE_NAV.game.result);
 
-		alert("ELSE IF");
+		alert("ELSE IF 1");
 	}
 
-	else
+	else if(game_levelFinal)
 	{
-		alert("ELSE");
+		delete screen_multiInfoUse;
+
+		$("#display_finalLevel").html("");
+
+		allBattleOver_battleEnd_return_end("BOSS_FAIL");
+
+		alert("ELSE IF 2");
 	}
 
 	delay = setTimeout(resultOutcome_hideAll, 3 * 1000);

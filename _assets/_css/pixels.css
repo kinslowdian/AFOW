@@ -2,9 +2,11 @@
 
 /* GFX-FIX */
 
-/* GENERAL */
-
 /* VECTOR */
+
+/* MASKS */
+
+/* GENERAL */
 
 /* 1 PIXEL DEPTH */
 
@@ -48,6 +50,91 @@ div[class*='tween-']
 
 /* ----------------------------------------------------------------------- GFX-FIX */
 
+
+
+/* ----------------------------------------------------------------------- VECTOR */
+
+.vectors_battleNav
+{
+	background: url(../_img/battleNavOptions.svg) no-repeat left top;
+	/* background-size: 180px 270px; */
+}
+
+.vectors_battleHint
+{
+	background: url(../_img/battleNavHint.svg) no-repeat left top;
+	/* background-size: 270px 60px; */
+}
+
+.vectors_touch-ui
+{
+	background-image: url(../_img/touch-ui_cross.svg);
+	background-repeat: no-repeat;
+	/* background-size: 160px 160px; */
+}
+
+.vectors_touch-mini
+{
+	background-image: url(../_img/touch-ui_cross_min.svg);
+	background-repeat: no-repeat;
+	/* background-size: 40px 40px; */
+}
+
+.vectors_clash_cloud
+{
+	background-image: url(../_img/clash_cloud.svg);
+	background-repeat: no-repeat;
+	/* background-size: 240px 120px; */
+}
+
+.vectors_superPunchShock
+{
+	background-image: url(../_img/puchSmashShock.svg);
+	background-repeat: no-repeat;
+	background-position: 0 0;
+}
+
+.vectors_gate
+{
+	background-image: url(../_img/gate.svg);
+	background-repeat: no-repeat;
+	background-size: 320px 240px;
+}
+
+.vectors_lightningForkTile
+{
+	background-image: url(../_img/lightningForkTile.svg);
+	background-position: left bottom;
+	background-repeat: repeat-y;
+}
+
+.vectors_lightningCloud
+{
+	background-image: url(../_img/lightningCloud.svg);
+	background-position: 0 0;
+	background-repeat: no-repeat;
+}
+
+.vectors_optionsTab
+{
+	background-image: url(../_img/optionsTabCorner.svg);
+	background-position: 0 0;
+	background-repeat: no-repeat;
+}
+
+/* ----------------------------------------------------------------------- VECTOR */
+
+
+
+/* ----------------------------------------------------------------------- MASKS */
+
+.mask_resultOutcome_circle
+{
+	-webkit-mask: url(../_img/failScreenMask.svg);
+	mask: url(../_img/failScreenMask.svg);
+}
+
+/* ----------------------------------------------------------------------- MASKS */
 
 
 
@@ -600,6 +687,14 @@ div[class*='tween-']
 	background-size: 160px 60px;
 }
 
+.pixels_optionsTab
+{
+	background-image: url(../_img/optionsTabSprite_1x.png);
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	background-size: 120px 120px;
+}
+
 
 .pixels_pineEvening0TreeMass
 {
@@ -673,75 +768,6 @@ div[class*='tween-']
 }
 
 /* ----------------------------------------------------------------------- GENERAL */
-
-
-
-
-/* ----------------------------------------------------------------------- VECTOR */
-
-.vectors_battleNav
-{
-	background: url(../_img/battleNavOptions.svg) no-repeat left top;
-	/* background-size: 180px 270px; */
-}
-
-.vectors_battleHint
-{
-	background: url(../_img/battleNavHint.svg) no-repeat left top;
-	/* background-size: 270px 60px; */
-}
-
-.vectors_touch-ui
-{
-	background-image: url(../_img/touch-ui_cross.svg);
-	background-repeat: no-repeat;
-	/* background-size: 160px 160px; */
-}
-
-.vectors_touch-mini
-{
-	background-image: url(../_img/touch-ui_cross_min.svg);
-	background-repeat: no-repeat;
-	/* background-size: 40px 40px; */
-}
-
-.vectors_clash_cloud
-{
-	background-image: url(../_img/clash_cloud.svg);
-	background-repeat: no-repeat;
-	/* background-size: 240px 120px; */
-}
-
-.vectors_superPunchShock
-{
-	background-image: url(../_img/puchSmashShock.svg);
-	background-repeat: no-repeat;
-	background-position: 0 0;
-}
-
-.vectors_gate
-{
-	background-image: url(../_img/gate.svg);
-	background-repeat: no-repeat;
-	background-size: 320px 240px;
-}
-
-.vectors_lightningForkTile
-{
-	background-image: url(../_img/lightningForkTile.svg);
-	background-position: left bottom;
-	background-repeat: repeat-y;
-}
-
-.vectors_lightningCloud
-{
-	background-image: url(../_img/lightningCloud.svg);
-	background-position: 0 0;
-	background-repeat: no-repeat;
-}
-
-/* ----------------------------------------------------------------------- VECTOR */
-
 
 
 
@@ -1089,6 +1115,11 @@ div[class*='tween-']
 	.pixels_menu
 	{
 		background-image: url(../_img/optionsTab_1x.png);
+	}
+
+	.pixels_optionsTab
+	{
+		background-image: url(../_img/optionsTabSprite_1x.png);
 	}
 
 	.pineEvening0TreeMass /*pixels_pineTreeMassT0*/
@@ -1486,6 +1517,11 @@ div[class*='tween-']
 	.pixels_menu
 	{
 		background-image: url(../_img/optionsTab_2x.png);
+	}
+
+	.pixels_optionsTab
+	{
+		background-image: url(../_img/optionsTabSprite_2x.png);
 	}
 
 	.pineEvening0TreeMass /*pixels_pineTreeMassT0*/

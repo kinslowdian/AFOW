@@ -158,7 +158,7 @@ function preloader_remove_btnEvent(event)
 
 	// multiUseInfoScreen_build("#preload-wrapper", "CONTROL");
 
-	multiUseInfoScreen_build("#options_wrapper .options-choice", "START_INTRO");
+	multiUseInfoScreen_build("#options_wrapper .options-choice", "START_INTRO", false);
 
 	// html_screen_soundOptions = html_lib_use("_multiUseInfo", false, false);
 	// html_soundOptions = html_lib_use("_multiUseInfo_br_sound", false, false);

@@ -82,7 +82,7 @@
 
 /* INFO_MULTI */
 
-/* INFO_ONE */
+/* INFO_ONCE */
 
 /* GODS */
 
@@ -2479,6 +2479,7 @@
 		font-size: 20px;
 
 		background: #b8e0ca;
+		background: #fff;
 
 		-webkit-transform	: translateY(-100%);
 		transform			: translateY(-100%);
@@ -2492,6 +2493,7 @@
 		height: 100%;
 
 		background: #b8e0ca;
+		background: #fff;
 
 		opacity: 0;
 
@@ -2520,6 +2522,7 @@
 		position: absolute;
 
 		background: #b8e0ca;
+		background: #fff;
 
 		/*z-index: 4;*/
 	}
@@ -2561,6 +2564,7 @@
 		line-height: 1;
 
 		color: #004752;
+		color: #17e69d;
 	}
 
 	#portalScreen .portalScreen_title_left
@@ -2626,6 +2630,7 @@
 		position: absolute;
 
 		background: #b8e0ca;
+		background: #fff;
 
 		opacity: 0;
 
@@ -2652,6 +2657,7 @@
 	#portalScreen .portalScreen_bg .portalScreen_field
 	{
 		background: #b8e0ca;
+		background: #fff;
 
 
 		/*z-index: 1;*/
@@ -2692,6 +2698,8 @@
 		height: 80px;
 
 		background: #fff;
+		background: #b7e0ca;
+		background: #17e69d;
 
 		-webkit-border-radius: 40px;
 		border-radius: 40px;
@@ -5838,7 +5846,7 @@
 #menu_strip
 {
 	width: 100%;
-	height: 60px;
+	height: 120px;
 
 	position: absolute;
 
@@ -5847,28 +5855,28 @@
 
 .menu_tab
 {
-	width: 160px;
-	height: 80px;
+	width: 120px;
+	height: 120px;
 
 	position: relative;
 
-	margin: 0 auto;
+	margin: 0;
 }
 
 .menuTab_show
 {
 	opacity: 1;
 
-	-webkit-transform: translateY(0px);
-	transform: translateY(0px);
+	-webkit-transform: translateX(0px);
+	transform: translateX(0px);
 }
 
 .menuTab_hide
 {
 	opacity: 0;
 
-	-webkit-transform: translateY(-60px);
-	transform: translateY(-60px);
+	-webkit-transform: translateX(-120px);
+	transform: translateX(-120px);
 }
 
 .tween-menuTab
@@ -5880,12 +5888,7 @@
 .menu_bg
 {
 	width: 120px;
-	height: 60px;
-
-	background: rgba(22, 22, 32, 0.9);
-
-  border-radius: 0 0 60px 60px;
-	box-shadow: 0px 0px 60px rgba(22, 22, 32, 0.4);
+	height: 120px;
 
 	position: absolute;
 
@@ -5893,8 +5896,8 @@
 
 	margin: 0 auto;
 
-	-webkit-transform: translateY(-10px);
-	transform: translateY(-10px);
+	-webkit-transform: translateX(-10px);
+	transform: translateX(-10px);
 }
 
 .tween-menuBG
@@ -5906,7 +5909,7 @@
 .menu_hit
 {
 	width: 120px;
-	height: 60px;
+	height: 120px;
 
 	position: absolute;
 
@@ -5919,14 +5922,14 @@
 
 #menu_strip .menu_tab:hover .menu_bg
 {
-	-webkit-transform: translateY(0px);
-	transform: translateY(0px);
+	-webkit-transform: translateX(0px);
+	transform: translateX(0px);
 }
 
 .menu_sprite
 {
-	width: 160px;
-	height: 60px;
+	width: 120px;
+	height: 120px;
 
 	position: absolute;
 }
@@ -5991,6 +5994,29 @@
 		pointer-events: none;
 	}
 
+.options-split
+{
+	width: inherit;
+	height: inherit;
+
+	background: #000;
+
+	position: absolute;
+
+	opacity: 0;
+}
+
+.tween-optionsSplit
+{
+	-webkit-transition: opacity 300ms linear;
+	transition: opacity 300ms linear;
+}
+
+.optionSplit_use
+{
+	opacity: 0.18;
+}
+
 /* ----------------------------------------------------------------------- OPTIONS */
 
 
@@ -6048,12 +6074,12 @@
 
 .multiUseInfo_cont_entrance
 {
-	background: #20202a;
+	background: #b7e0ca;
 }
 
 .options-select .multiUseInfo_cont_entrance
 {
-	background: #161620;
+	background: #b7e0ca;
 }
 
 .multiUseInfo_cont_entrance .multiUseInfo_deco_tr, .multiUseInfo_cont_entrance .multiUseInfo_deco_bl
@@ -6106,13 +6132,15 @@
 
 .multiUseInfo_cont_entrance .multiUseInfo_tl p:first-of-type
 {
-	color: #ffff66;
+	color: #fff;
+	color: #20202a;
 	margin-bottom: 3em;
 }
 
 .multiUseInfo_cont_entrance .multiUseInfo_tl p:last-of-type
 {
 	color: #fff;
+	color: #20202a;
 }
 
 .multiUseInfo_tl_show
@@ -6217,12 +6245,10 @@
 .multiUseInfo_keyboard_select-forceState_0
 {
 	color: #fff !important;
-	color: #fff !important;
 }
 
 .multiUseInfo_keyboard_select-forceState_1
 {
-	color: #ffff66 !important;
 	color: #fff !important;
 }
 
@@ -6412,18 +6438,16 @@
 
 .multiUseInfo_options .multiUseInfo_options_option_sound
 {
-	color: #17e69d;
+	color: #ffff66;
 }
 
 .multiUseInfo_options .multiUseInfo_options_option_about:hover
 {
 	color: #fff;
-	color: #fff;
 }
 
 .multiUseInfo_options .multiUseInfo_options_option_sound:hover
 {
-	color: #ffff66;
 	color: #fff;
 }
 
@@ -6434,7 +6458,7 @@
 
 .multiUseInfo_about .multiUseInfo_about_option_read
 {
-	color: #17e69d;
+	color: #ffff66;
 }
 
 .multiUseInfo_about .multiUseInfo_about_option_return
@@ -6445,12 +6469,10 @@
 .multiUseInfo_about .multiUseInfo_about_option_read:hover
 {
 	color: #fff;
-	color: #fff;
 }
 
 .multiUseInfo_about .multiUseInfo_about_option_return:hover
 {
-	color: #ffff66;
 	color: #fff;
 }
 
@@ -6461,7 +6483,7 @@
 
 .multiUseInfo_sound .multiUseInfo_sound_option_false
 {
-	color: #17e69d;
+	color: #ffff66;
 }
 
 .multiUseInfo_sound .multiUseInfo_sound_option_true
@@ -6472,12 +6494,10 @@
 .multiUseInfo_sound .multiUseInfo_sound_option_true:hover
 {
 	color: #fff;
-	color: #fff;
 }
 
 .multiUseInfo_sound .multiUseInfo_sound_option_false:hover
 {
-	color: #ffff66;
 	color: #fff;
 }
 
@@ -6577,18 +6597,16 @@
 
 .multiUseInfo_preBattle .multiUseInfo_preFight_option_leave
 {
-	color: #17e69d;
+	color: #ffff66;
 }
 
 .multiUseInfo_preBattle .multiUseInfo_preFight_option_fight:hover
 {
 	color: #fff;
-	color: #fff;
 }
 
 .multiUseInfo_preBattle .multiUseInfo_preFight_option_leave:hover
 {
-	color: #ffff66;
 	color: #fff;
 }
 
@@ -6638,18 +6656,16 @@
 
 .multiUseInfo_intoBattle .multiUseInfo_intoFight_option_escape
 {
-	color: #17e69d;
+	color: #ffff66;
 }
 
 .multiUseInfo_intoBattle .multiUseInfo_intoFight_option_attack:hover
 {
 	color: #fff;
-	color: #fff;
 }
 
 .multiUseInfo_intoBattle .multiUseInfo_intoFight_option_escape:hover
 {
-	color: #ffff66;
 	color: #fff;
 }
 
@@ -6659,6 +6675,9 @@
 
 
 /* ----------------------------------------------------------------------- INFO_ONCE */
+
+/*TODO DELETE*/
+/*
 
 .oneUseInfo_wrapper
 {
@@ -6838,6 +6857,8 @@
 	margin: 0 auto;
 }
 
+*/
+/*TODO DELETE*/
 
 .portal_bleed
 {
@@ -7740,8 +7761,8 @@
 
 .foggyEdge-portal
 {
-	background: -webkit-radial-gradient(center, ellipse cover, rgba(255, 255, 255, 0) 60%, rgba(255, 255, 255, 0.4) 100%);
-	background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0) 60%, rgba(255, 255, 255, 0.4) 100%);
+	background: -webkit-radial-gradient(center, ellipse cover, rgba(183, 224, 202, 0) 60%, rgba(183, 224, 202, 0.5) 100%);
+	background: radial-gradient(ellipse at center, rgba(183, 224, 202, 0) 60%, rgba(183, 224, 202, 0.5) 100%);
 }
 
 .foggyEdge-battle

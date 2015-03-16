@@ -364,13 +364,19 @@ function finalLevelSeq_lightningSecondStrike(event)
 	$("#display_finalLevel #finalLevel_wrapper .finalLevel_lightningCloudSprite").removeClass("finalLevelLightningCloudSprite_show").addClass("finalLevelLightningCloudSprite_rise");
 
 	// TODO
-	delay = setTimeout(finalLevelSeq_returnAfterLose, 4 * 1000);
+	// delay = setTimeout(finalLevelSeq_returnAfterLose, 4 * 1000);
+
+	resultOutcome_init();
+
+	delay = setTimeout(resultOutcome_request, 4 * 1000);
 }
 
 // TODO
 
 function finalLevelSeq_returnAfterLose()
 {
+	var exitFrame;
+
 	allBattleOver_battleEnd_return_end("BOSS_FAIL");
 
 
@@ -381,7 +387,12 @@ function finalLevelSeq_returnAfterLose()
 
 	// $("#display_wrapper .hitTest").removeAttr("style");
 
-	bossTaunt_init();
+	// TODO
+	// bossTaunt_init();
+
+	resultOutcome_init();
+
+	exitFrame = setTimeout(resultOutcome_request, 20);
 
 	$("#display_finalLevel #finalLevel_wrapper .finalLevel_part1").removeClass("tween-finalLevelPart").addClass("tween-finalLevelPartEnd");
 
@@ -402,6 +413,7 @@ function finalLevelSeq_returnAfterLoseEvent(event)
 
 	game_levelFinal = false;
 
+	// TODO
 	bossTaunt_wait();
 }
 
