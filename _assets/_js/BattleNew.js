@@ -47,7 +47,6 @@ function preBattleOptions_init()
 	preBattleOptions.delay = null;
 
 	preBattleOptions.html = {};
-	// preBattleOptions.html.display_inner_world = $("#display_wrapper #display_inner_world").html();
 	preBattleOptions.html.display_inner_world = $("#display_wrapper").html();
 
 	preBattleOptions.playerStore = {};
@@ -301,8 +300,6 @@ function microBattleSequence_startBattle(event)
 {
 	$(".tween-microBattleWeatherFade")[0].removeEventListener("webkitTransitionEnd", microBattleSequence_startBattle, false);
 	$(".tween-microBattleWeatherFade")[0].removeEventListener("transitionend", microBattleSequence_startBattle, false);
-
-	// $("#microBattle_player_wrapper").addClass("microBattle_player_wrapper_focus");
 
 	$("#microBattle_wrapper").html("");
 
@@ -711,18 +708,7 @@ function battleNav_selection(selected)
 
 function battleNav_logicRequest()
 {
-	// battleEngine_setPlayers(playerTarget, enemyTarget);
-
 	battleEngine_battleStart();
-
-
-
-
-	// BATTLE_NAV.game.result = battleEngine.battle(MAP_PLAYER, enemyTarget, false);
-
-	// BATTLE_NAV.game.result = "WIN";
-
-	// BATTLE_NAV.game.result = "LOSE";
 
 	battleNav_logicDisplay();
 }
@@ -1339,27 +1325,6 @@ function battleMini_puchAttackReturn(event)
 	$(event.target).addClass("battleNav-superPunchReturn");
 }
 
-/*
-function battleMini_blowAttackReturn()
-{
-	$(".SUPER-PUNCH" + BATTLE_NAV.animation.punchTotal)[0].addEventListener("webkitTransitionEnd", battleMini_punchAttackComplete, false);
-	$(".SUPER-PUNCH" + BATTLE_NAV.animation.punchTotal)[0].addEventListener("transitionend", battleMini_punchAttackComplete, false);
-
-	$(".SUPER-PUNCH" + BATTLE_NAV.animation.punchTotal).removeClass("battleNav-superPunchAttack");
-	$(".SUPER-PUNCH" + BATTLE_NAV.animation.punchTotal).addClass("battleNav-superPunchReturn");
-}
-*/
-
-// function battleMini_puchAttackReturn(target)
-// {
-// 	$(target)[0].addEventListener("webkitTransitionEnd", battleMini_punchAttackComplete, false);
-// 	$(target)[0].addEventListener("transitionend", battleMini_punchAttackComplete, false);
-
-// 	$(target).removeClass("battleNav-superPunchAttack").addClass("battleNav-superPunchReturn");
-// }
-
-
-
 function battleMini_punchAttackComplete(event)
 {
 	var lastPunchComplete = false;
@@ -1552,8 +1517,6 @@ function battleNav_battleResultsEnd()
 	else
 	{
 		$("#battle-nav-fight").css(BATTLE_NAV.settings.y_hide);
-
-		// battleUserInfo_textEngine("CLEAR", true);
 
 		battleUserInfo_textEngine("SHAKE_CLEAR", true);
 
@@ -2006,8 +1969,6 @@ function battleUserInfo_messaging(flow_stage, lightning)
 
 		case "RESULT":
 		{
-			// battleUserInfo_textEngineRun("microBattle_darkness_info_text_LOSE", "microBattle_darkness_info_text_" + BATTLE_NAV.game.result, BATTLE_NAV.game.result, "", "");
-
 			battleUserInfo_textEngineRun("microBattle_darkness_info_text_LOSE", "microBattle_darkness_info_text_" + BATTLE_NAV.game.result, BATTLE_NAV.game.result, "tween-microBattle_darkness_mega", "tween-superPunchSpriteAmbient");
 
 			break;
