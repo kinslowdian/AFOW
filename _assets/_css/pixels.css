@@ -93,6 +93,7 @@ div[class*='tween-']
 {
 	background-image: url(../_img/gate.svg);
 	background-repeat: no-repeat;
+	background-size: 320px 240px;
 }
 
 .vectors_lightningForkTile

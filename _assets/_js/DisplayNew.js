@@ -68,9 +68,6 @@ Display.prototype.hack = function()
 
 	this.stageY.fl.move = 40;
 	this.stageY.fl.easing = 0.01;
-
-	this.sky0_offset = 0.75;
-	this.sky1_offset = 0.5;
 }
 
 Display.prototype.setPosition = function()
@@ -89,15 +86,8 @@ function display_init()
 	display = new Display(320, 2000, "field");
 	display.init();
 
-	// $("." + display.centerTarget).addClass("tween-fieldShift");
-
 	display.hack();
 
-	// raw_displayEls = {};
-
-	// raw_displayEls.field 	= document.querySelector(".field");
-	// raw_displayEls.sky0 	= document.querySelector(".sky0");
-	// raw_displayEls.sky1 	= document.querySelector(".sky1");
 
 	display_screenUpdate(true);
 }
@@ -142,36 +132,6 @@ function display_centerLevel()
 
 	$("." + display.centerTarget)[0].style.webkitTransform 	= "translateY(" + display.focus_y.toFixed(0) + "px)";
 	$("." + display.centerTarget)[0].style.transform				= "translateY(" + display.focus_y.toFixed(0) + "px)";
-
-	sky_paralax();
-
-
-	// if(display.focus_y != display.focusCurrent_y)
-	// {
-	// 	display.stageY.fl.ty = display.focus_y;
-
-	// 	display.stageY.fl.dy = display.stageY.fl.ty - display.stageY.fl.y;
-
-	// 	if(Math.abs(display.stageY.fl.dy) < 1)
-	// 	{
-	// 		display.stageY.fl.y = display.stageY.fl.ty;
-
-	// 		display.focusCurrent_y = display.focus_y;
-	// 	}
-
-	// 	else
-	// 	{
-	// 		display.stageY.fl.vy = display.stageY.fl.dy * display.stageY.fl.easing;
-	// 		display.stageY.fl.y += display.stageY.fl.vy;
-
-
-	// 		$("." + display.centerTarget)[0].style.webkitTransform 	= "translateY(" + display.stageY.fl.y.toFixed(0) + "px)";
-	// 		$("." + display.centerTarget)[0].style.transform				= "translateY(" + display.stageY.fl.y.toFixed(0) + "px)";
-
-
-	// 		sky_paralax();
-	// 	}
-	// }
 }
 
 function display_centerLevelEnd(event)
@@ -256,40 +216,5 @@ function display_setBG()
 
 function sky_paralax()
 {
-	$(".sky0")[0].style.webkitTransform 	= "translateY(" + (display.focus_y * display.sky0_offset).toFixed(0) + "px)";
-	$(".sky0")[0].style.transform					= "translateY(" + (display.focus_y * display.sky0_offset).toFixed(0) + "px)";
-
-	$(".sky1")[0].style.webkitTransform 	= "translateY(" + (display.focus_y * display.sky1_offset).toFixed(0) + "px)";
-	$(".sky1")[0].style.transform					= "translateY(" + (display.focus_y * display.sky1_offset).toFixed(0) + "px)";
-
-
-
-	/*
-	var css_sky0;
-	var css_sky1;
-
-	css_sky0 = 	{
-								"-webkit-transform" : "translateY(" + (display.stageY.fl.y * display.sky0_offset) + "px)",
-								"transform" 				: "translateY(" + (display.stageY.fl.y * display.sky0_offset) + "px)"
-							};
-
-	css_sky1 = {
-								"-webkit-transform" : "translateY(" + (display.stageY.fl.y * display.sky1_offset) + "px)",
-								"transform" 				: "translateY(" + (display.stageY.fl.y * display.sky1_offset) + "px)"
-							};
-
-	$(".sky0").css(css_sky0);
-	$(".sky1").css(css_sky1);
-	*/
-
-
-	// $(".sky0")[0].style.webkitTransform 	= "translateY(" + (display.stageY.fl.y * display.sky0_offset).toFixed(0) + "px)";
-	// $(".sky0")[0].style.transform					= "translateY(" + (display.stageY.fl.y * display.sky0_offset).toFixed(0) + "px)";
-
-	// $(".sky1")[0].style.webkitTransform 	= "translateY(" + (display.stageY.fl.y * display.sky1_offset).toFixed(0) + "px)";
-	// $(".sky1")[0].style.transform					= "translateY(" + (display.stageY.fl.y * display.sky1_offset).toFixed(0) + "px)";
-
-	// raw_displayEls.sky0.style.webkitTransform 	= "translateY(" + (display.stageY.fl.y * display.sky1_offset) + "px)";
-	// raw_displayEls.sky1.style.transform					= "translateY(" + (display.stageY.fl.y * display.sky1_offset) + "px)";
 
 }

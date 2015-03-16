@@ -271,6 +271,7 @@ function move_init(run)
 			$("#touchPad .touchPad-cont").removeClass("touchPad_C_hide").addClass("touchPad_C_show");
 		}
 
+		$("#menu_strip").removeClass("ignoreMouseEvents");
 		$("#menu_strip .menu_tab").removeClass("menuTab_hide").addClass("menuTab_show");
 
 		// TouchUI.js
@@ -303,6 +304,7 @@ function move_init(run)
 			$("#" + control.touchData.indicator).removeClass("touchPad_C_signal_show").addClass("touchPad_C_signal_hide");
 		}
 
+		$("#menu_strip").addClass("ignoreMouseEvents");
 		$("#menu_strip .menu_tab").removeClass("menuTab_show").addClass("menuTab_hide");
 
 		// TouchUI.js
@@ -1074,50 +1076,25 @@ function autoMove_tweenStage(onEnd)
 
 	var css;
 
-	var css_sky0;
-	var css_sky1;
-
 	var delay_exit;
 
 	display.centerPlayer();
-
-	// $(".field").addClass("tween-fieldShift");
-
-	// $(".sky0").addClass("tween-fieldShift");
-	// $(".sky1").addClass("tween-fieldShift");
 
 	css = 	{
 						"-webkit-transform"	: "translateY(" + display.focus_y + "px)",
 						"transform"					: "translateY(" + display.focus_y + "px)"
 					};
 
-	css_sky0 = 	{
-								"-webkit-transform"	: "translateY(" + (display.focus_y * display.sky0_offset).toFixed(0) + "px)",
-								"transform"					: "translateY(" + (display.focus_y * display.sky0_offset).toFixed(0) + "px)"
-							};
-
-	css_sky1 = 	{
-								"-webkit-transform"	: "translateY(" + (display.focus_y * display.sky1_offset).toFixed(0) + "px)",
-								"transform"					: "translateY(" + (display.focus_y * display.sky1_offset).toFixed(0) + "px)"
-							};
 
 	display.setPosition();
 
 	$(".field").css(css);
-
-	$(".sky0").css(css_sky0);
-	$(".sky1").css(css_sky1);
 
 	delay_exit = setTimeout(autoMove_tweenStageComplete, 1000, onEnd);
 }
 
 function autoMove_tweenStageComplete(onEnd)
 {
-	// $(".field").removeClass("tween-fieldShift");
-
-	// $(".sky0").removeClass("tween-fieldShift");
-	// $(".sky1").removeClass("tween-fieldShift");
-
 	trace(onEnd);
 
 	if(onEnd.call_params)
@@ -1141,12 +1118,8 @@ function autoMove_event_portalEnter(event)
 		portalTarget.visited = true;
 	}
 
-	// $(".layer-field-player-area .player").removeClass("tween-player");
-	// $(".layer-field-player-area .player").removeClass(control.fl.tween);
-	// control.fl.tween = "";
 	autoMove_cleanPlayer();
 
-	// observe_init("MONKEY");
 
 	temp_findPortalExit();
 
