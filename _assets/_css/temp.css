@@ -597,12 +597,36 @@
 	{
 		margin: 20px auto 0 auto;
 	}
+
+	.resultOutcome_circle
+	{
+		visibility: hidden;
+	}
 }
 
 
 
 /*GREATER THAN 550px HEIGHT*/
-@media screen and (min-height:500px)
+@media screen and (min-height:460px)
+{
+	.resultOutcome_player
+	{
+		bottom: 10px; left: 0; right: 0;
+	}
+
+	.resultOutcome_header h1
+	{
+		margin: 10px auto 0 auto;
+	}
+
+	.resultOutcome_circle
+	{
+		visibility: visible;
+	}
+}
+
+/*GREATER THAN 550px HEIGHT*/
+@media screen and (min-height:540px)
 {
 	.resultOutcome_player
 	{
@@ -612,6 +636,11 @@
 	.resultOutcome_header h1
 	{
 		margin: 40px auto 0 auto;
+	}
+
+	.resultOutcome_circle
+	{
+		visibility: visible;
 	}
 }
 
@@ -665,8 +694,8 @@
 
 .tween-finalLevelEventContent
 {
-	-webkit-transition: -webkit-transform, 600ms, ease-in;
-	transition: transform, 600ms, ease-in;
+	-webkit-transition: -webkit-transform 600ms ease-in;
+	transition: transform 600ms ease-in;
 }
 
 .finalLevelEvent_focus
@@ -746,8 +775,8 @@
 
 .tween-finalLevelEventFill
 {
-	-webkit-transition: opacity, 400ms, ease-in;
-	transition: opacity, 400ms, ease-in;
+	-webkit-transition: opacity 400ms ease-in;
+	transition: opacity 400ms ease-in;
 }
 
 
