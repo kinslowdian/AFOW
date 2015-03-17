@@ -1128,13 +1128,6 @@ function autoMove_event_portalEnter(event)
 	// TODO
 	if(game_levelFinal)
 	{
-		// TODO
-		// finalLevelSeq_init();
-
-		// finalLevelAfterPortalFX(null);
-
-		// finalLevelEvent_showFill();
-
 		exitFrame = setTimeout(finalLevelEvent_showFill, 20);
 	}
 

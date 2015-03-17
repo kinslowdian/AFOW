@@ -1607,8 +1607,7 @@ function battleNav_outView(event)
 	// FINAL LEVEL ROUTE
 	if(game_levelFinal)
 	{
-		// TODO Temp.js
-		test_finalBattle_result();
+		boss_finalBattle_result();
 	}
 
 	// DEFAULT ROUTE

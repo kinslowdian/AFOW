@@ -25,20 +25,52 @@ function finalLevelTriggered()
 	html_lib_empty();
 }
 
-// TODO DEAD
-function finalLevelAfterPortalFX(event)
+// FINAL LEVEL EVENT SCREEN
+
+function finalLevelEvent_init()
+{
+	var html;
+
+	html = html_lib_use("_finalLevelEvent", false, true);
+
+	$("#display_finalLevelEvent").html(html);
+}
+
+function finalLevelEvent_showFill()
+{
+	$("#display_finalLevelEvent .tween-finalLevelEventFill")[0].addEventListener("webkitTransitionEnd", finalLevelEvent_fillEvent, false);
+	$("#display_finalLevelEvent .tween-finalLevelEventFill")[0].addEventListener("transitionend", finalLevelEvent_fillEvent, false);
+
+	$("#display_finalLevelEvent .finalLevelEvent_fill").removeClass("finalLevelEventFill_hide").addClass("finalLevelEventFill_show");
+}
+
+function finalLevelEvent_fillEvent(event)
+{
+	$("#display_finalLevelEvent .tween-finalLevelEventFill")[0].removeEventListener("webkitTransitionEnd", finalLevelEvent_fillEvent, false);
+	$("#display_finalLevelEvent .tween-finalLevelEventFill")[0].removeEventListener("transitionend", finalLevelEvent_fillEvent, false);
+
+	$("#display_finalLevelEvent .tween-finalLevelEventContent")[0].addEventListener("webkitTransitionEnd", finalLevelEvent_inView, false);
+	$("#display_finalLevelEvent .tween-finalLevelEventContent")[0].addEventListener("transitionend", finalLevelEvent_inView, false);
+
+	$("#display_finalLevelEvent .finalLevelEvent_content").removeClass("finalLevelEventContent_hide").addClass("finalLevelEventContent_show");
+}
+
+function finalLevelEvent_inView(event)
 {
 	var delay;
 
-	// TODO
-	if(event != null)
-	{
-		$(".tween-monkeyObserve")[0].removeEventListener("webkitTransitionEnd", finalLevelAfterPortalFX, false);
-		$(".tween-monkeyObserve")[0].removeEventListener("transitionend", finalLevelAfterPortalFX, false);
-	}
+	$("#display_finalLevelEvent .tween-finalLevelEventContent")[0].removeEventListener("webkitTransitionEnd", finalLevelEvent_inView, false);
+	$("#display_finalLevelEvent .tween-finalLevelEventContent")[0].removeEventListener("transitionend", finalLevelEvent_inView, false);
 
-	delay = setTimeout(finalLevelSeq_init, 800);
+	delay = setTimeout(finalLevelSeq_init, 1.6 * 1000, null);
 }
+
+function finalLevelEvent_purge()
+{
+	$("#display_finalLevelEvent").html("");
+}
+
+
 
 // PART 1
 
@@ -237,9 +269,54 @@ function finalLevSeq_stormEvent(event)
 	$("#display_finalLevel #finalLevel_wrapper .finalLevel_part1 .tween-cloudySky")[0].removeEventListener("transitionend", finalLevSeq_stormEvent, false);
 
 	// RECYCLE BATTLE NAV
-	// TODO Temp.js
-	test_finalBattle_intoBattle();
+
+	boss_finalBattle_intoBattle();
 }
+
+////////////////////// BOSS BATTLE SETUP WITH MAIN OBJECT
+
+function boss_finalBattle_intoBattle()
+{
+	var delay;
+
+	enemyTarget = {};
+
+	// WRITE BOSS
+	enemyTarget.alive = true;
+	enemyTarget.enemyType = "crow";
+	enemyTarget.id = "boss";
+	enemyTarget.name = "final boss";
+	enemyTarget.rating = 10;
+	enemyTarget.rendered = true;
+	enemyTarget.spawn = 1000;
+
+	// PLAYER1 + PLAYER2
+	battleEngine_setPlayers(playerTarget, enemyTarget);
+
+	battleNav_init();
+
+	delay = setTimeout(boss_finalBattle_init, 1 * 1000);
+}
+
+function boss_finalBattle_init()
+{
+	battleNav_show();
+}
+
+function boss_finalBattle_result()
+{
+	if(BATTLE_NAV.game.result === "WIN")
+	{
+		finalLevelSeq_bossDefeat();
+	}
+
+	if(BATTLE_NAV.game.result === "LOSE")
+	{
+		finalLevelSeq_bossWin();
+	}
+}
+
+////////////////////// BOSS BATTLE SETUP WITH MAIN OBJECT
 
 ////////////////////// BOSS BATTLE RESULT == WIN
 
