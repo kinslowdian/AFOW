@@ -1110,6 +1110,8 @@ function autoMove_tweenStageComplete(onEnd)
 
 function autoMove_event_portalEnter(event)
 {
+	var exitFrame;
+
 	$(".layer-field-player-area .player")[0].removeEventListener("webkitTransitionEnd", autoMove_event_portalEnter, false);
 	$(".layer-field-player-area .player")[0].removeEventListener("transitionend", autoMove_event_portalEnter, false);
 
@@ -1126,9 +1128,14 @@ function autoMove_event_portalEnter(event)
 	// TODO
 	if(game_levelFinal)
 	{
+		// TODO
 		// finalLevelSeq_init();
 
-		finalLevelAfterPortalFX(null);
+		// finalLevelAfterPortalFX(null);
+
+		// finalLevelEvent_showFill();
+
+		exitFrame = setTimeout(finalLevelEvent_showFill, 20);
 	}
 
 	else

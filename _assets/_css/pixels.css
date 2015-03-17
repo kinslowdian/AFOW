@@ -762,6 +762,29 @@ div[class*='tween-']
 	background-image: url(../_img/outcomeSprite_win_1x.png);
 }
 
+.pixels_finalLevelEvent
+{
+	background-image: url(../_img/finalLevelEvent_1x.png);
+	background-repeat: no-repeat;
+	background-size: 560px 440px;
+}
+
+.pixels_finalLevelEventTile
+{
+	background-image: url(../_img/finalLevelEventTile_1x.png);
+	background-repeat: repeat;
+	background-position: center top;
+	background-size: 240px 240px;
+}
+
+.pixels_finalLevelEventLoop
+{
+	background-image: url(../_img/finalLevelLoop_1x.gif);
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	background-size: 320px 320px;
+}
+
 /* ----------------------------------------------------------------------- GENERAL */
 
 
@@ -1160,6 +1183,21 @@ div[class*='tween-']
 	.pixels_resultOutcomeScreenWin
 	{
 		background-image: url(../_img/outcomeSprite_win_1x.png);
+	}
+
+	.pixels_finalLevelEvent
+	{
+		background-image: url(../_img/finalLevelEvent_1x.png);
+	}
+
+	.pixels_finalLevelEventTile
+	{
+		background-image: url(../_img/finalLevelEventTile_1x.png);
+	}
+
+	.pixels_finalLevelEventLoop
+	{
+		background-image: url(../_img/finalLevelLoop_1x.gif);
 	}
 }
 
@@ -1567,6 +1605,21 @@ div[class*='tween-']
 	.pixels_resultOutcomeScreenWin
 	{
 		background-image: url(../_img/outcomeSprite_win_2x.png);
+	}
+
+	.pixels_finalLevelEvent
+	{
+		background-image: url(../_img/finalLevelEvent_2x.png);
+	}
+
+	.pixels_finalLevelEventTile
+	{
+		background-image: url(../_img/finalLevelEventTile_2x.png);
+	}
+
+	.pixels_finalLevelEventLoop
+	{
+		background-image: url(../_img/finalLevelLoop_2x.gif);
 	}
 }
 

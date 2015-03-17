@@ -14,6 +14,8 @@ function finalLevelTriggered()
 	html_lev = html_lib_use("_finalLevel", true, true);
 	html_nav = html_lib_use("_battleNavUItext", true, true);
 
+	finalLevelEvent_init();
+
 	// LEVEL HTML PLUG
 	$("#display_finalLevel").html(html_lev);
 
@@ -23,6 +25,7 @@ function finalLevelTriggered()
 	html_lib_empty();
 }
 
+// TODO DEAD
 function finalLevelAfterPortalFX(event)
 {
 	var delay;
@@ -85,6 +88,8 @@ function finalLevelSeq_showEvent(event)
 
 	// FLUSH LEVEL OUT FOR OPTIMISATION
 	$("#display_wrapper").html("");
+
+	finalLevelEvent_purge();
 
 	delay = setTimeout(finalLevelSeq_zoom, 0.5 * 1000);
 }
