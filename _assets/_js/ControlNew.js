@@ -66,6 +66,8 @@ Control.prototype.init = function()
 
 	this.html_player = $("#display_wrapper .player").html();
 
+	this.fl.tween = "";
+
 	this.walkLegs = false;
 
 	this.dir = "";
@@ -1130,8 +1132,11 @@ function autoMove_enemyAttack_event(event)
 
 function autoMove_cleanPlayer()
 {
+	// TODO CHECK ALTERNATIVE
 	$(".layer-field-player-area .player").removeClass(control.fl.tween);
 	control.fl.tween = "";
+
+	control.animate = false;
 }
 
 
