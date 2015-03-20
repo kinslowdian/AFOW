@@ -259,6 +259,8 @@ function startGame_firstEntrance()
 	optionsTrigger_init(true);
 
 	control_request();
+
+	display_centerLevel();
 }
 
 // DEFUNCT

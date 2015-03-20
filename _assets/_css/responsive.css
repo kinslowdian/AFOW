@@ -293,11 +293,71 @@
 
 
 
-@media screen and (min-height:550px)
+/*@media screen and (min-height:550px)
 {
 	.oneUseInfo_winScreen_ground
 	{
 		visibility: visible !important;
+	}
+}
+*/
+
+/*GREATER THAN 300px HEIGHT*/
+@media screen and (min-height:300px)
+{
+	.resultOutcome_player
+	{
+		bottom: 20px; left: 0; right: 0;
+	}
+
+	.resultOutcome_header h1
+	{
+		margin: 20px auto 0 auto;
+	}
+
+	.resultOutcome_circle
+	{
+		visibility: hidden;
+	}
+}
+
+
+
+/*GREATER THAN 550px HEIGHT*/
+@media screen and (min-height:460px)
+{
+	.resultOutcome_player
+	{
+		bottom: 10px; left: 0; right: 0;
+	}
+
+	.resultOutcome_header h1
+	{
+		margin: 10px auto 0 auto;
+	}
+
+	.resultOutcome_circle
+	{
+		visibility: visible;
+	}
+}
+
+/*GREATER THAN 550px HEIGHT*/
+@media screen and (min-height:540px)
+{
+	.resultOutcome_player
+	{
+		bottom: 40px; left: 0; right: 0;
+	}
+
+	.resultOutcome_header h1
+	{
+		margin: 40px auto 0 auto;
+	}
+
+	.resultOutcome_circle
+	{
+		visibility: visible;
 	}
 }
 

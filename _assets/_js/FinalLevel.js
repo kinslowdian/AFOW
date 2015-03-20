@@ -104,6 +104,7 @@ function finalLevelSeq_showEvent(event)
 	$("#display_finalLevel #finalLevel_wrapper .foggyEdge").removeClass("foggyEdge_hide").addClass("foggyEdge_show");
 
 	// TODO MAY REQUIRE THE HTML STATE TO BE STORED FOR RETURNING TO THE GAME
+
 	theBattle = {};
 
 	theBattle.html = {};

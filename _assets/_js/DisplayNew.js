@@ -46,7 +46,7 @@ Display.prototype.centerPlayer = function()
 {
 	// 	center_y = -(player_y) + ((screen_h * 0.5) - (player_h * 0.5));
 
-	this.focus_y = Math.round(-(control.fl.target_safe_y) + ((this.h * 0.5) - (40 * 0.5)));
+	this.focus_y = Math.round(-(control.fl.y_safe) + ((this.h * 0.5) - (40 * 0.5)));
 }
 
 Display.prototype.hack = function()
@@ -130,8 +130,25 @@ function display_centerLevel()
 
 	display.centerPlayer();
 
-	$("." + display.centerTarget)[0].style.webkitTransform 	= "translateY(" + display.focus_y.toFixed(0) + "px)";
-	$("." + display.centerTarget)[0].style.transform				= "translateY(" + display.focus_y.toFixed(0) + "px)";
+	if(display.focus_y != display.focusCurrent_y)
+	{
+		css = "translateY(" + display.focus_y.toFixed(0) + "px)";
+
+		// ".tween-screen"
+		$("." + display.centerTarget)[0].addEventListener("webkitTransitionEnd", display_centerLevelEvent, false);
+		$("." + display.centerTarget)[0].addEventListener("transitionend", display_centerLevelEvent, false);
+
+		$("." + display.centerTarget)[0].style.webkitTransform 	= css;
+		$("." + display.centerTarget)[0].style.transform				= css;
+	}
+}
+
+function display_centerLevelEvent(event)
+{
+	$("." + display.centerTarget)[0].removeEventListener("webkitTransitionEnd", display_centerLevelEvent, false);
+	$("." + display.centerTarget)[0].removeEventListener("transitionend", display_centerLevelEvent, false);
+
+	display.focusCurrent_y = display.focus_y;
 }
 
 function display_centerLevelEnd(event)
@@ -152,7 +169,6 @@ function display_centerLevelEnd(event)
 		{
 			display.waitForStage.call_funct();
 		}
-
 	}
 }
 

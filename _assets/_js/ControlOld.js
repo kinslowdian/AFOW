@@ -30,49 +30,6 @@ var Control = function()
 
 Control.prototype.init = function()
 {
-	// NEW
-
-	this.fl.x 				= 0;
-	this.fl.y 				= 0;
-
-	this.fl.x_target 	= 0;
-	this.fl.y_target 	= 0;
-
-	this.fl.x_safe		= 0;
-	this.fl.y_safe		= 0;
-
-	this.fl.spawn_x		= 0;
-	this.fl.spawn_y		= 0;
-
-	this.fl.enter_x		= 0;
-	this.fl.enter_y		= 0;
-
-	this.rem_x				= 0;
-	this.rem_y				= 0;
-
-	this.fl.move			= 40;
-	this.animate 			= false;
-
-	this.signal				= "";
-
-	this.keyChange		= false;
-
-	this.walkClass		= "tween-player-XX";
-
-	this.scrollCount		= 0;
-	this.scrollCountMax	= 3;
-
-	// RECYCLED
-
-	this.html_player = $("#display_wrapper .player").html();
-
-	this.walkLegs = false;
-
-	this.dir = "";
-
-
-	// DEAD
-	/*
 	this.fl.target_x = 0;
 	this.fl.target_y = 0;
 
@@ -106,7 +63,6 @@ Control.prototype.init = function()
 
 	this.rem_x = 0;
 	this.rem_y = 0;
-	*/
 }
 
 Control.prototype.writePosition = function(placement)
@@ -116,11 +72,14 @@ Control.prototype.writePosition = function(placement)
 	this.fl.x 						= placement.x;
 	this.fl.y 						= placement.y;
 
-	this.fl.x_target 			= this.fl.x;
-	this.fl.y_target 			= this.fl.y;
+	this.fl.target_x 			= this.fl.x;
+	this.fl.target_y 			= this.fl.y;
 
-	this.fl.x_safe 				= this.fl.x;
-	this.fl.y_safe 				= this.fl.y;
+	this.fl.target_safe_x = this.fl.x;
+	this.fl.target_safe_y = this.fl.y;
+
+	this.fl.moveX 				= 0;
+	this.fl.moveY 				= 0;
 
 	this.walkClass				= "tween-player-XX";
 }
@@ -143,34 +102,28 @@ Control.prototype.writeRem = function(placement)
 	this.rem_y = placement.y;
 }
 
-Control.prototype.updateXY = function(x, y)
-{
-	this.fl.x_target += x;
-	this.fl.y_target += y;
-}
-
 Control.prototype.walkClassUpdate = function(newClass)
 {
-	if(newClass !== this.walkClass)
+	$(".layer-field-player-area .player .player-sprite").removeClass("tween-player-UD");
+	$(".layer-field-player-area .player .player-sprite").removeClass("tween-player-LR");
+	$(".layer-field-player-area .player .player-sprite").removeClass("tween-player-XX");
+
+	$(".layer-field-player-area .player .player-sprite").addClass(newClass);
+
+	if(newClass === "tween-player-XX" && this.walkLegs)
 	{
-		$(".player .player-sprite").removeClass(this.walkClass).addClass(newClass);
+		this.walkLegs = false;
+		$(".layer-field-player-area .player .map-goat-legs").removeClass("tween-mapPlayerWalk_loop").addClass("tween-mapPlayerWalk_stop");
+	}
 
-		this.walkClass = newClass;
-
-		if(this.walkClass === "tween-player-XX" && this.walkLegs)
-		{
-			this.walkLegs = false;
-			$(".layer-field-player-area .player .map-goat-legs").removeClass("tween-mapPlayerWalk_loop").addClass("tween-mapPlayerWalk_stop");
-		}
-
-		else if(this.walkClass !== "tween-player-XX" && !this.walkLegs)
-		{
-			this.walkLegs = true;
-			$(".layer-field-player-area .player .map-goat-legs").removeClass("tween-mapPlayerWalk_stop").addClass("tween-mapPlayerWalk_loop");
-		}
-
+	else if(newClass !== "tween-player-XX" && !this.walkLegs)
+	{
+		this.walkLegs = true;
+		$(".layer-field-player-area .player .map-goat-legs").removeClass("tween-mapPlayerWalk_stop").addClass("tween-mapPlayerWalk_loop");
 	}
 }
+
+
 
 Control.prototype.touch_initPad = function(touchArea)
 {
@@ -205,6 +158,7 @@ Control.prototype.touch_reset = function()
 function control_request()
 {
 	control_init();
+	loop_init();
 }
 
 function control_init()
@@ -227,324 +181,59 @@ function control_init()
 	move_init(true);
 }
 
+function loop_init()
+{
+	loopList = new Array();
 
-function move_init(run)
+	loopList.push(onEnterFrame_direction);
+	loopList.push(onEnterFrame_stepper);
+	loopList.push(hack_hitTest);
+	loopList.push(onEnterFrame_move);
+	// loopList.push(display_centerLevel);
+
+	loopRun = false;
+
+	onEnterFrame_init(true);
+}
+
+function onEnterFrame_init(run)
 {
 	if(run)
 	{
-		// CONTROLS
-		$(window)[0].addEventListener("keydown", move_event, false);
-		$(window)[0].addEventListener("keyup", move_event, false);
-
+		loopRun = true;
+		//
 		if(touchSupported)
 		{
-			$("#touchPad-full")[0].addEventListener("touchstart", touch_find, false);
-			$("#touchPad-full")[0].addEventListener("touchmove", touch_find, false);
-			$("#touchPad-full")[0].addEventListener("touchend", touch_find, false);
+			loopInt = setInterval(onEnterFrame, 20); // SET TO 10 FOR TURBO
+			// window.requestAnimationFrame(onEnterFrame);
 		}
 
-		// PLAYER
-		$(".player").addClass("tween-controlPlayer");
+		else
+		{
+			window.requestAnimationFrame(onEnterFrame);
+		}
 
-		$(".tween-controlPlayer")[0].addEventListener("webkitTransitionEnd", move_cssAddEvent, false);
-		$(".tween-controlPlayer")[0].addEventListener("transitionend", move_cssAddEvent, false);
-
-		// MENU
-		$("#menu_strip").removeClass("ignoreMouseEvents");
-		$("#menu_strip .menu_tab").removeClass("menuTab_hide").addClass("menuTab_show");
+		loopSlowInt = setInterval(onEnterSlow, 1400);
 	}
 
 	else
 	{
-		// CONTROLS
-		$(window)[0].removeEventListener("keydown", move_event, false);
-		$(window)[0].removeEventListener("keyup", move_event, false);
+		loopRun = false;
 
 		if(touchSupported)
 		{
-			$("#touchPad-full")[0].removeEventListener("touchstart", touch_find, false);
-			$("#touchPad-full")[0].removeEventListener("touchmove", touch_find, false);
-			$("#touchPad-full")[0].removeEventListener("touchend", touch_find, false);
+			clearInterval(loopInt);
+			// window.cancelAnimationFrame(onEnterFrame);
 		}
 
-		// PLAYER
-		$(".tween-controlPlayer")[0].removeEventListener("webkitTransitionEnd", move_cssAddEvent, false);
-		$(".tween-controlPlayer")[0].removeEventListener("transitionend", move_cssAddEvent, false);
+		else
+		{
+			window.cancelAnimationFrame(onEnterFrame);
+		}
 
-		$(".player").removeClass("tween-controlPlayer");
-
-		// MENU
-		$("#menu_strip").addClass("ignoreMouseEvents");
-		$("#menu_strip .menu_tab").removeClass("menuTab_show").addClass("menuTab_hide");
+		clearInterval(loopSlowInt);
 	}
 }
-
-function move_plugIn()
-{
-	move_reset();
-	move_init(true);
-}
-
-function move_reset()
-{
-	hitTest_init();
-
-	control.signal = "";
-}
-
-function move_cancel()
-{
-	control.signal = "STILL";
-
-	move_init(false);
-}
-
-function move_event(event)
-{
-	if(event.type === "keyup")
-	{
-		control.signal = "STILL";
-
-		control.walkClassUpdate("tween-player-XX");
-	}
-
-	if(event.type === "keydown")
-	{
-		// U
-		if(event.keyCode == 38 && control.signal !== "UP")
-		{
-			control.signal = "UP";
-
-			control.keyChange = true;
-		}
-
-		// D
-		else if(event.keyCode == 40 && control.signal !== "DOWN")
-		{
-			control.signal = "DOWN";
-
-			control.keyChange = true;
-		}
-
-		// L
-		else if(event.keyCode == 37 && control.signal !== "LEFT")
-		{
-			control.signal = "LEFT";
-
-			control.keyChange = true;
-		}
-
-		// R
-		else if(event.keyCode == 39 && control.signal !== "RIGHT")
-		{
-			control.signal = "RIGHT";
-
-			control.keyChange = true;
-		}
-	}
-
-	// trace(control.signal);
-
-	if(control.keyChange)
-	{
-		control.keyChange = false;
-
-		move_listen();
-	}
-}
-
-function move_listen()
-{
-	var _x;
-	var _y;
-
-	if(control.enableTouch)
-	{
-		control.signal = control.dir;
-	}
-
-	switch(control.signal)
-	{
-		case "UP":
-		{
-			_x = 0;
-			_y = -control.fl.move;
-
-			control.walkClassUpdate("tween-player-UD");
-
-			break;
-		}
-
-		case "DOWN":
-		{
-			_x = 0;
-			_y = control.fl.move;
-
-			control.walkClassUpdate("tween-player-UD");
-
-			break;
-		}
-
-		case "LEFT":
-		{
-			_x = -control.fl.move;
-			_y = 0;
-
-			control.walkClassUpdate("tween-player-LR");
-
-			break;
-		}
-
-		case "RIGHT":
-		{
-			_x = control.fl.move;
-			_y = 0;
-
-			control.walkClassUpdate("tween-player-LR");
-
-			break;
-		}
-
-		default:
-		{
-			control.signal = "STILL";
-
-			control.walkClassUpdate("tween-player-XX");
-		}
-	}
-
-	if(!control.animate && control.signal !== "STILL")
-	{
-		control.animate = true;
-
-		control.updateXY(_x, _y);
-
-		move_cssAdd();
-	}
-}
-
-function move_cssAdd()
-{
-	var css;
-	var reset_hitTest = false;
-
-	css = "translate(" + control.fl.x_target + "px, " + control.fl.y_target + "px)";
-
-	$(".hitTest")[0].style.webkitTransform 	= css;
-	$(".hitTest")[0].style.transform				= css;
-
-	// TODO CHECK FUNCTION CALL
-	hitTest_check();
-
-	// EDGE
-	if(HIT_TEST.hit_edge)
-	{
-		reset_hitTest = true;
-	}
-
-	else
-	{
-		control.fl.x_safe = control.fl.x_target;
-		control.fl.y_safe = control.fl.y_target;
-
-		$(".layer-field-player-area .player")[0].style.webkitTransform 	= css;
-		$(".layer-field-player-area .player")[0].style.transform				= css;
-	}
-
-	// PORTAL
-	if(HIT_TEST.hit_portal)
-	{
-		move_cancel();
-
-		temp_findPortalEnter();
-	}
-
-	// ENEMY
-	if(HIT_TEST.hit_enemy)
-	{
-		move_cancel();
-
-		control.fl.x_safe = control.fl.x_target;
-		control.fl.y_safe = control.fl.y_target;
-
-		preBattleOptions_init();
-
-		temp_findEnemy();
-	}
-
-	// SOUND
-	if(HIT_TEST.hit_sound)
-	{
-		if(soundEffects_pedal != null)
-		{
-			if(gameEventTriggers.hitList.sound_id !== HIT_TEST.hit_sound_id)
-			{
-				sound_level_trigger_event(HIT_TEST.hit_sound_id);
-
-				gameEventTriggers.hitList.sound_id = HIT_TEST.hit_sound_id;
-			}
-		}
-	}
-
-	// GOD
-	if(HIT_TEST.hit_god)
-	{
-		if(gameEventTriggers.hitList.god_id !== HIT_TEST.hit_god_id)
-		{
-			god_eventSearch(HIT_TEST.hit_god_id);
-
-			gameEventTriggers.hitList.god_id = HIT_TEST.hit_god_id;
-		}
-	}
-
-
-	if(reset_hitTest)
-	{
-		reset_hitTest = false;
-
-		css = "translate(" + control.fl.x_safe + "px, " + control.fl.y_safe + "px)";
-
-		control.fl.x_target = control.fl.x_safe;
-		control.fl.y_target = control.fl.y_safe;
-
-		$(".hitTest")[0].style.webkitTransform 	= css;
-		$(".hitTest")[0].style.transform				= css;
-
-		// TODO CHECK FUNCTION CALL
-		hitTest_init();
-
-		control.animate = false;
-	}
-}
-
-function move_cssAddEvent(event)
-{
-	control.fl.x = control.fl.x_target;
-	control.fl.y = control.fl.y_target;
-
-	control.animate = false;
-
-	if(control.signal === "UP" || control.signal === "DOWN")
-	{
-		// STAGE MOVE TO CENTER PLAYER AFTER 3xY_MOVES
-
-		if(control.scrollCount < control.scrollCountMax)
-		{
-			control.scrollCount++;
-		}
-
-		if(control.scrollCount >= control.scrollCountMax)
-		{
-			control.scrollCount = 0;
-
-			display_centerLevel();
-		}
-	}
-
-	move_listen();
-}
-
-
 
 function hitTest_init()
 {
@@ -562,7 +251,236 @@ function hitTest_init()
 	HIT_TEST.hit_god = false;
 }
 
-function hitTest_check()
+function move_init(run)
+{
+	if(run)
+	{
+		control.signal = true;
+
+		$(window)[0].addEventListener("keydown", move_event, false);
+		$(window)[0].addEventListener("keyup", move_event, false);
+
+		if(touchSupported)
+		{
+			$(window)[0].addEventListener("touchstart", touch_lock, false);
+
+			$("#touchPad-full")[0].addEventListener("touchstart", touch_find, false);
+			$("#touchPad-full")[0].addEventListener("touchmove", touch_find, false);
+			$("#touchPad-full")[0].addEventListener("touchend", touch_find, false);
+
+			$("#touchPad .touchPad-cont").removeClass("touchPad_C_hide").addClass("touchPad_C_show");
+		}
+
+		$("#menu_strip").removeClass("ignoreMouseEvents");
+		$("#menu_strip .menu_tab").removeClass("menuTab_hide").addClass("menuTab_show");
+
+		// TouchUI.js
+		// ADD WHEN HTML UPDATED
+		// $(window)[0].addEventListener("touchstart", touch_lock, false);
+
+		// ADD WHEN HTML UPDATED
+		// $("#touchPad-full")[0].addEventListener("touchstart", touch_find, false);
+		// $("#touchPad-full")[0].addEventListener("touchmove", touch_find, false);
+		// $("#touchPad-full")[0].addEventListener("touchend", touch_find, false);
+	}
+
+	else
+	{
+		control.signal = false;
+
+		$(window)[0].removeEventListener("keydown", move_event, false);
+		$(window)[0].removeEventListener("keyup", move_event, false);
+
+		if(touchSupported)
+		{
+			$(window)[0].removeEventListener("touchstart", touch_lock, false);
+
+			$("#touchPad-full")[0].removeEventListener("touchstart", touch_find, false);
+			$("#touchPad-full")[0].removeEventListener("touchmove", touch_find, false);
+			$("#touchPad-full")[0].removeEventListener("touchend", touch_find, false);
+
+			$("#touchPad .touchPad-cont").removeClass("touchPad_C_show").addClass("touchPad_C_hide");
+
+			$("#" + control.touchData.indicator).removeClass("touchPad_C_signal_show").addClass("touchPad_C_signal_hide");
+		}
+
+		$("#menu_strip").addClass("ignoreMouseEvents");
+		$("#menu_strip .menu_tab").removeClass("menuTab_show").addClass("menuTab_hide");
+
+		// TouchUI.js
+		// ADD WHEN HTML UPDATED
+		// $(window)[0].removeEventListener("touchstart", touch_lock, false);
+
+		// ADD WHEN HTML UPDATED
+		// $("#touchPad-full")[0].removeEventListener("touchstart", touch_find, false);
+		// $("#touchPad-full")[0].removeEventListener("touchmove", touch_find, false);
+		// $("#touchPad-full")[0].removeEventListener("touchend", touch_find, false);
+	}
+}
+
+function move_event(event)
+{
+	trace("move_event();");
+
+	var tempSignal = "";
+
+	if(event.type === "keyup")
+	{
+		control.dir = "STILL";
+
+		control.walkClassUpdate("tween-player-XX");
+	}
+
+	if(event.type === "keydown")
+	{
+		switch(event.keyCode)
+		{
+			case 37:
+			{
+				// LEFT
+				tempSignal = "LEFT";
+
+				control.walkClassUpdate("tween-player-LR");
+
+				break;
+			}
+
+			case 38:
+			{
+				// UP
+				tempSignal = "UP";
+
+				control.walkClassUpdate("tween-player-UD");
+
+				break;
+			}
+
+			case 39:
+			{
+				// RIGHT
+				tempSignal = "RIGHT";
+
+				control.walkClassUpdate("tween-player-LR");
+
+				break;
+			}
+
+			case 40:
+			{
+				// DOWN
+				tempSignal = "DOWN";
+
+				control.walkClassUpdate("tween-player-UD");
+
+				break;
+			}
+
+			default:
+			{
+				tempSignal = "STILL";
+
+				control.walkClassUpdate("tween-player-XX");
+			}
+		}
+
+		if(control.signal)
+		{
+			control.dir = tempSignal;
+		}
+	}
+}
+
+function move_reset()
+{
+	hitTest_init();
+
+	control.signal = true;
+
+	onEnterFrame_init(true);
+	console.log("!!!!!!----------- move_reset");
+}
+
+function move_cancel()
+{
+	control.signal = false;
+
+	onEnterFrame_init(false);
+
+	move_init(false);
+}
+
+function move_plugIn()
+{
+	move_reset();
+	move_init(true);
+}
+
+function onEnterFrame()
+{
+	for(var i in loopList)
+	{
+		loopList[i]();
+	}
+
+	if(loopRun && !touchSupported)
+	{
+		window.requestAnimationFrame(onEnterFrame);
+	}
+}
+
+function onEnterSlow()
+{
+	display_centerLevel();
+}
+
+function onEnterFrame_direction()
+{
+	if(control.signal)
+	{
+		if(control.dir === "UP")
+		{
+			if(control.fl.y == control.fl.target_y)
+			{
+				control.fl.moveY = -(control.fl.move);
+				control.fl.target_y -= control.fl.target_move;
+			}
+		}
+
+		else if(control.dir === "DOWN") //else if
+		{
+			if(control.fl.y == control.fl.target_y)
+			{
+				control.fl.moveY = control.fl.move;
+				control.fl.target_y += control.fl.target_move;
+			}
+		}
+
+		if(control.dir === "LEFT")
+		{
+			if(control.fl.x == control.fl.target_x)
+			{
+				control.fl.moveX = -(control.fl.move);
+				control.fl.target_x -= control.fl.target_move;
+			}
+		}
+
+		else if(control.dir === "RIGHT") //else if
+		{
+			if(control.fl.x == control.fl.target_x)
+			{
+				control.fl.moveX = control.fl.move;
+				control.fl.target_x += control.fl.target_move;
+			}
+		}
+	}
+
+	else
+	{
+
+	}
+}
+
+function hack_hitTest()
 {
 	HIT_TEST.hits = $(".collideCheck-player").collision(".collideCheck-field");
 
@@ -571,11 +489,15 @@ function hitTest_check()
 		if($(HIT_TEST.hits[0]).attr("data-npc") === "edge")
 		{
 			HIT_TEST.hit_edge = true;
+
+			control.signal = false;
 		}
 
 		else if($(HIT_TEST.hits[0]).attr("data-npc") === "portal")
 		{
 			HIT_TEST.hit_portal = true;
+
+			control.signal = false;
 
 			HIT_TEST.hit_portal_id = HIT_TEST.hits[0].id;
 		}
@@ -583,6 +505,8 @@ function hitTest_check()
 		else if($(HIT_TEST.hits[0]).attr("data-npc") === "enemy")
 		{
 			HIT_TEST.hit_enemy = true;
+
+			control.signal = false;
 
 			HIT_TEST.hit_enemy_id = HIT_TEST.hits[0].id;
 		}
@@ -606,7 +530,180 @@ function hitTest_check()
 	{
 
 	}
+
+	// $(".status p").html(HIT_TEST.hit_edge.toString());
+
+	hack_hitTest_update();
 }
+
+function hack_hitTest_update()
+{
+	if(HIT_TEST.hit_edge)
+	{
+		// HIT ISSUE SO USE SAFE X & Y (EXTRA WRITE)
+
+		control.fl.target_x = control.fl.target_safe_x;
+		control.fl.target_y = control.fl.target_safe_y;
+
+		// RESET CONTROL AND HIT TEST
+
+		// REVERSE LOGIC??
+
+		if(HIT_TEST.hit_edge)
+		{
+			HIT_TEST.hit_edge = false;
+		}
+
+		if(!control.signal)
+		{
+			control.signal = true;
+		}
+
+		// REVERSE LOGIC??
+	}
+
+	else
+	{
+		// SAFE VALUES UPDATED
+
+		if(!HIT_TEST.hit_enemy)
+		{
+			control.fl.target_safe_x = control.fl.target_x;
+			control.fl.target_safe_y = control.fl.target_y;
+
+			// display_centerLevel();
+		}
+		// control.fl.target_safe_x = control.fl.target_x;
+		// control.fl.target_safe_y = control.fl.target_y;
+	}
+
+	if(HIT_TEST.hit_portal)
+	{
+		// AMEND
+		// onEnterFrame_init(false);
+		move_cancel();
+
+		temp_findPortalEnter();
+	}
+
+	else
+	{
+
+	}
+
+	if(HIT_TEST.hit_enemy)
+	{
+		// AMEND
+		// onEnterFrame_init(false);
+		move_cancel();
+
+		preBattleOptions_init();
+
+		temp_findEnemy();
+	}
+
+	else
+	{
+
+	}
+
+	if(HIT_TEST.hit_sound)
+	{
+		if(soundEffects_pedal != null)
+		{
+			if(gameEventTriggers.hitList.sound_id !== HIT_TEST.hit_sound_id)
+			{
+				sound_level_trigger_event(HIT_TEST.hit_sound_id);
+
+				gameEventTriggers.hitList.sound_id = HIT_TEST.hit_sound_id;
+			}
+		}
+	}
+
+	// SEE temp.js
+	if(HIT_TEST.hit_god)
+	{
+		if(gameEventTriggers.hitList.god_id !== HIT_TEST.hit_god_id)
+		{
+			god_eventSearch(HIT_TEST.hit_god_id);
+
+			gameEventTriggers.hitList.god_id = HIT_TEST.hit_god_id;
+		}
+
+		// WHEN BUILT - OPTIMISE THIS THE SAME AS THE SOUND
+		// god_eventSearch(HIT_TEST.hit_god_id);
+	}
+}
+
+function onEnterFrame_stepper()
+{
+	// var css;
+
+	var finalMoveX;
+	var finalMoveY;
+
+	if(control.signal)
+	{
+		// USE TARGET X & Y
+
+		finalMoveX = control.fl.target_x;
+		finalMoveY = control.fl.target_y;
+	}
+
+	else
+	{
+		// HIT ISSUE SO USE SAFE X & Y
+
+		finalMoveX = control.fl.target_safe_x;
+		finalMoveY = control.fl.target_safe_y;
+	}
+
+	/*
+	css = {
+					"-webkit-transform"	: "translate(" + finalMoveX + "px, " + finalMoveY + "px)",
+					"transform"					: "translate(" + finalMoveX + "px, " + finalMoveY + "px)"
+				};
+
+	$(".hitTest").css(css);
+	*/
+
+	$(".hitTest")[0].style.webkitTransform 	= "translate(" + finalMoveX + "px, " + finalMoveY + "px)";
+	$(".hitTest")[0].style.transform 				= "translate(" + finalMoveX + "px, " + finalMoveY + "px)";
+}
+
+function onEnterFrame_move()
+{
+	// var css;
+
+	if(!HIT_TEST.hit_portal && !HIT_TEST.hit_enemy)
+	{
+		if(control.fl.x != control.fl.target_x)
+		{
+			// ADD NORMAL MOVEMENT
+			control.fl.x += control.fl.moveX;
+		}
+
+		if(control.fl.y != control.fl.target_y)
+		{
+			// ADD NORMAL MOVEMENT
+			control.fl.y += control.fl.moveY;
+		}
+
+		/*
+		css = {
+						"-webkit-transform"	: "translate(" + control.fl.x + "px, " + control.fl.y + "px)",
+						"transform"					: "translate(" + control.fl.x + "px, " + control.fl.y + "px)"
+					};
+
+		$(".layer-field-player-area .player").css(css);
+		*/
+
+		$(".layer-field-player-area .player")[0].style.webkitTransform 	= "translate(" + control.fl.x + "px, " + control.fl.y + "px)";
+		$(".layer-field-player-area .player")[0].style.transform				= "translate(" + control.fl.x + "px, " + control.fl.y + "px)";
+	}
+}
+
+
 
 ///////// UPDATE
 
@@ -878,8 +975,8 @@ function autoMove_init(moveRequest)
 		{
 			tween = {};
 
-			tween.x 		= control.fl.x_safe;
-			tween.y 		= control.fl.y_safe;
+			tween.x 		= control.fl.target_safe_x;
+			tween.y 		= control.fl.target_safe_y;
 
 			control.writePosition({x:tween.x, y:tween.y, d:"STILL"});
 
@@ -1282,8 +1379,6 @@ function touch_feedback()
 			control.walkClassUpdate(walkClass);
 		}
 	}
-
-	control_listen();
 }
 
 function touch_render()
