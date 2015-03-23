@@ -2546,6 +2546,8 @@ function worldReturn_slideReturnPurge(event)
 		eventColor_remove();
 	}
 
+	display_centerLevel();
+
 	// TODO CHECK
 	BATTLE_NAV.game.result = "";
 }

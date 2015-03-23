@@ -438,12 +438,33 @@ function move_cssAdd()
 	// TODO CHECK FUNCTION CALL
 	hitTest_check();
 
+	//////////////// MAIN HITS
+
 	// EDGE
 	if(HIT_TEST.hit_edge)
 	{
 		reset_hitTest = true;
 	}
 
+	// PORTAL
+	else if(HIT_TEST.hit_portal)
+	{
+		move_cancel();
+
+		temp_findPortalEnter();
+	}
+
+	// ENEMY
+	else if(HIT_TEST.hit_enemy)
+	{
+		move_cancel();
+
+		preBattleOptions_init();
+
+		temp_findEnemy();
+	}
+
+	// DEFAULT
 	else
 	{
 		control.fl.x_safe = control.fl.x_target;
@@ -453,26 +474,7 @@ function move_cssAdd()
 		$(".layer-field-player-area .player")[0].style.transform				= css;
 	}
 
-	// PORTAL
-	if(HIT_TEST.hit_portal)
-	{
-		move_cancel();
-
-		temp_findPortalEnter();
-	}
-
-	// ENEMY
-	if(HIT_TEST.hit_enemy)
-	{
-		move_cancel();
-
-		control.fl.x_safe = control.fl.x_target;
-		control.fl.y_safe = control.fl.y_target;
-
-		preBattleOptions_init();
-
-		temp_findEnemy();
-	}
+	//////////////// MAIN HITS
 
 	// SOUND
 	if(HIT_TEST.hit_sound)
