@@ -130,17 +130,22 @@ function display_centerLevel()
 
 	display.centerPlayer();
 
-	if(display.focus_y != display.focusCurrent_y)
+	/*
+	if(display.focus_y != display.focusCurrent_y && !display.focusMove)
 	{
+		display.focusMove = true;
+	*/
 		css = "translateY(" + display.focus_y.toFixed(0) + "px)";
 
 		// ".tween-screen"
-		$("." + display.centerTarget)[0].addEventListener("webkitTransitionEnd", display_centerLevelEvent, false);
-		$("." + display.centerTarget)[0].addEventListener("transitionend", display_centerLevelEvent, false);
+		// $("." + display.centerTarget)[0].addEventListener("webkitTransitionEnd", display_centerLevelEvent, false);
+		// $("." + display.centerTarget)[0].addEventListener("transitionend", display_centerLevelEvent, false);
 
 		$("." + display.centerTarget)[0].style.webkitTransform 	= css;
 		$("." + display.centerTarget)[0].style.transform				= css;
+	/*
 	}
+	*/
 }
 
 function display_centerLevelEvent(event)
@@ -149,6 +154,8 @@ function display_centerLevelEvent(event)
 	$("." + display.centerTarget)[0].removeEventListener("transitionend", display_centerLevelEvent, false);
 
 	display.focusCurrent_y = display.focus_y;
+
+	display.focusMove = false;
 }
 
 function display_centerLevelEnd(event)

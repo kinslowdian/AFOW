@@ -487,8 +487,11 @@ function move_cssAddEvent(event)
 
 	if(control.signal === "UP" || control.signal === "DOWN")
 	{
+		display_centerLevel();
+
 		// STAGE MOVE TO CENTER PLAYER AFTER 3xY_MOVES
 
+		/*
 		if(control.scrollCount < control.scrollCountMax)
 		{
 			control.scrollCount++;
@@ -500,6 +503,7 @@ function move_cssAddEvent(event)
 
 			display_centerLevel();
 		}
+		*/
 	}
 
 	move_listen();
@@ -1046,6 +1050,8 @@ function autoMove_cleanPlayer()
 function touch_init()
 {
 	control.touch_initPad("touchPad-full");
+
+	$(window)[0].addEventListener("touchstart", touch_lock, false);
 }
 
 function touch_lock(event)
@@ -1189,7 +1195,7 @@ function touch_feedback()
 		}
 	}
 
-	control_listen();
+	move_listen();
 }
 
 function touch_render()
