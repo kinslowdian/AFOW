@@ -51,8 +51,8 @@ function preBattleOptions_init()
 
 	preBattleOptions.playerStore = {};
 
-	preBattleOptions.playerStore.x_return = control.fl.target_safe_x;
-	preBattleOptions.playerStore.y_return = control.fl.target_safe_y;
+	preBattleOptions.playerStore.x_return = control.fl.x_safe;
+	preBattleOptions.playerStore.y_return = control.fl.y_safe;
 }
 
 function preBattleOptions_build()
