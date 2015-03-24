@@ -1,7 +1,4 @@
-
 var display;
-
-// var raw_displayEls;
 
 var Display = function(w, h, target)
 {
@@ -121,7 +118,9 @@ function display_screenUpdate(run)
 function display_screenUpdateEvent(event)
 {
 	display.updateScreenVals();
-	display.centerPlayer();
+	// display.centerPlayer();
+
+	display_centerLevel();
 }
 
 function display_centerLevel()
@@ -130,32 +129,28 @@ function display_centerLevel()
 
 	display.centerPlayer();
 
+	css = "translateY(" + display.focus_y.toFixed(0) + "px)";
+
 	/*
-	if(display.focus_y != display.focusCurrent_y && !display.focusMove)
+	if(!display.focusHasEvent)
 	{
-		display.focusMove = true;
-	*/
-		css = "translateY(" + display.focus_y.toFixed(0) + "px)";
+		display.focusHasEvent = true;
 
-		// ".tween-screen"
-		// $("." + display.centerTarget)[0].addEventListener("webkitTransitionEnd", display_centerLevelEvent, false);
-		// $("." + display.centerTarget)[0].addEventListener("transitionend", display_centerLevelEvent, false);
-
-		$("." + display.centerTarget)[0].style.webkitTransform 	= css;
-		$("." + display.centerTarget)[0].style.transform				= css;
-	/*
+		$("." + display.centerTarget)[0].addEventListener("webkitTransitionEnd", display_centerLevelEvent, false);
+		$("." + display.centerTarget)[0].addEventListener("transitionend", display_centerLevelEvent, false);
 	}
 	*/
+
+	$("." + display.centerTarget)[0].style.webkitTransform 	= css;
+	$("." + display.centerTarget)[0].style.transform				= css;
 }
 
 function display_centerLevelEvent(event)
 {
-	$("." + display.centerTarget)[0].removeEventListener("webkitTransitionEnd", display_centerLevelEvent, false);
-	$("." + display.centerTarget)[0].removeEventListener("transitionend", display_centerLevelEvent, false);
+	// $("." + display.centerTarget)[0].removeEventListener("webkitTransitionEnd", display_centerLevelEvent, false);
+	// $("." + display.centerTarget)[0].removeEventListener("transitionend", display_centerLevelEvent, false);
 
 	display.focusCurrent_y = display.focus_y;
-
-	display.focusMove = false;
 }
 
 function display_centerLevelEnd(event)
@@ -182,12 +177,6 @@ function display_centerLevelEnd(event)
 
 function display_setBG()
 {
-	// display.fill 			= {};
-	// display.fill.val_x = 0;
-	// display.fill.val_y = 0;
-	// display.fill.css 	= {};
-
-
 	display.fill.css 		= {};
 	display.fill.val_x 	= Math.round((display.screen_w * 0.5) / 40) * 40;
 	display.fill.val_y 	= Math.round((display.screen_h * 0.5) / 40) * 40;
@@ -235,9 +224,4 @@ function display_setBG()
 
 	$(".bgFill-t").css(display.fill.css.t);
 	$(".bgFill-b").css(display.fill.css.b);
-}
-
-function sky_paralax()
-{
-
 }

@@ -355,20 +355,15 @@ function multiUseInfoScreen_dropEndNext(event)
 
 function startIntro_optionsHint()
 {
-	var delay_startIntro;
+	var delay;
 
 	$(".multiUseInfo_intro .multiUseInfo_speech_40x40").toggleClass("multiUseInfo_speech_hide", "multiUseInfo_speech_show");
 
-	timerList_init();
-	delay_startIntro = new AnimationTimer();
-	timerList_add(delay_startIntro);
-	delay_startIntro.time(3, startIntro_optionsHintComplete);
+	delay = setTimeout(startIntro_optionsHintComplete, 3 * 1000);
 }
 
 function startIntro_optionsHintComplete()
 {
-	timerList_destroy();
-
 	multiUseInfoScreen_removeTitleSoft(startIntro_optionsHintRemove);
 }
 
@@ -391,19 +386,16 @@ function startIntro_optionsHintRemove(event)
 
 function controlIntro_hint()
 {
-	var delay_startIntro;
+	var delay;
+
 
 	$("#options_wrapper .options-choice").html("");
 
-	timerList_init();
-	delay_controlIntro = new AnimationTimer();
-	timerList_add(delay_controlIntro);
-	delay_controlIntro.time(3, controlIntro_hintComplete);
+	delay = setTimeout(controlIntro_hintComplete, 3 * 1000);
 }
 
 function controlIntro_hintComplete()
 {
-	timerList_destroy();
 	multiUseInfoScreen_removeTitle();
 }
 

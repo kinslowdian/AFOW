@@ -15,8 +15,6 @@ var Graphics;
 
 var ext_html_path;
 
-// var ext_html_data; - REPLACED IN Graphics obj
-
 var event_htmlLoaded = document.createEvent("Event");
 
 event_htmlLoaded.initEvent("EVENT_HTML_LOADED", true, true);
@@ -26,8 +24,6 @@ event_htmlLoaded.initEvent("EVENT_HTML_LOADED", true, true);
 
 function checkDevice()
 {
-	// CHANGE debug.touch IN debug.js TO true TO ENABLE TOUCH UI
-
 	touchSupported = ('ontouchstart' in document.documentElement) || (window.DocumentTouch && document instanceof DocumentTouch || navigator.msMaxTouchPoints || debug.touch ? true : false);
 
 	if(touchSupported)
@@ -120,9 +116,6 @@ function html_lib_init(callBack)
 
 	Graphics.html.file = Logic.dat_ROM["_HTML-EXT"]["file_lib"]["file"];
 	Graphics.html.save = new load_HTML(Graphics.html.file, $("#memory"));
-
-	// var lf = Logic.dat_ROM["_HTML-EXT"]["file_lib"]["file"];
-	//var lh = new load_HTML(lf, $("#memory"));
 }
 
 function html_lib_loaded(event)
@@ -134,11 +127,7 @@ function html_lib_loaded(event)
 
 function html_lib_store()
 {
-	// ext_html_data = $("#memory").html();
-
 	Graphics.html.data = $("#memory").html();
-
-	// temp_callback_html();
 
 	Graphics.gfx_CALL_BACK();
 

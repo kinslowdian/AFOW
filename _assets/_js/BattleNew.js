@@ -179,28 +179,20 @@ function microBattleSequence_storeData()
 
 function microBattleSequence_init()
 {
+	var delay;
 
-	var mbs_delay;
-
-	mbs_delay = new AnimationTimer();
-
-	timerList_add(mbs_delay);
-	mbs_delay.time(1, microBattleSequence_boss);
-
+	delay = setTimeout(microBattleSequence_boss, 1 * 1000);
 }
 
 function microBattleSequence_boss()
 {
-	var mbs_delay;
+	var delay;
 
 	$("#bossWatching .boss-head > div").removeClass("boss-face-default").addClass("boss-face-happy");
 	$("#bossWatching .boss-armL-Cont").addClass("boss-armL-Cont-UP");
 	$("#bossWatching .boss-armR-Cont").addClass("boss-armL-Cont-UP");
 
-	mbs_delay = new AnimationTimer();
-
-	timerList_add(mbs_delay);
-	mbs_delay.time(0.5, microBattleSequence_scrollDown);
+	delay = setTimeout(microBattleSequence_scrollDown, 0.5 * 1000);
 }
 
 function microBattleSequence_scrollDown()
@@ -237,14 +229,11 @@ function microBattleSequence_addData()
 
 function microBattleSequence_sceneReady()
 {
-	var mbs_level_delay;
+	var delay;
 
 	spaceSquids_setup();
 
-	mbs_level_delay = new AnimationTimer();
-
-	timerList_add(mbs_level_delay);
-	mbs_level_delay.time(1.5, microBattleSequence_levelFlashIn);
+	delay = setTimeout(microBattleSequence_levelFlashIn, 1.5 * 1000);
 }
 
 function microBattleSequence_levelFlashIn()
@@ -461,17 +450,14 @@ function battleNav_hintDisplayInit()
 
 function battleNav_hintDisplayShow(event)
 {
-	var hintDelay;
+	var delay;
 
 	$("#battle-hint-2")[0].removeEventListener("webkitTransitionEnd", battleNav_hintDisplayShow, false);
 	$("#battle-hint-2")[0].removeEventListener("transitionend", battleNav_hintDisplayShow, false);
 
 	$("#battle-nav .battleNavShock").css("opacity", "1");
 
-	hintDelay = new AnimationTimer();
-
-	timerList_add(hintDelay);
-	hintDelay.time(2.5, battleNav_hintDisplayHide);
+	delay = setTimeout(battleNav_hintDisplayHide, 2.5 * 1000);
 }
 
 function battleNav_hintDisplayHide()
@@ -651,7 +637,9 @@ function battleNav_mouseRollCheck(div, action)
 
 function battleNav_selection(selected)
 {
-	var selectionDelay;
+	// var selectionDelay;
+
+	var delay;
 
 	var unselected0;
 	var unselected1;
@@ -692,10 +680,7 @@ function battleNav_selection(selected)
 	// LOGIC
 	battleNav_logicRequest();
 
-	selectionDelay = new AnimationTimer();
-
-	timerList_add(selectionDelay);
-	selectionDelay.time(1, battleNav_removeSelection);
+	delay = setTimeout(battleNav_removeSelection, 1 * 1000);
 }
 
 function battleNav_logicRequest()
@@ -1467,14 +1452,12 @@ function battleNav_startBattleCountDownSequence(event)
 
 function battleNav_clearStageForFightInit(event)
 {
- 	var clearStage;
+	var delay;
 
  	$("#battle-nav-playerBird .battleCute-bird-arm-main")[0].removeEventListener("webkitAnimationEnd", battleNav_clearStageForFightInit, false);
  	$("#battle-nav-playerBird .battleCute-bird-arm-main")[0].removeEventListener("animationend", battleNav_clearStageForFightInit, false);
 
- 	clearStage = new AnimationTimer();
- 	timerList_add(clearStage);
- 	clearStage.time(1, battleNav_clearStageForFight);
+ 	delay = setTimeout(battleNav_clearStageForFight, 1 * 1000);
 }
 
 function battleNav_clearStageForFight()
@@ -1505,9 +1488,7 @@ function battleNav_battleResultsEnd()
 
 	if(BATTLE_NAV.game.result === "WIN" || BATTLE_NAV.game.result === "LOSE")
 	{
-		exitFrame = new AnimationTimer();
-		timerList_add(exitFrame);
-		exitFrame.time(0.02, battleNav_battleOver);
+		exitFrame = setTimeout(battleNav_battleOver, 20);
 	}
 
 	else
@@ -1829,8 +1810,6 @@ function battleUserInfo_fightText_sequence()
 	timerList_add(bui_fs_timer_p2);
 	timerList_add(bui_fs_timer_re);
 	timerList_add(bui_fs_timer_fm);
-
-	// battleUserInfo_textEngine("FIGHT_P1", true);
 
 	battleUserInfo_messaging("FIGHT_P1", true);
 
@@ -2321,8 +2300,8 @@ function battleEnd_battleOver_setControlsBasic()
 
 function battleEnd_battleOver_prepareForReturn()
 {
-		timerList_stopAll();
-		timerList_destroy();
+	timerList_stopAll();
+	timerList_destroy();
 }
 
 
@@ -2493,17 +2472,24 @@ function worldReturn_slideReturn()
 
 	html_lib_empty();
 
-	eventColor_add("returnLevel-" + BATTLE_NAV.game.result, null);
+	eventColor_add("returnLevel-" + BATTLE_NAV.game.result, null, false);
+
+	if(game_levelBlur)
+	{
+		game_levelBlur = false;
+
+		$("." + display.centerTarget).removeClass("fieldBlur");
+	}
 
 }
 
 function worldReturn_slideReturnApply()
 {
-	var delay_worldReturn_slideReturnComplete;
+	var delay;
 
 	$("#display_wrapper").removeClass("event-slide");
 
-	delay_worldReturn_slideReturnComplete = setTimeout(worldReturn_slideReturnComplete, 700);
+	delay = setTimeout(worldReturn_slideReturnComplete, 700);
 }
 
 function worldReturn_slideReturnComplete()
@@ -2538,9 +2524,9 @@ function worldReturn_slideReturnPurge(event)
 		move_plugIn();
 
 		eventColor_remove();
-	}
 
-	display_centerLevel();
+		display_centerLevel();
+	}
 
 	// TODO CHECK
 	BATTLE_NAV.game.result = "";

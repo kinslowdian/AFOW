@@ -1300,11 +1300,8 @@
 
 .tween-fieldShift
 {
-/*	-webkit-transition: 800ms ease-in-out;
-	transition: 800ms ease-in-out;*/
-
-	-webkit-transition: -webkit-transform 400ms linear;
-	transition: transform 400ms linear;
+	-webkit-transition: 400ms linear;
+	transition: 400ms linear;
 }
 
 /* ----------------------------------------------------------------------- PLAYER MOVE */
@@ -1797,6 +1794,12 @@
 		-webkit-transition: -webkit-transform 1s ease-in-out;
 		transition: transform 1s ease-in-out;
 	}
+
+.fieldBlur
+{
+	-webkit-filter: blur(8px);
+	filter: blur(8px);
+}
 
 
 /* ----------------------------------------------------------------------- LEVEL_GAME */

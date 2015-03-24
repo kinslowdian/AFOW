@@ -450,9 +450,6 @@ function finalLevelSeq_lightningSecondStrike(event)
 
 	$("#display_finalLevel #finalLevel_wrapper .finalLevel_lightningCloudSprite").removeClass("finalLevelLightningCloudSprite_show").addClass("finalLevelLightningCloudSprite_rise");
 
-	// TODO
-	// delay = setTimeout(finalLevelSeq_returnAfterLose, 4 * 1000);
-
 	resultOutcome_init();
 
 	delay = setTimeout(resultOutcome_request, 4 * 1000);
@@ -465,17 +462,6 @@ function finalLevelSeq_returnAfterLose()
 	var exitFrame;
 
 	allBattleOver_battleEnd_return_end("BOSS_FAIL");
-
-
-
-	// $("#display_wrapper").html(preBattleOptions.html.display_inner_world);
-	// $("#display_wrapper .player").html("");
-	// $("#display_wrapper .player").html(control.html_player);
-
-	// $("#display_wrapper .hitTest").removeAttr("style");
-
-	// TODO
-	// bossTaunt_init();
 
 	resultOutcome_init();
 
@@ -497,6 +483,8 @@ function finalLevelSeq_returnAfterLoseEvent(event)
 	$("#display_finalLevel #finalLevel_wrapper .tween-finalLevelPartEnd")[0].removeEventListener("transitionend", finalLevelSeq_returnAfterLoseEvent, false);
 
 	$("#display_finalLevel #finalLevel_wrapper .finalLevel_part1").remove();
+
+	battleEnd_battleOver_prepareForReturn();
 
 	game_levelFinal = false;
 

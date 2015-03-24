@@ -15,6 +15,7 @@ var PORTAL_TRAVEL;
 var game_levelChange = false;
 var game_introEntrance = true;
 var game_levelFinal = false;
+var game_levelBlur = false;
 
 // MERGED
 
@@ -969,7 +970,7 @@ function autoMove_event_portalEnter(event)
 
 	else
 	{
-		eventColor_add("portalLevel", null);
+		eventColor_add("portalLevel", null, true);
 
 		observe_init("MONKEY");
 	}
@@ -1026,7 +1027,7 @@ function autoMove_enemyAttack()
 	// NEW
 	$(".layer-field-player-area .player .map-goat-battleFace").addClass("map-goat-battleFace-display");
 
-	eventColor_add("battle", autoMove_enemyAttack_event);
+	eventColor_add("battle", autoMove_enemyAttack_event, true);
 
 	observe_init("BOSS");
 }
@@ -1212,7 +1213,7 @@ function touch_render()
 
 // COLOR_EVENT
 
-function eventColor_add(colorClass, onComplete)
+function eventColor_add(colorClass, onComplete, blur_add)
 {
 	$(".layer-field-event-color").addClass("tween-color-event");
 	$(".layer-field-event-color div").addClass("color-event-" + colorClass);
@@ -1227,6 +1228,13 @@ function eventColor_add(colorClass, onComplete)
 
 	$(".layer-field-event-color").removeClass("color-event-default");
 	$(".layer-field-event-color").addClass("color-event-show");
+
+	if(blur_add && !game_levelBlur)
+	{
+		game_levelBlur = true;
+
+		$("." + display.centerTarget).addClass("fieldBlur");
+	}
 }
 
 function eventColor_remove()
@@ -1236,6 +1244,13 @@ function eventColor_remove()
 
 
 	$(".layer-field-event-color").removeClass("color-event-show");
+
+	if(game_levelBlur)
+	{
+		game_levelBlur = false;
+
+		$("." + display.centerTarget).removeClass("fieldBlur");
+	}
 }
 
 function eventColor_purge(event)
