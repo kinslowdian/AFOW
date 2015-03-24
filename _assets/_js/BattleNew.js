@@ -132,8 +132,6 @@ function theBattle_build()
 	html_lev = html_lib_use("_level_battle", true, true);
 	html_nav = html_lib_use("_battleNavUItext", true, true);
 
-	// $("#display_wrapper #display_inner_info #battleScreen").html(html);
-
 	// LEVEL HTML PLUG
 	$("#display_wrapper").html(html_lev);
 
@@ -148,8 +146,6 @@ function theBattle_build()
 
 	html_lib_empty();
 
-
-	// screenUpdateInit(true);
 
 	// WATCH FOR CONFLICT WITH INTRO
 	timerList_init();
@@ -242,10 +238,6 @@ function microBattleSequence_addData()
 function microBattleSequence_sceneReady()
 {
 	var mbs_level_delay;
-
-	// DISPLAY FIX
-	// screenUpdateInit(true);
-	// DISPLAY FIX
 
 	spaceSquids_setup();
 
@@ -513,7 +505,7 @@ function battleNav_hintDisplayRemove(event)
 
 	$("#battle-hint").remove();
 
-	// TOO EARLY SET TO FALSE?
+	// `TODO TOO EARLY SET TO FALSE?
 	firstBattle = false;
 
 	battleNav_normalInit();
@@ -1289,7 +1281,11 @@ function battleMini_punchAttackFireEnd(event)
 
 
 				// punchTarget = event.target;
-				delay_punch = setTimeout(battleMini_puchAttackReturn, 0.8 * 1000, event);
+
+				// TODO setTimeout
+				// delay_punch = setTimeout(battleMini_puchAttackReturn, 0.8 * 1000, event);
+				removeBlow = setTimeout(battleMini_puchAttackReturn, 0.8 * 1000, event);
+
 
 				// BATTLE_NAV.animation.playheadDelay.time(0.8, battleMini_puchAttackReturn, event);
 			}
@@ -2497,10 +2493,8 @@ function worldReturn_slideReturn()
 
 	html_lib_empty();
 
-	eventColor_add("returnLevel", null);
+	eventColor_add("returnLevel-" + BATTLE_NAV.game.result, null);
 
-	// TODO
-	// delay_apply = setTimeout(worldReturn_slideReturnApply, 400);
 }
 
 function worldReturn_slideReturnApply()

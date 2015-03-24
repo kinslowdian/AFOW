@@ -7465,9 +7465,19 @@
 	background: rgba(0, 233, 160, 0.6);
 }
 
-.color-event-returnLevel
+/*.color-event-returnLevel
 {
 	background: rgba(255, 255, 255, 0.6);
+}*/
+
+.color-event-returnLevel-WIN
+{
+	background: rgba(255, 255, 255, 0.6);
+}
+
+.color-event-returnLevel-LOSE
+{
+	background: rgba(60, 60, 60, 0.6);
 }
 
 /* ----------------------------------------------------------------------- COLOR_EVENT */

@@ -200,6 +200,8 @@ function move_init(run)
 			$("#touchPad-full")[0].addEventListener("touchstart", touch_find, false);
 			$("#touchPad-full")[0].addEventListener("touchmove", touch_find, false);
 			$("#touchPad-full")[0].addEventListener("touchend", touch_find, false);
+
+			$("#touchPad .touchPad-cont").removeClass("touchPad_C_hide").addClass("touchPad_C_show");
 		}
 
 		// PLAYER
@@ -224,6 +226,10 @@ function move_init(run)
 			$("#touchPad-full")[0].removeEventListener("touchstart", touch_find, false);
 			$("#touchPad-full")[0].removeEventListener("touchmove", touch_find, false);
 			$("#touchPad-full")[0].removeEventListener("touchend", touch_find, false);
+
+			$("#touchPad .touchPad-cont").removeClass("touchPad_C_show").addClass("touchPad_C_hide");
+
+			$("#" + control.touchData.indicator).removeClass("touchPad_C_signal_show").addClass("touchPad_C_signal_hide");
 		}
 
 		// PLAYER
