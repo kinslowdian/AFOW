@@ -114,7 +114,7 @@
 
 	</head>
 
-	<body onorientationchange="display_rotate(event);">
+	<body>
 
 		<div id="memory"></div>
 
@@ -192,33 +192,43 @@
 
 		<div id="outcomeScreen" class="ignoreMouseEvents"></div>
 
-		<!-- REMOVE .hack-hide WHEN COMPLETE -->
-		<div id="displayErrorWrapper" class="hack-hide">
+		<div id="displayErrorWrapper" class="ignoreMouseEvents">
 
-			<div class="displayError tween-displayError displayErrorHide">
+			<div class="displayError_content tween-displayErrorContent displayErrorContent_hide">
 
-				<div class="displayError-top">
+				<div class="displayError_fill tween-displayErrorFill displayErrorFill_show"></div>
+
+				<div class="displayError_focus">
 
 					<div class="message font-dosis">
 
-						<p>TURN ME AROUND</p>
+						<p>ABC-XYZ</p>
 
 					</div>
 
 				</div>
 
-				<div class="displayError-btm">
+				<div class="displayError_bossFar">
 
-					<div class="boss-head-fullBleed pixels_start tween-boss-head-start"></div>
-					<div class="boss-body-fullBleed pixels_start"></div>
-					<div class="boss-hand-fullBleed-L boss-hand-fullBleed pixels_start"></div>
-					<div class="boss-hand-fullBleed-R boss-hand-fullBleed pixels_start"></div>
+					<div class="finalLevel_container_bossShadow displayError_boss">
+
+						<div class="finalLevel_bossShadow pixels_finalLevelSprite tween-finalLevel_bossShadow"></div>
+
+					</div>
 
 				</div>
 
-			</div>
+				<div class="displayError_land">
 
-			<div class="displayError-base tween-displayError-base"></div>
+					<div class="displayError_trees pixels_errorScreen tween-displayErrorTrees"></div>
+
+					<div class="displayError_darkness"></div>
+
+				</div>
+
+				<div class="foggyEdge_error foggyEdge-greenNight"></div>
+
+			</div>
 
 		</div> <!-- #displayErrorWrapper -->
 
@@ -249,6 +259,7 @@
 		<script type="text/javascript" src="_assets/_js/Info.js"></script>
 		<script type="text/javascript" src="_assets/_js/Triggers.js"></script>
 		<script type="text/javascript" src="_assets/_js/FinalLevel.js"></script>
+		<script type="text/javascript" src="_assets/_js/Error.js"></script>
 
 		<script type="text/javascript" src="_assets/_js/Temp.js"></script>
 

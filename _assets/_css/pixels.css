@@ -785,6 +785,15 @@ div[class*='tween-']
 	background-size: 320px 320px;
 }
 
+.pixels_errorScreen
+{
+	background-image: url(../_img/tile_errorScreen_1x.png);
+	background-repeat: repeat;
+	background-position: center top;
+
+	background-size: 240px 240px;
+}
+
 /* ----------------------------------------------------------------------- GENERAL */
 
 
@@ -1198,6 +1207,11 @@ div[class*='tween-']
 	.pixels_finalLevelEventLoop
 	{
 		background-image: url(../_img/finalLevelLoop_1x.gif);
+	}
+
+	.pixels_errorScreen
+	{
+		background-image: url(../_img/tile_errorScreen_1x.png);
 	}
 }
 
@@ -1620,6 +1634,11 @@ div[class*='tween-']
 	.pixels_finalLevelEventLoop
 	{
 		background-image: url(../_img/finalLevelLoop_2x.gif);
+	}
+
+	.pixels_errorScreen
+	{
+		background-image: url(../_img/tile_errorScreen_2x.png);
 	}
 }
 

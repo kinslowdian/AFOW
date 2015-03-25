@@ -171,12 +171,12 @@
 	{
 		"touch":
 		{
-			"txt" : "TURN ME AROUND"
+			"txt" : "<span>turn</span> me around"
 		},
 
 		"keyboard":
 		{
-			"txt" : "COME BACK AND FIGHT"
+			"txt" : "come <span>back</span> and fight"
 		}
 	},
 

@@ -319,6 +319,16 @@
 	{
 		visibility: hidden;
 	}
+
+	.displayError_bossFar
+	{
+		visibility: visible !important;
+	}
+
+	.displayError_trees
+	{
+		height: 300% !important;
+	}
 }
 
 
@@ -340,6 +350,17 @@
 	{
 		visibility: visible;
 	}
+
+	.displayError_boss
+	{
+		-webkit-transform: translateY(-160px) !important;
+		transform: translateY(-160px) !important;
+	}
+
+	.displayError_trees
+	{
+		height: 200% !important;
+	}
 }
 
 /*GREATER THAN 550px HEIGHT*/
@@ -358,6 +379,11 @@
 	.resultOutcome_circle
 	{
 		visibility: visible;
+	}
+
+	.displayError_focus .message
+	{
+		margin: 80px auto 0 auto !important;
 	}
 }
 

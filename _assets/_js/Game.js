@@ -1,7 +1,5 @@
 var ROM;
 
-var errorMessages = {};
-
 
 // CALLED FIRST FROM index.html
 function gameFirstInit()
@@ -33,8 +31,7 @@ function gameData_found()
 		levelCount++;
 	}
 
-	errorMessages.touch 	= Logic.dat_ROM["_ERRORS"]["touch"]["txt"];
-	errorMessages.keyboard 	= Logic.dat_ROM["_ERRORS"]["keyboard"]["txt"];
+	setupErrorMessages();
 
 	playerTarget = {};
 	playerTarget.rating = 0;
@@ -52,6 +49,8 @@ function gameData_found()
 
 function gameHTML_found()
 {
+
+
 	// sound_init();
 
 	sound_init_entry(soundData_found);

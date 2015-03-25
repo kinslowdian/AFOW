@@ -195,199 +195,221 @@
 
 /* ----------------------------------------------------------------------- DISPLAY ERROR */
 
-	#displayErrorWrapper
-	{
-		width: 100%;
-		height: 100%;
+#displayErrorWrapper
+{
+	width: 100%;
+	height: 100%;
 
-		font-size: 20px;
+	font-size: 20px;
 
-		overflow: hidden;
+	overflow: hidden;
 
-		pointer-events: none;
+	position: absolute;
 
-		position: absolute;
-	}
+	left: 0; right: 0; top: 0; bottom: 0;
+}
 
-	#displayErrorWrapper .displayError
-	{
-		width: 100%;
-		height: 100%;
+.displayError_content
+{
+	width: inherit;
+	height: inherit;
 
-		overflow: hidden;
+	position: absolute;
 
-		position: absolute;
+	background: #20202a;
 
-		z-index: 1;
-	}
+	left: 0; right: 0; top: 0; bottom: 0;
+}
 
-	#displayErrorWrapper .tween-displayError
-	{
-		-webkit-transition	: -webkit-transform 600ms ease-in-out;
-		transition			: transform 600ms ease-in-out;
-	}
+.displayError_focus
+{
+	width: 320px;
+	height: 100%;
 
-	#displayErrorWrapper .displayErrorShow
-	{
-		-webkit-transform	: translateY(0%);
-		transform			: translateY(0%);
-	}
+	position: absolute;
 
-	#displayErrorWrapper .displayErrorHide
-	{
-		-webkit-transform	: translateY(-100%);
-		transform			: translateY(-100%);
-	}
+	left: 0; right: 0; top: 0; bottom: 0;
 
-	#displayErrorWrapper .displayError-top
-	{
-		width: inherit;
-		height: 50%;
+	margin: 0 auto;
+}
 
-		background: #b7e0ca;
+.displayError_focus .message
+{
+	width: 90%;
 
-		position: absolute;
+	position: absolute;
 
-		top: 0;
+	top: 0; left: 0; right: 0; bottom: 0;
 
-		z-index: 1;
-	}
+	margin: 40px auto 0 auto;
+}
 
+.displayError_focus .message p
+{
+	width: 100%;
+	height: 1em;
 
-	#displayErrorWrapper .displayError-top .message
-	{
-		width: 90%;
+	display: inline-block;
 
-		position: absolute;
+	font-size: 1em;
+	line-height: 1;
+	text-align: center;
+	letter-spacing: 0.1em;
 
-		top: 40%; left: 0; right: 0; bottom: 0;
+	color: #fff;
 
-		margin: auto;
-	}
+	position: absolute;
+}
 
-	#displayErrorWrapper .displayError-top .message p
-	{
-		width: 100%;
-		height: 1em;
+.displayError_focus .message span
+{
+	color: #ff7a7a;
+	text-shadow: 0px 0px 6px rgba(255, 122, 122, 0.8);
+}
 
-		display: inline-block;
+.tween-displayErrorContent
+{
+	-webkit-transition: 400ms ease-in-out;
+	transition: 400ms ease-in-out;
+}
 
-		font-size: 1em;
-		line-height: 1;
-		text-align: center;
-		letter-spacing: 0.1em;
+.displayErrorContent_hide
+{
+	-webkit-transform: translateY(100%);
+	transform: translateY(100%);
+}
 
-		color: #004752;
+.displayErrorContent_show
+{
+	-webkit-transform: translateY(0%);
+	transform: translateY(0%);
+}
 
-		position: absolute;
-	}
+.displayError_bossFar
+{
+	width: inherit;
+	height: 50%;
 
-	#displayErrorWrapper .displayError-btm
-	{
-		width: inherit;
-		height: 50%;
+	visibility: hidden;
 
-		background: #004752;
+	position: absolute;
 
-		position: absolute;
+	bottom: 0;
+}
 
-		top: 50%;
+.displayError_boss
+{
+	margin: 0 auto;
 
-		z-index: 2;
-	}
-
-	#displayErrorWrapper .displayError-base
-	{
-		width: 100%;
-		height: 100%;
-
-		opacity: 0;
-
-		pointer-events: none;
-
-		background: #004752;
-
-		position: absolute;
-
-		z-index: 0;
-	}
-
-	#displayErrorWrapper .tween-displayError-base
-	{
-		-webkit-transition	: opacity 300ms linear 0s;
-		transition			: opacity 300ms linear 0s;
-	}
-
-	#displayErrorWrapper .displayError-btm .boss-head-fullBleed
-	{
-		width: 30px;
-		height: 35px;
-
-		background-position: -200px 0px;
-
-		position: absolute;
-
-		left: 0; right: 0; top: -20px; bottom: 0;
-
-		margin: 0 auto;
+	-webkit-transform: translateY(-80px);
+	transform: translateY(-80px);
+}
 
 
-		z-index: 1;
-	}
+.displayError_land
+{
+	width: inherit;
+	height: 50%;
 
-	#displayErrorWrapper .displayError-btm .boss-body-fullBleed
-	{
-		width: 200px;
-		height: 100%;
+	background: #004752;
 
-		background-position: 0px 0px;
+	overflow: hidden;
 
-		position: absolute;
+	position: absolute;
 
-		left: 0; right: 0; top: -3px; bottom: 0;
+	bottom: 0;
+}
 
-		margin: 0 auto;
+.displayError_trees
+{
+	width: inherit;
+	height: 200%;
+
+	position: absolute;
+
+	left: 0; right: 0; top: 0; bottom: 0;
+
+	margin: 0 auto;
+}
+
+.tween-displayErrorTrees
+{
+	-webkit-animation: tweenDisplayErrorTreesFrames 2000ms linear infinite;
+	animation: tweenDisplayErrorTreesFrames 2000ms linear infinite;
+}
+
+@-webkit-keyframes tweenDisplayErrorTreesFrames
+{
+	0% 		{-webkit-transform: translateY(0px);}
+	100% 	{-webkit-transform: translateY(-240px);}
+}
+
+@keyframes tweenDisplayErrorTreesFrames
+{
+	0% 		{transform: translateY(0px);}
+	100% 	{transform: translateY(-240px);}
+}
+
+.displayError_darkness
+{
+	width: inherit;
+	height: 160px;
+
+	background: -webkit-linear-gradient(top, rgba(32, 32, 42, 0.94) 0%, rgba(32, 32, 42, 0) 100%);
+	background: linear-gradient(to bottom, rgba(32, 32, 42, 0.94) 0%, rgba(32, 32, 42, 0) 100%);
+
+	position: absolute;
+
+	top: 0;
+}
 
 
-		z-index: 0;
-	}
+.foggyEdge_error
+{
+	width: 100%;
+	height: 100%;
 
-	#displayErrorWrapper .displayError-btm .boss-hand-fullBleed
-	{
-		width: 40px;
-		height: 26px;
+	position: absolute;
+}
 
-		position: absolute;
+.foggyEdge-greenNight
+{
+	background: -webkit-radial-gradient(center, ellipse cover, rgba(0, 71, 82, 0) 60%, rgba(0, 71, 82, 0.5) 100%);
+	background: radial-gradient(ellipse at center, rgba(0, 71, 82, 0) 60%, rgba(0, 71, 82, 0.5) 100%);
+}
 
-		bottom: 16%;
+.displayError_fill
+{
+	width: inherit;
+	height: inherit;
 
-		z-index: 1;
-	}
+	background: #141428;
 
-	#displayErrorWrapper .displayError-btm .boss-hand-fullBleed-L
-	{
-		background-position: -200px  -35px;
+	position: absolute;
+}
 
-		left: 3.125%;
-	}
+.tween-displayErrorFill
+{
+	-webkit-transition: opacity 450ms ease-in;
+	transition: opacity 450ms ease-in;
+}
 
-	#displayErrorWrapper .displayError-btm .boss-hand-fullBleed-R
-	{
-		background-position: -200px  -61px;
+.delay-displayErrorFill
+{
+	-webkit-transition-delay: 400ms;
+	transition-delay: 400ms;
+}
 
-		right: 3.125%;
-	}
 
-	#displayErrorWrapper .tween-boss-head-start
-	{
-		-webkit-animation	: tweenBossHeadStartFrames 1s ease-in-out infinite;
-		animation			: tweenBossHeadStartFrames 1s ease-in-out infinite;
-	}
+.displayErrorFill_show
+{
+	opacity: 1;
+}
 
-	.#displayErrorWrapper .bossFullBleed
-	{
-		background: #004752;
-	}
+.displayErrorFill_hide
+{
+	opacity: 0;
+}
 
 /* ----------------------------------------------------------------------- DISPLAY ERROR */
 
