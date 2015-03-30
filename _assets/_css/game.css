@@ -255,6 +255,7 @@
 	line-height: 1;
 	text-align: center;
 	letter-spacing: 0.1em;
+	text-transform: uppercase;
 
 	color: #fff;
 
@@ -1262,7 +1263,7 @@
 
 .hitTest
 {
-	background: rgba(0, 255, 0, 0.4);
+	/*background: rgba(0, 255, 0, 0.4);*/
 }
 
 /*DEAD?*/
@@ -1322,8 +1323,8 @@
 
 .tween-fieldShift
 {
-	-webkit-transition: 400ms linear;
-	transition: 400ms linear;
+	-webkit-transition: 600ms ease-in-out;
+	transition: 600ms ease-in-out;
 }
 
 /* ----------------------------------------------------------------------- PLAYER MOVE */
@@ -1819,8 +1820,8 @@
 
 .fieldBlur
 {
-	-webkit-filter: blur(8px);
-	filter: blur(8px);
+/*	-webkit-filter: blur(8px);
+	filter: blur(8px);*/
 }
 
 

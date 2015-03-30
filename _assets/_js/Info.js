@@ -1457,9 +1457,11 @@ function portalScreen_init()
 	PortalScreen.displayed = false;
 	PortalScreen.delay = null;
 
-	PortalScreen.html = $("#portalScreenData").html();
+	html_lib_reuse();
 
-	$("#portalScreenData").remove();
+	PortalScreen.html = html_lib_use("_portalScreen", false, true);
+
+	html_lib_empty();
 }
 
 function portalScreen_request()

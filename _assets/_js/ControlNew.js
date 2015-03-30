@@ -165,6 +165,8 @@ Control.prototype.touch_reset = function()
 function control_request()
 {
 	control_init();
+
+	levelShift_init(true);
 }
 
 function control_init()
@@ -249,6 +251,7 @@ function move_plugIn()
 {
 	move_reset();
 	move_init(true);
+	levelShift_init(true);
 }
 
 function move_reset()
@@ -263,6 +266,8 @@ function move_cancel()
 	control.signal = "STILL";
 
 	move_init(false);
+
+	levelShift_init(false);
 }
 
 function move_event(event)
@@ -492,9 +497,10 @@ function move_cssAddEvent(event)
 
 	control.animate = false;
 
-	if(control.signal === "UP" || control.signal === "DOWN")
-	{
-		display_centerLevel();
+
+	// if(control.signal === "UP" || control.signal === "DOWN")
+	// {
+	// 	display_centerLevel();
 
 		// STAGE MOVE TO CENTER PLAYER AFTER 3xY_MOVES
 
@@ -511,7 +517,8 @@ function move_cssAddEvent(event)
 			display_centerLevel();
 		}
 		*/
-	}
+	// }
+
 
 	move_listen();
 }
@@ -970,7 +977,7 @@ function autoMove_event_portalEnter(event)
 
 	else
 	{
-		eventColor_add("portalLevel", null, true);
+		eventColor_add("portalLevel", null, false);
 
 		observe_init("MONKEY");
 	}
@@ -1027,7 +1034,7 @@ function autoMove_enemyAttack()
 	// NEW
 	$(".layer-field-player-area .player .map-goat-battleFace").addClass("map-goat-battleFace-display");
 
-	eventColor_add("battle", autoMove_enemyAttack_event, true);
+	eventColor_add("battle", autoMove_enemyAttack_event, false);
 
 	observe_init("BOSS");
 }

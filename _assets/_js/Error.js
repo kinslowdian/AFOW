@@ -1,13 +1,17 @@
 
 var errorMessage;
+var errorCheck = false;
 
 function setupErrorMessages()
 {
-	error_init();
+	if(errorCheck)
+	{
+		error_init();
 
-	device_rotateCheck();
+		device_rotateCheck();
 
-	device_blurFocusCheck();
+		device_blurFocusCheck();
+	}
 }
 
 //------ EVENT SETUP
@@ -113,7 +117,7 @@ function error_use(fault)
 	$("#displayErrorWrapper .displayError_trees").addClass("tween-displayErrorTrees");
 	$("#displayErrorWrapper .displayError_fill").addClass("delay-displayErrorFill");
 
-	$("#displayErrorWrapper .message p").html(errorMessage.text.fault.toUpperCase());
+	$("#displayErrorWrapper .message p").html(errorMessage.text.fault);
 
 	error_request();
 }
