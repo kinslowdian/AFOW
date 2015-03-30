@@ -1,6 +1,5 @@
 
 var errorMessage;
-var errorCheck = false;
 
 function setupErrorMessages()
 {
@@ -115,7 +114,6 @@ function error_use(fault)
 
 	$("#displayErrorWrapper .finalLevel_bossShadow").addClass("tween-finalLevel_bossShadow");
 	$("#displayErrorWrapper .displayError_trees").addClass("tween-displayErrorTrees");
-	$("#displayErrorWrapper .displayError_fill").addClass("delay-displayErrorFill");
 
 	$("#displayErrorWrapper .message p").html(errorMessage.text.fault);
 
@@ -137,19 +135,7 @@ function error_requestEvent(event)
 	$("#displayErrorWrapper .tween-displayErrorContent")[0].removeEventListener("webkitTransitionEnd", error_requestEvent, false);
 	$("#displayErrorWrapper .tween-displayErrorContent")[0].removeEventListener("transitionend", error_requestEvent, false);
 
-
-	$("#displayErrorWrapper .displayError_fill")[0].addEventListener("webkitTransitionEnd", error_removeFillDelay, false);
-	$("#displayErrorWrapper .displayError_fill")[0].addEventListener("transitionend", error_removeFillDelay, false);
-
-	$("#displayErrorWrapper .displayError_fill").removeClass("displayErrorFill_show").addClass("displayErrorFill_hide");
-}
-
-function error_removeFillDelay(event)
-{
-	$("#displayErrorWrapper .displayError_fill")[0].removeEventListener("webkitTransitionEnd", error_removeFillDelay, false);
-	$("#displayErrorWrapper .displayError_fill")[0].removeEventListener("transitionend", error_removeFillDelay, false);
-
-	$("#displayErrorWrapper .displayError_fill").removeClass("delay-displayErrorFill");
+	$("#displayErrorWrapper .displayError_fill").addClass("tween-newPortalScreen_fx");
 }
 
 function error_remove()
@@ -169,6 +155,8 @@ function error_purge(event)
 
 	$("#displayErrorWrapper .finalLevel_bossShadow").removeClass("tween-finalLevel_bossShadow");
 	$("#displayErrorWrapper .displayError_trees").removeClass("tween-displayErrorTrees");
+
+	$("#displayErrorWrapper .displayError_fill").removeClass("tween-newPortalScreen_fx");
 
 	$("#displayErrorWrapper .message p").html("");
 
