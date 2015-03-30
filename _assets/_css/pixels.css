@@ -328,13 +328,13 @@ div[class*='tween-']
 	background-size: 320px 360px;
 }
 
-.pixels_portalScreen
+/*.pixels_portalScreen
 {
 	background-image: url(../_img/tilePortalScreenLRG_1x.png);
 	background-repeat: repeat;
 	background-position: center top;
 	background-size: 400px 320px;
-}
+}*/
 
 .pixels_battleCloud
 {
@@ -794,6 +794,15 @@ div[class*='tween-']
 	background-size: 240px 240px;
 }
 
+.pixels_newPortalScreen
+{
+	background-image: url(../_img/tile_newPortalScreen_1x.png);
+	background-repeat: repeat;
+	background-position: center top;
+
+	background-size: 120px 120px;
+}
+
 /* ----------------------------------------------------------------------- GENERAL */
 
 
@@ -928,10 +937,10 @@ div[class*='tween-']
 		background-image: url(../_img/map_enemySprite40x40_1x.png);
 	}
 
-	.pixels_portalScreen
+/*	.pixels_portalScreen
 	{
 		background-image: url(../_img/tilePortalScreenLRG_1x.png);
-	}
+	}*/
 
 	.pixels_battleCloud
 	{
@@ -1213,6 +1222,11 @@ div[class*='tween-']
 	{
 		background-image: url(../_img/tile_errorScreen_1x.png);
 	}
+
+	.pixels_newPortalScreen
+	{
+		background-image: url(../_img/tile_newPortalScreen_1x.png);
+	}
 }
 
 
@@ -1350,10 +1364,10 @@ div[class*='tween-']
 		background-image: url(../_img/map_enemySprite40x40_2x.png);
 	}
 
-	.pixels_portalScreen
+/*	.pixels_portalScreen
 	{
 		background-image: url(../_img/tilePortalScreenLRG_2x.png);
-	}
+	}*/
 
 	.pixels_battleCloud
 	{
@@ -1639,6 +1653,11 @@ div[class*='tween-']
 	.pixels_errorScreen
 	{
 		background-image: url(../_img/tile_errorScreen_2x.png);
+	}
+
+	.pixels_newPortalScreen
+	{
+		background-image: url(../_img/tile_newPortalScreen_2x.png);
 	}
 }
 

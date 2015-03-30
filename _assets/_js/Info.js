@@ -1470,118 +1470,67 @@ function portalScreen_request()
 
 	$("#portalScreen").html(PortalScreen.html);
 
-	$("#portalScreen .portalScreen_player .map-goat-legs").removeClass("tween-mapPlayerWalk_stop").addClass("tween-mapPlayerWalk_loop");
-
 	// EXIT FRAME
 	PortalScreen.delay = setTimeout(portalScreen_run, 20);
 }
 
 function portalScreen_run()
 {
-	var css;
+	$("#portalScreen .tween-displayErrorContent")[0].addEventListener("webkitTransitionEnd", portalScreen_screen0, false);
 
-	css = 	{
-				"-webkit-transform"	: "translateY(0%)",
-				"transform"			: "translateY(0%)"
-			};
+	$("#portalScreen .tween-displayErrorContent")[0].addEventListener("transitionend", portalScreen_screen0, false);
 
-	$("#portalScreen .portalScreen_wrapper").css(css);
-
-	$("#portalScreen .portalScreen_bleedFill").css("opacity", "1");
-
-	$(".tween-portalScreen_wrapper")[0].addEventListener("webkitTransitionEnd", portalScreen_screen0, false);
-	$(".tween-portalScreen_wrapper")[0].addEventListener("transitionend", portalScreen_screen0, false);
+	$("#portalScreen .newPortalScreen_content").removeClass("newPortalScreen_hide").addClass("newPortalScreen_show");
 }
 
 function portalScreen_screen0(event)
 {
-	$(".tween-portalScreen_wrapper")[0].removeEventListener("webkitTransitionEnd", portalScreen_screen0, false);
-	$(".tween-portalScreen_wrapper")[0].removeEventListener("transitionend", portalScreen_screen0, false);
+	$("#portalScreen .tween-displayErrorContent")[0].removeEventListener("webkitTransitionEnd", portalScreen_screen0, false);
 
-	PortalScreen.delay = setTimeout(portalScreen_screen1, 1 * 1000);
+	$("#portalScreen .tween-displayErrorContent")[0].removeEventListener("transitionend", portalScreen_screen0, false);
+
+
+	PortalScreen.delay = setTimeout(portalScreen_screen1, 4 * 1000);
 
 	level_clear();
 
 	level_init();
 
-	$("#portalScreen .portalScreen_title_left h1").text(LEVEL_MAIN.titleData.top.toUpperCase());
-	$("#portalScreen .portalScreen_title_right h1").text(LEVEL_MAIN.titleData.btm.toUpperCase());
+	$("#portalScreen .message p").html(LEVEL_MAIN.titleData.top);
+
+	$("#portalScreen .message").css("opacity", "1");
 }
 
 function portalScreen_screen1()
 {
-	$("#portalScreen .portalScreen_green").css("opacity", "1");
+	$("#portalScreen .tween-displayErrorContent")[0].addEventListener("webkitTransitionEnd", portalScreen_remove, false);
 
-	$(".tween-portalScreen_green")[0].addEventListener("webkitTransitionEnd", portalScreen_screen2, false);
-	$(".tween-portalScreen_green")[0].addEventListener("transitionend", portalScreen_screen2, false);
-}
+	$("#portalScreen .tween-displayErrorContent")[0].addEventListener("transitionend", portalScreen_remove, false);
 
-function portalScreen_screen2(event)
-{
-	$(".tween-portalScreen_green")[0].removeEventListener("webkitTransitionEnd", portalScreen_screen2, false);
-	$(".tween-portalScreen_green")[0].removeEventListener("transitionend", portalScreen_screen2, false);
+	$("#portalScreen .newPortalScreen_content").removeClass("newPortalScreen_show").addClass("newPortalScreen_hide");
 
-	$("#portalScreen .portalScreen_player .map-goat-head").removeClass("mapPlayer_head_default").addClass("mapPlayer_head_fear");
-	$("#portalScreen .portalScreen_player .map-goat-legs").removeClass("tween-mapPlayerWalk_loop").addClass("tween-mapPlayerWalk_stop");
-
-	$("#portalScreen .portalScreen_header").css("opacity", 1);
-
-
-	$(".tween-portalScreen_header")[0].addEventListener("webkitTransitionEnd", portalScreen_screen3, false);
-	$(".tween-portalScreen_header")[0].addEventListener("transitionend", portalScreen_screen3, false);
-}
-
-function portalScreen_screen3(event)
-{
-	$(".tween-portalScreen_header")[0].removeEventListener("webkitTransitionEnd", portalScreen_screen3, false);
-	$(".tween-portalScreen_header")[0].removeEventListener("transitionend", portalScreen_screen3, false);
-
-
-	$(".portalScreen_miniMoon").css("opacity", "0.6");
-
-	PortalScreen.delay = setTimeout(portalScreen_screen4, 1.2 * 1000);
-}
-
-function portalScreen_screen4()
-{
-	var css_p_main;
-	var css_p_fade;
-
-	css_p_main = 	{
-						"-webkit-transform"	: "translateX(100%)",
-						"transform"			: "translateX(100%)"
-					};
-
-	css_p_fade =	{
-						"-webkit-transition-delay"	: "0.6s",
-						"transition-delay" 			: "0.6s",
-						"opacity"					: "0"
-					};
-
-	$("#portalScreen .portalScreen_wrapper").css(css_p_main);
-	$("#portalScreen .portalScreen_bleedFill").css(css_p_fade);
-
-	$(".tween-portalScreen_bleedFill")[0].addEventListener("webkitTransitionEnd", portalScreen_remove, false);
-	$(".tween-portalScreen_bleedFill")[0].addEventListener("transitionend", portalScreen_remove, false);
-
-	// BACKGROUND SOUND
 
 	if(soundEffects_pedal != null)
 	{
 		sound_level_background();
 	}
+
 }
 
 function portalScreen_remove(event)
 {
-	$(".tween-portalScreen_bleedFill")[0].removeEventListener("webkitTransitionEnd", portalScreen_remove, false);
-	$(".tween-portalScreen_bleedFill")[0].removeEventListener("transitionend", portalScreen_remove, false);
+	$("#portalScreen .tween-displayErrorContent")[0].removeEventListener("webkitTransitionEnd", portalScreen_remove, false);
+
+	$("#portalScreen .tween-displayErrorContent")[0].removeEventListener("transitionend", portalScreen_remove, false);
+
 
 	$("#portalScreen").html("");
 
 	level_player_setup();
 
 	autoMove_init("PORTAL_PLACE");
+
+	PortalScreen.displayed = false;
 }
 
 ///////////////////////////////// --- PORTAL_SCREEN
