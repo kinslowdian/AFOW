@@ -213,22 +213,15 @@
 			{
 				"n": 0,
 				"weather": "SNOW",
-				"land": "forest",
-				"entry_fall": "YES",
-				"fall_x": 1.75,
-				"fall_y": -0.5,
+				"land": "stone",
+				"entry_fall": true,
+				"fall_x": 0.5,
+				"fall_y": 0.5,
 				"fall_d": "DOWN",
-				"title_top": "level number 0",
-				"title_btm": "bums!!!",
+				"title_top": "the mountain",
 				"levelFunctions":
 				{
-					"gate0_unlock":
-					[
-						{
-							"call_funct"	: "levelGate_checkStatus",
-							"call_params"	: ["level0_gate0", ["level0_test0", "level0_test1"]]
-						}
-					]
+
 				}
 			},
 
@@ -236,222 +229,108 @@
 			{
 				"WALLS" :
 				[
-					{"x": 0, "y": 9, "w": 1.5, "h": 1, "p": "pixels_forest collideCheck-field"},
+					{"x": 1.5, "y": 0.5, "w": 1, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 0, "y": 8, "w": 1.5, "h": 2, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 2.5, "y": 8, "w": 1.5, "h": 2, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 1, "y": 11, "w": 0.5, "h": 1, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 2.5, "y": 11, "w": 0.5, "h": 1, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 0, "y": 12, "w": 4, "h": 1, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 1, "y": 13, "w": 0.5, "h": 1, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 2.5, "y": 13, "w": 0.5, "h": 1, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 0, "y": 15, "w": 1.5, "h": 2, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 2.5, "y": 15, "w": 1.5, "h": 2, "p": "pixels_stoneForest collideCheck-field"},
 
-					{"x": 2.5, "y": 9, "w": 1.5, "h": 1, "p": "pixels_forest collideCheck-field"},
-
-					{"x": 0, "y": 10, "w": 4, "h": 1, "p": "pixels_forest collideCheck-field"},
-
-					{"x": 0, "y": 11, "w": 1.5, "h": 1, "p": "pixels_forest collideCheck-field"},
-
-					{"x": 2.5, "y": 11, "w": 1.5, "h": 1, "p": "pixels_forest collideCheck-field"},
-
-					{"x": 0, "y": 12, "w": 1, "h": 0.5, "p": "pixels_forest collideCheck-field"},
-
-					{"x": 3, "y": 12, "w": 1, "h": 0.5, "p": "pixels_forest collideCheck-field"},
-
-					{"x": 0, "y": 13.5, "w": 1, "h": 0.5, "p": "pixels_forest collideCheck-field"},
-
-					{"x": 3, "y": 13.5, "w": 1, "h": 0.5, "p": "pixels_forest collideCheck-field"},
-
-					{"x": 0, "y": 14, "w": 1.5, "h": 1, "p": "pixels_forest collideCheck-field"},
-
-					{"x": 2.5, "y": 14, "w": 1.5, "h": 1, "p": "pixels_forest collideCheck-field"},
-
-					{"x": 0, "y": 15, "w": 4, "h": 1, "p": "pixels_forest collideCheck-field"},
-
-					{"x": 0, "y": 16, "w": 1.5, "h": 1, "p": "pixels_forest collideCheck-field"},
-
-					{"x": 2.5, "y": 16, "w": 1.5, "h": 1, "p": "pixels_forest collideCheck-field"},
-
-					{"x": 0, "y": 19, "w": 1.5, "h": 2, "p": "pixels_forest collideCheck-field"},
-
-					{"x": 2.5, "y": 19, "w": 1.5, "h": 2, "p": "pixels_forest collideCheck-field"},
-
-					{"x": 0, "y": 24, "w": 1.5, "h": 1, "p": "pixels_forest collideCheck-field"},
-
-					{"x": 2.5, "y": 24, "w": 1.5, "h": 1, "p": "pixels_forest collideCheck-field"}
+					{"x": 0, "y": 2, "w": 1, "h": 6, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 3, "y": 2, "w": 1, "h": 6, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 0, "y": 17, "w": 1, "h": 4, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 3, "y": 17, "w": 1, "h": 4, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 0, "y": 23, "w": 1, "h": 2, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 3, "y": 23, "w": 1, "h": 2, "p": "pixels_boulder_stone collideCheck-field"}
 				],
 
 				"PLANTS":
 				[
-					{"x": 0, "y": 2, "w": 4, "h": 2, "p": "pixels_flowerLight"},
+					{"x": 0.5, "y": 0, "w": 0.5, "h": 0.5, "p": "pixels_stoneFlowerLight"},
+					{"x": 0, "y": 0.5, "w": 0.5, "h": 0.5, "p": "pixels_stoneFlowerLight"},
+					{"x": 1, "y": 0.5, "w": 0.5, "h": 0.5, "p": "pixels_stoneFlowerLight"},
+					{"x": 0.5, "y": 1, "w": 0.5, "h": 0.5, "p": "pixels_stoneFlowerLight"},
 
-					{"x": 0, "y": 7, "w": 4, "h": 2, "p": "pixels_flowerLight"},
+					{"x": 3, "y": 0, "w": 0.5, "h": 0.5, "p": "pixels_stoneFlowerLight"},
+					{"x": 2.5, "y": 0.5, "w": 0.5, "h": 0.5, "p": "pixels_stoneFlowerLight"},
+					{"x": 3.5, "y": 0.5, "w": 0.5, "h": 0.5, "p": "pixels_stoneFlowerLight"},
+					{"x": 3, "y": 1, "w": 0.5, "h": 0.5, "p": "pixels_stoneFlowerLight"},
 
-					{"x": 0, "y": 17, "w": 4, "h": 2, "p": "pixels_flowerLight"},
 
-					{"x": 1.5, "y": 19, "w": 1, "h": 2, "p": "pixels_flowerLight"},
+					{"x": 0, "y": 2, "w": 1.5, "h": 4, "p": "pixels_stoneFlowerLight"},
+					{"x": 2.5, "y": 2, "w": 1.5, "h": 4, "p": "pixels_stoneFlowerLight"},
 
-					{"x": 0, "y": 22, "w": 1, "h": 1, "p": "pixels_flowerLight"},
+					{"x": 1.5, "y": 8, "w": 1, "h": 2, "p": "pixels_stoneFlowerLight"},
 
-					{"x": 1.5, "y": 22, "w": 1, "h": 1, "p": "pixels_flowerLight"},
+					{"x": 0, "y": 10, "w": 4, "h": 1, "p": "pixels_stoneFlowerLight"},
 
-					{"x": 3, "y": 22, "w": 1, "h": 1, "p": "pixels_flowerLight"}
+					{"x": 0, "y": 13, "w": 1, "h": 2, "p": "pixels_stoneFlowerLight"},
+
+					{"x": 1, "y": 14, "w": 2, "h": 1, "p": "pixels_stoneFlowerLight"},
+
+					{"x": 3, "y": 13, "w": 1, "h": 2, "p": "pixels_stoneFlowerLight"},
+
+					{"x": 1.5, "y": 15, "w": 1, "h": 2, "p": "pixels_stoneFlowerLight"},
+
+					{"x": 1.5, "y": 19, "w": 1, "h": 4, "p": "pixels_stoneFlowerLight"},
+
+					{"x": 0.5, "y": 21.5, "w": 1, "h": 0.5, "p": "pixels_stoneFlowerLight"},
+
+					{"x": 2.5, "y": 21.5, "w": 1, "h": 0.5, "p": "pixels_stoneFlowerLight"},
+
+					{"x": 1, "y": 22, "w": 0.5, "h": 0.5, "p": "pixels_stoneFlowerLight"},
+
+					{"x": 2.5, "y": 22, "w": 0.5, "h": 0.5, "p": "pixels_stoneFlowerLight"}
 				],
 
 				"CLEARING":
 				[
-					{"x": -3, "y": 3, "w": 2, "h": 2, "n": "level0_clearing0", "t": "clearing_cross"},
 
-					{"x": 5, "y": 3, "w": 2, "h": 2, "n": "level0_clearing1", "t": "clearing_cross"},
-
-					{"x": 5, "y": 5, "w": 2, "h": 2, "n": "level0_clearing2", "t": "clearing_cross"},
-
-					{"x": -3, "y": 5, "w": 2, "h": 2, "n": "level0_clearing3", "t": "clearing_cross"},
-
-					{"x": -3, "y": 23, "w": 1, "h": 1, "n": "level0_clearing4", "t": "clearing_wolfGod"},
-
-					{"x": 5, "y": 23, "w": 2, "h": 2, "n": "level0_clearing5", "t": "clearing_cross"}
 				],
 
 				"FLOOR":
 				{
-					"class" : "field-floor-forest"
+					"class" : "field-floor-stone"
 				},
 
 				"OUTER":
 				{
-					"class" : "pixels_forestMass"
+					"class" : "pixels_stoneForestMass"
 				}
 			},
 
 			"water":
 			{
-				"FILL": 1,
 
-				"EDGE":
-				[
-					{"x": 1.5, "y": 4.5, "w": 1, "h": 0.5, "p": "pixels_waterEdge waterEdge tween-waterEdge"},
-
-					{"x": 1, "y": 5, "w": 0.5, "h": 0.5, "p": "pixels_waterEdge waterEdge tween-waterEdge"},
-
-					{"x": 2.5, "y": 5, "w": 0.5, "h": 0.5, "p": "pixels_waterEdge waterEdge tween-waterEdge"}
-				],
-
-				"BASE":
-				[
-					{"x": 1.5, "y": 4.5, "w": 1, "h": 0.5, "p": "pixels_waterBase waterPool collideCheck-field"},
-
-					{"x": 1, "y": 5, "w": 2, "h": 1, "p": "pixels_waterBase waterPool collideCheck-field"},
-
-					{"x": 1.5, "y": 6, "w": 1, "h": 0.5, "p": "pixels_waterBase waterPool collideCheck-field"}
-				],
-
-				"FISH":
-				[
-					{"x": 1.5, "y": 5, "w": 0.5, "h": 0.5, "n": "level0_waterFish0", "t": "water_fishCCW"}
-				]
 			},
 
 			"enemyPlayers":
 			[
-				{
-					"x": 1.5,
-					"y": 21,
-					"w": 0.5,
-					"h": 0.5,
-					"n": "level0_test0",
-					"t": "rabbit",
-					"l": 10,
-					"known" : "large eared rabbit",
-					"spawn": 0,
-					"defeat":	{
-											"link_funct": "gate0_unlock"
-										}
 
-				},
-
-				{
-					"x": 0,
-					"y": 1.5,
-					"w": 0.5,
-					"h": 0.5,
-					"n": "level0_test1",
-					"t": "rabbit",
-					"l": 10,
-					"known" : "toothless wonder",
-					"spawn": 0,
-					"defeat":	{
-											"link_funct": "gate0_unlock"
-										}
-				},
-
-				{
-					"x": 1.5,
-					"y": 12.5,
-					"w": 0.5,
-					"h": 0.5,
-					"n": "level0_crow0",
-					"t": "crow",
-					"l": 10,
-					"known" : "lost crow of oak",
-					"spawn": 0
-				},
-
-				{
-					"x": 2,
-					"y": 12.5,
-					"w": 0.5,
-					"h": 0.5,
-					"n": "level0_crow1",
-					"t": "crow",
-					"l": 10,
-					"known" : "lost crow of beech",
-					"spawn": 0
-				},
-
-				{
-					"x": 1.5,
-					"y": 13,
-					"w": 0.5,
-					"h": 0.5,
-					"n": "level0_crow2",
-					"t": "crow",
-					"l": 10,
-					"known" : "lost crow of hazel",
-					"spawn": 0
-				},
-
-				{
-					"x": 2,
-					"y": 13,
-					"w": 0.5,
-					"h": 0.5,
-					"n": "level0_crow3",
-					"t": "crow",
-					"l": 10,
-					"known" : "lost crow of birch",
-					"spawn": 0
-				}
 			],
 
 			"gates":
 			[
-				{
-					"x": 0,
-					"y": 21.5,
-					"w": 4,
-					"h": 2,
-					"c_cl": "layer-field-gate-area",
-					"n": "level0_gate0",
-					"spawn": 0
-				}
+
 			],
 
 			"portal":
 			[
 				{
 					"num": 0,
-					"x": 1.5,
-					"y": 9,
+					"x": 0,
+					"y": 11,
 					"w": 1,
 					"h": 1,
 					"level": 0,
-					"exit": 5,
+					"exit": 3,
 					"direction": "UP",
 					"spawn": 0,
-					"p": "portal_top_forest"
+					"p": "portal_top_stone"
 				},
 
 				{
@@ -461,66 +340,40 @@
 					"w": 1,
 					"h": 1,
 					"level": 0,
-					"exit": 5,
-					"direction": "DOWN",
+					"exit": 3,
+					"direction": "UP",
 					"spawn": 0,
-					"p": "portal_top_forest"
+					"p": "portal_top_stone"
 				},
 
 				{
 					"num": 2,
-					"x": 0,
-					"y": 12.5,
+					"x": 3,
+					"y": 11,
 					"w": 1,
 					"h": 1,
 					"level": 0,
-					"exit": 5,
-					"direction": "RIGHT",
+					"exit": 3,
+					"direction": "UP",
 					"spawn": 0,
-					"p": "portal_top_forest"
+					"p": "portal_top_stone"
 				},
 
 				{
 					"num": 3,
-					"x": 3,
-					"y": 12.5,
+					"x": 1.5,
+					"y": 13,
 					"w": 1,
 					"h": 1,
 					"level": 0,
-					"exit": 5,
-					"direction": "LEFT",
+					"exit": 1,
+					"direction": "DOWN",
 					"spawn": 0,
-					"p": "portal_top_forest"
+					"p": "portal_top_stone"
 				},
 
 				{
 					"num": 4,
-					"x": 1.5,
-					"y": 14,
-					"w": 1,
-					"h": 1,
-					"level": 0,
-					"exit": 5,
-					"direction": "UP",
-					"spawn": 0,
-					"p": "portal_top_forest"
-				},
-
-				{
-					"num": 5,
-					"x": 1.5,
-					"y": 16,
-					"w": 1,
-					"h": 1,
-					"level": 0,
-					"exit": 0,
-					"direction": "DOWN",
-					"spawn": 0,
-					"p": "portal_top_forest"
-				},
-
-				{
-					"num": 6,
 					"x": 1.5,
 					"y": 24,
 					"w": 1,
@@ -529,223 +382,18 @@
 					"exit": 0,
 					"direction": "UP",
 					"spawn": 0,
-					"p": "portal_top_forest"
-				},
-
-
-				{
-					"num": 7,
-					"x": 0,
-					"y": 4,
-					"w": 1,
-					"h": 1,
-					"level": 5,
-					"exit": 0,
-					"direction": "DOWN",
-					"spawn": 0,
-					"p": "portal_top_forest"
-				},
-
-				{
-					"num": 8,
-					"x": 3,
-					"y": 8,
-					"w": 1,
-					"h": 1,
-					"level": 5,
-					"exit": 0,
-					"direction": "DOWN",
-					"spawn": 0,
-					"bossLevel": true,
-					"p": "portal_top_forest"
+					"p": "portal_top_stone"
 				}
 			],
 
 			"sound_level":
 			[
-				{
-					"call_funct" : "sound_play",
-					"call_params": ["level_bg_sea"]
-				},
 
-				{
-					"call_funct" : "sound_volume",
-					"call_params": ["level_bg_sea", "0.04"]
-				},
-
-				{
-					"call_funct" : "sound_fadeInitGlobal",
-					"call_params" : [1]
-				}
 			],
 
 			"sound_trigger":
 			[
-				{
-					"x": 0,
-					"y": 2,
-					"w": 4,
-					"h": 0.5,
-					"instance_class": "sound_trigger_waterEscape0",
-					"sound_prefs":
-					[
-						{
-							"call_funct" : "sound_fadeInit",
-							"call_params": ["level_bg_sea", "0.04"]
-						}
-					]
-				},
 
-				{
-					"x": 0,
-					"y": 2.5,
-					"w": 4,
-					"h": 1,
-					"instance_class": "sound_trigger_waterStep0",
-					"sound_prefs":
-					[
-						{
-							"call_funct" : "sound_play",
-							"call_params": ["level_bg_sea"]
-						},
-
-						{
-							"call_funct" : "sound_fadeInit",
-							"call_params": ["level_bg_sea", "0.15"]
-						}
-					]
-				},
-
-				{
-					"x": 0,
-					"y": 3.5,
-					"w": 4,
-					"h": 1,
-					"instance_class": "sound_trigger_waterStep1",
-					"sound_prefs":
-					[
-						{
-							"call_funct" : "sound_play",
-							"call_params": ["level_bg_sea"]
-						},
-
-						{
-							"call_funct" : "sound_fadeInit",
-							"call_params": ["level_bg_sea", "0.3"]
-						}
-					]
-				},
-
-				{
-					"x": 0,
-					"y": 4.5,
-					"w": 4,
-					"h": 2,
-					"instance_class": "sound_trigger_waterArrive",
-					"sound_prefs":
-					[
-						{
-							"call_funct" : "sound_play",
-							"call_params": ["level_bg_sea"]
-						},
-
-						{
-							"call_funct" : "sound_fadeInit",
-							"call_params": ["level_bg_sea", "0.6"]
-						}
-					]
-				},
-
-				{
-					"x": 0,
-					"y": 6.5,
-					"w": 4,
-					"h": 1,
-					"instance_class": "sound_trigger_waterStep2",
-					"sound_prefs":
-					[
-						{
-							"call_funct" : "sound_play",
-							"call_params": ["level_bg_sea"]
-						},
-
-						{
-							"call_funct" : "sound_fadeInit",
-							"call_params": ["level_bg_sea", "0.3"]
-						}
-					]
-				},
-
-				{
-					"x": 0,
-					"y": 7.5,
-					"w": 4,
-					"h": 1,
-					"instance_class": "sound_trigger_waterStep3",
-					"sound_prefs":
-					[
-						{
-							"call_funct" : "sound_play",
-							"call_params": ["level_bg_sea"]
-						},
-
-						{
-							"call_funct" : "sound_fadeInit",
-							"call_params": ["level_bg_sea", "0.15"]
-						}
-					]
-				},
-
-				{
-					"x": 0,
-					"y": 8.5,
-					"w": 4,
-					"h": 0.5,
-					"instance_class": "sound_trigger_waterEscape1",
-					"sound_prefs":
-					[
-						{
-							"call_funct" : "sound_fadeInit",
-							"call_params": ["level_bg_sea", "0.04"]
-						}
-					]
-				},
-
-
-				{
-					"x": 0,
-					"y": 22,
-					"w": 4,
-					"h": 2,
-					"instance_class": "sound_trigger_portalApproach",
-					"sound_prefs":
-					[
-						{
-							"call_funct" : "sound_play",
-							"call_params": ["level_bg_forest"]
-						},
-
-						{
-							"call_funct" : "sound_fadeInit",
-							"call_params": ["level_bg_forest", "1"]
-						}
-					]
-				},
-
-				{
-					"x": 0,
-					"y": 20,
-					"w": 4,
-					"h": 2,
-					"instance_class": "sound_trigger_portalLeave",
-					"sound_prefs":
-					[
-						{
-							"call_funct" : "sound_fadeInit",
-							"call_params": ["level_bg_forest", "0"]
-						}
-					]
-				}
 			]
 		},
 

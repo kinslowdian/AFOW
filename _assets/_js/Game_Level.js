@@ -41,8 +41,8 @@ LEVEL.prototype.create = function()
 	this.spirits = {};
 
 	this.buildData.entry_fall	= this.settings.entry_fall;
-	this.buildData.fall_x		= this.settings.fall_x;
-	this.buildData.fall_y		= this.settings.fall_y;
+	this.buildData.fall_x		= this.settings.fall_x * 80;
+	this.buildData.fall_y		= this.settings.fall_y * 80;
 	this.buildData.direction	= this.settings.fall_d;
 
 	this.titleData.top			= this.settings.title_top;
@@ -1110,6 +1110,8 @@ function levelGate_cleanUp()
 
 function level_player_setup()
 {
+
+
 	// BREAK
 	/*
 	trace("level_player_setup();");

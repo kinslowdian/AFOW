@@ -167,6 +167,12 @@ function control_request()
 	control_init();
 
 	levelShift_init(true);
+
+	if(LEVEL_MAIN.buildData.entry_fall)
+	{
+		control.writeSpawn({x:LEVEL_MAIN.buildData.fall_x, y:LEVEL_MAIN.buildData.fall_y});
+		autoMove_init("SPAWN");
+	}
 }
 
 function control_init()

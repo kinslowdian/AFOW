@@ -803,6 +803,51 @@ div[class*='tween-']
 	background-size: 120px 120px;
 }
 
+.pixels_stoneForest
+{
+	background-image: url(../_img/tile_stonePineTrees_1x.png);
+	background-repeat: repeat;
+	background-position: left top;
+
+	background-size: 80px 80px;
+}
+
+.pixels_stoneFlowerLight
+{
+	background-image: url(../_img/tile_flowersLight_stone_1x.png);
+	background-repeat: repeat;
+	background-position: left top;
+
+	background-size: 80px 80px;
+}
+
+.pixels_stoneFlowerHeavy
+{
+	background-image: url(../_img/tile_flowersHeavy_stone_1x.png);
+	background-repeat: repeat;
+	background-position: left top;
+
+	background-size: 80px 80px;
+}
+
+.pixels_stoneForestMass
+{
+	background-image: url(../_img/tile_stoneForestMass_1x.png);
+	background-repeat: repeat;
+	background-position: center top;
+
+	background-size: 240px 240px;
+}
+
+.pixels_boulder_stone
+{
+	background-image: url(../_img/tile_boulder_stone_1x.png);
+	background-repeat: repeat;
+	background-position: left top;
+
+	background-size: 80px 80px;
+}
+
 /* ----------------------------------------------------------------------- GENERAL */
 
 
@@ -1226,6 +1271,31 @@ div[class*='tween-']
 	.pixels_newPortalScreen
 	{
 		background-image: url(../_img/tile_newPortalScreen_1x.png);
+	}
+
+	.pixels_stoneForest
+	{
+		background-image: url(../_img/tile_stonePineTrees_1x.png);
+	}
+
+	.pixels_stoneFlowerLight
+	{
+		background-image: url(../_img/tile_flowersLight_stone_1x.png);
+	}
+
+	.pixels_stoneFlowerHeavy
+	{
+		background-image: url(../_img/tile_flowersHeavy_stone_1x.png);
+	}
+
+	.pixels_stoneForestMass
+	{
+		background-image: url(../_img/tile_stoneForestMass_1x.png);
+	}
+
+	.pixels_boulder_stone
+	{
+		background-image: url(../_img/tile_boulder_stone_1x.png);
 	}
 }
 
@@ -1658,6 +1728,31 @@ div[class*='tween-']
 	.pixels_newPortalScreen
 	{
 		background-image: url(../_img/tile_newPortalScreen_2x.png);
+	}
+
+	.pixels_stoneForest
+	{
+		background-image: url(../_img/tile_stonePineTrees_2x.png);
+	}
+
+	.pixels_stoneFlowerLight
+	{
+		background-image: url(../_img/tile_flowersLight_stone_2x.png);
+	}
+
+	.pixels_stoneFlowerHeavy
+	{
+		background-image: url(../_img/tile_flowersHeavy_stone_2x.png);
+	}
+
+	.pixels_stoneForestMass
+	{
+		background-image: url(../_img/tile_stoneForestMass_2x.png);
+	}
+
+	.pixels_boulder_stone
+	{
+		background-image: url(../_img/tile_boulder_stone_2x.png);
 	}
 }
 

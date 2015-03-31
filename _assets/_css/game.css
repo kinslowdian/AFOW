@@ -1833,6 +1833,15 @@
 
 /* ----------------------------------------------------------------------- LEVEL_GAME_TEXTURES */
 
+.field-floor-stone
+{
+	background: #7a7a7f;
+}
+
+
+
+
+
 .edgeBleed-forest
 {
 	background: #20202a;
@@ -2462,6 +2471,11 @@
 .portal_top_ice
 {
 	background-position: -80px 0px;
+}
+
+.portal_top_stone
+{
+	background-position: -160px 0px;
 }
 
 /* ----------------------------------------------------------------------- PORTAL TEXTURE */
@@ -7648,6 +7662,13 @@
 	-webkit-transition 	: 400ms linear;
 	transition 					: 400ms linear;
 }
+
+.foggyEdge-stone
+{
+	background: -webkit-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.5) 100%);
+	background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.5) 100%);
+}
+
 
 .foggyEdge-portal
 {
