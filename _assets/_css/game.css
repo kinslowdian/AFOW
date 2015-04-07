@@ -96,6 +96,8 @@
 
 /* FOGGY */
 
+/* MIST */
+
 /* BEHIND WORLD */
 
 /* GATES */
@@ -1665,6 +1667,11 @@
 		z-index: 1;
 	}
 
+	.collideCheck-field
+	{
+		position: absolute;
+	}
+
 	/*TODO CHECK IF NEEDED*/
 	.field-area, .enemy-area, .portal-area, .player-area, .fieldEdge, .match-area, .sound-area
 	{
@@ -1836,6 +1843,11 @@
 .field-floor-stone
 {
 	background: #7a7a7f;
+}
+
+.field-floor-underground, .pixels_undergroundMass
+{
+	background: #00151f;
 }
 
 
@@ -2476,6 +2488,11 @@
 .portal_top_stone
 {
 	background-position: -160px 0px;
+}
+
+.portal_top_underground
+{
+	background-position: -240px 0px;
 }
 
 /* ----------------------------------------------------------------------- PORTAL TEXTURE */
@@ -7688,7 +7705,7 @@
 	background: radial-gradient(ellipse at center, rgba(240, 190, 0, 0) 60%, rgba(240, 190, 0, 0.5) 100%);
 }
 
-.foggyEdge-evening
+.foggyEdge-evening, .foggyEdge-underground
 {
 	background: -webkit-radial-gradient(center, ellipse cover, rgba(102, 36, 91, 0) 60%, rgba(102, 36, 91, 0.5) 100%);
 	background: radial-gradient(ellipse at center, rgba(102, 36, 91, 0) 60%, rgba(102, 36, 91, 0.5) 100%);
@@ -7701,6 +7718,97 @@
 }
 
 /* ----------------------------------------------------------------------- FOGGY */
+
+
+
+
+/* ----------------------------------------------------------------------- MIST */
+
+.mistyEdge
+{
+	width: 100%;
+	height: 100%;
+
+	position: absolute;
+
+	left: 0; right: 0; top: 0; bottom: 0;
+
+	overflow: hidden;
+}
+
+.mistFlowBtm, .mistFlowTop
+{
+	width: 100%;
+	height: 320px;
+
+	position: absolute;
+
+	left: 0; right: 0; top: 0; bottom: 0;
+}
+
+.mistFlowBtm
+{
+	width: 200%;
+
+	margin: auto auto 0 auto;
+}
+
+.mistFlowTop
+{
+	width: 200%;
+
+	margin: 0 auto auto auto;
+}
+
+.tween-mistBtmFlow
+{
+	-webkit-animation: tweenMistFlowBtmFrames 4800ms linear infinite;
+	animation: tweenMistFlowBtmFrames 4800ms linear infinite;
+}
+
+@-webkit-keyframes tweenMistFlowBtmFrames
+{
+	0%		{-webkit-transform: translateX(0px);}
+	100% 	{-webkit-transform: translateX(-640px);}
+}
+
+@keyframes tweenMistFlowBtmFrames
+{
+	0%		{transform: translateX(0px);}
+	100% 	{transform: translateX(-640px);}
+}
+
+.tween-mistTopFlow
+{
+	-webkit-animation: tweenMistFlowTopFrames 4800ms linear infinite;
+	animation: tweenMistFlowTopFrames 4800ms linear infinite;
+}
+
+@-webkit-keyframes tweenMistFlowTopFrames
+{
+	0%		{-webkit-transform: translateX(0px);}
+	100% 	{-webkit-transform: translateX(-640px);}
+}
+
+@keyframes tweenMistFlowTopFrames
+{
+	0%		{transform: translateX(0px);}
+	100% 	{transform: translateX(-640px);}
+}
+
+.mistFlow0
+{
+	-webkit-animation-duration: 4800ms;
+	animation-duration: 4800ms;
+}
+
+.mistFlow1
+{
+	-webkit-animation-duration: 5200ms;
+	animation-duration: 5200ms;
+}
+
+/* ----------------------------------------------------------------------- MIST */
 
 
 

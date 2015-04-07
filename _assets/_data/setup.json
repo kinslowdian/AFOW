@@ -213,12 +213,13 @@
 			{
 				"n": 0,
 				"weather": "SNOW",
+				"mist": true,
 				"land": "stone",
 				"entry_fall": true,
 				"fall_x": 0.5,
 				"fall_y": 0.5,
 				"fall_d": "DOWN",
-				"title_top": "the mountain",
+				"title_top": "a mountain top",
 				"levelFunctions":
 				{
 
@@ -240,12 +241,56 @@
 					{"x": 0, "y": 15, "w": 1.5, "h": 2, "p": "pixels_stoneForest collideCheck-field"},
 					{"x": 2.5, "y": 15, "w": 1.5, "h": 2, "p": "pixels_stoneForest collideCheck-field"},
 
-					{"x": 0, "y": 2, "w": 1, "h": 6, "p": "pixels_boulder_stone collideCheck-field"},
-					{"x": 3, "y": 2, "w": 1, "h": 6, "p": "pixels_boulder_stone collideCheck-field"},
-					{"x": 0, "y": 17, "w": 1, "h": 4, "p": "pixels_boulder_stone collideCheck-field"},
-					{"x": 3, "y": 17, "w": 1, "h": 4, "p": "pixels_boulder_stone collideCheck-field"},
-					{"x": 0, "y": 23, "w": 1, "h": 2, "p": "pixels_boulder_stone collideCheck-field"},
-					{"x": 3, "y": 23, "w": 1, "h": 2, "p": "pixels_boulder_stone collideCheck-field"}
+					{"x": 0, "y": 3.5, "w": 0.5, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 3.5, "y": 3.5, "w": 0.5, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 0, "y": 6, "w": 0.5, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 3.5, "y": 6, "w": 0.5, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 0.5, "y": 18, "w": 0.5, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 0, "y": 18.5, "w": 0.5, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 3, "y": 18, "w": 0.5, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 3.5, "y": 18.5, "w": 0.5, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 0, "y": 23, "w": 0.5, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 0.5, "y": 23.5, "w": 0.5, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 3.5, "y": 23, "w": 0.5, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 3, "y": 23.5, "w": 0.5, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
+
+
+
+					{"x": 1.5, "y": 1, "w": 1, "h": 3, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 1, "y": 1.5, "w": 0.5, "h": 2, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 2.5, "y": 1.5, "w": 0.5, "h": 2, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 0.5, "y": 2, "w": 0.5, "h": 1, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 3, "y": 2, "w": 0.5, "h": 1, "p": "pixels_boulder_stone collideCheck-field"},
+
+					{"x": 0, "y": 4, "w": 0.5, "h": 1.5, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 0.5, "y": 4.5, "w": 0.5, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
+
+					{"x": 3.5, "y": 4, "w": 0.5, "h": 1.5, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 3, "y": 4.5, "w": 0.5, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
+
+					{"x": 0, "y": 6.5, "w": 0.5, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 0, "y": 7, "w": 1, "h": 1, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 1, "y": 7.5, "w": 0.5, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
+
+					{"x": 3.5, "y": 6.5, "w": 0.5, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 3, "y": 7, "w": 1, "h": 1, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 2.5, "y": 7.5, "w": 0.5, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
+
+					{"x": 0, "y": 18, "w": 0.5, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 0, "y": 17, "w": 1, "h": 1, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 1, "y": 17, "w": 0.5, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
+
+					{"x": 3.5, "y": 18, "w": 0.5, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 3, "y": 17, "w": 1, "h": 1, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 2.5, "y": 17, "w": 0.5, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
+
+					{"x": 0, "y": 23.5, "w": 0.5, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 0, "y": 24, "w": 1, "h": 1, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 1, "y": 24.5, "w": 0.5, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
+
+					{"x": 3.5, "y": 23.5, "w": 0.5, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 3, "y": 24, "w": 1, "h": 1, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 2.5, "y": 24.5, "w": 0.5, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"}
 				],
 
 				"PLANTS":
@@ -260,30 +305,20 @@
 					{"x": 3.5, "y": 0.5, "w": 0.5, "h": 0.5, "p": "pixels_stoneFlowerLight"},
 					{"x": 3, "y": 1, "w": 0.5, "h": 0.5, "p": "pixels_stoneFlowerLight"},
 
+					{"x": 1.5, "y": 5, "w": 1, "h": 2, "p": "pixels_stoneFlowerLight"},
 
-					{"x": 0, "y": 2, "w": 1.5, "h": 4, "p": "pixels_stoneFlowerLight"},
-					{"x": 2.5, "y": 2, "w": 1.5, "h": 4, "p": "pixels_stoneFlowerLight"},
 
 					{"x": 1.5, "y": 8, "w": 1, "h": 2, "p": "pixels_stoneFlowerLight"},
-
 					{"x": 0, "y": 10, "w": 4, "h": 1, "p": "pixels_stoneFlowerLight"},
-
 					{"x": 0, "y": 13, "w": 1, "h": 2, "p": "pixels_stoneFlowerLight"},
-
 					{"x": 1, "y": 14, "w": 2, "h": 1, "p": "pixels_stoneFlowerLight"},
-
 					{"x": 3, "y": 13, "w": 1, "h": 2, "p": "pixels_stoneFlowerLight"},
-
 					{"x": 1.5, "y": 15, "w": 1, "h": 2, "p": "pixels_stoneFlowerLight"},
 
 					{"x": 1.5, "y": 19, "w": 1, "h": 4, "p": "pixels_stoneFlowerLight"},
-
 					{"x": 0.5, "y": 21.5, "w": 1, "h": 0.5, "p": "pixels_stoneFlowerLight"},
-
 					{"x": 2.5, "y": 21.5, "w": 1, "h": 0.5, "p": "pixels_stoneFlowerLight"},
-
 					{"x": 1, "y": 22, "w": 0.5, "h": 0.5, "p": "pixels_stoneFlowerLight"},
-
 					{"x": 2.5, "y": 22, "w": 0.5, "h": 0.5, "p": "pixels_stoneFlowerLight"}
 				],
 
@@ -330,6 +365,7 @@
 					"exit": 3,
 					"direction": "UP",
 					"spawn": 0,
+					"bossLevel": false,
 					"p": "portal_top_stone"
 				},
 
@@ -343,6 +379,7 @@
 					"exit": 3,
 					"direction": "UP",
 					"spawn": 0,
+					"bossLevel": false,
 					"p": "portal_top_stone"
 				},
 
@@ -356,6 +393,7 @@
 					"exit": 3,
 					"direction": "UP",
 					"spawn": 0,
+					"bossLevel": false,
 					"p": "portal_top_stone"
 				},
 
@@ -369,6 +407,7 @@
 					"exit": 1,
 					"direction": "DOWN",
 					"spawn": 0,
+					"bossLevel": false,
 					"p": "portal_top_stone"
 				},
 
@@ -382,6 +421,21 @@
 					"exit": 0,
 					"direction": "UP",
 					"spawn": 0,
+					"bossLevel": false,
+					"p": "portal_top_stone"
+				},
+
+				{
+					"num": 5,
+					"x": 2,
+					"y": 4,
+					"w": 1,
+					"h": 1,
+					"level": 3,
+					"exit": 0,
+					"direction": "UP",
+					"spawn": 0,
+					"bossLevel": false,
 					"p": "portal_top_stone"
 				}
 			],
@@ -402,194 +456,216 @@
 			"levelSettings":
 			{
 				"n": 1,
-				"weather": "RAIN",
-				"land": "forest",
-				"entry_fall": "NO",
+				"weather": "SNOW",
+				"mist": true,
+				"land": "stone",
+				"entry_fall": false,
 				"fall_x": 0,
 				"fall_y": 0,
 				"fall_d": "DOWN",
-				"title_top": "level number 1",
-				"title_btm": "zomg!!!"
+				"title_top": "the mountain side",
+				"levelFunctions":
+				{
+
+				}
 			},
 
 			"texture":
 			{
 				"WALLS" :
 				[
-					{"x": 0, "y": 0, "w": 1.5, "h": 2, "p": "pixels_forest collideCheck-field"},
+					{"x": 0, "y": 1.5, "w": 0.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+					{"x": 0.5, "y": 1, "w": 0.5, "h": 1.5, "p": "pixels_forest collideCheck-field"},
+					{"x": 1, "y": 0.5, "w": 0.5, "h": 1, "p": "pixels_forest collideCheck-field"},
+					{"x": 1, "y": 2, "w": 0.5, "h": 1, "p": "pixels_forest collideCheck-field"},
 
-					{"x": 2.5, "y": 0, "w": 1.5, "h": 2, "p": "pixels_forest collideCheck-field"},
+					{"x": 3.5, "y": 1.5, "w": 0.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+					{"x": 3, "y": 1, "w": 0.5, "h": 1.5, "p": "pixels_forest collideCheck-field"},
+					{"x": 2.5, "y": 0.5, "w": 0.5, "h": 1, "p": "pixels_forest collideCheck-field"},
+					{"x": 2.5, "y": 2, "w": 0.5, "h": 1, "p": "pixels_forest collideCheck-field"},
 
-					{"x": 0, "y": 2, "w": 0.5, "h": 3, "p": "pixels_forest collideCheck-field"},
+					{"x": 1.5, "y": 4.5, "w": 1, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
 
-					{"x": 3.5, "y": 2, "w": 0.5, "h": 3, "p": "pixels_forest collideCheck-field"},
+					{"x": 0, "y": 4.5, "w": 0.5, "h": 1.5, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 0.5, "y": 5, "w": 0.5, "h": 1, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 1, "y": 5.5, "w": 0.5, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
 
-					{"x": 1.5, "y": 3, "w": 1, "h": 2, "p": "pixels_forest collideCheck-field"},
+					{"x": 3.5, "y": 4.5, "w": 0.5, "h": 1.5, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 3, "y": 5, "w": 0.5, "h": 1, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 2.5, "y": 5.5, "w": 0.5, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
 
-					{"x": 0, "y": 5, "w": 4, "h": 2, "p": "pixels_forest collideCheck-field"},
+					{"x": 0, "y": 7, "w": 0.5, "h": 1.5, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 0.5, "y": 7, "w": 0.5, "h": 1, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 1, "y": 7, "w": 0.5, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
 
-					{"x": 0, "y": 7, "w": 0.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+					{"x": 3.5, "y": 7, "w": 0.5, "h": 1.5, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 3, "y": 7, "w": 0.5, "h": 1, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 2.5, "y": 7, "w": 0.5, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
 
-					{"x": 3.5, "y": 7, "w": 0.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+					{"x": 0, "y": 11.5, "w": 0.5, "h": 1.5, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 0.5, "y": 12, "w": 0.5, "h": 1, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 1.5, "y": 12.5, "w": 0.5, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
 
-					{"x": 1, "y": 7, "w": 2, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+					{"x": 3.5, "y": 11.5, "w": 0.5, "h": 1.5, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 3, "y": 12, "w": 0.5, "h": 1, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 2.5, "y": 12.5, "w": 0.5, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
 
-					{"x": 1.5, "y": 7.5, "w": 1, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+					{"x": 1, "y": 13, "w": 2, "h": 1, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 1.5, "y": 14, "w": 1, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
+
+					{"x": 0, "y": 17.5, "w": 1, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 0.5, "y": 18, "w": 1, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 1, "y": 18.5, "w": 0.5, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 0.5, "y": 19, "w": 1, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 0, "y": 19.5, "w": 1, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
+
+					{"x": 3, "y": 17.5, "w": 1, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 2.5, "y": 18, "w": 1, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 2.5, "y": 18.5, "w": 0.5, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 2.5, "y": 19, "w": 1, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 3, "y": 19.5, "w": 1, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
+
+					{"x": 0, "y": 20.5, "w": 0.5, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 3.5, "y": 20.5, "w": 0.5, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
+
+					{"x": 1.5, "y": 20, "w": 1, "h": 1.5, "p": "pixels_stoneForest collideCheck-field"},
+
+					{"x": 0.5, "y": 18, "w": 1, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 1, "y": 18.5, "w": 0.5, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 0.5, "y": 19, "w": 1, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 0, "y": 19.5, "w": 1, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
+
+					{"x": 0.5, "y": 21.5, "w": 0.5, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 1, "y": 22, "w": 0.5, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
+
+					{"x": 3, "y": 21.5, "w": 0.5, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 2.5, "y": 22, "w": 0.5, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
+
+					{"x": 0.5, "y": 23.5, "w": 0.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+					{"x": 1, "y": 23, "w": 0.5, "h": 1.5, "p": "pixels_forest collideCheck-field"},
+
+					{"x": 3, "y": 23.5, "w": 0.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+					{"x": 2.5, "y": 23, "w": 0.5, "h": 1.5, "p": "pixels_forest collideCheck-field"},
 
 
-					{"x": 1.5, "y": 10.5, "w": 1, "h": 1, "p": "pixels_forest collideCheck-field"},
-
+					{"x": 1.5, "y": 8, "w": 1, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+					{"x": 1, "y": 8.5, "w": 0.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+					{"x": 2.5, "y": 8.5, "w": 0.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+					{"x": 0.5, "y": 9, "w": 0.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+					{"x": 0, "y": 9.5, "w": 0.5, "h": 1, "p": "pixels_forest collideCheck-field"},
+					{"x": 0.5, "y": 10.5, "w": 0.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
 					{"x": 1, "y": 11, "w": 0.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
-
+					{"x": 1.5, "y": 11.5, "w": 1, "h": 0.5, "p": "pixels_forest collideCheck-field"},
 					{"x": 2.5, "y": 11, "w": 0.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+					{"x": 3, "y": 10.5, "w": 0.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+					{"x": 3.5, "y": 9.5, "w": 0.5, "h": 1, "p": "pixels_forest collideCheck-field"},
+					{"x": 3, "y": 9, "w": 0.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+					{"x": 2.5, "y": 8.5, "w": 0.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
 
-					{"x": 1, "y": 13.5, "w": 0.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+					{"x": 0, "y": 9, "w": 0.5, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 0, "y": 10.5, "w": 0.5, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 3.5, "y": 9, "w": 0.5, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 3.5, "y": 10.5, "w": 0.5, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
 
-					{"x": 2.5, "y": 13.5, "w": 0.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+					{"x": 0, "y": 0, "w": 1.5, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 0, "y": 0.5, "w": 1, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 0, "y": 1, "w": 0.5, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
 
-					{"x": 1.5, "y": 13.5, "w": 1, "h": 1, "p": "pixels_forest collideCheck-field"},
+					{"x": 2.5, "y": 0, "w": 1.5, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 3, "y": 0.5, "w": 1, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 3.5, "y": 1, "w": 0.5, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
+
+					{"x": 0, "y": 2, "w": 0.5, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 0, "y": 2.5, "w": 1, "h": 2, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 1, "y": 3, "w": 0.5, "h": 1.5, "p": "pixels_boulder_stone collideCheck-field"},
+
+					{"x": 1.5, "y": 3.5, "w": 1, "h": 1, "p": "pixels_boulder_stone collideCheck-field"},
+
+					{"x": 3.5, "y": 2, "w": 0.5, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 3, "y": 2.5, "w": 1, "h": 2, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 2.5, "y": 3, "w": 0.5, "h": 1.5, "p": "pixels_boulder_stone collideCheck-field"},
+
+					{"x": 0.5, "y": 4.5, "w": 1, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 2.5, "y": 4.5, "w": 1, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 1, "y": 5, "w": 2, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 1.5, "y": 5.5, "w": 1, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
+
+					{"x": 1.5, "y": 7, "w": 1, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 1, "y": 7.5, "w": 2, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 0.5, "y": 8, "w": 1, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 2.5, "y": 8, "w": 1, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 0, "y": 8.5, "w": 1, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 3, "y": 8.5, "w": 1, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
+
+					{"x": 1.5, "y": 12.5, "w": 1, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 1, "y": 12, "w": 2, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 0.5, "y": 11.5, "w": 1, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 2.5, "y": 11.5, "w": 1, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 0, "y": 11, "w": 1, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 3, "y": 11, "w": 1, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
 
 
-					{"x": 0, "y": 23, "w": 1.5, "h": 2, "p": "pixels_forest collideCheck-field"},
+					{"x": 0, "y": 18, "w": 0.5, "h": 1.5, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 0.5, "y": 18.5, "w": 0.5, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
 
-					{"x": 2.5, "y": 23, "w": 1.5, "h": 2, "p": "pixels_forest collideCheck-field"},
+					{"x": 3.5, "y": 18, "w": 0.5, "h": 1.5, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 3, "y": 18.5, "w": 0.5, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
 
-					{"x": 0, "y": 20, "w": 0.5, "h": 3, "p": "pixels_forest collideCheck-field"},
+					{"x": 0, "y": 21.5, "w": 0.5, "h": 3.5, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 0.5, "y": 22, "w": 0.5, "h": 1.5, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 0.5, "y": 24, "w": 0.5, "h": 1, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 1, "y": 22.5, "w": 0.5, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 1, "y": 24.5, "w": 0.5, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
 
-					{"x": 3.5, "y": 20, "w": 0.5, "h": 3, "p": "pixels_forest collideCheck-field"},
 
-					{"x": 1.5, "y": 20, "w": 1, "h": 2, "p": "pixels_forest collideCheck-field"},
-
-					{"x": 0, "y": 18, "w": 4, "h": 2, "p": "pixels_forest collideCheck-field"},
-
-					{"x": 0, "y": 17.5, "w": 0.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
-
-					{"x": 3.5, "y": 17.5, "w": 0.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
-
-					{"x": 1, "y": 17.5, "w": 2, "h": 0.5, "p": "pixels_forest collideCheck-field"},
-
-					{"x": 1.5, "y": 17, "w": 1, "h": 0.5, "p": "pixels_forest collideCheck-field"}
+					{"x": 3.5, "y": 21.5, "w": 0.5, "h": 3.5, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 3, "y": 22, "w": 0.5, "h": 1.5, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 3, "y": 24, "w": 0.5, "h": 1, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 2.5, "y": 22.5, "w": 0.5, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 2.5, "y": 24.5, "w": 0.5, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"}
 				],
 
 				"PLANTS":
 				[
-					{"x": 1.5, "y": 1, "w": 1, "h": 1, "p": "pixels_flowerLight"},
+					{"x": 1.5, "y": 1, "w": 1, "h": 1.5, "p": "pixels_flowerLight"},
+					{"x": 1, "y": 1.5, "w": 0.5, "h": 0.5, "p": "pixels_flowerLight"},
+					{"x": 2.5, "y": 1.5, "w": 0.5, "h": 0.5, "p": "pixels_flowerLight"},
 
-					{"x": 0.5, "y": 2, "w": 3, "h": 1, "p": "pixels_flowerLight"},
+					{"x": 0.5, "y": 9.5, "w": 0.5, "h": 1, "p": "pixels_flowerHeavy"},
+					{"x": 1, "y": 9, "w": 0.5, "h": 2, "p": "pixels_flowerHeavy"},
+					{"x": 1.5, "y": 8.5, "w": 1, "h": 1, "p": "pixels_flowerHeavy"},
+					{"x": 1.5, "y": 10.5, "w": 1, "h": 1, "p": "pixels_flowerHeavy"},
+					{"x": 2.5, "y": 9, "w": 0.5, "h": 2, "p": "pixels_flowerHeavy"},
+					{"x": 3, "y": 9.5, "w": 0.5, "h": 1, "p": "pixels_flowerHeavy"},
 
-					{"x": 0.5, "y": 3, "w": 1, "h": 1, "p": "pixels_flowerLight"},
+					{"x": 1.5, "y": 22.5, "w": 1, "h": 1.5, "p": "pixels_flowerLight"},
 
-					{"x": 2.5, "y": 3, "w": 1, "h": 1, "p": "pixels_flowerLight"},
+					{"x": 1, "y": 15.5, "w": 0.5, "h": 1, "p": "pixels_stoneFlowerLight"},
+					{"x": 1.5, "y": 15, "w": 1, "h": 2, "p": "pixels_stoneFlowerLight"},
+					{"x": 2.5, "y": 15.5, "w": 0.5, "h": 1, "p": "pixels_stoneFlowerLight"},
 
-					{"x": 0.5, "y": 21, "w": 1, "h": 1, "p": "pixels_flowerLight"},
-
-					{"x": 2.5, "y": 21, "w": 1, "h": 1, "p": "pixels_flowerLight"},
-
-					{"x": 0.5, "y": 22, "w": 3, "h": 1, "p": "pixels_flowerLight"},
-
-					{"x": 1.5, "y": 23, "w": 1, "h": 1, "p": "pixels_flowerLight"},
-
-					{"x": 1, "y": 11.5, "w": 2, "h": 0.5, "p": "pixels_flowerLight"},
-
-					{"x": 1, "y": 12, "w": 0.5, "h": 1, "p": "pixels_flowerLight"},
-
-					{"x": 2.5, "y": 12, "w": 0.5, "h": 1, "p": "pixels_flowerLight"},
-
-					{"x": 1, "y": 13, "w": 2, "h": 0.5, "p": "pixels_flowerLight"}
+					{"x": 1, "y": 6, "w": 2, "h": 1, "p": "pixels_stoneFlowerLight"}
 				],
 
 				"CLEARING":
 				[
-					{"x": -3, "y": 3, "w": 2, "h": 2, "n": "level1_clearing0", "t": "clearing_cross"},
 
-					{"x": 5, "y": 3, "w": 2, "h": 2, "n": "level1_clearing1", "t": "clearing_cross"},
-
-					{"x": 5, "y": 5, "w": 2, "h": 2, "n": "level1_clearing2", "t": "clearing_cross"},
-
-					{"x": -3, "y": 5, "w": 2, "h": 2, "n": "level1_clearing3", "t": "clearing_cross"},
-
-					{"x": -3, "y": 23, "w": 2, "h": 2, "n": "level1_clearing4", "t": "clearing_cross"},
-
-					{"x": 5, "y": 23, "w": 2, "h": 2, "n": "level1_clearing5", "t": "clearing_cross"}
 				],
 
 				"FLOOR":
 				{
-					"class" : "field-floor-forest"
+					"class" : "field-floor-stone"
 				},
 
 				"OUTER":
 				{
-					"class" : "pixels_forestMass"
+					"class" : "pixels_stoneForestMass"
 				}
 			},
 
 			"water":
 			{
-				"FILL": 1,
 
-				"EDGE":
-				[
-					{"x": 0, "y": 7.5, "w": 0.5, "h": 0.5, "p": "pixels_waterEdge waterEdge tween-waterEdge"},
-
-					{"x": 0.5, "y": 7, "w": 0.5, "h": 0.5, "p": "pixels_waterEdge waterEdge tween-waterEdge"},
-
-					{"x": 1, "y": 7.5, "w": 0.5, "h": 0.5, "p": "pixels_waterEdge waterEdge tween-waterEdge"},
-
-
-					{"x": 1.5, "y": 8, "w": 1, "h": 0.5, "p": "pixels_waterEdge waterEdge tween-waterEdge"},
-
-
-					{"x": 2.5, "y": 7.5, "w": 0.5, "h": 0.5, "p": "pixels_waterEdge waterEdge tween-waterEdge"},
-
-					{"x": 3, "y": 7, "w": 0.5, "h": 0.5, "p": "pixels_waterEdge waterEdge tween-waterEdge"},
-
-					{"x": 3.5, "y": 7.5, "w": 0.5, "h": 0.5, "p": "pixels_waterEdge waterEdge tween-waterEdge"},
-
-
-					{"x": 1, "y": 14, "w": 0.5, "h": 0.5, "p": "pixels_waterEdge waterEdge tween-waterEdge"},
-
-					{"x": 2.5, "y": 14, "w": 0.5, "h": 0.5, "p": "pixels_waterEdge waterEdge tween-waterEdge"}
-				],
-
-				"BASE":
-				[
-					{"x": 0.5, "y": 7, "w": 0.5, "h": 0.5, "p": "pixels_waterBase waterPool collideCheck-field"},
-
-					{"x": 3, "y": 7, "w": 0.5, "h": 0.5, "p": "pixels_waterBase waterPool collideCheck-field"},
-
-
-					{"x": 0, "y": 7.5, "w": 1.5, "h": 3.5, "p": "pixels_waterBase waterPool collideCheck-field"},
-
-					{"x": 2.5, "y": 7.5, "w": 1.5, "h": 3.5, "p": "pixels_waterBase waterPool collideCheck-field"},
-
-					{"x": 1.5, "y": 8, "w": 1, "h": 2.5, "p": "pixels_waterBase waterPool collideCheck-field"},
-
-
-					{"x": 0, "y": 11, "w": 1, "h": 3, "p": "pixels_waterBase waterPool collideCheck-field"},
-
-					{"x": 3, "y": 11, "w": 1, "h": 3, "p": "pixels_waterBase waterPool collideCheck-field"},
-
-
-
-					{"x": 0.5, "y": 17.5, "w": 0.5, "h": 0.5, "p": "pixels_waterBase waterPool collideCheck-field"},
-
-					{"x": 3, "y": 17.5, "w": 0.5, "h": 0.5, "p": "pixels_waterBase waterPool collideCheck-field"},
-
-
-					{"x": 0, "y": 14, "w": 1.5, "h": 3.5, "p": "pixels_waterBase waterPool collideCheck-field"},
-
-					{"x": 2.5, "y": 14, "w": 1.5, "h": 3.5, "p": "pixels_waterBase waterPool collideCheck-field"},
-
-					{"x": 1.5, "y": 14.5, "w": 1, "h": 2.5, "p": "pixels_waterBase waterPool collideCheck-field"}
-				],
-
-				"FISH":
-				[
-					{"x": 1.5, "y": 9, "w": 0.5, "h": 0.5, "n": "level1_waterFish0", "t": "water_fishCCW"},
-
-					{"x": 2, "y": 15.5, "w": 0.5, "h": 0.5, "n": "level1_waterFish1", "t": "water_fishACW"}
-				]
 			},
 
 			"enemyPlayers":
@@ -597,18 +673,10 @@
 
 			],
 
-			"gods":
-			{
-				"GOD":
-				[
+			"gates":
+			[
 
-				],
-
-				"TRIGGERS":
-				[
-
-				]
-			},
+			],
 
 			"portal":
 			[
@@ -619,79 +687,99 @@
 					"w": 1,
 					"h": 1,
 					"level": 0,
-					"exit": 6,
+					"exit": 4,
 					"direction": "DOWN",
 					"spawn": 1,
+					"bossLevel": false,
 					"p": "portal_top_forest"
 				},
 
 				{
 					"num": 1,
-					"x": 0.5,
-					"y": 4,
+					"x": 1.5,
+					"y": 2.5,
 					"w": 1,
 					"h": 1,
 					"level": 1,
-					"exit": 3,
+					"exit": 2,
 					"direction": "UP",
 					"spawn": 1,
+					"bossLevel": false,
 					"p": "portal_top_forest"
 				},
 
 				{
 					"num": 2,
-					"x": 2.5,
-					"y": 4,
-					"w": 1,
-					"h": 1,
-					"level": 1,
-					"exit": 4,
-					"direction": "UP",
-					"spawn": 1,
-					"p": "portal_top_forest"
-				},
-
-				{
-					"num": 3,
-					"x": 0.5,
-					"y": 20,
+					"x": 0,
+					"y": 6,
 					"w": 1,
 					"h": 1,
 					"level": 1,
 					"exit": 1,
-					"direction": "DOWN",
+					"direction": "RIGHT",
 					"spawn": 1,
-					"p": "portal_top_forest"
+					"bossLevel": false,
+					"p": "portal_top_stone"
 				},
 
 				{
-					"num": 4,
-					"x": 2.5,
-					"y": 20,
+					"num": 3,
+					"x": 3,
+					"y": 6,
 					"w": 1,
 					"h": 1,
 					"level": 1,
 					"exit": 5,
+					"direction": "LEFT",
+					"spawn": 1,
+					"bossLevel": false,
+					"p": "portal_top_stone"
+				},
+
+				{
+					"num": 4,
+					"x": 1.5,
+					"y": 9.5,
+					"w": 1,
+					"h": 1,
+					"level": 1,
+					"exit": 2,
 					"direction": "DOWN",
 					"spawn": 1,
+					"bossLevel": false,
 					"p": "portal_top_forest"
 				},
 
 				{
 					"num": 5,
-					"x": 1.5,
-					"y": 12,
+					"x": 0,
+					"y": 13,
+					"w": 1,
+					"h": 1,
+					"level": 1,
+					"exit": 3,
+					"direction": "DOWN",
+					"spawn": 1,
+					"bossLevel": false,
+					"p": "portal_top_stone"
+				},
+
+				{
+					"num": 6,
+					"x": 3,
+					"y": 13,
 					"w": 1,
 					"h": 1,
 					"level": 1,
 					"exit": 4,
 					"direction": "DOWN",
 					"spawn": 1,
-					"p": "portal_top_forest"
+					"bossLevel": false,
+					"p": "portal_top_stone"
 				},
 
 				{
-					"num": 6,
+					"num": 7,
 					"x": 1.5,
 					"y": 24,
 					"w": 1,
@@ -700,26 +788,19 @@
 					"exit": 0,
 					"direction": "UP",
 					"spawn": 1,
+					"bossLevel": false,
 					"p": "portal_top_forest"
 				}
 			],
 
 			"sound_level":
 			[
-				{
-					"call_funct" : "sound_play",
-					"call_params": ["level_bg_forest"]
-				},
 
-				{
-					"call_funct" : "sound_volume",
-					"call_params": ["level_bg_forest", "0.01"]
-				},
+			],
 
-				{
-					"call_funct" : "sound_fadeInitGlobal",
-					"call_params" : [1]
-				}
+			"sound_trigger":
+			[
+
 			]
 		},
 
@@ -728,165 +809,191 @@
 			"levelSettings":
 			{
 				"n": 2,
-				"weather": "WIND",
-				"land": "forest",
-				"entry_fall": "NO",
+				"weather": "SNOW",
+				"mist": true,
+				"land": "stone",
+				"entry_fall": false,
 				"fall_x": 0,
 				"fall_y": 0,
 				"fall_d": "DOWN",
-				"title_top": "level number 2",
-				"title_btm": "zomg!!!"
+				"title_top": "the mountain foot",
+				"levelFunctions":
+				{
+
+				}
 			},
 
 			"texture":
 			{
 				"WALLS" :
 				[
-					{"x": 0, "y": 7.5, "w": 0.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+					{"x": 0, "y": 0, "w": 0.5, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 3.5, "y": 0, "w": 0.5, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
 
-					{"x": 3.5, "y": 7.5, "w": 0.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+					{"x": 1.5, "y": 2.5, "w": 1, "h": 1, "p": "pixels_stoneForest collideCheck-field"},
 
-					{"x": 0, "y": 9, "w": 0.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+					{"x": 1.5, "y": 7, "w": 1, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
 
-					{"x": 3.5, "y": 7.5, "w": 0.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+					{"x": 1.5, "y": 9.5, "w": 1, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
 
-					{"x": 1, "y": 12, "w": 0.5, "h": 1, "p": "pixels_forest collideCheck-field"},
+					{"x": 0.5, "y": 11, "w": 0.5, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 3, "y": 11, "w": 0.5, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 0.5, "y": 13.5, "w": 0.5, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 3, "y": 13.5, "w": 0.5, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
 
-					{"x": 2.5, "y": 12, "w": 0.5, "h": 1, "p": "pixels_forest collideCheck-field"},
+					{"x": 1, "y": 14.5, "w": 0.5, "h": 4, "p": "pixels_forest collideCheck-field"},
+					{"x": 2.5, "y": 14.5, "w": 0.5, "h": 4, "p": "pixels_forest collideCheck-field"},
+					{"x": 0, "y": 19.5, "w": 1.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+					{"x": 2.5, "y": 19.5, "w": 1.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+					{"x": 0, "y": 21, "w": 4, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+					{"x": 0, "y": 21.5, "w": 0.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+					{"x": 3.5, "y": 21.5, "w": 0.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+					{"x": 1, "y": 22, "w": 0.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+					{"x": 2.5, "y": 22, "w": 0.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+					{"x": 0.5, "y": 22.5, "w": 0.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+					{"x": 3, "y": 22.5, "w": 0.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+					{"x": 0, "y": 23, "w": 0.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+					{"x": 1.5, "y": 23, "w": 1, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+					{"x": 3.5, "y": 23, "w": 0.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+					{"x": 0, "y": 24, "w": 0.5, "h": 1, "p": "pixels_forest collideCheck-field"},
+					{"x": 0.5, "y": 24.5, "w": 0.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+					{"x": 3, "y": 24.5, "w": 0.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+					{"x": 3.5, "y": 24, "w": 0.5, "h": 1, "p": "pixels_forest collideCheck-field"},
 
-					{"x": 0, "y": 13, "w": 4, "h": 1, "p": "pixels_forest collideCheck-field"},
+					{"x": 0.5, "y": 0, "w": 1, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 0, "y": 0.5, "w": 1, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 0, "y": 1, "w": 0.5, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
 
-					{"x": 1, "y": 14, "w": 0.5, "h": 2, "p": "pixels_forest collideCheck-field"},
+					{"x": 2.5, "y": 0, "w": 1, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 3, "y": 0.5, "w": 1, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 3.5, "y": 1, "w": 0.5, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
 
-					{"x": 2.5, "y": 14, "w": 0.5, "h": 2, "p": "pixels_forest collideCheck-field"},
+					{"x": 1, "y": 1.5, "w": 0.5, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 2.5, "y": 1.5, "w": 0.5, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
 
-					{"x": 0, "y": 16, "w": 1.5, "h": 2, "p": "pixels_forest collideCheck-field"},
+					{"x": 1.5, "y": 1.5, "w": 0.5, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 0.5, "y": 2, "w": 3, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 1, "y": 2.5, "w": 0.5, "h": 1, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 2.5, "y": 2.5, "w": 0.5, "h": 1, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 0.5, "y": 3.5, "w": 3, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
 
-					{"x": 2.5, "y": 16, "w": 1.5, "h": 2, "p": "pixels_forest collideCheck-field"},
+					{"x": 1, "y": 4, "w": 0.5, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 2.5, "y": 4, "w": 0.5, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
 
-					{"x": 0, "y": 19, "w": 4, "h": 1, "p": "pixels_forest collideCheck-field"},
+					{"x": 0, "y": 4.5, "w": 0.5, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 0, "y": 5, "w": 1, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 0, "y": 5.5, "w": 1.5, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
 
-					{"x": 0, "y": 20, "w": 1.5, "h": 5, "p": "pixels_forest collideCheck-field"},
+					{"x": 3.5, "y": 4.5, "w": 0.5, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 3, "y": 5, "w": 1, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 2.5, "y": 5.5, "w": 1.5, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
 
-					{"x": 2.5, "y": 20, "w": 1.5, "h": 5, "p": "pixels_forest collideCheck-field"}
+					{"x": 0, "y": 6, "w": 4, "h": 1, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 0, "y": 7, "w": 1.5, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 2.5, "y": 7, "w": 1.5, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 0, "y": 7.5, "w": 4, "h": 2, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 0, "y": 9.5, "w": 1.5, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 2.5, "y": 9.5, "w": 1.5, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 0, "y": 10, "w": 4, "h": 1, "p": "pixels_boulder_stone collideCheck-field"},
+
+					{"x": 0, "y": 11, "w": 0.5, "h": 3, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 3.5, "y": 11, "w": 0.5, "h": 3, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 1, "y": 11, "w": 0.5, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 2.5, "y": 11, "w": 0.5, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 0.5, "y": 11.5, "w": 0.5, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 3, "y": 11.5, "w": 0.5, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 0.5, "y": 13, "w": 0.5, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 3, "y": 13, "w": 0.5, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 1, "y": 13.5, "w": 0.5, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 2.5, "y": 13.5, "w": 0.5, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
+
+					{"x": 0, "y": 14, "w": 4, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 0, "y": 14.5, "w": 1, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 1.5, "y": 14.5, "w": 1, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 3, "y": 14.5, "w": 1, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
+
+					{"x": 0.5, "y": 21.5, "w": 1, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+					{"x": 0, "y": 22, "w": 1, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+					{"x": 0, "y": 22.5, "w": 0.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+
+					{"x": 2.5, "y": 21.5, "w": 1, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+					{"x": 3, "y": 22, "w": 1, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+					{"x": 3.5, "y": 22.5, "w": 0.5, "h": 0.5, "p": "pixels_forest collideCheck-field"}
 				],
 
 				"PLANTS":
 				[
-					{"x": 0, "y": 0, "w": 1.5, "h": 1, "p": "pixels_flowerLight"},
+					{"x": 1, "y": 0.5, "w": 0.5, "h": 0.5, "p": "pixels_stoneFlowerLight"},
+					{"x": 2.5, "y": 0.5, "w": 0.5, "h": 0.5, "p": "pixels_stoneFlowerLight"},
+					{"x": 0.5, "y": 1, "w": 3, "h": 0.5, "p": "pixels_stoneFlowerLight"},
+					{"x": 0, "y": 1.5, "w": 1, "h": 0.5, "p": "pixels_stoneFlowerLight"},
+					{"x": 1.5, "y": 1.5, "w": 1, "h": 0.5, "p": "pixels_stoneFlowerLight"},
+					{"x": 3, "y": 1.5, "w": 1, "h": 0.5, "p": "pixels_stoneFlowerLight"},
+					{"x": 0, "y": 2, "w": 0.5, "h": 2.5, "p": "pixels_stoneFlowerLight"},
+					{"x": 3.5, "y": 2, "w": 0.5, "h": 2.5, "p": "pixels_stoneFlowerLight"},
+					{"x": 0.5, "y": 2.5, "w": 0.5, "h": 1, "p": "pixels_stoneFlowerLight"},
+					{"x": 3, "y": 2.5, "w": 0.5, "h": 1, "p": "pixels_stoneFlowerLight"},
+					{"x": 0.5, "y": 4, "w": 0.5, "h": 1, "p": "pixels_stoneFlowerLight"},
+					{"x": 1, "y": 4.5, "w": 0.5, "h": 1, "p": "pixels_stoneFlowerLight"},
+					{"x": 1.5, "y": 4, "w": 1, "h": 1, "p": "pixels_stoneFlowerLight"},
+					{"x": 2.5, "y": 4.5, "w": 0.5, "h": 1, "p": "pixels_stoneFlowerLight"},
+					{"x": 3, "y": 4, "w": 0.5, "h": 1, "p": "pixels_stoneFlowerLight"},
 
-					{"x": 2.5, "y": 0, "w": 1.5, "h": 1, "p": "pixels_flowerLight"},
+					{"x": 1.5, "y": 11, "w": 1, "h": 0.5, "p": "pixels_stoneFlowerLight"},
+					{"x": 1, "y": 11.5, "w": 2, "h": 0.5, "p": "pixels_stoneFlowerLight"},
+					{"x": 0.5, "y": 12, "w": 1, "h": 1, "p": "pixels_stoneFlowerLight"},
+					{"x": 2.5, "y": 12, "w": 1, "h": 1, "p": "pixels_stoneFlowerLight"},
+					{"x": 1, "y": 13, "w": 2, "h": 0.5, "p": "pixels_stoneFlowerLight"},
+					{"x": 1.5, "y": 13.5, "w": 1, "h": 0.5, "p": "pixels_stoneFlowerLight"},
 
-					{"x": 0, "y": 1, "w": 4, "h": 6, "p": "pixels_flowerLight"},
+					{"x": 0, "y": 16, "w": 1, "h": 3.5, "p": "pixels_flowerLight"},
+					{"x": 1, "y": 18.5, "w": 0.5, "h": 1, "p": "pixels_flowerLight"},
+					{"x": 1, "y": 20, "w": 0.5, "h": 1, "p": "pixels_flowerLight"},
+					{"x": 1.5, "y": 16, "w": 1, "h": 5, "p": "pixels_flowerLight"},
+					{"x": 2.5, "y": 18.5, "w": 0.5, "h": 1, "p": "pixels_flowerLight"},
+					{"x": 2.5, "y": 20, "w": 0.5, "h": 1, "p": "pixels_flowerLight"},
+					{"x": 3, "y": 16, "w": 1, "h": 3.5, "p": "pixels_flowerLight"},
 
-					{"x": 0, "y": 7, "w": 1.5, "h": 0.5, "p": "pixels_flowerLight"},
-
-					{"x": 2.5, "y": 7, "w": 1.5, "h": 0.5, "p": "pixels_flowerLight"},
-
-					{"x": 0, "y": 9.5, "w": 1.5, "h": 0.5, "p": "pixels_flowerLight"},
-
-					{"x": 2.5, "y": 9.5, "w": 1.5, "h": 0.5, "p": "pixels_flowerLight"},
-
-					{"x": 0, "y": 10, "w": 4, "h": 2, "p": "pixels_flowerLight"},
-
-					{"x": 0, "y": 15, "w": 1, "h": 1, "p": "pixels_flowerLight"},
-
-					{"x": 3, "y": 15, "w": 1, "h": 1, "p": "pixels_flowerLight"}
+					{"x": 1, "y": 22.5, "w": 2, "h": 0.5, "p": "pixels_flowerHeavy"},
+					{"x": 0.5, "y": 23, "w": 1, "h": 0.5, "p": "pixels_flowerHeavy"},
+					{"x": 2.5, "y": 23, "w": 1, "h": 0.5, "p": "pixels_flowerHeavy"},
+					{"x": 0, "y": 23.5, "w": 4, "h": 0.5, "p": "pixels_flowerHeavy"},
+					{"x": 0.5, "y": 24, "w": 1, "h": 0.5, "p": "pixels_flowerHeavy"},
+					{"x": 1, "y": 24.5, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavy"},
+					{"x": 2.5, "y": 24, "w": 1, "h": 0.5, "p": "pixels_flowerHeavy"},
+					{"x": 2.5, "y": 24.5, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavy"}
 				],
 
 				"CLEARING":
 				[
-					{
-						"x": -3,
-						"y": 6,
-						"w": 2,
-						"h": 2,
-						"n": "level2_clearing0",
-						"t": "clearing_cross"
-					},
 
-					{
-						"x": 5,
-						"y": 6,
-						"w": 2,
-						"h": 2,
-						"n": "level2_clearing1",
-						"t": "clearing_cross"
-					}
 				],
 
 				"FLOOR":
 				{
-					"class" : "field-floor-forest"
+					"class" : "field-floor-stone"
 				},
 
 				"OUTER":
 				{
-					"class" : "pixels_forestMass"
+					"class" : "pixels_stoneForestMass"
 				}
 			},
 
 			"water":
 			{
-				"FILL": 1,
 
-				"EDGE":
-				[
-					{"x": 0.5, "y": 7.5, "w": 1, "h": 0.5, "p": "pixels_waterEdge waterEdge tween-waterEdge"},
-
-					{"x": 2.5, "y": 7.5, "w": 1, "h": 0.5, "p": "pixels_waterEdge waterEdge tween-waterEdge"},
-
-					{"x": 0, "y": 8, "w": 0.5, "h": 0.5, "p": "pixels_waterEdge waterEdge tween-waterEdge"},
-
-					{"x": 3.5, "y": 8, "w": 0.5, "h": 0.5, "p": "pixels_waterEdge waterEdge tween-waterEdge"}
-				],
-
-				"BASE":
-				[
-					{"x": 0.5, "y": 7.5, "w": 1, "h": 0.5, "p": "pixels_waterBase waterPool collideCheck-field"},
-
-					{"x": 2.5, "y": 7.5, "w": 1, "h": 0.5, "p": "pixels_waterBase waterPool collideCheck-field"},
-
-					{"x": 0, "y": 8, "w": 4, "h": 1, "p": "pixels_waterBase waterPool collideCheck-field"},
-
-					{"x": 0.5, "y": 9, "w": 1, "h": 0.5, "p": "pixels_waterBase waterPool collideCheck-field"},
-
-					{"x": 2.5, "y": 9, "w": 1, "h": 0.5, "p": "pixels_waterBase waterPool collideCheck-field"}
-				],
-
-				"FISH":
-				[
-
-				]
 			},
 
 			"enemyPlayers":
 			[
-				{
-					"x": 0,
-					"y": 0,
-					"w": 0.5,
-					"h": 0.5,
-					"n": "level2_crow0",
-					"t": "crow",
-					"l": 30,
-					"known" : "mystic crow 2",
-					"spawn": 2
-				}
+
 			],
 
-			"gods":
-			{
-				"GOD":
-				[
+			"gates":
+			[
 
-				],
-
-				"TRIGGERS":
-				[
-
-				]
-			},
+			],
 
 			"portal":
 			[
@@ -897,157 +1004,127 @@
 					"w": 1,
 					"h": 1,
 					"level": 1,
-					"exit": 6,
+					"exit": 7,
 					"direction": "DOWN",
 					"spawn": 2,
-					"p": "portal_top_forest"
+					"bossLevel": false,
+					"p": "portal_top_stone"
 				},
 
 				{
 					"num": 1,
 					"x": 1.5,
-					"y": 7,
-					"w": 1,
-					"h": 1,
-					"level": 2,
-					"exit": 2,
-					"direction": "UP",
-					"spawn": 2,
-					"p": "portal_top_forest"
-				},
-
-				{
-					"num": 2,
-					"x": 1.5,
-					"y": 9,
-					"w": 1,
-					"h": 1,
-					"level": 2,
-					"exit": 1,
-					"direction": "DOWN",
-					"spawn": 2,
-					"p": "portal_top_forest"
-				},
-
-				{
-					"num": 3,
-					"x": 0,
-					"y": 12,
-					"w": 1,
-					"h": 1,
-					"level": 2,
-					"exit": 8,
-					"direction": "UP",
-					"spawn": 2,
-					"p": "portal_top_forest"
-				},
-
-				{
-					"num": 4,
-					"x": 1.5,
-					"y": 12,
-					"w": 1,
-					"h": 1,
-					"level": 2,
-					"exit": 6,
-					"direction": "UP",
-					"spawn": 2,
-					"p": "portal_top_forest"
-				},
-
-				{
-					"num": 5,
-					"x": 3,
-					"y": 12,
+					"y": 5,
 					"w": 1,
 					"h": 1,
 					"level": 2,
 					"exit": 7,
 					"direction": "UP",
 					"spawn": 2,
+					"bossLevel": false,
+					"p": "portal_top_stone"
+				},
+
+				{
+					"num": 2,
+					"x": 1.5,
+					"y": 12,
+					"w": 1,
+					"h": 1,
+					"level": 2,
+					"exit": 6,
+					"direction": "UP",
+					"spawn": 2,
+					"bossLevel": false,
+					"p": "portal_top_stone"
+				},
+
+				{
+					"num": 3,
+					"x": 0,
+					"y": 15,
+					"w": 1,
+					"h": 1,
+					"level": 2,
+					"exit": 8,
+					"direction": "DOWN",
+					"spawn": 2,
+					"bossLevel": false,
+					"p": "portal_top_forest"
+				},
+
+				{
+					"num": 4,
+					"x": 1.5,
+					"y": 15,
+					"w": 1,
+					"h": 1,
+					"level": 2,
+					"exit": 2,
+					"direction": "DOWN",
+					"spawn": 2,
+					"bossLevel": false,
+					"p": "portal_top_forest"
+				},
+
+				{
+					"num": 5,
+					"x": 3,
+					"y": 15,
+					"w": 1,
+					"h": 1,
+					"level": 2,
+					"exit": 2,
+					"direction": "DOWN",
+					"spawn": 2,
+					"bossLevel": false,
 					"p": "portal_top_forest"
 				},
 
 				{
 					"num": 6,
 					"x": 0,
-					"y": 14,
+					"y": 20,
+					"w": 1,
+					"h": 1,
+					"level": 2,
+					"exit": 1,
+					"direction": "RIGHT",
+					"spawn": 2,
+					"bossLevel": false,
+					"p": "portal_top_forest"
+				},
+
+				{
+					"num": 7,
+					"x": 3,
+					"y": 20,
+					"w": 1,
+					"h": 1,
+					"level": 2,
+					"exit": 1,
+					"direction": "LEFT",
+					"spawn": 2,
+					"bossLevel": false,
+					"p": "portal_top_forest"
+				},
+
+				{
+					"num": 8,
+					"x": 1.5,
+					"y": 21.5,
 					"w": 1,
 					"h": 1,
 					"level": 2,
 					"exit": 3,
 					"direction": "DOWN",
 					"spawn": 2,
-					"p": "portal_top_forest"
-				},
-
-				{
-					"num": 7,
-					"x": 1.5,
-					"y": 14,
-					"w": 1,
-					"h": 1,
-					"level": 2,
-					"exit": 4,
-					"direction": "DOWN",
-					"spawn": 2,
-					"p": "portal_top_forest"
-				},
-
-				{
-					"num": 8,
-					"x": 3,
-					"y": 14,
-					"w": 1,
-					"h": 1,
-					"level": 2,
-					"exit": 5,
-					"direction": "DOWN",
-					"spawn": 2,
+					"bossLevel": false,
 					"p": "portal_top_forest"
 				},
 
 				{
 					"num": 9,
-					"x": 0,
-					"y": 18,
-					"w": 1,
-					"h": 1,
-					"level": 2,
-					"exit": 11,
-					"direction": "RIGHT",
-					"spawn": 2,
-					"p": "portal_top_forest"
-				},
-
-				{
-					"num": 10,
-					"x": 3,
-					"y": 18,
-					"w": 1,
-					"h": 1,
-					"level": 2,
-					"exit": 6,
-					"direction": "LEFT",
-					"spawn": 2,
-					"p": "portal_top_forest"
-				},
-
-				{
-					"num": 11,
-					"x": 1.5,
-					"y": 20,
-					"w": 1,
-					"h": 1,
-					"level": 2,
-					"exit": 9,
-					"direction": "DOWN",
-					"spawn": 2,
-					"p": "portal_top_forest"
-				},
-
-				{
-					"num": 12,
 					"x": 1.5,
 					"y": 24,
 					"w": 1,
@@ -1056,8 +1133,19 @@
 					"exit": 0,
 					"direction": "UP",
 					"spawn": 2,
+					"bossLevel": false,
 					"p": "portal_top_forest"
 				}
+			],
+
+			"sound_level":
+			[
+
+			],
+
+			"sound_trigger":
+			[
+
 			]
 		},
 
@@ -1066,215 +1154,98 @@
 			"levelSettings":
 			{
 				"n": 3,
-				"weather": "CLEAR",
-				"land": "forest",
-				"entry_fall": "NO",
+				"weather": "SNOW",
+				"mist": false,
+				"land": "underground",
+				"entry_fall": false,
 				"fall_x": 0,
 				"fall_y": 0,
 				"fall_d": "DOWN",
-				"title_top": "level number 3",
-				"title_btm": "watch out for rabbits"
+				"title_top": "under the mountain",
+				"levelFunctions":
+				{
+
+				}
 			},
 
 			"texture":
 			{
 				"WALLS" :
 				[
-					{"x": 0, "y": 0, "w": 1.5, "h": 5, "p": "pixels_forest collideCheck-field"},
-
-					{"x": 2.5, "y": 0, "w": 1.5, "h": 5, "p": "pixels_forest collideCheck-field"},
-
-					{"x": 2, "y": 9, "w": 0.5, "h": 1, "p": "pixels_forest collideCheck-field"},
-
-					{"x": 2, "y": 15, "w": 0.5, "h": 1, "p": "pixels_forest collideCheck-field"},
-
-					{"x": 0, "y": 16, "w": 1, "h": 1, "p": "pixels_forest collideCheck-field"},
-
-					{"x": 0, "y": 17, "w": 2, "h": 1, "p": "pixels_forest collideCheck-field"},
-
-					{"x": 1, "y": 18, "w": 2, "h": 1, "p": "pixels_forest collideCheck-field"},
-
-					{"x": 1, "y": 19, "w": 3, "h": 1, "p": "pixels_forest collideCheck-field"},
-
-					{"x": 3, "y": 20, "w": 1, "h": 1, "p": "pixels_forest collideCheck-field"},
-
-					{"x": 0, "y": 21, "w": 4, "h": 1, "p": "pixels_forest collideCheck-field"},
-
-					{"x": 0, "y": 23, "w": 3, "h": 1, "p": "pixels_forest collideCheck-field"},
-
-					{"x": 0, "y": 24, "w": 1.5, "h": 1, "p": "pixels_forest collideCheck-field"}
+					{"x": 1, "y": 0, "w": 0.5, "h": 5, "p": "collideCheck-field"},
+					{"x": 1.5, "y": 4, "w": 1.5, "h": 1, "p": "collideCheck-field"},
+					{"x": 0, "y": 4.5, "w": 1, "h": 0.5, "p": "collideCheck-field"},
+					{"x": 2.5, "y": 0, "w": 0.5, "h": 3, "p": "collideCheck-field"},
+					{"x": 3, "y": 2.5, "w": 1, "h": 0.5, "p": "collideCheck-field"},
+					{"x": 0, "y": 6, "w": 0.5, "h": 0.5, "p": "collideCheck-field"},
+					{"x": 0.5, "y": 6, "w": 0.5, "h": 2.5, "p": "collideCheck-field"},
+					{"x": 2, "y": 6, "w": 1, "h": 1, "p": "collideCheck-field"},
+					{"x": 1, "y": 8, "w": 2, "h": 0.5, "p": "collideCheck-field"},
+					{"x": 2.5, "y": 8.5, "w": 0.5, "h": 4, "p": "collideCheck-field"},
+					{"x": 1.5, "y": 12.5, "w": 1, "h": 0.5, "p": "collideCheck-field"},
+					{"x": 1, "y": 11, "w": 0.5, "h": 1.5, "p": "collideCheck-field"},
+					{"x": 0, "y": 10.5, "w": 1.5, "h": 0.5, "p": "collideCheck-field"},
+					{"x": 3, "y": 10, "w": 1, "h": 1, "p": "collideCheck-field"},
+					{"x": 1, "y": 14, "w": 2, "h": 1, "p": "collideCheck-field"},
+					{"x": 1.5, "y": 15, "w": 1, "h": 0.5, "p": "collideCheck-field"},
+					{"x": 0, "y": 16, "w": 0.5, "h": 0.5, "p": "collideCheck-field"},
+					{"x": 3.5, "y": 16, "w": 0.5, "h": 0.5, "p": "collideCheck-field"},
+					{"x": 0, "y": 16.5, "w": 4, "h": 0.5, "p": "collideCheck-field"},
+					{"x": 1, "y": 17, "w": 0.5, "h": 8, "p": "collideCheck-field"},
+					{"x": 2.5, "y": 17, "w": 0.5, "h": 8, "p": "collideCheck-field"}
 				],
 
 				"PLANTS":
 				[
-					{"x": 0, "y": 5, "w": 1, "h": 0.5, "p": "pixels_flowerLight"},
-
-					{"x": 0, "y": 5.5, "w": 0.5, "h": 0.5, "p": "pixels_flowerLight"},
-
-					{"x": 2.5, "y": 5.5, "w": 0.5, "h": 0.5, "p": "pixels_flowerLight"},
-
-					{"x": 1.5, "y": 6.5, "w": 0.5, "h": 0.5, "p": "pixels_flowerLight"},
-
-					{"x": 0.5, "y": 7.5, "w": 0.5, "h": 0.5, "p": "pixels_flowerLight"},
-
-					{"x": 2.5, "y": 9, "w": 1.5, "h": 1, "p": "pixels_flowerLight"},
-
-					{"x": 1, "y": 11, "w": 1, "h": 3, "p": "pixels_flowerLight"},
-
-					{"x": 2.5, "y": 15, "w": 1.5, "h": 1, "p": "pixels_flowerLight"},
-
-					{"x": 0, "y": 19, "w": 1, "h": 2, "p": "pixels_flowerLight"},
-
-					{"x": 1, "y": 20, "w": 1, "h": 1, "p": "pixels_flowerLight"},
-
-					{"x": 1, "y": 22, "w": 3, "h": 1, "p": "pixels_flowerLight"},
-
-					{"x": 3, "y": 23, "w": 1, "h": 2, "p": "pixels_flowerLight"},
-
-					{"x": 2.5, "y": 24, "w": 0.5, "h": 1, "p": "pixels_flowerLight"}
+					{"x": 1.5, "y": 1, "w": 1, "h": 3, "p": "pixels_undeground_floor"},
+					{"x": 2.5, "y": 3, "w": 1.5, "h": 1, "p": "pixels_undeground_floor"},
+					{"x": 3, "y": 4, "w": 1, "h": 1, "p": "pixels_undeground_floor"},
+					{"x": 1, "y": 5, "w": 3, "h": 1, "p": "pixels_undeground_floor"},
+					{"x": 1, "y": 6, "w": 1, "h": 1, "p": "pixels_undeground_floor"},
+					{"x": 3, "y": 6, "w": 1, "h": 1, "p": "pixels_undeground_floor"},
+					{"x": 1, "y": 7, "w": 3, "h": 1, "p": "pixels_undeground_floor"},
+					{"x": 3, "y": 8, "w": 1, "h": 2, "p": "pixels_undeground_floor"},
+					{"x": 0, "y": 12, "w": 1, "h": 3, "p": "pixels_undeground_floor"},
+					{"x": 0, "y": 15, "w": 0.5, "h": 1, "p": "pixels_undeground_floor"},
+					{"x": 0.5, "y": 15, "w": 1, "h": 0.5, "p": "pixels_undeground_floor"},
+					{"x": 0.5, "y": 15.5, "w": 3, "h": 1, "p": "pixels_undeground_floor"},
+					{"x": 2.5, "y": 15, "w": 1, "h": 0.5, "p": "pixels_undeground_floor"},
+					{"x": 3.5, "y": 15, "w": 0.5, "h": 1, "p": "pixels_undeground_floor"},
+					{"x": 3, "y": 12, "w": 1, "h": 3, "p": "pixels_undeground_floor"},
+					{"x": 1, "y": 13, "w": 2, "h": 1, "p": "pixels_undeground_floor"},
+					{"x": 1.5, "y": 18, "w": 1, "h": 6, "p": "pixels_undeground_floor"}
 				],
 
 				"CLEARING":
 				[
-					{"x": -3, "y": 6, "w": 2, "h": 2, "n": "level2_clearing0", "t": "clearing_cross"},
 
-					{"x": 5, "y": 6, "w": 2, "h": 2, "n": "level2_clearing1", "t": "clearing_cross"}
 				],
 
 				"FLOOR":
 				{
-					"class" : "field-floor-forest"
+					"class" : "field-floor-underground"
 				},
 
 				"OUTER":
 				{
-					"class" : "pixels_forestMass"
+					"class" : "pixels_undergroundMass"
 				}
 			},
 
 			"water":
 			{
-				"FILL": 1,
 
-				"EDGE":
-				[
-					{"x": 3, "y": 6, "w": 1, "h": 0.5, "p": "pixels_waterEdge waterEdge tween-waterEdge"},
-
-					{"x": 2, "y": 7, "w": 1, "h": 0.5, "p": "pixels_waterEdge waterEdge tween-waterEdge"},
-
-					{"x": 1, "y": 8, "w": 1, "h": 0.5, "p": "pixels_waterEdge waterEdge tween-waterEdge"},
-
-					{"x": 0, "y": 9, "w": 1, "h": 0.5, "p": "pixels_waterEdge waterEdge tween-waterEdge"},
-
-					{"x": 2, "y": 10, "w": 2, "h": 0.5, "p": "pixels_waterEdge waterEdge tween-waterEdge"},
-
-					{"x": 2, "y": 12, "w": 1, "h": 0.5, "p": "pixels_waterEdge waterEdge tween-waterEdge"},
-
-					{"x": 1, "y": 14, "w": 2, "h": 0.5, "p": "pixels_waterEdge waterEdge tween-waterEdge"},
-
-					{"x": 2, "y": 16, "w": 1, "h": 0.5, "p": "pixels_waterEdge waterEdge tween-waterEdge"},
-
-					{"x": 3, "y": 17, "w": 1, "h": 0.5, "p": "pixels_waterEdge waterEdge tween-waterEdge"}
-				],
-
-				"BASE":
-				[
-					{"x": 3, "y": 6, "w": 1, "h": 2, "p": "pixels_waterBase waterPool collideCheck-field"},
-
-					{"x": 2, "y": 7, "w": 2, "h": 1, "p": "pixels_waterBase waterPool collideCheck-field"},
-
-					{"x": 1, "y": 8, "w": 2, "h": 1, "p": "pixels_waterBase waterPool collideCheck-field"},
-
-					{"x": 0, "y": 9, "w": 2, "h": 1, "p": "pixels_waterBase waterPool collideCheck-field"},
-
-					{"x": 0, "y": 10, "w": 4, "h": 1, "p": "pixels_waterBase waterPool collideCheck-field"},
-
-					{"x": 0, "y": 11, "w": 1, "h": 3, "p": "pixels_waterBase waterPool collideCheck-field"},
-
-					{"x": 3, "y": 11, "w": 1, "h": 3, "p": "pixels_waterBase waterPool collideCheck-field"},
-
-					{"x": 2, "y": 12, "w": 1, "h": 1, "p": "pixels_waterBase waterPool collideCheck-field"},
-
-					{"x": 0, "y": 14, "w": 4, "h": 1, "p": "pixels_waterBase waterPool collideCheck-field"},
-
-					{"x": 0, "y": 15, "w": 2, "h": 1, "p": "pixels_waterBase waterPool collideCheck-field"},
-
-					{"x": 1, "y": 16, "w": 2, "h": 1, "p": "pixels_waterBase waterPool collideCheck-field"},
-
-					{"x": 2, "y": 17, "w": 2, "h": 1, "p": "pixels_waterBase waterPool collideCheck-field"},
-
-					{"x": 3, "y": 18, "w": 1, "h": 1, "p": "pixels_waterBase waterPool collideCheck-field"}
-				],
-
-				"FISH":
-				[
-
-				]
 			},
 
 			"enemyPlayers":
 			[
-				{
-					"x": 1,
-					"y": 20,
-					"w": 0.5,
-					"h": 0.5,
-					"n": "level3_rabbit0",
-					"t": "rabbit",
-					"l": 79,
-					"known" : "left guardian of wormhole 10",
-					"spawn": 3
-				},
 
-				{
-					"x": 1,
-					"y": 20.5,
-					"w": 0.5,
-					"h": 0.5,
-					"n": "level3_rabbit1",
-					"t": "rabbit",
-					"l": 22,
-					"known" : "right guardian of wormhole 10",
-					"spawn": 3
-				},
-
-				{
-					"x": 3,
-					"y": 23.5,
-					"w": 0.5,
-					"h": 0.5,
-					"n": "level3_rabbit2",
-					"t": "rabbit",
-					"l": 22,
-					"known" : "right guardian of wormhole 12",
-					"spawn": 3
-				},
-
-				{
-					"x": 3.5,
-					"y": 23.5,
-					"w": 0.5,
-					"h": 0.5,
-					"n": "level3_rabbit3",
-					"t": "rabbit",
-					"l": 22,
-					"known" : "left guardian of wormhole 12",
-					"spawn": 3
-				}
 			],
 
-			"gods":
-			{
-				"GOD":
-				[
+			"gates":
+			[
 
-				],
-
-				"TRIGGERS":
-				[
-
-				]
-			},
+			],
 
 			"portal":
 			[
@@ -1285,167 +1256,86 @@
 					"w": 1,
 					"h": 1,
 					"level": 2,
-					"exit": 12,
+					"exit": 9,
 					"direction": "DOWN",
 					"spawn": 3,
-					"p": "portal_top_forest"
+					"p": "portal_top_underground"
 				},
 
 				{
 					"num": 1,
 					"x": 0,
-					"y": 8,
-					"w": 1,
-					"h": 1,
-					"level": 3,
-					"exit": 8,
-					"direction": "UP",
-					"spawn": 3,
-					"p": "portal_top_forest"
-				},
-
-				{
-					"num": 2,
-					"x": 1,
-					"y": 7,
-					"w": 1,
-					"h": 1,
-					"level": 3,
-					"exit": 6,
-					"direction": "UP",
-					"spawn": 3,
-					"p": "portal_top_forest"
-				},
-
-				{
-					"num": 3,
-					"x": 2,
-					"y": 6,
-					"w": 1,
-					"h": 1,
-					"level": 3,
-					"exit": 0,
-					"direction": "UP",
-					"spawn": 3,
-					"p": "portal_top_forest"
-				},
-
-				{
-					"num": 4,
-					"x": 3,
 					"y": 5,
 					"w": 1,
 					"h": 1,
 					"level": 3,
-					"exit": 5,
-					"direction": "UP",
+					"exit": 4,
+					"direction": "RIGHT",
 					"spawn": 3,
-					"p": "portal_top_forest"
+					"p": "portal_top_underground"
+				},
+
+				{
+					"num": 2,
+					"x": 0,
+					"y": 11,
+					"w": 1,
+					"h": 1,
+					"level": 99,
+					"exit": 99,
+					"direction": "DOWN",
+					"spawn": 3,
+					"p": "portal_top_underground"
+				},
+
+				{
+					"num": 3,
+					"x": 3,
+					"y": 11,
+					"w": 1,
+					"h": 1,
+					"level": 99,
+					"exit": 99,
+					"direction": "DOWN",
+					"spawn": 3,
+					"p": "portal_top_underground"
+				},
+
+				{
+					"num": 4,
+					"x": 1.5,
+					"y": 17,
+					"w": 1,
+					"h": 1,
+					"level": 3,
+					"exit": 1,
+					"direction": "DOWN",
+					"spawn": 3,
+					"p": "portal_top_underground"
 				},
 
 				{
 					"num": 5,
-					"x": 3,
-					"y": 8,
-					"w": 1,
-					"h": 1,
-					"level": 3,
-					"exit": 0,
-					"direction": "DOWN",
-					"spawn": 3,
-					"p": "portal_top_forest"
-				},
-
-				{
-					"num": 6,
-					"x": 2,
-					"y": 11,
-					"w": 1,
-					"h": 1,
-					"level": 3,
-					"exit": 3,
-					"direction": "LEFT",
-					"spawn": 3,
-					"p": "portal_top_forest"
-				},
-
-				{
-					"num": 7,
-					"x": 2,
-					"y": 13,
-					"w": 1,
-					"h": 1,
-					"level": 3,
-					"exit": 9,
-					"direction": "LEFT",
-					"spawn": 3,
-					"p": "portal_top_forest"
-				},
-
-				{
-					"num": 8,
-					"x": 3,
-					"y": 16,
-					"w": 1,
-					"h": 1,
-					"level": 3,
-					"exit": 0,
-					"direction": "UP",
-					"spawn": 3,
-					"p": "portal_top_forest"
-				},
-
-				{
-					"num": 9,
-					"x": 0,
-					"y": 18,
-					"w": 1,
-					"h": 1,
-					"level": 3,
-					"exit": 0,
-					"direction": "DOWN",
-					"spawn": 3,
-					"p": "portal_top_forest"
-				},
-
-				{
-					"num": 10,
-					"x": 2,
-					"y": 20,
-					"w": 1,
-					"h": 1,
-					"level": 3,
-					"exit": 11,
-					"direction": "LEFT",
-					"spawn": 3,
-					"p": "portal_top_forest"
-				},
-
-				{
-					"num": 11,
-					"x": 0,
-					"y": 22,
-					"w": 1,
-					"h": 1,
-					"level": 3,
-					"exit": 10,
-					"direction": "RIGHT",
-					"spawn": 3,
-					"p": "portal_top_forest"
-				},
-
-				{
-					"num": 12,
 					"x": 1.5,
 					"y": 24,
 					"w": 1,
 					"h": 1,
 					"level": 4,
 					"exit": 0,
-					"direction": "RIGHT",
+					"direction": "UP",
 					"spawn": 3,
-					"p": "portal_top_forest"
+					"p": "portal_top_underground"
 				}
+			],
+
+			"sound_level":
+			[
+
+			],
+
+			"sound_trigger":
+			[
+
 			]
 		},
 

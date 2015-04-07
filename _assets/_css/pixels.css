@@ -848,6 +848,33 @@ div[class*='tween-']
 	background-size: 80px 80px;
 }
 
+.pixels_undeground_floor
+{
+	background-image: url(../_img/tile_undergroundFloor_1x.png);
+	background-repeat: repeat;
+	background-position: left top;
+
+	background-size: 80px 80px;
+}
+
+.pixels_mistBtm
+{
+	background-image: url(../_img/mistBottom_1x.png);
+	background-repeat: repeat-x;
+	background-position: center top;
+
+	background-size: 640px 320px;
+}
+
+.pixels_mistTop
+{
+	background-image: url(../_img/mistTop_1x.png);
+	background-repeat: repeat-x;
+	background-position: center top;
+
+	background-size: 640px 320px;
+}
+
 /* ----------------------------------------------------------------------- GENERAL */
 
 
@@ -1296,6 +1323,11 @@ div[class*='tween-']
 	.pixels_boulder_stone
 	{
 		background-image: url(../_img/tile_boulder_stone_1x.png);
+	}
+
+	.pixels_undeground_floor
+	{
+		background-image: url(../_img/tile_undergroundFloor_1x.png);
 	}
 }
 
@@ -1753,6 +1785,11 @@ div[class*='tween-']
 	.pixels_boulder_stone
 	{
 		background-image: url(../_img/tile_boulder_stone_2x.png);
+	}
+
+	.pixels_undeground_floor
+	{
+		background-image: url(../_img/tile_undergroundFloor_2x.png);
 	}
 }
 

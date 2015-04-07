@@ -36,6 +36,7 @@ LEVEL.prototype.create = function()
 {
 	this.levelNumber 			= this.settings.n;
 	this.weather				= this.settings.weather;
+	this.mist						= this.settings.mist;
 	this.landType				= this.settings.land;
 
 	this.spirits = {};
@@ -530,6 +531,8 @@ function level_form()
 {
 	var i;
 
+	var mist_html;
+
 	display_setBG();
 
 	if(Graphics.html.data)
@@ -546,6 +549,14 @@ function level_form()
 	{
 		level_weather();
 		$(".layer-ui").remove();
+	}
+
+	// MISTY EDGE
+	if(LEVEL_MAIN.mist)
+	{
+		mist_html = html_lib_use("_mist", false, true);
+
+		$(".mistyEdge").html(mist_html);
 	}
 
 	// FOGGY EDGE
@@ -1149,6 +1160,9 @@ function level_clear()
 	$(".bgFill-b").removeClass(find_bgPixels.classString);
 
 	delete find_bgPixels;
+
+	// MISTY EDGE
+	$(".mistyEdge").html("");
 
 	// FOGGY EDGE
 	$(".foggyEdge").removeClass("foggyEdge-" + LEVEL_MAIN.landType);
