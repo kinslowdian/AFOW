@@ -552,7 +552,7 @@ function level_form()
 	}
 
 	// MISTY EDGE
-	if(LEVEL_MAIN.mist)
+	if(LEVEL_MAIN.mist && display.screen_w >= 640)
 	{
 		mist_html = html_lib_use("_mist", false, true);
 
@@ -805,6 +805,26 @@ function level_form()
 		if(ROM.mapLevel == gates_ARR[object_gate].spawn)
 		{
 			gates_ARR[object_gate].build();
+		}
+	}
+
+	// FRIENDS (PRE-READ)
+
+	if(!friendsBorn)
+	{
+		friendsBorn = true;
+
+		friendRead();
+	}
+
+	for(var object_gate in friends_ARR)
+	{
+		if(ROM.mapLevel == friends_ARR[object_gate].spawn)
+		{
+			if(!friends_ARR[object_gate].seen)
+			{
+				friends_ARR[object_gate].build();
+			}
 		}
 	}
 
@@ -1176,6 +1196,7 @@ function level_clear()
 	$(".layer-field-walls").html("");
 	$(".layer-field-portal-area").html("");
 	$(".layer-field-enemy-area").html("");
+	$(".layer-field-friend-area").html("");
 	$(".layer-field-sound-area").html("");
 	$(".layer-field-gate-area").html("");
 

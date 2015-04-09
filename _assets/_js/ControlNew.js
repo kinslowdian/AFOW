@@ -7,6 +7,7 @@ var HIT_TEST;
 var playerTarget;
 var portalTarget; // PREV = PORTAL_TRAVEL
 var enemyTarget; // PREV = ROM.enemy.character
+var friendTarget;
 
 // MERGED
 
@@ -439,6 +440,14 @@ function move_cssAdd()
 		hitTest_findEnemy();
 	}
 
+	// FRIEND
+	else if(HIT_TEST.hit_friend)
+	{
+		move_cancel();
+
+		hitTest_findFriend();
+	}
+
 	// DEFAULT
 	else
 	{
@@ -539,12 +548,15 @@ function hitTest_init()
 	HIT_TEST.hit_enemy_id = "";
 	HIT_TEST.hit_sound_id = "";
 	HIT_TEST.hit_god_id = "";
+	HIT_TEST.hit_friend_id = "";
 
 	HIT_TEST.hit_edge = false;
+
 	HIT_TEST.hit_portal = false;
 	HIT_TEST.hit_enemy = false;
 	HIT_TEST.hit_sound = false;
 	HIT_TEST.hit_god = false;
+	HIT_TEST.hit_friend = false;
 }
 
 function hitTest_check()
@@ -585,6 +597,13 @@ function hitTest_check()
 
 			HIT_TEST.hit_god_id = HIT_TEST.hits[0].id;
 		}
+
+		else if($(HIT_TEST.hits[0]).attr("data-npc") === "friend")
+		{
+			HIT_TEST.hit_friend = true;
+
+			HIT_TEST.hit_friend_id = HIT_TEST.hits[0].id;
+		}
 	}
 
 	else
@@ -615,6 +634,23 @@ function hitTest_findEnemy()
 	preBattleOptions_build();
 
 	autoMove_init("ENEMY_ATTACK");
+}
+
+function hitTest_findFriend()
+{
+	for(var friendObj in friends_ARR)
+	{
+		if(friends_ARR[friendObj].id === HIT_TEST.hit_friend_id)
+		{
+			friendTarget = friends_ARR[friendObj];
+
+			break;
+		}
+	}
+
+	temp_messageScreen_init();
+
+	trace("!!! FRIEND HIT === " + friendTarget);
 }
 
 function hitTest_findPortalEnter()

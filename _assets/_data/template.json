@@ -1,0 +1,168 @@
+		"level3":
+		{
+			"levelSettings":
+			{
+				"n": 3,
+				"weather": "",
+				"land": "underground",
+				"entry_fall": false,
+				"fall_x": 0,
+				"fall_y": 0,
+				"fall_d": "DOWN",
+				"title_top": "under the mountain",
+				"levelFunctions":
+				{
+
+				}
+			},
+
+			"texture":
+			{
+				"WALLS" :
+				[
+
+				],
+
+				"PLANTS":
+				[
+					{"x": 1.5, "y": 1, "w": 1, "h": 3, "p": "pixels_undeground_floor"},
+					{"x": 2.5, "y": 3, "w": 1.5, "h": 1, "p": "pixels_undeground_floor"},
+					{"x": 3, "y": 4, "w": 1, "h": 1, "p": "pixels_undeground_floor"},
+					{"x": 1, "y": 5, "w": 3, "h": 1, "p": "pixels_undeground_floor"},
+					{"x": 1, "y": 6, "w": 1, "h": 1, "p": "pixels_undeground_floor"},
+					{"x": 3, "y": 6, "w": 1, "h": 1, "p": "pixels_undeground_floor"},
+					{"x": 1, "y": 7, "w": 3, "h": 1, "p": "pixels_undeground_floor"},
+					{"x": 3, "y": 8, "w": 1, "h": 2, "p": "pixels_undeground_floor"},
+					{"x": 0, "y": 12, "w": 1, "h": 3, "p": "pixels_undeground_floor"},
+					{"x": 0, "y": 15, "w": 0.5, "h": 1, "p": "pixels_undeground_floor"},
+					{"x": 0.5, "y": 15, "w": 1, "h": 0.5, "p": "pixels_undeground_floor"},
+					{"x": 0.5, "y": 15.5, "w": 3, "h": 1, "p": "pixels_undeground_floor"},
+					{"x": 2.5, "y": 15, "w": 1, "h": 0.5, "p": "pixels_undeground_floor"},
+					{"x": 3.5, "y": 15, "w": 0.5, "h": 1, "p": "pixels_undeground_floor"},
+					{"x": 3, "y": 12, "w": 1, "h": 3, "p": "pixels_undeground_floor"},
+					{"x": 1, "y": 13, "w": 2, "h": 1, "p": "pixels_undeground_floor"},
+					{"x": 1.5, "y": 18, "w": 1, "h": 6, "p": "pixels_undeground_floor"}
+				],
+
+				"CLEARING":
+				[
+
+				],
+
+				"FLOOR":
+				{
+					"class" : "field-floor-underground"
+				},
+
+				"OUTER":
+				{
+					"class" : "field-floor-underground"
+				}
+			},
+
+			"water":
+			{
+
+			},
+
+			"enemyPlayers":
+			[
+
+			],
+
+			"gates":
+			[
+
+			],
+
+			"portal":
+			[
+				{
+					"num": 0,
+					"x": 1.5,
+					"y": 0,
+					"w": 1,
+					"h": 1,
+					"level": 2,
+					"exit": 9,
+					"direction": "DOWN",
+					"spawn": 3,
+					"p": "portal_top_underground"
+				},
+
+				{
+					"num": 1,
+					"x": 0,
+					"y": 5,
+					"w": 1,
+					"h": 1,
+					"level": 3,
+					"exit": 4,
+					"direction": "RIGHT",
+					"spawn": 3,
+					"p": "portal_top_underground"
+				},
+
+				{
+					"num": 2,
+					"x": 0,
+					"y": 11,
+					"w": 1,
+					"h": 1,
+					"level": 99,
+					"exit": 99,
+					"direction": "DOWN",
+					"spawn": 3,
+					"p": "portal_top_underground"
+				},
+
+				{
+					"num": 3,
+					"x": 3,
+					"y": 11,
+					"w": 1,
+					"h": 1,
+					"level": 99,
+					"exit": 99,
+					"direction": "DOWN",
+					"spawn": 3,
+					"p": "portal_top_underground"
+				},
+
+				{
+					"num": 4,
+					"x": 1.5,
+					"y": 17,
+					"w": 1,
+					"h": 1,
+					"level": 3,
+					"exit": 1,
+					"direction": "DOWN",
+					"spawn": 3,
+					"p": "portal_top_underground"
+				},
+
+				{
+					"num": 5,
+					"x": 1.5,
+					"y": 24,
+					"w": 1,
+					"h": 1,
+					"level": 5,
+					"exit": 0,
+					"direction": "UP",
+					"spawn": 3,
+					"p": "portal_top_underground"
+				}
+			],
+
+			"sound_level":
+			[
+
+			],
+
+			"sound_trigger":
+			[
+
+			]
+		},

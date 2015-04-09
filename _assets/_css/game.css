@@ -832,6 +832,11 @@
 		background-position: -120px 0;
 	}
 
+	.mapPlayer_head_help
+	{
+		background-position: -80px -40px;
+	}
+
 
 	#player-block .map-goat
 	{
