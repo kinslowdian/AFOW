@@ -1212,6 +1212,14 @@ function level_clear()
 			enemies_ARR[object_enemy].rendered = false;
 		}
 	}
+
+	for(var object_friend in friends_ARR)
+	{
+		if(friends_ARR[object_friend].rendered)
+		{
+			friends_ARR[object_friend].rendered = false;
+		}
+	}
 }
 
 function behindWorld_outcome(outcomeType)

@@ -356,6 +356,10 @@
 					"w": 0.5,
 					"h": 0.5,
 					"n": "level0_friend0",
+					"grass": "pixels_stoneFlowerHeavy",
+					"haze": "haze_stone",
+					"fill": "field-floor-stone",
+					"once": false,
 					"character": "_player_friend_40x40",
 					"spawn": 0,
 					"hint": "up ahead is a wormhole,<br>they dont always go where you’d expect"

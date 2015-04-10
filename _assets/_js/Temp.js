@@ -57,6 +57,7 @@ var friend = function(settings, container, num)
 	this.seen									= false;
 	this.rendered							= false;
 	this.array_index					= num;
+	this.flooring							= {};
 };
 
 friend.prototype.create = function()
@@ -65,6 +66,12 @@ friend.prototype.create = function()
 	this.spawn							= this.settings.spawn;
 	this.hint								= this.settings.hint;
 	this.character					= this.settings.character;
+	this.once								= this.settings.once;
+
+	this.flooring.grass			= this.settings.grass;
+	this.flooring.haze			= this.settings.haze;
+	this.flooring.fill			= this.settings.fill;
+
 
 	this.buildData.block_x 	= this.settings.x;
 	this.buildData.block_y 	= this.settings.y;
@@ -128,8 +135,6 @@ function temp_messageScreen_init()
 	var exitFrame;
 	var css;
 
-	friendTarget.seen = true;
-
 	html_lib_reuse();
 
 	messageScreen_html = html_lib_use("_messageScreen", false, true);
@@ -154,6 +159,12 @@ function temp_messageScreen_init()
 
 	$("#messageScreen .messageScreen_focus .messageScreen_text p").html('"' + friendTarget.hint + '"');
 
+	$("#messageScreen .foggyEdge").addClass("foggyEdge-" + LEVEL_MAIN.landType);
+
+	$("#messageScreen .messageScreenLand_grass").addClass(friendTarget.flooring.grass);
+	$("#messageScreen .messageScreen_haze").addClass(friendTarget.flooring.haze);
+	$("#messageScreen .messageScreenLand_field").addClass(friendTarget.flooring.fill);
+
 	$("#messageScreen").removeClass("messageScreen_hide");
 
 	exitFrame = setTimeout(temp_messageScreen_run, 20);
@@ -161,21 +172,66 @@ function temp_messageScreen_init()
 
 function temp_messageScreen_run()
 {
-	$(".tween-messageScreenFlare")[0].addEventListener("webkitTransitionEnd", temp_messageScreen_runEvent, false);
-	$(".tween-messageScreenFlare")[0].addEventListener("transitionend", temp_messageScreen_runEvent, false);
+	$("#messageScreen .tween-messageScreenFlare")[0].addEventListener("webkitTransitionEnd", temp_messageScreen_runEvent, false);
+	$("#messageScreen .tween-messageScreenFlare")[0].addEventListener("transitionend", temp_messageScreen_runEvent, false);
 
 	$("#messageScreen .messageScreen_flare").removeClass("messageScreenFlare_hide").addClass("messageScreenFlare_show");
 }
 
 function temp_messageScreen_runEvent(event)
 {
-	$(".tween-messageScreenFlare")[0].removeEventListener("webkitTransitionEnd", temp_messageScreen_runEvent, false);
-	$(".tween-messageScreenFlare")[0].removeEventListener("transitionend", temp_messageScreen_runEvent, false);
+	var delay;
 
-	$("#" + friendTarget.id).remove();
+	$("#messageScreen .tween-messageScreenFlare")[0].removeEventListener("webkitTransitionEnd", temp_messageScreen_runEvent, false);
+	$("#messageScreen .tween-messageScreenFlare")[0].removeEventListener("transitionend", temp_messageScreen_runEvent, false);
+
+	if(friendTarget.once)
+	{
+		friendTarget.seen = true;
+
+		$("#" + friendTarget.id).remove();
+	}
+
+	$("#messageScreen .messageScreen_text p").removeClass("messageScreenText_hide").addClass("messageScreenText_show");
 
 	$("#messageScreen .messageScreen_main").removeClass("messageScreen_hide");
 	$("#messageScreen .messageScreen_flare").removeClass("messageScreenFlare_show").addClass("messageScreenFlare_hide");
+
+	delay = setTimeout(temp_messageScreen_end, 4 * 1000);
 }
+
+function temp_messageScreen_end()
+{
+	$("#messageScreen .tween-messageScreenFlare")[0].addEventListener("webkitTransitionEnd", temp_messageScreen_endEvent, false);
+	$("#messageScreen .tween-messageScreenFlare")[0].addEventListener("transitionend", temp_messageScreen_endEvent, false);
+
+	$("#messageScreen .messageScreen_flare").removeClass("messageScreenFlare_hide").addClass("messageScreenFlare_show");
+}
+
+function temp_messageScreen_endEvent(event)
+{
+	$("#messageScreen .tween-messageScreenFlare")[0].removeEventListener("webkitTransitionEnd", temp_messageScreen_endEvent, false);
+	$("#messageScreen .tween-messageScreenFlare")[0].removeEventListener("transitionend", temp_messageScreen_endEvent, false);
+
+	$("#messageScreen .messageScreen_main").addClass("messageScreen_hide");
+
+	$("#messageScreen .tween-messageScreenFlare")[0].addEventListener("webkitTransitionEnd", temp_messageScreen_purge, false);
+	$("#messageScreen .tween-messageScreenFlare")[0].addEventListener("transitionend", temp_messageScreen_purge, false);
+
+	$("#messageScreen .messageScreen_flare").removeClass("messageScreenFlare_show").addClass("messageScreenFlare_hide");
+}
+
+function temp_messageScreen_purge(event)
+{
+	$("#messageScreen .tween-messageScreenFlare")[0].removeEventListener("webkitTransitionEnd", temp_messageScreen_purge, false);
+	$("#messageScreen .tween-messageScreenFlare")[0].removeEventListener("transitionend", temp_messageScreen_purge, false);
+
+	$("#messageScreen").html("");
+
+	friendTarget = {};
+
+	move_plugIn();
+}
+
 
 

@@ -446,6 +446,12 @@ function move_cssAdd()
 		move_cancel();
 
 		hitTest_findFriend();
+
+		// enables reset
+		reset_hitTest = true;
+		control.signal = "STILL";
+
+		control.walkClassUpdate("tween-player-XX");
 	}
 
 	// DEFAULT

@@ -875,6 +875,16 @@ div[class*='tween-']
 	background-size: 640px 320px;
 }
 
+.pixels_flowerHeavyEvening0
+{
+	background-image: url(../_img/tile_flowersHeavy_evening0_1x.png);
+	background-position: 0 0;
+	background-repeat: repeat;
+	background-size: 80px 80px;
+}
+
+
+
 /* ----------------------------------------------------------------------- GENERAL */
 
 
@@ -1328,6 +1338,11 @@ div[class*='tween-']
 	.pixels_undeground_floor
 	{
 		background-image: url(../_img/tile_undergroundFloor_1x.png);
+	}
+
+	.pixels_flowerHeavyEvening0
+	{
+		background-image: url(../_img/tile_flowersHeavy_evening0_1x.png);
 	}
 }
 
@@ -1790,6 +1805,11 @@ div[class*='tween-']
 	.pixels_undeground_floor
 	{
 		background-image: url(../_img/tile_undergroundFloor_2x.png);
+	}
+
+	.pixels_flowerHeavyEvening0
+	{
+		background-image: url(../_img/tile_flowersHeavy_evening0_2x.png);
 	}
 }
 
