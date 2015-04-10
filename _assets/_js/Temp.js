@@ -163,7 +163,7 @@ function temp_messageScreen_init()
 
 	$("#messageScreen .messageScreenLand_grass").addClass(friendTarget.flooring.grass);
 	$("#messageScreen .messageScreen_haze").addClass(friendTarget.flooring.haze);
-	$("#messageScreen .messageScreenLand_field").addClass(friendTarget.flooring.fill);
+	$("#messageScreen .messageScreenLand_fieldFill").addClass(friendTarget.flooring.fill);
 
 	$("#messageScreen").removeClass("messageScreen_hide");
 
