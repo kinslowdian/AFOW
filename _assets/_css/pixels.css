@@ -674,6 +674,13 @@ div[class*='tween-']
 	background-size: cover;
 }
 
+.pixels_behindWorld_mountainSky
+{
+	background: url(../_img/mountainSky.jpg);
+	background-attachment: fixed;
+	background-size: cover;
+}
+
 .pixels_menu
 {
 	background-image: url(../_img/optionsTab_1x.png);

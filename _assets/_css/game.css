@@ -238,7 +238,9 @@
 
 .displayError_focus .message
 {
-	width: 90%;
+	/*width: 90%;*/
+
+	width: 300px;
 
 	position: absolute;
 
@@ -859,6 +861,7 @@
 
 		-webkit-transition: -webkit-transform 200ms linear;
 		transition: transform 200ms linear;
+
 	}
 
 	.player-sprite

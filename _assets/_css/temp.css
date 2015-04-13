@@ -206,12 +206,30 @@
 	width: inherit;
 	height: 160px;
 
-	background: -webkit-linear-gradient(top, rgba(32, 32, 42, 0.94) 0%, rgba(32, 32, 42, 0) 100%);
-	background: linear-gradient(to bottom, rgba(32, 32, 42, 0.94) 0%, rgba(32, 32, 42, 0) 100%);
-
 	position: absolute;
 
 	top: 0;
+}
+
+.darkness-stone
+{
+/*	background: -webkit-linear-gradient(top, rgba(32, 32, 42, 0.94) 0%, rgba(32, 32, 42, 0) 100%);
+	background: linear-gradient(to bottom, rgba(32, 32, 42, 0.94) 0%, rgba(32, 32, 42, 0) 100%);*/
+
+	background: -webkit-linear-gradient(top, rgba(122, 122, 127, 0.94) 0%, rgba(122, 122, 127, 0) 100%);
+	background: linear-gradient(to bottom, rgba(122, 122, 127, 0.94) 0%, rgba(122, 122, 127, 0) 100%);
+}
+
+.darkness-forest
+{
+	background: -webkit-linear-gradient(top, rgba(223, 223, 213, 0.94) 0%, rgba(223, 223, 213, 0) 100%);
+	background: linear-gradient(to bottom, rgba(223, 223, 213, 0.94) 0%, rgba(223, 223, 213, 0) 100%);
+}
+
+.darkness-underground
+{
+	background: -webkit-linear-gradient(top, rgba(0, 0, 10, 0.94) 0%, rgba(0, 0, 10, 0) 100%);
+	background: linear-gradient(to bottom, rgba(0, 0, 10, 0.94) 0%, rgba(0, 0, 10, 0) 100%);
 }
 
 .messageScreenLand_field, .messageScreenLand_fieldFill
@@ -265,7 +283,7 @@
 
 .messageScreen_focus .messageScreen_text
 {
-	width: 90%;
+	width: 300px;
 
 	position: absolute;
 
@@ -294,8 +312,8 @@
 
 .tween-messageScreenText
 {
-	-webkit-transition: 400ms ease-out 400ms;
-	transition: 400ms ease-out 400ms;
+	-webkit-transition: 400ms ease-out 600ms;
+	transition: 400ms ease-out 600ms;
 }
 
 .messageScreenText_hide
@@ -314,27 +332,28 @@
 	transform: translateY(0px);
 }
 
-/*
-.tween-messageScreenText
+.messageScreen_fullFill
 {
-	-webkit-animation: tweenMessageScreenTextFrames 500ms ease-in-out infinite;
-	animation: tweenMessageScreenTextFrames 500ms ease-in-out infinite;
+	width: inherit;
+	height: inherit;
+
+	background: rgba(10, 10, 20, 0.8);
+
+	opacity: 0;
+
+	position: absolute;
 }
 
-@-webkit-keyframes tweenMessageScreenTextFrames
+.messageScreenFullFill_show
 {
-	0%		{-webkit-transform: translateY(0px);}
-	50%		{-webkit-transform: translateY(10px);}
-	100%	{-webkit-transform: translateY(0px);}
+	opacity: 1;
 }
 
-@keyframes tweenMessageScreenTextFrames
+.tween-messageScreenFullFill
 {
-	0%		{transform: translateY(0px);}
-	50%		{transform: translateY(10px);}
-	100%	{transform: translateY(0px);}
+	-webkit-transition: opacity 400ms ease-out 600ms;
+	transition: opacity 400ms ease-out 600ms;
 }
-*/
 
 .messageScreen_haze
 {
@@ -348,10 +367,22 @@
 	margin: -80px 0 0 0;
 }
 
-.haze_stone
+.haze-stone
 {
 	background: -webkit-linear-gradient(top, rgba(122, 122, 127, 0) 0%, rgba(122, 122, 127, 0.6) 100%);
 	background: linear-gradient(to bottom, rgba(122, 122, 127, 0) 0%, rgba(122, 122, 127, 0.6) 100%);
+}
+
+.haze-forest
+{
+	background: -webkit-linear-gradient(top, rgba(223, 223, 213, 0) 0%, rgba(223, 223, 213, 0.6) 100%);
+	background: linear-gradient(to bottom, rgba(223, 223, 213, 0) 0%, rgba(223, 223, 213, 0.6) 100%);
+}
+
+.haze-underground
+{
+	background: -webkit-linear-gradient(top, rgba(0, 0, 10, 0) 0%, rgba(0, 0, 10, 0.6) 100%);
+	background: linear-gradient(to bottom, rgba(0, 0, 10, 0) 0%, rgba(0, 0, 10, 0.6) 100%);
 }
 
 

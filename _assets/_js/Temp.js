@@ -58,27 +58,35 @@ var friend = function(settings, container, num)
 	this.rendered							= false;
 	this.array_index					= num;
 	this.flooring							= {};
+	this.scene								= {};
 };
 
 friend.prototype.create = function()
 {
-	this.id 								= this.settings.n;
-	this.spawn							= this.settings.spawn;
-	this.hint								= this.settings.hint;
-	this.character					= this.settings.character;
-	this.once								= this.settings.once;
+	this.id 									= this.settings.n;
+	this.spawn								= this.settings.spawn;
+	this.hint									= this.settings.hint;
+	this.time									= this.settings.time;
+	this.character						= this.settings.character;
+	this.once									= this.settings.once;
 
-	this.flooring.grass			= this.settings.grass;
-	this.flooring.haze			= this.settings.haze;
-	this.flooring.fill			= this.settings.fill;
+	// pixels_behindWorld_bad pixels_behindWorld_good
+
+	this.scene.customFog			= this.settings.customFog;
+	this.scene.bg							= this.settings.bg;
+	this.scene.customDarkness	= this.settings.customDarkness;
+
+	this.flooring.grass				= this.settings.grass;
+	this.flooring.customHaze	= this.settings.customHaze;
+	this.flooring.customFill	= this.settings.customFill;
 
 
-	this.buildData.block_x 	= this.settings.x;
-	this.buildData.block_y 	= this.settings.y;
-	this.buildData.x				= this.buildData.block_x * 80;
-	this.buildData.y 				= this.buildData.block_y * 80;
-	this.buildData.w 				= this.settings.w * 80;
-	this.buildData.h 				= this.settings.h * 80;
+	this.buildData.block_x 		= this.settings.x;
+	this.buildData.block_y 		= this.settings.y;
+	this.buildData.x					= this.buildData.block_x * 80;
+	this.buildData.y 					= this.buildData.block_y * 80;
+	this.buildData.w 					= this.settings.w * 80;
+	this.buildData.h 					= this.settings.h * 80;
 
 	this.buildData.html		= html_lib_use(this.character, false, true);
 
@@ -157,13 +165,51 @@ function temp_messageScreen_init()
 
 	$("#messageScreen .messageScreen_friend").css(css);
 
-	$("#messageScreen .messageScreen_focus .messageScreen_text p").html('"' + friendTarget.hint + '"');
+	$("#messageScreen .messageScreen_focus .messageScreen_text p").html(friendTarget.hint);
 
-	$("#messageScreen .foggyEdge").addClass("foggyEdge-" + LEVEL_MAIN.landType);
+	if(friendTarget.scene.customFog)
+	{
+		$("#messageScreen .foggyEdge").addClass(friendTarget.scene.customFog);
+	}
 
+	else
+	{
+		$("#messageScreen .foggyEdge").addClass("foggyEdge-" + LEVEL_MAIN.landType);
+	}
+
+	if(friendTarget.scene.customDarkness)
+	{
+		$("#messageScreen .messageScreenLand_darkness").addClass(friendTarget.scene.customDarkness);
+	}
+
+	else
+	{
+		$("#messageScreen .messageScreenLand_darkness").addClass("darkness-" + LEVEL_MAIN.landType);
+	}
+
+	$("#messageScreen .behindWorld").addClass(friendTarget.scene.bg);
 	$("#messageScreen .messageScreenLand_grass").addClass(friendTarget.flooring.grass);
-	$("#messageScreen .messageScreen_haze").addClass(friendTarget.flooring.haze);
-	$("#messageScreen .messageScreenLand_fieldFill").addClass(friendTarget.flooring.fill);
+
+	if(friendTarget.flooring.customHaze)
+	{
+		$("#messageScreen .messageScreen_haze").addClass(friendTarget.flooring.customHaze);
+	}
+
+	else
+	{
+		$("#messageScreen .messageScreen_haze").addClass("haze-" + LEVEL_MAIN.landType);
+	}
+
+	if(friendTarget.flooring.customFill)
+	{
+		$("#messageScreen .messageScreenLand_fieldFill").addClass(friendTarget.flooring.customFill);
+	}
+
+	else
+	{
+		$("#messageScreen .messageScreenLand_fieldFill").addClass("field-floor-" + LEVEL_MAIN.landType);
+	}
+
 
 	$("#messageScreen").removeClass("messageScreen_hide");
 
@@ -194,10 +240,12 @@ function temp_messageScreen_runEvent(event)
 
 	$("#messageScreen .messageScreen_text p").removeClass("messageScreenText_hide").addClass("messageScreenText_show");
 
+	$("#messageScreen .messageScreen_fullFill").addClass("messageScreenFullFill_show");
+
 	$("#messageScreen .messageScreen_main").removeClass("messageScreen_hide");
 	$("#messageScreen .messageScreen_flare").removeClass("messageScreenFlare_show").addClass("messageScreenFlare_hide");
 
-	delay = setTimeout(temp_messageScreen_end, 4 * 1000);
+	delay = setTimeout(temp_messageScreen_end, friendTarget.time * 1000);
 }
 
 function temp_messageScreen_end()

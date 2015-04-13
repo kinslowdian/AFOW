@@ -1,15 +1,16 @@
-		"level3":
+		"level4":
 		{
 			"levelSettings":
 			{
-				"n": 3,
-				"weather": "",
+				"n": 4,
+				"weather": "SNOW",
+				"mist": false,
 				"land": "underground",
 				"entry_fall": false,
 				"fall_x": 0,
 				"fall_y": 0,
 				"fall_d": "DOWN",
-				"title_top": "under the mountain",
+				"title_top": "under the forest edge",
 				"levelFunctions":
 				{
 
@@ -25,23 +26,7 @@
 
 				"PLANTS":
 				[
-					{"x": 1.5, "y": 1, "w": 1, "h": 3, "p": "pixels_undeground_floor"},
-					{"x": 2.5, "y": 3, "w": 1.5, "h": 1, "p": "pixels_undeground_floor"},
-					{"x": 3, "y": 4, "w": 1, "h": 1, "p": "pixels_undeground_floor"},
-					{"x": 1, "y": 5, "w": 3, "h": 1, "p": "pixels_undeground_floor"},
-					{"x": 1, "y": 6, "w": 1, "h": 1, "p": "pixels_undeground_floor"},
-					{"x": 3, "y": 6, "w": 1, "h": 1, "p": "pixels_undeground_floor"},
-					{"x": 1, "y": 7, "w": 3, "h": 1, "p": "pixels_undeground_floor"},
-					{"x": 3, "y": 8, "w": 1, "h": 2, "p": "pixels_undeground_floor"},
-					{"x": 0, "y": 12, "w": 1, "h": 3, "p": "pixels_undeground_floor"},
-					{"x": 0, "y": 15, "w": 0.5, "h": 1, "p": "pixels_undeground_floor"},
-					{"x": 0.5, "y": 15, "w": 1, "h": 0.5, "p": "pixels_undeground_floor"},
-					{"x": 0.5, "y": 15.5, "w": 3, "h": 1, "p": "pixels_undeground_floor"},
-					{"x": 2.5, "y": 15, "w": 1, "h": 0.5, "p": "pixels_undeground_floor"},
-					{"x": 3.5, "y": 15, "w": 0.5, "h": 1, "p": "pixels_undeground_floor"},
-					{"x": 3, "y": 12, "w": 1, "h": 3, "p": "pixels_undeground_floor"},
-					{"x": 1, "y": 13, "w": 2, "h": 1, "p": "pixels_undeground_floor"},
-					{"x": 1.5, "y": 18, "w": 1, "h": 6, "p": "pixels_undeground_floor"}
+
 				],
 
 				"CLEARING":
@@ -51,12 +36,12 @@
 
 				"FLOOR":
 				{
-					"class" : "field-floor-underground"
+					"class" : "field-floor-stone"
 				},
 
 				"OUTER":
 				{
-					"class" : "field-floor-underground"
+					"class" : "pixels_stoneForestMass"
 				}
 			},
 
@@ -68,6 +53,47 @@
 			"enemyPlayers":
 			[
 
+			],
+
+			"friendPlayers":
+			[
+				{
+					"x": 1.5,
+					"y": 13.5,
+					"w": 0.5,
+					"h": 0.5,
+					"n": "level2_friend0",
+					"customFog": false,
+					"customDarkness": false,
+					"customHaze": false,
+					"customFill": false,
+					"bg": "pixels_behindWorld_good",
+					"grass": "pixels_stoneFlowerHeavy",
+					"once": false,
+					"character": "_player_friend_40x40",
+					"spawn": 2,
+					"hint": "you must find the route under this mountain, it's south of this mountain foot...",
+					"time": 4.6
+				},
+
+				{
+					"x": 2,
+					"y": 13.5,
+					"w": 0.5,
+					"h": 0.5,
+					"n": "level2_friend1",
+					"customFog": false,
+					"customDarkness": false,
+					"customHaze": false,
+					"customFill": false,
+					"bg": "pixels_behindWorld_good",
+					"grass": "pixels_stoneFlowerHeavy",
+					"once": false,
+					"character": "_player_friend_40x40",
+					"spawn": 2,
+					"hint": "you are lost like us, try another wormhole hurry!",
+					"time": 4.6
+				}
 			],
 
 			"gates":
@@ -83,76 +109,138 @@
 					"y": 0,
 					"w": 1,
 					"h": 1,
-					"level": 2,
-					"exit": 9,
+					"level": 1,
+					"exit": 7,
 					"direction": "DOWN",
-					"spawn": 3,
-					"p": "portal_top_underground"
+					"spawn": 2,
+					"bossLevel": false,
+					"p": "portal_top_stone"
 				},
 
 				{
 					"num": 1,
-					"x": 0,
+					"x": 1.5,
 					"y": 5,
 					"w": 1,
 					"h": 1,
-					"level": 3,
-					"exit": 4,
-					"direction": "RIGHT",
-					"spawn": 3,
-					"p": "portal_top_underground"
+					"level": 2,
+					"exit": 7,
+					"direction": "UP",
+					"spawn": 2,
+					"bossLevel": false,
+					"p": "portal_top_stone"
 				},
 
 				{
 					"num": 2,
-					"x": 0,
-					"y": 11,
+					"x": 1.5,
+					"y": 12,
 					"w": 1,
 					"h": 1,
-					"level": 99,
-					"exit": 99,
-					"direction": "DOWN",
-					"spawn": 3,
-					"p": "portal_top_underground"
+					"level": 2,
+					"exit": 6,
+					"direction": "UP",
+					"spawn": 2,
+					"bossLevel": false,
+					"p": "portal_top_stone"
 				},
 
 				{
 					"num": 3,
-					"x": 3,
-					"y": 11,
+					"x": 0,
+					"y": 15,
 					"w": 1,
 					"h": 1,
-					"level": 99,
-					"exit": 99,
+					"level": 2,
+					"exit": 8,
 					"direction": "DOWN",
-					"spawn": 3,
-					"p": "portal_top_underground"
+					"spawn": 2,
+					"bossLevel": false,
+					"p": "portal_top_forest"
 				},
 
 				{
 					"num": 4,
 					"x": 1.5,
-					"y": 17,
+					"y": 15,
 					"w": 1,
 					"h": 1,
-					"level": 3,
-					"exit": 1,
+					"level": 2,
+					"exit": 2,
 					"direction": "DOWN",
-					"spawn": 3,
-					"p": "portal_top_underground"
+					"spawn": 2,
+					"bossLevel": false,
+					"p": "portal_top_forest"
 				},
 
 				{
 					"num": 5,
+					"x": 3,
+					"y": 15,
+					"w": 1,
+					"h": 1,
+					"level": 2,
+					"exit": 2,
+					"direction": "DOWN",
+					"spawn": 2,
+					"bossLevel": false,
+					"p": "portal_top_forest"
+				},
+
+				{
+					"num": 6,
+					"x": 0,
+					"y": 20,
+					"w": 1,
+					"h": 1,
+					"level": 2,
+					"exit": 1,
+					"direction": "RIGHT",
+					"spawn": 2,
+					"bossLevel": false,
+					"p": "portal_top_forest"
+				},
+
+				{
+					"num": 7,
+					"x": 3,
+					"y": 20,
+					"w": 1,
+					"h": 1,
+					"level": 2,
+					"exit": 1,
+					"direction": "LEFT",
+					"spawn": 2,
+					"bossLevel": false,
+					"p": "portal_top_forest"
+				},
+
+				{
+					"num": 8,
+					"x": 1.5,
+					"y": 21.5,
+					"w": 1,
+					"h": 1,
+					"level": 2,
+					"exit": 3,
+					"direction": "DOWN",
+					"spawn": 2,
+					"bossLevel": false,
+					"p": "portal_top_forest"
+				},
+
+				{
+					"num": 9,
 					"x": 1.5,
 					"y": 24,
 					"w": 1,
 					"h": 1,
-					"level": 5,
+					"level": 3,
 					"exit": 0,
 					"direction": "UP",
-					"spawn": 3,
-					"p": "portal_top_underground"
+					"spawn": 2,
+					"bossLevel": false,
+					"p": "portal_top_forest"
 				}
 			],
 
