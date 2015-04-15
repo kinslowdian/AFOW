@@ -41,7 +41,8 @@
 
 				"OUTER":
 				{
-					"class" : "pixels_stoneForestMass"
+					"class_LR": "pixels_undergroundMass",
+					"class_TB": "pixels_undergroundMass"
 				}
 			},
 

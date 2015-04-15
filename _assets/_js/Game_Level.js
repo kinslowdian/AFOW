@@ -176,6 +176,8 @@ enemy.prototype.build = function()
 
 	$(this.buildData.container + " #" + this.id).css(this.buildData.css);
 
+	$(this.buildData.container + " #" + this.id).attr("data-npc", "enemy");
+
 	trace("RENDER ISSUE :: " + "#" + this.id);
 	trace(this.buildData.css);
 
@@ -570,10 +572,10 @@ function level_form()
 
 	// $("#roam_content").addClass(Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["texture"]["OUTER"]["class"]);
 
-	$(".layer-field-fill .bgFill-l").addClass(Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["texture"]["OUTER"]["class"]);
-	$(".layer-field-fill .bgFill-r").addClass(Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["texture"]["OUTER"]["class"]);
-	$(".layer-field-fill .bgFill-t").addClass(Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["texture"]["OUTER"]["class"]);
-	$(".layer-field-fill .bgFill-b").addClass(Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["texture"]["OUTER"]["class"]);
+	$(".layer-field-fill .bgFill-l").addClass(Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["texture"]["OUTER"]["class_LR"]);
+	$(".layer-field-fill .bgFill-r").addClass(Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["texture"]["OUTER"]["class_LR"]);
+	$(".layer-field-fill .bgFill-t").addClass(Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["texture"]["OUTER"]["class_TB"]);
+	$(".layer-field-fill .bgFill-b").addClass(Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["texture"]["OUTER"]["class_TB"]);
 
 	// TREES BUSHES
 
@@ -1167,6 +1169,7 @@ function level_player_setup()
 
 function level_clear()
 {
+	/*
 	var find_bgPixels = {};
 
 	find_bgPixels.target 			= $(".bgFill-l").attr("class");
@@ -1180,6 +1183,12 @@ function level_clear()
 	$(".bgFill-b").removeClass(find_bgPixels.classString);
 
 	delete find_bgPixels;
+	*/
+
+	level_fill_clear("bgFill-l");
+	level_fill_clear("bgFill-r");
+	level_fill_clear("bgFill-t");
+	level_fill_clear("bgFill-b");
 
 	// MISTY EDGE
 	$(".mistyEdge").html("");
@@ -1243,5 +1252,20 @@ function behindWorld_outcome(outcomeType)
 			break;
 		}
 	}
+}
+
+function level_fill_clear(side)
+{
+	var find_bgPixels = {};
+
+	find_bgPixels.classMain		= "." + side;
+	find_bgPixels.target 			= $(find_bgPixels.classMain).attr("class");
+	find_bgPixels.searchBeg 	= find_bgPixels.target.search("pixels");
+	find_bgPixels.searchEnd		= find_bgPixels.target.length;
+	find_bgPixels.classString	= find_bgPixels.target.substr(find_bgPixels.searchBeg, find_bgPixels.searchEnd);
+
+	$(find_bgPixels.classMain).removeClass(find_bgPixels.classString);
+
+	delete find_bgPixels;
 }
 

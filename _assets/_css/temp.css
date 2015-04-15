@@ -39,6 +39,26 @@
 
 /* ------------------------------ DEBUG */
 
+/*TEST ONLY*/
+.pixels_test320
+{
+	background-image: url(../_img/_tile_320.png);
+	background-repeat: repeat;
+	background-position: center top;
+
+	background-size: 320px 320px;
+}
+
+.pixels_test320TB
+{
+	background-image: url(../_img/_tile_320TB.png);
+	background-repeat: repeat;
+	background-position: center top;
+
+	background-size: 320px 320px;
+}
+/*TEST ONLY*/
+
 
 .pixels_mistBtm
 {

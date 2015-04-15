@@ -105,6 +105,8 @@ friend.prototype.build = function()
 
 	$(this.buildData.container + " #" + this.id).css(this.buildData.css);
 
+	$(this.buildData.container + " #" + this.id).attr("data-npc", "friend");
+
 	this.rendered = true;
 };
 

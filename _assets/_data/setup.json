@@ -334,7 +334,8 @@
 
 				"OUTER":
 				{
-					"class" : "pixels_stoneForestMass"
+					"class_LR": "pixels_stoneForestMassLR",
+					"class_TB": "pixels_stoneForestMassTB"
 				}
 			},
 
@@ -386,25 +387,6 @@
 					"character": "_player_friend_40x40",
 					"spawn": 0,
 					"hint": "beware of these mysterious wormholes, they dont always go where you’d expect...",
-					"time": 4.6
-				},
-
-				{
-					"x": 1.75,
-					"y": 18.5,
-					"w": 0.5,
-					"h": 0.5,
-					"n": "level0_friend2",
-					"customFog": false,
-					"customDarkness": false,
-					"customHaze": false,
-					"customFill": false,
-					"bg": "pixels_behindWorld_good",
-					"grass": "pixels_stoneFlowerHeavy",
-					"once": true,
-					"character": "_player_friend_40x40",
-					"spawn": 0,
-					"hint": "dark wormholes travel further to many dangerous places...",
 					"time": 4.6
 				}
 			],
@@ -492,7 +474,7 @@
 					"y": 4,
 					"w": 1,
 					"h": 1,
-					"level": 4,
+					"level": 5,
 					"exit": 0,
 					"direction": "UP",
 					"spawn": 0,
@@ -720,7 +702,8 @@
 
 				"OUTER":
 				{
-					"class" : "pixels_stoneForestMass"
+					"class_LR": "pixels_stoneForestMassLR",
+					"class_TB": "pixels_stoneForestMassTB"
 				}
 			},
 
@@ -1059,7 +1042,8 @@
 
 				"OUTER":
 				{
-					"class" : "pixels_stoneForestMass"
+					"class_LR": "pixels_stoneForestMassLR",
+					"class_TB": "pixels_stoneForestMassTB"
 				}
 			},
 
@@ -1352,7 +1336,8 @@
 
 				"OUTER":
 				{
-					"class" : "pixels_undergroundMass"
+					"class_LR": "pixels_undergroundMass",
+					"class_TB": "pixels_undergroundMass"
 				}
 			},
 
@@ -1558,7 +1543,8 @@
 
 				"OUTER":
 				{
-					"class" : "pixels_undergroundMass"
+					"class_LR": "pixels_undergroundMass",
+					"class_TB": "pixels_undergroundMass"
 				}
 			},
 
@@ -1702,26 +1688,81 @@
 			"levelSettings":
 			{
 				"n": 5,
-				"weather": "SNOW",
-				"land": "ice",
-				"entry_fall": "NO",
+				"weather": "RAIN",
+				"mist": false,
+				"land": "forest",
+				"entry_fall": false,
 				"fall_x": 0,
 				"fall_y": 0,
 				"fall_d": "DOWN",
-				"title_top": "level number 5",
-				"title_btm": "The court of gods"
+				"title_top": "into the great forest",
+				"levelFunctions":
+				{
+
+				}
 			},
 
 			"texture":
 			{
 				"WALLS" :
 				[
-
+					{"x": 1, "y": 3, "w": 0.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+					{"x": 2.5, "y": 3, "w": 0.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+					{"x": 0.5, "y": 3.5, "w": 1, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+					{"x": 2.5, "y": 3.5, "w": 1, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+					{"x": 0, "y": 4, "w": 1.5, "h": 1, "p": "pixels_forest collideCheck-field"},
+					{"x": 2.5, "y": 4, "w": 1.5, "h": 1, "p": "pixels_forest collideCheck-field"},
+					{"x": 1, "y": 5, "w": 2, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+					{"x": 1.5, "y": 5.5, "w": 1, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+					{"x": 1.5, "y": 7, "w": 1, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+					{"x": 1, "y": 7.5, "w": 2, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+					{"x": 0, "y": 8, "w": 4, "h": 3.5, "p": "pixels_forest collideCheck-field"},
+					{"x": 0, "y": 13.5, "w": 1, "h": 3, "p": "pixels_forest collideCheck-field"},
+					{"x": 3, "y": 13.5, "w": 1, "h": 3, "p": "pixels_forest collideCheck-field"},
+					{"x": 1, "y": 14, "w": 0.5, "h": 2, "p": "pixels_forest collideCheck-field"},
+					{"x": 2.5, "y": 14, "w": 0.5, "h": 2, "p": "pixels_forest collideCheck-field"},
+					{"x": 0, "y": 17, "w": 3.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+					{"x": 0.5, "y": 18, "w": 3.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+					{"x": 0, "y": 19, "w": 3.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+					{"x": 0.5, "y": 20, "w": 3.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+					{"x": 0, "y": 21, "w": 3, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+					{"x": 1, "y": 22, "w": 0.5, "h": 3, "p": "pixels_forest collideCheck-field"},
+					{"x": 2.5, "y": 21.5, "w": 0.5, "h": 3.5, "p": "pixels_forest collideCheck-field"},
+					{"x": 0, "y": 24, "w": 1, "h": 1, "p": "pixels_forest collideCheck-field"},
+					{"x": 3, "y": 24, "w": 1, "h": 1, "p": "pixels_forest collideCheck-field"}
 				],
 
 				"PLANTS":
 				[
+					{"x": 0, "y": 0, "w": 1.5, "h": 3, "p": "pixels_flowerHeavy"},
+					{"x": 2.5, "y": 0, "w": 1.5, "h": 3, "p": "pixels_flowerHeavy"},
+					{"x": 0, "y": 3, "w": 1, "h": 0.5, "p": "pixels_flowerHeavy"},
+					{"x": 3, "y": 3, "w": 1, "h": 0.5, "p": "pixels_flowerHeavy"},
+					{"x": 0, "y": 3.5, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavy"},
+					{"x": 3.5, "y": 3.5, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavy"},
+					{"x": 1, "y": 5.5, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavy"},
+					{"x": 2.5, "y": 5.5, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavy"},
+					{"x": 0, "y": 6, "w": 4, "h": 1, "p": "pixels_flowerHeavy"},
+					{"x": 1, "y": 7, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavy"},
+					{"x": 2.5, "y": 7, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavy"},
 
+					{"x": 0, "y": 12.5, "w": 4, "h": 1, "p": "pixels_flowerLight"},
+					{"x": 1, "y": 13.5, "w": 2, "h": 0.5, "p": "pixels_flowerLight"},
+					{"x": 1.5, "y": 14, "w": 1, "h": 2, "p": "pixels_flowerLight"},
+					{"x": 1, "y": 16, "w": 2, "h": 0.5, "p": "pixels_flowerLight"},
+					{"x": 0, "y": 16.5, "w": 4, "h": 0.5, "p": "pixels_flowerLight"},
+					{"x": 3.5, "y": 17, "w": 0.5, "h": 0.5, "p": "pixels_flowerLight"},
+					{"x": 0, "y": 17.5, "w": 4, "h": 0.5, "p": "pixels_flowerLight"},
+					{"x": 0, "y": 18, "w": 0.5, "h": 0.5, "p": "pixels_flowerLight"},
+					{"x": 0, "y": 18.5, "w": 4, "h": 0.5, "p": "pixels_flowerLight"},
+					{"x": 3.5, "y": 19, "w": 0.5, "h": 0.5, "p": "pixels_flowerLight"},
+					{"x": 0, "y": 19.5, "w": 4, "h": 0.5, "p": "pixels_flowerLight"},
+					{"x": 0, "y": 20, "w": 0.5, "h": 0.5, "p": "pixels_flowerLight"},
+					{"x": 0, "y": 20.5, "w": 4, "h": 0.5, "p": "pixels_flowerLight"},
+					{"x": 3, "y": 21, "w": 1, "h": 2, "p": "pixels_flowerLight"},
+					{"x": 0, "y": 21.5, "w": 1, "h": 1.5, "p": "pixels_flowerLight"},
+					{"x": 1, "y": 21.5, "w": 0.5, "h": 0.5, "p": "pixels_flowerLight"},
+					{"x": 1.5, "y": 21.5, "w": 1, "h": 2.5, "p": "pixels_flowerLight"}
 				],
 
 				"CLEARING":
@@ -1731,12 +1772,13 @@
 
 				"FLOOR":
 				{
-					"class" : "field-floor-ice"
+					"class" : "field-floor-forest"
 				},
 
 				"OUTER":
 				{
-					"class" : "pixels_forestMassIce"
+					"class_LR": "pixels_forestMassLR",
+					"class_TB": "pixels_forestMassTB"
 				}
 			},
 
@@ -1750,207 +1792,32 @@
 
 			],
 
-			"gods":
-			{
-				"GOD":
-				[
-					{
-						"x": 0,
-						"y": 4,
-						"w": 4,
-						"h": 3,
-						"n": "level5_god_monkeyDefaultIce0",
-						"c_cl": "layer-field-god-area",
-						"b_cl": "field-floor-ice",
-						"t_cl": "monkey_default_trees_ice",
-						"g_cl": "monkey_default_ground_ice",
-						"p_cl": "pixels_monkeyKingdomIce",
-						"t": "god_monkey_default",
-						"a": "tween-monkey_default_main_0",
-						"p": "HIDE",
-						"display":
-						{
-							"show": "monkey_default_show",
-							"hide": "monkey_default_hide"
-						}
-					},
+			"friendPlayers":
+			[
+				{
+					"x": 1.75,
+					"y": 13.5,
+					"w": 0.5,
+					"h": 0.5,
+					"n": "level5_friend0",
+					"customFog": false,
+					"customDarkness": false,
+					"customHaze": false,
+					"customFill": false,
+					"bg": "pixels_behindWorld_good",
+					"grass": "pixels_flowerHeavy",
+					"once": true,
+					"character": "_enemy_crow",
+					"spawn": 5,
+					"hint": "go back to the mountain, you shouldn't be here. if i see you again i'll kill you",
+					"time": 4.6
+				}
+			],
 
-					{
-						"x": 0,
-						"y": 11,
-						"w": 4,
-						"h": 3,
-						"n": "level5_god_monkeydefaultIce1",
-						"c_cl": "layer-field-god-area",
-						"b_cl": "field-floor-ice",
-						"t_cl": "monkey_default_trees_ice",
-						"g_cl": "monkey_default_ground_ice",
-						"p_cl": "pixels_monkeyKingdomIce",
-						"t": "god_monkey_default",
-						"a": "tween-monkey_default_main_1",
-						"p": "HIDE",
-						"display":
-						{
-							"show": "monkey_default_show",
-							"hide": "monkey_default_hide"
-						}
-					},
+			"gates":
+			[
 
-					{
-						"x": 0,
-						"y": 18,
-						"w": 4,
-						"h": 3,
-						"n": "level5_god_monkeyKingIce",
-						"c_cl": "layer-field-god-area",
-						"b_cl": "field-floor-ice",
-						"t_cl": "monkey_king_trees_ice",
-						"g_cl": "monkey_king_ground_ice",
-						"p_cl": "pixels_monkeyKingdomIce",
-						"t": "god_monkey_king",
-						"a": "tween-monkey_king_main",
-						"p": "HIDE",
-						"display":
-						{
-							"show": "monkey_king_show",
-							"hide": "monkey_king_hide"
-						}
-					}
-				],
-
-				"TRIGGERS":
-				[
-					{
-						"x": 0,
-						"y": 1,
-						"w": 4,
-						"h": 1,
-						"c_cl": "layer-field-god-area",
-						"god_prefs":
-						[
-							{
-								"call_funct" : "god_displayInit",
-								"call_params": ["level5_god_monkeyDefaultIce0", "HIDE"]
-							}
-						]
-					},
-
-					{
-						"x": 0,
-						"y": 2,
-						"w": 4,
-						"h": 1,
-						"c_cl": "layer-field-god-area",
-						"god_prefs":
-						[
-							{
-								"call_funct" : "god_displayInit",
-								"call_params": ["level5_god_monkeyDefaultIce0", "SHOW"]
-							}
-						]
-					},
-
-					{
-						"x": 0,
-						"y": 8,
-						"w": 4,
-						"h": 1,
-						"c_cl": "layer-field-god-area",
-						"god_prefs":
-						[
-							{
-								"call_funct" : "god_displayInit",
-								"call_params": ["level5_god_monkeyDefaultIce0", "HIDE"]
-							},
-
-							{
-								"call_funct" : "god_displayInit",
-								"call_params": ["level5_god_monkeydefaultIce1", "HIDE"]
-							}
-						]
-					},
-
-					{
-						"x": 0,
-						"y": 9,
-						"w": 4,
-						"h": 1,
-						"c_cl": "layer-field-god-area",
-						"god_prefs":
-						[
-							{
-								"call_funct" : "god_displayInit",
-								"call_params": ["level5_god_monkeydefaultIce1", "SHOW"]
-							}
-						]
-					},
-
-					{
-						"x": 0,
-						"y": 15,
-						"w": 4,
-						"h": 1,
-						"c_cl": "layer-field-god-area",
-						"god_prefs":
-						[
-							{
-								"call_funct" : "god_displayInit",
-								"call_params": ["level5_god_monkeydefaultIce1", "HIDE"]
-							},
-
-							{
-								"call_funct" : "god_displayInit",
-								"call_params": ["level5_god_monkeyKingIce", "HIDE"]
-							}
-						]
-					},
-
-					{
-						"x": 0,
-						"y": 16,
-						"w": 4,
-						"h": 1,
-						"c_cl": "layer-field-god-area",
-						"god_prefs":
-						[
-							{
-								"call_funct" : "god_displayInit",
-								"call_params": ["level5_god_monkeyKingIce", "SHOW"]
-							}
-						]
-					},
-
-					{
-						"x": 0,
-						"y": 22,
-						"w": 4,
-						"h": 1,
-						"c_cl": "layer-field-god-area",
-						"god_prefs":
-						[
-							{
-								"call_funct" : "god_displayInit",
-								"call_params": ["level5_god_monkeyKingIce", "SHOW"]
-							}
-						]
-					},
-
-					{
-						"x": 0,
-						"y": 23,
-						"w": 4,
-						"h": 1,
-						"c_cl": "layer-field-god-area",
-						"god_prefs":
-						[
-							{
-								"call_funct" : "god_displayInit",
-								"call_params": ["level5_god_monkeyKingIce", "HIDE"]
-							}
-						]
-					}
-				]
-			},
+			],
 
 			"portal":
 			[
@@ -1961,92 +1828,169 @@
 					"w": 1,
 					"h": 1,
 					"level": 4,
-					"exit": 6,
+					"exit": 5,
 					"direction": "DOWN",
 					"spawn": 5,
-					"p": "portal_top_ice"
+					"bossLevel": false,
+					"p": "portal_top_forest"
 				},
 
 				{
 					"num": 1,
 					"x": 1.5,
-					"y": 3,
+					"y": 4,
 					"w": 1,
 					"h": 1,
 					"level": 5,
-					"exit": 2,
+					"exit": 11,
 					"direction": "UP",
 					"spawn": 5,
-					"p": "portal_top_ice"
+					"bossLevel": false,
+					"p": "portal_top_forest"
 				},
 
 				{
 					"num": 2,
-					"x": 1.5,
-					"y": 7,
+					"x": 0,
+					"y": 5,
 					"w": 1,
 					"h": 1,
 					"level": 5,
-					"exit": 1,
+					"exit": 11,
 					"direction": "DOWN",
 					"spawn": 5,
-					"p": "portal_top_ice"
+					"bossLevel": false,
+					"p": "portal_top_forest"
 				},
 
 				{
 					"num": 3,
-					"x": 1.5,
-					"y": 10,
+					"x": 3,
+					"y": 5,
 					"w": 1,
 					"h": 1,
 					"level": 5,
-					"exit": 4,
-					"direction": "UP",
+					"exit": 11,
+					"direction": "DOWN",
 					"spawn": 5,
-					"p": "portal_top_ice"
+					"bossLevel": false,
+					"p": "portal_top_forest"
 				},
 
 				{
 					"num": 4,
-					"x": 1.5,
-					"y": 14,
+					"x": 0,
+					"y": 7,
 					"w": 1,
 					"h": 1,
 					"level": 5,
-					"exit": 3,
-					"direction": "DOWN",
+					"exit": 10,
+					"direction": "UP",
 					"spawn": 5,
-					"p": "portal_top_ice"
+					"bossLevel": false,
+					"p": "portal_top_forest"
 				},
 
 				{
 					"num": 5,
-					"x": 1.5,
-					"y": 17,
+					"x": 3,
+					"y": 7,
 					"w": 1,
 					"h": 1,
 					"level": 5,
-					"exit": 6,
+					"exit": 7,
 					"direction": "UP",
 					"spawn": 5,
-					"p": "portal_top_ice"
+					"bossLevel": false,
+					"p": "portal_top_forest"
 				},
 
 				{
 					"num": 6,
-					"x": 1.5,
-					"y": 21,
+					"x": 0,
+					"y": 11.5,
+					"w": 1,
+					"h": 1,
+					"level": 5,
+					"exit": 0,
+					"direction": "DOWN",
+					"spawn": 5,
+					"bossLevel": false,
+					"p": "portal_top_forest"
+				},
+
+				{
+					"num": 7,
+					"x": 1,
+					"y": 11.5,
 					"w": 1,
 					"h": 1,
 					"level": 5,
 					"exit": 5,
 					"direction": "DOWN",
 					"spawn": 5,
-					"p": "portal_top_ice"
+					"bossLevel": false,
+					"p": "portal_top_forest"
 				},
 
 				{
-					"num": 7,
+					"num": 8,
+					"x": 2,
+					"y": 11.5,
+					"w": 1,
+					"h": 1,
+					"level": 5,
+					"exit": 4,
+					"direction": "DOWN",
+					"spawn": 5,
+					"bossLevel": false,
+					"p": "portal_top_forest"
+				},
+
+				{
+					"num": 9,
+					"x": 3,
+					"y": 11.5,
+					"w": 1,
+					"h": 1,
+					"level": 5,
+					"exit": 11,
+					"direction": "DOWN",
+					"spawn": 5,
+					"bossLevel": false,
+					"p": "portal_top_forest"
+				},
+
+				{
+					"num": 10,
+					"x": 0,
+					"y": 23,
+					"w": 1,
+					"h": 1,
+					"level": 5,
+					"exit": 4,
+					"direction": "UP",
+					"spawn": 5,
+					"bossLevel": false,
+					"p": "portal_top_forest"
+				},
+
+				{
+					"num": 11,
+					"x": 3,
+					"y": 23,
+					"w": 1,
+					"h": 1,
+					"level": 5,
+					"exit": 1,
+					"direction": "UP",
+					"spawn": 5,
+					"bossLevel": false,
+					"p": "portal_top_forest"
+				},
+
+				{
+					"num": 12,
 					"x": 1.5,
 					"y": 24,
 					"w": 1,
@@ -2055,26 +1999,19 @@
 					"exit": 0,
 					"direction": "UP",
 					"spawn": 5,
-					"p": "portal_top_ice"
+					"bossLevel": false,
+					"p": "portal_top_forest"
 				}
 			],
 
 			"sound_level":
 			[
-				{
-					"call_funct" : "sound_play",
-					"call_params": ["level_bg_forest"]
-				},
 
-				{
-					"call_funct" : "sound_volume",
-					"call_params": ["level_bg_forest", "0.01"]
-				},
+			],
 
-				{
-					"call_funct" : "sound_fadeInitGlobal",
-					"call_params" : [1]
-				}
+			"sound_trigger":
+			[
+
 			]
 		},
 

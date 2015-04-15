@@ -150,14 +150,6 @@ div[class*='tween-']
 	background-size: 240px 160px;
 }
 
-.pixels_forestMass
-{
-	background-image: url(../_img/tile_pineTreesMass_1x.png);
-	background-repeat: repeat;
-	background-position: left top;
-	background-size: 240px 240px;
-}
-
 .pixels_portal
 {
 	background-image: url(../_img/portalSprite_1x.png);
@@ -837,13 +829,21 @@ div[class*='tween-']
 	background-size: 80px 80px;
 }
 
-.pixels_stoneForestMass
-{
-	background-image: url(../_img/tile_stoneForestMass_1x.png);
-	background-repeat: repeat;
-	background-position: center top;
 
-	background-size: 240px 240px;
+.pixels_stoneForestMassLR
+{
+	background-image: url(../_img/tile_stoneForestMassLR_1x.png);
+	background-repeat: repeat;
+
+	background-size: 320px 320px;
+}
+
+.pixels_stoneForestMassTB
+{
+	background-image: url(../_img/tile_stoneForestMassTB_1x.png);
+	background-repeat: repeat;
+
+	background-size: 320px 320px;
 }
 
 .pixels_boulder_stone
@@ -890,6 +890,22 @@ div[class*='tween-']
 	background-size: 80px 80px;
 }
 
+.pixels_forestMassLR
+{
+	background-image: url(../_img/tile_forestMassLR_1x.png);
+	background-repeat: repeat;
+
+	background-size: 320px 320px;
+}
+
+.pixels_forestMassTB
+{
+	background-image: url(../_img/tile_forestMassTB_1x.png);
+	background-repeat: repeat;
+
+	background-size: 320px 320px;
+}
+
 
 
 /* ----------------------------------------------------------------------- GENERAL */
@@ -908,11 +924,6 @@ div[class*='tween-']
 	.pixels_woodlandBottom
 	{
 		background-image: url(../_img/bottomEnd_1x.png);
-	}
-
-	.pixels_forestMass
-	{
-		background-image: url(../_img/tile_pineTreesMass_1x.png);
 	}
 
 	.pixels_portal
@@ -1332,9 +1343,14 @@ div[class*='tween-']
 		background-image: url(../_img/tile_flowersHeavy_stone_1x.png);
 	}
 
-	.pixels_stoneForestMass
+	.pixels_stoneForestMassLR
 	{
-		background-image: url(../_img/tile_stoneForestMass_1x.png);
+		background-image: url(../_img/tile_stoneForestMassLR_1x.png);
+	}
+
+	.pixels_stoneForestMassTB
+	{
+		background-image: url(../_img/tile_stoneForestMassTB_1x.png);
 	}
 
 	.pixels_boulder_stone
@@ -1350,6 +1366,16 @@ div[class*='tween-']
 	.pixels_flowerHeavyEvening0
 	{
 		background-image: url(../_img/tile_flowersHeavy_evening0_1x.png);
+	}
+
+	.pixels_forestMassLR
+	{
+		background-image: url(../_img/tile_forestMassLR_1x.png);
+	}
+
+	.pixels_forestMassTB
+	{
+		background-image: url(../_img/tile_forestMassTB_1x.png);
 	}
 }
 
@@ -1370,11 +1396,6 @@ div[class*='tween-']
 	.pixels_woodlandBottom
 	{
 		background-image: url(../_img/bottomEnd_2x.png);
-	}
-
-	.pixels_forestMass
-	{
-		background-image: url(../_img/tile_pineTreesMass_2x.png);
 	}
 
 	.pixels_portal
@@ -1799,9 +1820,14 @@ div[class*='tween-']
 		background-image: url(../_img/tile_flowersHeavy_stone_2x.png);
 	}
 
-	.pixels_stoneForestMass
+	.pixels_stoneForestMassLR
 	{
-		background-image: url(../_img/tile_stoneForestMass_2x.png);
+		background-image: url(../_img/tile_stoneForestMassLR_2x.png);
+	}
+
+	.pixels_stoneForestMassTB
+	{
+		background-image: url(../_img/tile_stoneForestMassTB_2x.png);
 	}
 
 	.pixels_boulder_stone
@@ -1817,6 +1843,16 @@ div[class*='tween-']
 	.pixels_flowerHeavyEvening0
 	{
 		background-image: url(../_img/tile_flowersHeavy_evening0_2x.png);
+	}
+
+	.pixels_forestMassLR
+	{
+		background-image: url(../_img/tile_forestMassLR_2x.png);
+	}
+
+	.pixels_forestMassTB
+	{
+		background-image: url(../_img/tile_forestMassTB_2x.png);
 	}
 }
 

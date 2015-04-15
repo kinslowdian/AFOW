@@ -49,3 +49,23 @@
 
 	position: absolute;
 }
+
+.bgFill-l
+{
+	background-position: right top !important;
+}
+
+.bgFill-r
+{
+	background-position: left top !important;
+}
+
+.bgFill-t
+{
+	background-position: center bottom;
+}
+
+.bgFill-b
+{
+	background-position: center top;
+}
