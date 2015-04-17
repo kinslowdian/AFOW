@@ -9,11 +9,6 @@
 @media screen and (min-width:300px)
 {
 	/* WALK ANIMATION DESKTOP ONLY */
-	.tween-mapPlayerWalk_loop
-	{
-		-webkit-animation	: tweenMapPlayerWalkLoopFrames 140ms steps(8) 0 infinite; /* 90ms */
-		animation			: tweenMapPlayerWalkLoopFrames 140ms steps(8) 0 infinite; /* 90ms */
-	}
 
 	/* INFO */
 	.multiUseInfo_tl
@@ -84,11 +79,6 @@
 @media screen and (min-width:600px)
 {
 	/* WALK ANIMATION DESKTOP ONLY */
-	.tween-mapPlayerWalk_loop
-	{
-		-webkit-animation	: tweenMapPlayerWalkLoopFrames 140ms steps(8) 0 infinite; /* 90ms */
-		animation			: tweenMapPlayerWalkLoopFrames 140ms steps(8) 0 infinite; /* 90ms */
-	}
 
 	/* INFO */
 	.multiUseInfo_tl
@@ -159,11 +149,6 @@
 @media screen and (min-width:900px)
 {
 	/* WALK ANIMATION DESKTOP ONLY */
-	.tween-mapPlayerWalk_loop
-	{
-		-webkit-animation	: tweenMapPlayerWalkLoopFrames 140ms steps(8) 0 infinite; /* 90ms */
-		animation			: tweenMapPlayerWalkLoopFrames 140ms steps(8) 0 infinite; /* 90ms */
-	}
 
 	/* INFO */
 	.multiUseInfo_tl
@@ -227,11 +212,6 @@
 @media screen and (min-width:1200px)
 {
 	/* WALK ANIMATION DESKTOP ONLY */
-	.tween-mapPlayerWalk_loop
-	{
-		-webkit-animation	: tweenMapPlayerWalkLoopFrames 140ms steps(8) 0 infinite; /* 90ms */
-		animation			: tweenMapPlayerWalkLoopFrames 140ms steps(8) 0 infinite; /* 90ms */
-	}
 
 	/* INFO */
 	.multiUseInfo_tl

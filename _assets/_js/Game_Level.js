@@ -689,7 +689,7 @@ function level_form()
 
 			for(var object_waterFish in Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["water"]["FISH"])
 			{
-				var w = new backgroundExtras(Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["water"]["FISH"][object_waterFish], ".water-area");
+				var w = new backgroundExtras(Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["water"]["FISH"][object_waterFish], ".layer-field-water-area");
 
 				w.create();
 
