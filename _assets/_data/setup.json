@@ -474,7 +474,7 @@
 					"y": 4,
 					"w": 1,
 					"h": 1,
-					"level": 6,
+					"level": 7,
 					"exit": 0,
 					"direction": "UP",
 					"spawn": 0,
@@ -2146,9 +2146,9 @@
 
 				"FISH":
 				[
-					{"x": 1.5, "y": 8.5, "w": 0.5, "h": 0.5, "n": "level1_waterFish0", "t": "water_fishCCW"},
-					{"x": 0.5, "y": 16, "w": 0.5, "h": 0.5, "n": "level1_waterFish1", "t": "water_fishACW"},
-					{"x": 3, "y": 16, "w": 0.5, "h": 0.5, "n": "level1_waterFish2", "t": "water_fishCCW"}
+					{"x": 1.5, "y": 8.5, "w": 0.5, "h": 0.5, "n": "level6_waterFish0", "t": "water_fishCCW"},
+					{"x": 0.5, "y": 16, "w": 0.5, "h": 0.5, "n": "level6_waterFish1", "t": "water_fishACW"},
+					{"x": 3, "y": 16, "w": 0.5, "h": 0.5, "n": "level6_waterFish2", "t": "water_fishCCW"}
 				]
 			},
 
@@ -2307,7 +2307,7 @@
 			{
 				"n": 7,
 				"weather": "",
-				"mist": true,
+				"mist": false,
 				"land": "forest",
 				"entry_fall": false,
 				"fall_x": 0,
@@ -2346,7 +2346,7 @@
 					{"x": 1, "y": 12.5, "w": 2, "h": 1, "p": "pixels_flowerHeavy"},
 					{"x": 1, "y": 13.5, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavy"},
 					{"x": 2.5, "y": 13.5, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavy"},
-					{"x": 1, "y": 22, "w": 1, "h": 2, "p": "pixels_flowerHeavy"},
+					{"x": 1, "y": 22, "w": 1, "h": 2, "p": "pixels_flowerHeavy"}
 
 				],
 
@@ -2362,8 +2362,8 @@
 
 				"OUTER":
 				{
-					"class_LR": "pixels_forestMassLR",
-					"class_TB": "pixels_forestMassTB"
+					"class_LR": "pixels_waterBase waterPool",
+					"class_TB": "pixels_waterBase waterPool"
 				}
 			},
 
@@ -2371,77 +2371,93 @@
 			{
 				"EDGE":
 				[
-					{"x": 0.5, "y": 7, "w": 0.5, "h": 0.5, "p": "pixels_waterEdge waterEdge tween-waterEdge"},
-					{"x": 3, "y": 7, "w": 0.5, "h": 0.5, "p": "pixels_waterEdge waterEdge tween-waterEdge"},
-					{"x": 0, "y": 7.5, "w": 0.5, "h": 0.5, "p": "pixels_waterEdge waterEdge tween-waterEdge"},
-					{"x": 1, "y": 7.5, "w": 0.5, "h": 0.5, "p": "pixels_waterEdge waterEdge tween-waterEdge"},
-					{"x": 2.5, "y": 7.5, "w": 0.5, "h": 0.5, "p": "pixels_waterEdge waterEdge tween-waterEdge"},
-					{"x": 3.5, "y": 7.5, "w": 0.5, "h": 0.5, "p": "pixels_waterEdge waterEdge tween-waterEdge"},
+					{"x": 0.5, "y": 3, "w": 0.5, "h": 0.5, "p": "pixels_waterEdge waterEdge tween-waterEdge"},
+					{"x": 3, "y": 3, "w": 0.5, "h": 0.5, "p": "pixels_waterEdge waterEdge tween-waterEdge"},
+					{"x": 1, "y": 4.5, "w": 0.5, "h": 0.5, "p": "pixels_waterEdge waterEdge tween-waterEdge"},
+					{"x": 2.5, "y": 4.5, "w": 0.5, "h": 0.5, "p": "pixels_waterEdge waterEdge tween-waterEdge"},
 					{"x": 1.5, "y": 8, "w": 1, "h": 0.5, "p": "pixels_waterEdge waterEdge tween-waterEdge"},
 					{"x": 0.5, "y": 13, "w": 0.5, "h": 0.5, "p": "pixels_waterEdge waterEdge tween-waterEdge"},
 					{"x": 3, "y": 13, "w": 0.5, "h": 0.5, "p": "pixels_waterEdge waterEdge tween-waterEdge"},
 					{"x": 1, "y": 14, "w": 0.5, "h": 0.5, "p": "pixels_waterEdge waterEdge tween-waterEdge"},
+					{"x": 1.5, "y": 14.5, "w": 1, "h": 0.5, "p": "pixels_waterEdge waterEdge tween-waterEdge"},
 					{"x": 2.5, "y": 14, "w": 0.5, "h": 0.5, "p": "pixels_waterEdge waterEdge tween-waterEdge"},
-					{"x": 1.5, "y": 16, "w": 1, "h": 0.5, "p": "pixels_waterEdge waterEdge tween-waterEdge"}
+					{"x": 1.5, "y": 17, "w": 1, "h": 0.5, "p": "pixels_waterEdge waterEdge tween-waterEdge"},
+					{"x": 1.5, "y": 19.5, "w": 1, "h": 0.5, "p": "pixels_waterEdge waterEdge tween-waterEdge"},
+					{"x": 1, "y": 24, "w": 2, "h": 0.5, "p": "pixels_waterEdge waterEdge tween-waterEdge"}
 				],
 
 				"BASE":
 				[
-					{"x": 0.5, "y": 7, "w": 0.5, "h": 0.5, "p": "pixels_waterBase waterPool collideCheck-field"},
-					{"x": 3, "y": 7, "w": 0.5, "h": 0.5, "p": "pixels_waterBase waterPool collideCheck-field"},
-					{"x": 0, "y": 7.5, "w": 1.5, "h": 0.5, "p": "pixels_waterBase waterPool collideCheck-field"},
-					{"x": 2.5, "y": 7.5, "w": 1.5, "h": 0.5, "p": "pixels_waterBase waterPool collideCheck-field"},
-					{"x": 0, "y": 8, "w": 4, "h": 2, "p": "pixels_waterBase waterPool collideCheck-field"},
-					{"x": 0, "y": 10, "w": 1.5, "h": 0.5, "p": "pixels_waterBase waterPool collideCheck-field"},
-					{"x": 2.5, "y": 10, "w": 1.5, "h": 0.5, "p": "pixels_waterBase waterPool collideCheck-field"},
-					{"x": 0, "y": 10.5, "w": 1, "h": 1, "p": "pixels_waterBase waterPool collideCheck-field"},
-					{"x": 3, "y": 10.5, "w": 1, "h": 1, "p": "pixels_waterBase waterPool collideCheck-field"},
-					{"x": 0, "y": 11.5, "w": 0.5, "h": 1.5, "p": "pixels_waterBase waterPool collideCheck-field"},
-					{"x": 3.5, "y": 11.5, "w": 0.5, "h": 1.5, "p": "pixels_waterBase waterPool collideCheck-field"},
+					{"x": 0, "y": 0, "w": 4, "h": 1, "p": "pixels_waterBase waterPool collideCheck-field"},
+					{"x": 0, "y": 1, "w": 1, "h": 1, "p": "pixels_waterBase waterPool collideCheck-field"},
+					{"x": 1, "y": 1, "w": 0.5, "h": 0.5, "p": "pixels_waterBase waterPool collideCheck-field"},
+					{"x": 2.5, "y": 1, "w": 0.5, "h": 0.5, "p": "pixels_waterBase waterPool collideCheck-field"},
+					{"x": 3, "y": 1, "w": 1, "h": 1, "p": "pixels_waterBase waterPool collideCheck-field"},
+					{"x": 0, "y": 2, "w": 0.5, "h": 1, "p": "pixels_waterBase waterPool collideCheck-field"},
+					{"x": 3.5, "y": 2, "w": 0.5, "h": 1, "p": "pixels_waterBase waterPool collideCheck-field"},
+
+					{"x": 0, "y": 3, "w": 1, "h": 8, "p": "pixels_waterBase waterPool collideCheck-field"},
+					{"x": 1, "y": 4.5, "w": 0.5, "h": 5.5, "p": "pixels_waterBase waterPool collideCheck-field"},
+					{"x": 1.5, "y": 8, "w": 1, "h": 1.5, "p": "pixels_waterBase waterPool collideCheck-field"},
+					{"x": 2.5, "y": 4.5, "w": 0.5, "h": 5.5, "p": "pixels_waterBase waterPool collideCheck-field"},
+					{"x": 3, "y": 3, "w": 1, "h": 8, "p": "pixels_waterBase waterPool collideCheck-field"},
+
+					{"x": 0, "y": 11, "w": 0.5, "h": 2, "p": "pixels_waterBase waterPool collideCheck-field"},
+					{"x": 3.5, "y": 11, "w": 0.5, "h": 2, "p": "pixels_waterBase waterPool collideCheck-field"},
+
 					{"x": 0, "y": 13, "w": 1, "h": 1, "p": "pixels_waterBase waterPool collideCheck-field"},
 					{"x": 3, "y": 13, "w": 1, "h": 1, "p": "pixels_waterBase waterPool collideCheck-field"},
-					{"x": 0, "y": 14, "w": 1.5, "h": 3, "p": "pixels_waterBase waterPool collideCheck-field"},
-					{"x": 2.5, "y": 14, "w": 1.5, "h": 3, "p": "pixels_waterBase waterPool collideCheck-field"},
-					{"x": 1.5, "y": 16, "w": 1, "h": 1, "p": "pixels_waterBase waterPool collideCheck-field"},
-					{"x": 0, "y": 17, "w": 1.5, "h": 0.5, "p": "pixels_waterBase waterPool collideCheck-field"},
-					{"x": 2.5, "y": 17, "w": 1.5, "h": 0.5, "p": "pixels_waterBase waterPool collideCheck-field"},
-					{"x": 0.5, "y": 17.5, "w": 0.5, "h": 0.5, "p": "pixels_waterBase waterPool collideCheck-field"},
-					{"x": 3, "y": 17.5, "w": 0.5, "h": 0.5, "p": "pixels_waterBase waterPool collideCheck-field"}
-
+					{"x": 0, "y": 14, "w": 1.5, "h": 0.5, "p": "pixels_waterBase waterPool collideCheck-field"},
+					{"x": 2.5, "y": 14, "w": 1.5, "h": 0.5, "p": "pixels_waterBase waterPool collideCheck-field"},
+					{"x": 0, "y": 14.5, "w": 4, "h": 1.5, "p": "pixels_waterBase waterPool collideCheck-field"},
+					{"x": 0, "y": 16, "w": 1.5, "h": 1, "p": "pixels_waterBase waterPool collideCheck-field"},
+					{"x": 2.5, "y": 16, "w": 1.5, "h": 1, "p": "pixels_waterBase waterPool collideCheck-field"},
+					{"x": 0, "y": 17, "w": 4, "h": 1.5, "p": "pixels_waterBase waterPool collideCheck-field"},
+					{"x": 0, "y": 18.5, "w": 1.5, "h": 1, "p": "pixels_waterBase waterPool collideCheck-field"},
+					{"x": 2.5, "y": 18.5, "w": 1.5, "h": 1, "p": "pixels_waterBase waterPool collideCheck-field"},
+					{"x": 0, "y": 19.5, "w": 4, "h": 1.5, "p": "pixels_waterBase waterPool collideCheck-field"},
+					{"x": 0, "y": 21, "w": 1, "h": 4, "p": "pixels_waterBase waterPool collideCheck-field"},
+					{"x": 3, "y": 21, "w": 1, "h": 4, "p": "pixels_waterBase waterPool collideCheck-field"},
+					{"x": 1, "y": 24, "w": 2, "h": 1, "p": "pixels_waterBase waterPool collideCheck-field"}
 				],
 
 				"FISH":
 				[
-					{"x": 1.5, "y": 8.5, "w": 0.5, "h": 0.5, "n": "level1_waterFish0", "t": "water_fishCCW"},
-					{"x": 0.5, "y": 16, "w": 0.5, "h": 0.5, "n": "level1_waterFish1", "t": "water_fishACW"},
-					{"x": 3, "y": 16, "w": 0.5, "h": 0.5, "n": "level1_waterFish2", "t": "water_fishCCW"}
+					{"x": 3, "y": 5, "w": 0.5, "h": 0.5, "n": "level7_waterFish0", "t": "water_fishCCW"},
+					{"x": 0.5, "y": 5, "w": 0.5, "h": 0.5, "n": "level7_waterFish1", "t": "water_fishACW"},
+
+					{"x": 3, "y": 7, "w": 0.5, "h": 0.5, "n": "level7_waterFish2", "t": "water_fishCCW"},
+					{"x": 0.5, "y": 7, "w": 0.5, "h": 0.5, "n": "level7_waterFish3", "t": "water_fishACW"},
+
+					{"x": 3.5, "y": 22, "w": 0.5, "h": 0.5, "n": "level7_waterFish4", "t": "water_fishCCW"},
+					{"x": 0, "y": 22, "w": 0.5, "h": 0.5, "n": "level7_waterFish5", "t": "water_fishACW"}
 				]
 			},
 
 			"enemyPlayers":
 			[
 				{
-					"x": 0.5,
-					"y": 12,
+					"x": 1.5,
+					"y": 4.5,
 					"w": 0.5,
 					"h": 0.5,
-					"n": "level6_crow0",
+					"n": "level7_crow0",
 					"t": "crow",
-					"l": 0,
-					"known" : "the feather messenger",
-					"spawn": 6
+					"l": 1,
+					"known" : "left claw crow",
+					"spawn": 7
 				},
 
 				{
-					"x": 3,
-					"y": 12,
+					"x": 2,
+					"y": 4.5,
 					"w": 0.5,
 					"h": 0.5,
-					"n": "level6_crow1",
+					"n": "level7_crow1",
 					"t": "crow",
-					"l": 0,
-					"known" : "the feather fisher",
-					"spawn": 6
+					"l": 1,
+					"known" : "right claw crow",
+					"spawn": 7
 				}
 			],
 
@@ -2459,8 +2475,8 @@
 			[
 				{
 					"num": 0,
-					"x": 1.5,
-					"y": 0,
+					"x": 0.5,
+					"y": 2,
 					"w": 1,
 					"h": 1,
 					"level": 7,
@@ -2473,8 +2489,8 @@
 
 				{
 					"num": 1,
-					"x": 0.5,
-					"y": 4,
+					"x": 2.5,
+					"y": 2,
 					"w": 1,
 					"h": 1,
 					"level": 7,
@@ -2487,8 +2503,8 @@
 
 				{
 					"num": 2,
-					"x": 2.5,
-					"y": 4,
+					"x": 1.5,
+					"y": 7,
 					"w": 1,
 					"h": 1,
 					"level": 7,
@@ -2502,7 +2518,7 @@
 				{
 					"num": 3,
 					"x": 1.5,
-					"y": 10,
+					"y": 9.5,
 					"w": 1,
 					"h": 1,
 					"level": 7,
@@ -2516,7 +2532,7 @@
 				{
 					"num": 4,
 					"x": 1.5,
-					"y": 15,
+					"y": 11.5,
 					"w": 1,
 					"h": 1,
 					"level": 6,
@@ -2529,8 +2545,8 @@
 
 				{
 					"num": 5,
-					"x": 0.5,
-					"y": 20,
+					"x": 1.5,
+					"y": 13.5,
 					"w": 1,
 					"h": 1,
 					"level": 7,
@@ -2543,8 +2559,8 @@
 
 				{
 					"num": 6,
-					"x": 2.5,
-					"y": 20,
+					"x": 1,
+					"y": 21,
 					"w": 1,
 					"h": 1,
 					"level": 7,
@@ -2557,8 +2573,8 @@
 
 				{
 					"num": 7,
-					"x": 2.5,
-					"y": 20,
+					"x": 2,
+					"y": 23,
 					"w": 1,
 					"h": 1,
 					"level": 8,
@@ -2585,5 +2601,6 @@
 		{
 
 		}
+
 	}
 }
