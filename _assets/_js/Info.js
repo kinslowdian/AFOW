@@ -1470,8 +1470,10 @@ function portalScreen_request()
 
 	$("#portalScreen").html(PortalScreen.html);
 
+	$("#portalScreen .newPortalScreen_content").addClass("newPortalScreen_hide");
+
 	// EXIT FRAME
-	PortalScreen.delay = setTimeout(portalScreen_run, 20);
+	PortalScreen.delay = setTimeout(portalScreen_run, 100); // 20
 }
 
 function portalScreen_run()

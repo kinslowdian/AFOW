@@ -209,7 +209,8 @@ function temp_messageScreen_init()
 
 	else
 	{
-		$("#messageScreen .messageScreenLand_fieldFill").addClass("field-floor-" + LEVEL_MAIN.landType);
+		// $("#messageScreen .messageScreenLand_fieldFill").addClass("field-floor-" + LEVEL_MAIN.landType);
+		$("#messageScreen .messageScreenLand_fieldFill").addClass(LEVEL_MAIN.floorType);
 	}
 
 

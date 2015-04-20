@@ -215,6 +215,7 @@
 				"weather": "SNOW",
 				"mist": true,
 				"land": "stone",
+				"floor": "field-floor-stone",
 				"entry_fall": true,
 				"fall_x": 0.5,
 				"fall_y": 0.5,
@@ -326,11 +327,6 @@
 				[
 
 				],
-
-				"FLOOR":
-				{
-					"class" : "field-floor-stone"
-				},
 
 				"OUTER":
 				{
@@ -502,6 +498,7 @@
 				"weather": "SNOW",
 				"mist": true,
 				"land": "stone",
+				"floor": "field-floor-stone",
 				"entry_fall": false,
 				"fall_x": 0,
 				"fall_y": 0,
@@ -695,11 +692,6 @@
 
 				],
 
-				"FLOOR":
-				{
-					"class" : "field-floor-stone"
-				},
-
 				"OUTER":
 				{
 					"class_LR": "pixels_stoneForestMassLR",
@@ -878,6 +870,7 @@
 				"weather": "SNOW",
 				"mist": true,
 				"land": "stone",
+				"floor": "field-floor-stone",
 				"entry_fall": false,
 				"fall_x": 0,
 				"fall_y": 0,
@@ -1034,11 +1027,6 @@
 				[
 
 				],
-
-				"FLOOR":
-				{
-					"class" : "field-floor-stone"
-				},
 
 				"OUTER":
 				{
@@ -1265,6 +1253,7 @@
 				"weather": "SNOW",
 				"mist": false,
 				"land": "underground",
+				"floor": "field-floor-underground",
 				"entry_fall": false,
 				"fall_x": 0,
 				"fall_y": 0,
@@ -1328,11 +1317,6 @@
 				[
 
 				],
-
-				"FLOOR":
-				{
-					"class" : "field-floor-underground"
-				},
 
 				"OUTER":
 				{
@@ -1461,6 +1445,7 @@
 				"weather": "SNOW",
 				"mist": false,
 				"land": "underground",
+				"floor": "field-floor-underground",
 				"entry_fall": false,
 				"fall_x": 0,
 				"fall_y": 0,
@@ -1535,11 +1520,6 @@
 				[
 
 				],
-
-				"FLOOR":
-				{
-					"class" : "field-floor-underground"
-				},
 
 				"OUTER":
 				{
@@ -1691,6 +1671,7 @@
 				"weather": "RAIN",
 				"mist": false,
 				"land": "forest",
+				"floor": "field-floor-forest",
 				"entry_fall": false,
 				"fall_x": 0,
 				"fall_y": 0,
@@ -1769,11 +1750,6 @@
 				[
 
 				],
-
-				"FLOOR":
-				{
-					"class" : "field-floor-forest"
-				},
 
 				"OUTER":
 				{
@@ -2023,6 +1999,7 @@
 				"weather": "RAIN",
 				"mist": false,
 				"land": "forest",
+				"floor": "field-floor-forest",
 				"entry_fall": false,
 				"fall_x": 0,
 				"fall_y": 0,
@@ -2088,11 +2065,6 @@
 				[
 
 				],
-
-				"FLOOR":
-				{
-					"class" : "field-floor-forest"
-				},
 
 				"OUTER":
 				{
@@ -2308,7 +2280,8 @@
 				"n": 7,
 				"weather": "",
 				"mist": false,
-				"land": "forest",
+				"land": "sea",
+				"floor": "field-floor-forest",
 				"entry_fall": false,
 				"fall_x": 0,
 				"fall_y": 0,
@@ -2354,11 +2327,6 @@
 				[
 
 				],
-
-				"FLOOR":
-				{
-					"class" : "field-floor-forest"
-				},
 
 				"OUTER":
 				{

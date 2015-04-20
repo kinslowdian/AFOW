@@ -38,6 +38,7 @@ LEVEL.prototype.create = function()
 	this.weather				= this.settings.weather;
 	this.mist						= this.settings.mist;
 	this.landType				= this.settings.land;
+	this.floorType			= this.settings.floor;
 
 	this.spirits = {};
 
@@ -452,9 +453,11 @@ gate.prototype.build = function()
 	$("." + this.buildData.container).append(this.buildData.html);
 	$("." + this.buildData.container + " #_gate").attr("id", this.id);
 
-	$("#" + this.id + " .gate-outer-floor").addClass("field-floor-" + LEVEL_MAIN.landType);
+	// $("#" + this.id + " .gate-outer-floor").addClass("field-floor-" + LEVEL_MAIN.landType);
+	$("#" + this.id + " .gate-outer-floor").addClass(LEVEL_MAIN.floorType);
 
-	$("#" + this.id + " .gate-inner-floor").addClass("field-floor-" + LEVEL_MAIN.landType);
+	// $("#" + this.id + " .gate-inner-floor").addClass("field-floor-" + LEVEL_MAIN.landType);
+	$("#" + this.id + " .gate-inner-floor").addClass(LEVEL_MAIN.floorType);
 
 	if(!this.closed)
 	{
@@ -566,7 +569,9 @@ function level_form()
 
 	// FLOOR COLOUR
 
-	$(".layer-field-floor > div").addClass(Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["texture"]["FLOOR"]["class"]);
+	// $(".layer-field-floor > div").addClass(Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["texture"]["FLOOR"]["class"]);
+
+	$(".layer-field-floor > div").addClass(LEVEL_MAIN.floorType);
 
 	// OUTER BACKGROUND
 
@@ -855,7 +860,8 @@ function digGrave(dead_obj)
 	$("#" + dead_obj.id).css(dead_obj.buildData.css);
 
 	// GRAVE FIX
-	$("#" + dead_obj.id).addClass("field-floor-" + LEVEL_MAIN.landType);
+	// $("#" + dead_obj.id).addClass("field-floor-" + LEVEL_MAIN.landType);
+	$("#" + dead_obj.id).addClass(LEVEL_MAIN.floorType);
 	// GRAVE FIX
 
 	enemies_ARR[dead_obj.array_index].rendered = true;

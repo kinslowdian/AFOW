@@ -2161,7 +2161,7 @@ function battleEnd_battleOver_returnWin()
 
 	$("#" + theBattle.grave.ref).removeAttr("id");
 
-	$("#" + enemies_ARR[enemyTarget.array_index].id).addClass("field-floor-" + LEVEL_MAIN.landType);
+	$("#" + enemies_ARR[enemyTarget.array_index].id).addClass(LEVEL_MAIN.floorType);
 
 	battleEnd_battleOver_setControlsBasic();
 
