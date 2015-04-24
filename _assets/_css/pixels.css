@@ -882,6 +882,14 @@ div[class*='tween-']
 	background-size: 640px 320px;
 }
 
+.pixels_flowerLightEvening0
+{
+	background-image: url(../_img/tile_flowersLight_evening0_1x.png);
+	background-position: 0 0;
+	background-repeat: repeat;
+	background-size: 80px 80px;
+}
+
 .pixels_flowerHeavyEvening0
 {
 	background-image: url(../_img/tile_flowersHeavy_evening0_1x.png);
@@ -889,6 +897,30 @@ div[class*='tween-']
 	background-repeat: repeat;
 	background-size: 80px 80px;
 }
+
+.pixels_forestEvening0
+{
+	background-image: url(../_img/tile_evening0PineTrees_1x.png);
+	background-repeat: repeat;
+	background-size: 80px 80px;
+}
+
+.pixels_forestMassEvening0LR
+{
+	background-image: url(../_img/tile_pineTreesMassLR_evening0_1x.png);
+	background-repeat: repeat;
+
+	background-size: 320px 320px;
+}
+
+.pixels_forestMassEvening0TB
+{
+	background-image: url(../_img/tile_pineTreesMassTB_evening0_1x.png);
+	background-repeat: repeat;
+
+	background-size: 320px 320px;
+}
+
 
 .pixels_forestMassLR
 {
@@ -1363,9 +1395,29 @@ div[class*='tween-']
 		background-image: url(../_img/tile_undergroundFloor_1x.png);
 	}
 
+	.pixels_flowerLightEvening0
+	{
+		background-image: url(../_img/tile_flowersLight_evening0_1x.png);
+	}
+
 	.pixels_flowerHeavyEvening0
 	{
 		background-image: url(../_img/tile_flowersHeavy_evening0_1x.png);
+	}
+
+	.pixels_forestEvening0
+	{
+		background-image: url(../_img/tile_evening0PineTrees_1x.png);
+	}
+
+	.pixels_forestMassEvening0LR
+	{
+		background-image: url(../_img/tile_pineTreesMassLR_evening0_1x.png);
+	}
+
+	.pixels_forestMassEvening0TB
+	{
+		background-image: url(../_img/tile_pineTreesMassTB_evening0_1x.png);
 	}
 
 	.pixels_forestMassLR
@@ -1840,9 +1892,29 @@ div[class*='tween-']
 		background-image: url(../_img/tile_undergroundFloor_2x.png);
 	}
 
+	.pixels_flowerLightEvening0
+	{
+		background-image: url(../_img/tile_flowersLight_evening0_2x.png);
+	}
+
 	.pixels_flowerHeavyEvening0
 	{
 		background-image: url(../_img/tile_flowersHeavy_evening0_2x.png);
+	}
+
+	.pixels_forestEvening0
+	{
+		background-image: url(../_img/tile_evening0PineTrees_2x.png);
+	}
+
+	.pixels_forestMassEvening0LR
+	{
+		background-image: url(../_img/tile_pineTreesMassLR_evening0_2x.png);
+	}
+
+	.pixels_forestMassEvening0TB
+	{
+		background-image: url(../_img/tile_pineTreesMassTB_evening0_2x.png);
 	}
 
 	.pixels_forestMassLR

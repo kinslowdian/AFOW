@@ -1,16 +1,17 @@
-		"level4":
+		"level9":
 		{
 			"levelSettings":
 			{
-				"n": 4,
-				"weather": "SNOW",
+				"n": 9,
+				"weather": "",
 				"mist": false,
-				"land": "underground",
+				"land": "forest",
+				"floor": "field-floor-forest",
 				"entry_fall": false,
 				"fall_x": 0,
 				"fall_y": 0,
 				"fall_d": "DOWN",
-				"title_top": "under the forest edge",
+				"title_top": "a corner of wormholes",
 				"levelFunctions":
 				{
 
@@ -34,21 +35,29 @@
 
 				],
 
-				"FLOOR":
-				{
-					"class" : "field-floor-stone"
-				},
-
 				"OUTER":
 				{
-					"class_LR": "pixels_undergroundMass",
-					"class_TB": "pixels_undergroundMass"
+					"class_LR": "pixels_forestMassLR",
+					"class_TB": "pixels_forestMassTB"
 				}
 			},
 
 			"water":
 			{
+				"EDGE":
+				[
 
+				],
+
+				"BASE":
+				[
+
+				],
+
+				"FISH":
+				[
+
+				]
 			},
 
 			"enemyPlayers":
@@ -58,43 +67,7 @@
 
 			"friendPlayers":
 			[
-				{
-					"x": 1.5,
-					"y": 13.5,
-					"w": 0.5,
-					"h": 0.5,
-					"n": "level2_friend0",
-					"customFog": false,
-					"customDarkness": false,
-					"customHaze": false,
-					"customFill": false,
-					"bg": "pixels_behindWorld_good",
-					"grass": "pixels_stoneFlowerHeavy",
-					"once": false,
-					"character": "_player_friend_40x40",
-					"spawn": 2,
-					"hint": "you must find the route under this mountain, it's south of this mountain foot...",
-					"time": 4.6
-				},
 
-				{
-					"x": 2,
-					"y": 13.5,
-					"w": 0.5,
-					"h": 0.5,
-					"n": "level2_friend1",
-					"customFog": false,
-					"customDarkness": false,
-					"customHaze": false,
-					"customFill": false,
-					"bg": "pixels_behindWorld_good",
-					"grass": "pixels_stoneFlowerHeavy",
-					"once": false,
-					"character": "_player_friend_40x40",
-					"spawn": 2,
-					"hint": "you are lost like us, try another wormhole hurry!",
-					"time": 4.6
-				}
 			],
 
 			"gates":
@@ -104,145 +77,7 @@
 
 			"portal":
 			[
-				{
-					"num": 0,
-					"x": 1.5,
-					"y": 0,
-					"w": 1,
-					"h": 1,
-					"level": 1,
-					"exit": 7,
-					"direction": "DOWN",
-					"spawn": 2,
-					"bossLevel": false,
-					"p": "portal_top_stone"
-				},
 
-				{
-					"num": 1,
-					"x": 1.5,
-					"y": 5,
-					"w": 1,
-					"h": 1,
-					"level": 2,
-					"exit": 7,
-					"direction": "UP",
-					"spawn": 2,
-					"bossLevel": false,
-					"p": "portal_top_stone"
-				},
-
-				{
-					"num": 2,
-					"x": 1.5,
-					"y": 12,
-					"w": 1,
-					"h": 1,
-					"level": 2,
-					"exit": 6,
-					"direction": "UP",
-					"spawn": 2,
-					"bossLevel": false,
-					"p": "portal_top_stone"
-				},
-
-				{
-					"num": 3,
-					"x": 0,
-					"y": 15,
-					"w": 1,
-					"h": 1,
-					"level": 2,
-					"exit": 8,
-					"direction": "DOWN",
-					"spawn": 2,
-					"bossLevel": false,
-					"p": "portal_top_forest"
-				},
-
-				{
-					"num": 4,
-					"x": 1.5,
-					"y": 15,
-					"w": 1,
-					"h": 1,
-					"level": 2,
-					"exit": 2,
-					"direction": "DOWN",
-					"spawn": 2,
-					"bossLevel": false,
-					"p": "portal_top_forest"
-				},
-
-				{
-					"num": 5,
-					"x": 3,
-					"y": 15,
-					"w": 1,
-					"h": 1,
-					"level": 2,
-					"exit": 2,
-					"direction": "DOWN",
-					"spawn": 2,
-					"bossLevel": false,
-					"p": "portal_top_forest"
-				},
-
-				{
-					"num": 6,
-					"x": 0,
-					"y": 20,
-					"w": 1,
-					"h": 1,
-					"level": 2,
-					"exit": 1,
-					"direction": "RIGHT",
-					"spawn": 2,
-					"bossLevel": false,
-					"p": "portal_top_forest"
-				},
-
-				{
-					"num": 7,
-					"x": 3,
-					"y": 20,
-					"w": 1,
-					"h": 1,
-					"level": 2,
-					"exit": 1,
-					"direction": "LEFT",
-					"spawn": 2,
-					"bossLevel": false,
-					"p": "portal_top_forest"
-				},
-
-				{
-					"num": 8,
-					"x": 1.5,
-					"y": 21.5,
-					"w": 1,
-					"h": 1,
-					"level": 2,
-					"exit": 3,
-					"direction": "DOWN",
-					"spawn": 2,
-					"bossLevel": false,
-					"p": "portal_top_forest"
-				},
-
-				{
-					"num": 9,
-					"x": 1.5,
-					"y": 24,
-					"w": 1,
-					"h": 1,
-					"level": 3,
-					"exit": 0,
-					"direction": "UP",
-					"spawn": 2,
-					"bossLevel": false,
-					"p": "portal_top_forest"
-				}
 			],
 
 			"sound_level":

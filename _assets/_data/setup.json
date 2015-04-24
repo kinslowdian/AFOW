@@ -56,13 +56,13 @@
 			"title_1" 			: "",
 			"btn_0"					: "fight",
 			"btn_1"					: "leave",
-			"enemy_static"	: ["A"],
+			"enemy_static"	: [""],
 
 			"enemy_dynamic"	: ["is furious.", "is ready to attack.", "screams at you.", "wants an argument.", "blocks your way.", "is looking forward to christmas.", "is ready to battle."],
 
 			"player_static"		: ["What do you do with your"],
 
-			"player_dynamic"	:	["powers?", "set of spanners?", "book of passwords?", "collection of coins?", "old keyboard?", "fridge magnets?"]
+			"player_dynamic"	:	["lack of confidence?", "short temper?", "emotional issues?", "built up hatred?", "blood stained claws?", "rusty shovel?"]
 		},
 
 		"nav_intobattle":
@@ -470,7 +470,7 @@
 					"y": 4,
 					"w": 1,
 					"h": 1,
-					"level": 9,
+					"level": 11,
 					"exit": 0,
 					"direction": "UP",
 					"spawn": 0,
@@ -2174,7 +2174,7 @@
 					"direction": "DOWN",
 					"spawn": 6,
 					"bossLevel": false,
-					"p": "pixels_portal"
+					"p": "portal_top_forest"
 				},
 
 				{
@@ -2188,7 +2188,7 @@
 					"direction": "UP",
 					"spawn": 6,
 					"bossLevel": false,
-					"p": "pixels_portal"
+					"p": "portal_top_forest"
 				},
 
 				{
@@ -2202,7 +2202,7 @@
 					"direction": "UP",
 					"spawn": 6,
 					"bossLevel": false,
-					"p": "pixels_portal"
+					"p": "portal_top_forest"
 				},
 
 				{
@@ -2216,7 +2216,7 @@
 					"direction": "DOWN",
 					"spawn": 6,
 					"bossLevel": false,
-					"p": "pixels_portal"
+					"p": "portal_top_forest"
 				},
 
 				{
@@ -2230,7 +2230,7 @@
 					"direction": "UP",
 					"spawn": 6,
 					"bossLevel": false,
-					"p": "pixels_portal"
+					"p": "portal_top_forest"
 				},
 
 				{
@@ -2244,7 +2244,7 @@
 					"direction": "DOWN",
 					"spawn": 6,
 					"bossLevel": false,
-					"p": "pixels_portal"
+					"p": "portal_top_forest"
 				},
 
 				{
@@ -2258,7 +2258,7 @@
 					"direction": "DOWN",
 					"spawn": 6,
 					"bossLevel": false,
-					"p": "pixels_portal"
+					"p": "portal_top_forest"
 				}
 			],
 
@@ -2452,7 +2452,7 @@
 					"direction": "RIGHT",
 					"spawn": 7,
 					"bossLevel": false,
-					"p": "pixels_portal"
+					"p": "portal_top_forest"
 				},
 
 				{
@@ -2466,7 +2466,7 @@
 					"direction": "LEFT",
 					"spawn": 7,
 					"bossLevel": false,
-					"p": "pixels_portal"
+					"p": "portal_top_forest"
 				},
 
 				{
@@ -2480,7 +2480,7 @@
 					"direction": "UP",
 					"spawn": 7,
 					"bossLevel": false,
-					"p": "pixels_portal"
+					"p": "portal_top_forest"
 				},
 
 				{
@@ -2494,7 +2494,7 @@
 					"direction": "DOWN",
 					"spawn": 7,
 					"bossLevel": false,
-					"p": "pixels_portal"
+					"p": "portal_top_forest"
 				},
 
 				{
@@ -2508,7 +2508,7 @@
 					"direction": "RIGHT",
 					"spawn": 7,
 					"bossLevel": false,
-					"p": "pixels_portal"
+					"p": "portal_top_forest"
 				},
 
 				{
@@ -2522,7 +2522,7 @@
 					"direction": "UP",
 					"spawn": 7,
 					"bossLevel": false,
-					"p": "pixels_portal"
+					"p": "portal_top_forest"
 				},
 
 				{
@@ -2536,7 +2536,7 @@
 					"direction": "DOWN",
 					"spawn": 7,
 					"bossLevel": false,
-					"p": "pixels_portal"
+					"p": "portal_top_forest"
 				},
 
 				{
@@ -2550,7 +2550,7 @@
 					"direction": "LEFT",
 					"spawn": 7,
 					"bossLevel": false,
-					"p": "pixels_portal"
+					"p": "portal_top_forest"
 				}
 			],
 
@@ -2564,7 +2564,7 @@
 
 			]
 		},
-		
+
 		"level8":
 		{
 			"levelSettings":
@@ -2645,7 +2645,7 @@
 					{"x": 0, "y": 20, "w": 3, "h": 0.5, "p": "pixels_flowerLight"},
 					{"x": 0.5, "y": 20.5, "w": 2.5, "h": 0.5, "p": "pixels_flowerLight"},
 					{"x": 1, "y": 21, "w": 3, "h": 0.5, "p": "pixels_flowerLight"},
-					
+
 					{"x": 0, "y": 23.5, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavy"},
 					{"x": 3.5, "y": 23.5, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavy"},
 					{"x": 1.5, "y": 2, "w": 1, "h": 2, "p": "pixels_flowerHeavy"},
@@ -2679,7 +2679,7 @@
 					{"x": 3.5, "y": 1.5, "w": 0.5, "h": 0.5, "p": "pixels_waterEdge waterEdge tween-waterEdge"},
 					{"x": 3, "y": 1, "w": 0.5, "h": 0.5, "p": "pixels_waterEdge waterEdge tween-waterEdge"},
 					{"x": 2, "y": 5, "w": 0.5, "h": 0.5, "p": "pixels_waterEdge waterEdge tween-waterEdge"},
-					{"x": 1.5, "y": 5, "w": 0.5, "h": 0.5, "p": "pixels_waterEdge waterEdge tween-waterEdge"}			
+					{"x": 1.5, "y": 5, "w": 0.5, "h": 0.5, "p": "pixels_waterEdge waterEdge tween-waterEdge"}
 				],
 
 				"BASE":
@@ -2732,7 +2732,7 @@
 				"bossLevel": false,
 				"p": "portal_top_forest"
 				},
-				
+
 				{
 				"num": 1,
 				"x": 1.5,
@@ -2746,7 +2746,7 @@
 				"bossLevel": false,
 				"p": "portal_top_forest"
 				},
-				
+
 				{
 				"num": 2,
 				"x": 1.5,
@@ -2760,7 +2760,7 @@
 				"bossLevel": false,
 				"p": "portal_top_forest"
 				},
-				
+
 				{
 				"num": 3,
 				"x": 1.5,
@@ -2774,7 +2774,7 @@
 				"bossLevel": false,
 				"p": "portal_top_forest"
 				},
-				
+
 				{
 				"num": 4,
 				"x": 0,
@@ -2788,7 +2788,7 @@
 				"bossLevel": false,
 				"p": "portal_top_forest"
 				},
-				
+
 				{
 				"num": 5,
 				"x": 1.5,
@@ -2802,7 +2802,7 @@
 				"bossLevel": false,
 				"p": "portal_top_forest"
 				},
-				
+
 				{
 				"num": 6,
 				"x": 1.5,
@@ -2816,7 +2816,7 @@
 				"bossLevel": false,
 				"p": "portal_top_forest"
 				},
-				
+
 				{
 				"num": 7,
 				"x": 3,
@@ -2830,7 +2830,7 @@
 				"bossLevel": false,
 				"p": "portal_top_forest"
 				},
-				
+
 				{
 				"num": 8,
 				"x": 3,
@@ -2844,7 +2844,7 @@
 				"bossLevel": false,
 				"p": "portal_top_forest"
 				},
-				
+
 				{
 				"num": 9,
 				"x": 3,
@@ -2858,7 +2858,7 @@
 				"bossLevel": false,
 				"p": "portal_top_forest"
 				},
-				
+
 				{
 				"num": 10,
 				"x": 0,
@@ -2884,7 +2884,7 @@
 
 			]
 		},
-		
+
 		"level9":
 		{
 			"levelSettings":
@@ -2962,7 +2962,7 @@
 					{"x": 1.5, "y": 6.5, "w": 1, "h": 0.5, "p": "pixels_flowerLight"},
 					{"x": 2.5, "y": 5, "w": 1, "h": 2.5, "p": "pixels_flowerLight"},
 					{"x": 3.5, "y": 5.5, "w": 0.5, "h": 3, "p": "pixels_flowerLight"},
-					
+
 					{"x": 0, "y": 13.5, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavy"},
 					{"x": 3.5, "y": 13.5, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavy"},
 					{"x": 3.5, "y": 17, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavy"},
@@ -3001,7 +3001,7 @@
 			{
 				"EDGE":
 				[
-			
+
 				],
 
 				"BASE":
@@ -3045,7 +3045,7 @@
 				"bossLevel": false,
 				"p": "portal_top_forest"
 				},
-				
+
 				{
 				"num": 1,
 				"x": 1.5,
@@ -3059,7 +3059,7 @@
 				"bossLevel": false,
 				"p": "portal_top_forest"
 				},
-				
+
 				{
 				"num": 2,
 				"x": 0,
@@ -3073,7 +3073,7 @@
 				"bossLevel": false,
 				"p": "portal_top_forest"
 				},
-				
+
 				{
 				"num": 3,
 				"x": 1,
@@ -3087,7 +3087,7 @@
 				"bossLevel": false,
 				"p": "portal_top_forest"
 				},
-				
+
 				{
 				"num": 4,
 				"x": 2,
@@ -3101,7 +3101,7 @@
 				"bossLevel": false,
 				"p": "portal_top_forest"
 				},
-				
+
 				{
 				"num": 5,
 				"x": 3,
@@ -3115,7 +3115,7 @@
 				"bossLevel": false,
 				"p": "portal_top_forest"
 				},
-				
+
 				{
 				"num": 6,
 				"x": 3,
@@ -3129,7 +3129,7 @@
 				"bossLevel": false,
 				"p": "portal_top_forest"
 				},
-				
+
 				{
 				"num": 7,
 				"x": 3,
@@ -3143,7 +3143,7 @@
 				"bossLevel": false,
 				"p": "portal_top_forest"
 				},
-				
+
 				{
 				"num": 8,
 				"x": 0,
@@ -3157,7 +3157,7 @@
 				"bossLevel": false,
 				"p": "portal_top_forest"
 				},
-				
+
 				{
 				"num": 9,
 				"x": 3,
@@ -3171,7 +3171,7 @@
 				"bossLevel": false,
 				"p": "portal_top_forest"
 				},
-				
+
 				{
 				"num": 10,
 				"x": 0,
@@ -3185,7 +3185,7 @@
 				"bossLevel": false,
 				"p": "portal_top_forest"
 				},
-				
+
 				{
 				"num": 11,
 				"x": 3,
@@ -3199,7 +3199,7 @@
 				"bossLevel": false,
 				"p": "portal_top_forest"
 				},
-				
+
 				{
 				"num": 12,
 				"x": 0,
@@ -3213,7 +3213,7 @@
 				"bossLevel": false,
 				"p": "portal_top_forest"
 				},
-				
+
 				{
 				"num": 13,
 				"x": 3,
@@ -3221,13 +3221,13 @@
 				"w": 1,
 				"h": 1,
 				"level": 10,
-				"exit": 0,
+				"exit": 8,
 				"direction": "UP",
 				"spawn": 9,
 				"bossLevel": false,
 				"p": "portal_top_forest"
 				},
-				
+
 				{
 				"num": 14,
 				"x": 0,
@@ -3241,7 +3241,7 @@
 				"bossLevel": false,
 				"p": "portal_top_forest"
 				},
-				
+
 				{
 				"num": 15,
 				"x": 3,
@@ -3252,6 +3252,876 @@
 				"exit": 0,
 				"direction": "LEFT",
 				"spawn": 9,
+				"bossLevel": false,
+				"p": "portal_top_forest"
+				}
+			],
+
+			"sound_level":
+			[
+
+			],
+
+			"sound_trigger":
+			[
+
+			]
+		},
+
+		"level10":
+		{
+			"levelSettings":
+			{
+				"n": 10,
+				"weather": "RAIN",
+				"mist": false,
+				"land": "forest",
+				"floor": "field-floor-forest",
+				"entry_fall": false,
+				"fall_x": 0,
+				"fall_y": 0,
+				"fall_d": "DOWN",
+				"title_top": "nearing a murder of crows",
+				"levelFunctions":
+				{
+
+				}
+			},
+
+			"texture":
+			{
+				"WALLS" :
+				[
+					{"x": 0.5, "y": 0.5, "w": 0.5, "h": 22.5, "p": "pixels_forest collideCheck-field"},
+					{"x": 1, "y": 22.5, "w": 0.5, "h": 2.5, "p": "pixels_forest collideCheck-field"},
+					{"x": 2.5, "y": 22.5, "w": 0.5, "h": 2.5, "p": "pixels_forest collideCheck-field"},
+					{"x": 1.5, "y": 18.5, "w": 1, "h": 3.5, "p": "pixels_forest collideCheck-field"},
+					{"x": 1.5, "y": 16, "w": 0.5, "h": 2.5, "p": "pixels_forest collideCheck-field"},
+					{"x": 2, "y": 15.5, "w": 1, "h": 1, "p": "pixels_forest collideCheck-field"},
+					{"x": 2, "y": 13.5, "w": 1, "h": 1, "p": "pixels_forest collideCheck-field"},
+					{"x": 2, "y": 11.5, "w": 1, "h": 1, "p": "pixels_forest collideCheck-field"},
+					{"x": 2, "y": 9.5, "w": 1, "h": 1, "p": "pixels_forest collideCheck-field"},
+					{"x": 2, "y": 7.5, "w": 1, "h": 1, "p": "pixels_forest collideCheck-field"},
+					{"x": 2, "y": 5.5, "w": 1, "h": 1, "p": "pixels_forest collideCheck-field"},
+					{"x": 2, "y": 4, "w": 1.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+					{"x": 1.5, "y": 1, "w": 2, "h": 3, "p": "pixels_forest collideCheck-field"},
+					{"x": 1.5, "y": 0, "w": 0.5, "h": 1, "p": "pixels_forest collideCheck-field"},
+					{"x": 3, "y": 4.5, "w": 0.5, "h": 18.5, "p": "pixels_forest collideCheck-field"}
+				],
+
+				"PLANTS":
+				[
+					{"x": 0, "y": 0, "w": 1.5, "h": 0.5, "p": "pixels_flowerLight"},
+					{"x": 1, "y": 0.5, "w": 0.5, "h": 3.5, "p": "pixels_flowerLight"},
+					{"x": 1, "y": 4, "w": 1, "h": 12, "p": "pixels_flowerLight"},
+					{"x": 1, "y": 16, "w": 0.5, "h": 6, "p": "pixels_flowerLight"},
+					{"x": 1, "y": 22, "w": 2, "h": 0.5, "p": "pixels_flowerLight"},
+					{"x": 2.5, "y": 18.5, "w": 0.5, "h": 3.5, "p": "pixels_flowerLight"},
+					{"x": 2, "y": 17.5, "w": 1, "h": 1, "p": "pixels_flowerLight"},
+					{"x": 1.5, "y": 22.5, "w": 1, "h": 1.5, "p": "pixels_flowerLight"},
+					{"x": 0, "y": 23, "w": 1, "h": 1, "p": "pixels_flowerLight"},
+					{"x": 0, "y": 0.5, "w": 0.5, "h": 22.5, "p": "pixels_flowerLight"},
+
+					{"x": 3, "y": 0, "w": 1, "h": 1, "p": "pixels_flowerHeavy"},
+					{"x": 3.5, "y": 1, "w": 0.5, "h": 22, "p": "pixels_flowerHeavy"},
+					{"x": 3, "y": 23, "w": 1, "h": 1, "p": "pixels_flowerHeavy"}
+				],
+
+				"CLEARING":
+				[
+
+				],
+
+				"OUTER":
+				{
+					"class_LR": "pixels_forestMassLR",
+					"class_TB": "pixels_forestMassTB"
+				}
+			},
+
+			"water":
+			{
+				"EDGE":
+				[
+
+				],
+
+				"BASE":
+				[
+
+				],
+
+				"FISH":
+				[
+
+				]
+			},
+
+			"enemyPlayers":
+			[
+				{
+				"x": 1,
+				"y": 1,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level10_crow0",
+				"t": "crow",
+				"l": 3,
+				"known": "the guard of crows",
+				"spawn": 10
+				},
+
+				{
+				"x": 1,
+				"y": 2,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level10_crow1",
+				"t": "crow",
+				"l": 3,
+				"known": "the guard of crows",
+				"spawn": 10
+				},
+
+				{
+				"x": 1,
+				"y": 3,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level10_crow2",
+				"t": "crow",
+				"l": 6,
+				"known": "the wormhole watcher",
+				"spawn": 10
+				},
+
+				{
+				"x": 2.5,
+				"y": 19,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level10_crow3",
+				"t": "crow",
+				"l": 18,
+				"known": "the crow of secrets",
+				"spawn": 10
+				},
+
+				{
+				"x": 2.5,
+				"y": 20,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level10_crow4",
+				"t": "crow",
+				"l": 12,
+				"known": "the crow of watching",
+				"spawn": 10
+				},
+
+				{
+				"x": 2.5,
+				"y": 21,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level10_crow5",
+				"t": "crow",
+				"l": 6,
+				"known": "the crow of watching",
+				"spawn": 10
+				}
+			],
+
+			"friendPlayers":
+			[
+
+			],
+
+			"gates":
+			[
+
+			],
+
+			"portal":
+			[
+				{
+				"num": 0,
+				"x": 2,
+				"y": 0,
+				"w": 1,
+				"h": 1,
+				"level": 10,
+				"exit": 1,
+				"direction": "RIGHT",
+				"spawn": 10,
+				"bossLevel": false,
+				"p": "portal_top_forest"
+				},
+
+				{
+				"num": 1,
+				"x": 2,
+				"y": 4.5,
+				"w": 1,
+				"h": 1,
+				"level": 10,
+				"exit": 8,
+				"direction": "LEFT",
+				"spawn": 10,
+				"bossLevel": false,
+				"p": "portal_top_forest"
+				},
+
+				{
+				"num": 2,
+				"x": 2,
+				"y": 6.5,
+				"w": 1,
+				"h": 1,
+				"level": 10,
+				"exit": 9,
+				"direction": "LEFT",
+				"spawn": 10,
+				"bossLevel": false,
+				"p": "portal_top_forest"
+				},
+
+				{
+				"num": 3,
+				"x": 2,
+				"y": 8.5,
+				"w": 1,
+				"h": 1,
+				"level": 10,
+				"exit": 1,
+				"direction": "LEFT",
+				"spawn": 10,
+				"bossLevel": false,
+				"p": "portal_top_forest"
+				},
+
+				{
+				"num": 4,
+				"x": 2,
+				"y": 10.5,
+				"w": 1,
+				"h": 1,
+				"level": 10,
+				"exit": 6,
+				"direction": "LEFT",
+				"spawn": 10,
+				"bossLevel": false,
+				"p": "portal_top_forest"
+				},
+
+				{
+				"num": 5,
+				"x": 2,
+				"y": 12.5,
+				"w": 1,
+				"h": 1,
+				"level": 10,
+				"exit": 0,
+				"direction": "LEFT",
+				"spawn": 10,
+				"bossLevel": false,
+				"p": "portal_top_forest"
+				},
+
+				{
+				"num": 6,
+				"x": 2,
+				"y": 14.5,
+				"w": 1,
+				"h": 1,
+				"level": 10,
+				"exit": 9,
+				"direction": "LEFT",
+				"spawn": 10,
+				"bossLevel": false,
+				"p": "portal_top_forest"
+				},
+
+				{
+				"num": 7,
+				"x": 2,
+				"y": 16.5,
+				"w": 1,
+				"h": 1,
+				"level": 9,
+				"exit": 15,
+				"direction": "DOWN",
+				"spawn": 10,
+				"bossLevel": false,
+				"p": "portal_top_forest"
+				},
+
+				{
+				"num": 8,
+				"x": 0,
+				"y": 24,
+				"w": 1,
+				"h": 1,
+				"level": 9,
+				"exit": 13,
+				"direction": "UP",
+				"spawn": 10,
+				"bossLevel": false,
+				"p": "portal_top_forest"
+				},
+
+				{
+				"num": 9,
+				"x": 1.5,
+				"y": 24,
+				"w": 1,
+				"h": 1,
+				"level": 10,
+				"exit": 1,
+				"direction": "UP",
+				"spawn": 10,
+				"bossLevel": false,
+				"p": "portal_top_forest"
+				},
+
+				{
+				"num": 10,
+				"x": 3,
+				"y": 24,
+				"w": 1,
+				"h": 1,
+				"level": 11,
+				"exit": 0,
+				"direction": "UP",
+				"spawn": 10,
+				"bossLevel": false,
+				"p": "portal_top_forest"
+				}
+			],
+
+			"sound_level":
+			[
+
+			],
+
+			"sound_trigger":
+			[
+
+			]
+		},
+
+		"level11":
+		{
+			"levelSettings":
+			{
+				"n": 11,
+				"weather": "RAIN",
+				"mist": false,
+				"land": "forest",
+				"floor": "field-floor-forest",
+				"entry_fall": false,
+				"fall_x": 0,
+				"fall_y": 0,
+				"fall_d": "DOWN",
+				"title_top": "the advance of crows",
+				"levelFunctions":
+				{
+
+				}
+			},
+
+			"texture":
+			{
+				"WALLS" :
+				[
+					{"x": 2.5, "y": 12, "w": 0.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+					{"x": 1, "y": 12, "w": 0.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+					{"x": 3.5, "y": 13, "w": 0.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+					{"x": 0, "y": 13, "w": 0.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+					{"x": 2.5, "y": 18, "w": 0.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+					{"x": 1, "y": 18, "w": 0.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+					{"x": 3.5, "y": 17, "w": 0.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+					{"x": 0, "y": 17, "w": 0.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+					{"x": 0, "y": 0, "w": 1.5, "h": 3, "p": "pixels_forest collideCheck-field"},
+					{"x": 1.5, "y": 2, "w": 1, "h": 1, "p": "pixels_forest collideCheck-field"},
+					{"x": 2.5, "y": 0, "w": 1.5, "h": 1, "p": "pixels_forest collideCheck-field"},
+					{"x": 3.5, "y": 1, "w": 0.5, "h": 3, "p": "pixels_forest collideCheck-field"},
+					{"x": 1, "y": 4, "w": 3, "h": 1, "p": "pixels_forest collideCheck-field"},
+					{"x": 0, "y": 5, "w": 4, "h": 7, "p": "pixels_forest collideCheck-field"},
+					{"x": 0, "y": 12, "w": 1, "h": 1, "p": "pixels_forest collideCheck-field"},
+					{"x": 3, "y": 12, "w": 1, "h": 1, "p": "pixels_forest collideCheck-field"},
+					{"x": 0, "y": 17.5, "w": 1, "h": 1, "p": "pixels_forest collideCheck-field"},
+					{"x": 3, "y": 17.5, "w": 1, "h": 1, "p": "pixels_forest collideCheck-field"},
+					{"x": 0, "y": 18.5, "w": 4, "h": 2, "p": "pixels_forest collideCheck-field"},
+					{"x": 0, "y": 21, "w": 2, "h": 1, "p": "pixels_forest collideCheck-field"},
+					{"x": 2, "y": 21.5, "w": 2, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+					{"x": 0.5, "y": 22.5, "w": 1.5, "h": 1, "p": "pixels_forest collideCheck-field"},
+					{"x": 2, "y": 23, "w": 2, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+					{"x": 0, "y": 24, "w": 2, "h": 1, "p": "pixels_forest collideCheck-field"},
+					{"x": 2, "y": 24.5, "w": 2, "h": 0.5, "p": "pixels_forest collideCheck-field"}
+				],
+
+				"PLANTS":
+				[
+					{"x": 2.5, "y": 12.5, "w": 0.5, "h": 0.5, "p": "pixels_flowerLight"},
+					{"x": 1, "y": 12.5, "w": 0.5, "h": 0.5, "p": "pixels_flowerLight"},
+					{"x": 2.5, "y": 17.5, "w": 0.5, "h": 0.5, "p": "pixels_flowerLight"},
+					{"x": 1, "y": 17.5, "w": 0.5, "h": 0.5, "p": "pixels_flowerLight"},
+					{"x": 1.5, "y": 1, "w": 2, "h": 1, "p": "pixels_flowerLight"},
+					{"x": 2.5, "y": 2, "w": 1, "h": 1, "p": "pixels_flowerLight"},
+					{"x": 0, "y": 3, "w": 3.5, "h": 1, "p": "pixels_flowerLight"},
+					{"x": 0, "y": 13.5, "w": 4, "h": 3.5, "p": "pixels_flowerLight"},
+					{"x": 0.5, "y": 13, "w": 3, "h": 0.5, "p": "pixels_flowerLight"},
+					{"x": 0.5, "y": 17, "w": 3, "h": 0.5, "p": "pixels_flowerLight"},
+					{"x": 0, "y": 20.5, "w": 2, "h": 0.5, "p": "pixels_flowerLight"},
+					{"x": 2, "y": 20.5, "w": 1, "h": 1, "p": "pixels_flowerLight"},
+
+					{"x": 0, "y": 22, "w": 2, "h": 0.5, "p": "pixels_flowerHeavy"},
+					{"x": 2, "y": 22, "w": 1, "h": 1, "p": "pixels_flowerHeavy"},
+					{"x": 2, "y": 23.5, "w": 1, "h": 1, "p": "pixels_flowerHeavy"},
+					{"x": 0, "y": 23.5, "w": 2, "h": 0.5, "p": "pixels_flowerHeavy"},
+					{"x": 0, "y": 22.5, "w": 0.5, "h": 1, "p": "pixels_flowerHeavy"}
+				],
+
+				"CLEARING":
+				[
+
+				],
+
+				"OUTER":
+				{
+					"class_LR": "pixels_forestMassLR",
+					"class_TB": "pixels_forestMassTB"
+				}
+			},
+
+			"water":
+			{
+				"EDGE":
+				[
+
+				],
+
+				"BASE":
+				[
+
+				],
+
+				"FISH":
+				[
+
+				]
+			},
+
+			"enemyPlayers":
+			[
+				{
+				"x": 0,
+				"y": 14,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level11_crow0",
+				"t": "crow",
+				"l": 6,
+				"known": "a frontline crow",
+				"spawn": 11
+				},
+
+				{
+				"x": 0.5,
+				"y": 14,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level11_crow1",
+				"t": "crow",
+				"l": 6,
+				"known": "a frontline crow",
+				"spawn": 11
+				},
+
+				{
+				"x": 1,
+				"y": 14,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level11_crow2",
+				"t": "crow",
+				"l": 6,
+				"known": "a frontline crow",
+				"spawn": 11
+				},
+
+				{
+				"x": 1.5,
+				"y": 14,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level11_crow3",
+				"t": "crow",
+				"l": 6,
+				"known": "a frontline crow",
+				"spawn": 11
+				},
+
+				{
+				"x": 2,
+				"y": 14,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level11_crow4",
+				"t": "crow",
+				"l": 6,
+				"known": "a frontline crow",
+				"spawn": 11
+				},
+
+				{
+				"x": 2.5,
+				"y": 14,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level11_crow5",
+				"t": "crow",
+				"l": 6,
+				"known": "a frontline crow",
+				"spawn": 11
+				},
+
+				{
+				"x": 3,
+				"y": 14,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level11_crow6",
+				"t": "crow",
+				"l": 6,
+				"known": "a frontline crow",
+				"spawn": 11
+				},
+
+				{
+				"x": 3.5,
+				"y": 14,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level11_crow7",
+				"t": "crow",
+				"l": 6,
+				"known": "a frontline crow",
+				"spawn": 11
+				},
+
+				{
+				"x": 0,
+				"y": 15,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level11_crow8",
+				"t": "crow",
+				"l": 9,
+				"known": "a crow of division two",
+				"spawn": 11
+				},
+
+				{
+				"x": 0.5,
+				"y": 15,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level11_crow9",
+				"t": "crow",
+				"l": 9,
+				"known": "a crow of division two",
+				"spawn": 11
+				},
+
+				{
+				"x": 1,
+				"y": 15,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level11_crow10",
+				"t": "crow",
+				"l": 9,
+				"known": "a crow of division two",
+				"spawn": 11
+				},
+
+				{
+				"x": 1.5,
+				"y": 15,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level11_crow11",
+				"t": "crow",
+				"l": 9,
+				"known": "a crow of division two",
+				"spawn": 11
+				},
+
+				{
+				"x": 2,
+				"y": 15,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level11_crow12",
+				"t": "crow",
+				"l": 9,
+				"known": "a crow of division two",
+				"spawn": 11
+				},
+
+				{
+				"x": 2.5,
+				"y": 15,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level11_crow13",
+				"t": "crow",
+				"l": 9,
+				"known": "a crow of division two",
+				"spawn": 11
+				},
+
+				{
+				"x": 3,
+				"y": 15,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level11_crow14",
+				"t": "crow",
+				"l": 9,
+				"known": "a crow of division two",
+				"spawn": 11
+				},
+
+				{
+				"x": 3.5,
+				"y": 15,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level11_crow15",
+				"t": "crow",
+				"l": 9,
+				"known": "a crow of division two",
+				"spawn": 11
+				},
+
+				{
+				"x": 0,
+				"y": 16,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level11_crow16",
+				"t": "crow",
+				"l": 12,
+				"known": "a crow of division three",
+				"spawn": 11
+				},
+
+				{
+				"x": 0.5,
+				"y": 16,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level11_crow17",
+				"t": "crow",
+				"l": 12,
+				"known": "a crow of division three",
+				"spawn": 11
+				},
+
+				{
+				"x": 1,
+				"y": 16,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level11_crow18",
+				"t": "crow",
+				"l": 12,
+				"known": "a crow of division three",
+				"spawn": 11
+				},
+
+				{
+				"x": 1.5,
+				"y": 16,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level11_crow19",
+				"t": "crow",
+				"l": 12,
+				"known": "a crow of division three",
+				"spawn": 11
+				},
+
+				{
+				"x": 2,
+				"y": 16,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level11_crow20",
+				"t": "crow",
+				"l": 12,
+				"known": "a crow of division three",
+				"spawn": 11
+				},
+
+				{
+				"x": 2.5,
+				"y": 16,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level11_crow21",
+				"t": "crow",
+				"l": 12,
+				"known": "a crow of division three",
+				"spawn": 11
+				},
+
+				{
+				"x": 3,
+				"y": 16,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level11_crow22",
+				"t": "crow",
+				"l": 12,
+				"known": "a crow of division three",
+				"spawn": 11
+				},
+
+				{
+				"x": 3.5,
+				"y": 16,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level11_crow23",
+				"t": "crow",
+				"l": 12,
+				"known": "a crow of division three",
+				"spawn": 11
+				},
+
+				{
+				"x": 0,
+				"y": 20.5,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level11_crow24",
+				"t": "crow",
+				"l": 24,
+				"known": "the crow captain",
+				"spawn": 11
+				}
+			],
+
+			"friendPlayers":
+			[
+
+			],
+
+			"gates":
+			[
+
+			],
+
+			"portal":
+			[
+				{
+				"num": 0,
+				"x": 1.5,
+				"y": 0,
+				"w": 1,
+				"h": 1,
+				"level": 10,
+				"exit": 1,
+				"direction": "DOWN",
+				"spawn": 11,
+				"bossLevel": false,
+				"p": "portal_top_forest"
+				},
+
+				{
+				"num": 1,
+				"x": 0,
+				"y": 4,
+				"w": 1,
+				"h": 1,
+				"level": 11,
+				"exit": 2,
+				"direction": "UP",
+				"spawn": 11,
+				"bossLevel": false,
+				"p": "portal_top_forest"
+				},
+
+				{
+				"num": 2,
+				"x": 1.5,
+				"y": 12,
+				"w": 1,
+				"h": 1,
+				"level": 11,
+				"exit": 1,
+				"direction": "DOWN",
+				"spawn": 11,
+				"bossLevel": false,
+				"p": "portal_top_forest"
+				},
+
+				{
+				"num": 3,
+				"x": 1.5,
+				"y": 17.5,
+				"w": 1,
+				"h": 1,
+				"level": 11,
+				"exit": 5,
+				"direction": "UP",
+				"spawn": 11,
+				"bossLevel": false,
+				"p": "portal_top_forest"
+				},
+
+				{
+				"num": 4,
+				"x": 3,
+				"y": 20.5,
+				"w": 1,
+				"h": 1,
+				"level": 11,
+				"exit": 3,
+				"direction": "LEFT",
+				"spawn": 11,
+				"bossLevel": false,
+				"p": "portal_top_forest"
+				},
+
+				{
+				"num": 5,
+				"x": 3,
+				"y": 22,
+				"w": 1,
+				"h": 1,
+				"level": 11,
+				"exit": 4,
+				"direction": "LEFT",
+				"spawn": 11,
+				"bossLevel": false,
+				"p": "portal_top_forest"
+				},
+
+				{
+				"num": 6,
+				"x": 3,
+				"y": 23.5,
+				"w": 1,
+				"h": 1,
+				"level": 12,
+				"exit": 0,
+				"direction": "LEFT",
+				"spawn": 11,
 				"bossLevel": false,
 				"p": "portal_top_forest"
 				}
