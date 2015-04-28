@@ -173,39 +173,6 @@ div[class*='tween-']
 	background-size: 80px 320px;
 }
 
-.pixels_forest
-{
-	background-image: url(../_img/tile_pineTrees_1x.png);
-	background-repeat: repeat;
-	background-size: 80px 80px;
-}
-
-.pixels_flowerLight
-{
-	background-image: url(../_img/tile_flowersLight_1x.png);
-	background-position: 0 0;
-	background-repeat: repeat;
-	background-size: 80px 80px;
-}
-
-.pixels_flowerHeavy
-{
-	background-image: url(../_img/tile_flowersHeavy_1x.png);
-	background-position: 0 0;
-	background-repeat: repeat;
-	background-size: 80px 80px;
-}
-
-/*
-.pixels_flowerRichCross
-{
-	background-image: url(../_img/tile_flowersRich_+_1x.png);
-	background-position: 0 0;
-	background-repeat: no-repeat;
-	background-size: 120px 120px;
-}
-*/
-
 .pixels_rain0
 {
 	background-image: url(../_img/rain_0_1x.png);
@@ -285,15 +252,6 @@ div[class*='tween-']
 	background-size: 240px 203px;
 }
 
-/*
-.pixels_colour-navPink
-{
-	background-image: url(../_img/col_nav-pink_1x.png);
-	background-repeat: repeat;
-	background-size: 100px 100px;
-}
-*/
-
 .pixels_map_player
 {
 	background-image: url(../_img/map_playerSprite_1x.png);
@@ -301,15 +259,6 @@ div[class*='tween-']
 	/* background-position: 0 0; */
 	background-size: 320px 120px;
 }
-
-/*
-.pixels_battleFlow
-{
-	background-image: url(../_img/battleNavSprite_1x.png);
-	background-repeat: no-repeat;
-	background-size: 371px 400px;
-}
-*/
 
 
 .pixels_map_enemy40x40
@@ -320,14 +269,6 @@ div[class*='tween-']
 	background-size: 320px 360px;
 }
 
-/*.pixels_portalScreen
-{
-	background-image: url(../_img/tilePortalScreenLRG_1x.png);
-	background-repeat: repeat;
-	background-position: center top;
-	background-size: 400px 320px;
-}*/
-
 .pixels_battleCloud
 {
 	background-image: url(../_img/battleNavCloud_1x.png);
@@ -335,15 +276,6 @@ div[class*='tween-']
 	background-position: center top;
 	background-size: 72px 211px;
 }
-
-/*
-.pixels_battleFlow
-{
-	background-image: url(../_img/battleNavSprite_1x.png);
-	background-repeat: no-repeat;
-	background-size: 371px 400px;
-}
-*/
 
 .pixels_warCrabs
 {
@@ -471,35 +403,6 @@ div[class*='tween-']
 	background-repeat: no-repeat;
 	background-size: 160px 240px;
 }
-
-/*
-	.pixels_battleCrowd_sky
-	{
-		background-image: url(../_img/battleSky_1x.png);
-
-		background-size: 534px 360px;
-	}
-*/
-
-/*
-	.pixels_battleCrowd_goats
-	{
-		background-image: url(../_img/battleCrowdTile_goats_1x.png);
-		background-repeat: repeat;
-		background-position: center top;
-		background-size: 80px 80px;
-	}
-*/
-
-/*
-	.pixels_battleCrowd_rabbits
-	{
-		background-image: url(../_img/battleCrowdTile_rabbits_1x.png);
-		background-repeat: repeat;
-		background-position: center top;
-		background-size: 80px 80px;
-	}
-*/
 
 
 .pixels_forestMassDark
@@ -802,68 +705,6 @@ div[class*='tween-']
 	background-size: 120px 120px;
 }
 
-.pixels_stoneForest
-{
-	background-image: url(../_img/tile_stonePineTrees_1x.png);
-	background-repeat: repeat;
-	background-position: left top;
-
-	background-size: 80px 80px;
-}
-
-.pixels_stoneFlowerLight
-{
-	background-image: url(../_img/tile_flowersLight_stone_1x.png);
-	background-repeat: repeat;
-	background-position: left top;
-
-	background-size: 80px 80px;
-}
-
-.pixels_stoneFlowerHeavy
-{
-	background-image: url(../_img/tile_flowersHeavy_stone_1x.png);
-	background-repeat: repeat;
-	background-position: left top;
-
-	background-size: 80px 80px;
-}
-
-
-.pixels_stoneForestMassLR
-{
-	background-image: url(../_img/tile_stoneForestMassLR_1x.png);
-	background-repeat: repeat;
-
-	background-size: 320px 320px;
-}
-
-.pixels_stoneForestMassTB
-{
-	background-image: url(../_img/tile_stoneForestMassTB_1x.png);
-	background-repeat: repeat;
-
-	background-size: 320px 320px;
-}
-
-.pixels_boulder_stone
-{
-	background-image: url(../_img/tile_boulder_stone_1x.png);
-	background-repeat: repeat;
-	background-position: left top;
-
-	background-size: 80px 80px;
-}
-
-.pixels_undeground_floor
-{
-	background-image: url(../_img/tile_undergroundFloor_1x.png);
-	background-repeat: repeat;
-	background-position: left top;
-
-	background-size: 80px 80px;
-}
-
 .pixels_mistBtm
 {
 	background-image: url(../_img/mistBottom_1x.png);
@@ -880,62 +721,6 @@ div[class*='tween-']
 	background-position: center top;
 
 	background-size: 640px 320px;
-}
-
-.pixels_flowerLightEvening0
-{
-	background-image: url(../_img/tile_flowersLight_evening0_1x.png);
-	background-position: 0 0;
-	background-repeat: repeat;
-	background-size: 80px 80px;
-}
-
-.pixels_flowerHeavyEvening0
-{
-	background-image: url(../_img/tile_flowersHeavy_evening0_1x.png);
-	background-position: 0 0;
-	background-repeat: repeat;
-	background-size: 80px 80px;
-}
-
-.pixels_forestEvening0
-{
-	background-image: url(../_img/tile_evening0PineTrees_1x.png);
-	background-repeat: repeat;
-	background-size: 80px 80px;
-}
-
-.pixels_forestMassEvening0LR
-{
-	background-image: url(../_img/tile_pineTreesMassLR_evening0_1x.png);
-	background-repeat: repeat;
-
-	background-size: 320px 320px;
-}
-
-.pixels_forestMassEvening0TB
-{
-	background-image: url(../_img/tile_pineTreesMassTB_evening0_1x.png);
-	background-repeat: repeat;
-
-	background-size: 320px 320px;
-}
-
-
-.pixels_forestMassLR
-{
-	background-image: url(../_img/tile_forestMassLR_1x.png);
-	background-repeat: repeat;
-
-	background-size: 320px 320px;
-}
-
-.pixels_forestMassTB
-{
-	background-image: url(../_img/tile_forestMassTB_1x.png);
-	background-repeat: repeat;
-
-	background-size: 320px 320px;
 }
 
 
@@ -972,28 +757,6 @@ div[class*='tween-']
 	{
 		background-image: url(../_img/portalBossSprite_1x.png);
 	}
-
-	.pixels_forest
-	{
-		background-image: url(../_img/tile_pineTrees_1x.png);
-	}
-
-	.pixels_flowerLight
-	{
-		background-image: url(../_img/tile_flowersLight_1x.png);
-	}
-
-	.pixels_flowerHeavy
-	{
-		background-image: url(../_img/tile_flowersHeavy_1x.png);
-	}
-
-/*
-	.pixels_flowerRichCross
-	{
-		background-image: url(../_img/tile_flowersRich_+_1x.png);
-	}
-*/
 
 	.pixels_rain0
 	{
@@ -1045,46 +808,20 @@ div[class*='tween-']
 		background-image: url(../_img/startSprite_1x.png);
 	}
 
-/*
-	.pixels_colour-navPink
-	{
-		background-image: url(../_img/col_nav-pink_1x.png);
-	}
-*/
-
 	.pixels_map_player
 	{
 		background-image: url(../_img/map_playerSprite_1x.png);
 	}
-
-/*
-	.pixels_battleFlow
-	{
-		background-image: url(../_img/battleNavSprite_1x.png);
-	}
-*/
 
 	.pixels_map_enemy40x40
 	{
 		background-image: url(../_img/map_enemySprite40x40_1x.png);
 	}
 
-/*	.pixels_portalScreen
-	{
-		background-image: url(../_img/tilePortalScreenLRG_1x.png);
-	}*/
-
 	.pixels_battleCloud
 	{
 		background-image: url(../_img/battleNavCloud_1x.png);
 	}
-
-/*
-	.pixels_battleFlow
-	{
-		background-image: url(../_img/battleNavSprite_1x.png);
-	}
-*/
 
 	.pixels_warCrabs
 	{
@@ -1167,27 +904,6 @@ div[class*='tween-']
 	{
 		background-image: url(../_img/spaceSquid_1x.png);
 	}
-
-/*
-	.pixels_battleCrowd_sky
-	{
-		background-image: url(../_img/battleSky_1x.png);
-	}
-*/
-
-/*
-	.pixels_battleCrowd_goats
-	{
-		background-image: url(../_img/battleCrowdTile_goats_1x.png);
-	}
-*/
-
-/*
-	.pixels_battleCrowd_rabbits
-	{
-		background-image: url(../_img/battleCrowdTile_rabbits_1x.png);
-	}
-*/
 
 
 	.pixels_forestMassDark
@@ -1359,76 +1075,6 @@ div[class*='tween-']
 	{
 		background-image: url(../_img/tile_newPortalScreen_1x.png);
 	}
-
-	.pixels_stoneForest
-	{
-		background-image: url(../_img/tile_stonePineTrees_1x.png);
-	}
-
-	.pixels_stoneFlowerLight
-	{
-		background-image: url(../_img/tile_flowersLight_stone_1x.png);
-	}
-
-	.pixels_stoneFlowerHeavy
-	{
-		background-image: url(../_img/tile_flowersHeavy_stone_1x.png);
-	}
-
-	.pixels_stoneForestMassLR
-	{
-		background-image: url(../_img/tile_stoneForestMassLR_1x.png);
-	}
-
-	.pixels_stoneForestMassTB
-	{
-		background-image: url(../_img/tile_stoneForestMassTB_1x.png);
-	}
-
-	.pixels_boulder_stone
-	{
-		background-image: url(../_img/tile_boulder_stone_1x.png);
-	}
-
-	.pixels_undeground_floor
-	{
-		background-image: url(../_img/tile_undergroundFloor_1x.png);
-	}
-
-	.pixels_flowerLightEvening0
-	{
-		background-image: url(../_img/tile_flowersLight_evening0_1x.png);
-	}
-
-	.pixels_flowerHeavyEvening0
-	{
-		background-image: url(../_img/tile_flowersHeavy_evening0_1x.png);
-	}
-
-	.pixels_forestEvening0
-	{
-		background-image: url(../_img/tile_evening0PineTrees_1x.png);
-	}
-
-	.pixels_forestMassEvening0LR
-	{
-		background-image: url(../_img/tile_pineTreesMassLR_evening0_1x.png);
-	}
-
-	.pixels_forestMassEvening0TB
-	{
-		background-image: url(../_img/tile_pineTreesMassTB_evening0_1x.png);
-	}
-
-	.pixels_forestMassLR
-	{
-		background-image: url(../_img/tile_forestMassLR_1x.png);
-	}
-
-	.pixels_forestMassTB
-	{
-		background-image: url(../_img/tile_forestMassTB_1x.png);
-	}
 }
 
 
@@ -1464,28 +1110,6 @@ div[class*='tween-']
 	{
 		background-image: url(../_img/portalBossSprite_2x.png);
 	}
-
-	.pixels_forest
-	{
-		background-image: url(../_img/tile_pineTrees_2x.png);
-	}
-
-	.pixels_flowerLight
-	{
-		background-image: url(../_img/tile_flowersLight_2x.png);
-	}
-
-	.pixels_flowerHeavy
-	{
-		background-image: url(../_img/tile_flowersHeavy_2x.png);
-	}
-
-/*
-	.pixels_flowerRichCross
-	{
-		background-image: url(../_img/tile_flowersRich_+_2x.png);
-	}
-*/
 
 	.pixels_rain0
 	{
@@ -1855,76 +1479,6 @@ div[class*='tween-']
 	.pixels_newPortalScreen
 	{
 		background-image: url(../_img/tile_newPortalScreen_2x.png);
-	}
-
-	.pixels_stoneForest
-	{
-		background-image: url(../_img/tile_stonePineTrees_2x.png);
-	}
-
-	.pixels_stoneFlowerLight
-	{
-		background-image: url(../_img/tile_flowersLight_stone_2x.png);
-	}
-
-	.pixels_stoneFlowerHeavy
-	{
-		background-image: url(../_img/tile_flowersHeavy_stone_2x.png);
-	}
-
-	.pixels_stoneForestMassLR
-	{
-		background-image: url(../_img/tile_stoneForestMassLR_2x.png);
-	}
-
-	.pixels_stoneForestMassTB
-	{
-		background-image: url(../_img/tile_stoneForestMassTB_2x.png);
-	}
-
-	.pixels_boulder_stone
-	{
-		background-image: url(../_img/tile_boulder_stone_2x.png);
-	}
-
-	.pixels_undeground_floor
-	{
-		background-image: url(../_img/tile_undergroundFloor_2x.png);
-	}
-
-	.pixels_flowerLightEvening0
-	{
-		background-image: url(../_img/tile_flowersLight_evening0_2x.png);
-	}
-
-	.pixels_flowerHeavyEvening0
-	{
-		background-image: url(../_img/tile_flowersHeavy_evening0_2x.png);
-	}
-
-	.pixels_forestEvening0
-	{
-		background-image: url(../_img/tile_evening0PineTrees_2x.png);
-	}
-
-	.pixels_forestMassEvening0LR
-	{
-		background-image: url(../_img/tile_pineTreesMassLR_evening0_2x.png);
-	}
-
-	.pixels_forestMassEvening0TB
-	{
-		background-image: url(../_img/tile_pineTreesMassTB_evening0_2x.png);
-	}
-
-	.pixels_forestMassLR
-	{
-		background-image: url(../_img/tile_forestMassLR_2x.png);
-	}
-
-	.pixels_forestMassTB
-	{
-		background-image: url(../_img/tile_forestMassTB_2x.png);
 	}
 }
 

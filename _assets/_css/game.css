@@ -2,6 +2,7 @@
 @import url(http://fonts.googleapis.com/css?family=Dosis);
 @import url(reset.css);
 @import url(pixels.css);
+@import url(terrain.css);
 
 /* DELETE THIS */
 @import url(temp.css);
@@ -1887,6 +1888,11 @@
 	background: #20202a;
 }
 
+.field-floor-evening0
+{
+	background: #e5eaa4;
+}
+
 /* ----------------------------------------------------------------------- LEVEL_GAME_TEXTURES */
 
 
@@ -2506,6 +2512,11 @@
 .portal_top_underground
 {
 	background-position: -240px 0px;
+}
+
+.portal_top_evening0
+{
+	background-position: 0px -80px;
 }
 
 /* ----------------------------------------------------------------------- PORTAL TEXTURE */
@@ -7658,7 +7669,7 @@
 	background: radial-gradient(ellipse at center, rgba(240, 190, 0, 0) 60%, rgba(240, 190, 0, 0.5) 100%);
 }
 
-.foggyEdge-evening, .foggyEdge-underground
+.foggyEdge-evening, .foggyEdge-underground, .foggyEdge-evening0
 {
 	background: -webkit-radial-gradient(center, ellipse cover, rgba(102, 36, 91, 0) 60%, rgba(102, 36, 91, 0.5) 100%);
 	background: radial-gradient(ellipse at center, rgba(102, 36, 91, 0) 60%, rgba(102, 36, 91, 0.5) 100%);

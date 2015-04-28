@@ -181,12 +181,12 @@ function temp_messageScreen_init()
 
 	if(friendTarget.scene.customDarkness)
 	{
-		$("#messageScreen .messageScreenLand_darkness").addClass(friendTarget.scene.customDarkness);
+		// $("#messageScreen .messageScreenLand_darkness").addClass(friendTarget.scene.customDarkness);
 	}
 
 	else
 	{
-		$("#messageScreen .messageScreenLand_darkness").addClass("darkness-" + LEVEL_MAIN.landType);
+		// $("#messageScreen .messageScreenLand_darkness").addClass("darkness-" + LEVEL_MAIN.landType);
 	}
 
 	$("#messageScreen .behindWorld").addClass(friendTarget.scene.bg);
@@ -194,12 +194,12 @@ function temp_messageScreen_init()
 
 	if(friendTarget.flooring.customHaze)
 	{
-		$("#messageScreen .messageScreen_haze").addClass(friendTarget.flooring.customHaze);
+		// $("#messageScreen .messageScreen_haze").addClass(friendTarget.flooring.customHaze);
 	}
 
 	else
 	{
-		$("#messageScreen .messageScreen_haze").addClass("haze-" + LEVEL_MAIN.landType);
+		// $("#messageScreen .messageScreen_haze").addClass("haze-" + LEVEL_MAIN.landType);
 	}
 
 	if(friendTarget.flooring.customFill)
