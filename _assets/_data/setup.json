@@ -470,7 +470,7 @@
 					"y": 4,
 					"w": 1,
 					"h": 1,
-					"level": 15,
+					"level": 16,
 					"exit": 0,
 					"direction": "UP",
 					"spawn": 0,
@@ -1379,8 +1379,8 @@
 					"y": 11,
 					"w": 1,
 					"h": 1,
-					"level": 99,
-					"exit": 99,
+					"level": 16,
+					"exit": 1,
 					"direction": "DOWN",
 					"spawn": 3,
 					"p": "portal_top_underground"
@@ -1392,8 +1392,8 @@
 					"y": 11,
 					"w": 1,
 					"h": 1,
-					"level": 99,
-					"exit": 99,
+					"level": 9,
+					"exit": 14,
 					"direction": "DOWN",
 					"spawn": 3,
 					"p": "portal_top_underground"
@@ -5484,6 +5484,342 @@
 				"exit": 0,
 				"direction": "UP",
 				"spawn": 15,
+				"bossLevel": false,
+				"p": "portal_top_evening0"
+				}
+			],
+
+			"sound_level":
+			[
+
+			],
+
+			"sound_trigger":
+			[
+
+			]
+		},
+
+		"level16":
+		{
+			"levelSettings":
+			{
+				"n": 16,
+				"weather": "RAIN",
+				"mist": false,
+				"land": "evening0",
+				"floor": "field-floor-evening0",
+				"entry_fall": false,
+				"fall_x": 0,
+				"fall_y": 0,
+				"fall_d": "DOWN",
+				"title_top": "the farmers locked gate",
+				"levelFunctions":
+				{
+					"gate16_unlock":
+					[
+						{
+							"call_funct"	: "levelGate_checkStatus",
+							"call_params"	: ["level16_gate0", ["level16_rabbit0", "level16_rabbit1", "level16_rabbit2", "level16_rabbit3"]]
+						}
+					]
+				}
+			},
+
+			"texture":
+			{
+				"WALLS" :
+				[
+					{"x": 0, "y": 13.5, "w": 0.5, "h": 0.5, "p": "pixels_forestEvening0 collideCheck-field"},
+					{"x": 3.5, "y": 13.5, "w": 0.5, "h": 0.5, "p": "pixels_forestEvening0 collideCheck-field"},
+					{"x": 0, "y": 11, "w": 0.5, "h": 0.5, "p": "pixels_forestEvening0 collideCheck-field"},
+					{"x": 3.5, "y": 11, "w": 0.5, "h": 0.5, "p": "pixels_forestEvening0 collideCheck-field"},
+					{"x": 0, "y": 8.5, "w": 0.5, "h": 0.5, "p": "pixels_forestEvening0 collideCheck-field"},
+					{"x": 3.5, "y": 8.5, "w": 0.5, "h": 0.5, "p": "pixels_forestEvening0 collideCheck-field"},
+					{"x": 0, "y": 16, "w": 0.5, "h": 0.5, "p": "pixels_forestEvening0 collideCheck-field"},
+					{"x": 3.5, "y": 16, "w": 0.5, "h": 0.5, "p": "pixels_forestEvening0 collideCheck-field"},
+					{"x": 0.5, "y": 3.5, "w": 0.5, "h": 0.5, "p": "pixels_forestEvening0 collideCheck-field"},
+					{"x": 0, "y": 0.5, "w": 0.5, "h": 0.5, "p": "pixels_forestEvening0 collideCheck-field"},
+					{"x": 3, "y": 3.5, "w": 0.5, "h": 0.5, "p": "pixels_forestEvening0 collideCheck-field"},
+					{"x": 3.5, "y": 0.5, "w": 0.5, "h": 0.5, "p": "pixels_forestEvening0 collideCheck-field"},
+					{"x": 0, "y": 24, "w": 0.5, "h": 0.5, "p": "pixels_forestEvening0 collideCheck-field"},
+					{"x": 3.5, "y": 24, "w": 0.5, "h": 0.5, "p": "pixels_forestEvening0 collideCheck-field"},
+					{"x": 1, "y": 22, "w": 0.5, "h": 0.5, "p": "pixels_forestEvening0 collideCheck-field"},
+					{"x": 2.5, "y": 22, "w": 0.5, "h": 0.5, "p": "pixels_forestEvening0 collideCheck-field"},
+					{"x": 0.5, "y": 21, "w": 0.5, "h": 0.5, "p": "pixels_forestEvening0 collideCheck-field"},
+					{"x": 3, "y": 21, "w": 0.5, "h": 0.5, "p": "pixels_forestEvening0 collideCheck-field"},
+					{"x": 1, "y": 20, "w": 0.5, "h": 0.5, "p": "pixels_forestEvening0 collideCheck-field"},
+					{"x": 2.5, "y": 20, "w": 0.5, "h": 0.5, "p": "pixels_forestEvening0 collideCheck-field"},
+					{"x": 0.5, "y": 19, "w": 0.5, "h": 0.5, "p": "pixels_forestEvening0 collideCheck-field"},
+					{"x": 3, "y": 19, "w": 0.5, "h": 0.5, "p": "pixels_forestEvening0 collideCheck-field"},
+					{"x": 1, "y": 18, "w": 0.5, "h": 0.5, "p": "pixels_forestEvening0 collideCheck-field"},
+					{"x": 2.5, "y": 18, "w": 0.5, "h": 0.5, "p": "pixels_forestEvening0 collideCheck-field"},
+					{"x": 0.5, "y": 17, "w": 0.5, "h": 0.5, "p": "pixels_forestEvening0 collideCheck-field"},
+					{"x": 3, "y": 17, "w": 0.5, "h": 0.5, "p": "pixels_forestEvening0 collideCheck-field"},
+					{"x": 0.5, "y": 23, "w": 0.5, "h": 0.5, "p": "pixels_forestEvening0 collideCheck-field"},
+					{"x": 3, "y": 23, "w": 0.5, "h": 0.5, "p": "pixels_forestEvening0 collideCheck-field"},
+					{"x": 0, "y": 1, "w": 1, "h": 0.5, "p": "pixels_forestEvening0 collideCheck-field"},
+					{"x": 3, "y": 1, "w": 1, "h": 0.5, "p": "pixels_forestEvening0 collideCheck-field"},
+					{"x": 0.5, "y": 1.5, "w": 1, "h": 2, "p": "pixels_forestEvening0 collideCheck-field"},
+					{"x": 2.5, "y": 1.5, "w": 1, "h": 2, "p": "pixels_forestEvening0 collideCheck-field"},
+					{"x": 0, "y": 9, "w": 1, "h": 2, "p": "pixels_forestEvening0 collideCheck-field"},
+					{"x": 1, "y": 9.5, "w": 0.5, "h": 1, "p": "pixels_forestEvening0 collideCheck-field"},
+					{"x": 2.5, "y": 9.5, "w": 0.5, "h": 1, "p": "pixels_forestEvening0 collideCheck-field"},
+					{"x": 3, "y": 9, "w": 1, "h": 2, "p": "pixels_forestEvening0 collideCheck-field"},
+					{"x": 1, "y": 14.5, "w": 0.5, "h": 1, "p": "pixels_forestEvening0 collideCheck-field"},
+					{"x": 2.5, "y": 14.5, "w": 0.5, "h": 1, "p": "pixels_forestEvening0 collideCheck-field"},
+					{"x": 0, "y": 14, "w": 1, "h": 2, "p": "pixels_forestEvening0 collideCheck-field"},
+					{"x": 3, "y": 14, "w": 1, "h": 2, "p": "pixels_forestEvening0 collideCheck-field"},
+					{"x": 0, "y": 24.5, "w": 1, "h": 0.5, "p": "pixels_forestEvening0 collideCheck-field"},
+					{"x": 3, "y": 24.5, "w": 1, "h": 0.5, "p": "pixels_forestEvening0 collideCheck-field"}
+				],
+
+				"PLANTS":
+				[
+					{"x": 0, "y": 0, "w": 0.5, "h": 0.5, "p": "pixels_flowerLightEvening0"},
+					{"x": 3.5, "y": 0, "w": 0.5, "h": 0.5, "p": "pixels_flowerLightEvening0"},
+					{"x": 3.5, "y": 4.5, "w": 0.5, "h": 0.5, "p": "pixels_flowerLightEvening0"},
+					{"x": 0, "y": 4.5, "w": 0.5, "h": 0.5, "p": "pixels_flowerLightEvening0"},
+					{"x": 0, "y": 8, "w": 0.5, "h": 0.5, "p": "pixels_flowerLightEvening0"},
+					{"x": 3.5, "y": 8, "w": 0.5, "h": 0.5, "p": "pixels_flowerLightEvening0"},
+					{"x": 1, "y": 10.5, "w": 0.5, "h": 0.5, "p": "pixels_flowerLightEvening0"},
+					{"x": 2.5, "y": 10.5, "w": 0.5, "h": 0.5, "p": "pixels_flowerLightEvening0"},
+					{"x": 0.5, "y": 0, "w": 1, "h": 1, "p": "pixels_flowerLightEvening0"},
+					{"x": 2.5, "y": 0, "w": 1, "h": 1, "p": "pixels_flowerLightEvening0"},
+					{"x": 1, "y": 1, "w": 2, "h": 0.5, "p": "pixels_flowerLightEvening0"},
+					{"x": 1.5, "y": 1.5, "w": 1, "h": 2, "p": "pixels_flowerLightEvening0"},
+					{"x": 1, "y": 3.5, "w": 2, "h": 0.5, "p": "pixels_flowerLightEvening0"},
+					{"x": 0, "y": 4, "w": 4, "h": 0.5, "p": "pixels_flowerLightEvening0"},
+					{"x": 1, "y": 4.5, "w": 2, "h": 0.5, "p": "pixels_flowerLightEvening0"},
+					{"x": 0, "y": 1.5, "w": 0.5, "h": 2.5, "p": "pixels_flowerLightEvening0"},
+					{"x": 3.5, "y": 1.5, "w": 0.5, "h": 2.5, "p": "pixels_flowerLightEvening0"},
+					{"x": 1.5, "y": 5, "w": 1, "h": 2, "p": "pixels_flowerLightEvening0"},
+					{"x": 0.5, "y": 5.5, "w": 0.5, "h": 1.5, "p": "pixels_flowerLightEvening0"},
+					{"x": 3, "y": 5.5, "w": 0.5, "h": 1.5, "p": "pixels_flowerLightEvening0"},
+					{"x": 0, "y": 7, "w": 4, "h": 1, "p": "pixels_flowerLightEvening0"},
+					{"x": 0.5, "y": 8, "w": 1, "h": 1, "p": "pixels_flowerLightEvening0"},
+					{"x": 2.5, "y": 8, "w": 1, "h": 1, "p": "pixels_flowerLightEvening0"},
+					{"x": 1, "y": 9, "w": 2, "h": 0.5, "p": "pixels_flowerLightEvening0"},
+					{"x": 1.5, "y": 9.5, "w": 1, "h": 1, "p": "pixels_flowerLightEvening0"},
+					{"x": 1.5, "y": 10.5, "w": 1, "h": 1, "p": "pixels_flowerLightEvening0"},
+					{"x": 0.5, "y": 11, "w": 1, "h": 0.5, "p": "pixels_flowerLightEvening0"},
+					{"x": 2.5, "y": 11, "w": 1, "h": 0.5, "p": "pixels_flowerLightEvening0"},
+
+					{"x": 0.5, "y": 13.5, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 3, "y": 13.5, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 0.5, "y": 18, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 1.5, "y": 18, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 2, "y": 18, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 3, "y": 18, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 0.5, "y": 20, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 1.5, "y": 20, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 2, "y": 20, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 3, "y": 20, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 1, "y": 19, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 1.5, "y": 19, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 2, "y": 19, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 2.5, "y": 19, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 1, "y": 21, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 1.5, "y": 21, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 2, "y": 21, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 2.5, "y": 21, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 0.5, "y": 22, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 1.5, "y": 22, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 2, "y": 22, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 3, "y": 22, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 1, "y": 13.5, "w": 2, "h": 1, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 1.5, "y": 14.5, "w": 1, "h": 1, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 1, "y": 15.5, "w": 2, "h": 0.5, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 0.5, "y": 16, "w": 3, "h": 0.5, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 0, "y": 16.5, "w": 1.5, "h": 0.5, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 2.5, "y": 16.5, "w": 1.5, "h": 0.5, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 1, "y": 17, "w": 2, "h": 0.5, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 0, "y": 17, "w": 0.5, "h": 7, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 3.5, "y": 17, "w": 0.5, "h": 7, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 1.5, "y": 23, "w": 1, "h": 1, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 1, "y": 23, "w": 0.5, "h": 2, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 2.5, "y": 23, "w": 0.5, "h": 2, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 0.5, "y": 23.5, "w": 0.5, "h": 1, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 3, "y": 23.5, "w": 0.5, "h": 1, "p": "pixels_flowerHeavyEvening0"}
+				],
+
+				"CLEARING":
+				[
+
+				],
+
+				"OUTER":
+				{
+					"class_LR": "pixels_forestMassEvening0LR",
+					"class_TB": "pixels_forestMassEvening0TB"
+				}
+			},
+
+			"water":
+			{
+				"EDGE":
+				[
+					{"x": 0.5, "y": 4.5, "w": 0.5, "h": 0.5, "p": "pixels_waterEdge waterEdge tween-waterEdge"},
+					{"x": 0, "y": 5, "w": 0.5, "h": 0.5, "p": "pixels_waterEdge waterEdge tween-waterEdge"},
+					{"x": 1, "y": 5, "w": 0.5, "h": 0.5, "p": "pixels_waterEdge waterEdge tween-waterEdge"},
+					{"x": 2.5, "y": 5, "w": 0.5, "h": 0.5, "p": "pixels_waterEdge waterEdge tween-waterEdge"},
+					{"x": 3, "y": 4.5, "w": 0.5, "h": 0.5, "p": "pixels_waterEdge waterEdge tween-waterEdge"},
+					{"x": 3.5, "y": 5, "w": 0.5, "h": 0.5, "p": "pixels_waterEdge waterEdge tween-waterEdge"},
+					{"x": 1.5, "y": 16.5, "w": 1, "h": 0.5, "p": "pixels_waterEdge waterEdge tween-waterEdge"},
+					{"x": 0.5, "y": 17.5, "w": 3, "h": 0.5, "p": "pixels_waterEdge waterEdge tween-waterEdge"},
+					{"x": 0.5, "y": 18.5, "w": 3, "h": 0.5, "p": "pixels_waterEdge waterEdge tween-waterEdge"},
+					{"x": 0.5, "y": 19.5, "w": 3, "h": 0.5, "p": "pixels_waterEdge waterEdge tween-waterEdge"},
+					{"x": 0.5, "y": 20.5, "w": 3, "h": 0.5, "p": "pixels_waterEdge waterEdge tween-waterEdge"},
+					{"x": 0.5, "y": 21.5, "w": 3, "h": 0.5, "p": "pixels_waterEdge waterEdge tween-waterEdge"},
+					{"x": 0.5, "y": 22.5, "w": 3, "h": 0.5, "p": "pixels_waterEdge waterEdge tween-waterEdge"}
+				],
+
+				"BASE":
+				[
+					{"x": 0.5, "y": 4.5, "w": 0.5, "h": 0.5, "p": "pixels_waterBase waterPool collideCheck-field"},
+					{"x": 3, "y": 4.5, "w": 0.5, "h": 0.5, "p": "pixels_waterBase waterPool collideCheck-field"},
+					{"x": 1.5, "y": 16.5, "w": 1, "h": 0.5, "p": "pixels_waterBase waterPool collideCheck-field"},
+					{"x": 0.5, "y": 17.5, "w": 3, "h": 0.5, "p": "pixels_waterBase waterPool collideCheck-field"},
+					{"x": 0.5, "y": 18.5, "w": 3, "h": 0.5, "p": "pixels_waterBase waterPool collideCheck-field"},
+					{"x": 0.5, "y": 19.5, "w": 3, "h": 0.5, "p": "pixels_waterBase waterPool collideCheck-field"},
+					{"x": 0.5, "y": 20.5, "w": 3, "h": 0.5, "p": "pixels_waterBase waterPool collideCheck-field"},
+					{"x": 0.5, "y": 21.5, "w": 3, "h": 0.5, "p": "pixels_waterBase waterPool collideCheck-field"},
+					{"x": 0.5, "y": 22.5, "w": 3, "h": 0.5, "p": "pixels_waterBase waterPool collideCheck-field"},
+					{"x": 2.5, "y": 5, "w": 1.5, "h": 0.5, "p": "pixels_waterBase waterPool collideCheck-field"},
+					{"x": 2.5, "y": 5.5, "w": 0.5, "h": 1.5, "p": "pixels_waterBase waterPool collideCheck-field"},
+					{"x": 3.5, "y": 5.5, "w": 0.5, "h": 1.5, "p": "pixels_waterBase waterPool collideCheck-field"},
+					{"x": 0, "y": 5, "w": 1.5, "h": 0.5, "p": "pixels_waterBase waterPool collideCheck-field"},
+					{"x": 0, "y": 5.5, "w": 0.5, "h": 1.5, "p": "pixels_waterBase waterPool collideCheck-field"},
+					{"x": 1, "y": 5.5, "w": 0.5, "h": 1.5, "p": "pixels_waterBase waterPool collideCheck-field"}
+				],
+
+				"FISH":
+				[
+
+				]
+			},
+
+			"enemyPlayers":
+			[
+				{
+				"x": 0,
+				"y": 1.5,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level16_rabbit0",
+				"t": "rabbit",
+				"l": 30,
+				"known": "the rabbit locksmith",
+				"spawn": 16,
+				"defeat":	{
+										"link_funct": "gate16_unlock"
+									}
+				},
+
+				{
+				"x": 3.5,
+				"y": 1.5,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level16_rabbit1",
+				"t": "rabbit",
+				"l": 30,
+				"known": "the rabbit locksmith",
+				"spawn": 16,
+				"defeat":	{
+										"link_funct": "gate16_unlock"
+									}
+				},
+
+				{
+				"x": 0.5,
+				"y": 5.5,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level16_rabbit2",
+				"t": "rabbit",
+				"l": 40,
+				"known": "the rabbit gate keeper",
+				"spawn": 16,
+				"defeat":	{
+										"link_funct": "gate16_unlock"
+									}
+				},
+
+				{
+				"x": 3,
+				"y": 5.5,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level16_rabbit3",
+				"t": "rabbit",
+				"l": 40,
+				"known": "the rabbit gate keeper",
+				"spawn": 16,
+				"defeat":	{
+										"link_funct": "gate16_unlock"
+									}
+				}
+			],
+
+			"friendPlayers":
+			[
+
+			],
+
+			"gates":
+			[
+				{
+				"x": 0,
+				"y": 11.5,
+				"w": 4,
+				"h": 2,
+				"c_cl": "layer-field-gate-area",
+				"n": "level16_gate0",
+				"spawn": 16
+				}
+			],
+
+			"portal":
+			[
+				{
+				"num": 0,
+				"x": 1.5,
+				"y": 0,
+				"w": 1,
+				"h": 1,
+				"level": 15,
+				"exit": 8,
+				"direction": "DOWN",
+				"spawn": 16,
+				"bossLevel": false,
+				"p": "portal_top_evening0"
+				},
+
+				{
+				"num": 1,
+				"x": 1.5,
+				"y": 8,
+				"w": 1,
+				"h": 1,
+				"level": 3,
+				"exit": 2,
+				"direction": "DOWN",
+				"spawn": 16,
+				"bossLevel": false,
+				"p": "portal_top_evening0"
+				},
+
+				{
+				"num": 2,
+				"x": 1.5,
+				"y": 24,
+				"w": 1,
+				"h": 1,
+				"level": 17,
+				"exit": 0,
+				"direction": "DOWN",
+				"spawn": 16,
 				"bossLevel": false,
 				"p": "portal_top_evening0"
 				}

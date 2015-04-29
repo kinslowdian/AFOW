@@ -1690,3 +1690,153 @@ function resultOutcome_hideAllEvent(event)
 ///////////////////////////////// --- OUTCOME SCREENS
 
 
+///////////////////////////////// --- GAME MESSAGES
+
+function messageScreen_init()
+{
+	var messageScreen_html;
+	var exitFrame;
+	var css;
+
+	html_lib_reuse();
+
+	messageScreen_html = html_lib_use("_messageScreen", false, true);
+
+	html_lib_empty();
+
+	$("#messageScreen").html(messageScreen_html);
+
+	$("#messageScreen .messageScreen_friend").html(friendTarget.buildData.html);
+
+	//OPTIMISED TARGETING
+	$("#messageScreen .messageScreen_friend > div").removeAttr("id");
+
+	css = {
+					"width" 						: friendTarget.buildData.w + "px",
+					"height" 						: friendTarget.buildData.h + "px",
+					"-webkit-transform"	: "translateY(" + -(friendTarget.buildData.h) + "px)",
+					"transform"					: "translateY(" + -(friendTarget.buildData.h) + "px)"
+				};
+
+	$("#messageScreen .messageScreen_friend").css(css);
+
+	$("#messageScreen .messageScreen_focus .messageScreen_text p").html(friendTarget.hint);
+
+	if(friendTarget.scene.customFog)
+	{
+		$("#messageScreen .foggyEdge").addClass(friendTarget.scene.customFog);
+	}
+
+	else
+	{
+		$("#messageScreen .foggyEdge").addClass("foggyEdge-" + LEVEL_MAIN.landType);
+	}
+
+	if(friendTarget.scene.customDarkness)
+	{
+		// $("#messageScreen .messageScreenLand_darkness").addClass(friendTarget.scene.customDarkness);
+	}
+
+	else
+	{
+		// $("#messageScreen .messageScreenLand_darkness").addClass("darkness-" + LEVEL_MAIN.landType);
+	}
+
+	$("#messageScreen .behindWorld").addClass(friendTarget.scene.bg);
+	$("#messageScreen .messageScreenLand_grass").addClass(friendTarget.flooring.grass);
+
+	if(friendTarget.flooring.customHaze)
+	{
+		// $("#messageScreen .messageScreen_haze").addClass(friendTarget.flooring.customHaze);
+	}
+
+	else
+	{
+		// $("#messageScreen .messageScreen_haze").addClass("haze-" + LEVEL_MAIN.landType);
+	}
+
+	if(friendTarget.flooring.customFill)
+	{
+		$("#messageScreen .messageScreenLand_fieldFill").addClass(friendTarget.flooring.customFill);
+	}
+
+	else
+	{
+		// $("#messageScreen .messageScreenLand_fieldFill").addClass("field-floor-" + LEVEL_MAIN.landType);
+		$("#messageScreen .messageScreenLand_fieldFill").addClass(LEVEL_MAIN.floorType);
+	}
+
+
+	$("#messageScreen").removeClass("messageScreen_hide");
+
+	exitFrame = setTimeout(messageScreen_run, 20);
+}
+
+function messageScreen_run()
+{
+	$("#messageScreen .tween-messageScreenFlare")[0].addEventListener("webkitTransitionEnd", messageScreen_runEvent, false);
+	$("#messageScreen .tween-messageScreenFlare")[0].addEventListener("transitionend", messageScreen_runEvent, false);
+
+	$("#messageScreen .messageScreen_flare").removeClass("messageScreenFlare_hide").addClass("messageScreenFlare_show");
+}
+
+function messageScreen_runEvent(event)
+{
+	var delay;
+
+	$("#messageScreen .tween-messageScreenFlare")[0].removeEventListener("webkitTransitionEnd", messageScreen_runEvent, false);
+	$("#messageScreen .tween-messageScreenFlare")[0].removeEventListener("transitionend", messageScreen_runEvent, false);
+
+	if(friendTarget.once)
+	{
+		friendTarget.seen = true;
+
+		$("#" + friendTarget.id).remove();
+	}
+
+	$("#messageScreen .messageScreen_text p").removeClass("messageScreenText_hide").addClass("messageScreenText_show");
+
+	$("#messageScreen .messageScreen_fullFill").addClass("messageScreenFullFill_show");
+
+	$("#messageScreen .messageScreen_main").removeClass("messageScreen_hide");
+	$("#messageScreen .messageScreen_flare").removeClass("messageScreenFlare_show").addClass("messageScreenFlare_hide");
+
+	delay = setTimeout(messageScreen_end, friendTarget.time * 1000);
+}
+
+function messageScreen_end()
+{
+	$("#messageScreen .tween-messageScreenFlare")[0].addEventListener("webkitTransitionEnd", messageScreen_endEvent, false);
+	$("#messageScreen .tween-messageScreenFlare")[0].addEventListener("transitionend", messageScreen_endEvent, false);
+
+	$("#messageScreen .messageScreen_flare").removeClass("messageScreenFlare_hide").addClass("messageScreenFlare_show");
+}
+
+function messageScreen_endEvent(event)
+{
+	$("#messageScreen .tween-messageScreenFlare")[0].removeEventListener("webkitTransitionEnd", messageScreen_endEvent, false);
+	$("#messageScreen .tween-messageScreenFlare")[0].removeEventListener("transitionend", messageScreen_endEvent, false);
+
+	$("#messageScreen .messageScreen_main").addClass("messageScreen_hide");
+
+	$("#messageScreen .tween-messageScreenFlare")[0].addEventListener("webkitTransitionEnd", messageScreen_purge, false);
+	$("#messageScreen .tween-messageScreenFlare")[0].addEventListener("transitionend", messageScreen_purge, false);
+
+	$("#messageScreen .messageScreen_flare").removeClass("messageScreenFlare_show").addClass("messageScreenFlare_hide");
+}
+
+function messageScreen_purge(event)
+{
+	$("#messageScreen .tween-messageScreenFlare")[0].removeEventListener("webkitTransitionEnd", messageScreen_purge, false);
+	$("#messageScreen .tween-messageScreenFlare")[0].removeEventListener("transitionend", messageScreen_purge, false);
+
+	$("#messageScreen").html("");
+
+	friendTarget = {};
+
+	move_plugIn();
+}
+
+///////////////////////////////// --- GAME MESSAGES
+
+

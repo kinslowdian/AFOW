@@ -4,15 +4,15 @@ var LEVEL_MAIN;
 var foggy = {};
 
 var enemyData_ARR = new Array();
-
 var enemies_ARR = new Array();
-
 var enemiesBorn = false;
 
+var friendData_ARR = new Array();
+var friends_ARR = new Array();
+var friendsBorn = false;
+
 var portalData_ARR = new Array();
-
 var portals_ARR = new Array();
-
 var portalsOpened = false;
 
 // var gateControl = {};
@@ -20,9 +20,7 @@ var portalsOpened = false;
 var levelGateTarget;
 
 var gateData_ARR = new Array();
-
 var gates_ARR = new Array();
-
 var gatesBorn = false;
 
 var LEVEL = function(settings)
@@ -220,6 +218,91 @@ function enemy_forcePosition(obj)
 	css_data = obj.buildData.css;
 
 	return css_data;
+}
+
+var friend = function(settings, container, num)
+{
+	this.settings							= settings;
+	this.buildData						= {};
+	this.buildData.container	= container;
+	this.seen									= false;
+	this.rendered							= false;
+	this.array_index					= num;
+	this.flooring							= {};
+	this.scene								= {};
+};
+
+friend.prototype.create = function()
+{
+	this.id 									= this.settings.n;
+	this.spawn								= this.settings.spawn;
+	this.hint									= this.settings.hint;
+	this.time									= this.settings.time;
+	this.character						= this.settings.character;
+	this.once									= this.settings.once;
+
+	// pixels_behindWorld_bad pixels_behindWorld_good
+
+	this.scene.customFog			= this.settings.customFog;
+	this.scene.bg							= this.settings.bg;
+	this.scene.customDarkness	= this.settings.customDarkness;
+
+	this.flooring.grass				= this.settings.grass;
+	this.flooring.customHaze	= this.settings.customHaze;
+	this.flooring.customFill	= this.settings.customFill;
+
+
+	this.buildData.block_x 		= this.settings.x;
+	this.buildData.block_y 		= this.settings.y;
+	this.buildData.x					= this.buildData.block_x * 80;
+	this.buildData.y 					= this.buildData.block_y * 80;
+	this.buildData.w 					= this.settings.w * 80;
+	this.buildData.h 					= this.settings.h * 80;
+
+	this.buildData.html		= html_lib_use(this.character, false, true);
+
+	this.buildData.css		=	{
+									"-webkit-transform"	: "translate(" + this.buildData.x + "px, " + this.buildData.y + "px)",
+									"transform"			: "translate(" + this.buildData.x + "px, " + this.buildData.y + "px)"
+								};
+
+	delete this.settings;
+};
+
+friend.prototype.build = function()
+{
+	$(this.buildData.container).append(this.buildData.html);
+	$(this.buildData.container + " #" + this.character).attr("id", this.id);
+
+	$(this.buildData.container + " #" + this.id).css(this.buildData.css);
+
+	$(this.buildData.container + " #" + this.id).attr("data-npc", "friend");
+
+	this.rendered = true;
+};
+
+function friendRead()
+{
+	for(var levelData in Logic.dat_ROM["_LEVELS"])
+	{
+		for(var i in Logic.dat_ROM["_LEVELS"][levelData]["friendPlayers"])
+		{
+			friendData_ARR.push(Logic.dat_ROM["_LEVELS"][levelData]["friendPlayers"][i]);
+		}
+	}
+
+	var friend_count = 0;
+
+	for(var j in friendData_ARR)
+	{
+		var f = new friend(friendData_ARR[j], ".layer-field-friend-area", friend_count);
+
+		f.create();
+
+		friends_ARR.push(f);
+
+		friend_count++;
+	}
 }
 
 var portal = function(settings, container)
@@ -1175,22 +1258,6 @@ function level_player_setup()
 
 function level_clear()
 {
-	/*
-	var find_bgPixels = {};
-
-	find_bgPixels.target 			= $(".bgFill-l").attr("class");
-	find_bgPixels.searchBeg 	= find_bgPixels.target.search("pixels");
-	find_bgPixels.searchEnd		= find_bgPixels.target.length;
-	find_bgPixels.classString	= find_bgPixels.target.substr(find_bgPixels.searchBeg, find_bgPixels.searchEnd);
-
-	$(".bgFill-l").removeClass(find_bgPixels.classString);
-	$(".bgFill-r").removeClass(find_bgPixels.classString);
-	$(".bgFill-t").removeClass(find_bgPixels.classString);
-	$(".bgFill-b").removeClass(find_bgPixels.classString);
-
-	delete find_bgPixels;
-	*/
-
 	level_fill_clear("bgFill-l");
 	level_fill_clear("bgFill-r");
 	level_fill_clear("bgFill-t");

@@ -1,5 +1,8 @@
 var display;
 
+var tt_levelShift;
+var time_levelShift = 800;
+
 var Display = function(w, h, target)
 {
 	this.gameWidth = w;
@@ -211,4 +214,29 @@ function display_setBG()
 
 	$(".bgFill-t").css(display.fill.css.t);
 	$(".bgFill-b").css(display.fill.css.b);
+}
+
+function levelShift_init(run)
+{
+	if(run)
+	{
+		levelShift_loop();
+	}
+
+	else
+	{
+		clearTimeout(tt_levelShift);
+	}
+}
+
+function levelShift_loop()
+{
+	tt_levelShift = setTimeout(levelShift_loopEnd, time_levelShift);
+}
+
+function levelShift_loopEnd()
+{
+	display_centerLevel();
+
+	levelShift_loop();
 }

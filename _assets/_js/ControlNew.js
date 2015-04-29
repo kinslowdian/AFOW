@@ -654,7 +654,7 @@ function hitTest_findFriend()
 		}
 	}
 
-	temp_messageScreen_init();
+	messageScreen_init();
 
 	trace("!!! FRIEND HIT === " + friendTarget);
 }

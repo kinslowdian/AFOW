@@ -131,12 +131,6 @@ function preloader_remove_step0()
 {
 	$("#preload-wrapper .preloader-message-group").css("opacity", "1");
 
-	// $("#preload-wrapper .preloader-message-sound")[0].addEventListener("touchend", preloader_remove1, false);
-	// $("#preload-wrapper .preloader-message-sound")[0].addEventListener("click", preloader_remove1, false);
-
-	// $("#preload-wrapper .preloader-message-silence")[0].addEventListener("touchend", preload_removeNS, false);
-	// $("#preload-wrapper .preloader-message-silence")[0].addEventListener("click", preload_removeNS, false);
-
 	$("#preload-wrapper .preloader-message-start")[0].addEventListener("touchend", preloader_remove_btnEvent, false);
 	$("#preload-wrapper .preloader-message-start")[0].addEventListener("click", preloader_remove_btnEvent, false);
 }
@@ -149,26 +143,9 @@ function preloader_remove_btnEvent(event)
 	$("#preload-wrapper .preloader-message-start")[0].removeEventListener("touchend", preloader_remove_btnEvent, false);
 	$("#preload-wrapper .preloader-message-start")[0].removeEventListener("click", preloader_remove_btnEvent, false);
 
-	// html_lib_reuse();
-
-	// multiUseInfoScreen_build("#preload-wrapper", "SOUND_GLOBAL");
-
-	// multiUseInfoScreen_build("#preload-wrapper", "START_INTRO");
-
-	// multiUseInfoScreen_build("#preload-wrapper", "CONTROL");
 
 	multiUseInfoScreen_build("#options_wrapper .options-choice", "START_INTRO", false);
 
-	// html_screen_soundOptions = html_lib_use("_multiUseInfo", false, false);
-	// html_soundOptions = html_lib_use("_multiUseInfo_br_sound", false, false);
-
-	// html_lib_empty();
-
-	// $("#preload-wrapper").append(html_screen_soundOptions);
-	// $("#preload-wrapper .multiUseInfo_br").append(html_soundOptions);
-	// $("#preload-wrapper .multiUseInfo_cont_entrance").addClass("multiUseInfo_sound");
-
-	// multiUseInfoScreen_drop("SOUND_GLOBAL");
 
 	// QUICK BREAK
 	$(".tween-preload")[0].addEventListener("webkitTransitionEnd", test_soundOptions, false);
@@ -176,17 +153,12 @@ function preloader_remove_btnEvent(event)
 
 	$("#preload-wrapper .preloader-message-group").css("opacity", "0");
 
-	//var d = setTimeout(multiUseInfoScreen_drop, 3 * 1000, "SOUND_GLOBAL");
-
-	// multiUseInfoScreen_drop("SOUND_GLOBAL");
 }
 
 function test_soundOptions(event)
 {
 	$(".tween-preload")[0].removeEventListener("webkitTransitionEnd", test_soundOptions, false);
 	$(".tween-preload")[0].removeEventListener("transitionend", test_soundOptions, false);
-
-	// multiUseInfoScreen_drop("SOUND_GLOBAL");
 
 	multiUseInfoScreen_drop();
 }
