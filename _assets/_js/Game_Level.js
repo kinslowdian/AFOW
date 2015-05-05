@@ -4,8 +4,10 @@ var LEVEL_MAIN;
 var foggy = {};
 
 var enemyData_ARR = new Array();
+var enemyBodyHTML = "";
 var enemies_ARR = new Array();
 var enemiesBorn = false;
+
 
 var friendData_ARR = new Array();
 var friends_ARR = new Array();
@@ -173,7 +175,11 @@ enemy.prototype.build = function()
 	$(this.buildData.container).append(this.buildData.html);
 	$(this.buildData.container + " #_enemy_" + this.enemyType).attr("id", this.id);
 
+
+
 	$(this.buildData.container + " #" + this.id).css(this.buildData.css);
+	$(this.buildData.container + " #" + this.id).html(enemyBodyHTML);
+
 
 	$(this.buildData.container + " #" + this.id).attr("data-npc", "enemy");
 
@@ -185,6 +191,8 @@ enemy.prototype.build = function()
 
 function enemyRead()
 {
+	enemyBodyHTML = html_lib_use("_enemy_body", false, true);
+
 	for(var levelData in Logic.dat_ROM["_LEVELS"])
 	{
 		for(var i in Logic.dat_ROM["_LEVELS"][levelData]["enemyPlayers"])

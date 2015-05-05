@@ -846,6 +846,7 @@ function preBattle_fullContent()
 
 	// CHARACTER ADD
 	$(".multiUseInfo_preBattle .multiUseInfo_serial").html(enemyTarget.buildData.html);
+	$(".multiUseInfo_preBattle .multiUseInfo_serial > div").html(enemyBodyHTML);
 }
 
 function preBattle_display()
@@ -1052,6 +1053,7 @@ function intoBattle_fullContent()
 	$(".multiUseInfo_intoBattle .multiUseInfo_serial").html(serial_html);
 	$(".multiUseInfo_intoBattle .multiUseInfo_serial .intoFightDisplay_p1").html(player_html);
 	$(".multiUseInfo_intoBattle .multiUseInfo_serial .intoFightDisplay_p2").html(enemyTarget.buildData.html);
+	$(".multiUseInfo_intoBattle .multiUseInfo_serial .intoFightDisplay_p2 > div").html(enemyBodyHTML);
 }
 
 function intoBattle_btnInit(run)

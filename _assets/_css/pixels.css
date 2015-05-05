@@ -266,7 +266,8 @@ div[class*='tween-']
 	background-image: url(../_img/map_enemySprite40x40_1x.png);
 	background-repeat: no-repeat;
 	/* background-size: 320px 240px; */
-	background-size: 320px 360px;
+	/*background-size: 320px 480px;*/
+	background-size: 320px 1560px;
 }
 
 .pixels_battleCloud
@@ -440,7 +441,7 @@ div[class*='tween-']
 {
 	background-image: url(../_img/battleCuteFull_1x.png);
 	background-repeat: no-repeat;
-	background-size: 371px 390px;
+	background-size: 371px 510px;
 }
 
 .pixels_levelClearing

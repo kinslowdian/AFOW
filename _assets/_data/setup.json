@@ -470,7 +470,7 @@
 					"y": 4,
 					"w": 1,
 					"h": 1,
-					"level": 16,
+					"level": 17,
 					"exit": 0,
 					"direction": "UP",
 					"spawn": 0,
@@ -5818,10 +5818,367 @@
 				"h": 1,
 				"level": 17,
 				"exit": 0,
-				"direction": "DOWN",
+				"direction": "UP",
 				"spawn": 16,
 				"bossLevel": false,
 				"p": "portal_top_evening0"
+				}
+			],
+
+			"sound_level":
+			[
+
+			],
+
+			"sound_trigger":
+			[
+
+			]
+		},
+
+		"level17":
+		{
+			"levelSettings":
+			{
+				"n": 17,
+				"weather": "SNOW",
+				"mist": false,
+				"land": "underground",
+				"floor": "field-floor-underground",
+				"entry_fall": false,
+				"fall_x": 0,
+				"fall_y": 0,
+				"fall_d": "DOWN",
+				"title_top": "escape from the fields",
+				"levelFunctions":
+				{
+
+				}
+			},
+
+			"texture":
+			{
+				"WALLS" :
+				[
+					{"x": 3, "y": 6.5, "w": 0.5, "h": 0.5, "p": "collideCheck-field"},
+					{"x": 0, "y": 9, "w": 0.5, "h": 0.5, "p": "collideCheck-field"},
+					{"x": 3.5, "y": 9, "w": 0.5, "h": 0.5, "p": "collideCheck-field"},
+					{"x": 0, "y": 1, "w": 1, "h": 1.5, "p": "collideCheck-field"},
+					{"x": 2, "y": 0.5, "w": 1, "h": 2, "p": "collideCheck-field"},
+					{"x": 1.5, "y": 1, "w": 0.5, "h": 1, "p": "collideCheck-field"},
+					{"x": 3, "y": 1, "w": 0.5, "h": 1, "p": "collideCheck-field"},
+					{"x": 1, "y": 3, "w": 3, "h": 0.5, "p": "collideCheck-field"},
+					{"x": 0.5, "y": 3, "w": 0.5, "h": 4, "p": "collideCheck-field"},
+					{"x": 1, "y": 6.5, "w": 2, "h": 1, "p": "collideCheck-field"},
+					{"x": 1, "y": 8, "w": 2, "h": 1.5, "p": "collideCheck-field"},
+					{"x": 0.5, "y": 8.5, "w": 0.5, "h": 1, "p": "collideCheck-field"},
+					{"x": 3, "y": 8.5, "w": 0.5, "h": 1, "p": "collideCheck-field"},
+					{"x": 0.5, "y": 10, "w": 3, "h": 0.5, "p": "collideCheck-field"},
+					{"x": 0.5, "y": 10.5, "w": 0.5, "h": 2.5, "p": "collideCheck-field"},
+					{"x": 1, "y": 12.5, "w": 1, "h": 0.5, "p": "collideCheck-field"},
+					{"x": 2, "y": 11, "w": 0.5, "h": 2, "p": "collideCheck-field"},
+					{"x": 3, "y": 10.5, "w": 0.5, "h": 4, "p": "collideCheck-field"},
+					{"x": 0, "y": 13.5, "w": 3, "h": 1, "p": "collideCheck-field"},
+					{"x": 1, "y": 15, "w": 3, "h": 0.5, "p": "collideCheck-field"},
+					{"x": 0.5, "y": 15, "w": 0.5, "h": 3, "p": "collideCheck-field"},
+					{"x": 1, "y": 17.5, "w": 2.5, "h": 0.5, "p": "collideCheck-field"},
+					{"x": 3, "y": 16.5, "w": 0.5, "h": 1, "p": "collideCheck-field"},
+					{"x": 1.5, "y": 16, "w": 2, "h": 0.5, "p": "collideCheck-field"},
+					{"x": 0, "y": 18.5, "w": 4, "h": 0.5, "p": "collideCheck-field"},
+					{"x": 1, "y": 19.5, "w": 0.5, "h": 2.5, "p": "collideCheck-field"},
+					{"x": 0.5, "y": 21.5, "w": 0.5, "h": 2, "p": "collideCheck-field"},
+					{"x": 1, "y": 23, "w": 0.5, "h": 1, "p": "collideCheck-field"},
+					{"x": 1.5, "y": 23.5, "w": 0.5, "h": 1, "p": "collideCheck-field"},
+					{"x": 2, "y": 23.5, "w": 2, "h": 0.5, "p": "collideCheck-field"}
+				],
+
+				"PLANTS":
+				[
+					{"x": 2, "y": 10.5, "w": 0.5, "h": 0.5, "p": "pixels_undeground_floor"},
+					{"x": 1, "y": 16, "w": 0.5, "h": 0.5, "p": "pixels_undeground_floor"},
+					{"x": 3.5, "y": 6.5, "w": 0.5, "h": 0.5, "p": "pixels_undeground_floor"},
+					{"x": 0, "y": 8.5, "w": 0.5, "h": 0.5, "p": "pixels_undeground_floor"},
+					{"x": 3.5, "y": 8.5, "w": 0.5, "h": 0.5, "p": "pixels_undeground_floor"},
+					{"x": 0, "y": 20.5, "w": 1, "h": 1, "p": "pixels_undeground_floor"},
+					{"x": 0, "y": 21.5, "w": 0.5, "h": 2, "p": "pixels_undeground_floor"},
+					{"x": 0, "y": 23.5, "w": 1, "h": 1.5, "p": "pixels_undeground_floor"},
+					{"x": 1, "y": 24, "w": 0.5, "h": 1, "p": "pixels_undeground_floor"},
+					{"x": 2, "y": 24, "w": 1, "h": 1, "p": "pixels_undeground_floor"},
+					{"x": 0, "y": 18, "w": 4, "h": 0.5, "p": "pixels_undeground_floor"},
+					{"x": 0, "y": 14.5, "w": 0.5, "h": 3.5, "p": "pixels_undeground_floor"},
+					{"x": 3.5, "y": 16, "w": 0.5, "h": 2, "p": "pixels_undeground_floor"},
+					{"x": 1, "y": 15.5, "w": 3, "h": 0.5, "p": "pixels_undeground_floor"},
+					{"x": 1, "y": 16.5, "w": 1, "h": 1, "p": "pixels_undeground_floor"},
+					{"x": 0.5, "y": 14.5, "w": 3.5, "h": 0.5, "p": "pixels_undeground_floor"},
+					{"x": 3.5, "y": 9.5, "w": 0.5, "h": 5, "p": "pixels_undeground_floor"},
+					{"x": 0, "y": 9.5, "w": 3.5, "h": 0.5, "p": "pixels_undeground_floor"},
+					{"x": 0, "y": 10, "w": 0.5, "h": 3.5, "p": "pixels_undeground_floor"},
+					{"x": 0.5, "y": 13, "w": 2.5, "h": 0.5, "p": "pixels_undeground_floor"},
+					{"x": 2.5, "y": 10.5, "w": 0.5, "h": 2.5, "p": "pixels_undeground_floor"},
+					{"x": 1, "y": 10.5, "w": 1, "h": 1, "p": "pixels_undeground_floor"},
+					{"x": 0, "y": 7, "w": 1, "h": 1.5, "p": "pixels_undeground_floor"},
+					{"x": 3, "y": 7, "w": 1, "h": 1.5, "p": "pixels_undeground_floor"},
+					{"x": 1, "y": 7.5, "w": 2, "h": 0.5, "p": "pixels_undeground_floor"},
+					{"x": 0, "y": 2.5, "w": 0.5, "h": 4.5, "p": "pixels_undeground_floor"},
+					{"x": 0.5, "y": 2.5, "w": 3.5, "h": 0.5, "p": "pixels_undeground_floor"},
+					{"x": 1, "y": 4.5, "w": 1, "h": 2, "p": "pixels_undeground_floor"},
+					{"x": 2, "y": 3.5, "w": 2, "h": 3, "p": "pixels_undeground_floor"},
+					{"x": 3, "y": 2, "w": 1, "h": 0.5, "p": "pixels_undeground_floor"},
+					{"x": 1, "y": 2, "w": 1, "h": 0.5, "p": "pixels_undeground_floor"},
+					{"x": 1, "y": 1, "w": 0.5, "h": 1, "p": "pixels_undeground_floor"},
+					{"x": 3.5, "y": 1, "w": 0.5, "h": 1, "p": "pixels_undeground_floor"},
+					{"x": 2, "y": 0, "w": 1, "h": 0.5, "p": "pixels_undeground_floor"},
+					{"x": 1, "y": 0, "w": 1, "h": 1, "p": "pixels_undeground_floor"},
+					{"x": 3, "y": 0, "w": 1, "h": 1, "p": "pixels_undeground_floor"}
+				],
+
+				"CLEARING":
+				[
+
+				],
+
+				"OUTER":
+				{
+					"class_LR": "pixels_undergroundMass",
+					"class_TB": "pixels_undergroundMass"
+				}
+			},
+
+			"water":
+			{
+				"EDGE":
+				[
+
+				],
+
+				"BASE":
+				[
+
+				],
+
+				"FISH":
+				[
+
+				]
+			},
+
+			"enemyPlayers":
+			[
+				{
+				"x": 3,
+				"y": 3.5,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level17_rabbit0",
+				"t": "ape",
+				"l": 6,
+				"known": "a rabbit of resentment",
+				"spawn": 17
+				},
+
+				{
+				"x": 3,
+				"y": 4,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level17_rabbit1",
+				"t": "bear",
+				"l": 6,
+				"known": "a rabbit of resentment",
+				"spawn": 17
+				},
+
+				{
+				"x": 3,
+				"y": 4.5,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level17_rabbit2",
+				"t": "bull",
+				"l": 6,
+				"known": "a rabbit of resentment",
+				"spawn": 17
+				},
+
+				{
+				"x": 3,
+				"y": 5,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level17_rabbit3",
+				"t": "cat",
+				"l": 6,
+				"known": "a rabbit of resentment",
+				"spawn": 17
+				},
+
+				{
+				"x": 1,
+				"y": 5.5,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level17_rabbit4",
+				"t": "fox",
+				"l": 6,
+				"known": "a rabbit of resentment",
+				"spawn": 17
+				},
+
+				{
+				"x": 1.5,
+				"y": 5.5,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level17_rabbit5",
+				"t": "frog",
+				"l": 6,
+				"known": "a rabbit of resentment",
+				"spawn": 17
+				},
+
+				{
+				"x": 2,
+				"y": 5.5,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level17_rabbit6",
+				"t": "jackal",
+				"l": 6,
+				"known": "a rabbit of resentment",
+				"spawn": 17
+				},
+
+				{
+				"x": 2.5,
+				"y": 5.5,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level17_rabbit7",
+				"t": "mouse",
+				"l": 6,
+				"known": "a rabbit of resentment",
+				"spawn": 17
+				},
+
+				{
+				"x": 3,
+				"y": 5.5,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level17_crow8",
+				"t": "platypus",
+				"l": 9,
+				"known": "the crow of confusion",
+				"spawn": 17
+				},
+
+				{
+				"x": 1.5,
+				"y": 24.5,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level17_rabbit9",
+				"t": "shoebill",
+				"l": 9,
+				"known": "the rabbit of revenge",
+				"spawn": 17
+				}
+			],
+
+			"friendPlayers":
+			[
+
+			],
+
+			"gates":
+			[
+
+			],
+
+			"portal":
+			[
+				{
+				"num": 0,
+				"x": 0,
+				"y": 0,
+				"w": 1,
+				"h": 1,
+				"level": 16,
+				"exit": 2,
+				"direction": "RIGHT",
+				"spawn": 17,
+				"bossLevel": false,
+				"p": "portal_top_underground"
+				},
+
+				{
+				"num": 1,
+				"x": 1,
+				"y": 3.5,
+				"w": 1,
+				"h": 1,
+				"level": 17,
+				"exit": 3,
+				"direction": "RIGHT",
+				"spawn": 17,
+				"bossLevel": false,
+				"p": "portal_top_underground"
+				},
+
+				{
+				"num": 2,
+				"x": 1,
+				"y": 11.5,
+				"w": 1,
+				"h": 1,
+				"level": 17,
+				"exit": 4,
+				"direction": "UP",
+				"spawn": 17,
+				"bossLevel": false,
+				"p": "portal_top_underground"
+				},
+
+				{
+				"num": 3,
+				"x": 2,
+				"y": 16.5,
+				"w": 1,
+				"h": 1,
+				"level": 17,
+				"exit": 1,
+				"direction": "LEFT",
+				"spawn": 17,
+				"bossLevel": false,
+				"p": "portal_top_underground"
+				},
+
+				{
+				"num": 4,
+				"x": 0,
+				"y": 19.5,
+				"w": 1,
+				"h": 1,
+				"level": 17,
+				"exit": 2,
+				"direction": "DOWN",
+				"spawn": 17,
+				"bossLevel": false,
+				"p": "portal_top_underground"
+				},
+
+				{
+				"num": 5,
+				"x": 3,
+				"y": 24,
+				"w": 1,
+				"h": 1,
+				"level": 18,
+				"exit": 0,
+				"direction": "LEFT",
+				"spawn": 17,
+				"bossLevel": false,
+				"p": "portal_top_underground"
 				}
 			],
 

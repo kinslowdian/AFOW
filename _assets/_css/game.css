@@ -1514,6 +1514,8 @@
 
 	/* DISPLAY PIXELS */
 
+	/*RABBIT*/
+
 	.enemy_rabbit .map-enemy_40x40-head
 	{
 		background-position-y: 0;
@@ -1539,6 +1541,7 @@
 		background-position-y: -80px;
 	}
 
+	/*CROW*/
 
 	.enemy_crow .enemy-sprite .map-enemy_40x40-head
 	{
@@ -1565,6 +1568,7 @@
 		background-position-y: -200px;
 	}
 
+	/*ZOMBIE*/
 
 	.enemy_zombie .enemy-sprite .map-enemy_40x40-head
 	{
@@ -1591,6 +1595,275 @@
 		background-position-y: -320px;
 	}
 
+	/*CAT*/
+
+	.enemy_cat .enemy-sprite .map-enemy_40x40-head
+	{
+		background-position-y: -360px;
+	}
+
+	.enemy_cat .enemy-sprite .map-enemy_40x40-hand-L
+	{
+		background-position-y: -400px;
+	}
+
+	.enemy_cat .enemy-sprite .map-enemy_40x40-hand-R
+	{
+		background-position-y: -400px;
+	}
+
+	.enemy_cat .enemy-sprite .map-enemy_40x40-body
+	{
+		background-position-y: -360px;
+	}
+
+	.enemy_cat .enemy-sprite .map-enemy_40x40-legs
+	{
+		background-position-y: -440px;
+	}
+
+	/*APE*/
+
+.enemy_ape .enemy-sprite .map-enemy_40x40-head
+{
+	background-position-y: -480px;
+}
+
+.enemy_ape .enemy-sprite .map-enemy_40x40-hand-L
+{
+	background-position-y: -520px;
+}
+
+.enemy_ape .enemy-sprite .map-enemy_40x40-hand-R
+{
+	background-position-y: -520px;
+}
+
+.enemy_ape .enemy-sprite .map-enemy_40x40-body
+{
+	background-position-y: -480px;
+}
+
+.enemy_ape .enemy-sprite .map-enemy_40x40-legs
+{
+	background-position-y: -560px;
+}
+
+	/*BEAR*/
+
+.enemy_bear .enemy-sprite .map-enemy_40x40-head
+{
+	background-position-y: -600px;
+}
+
+.enemy_bear .enemy-sprite .map-enemy_40x40-hand-L
+{
+	background-position-y: -640px;
+}
+
+.enemy_bear .enemy-sprite .map-enemy_40x40-hand-R
+{
+	background-position-y: -640px;
+}
+
+.enemy_bear .enemy-sprite .map-enemy_40x40-body
+{
+	background-position-y: -600px;
+}
+
+.enemy_bear .enemy-sprite .map-enemy_40x40-legs
+{
+	background-position-y: -680px;
+}
+
+	/*BULL*/
+
+.enemy_bull .enemy-sprite .map-enemy_40x40-head
+{
+	background-position-y: -720px;
+}
+
+.enemy_bull .enemy-sprite .map-enemy_40x40-hand-L
+{
+	background-position-y: -760px;
+}
+
+.enemy_bull .enemy-sprite .map-enemy_40x40-hand-R
+{
+	background-position-y: -760px;
+}
+
+.enemy_bull .enemy-sprite .map-enemy_40x40-body
+{
+	background-position-y: -720px;
+}
+
+.enemy_bull .enemy-sprite .map-enemy_40x40-legs
+{
+	background-position-y: -800px;
+}
+
+	/*FOX*/
+
+.enemy_fox .enemy-sprite .map-enemy_40x40-head
+{
+	background-position-y: -840px;
+}
+
+.enemy_fox .enemy-sprite .map-enemy_40x40-hand-L
+{
+	background-position-y: -880px;
+}
+
+.enemy_fox .enemy-sprite .map-enemy_40x40-hand-R
+{
+	background-position-y: -880px;
+}
+
+.enemy_fox .enemy-sprite .map-enemy_40x40-body
+{
+	background-position-y: -840px;
+}
+
+.enemy_fox .enemy-sprite .map-enemy_40x40-legs
+{
+	background-position-y: -920px;
+}
+
+	/*FROG*/
+
+.enemy_frog .enemy-sprite .map-enemy_40x40-head
+{
+	background-position-y: -960px;
+}
+
+.enemy_frog .enemy-sprite .map-enemy_40x40-hand-L
+{
+	background-position-y: -1000px;
+}
+
+.enemy_frog .enemy-sprite .map-enemy_40x40-hand-R
+{
+	background-position-y: -1000px;
+}
+
+.enemy_frog .enemy-sprite .map-enemy_40x40-body
+{
+	background-position-y: -960px;
+}
+
+.enemy_frog .enemy-sprite .map-enemy_40x40-legs
+{
+	background-position-y: -1040px;
+}
+
+	/*JACKAL*/
+
+.enemy_jackal .enemy-sprite .map-enemy_40x40-head
+{
+	background-position-y: -1080px;
+}
+
+.enemy_jackal .enemy-sprite .map-enemy_40x40-hand-L
+{
+	background-position-y: -1120px;
+}
+
+.enemy_jackal .enemy-sprite .map-enemy_40x40-hand-R
+{
+	background-position-y: -1120px;
+}
+
+.enemy_jackal .enemy-sprite .map-enemy_40x40-body
+{
+	background-position-y: -1080px;
+}
+
+.enemy_jackal .enemy-sprite .map-enemy_40x40-legs
+{
+	background-position-y: -1160px;
+}
+
+	/*MOUSE*/
+
+.enemy_mouse .enemy-sprite .map-enemy_40x40-head
+{
+	background-position-y: -1200px;
+}
+
+.enemy_mouse .enemy-sprite .map-enemy_40x40-hand-L
+{
+	background-position-y: -1240px;
+}
+
+.enemy_mouse .enemy-sprite .map-enemy_40x40-hand-R
+{
+	background-position-y: -1240px;
+}
+
+.enemy_mouse .enemy-sprite .map-enemy_40x40-body
+{
+	background-position-y: -1200px;
+}
+
+.enemy_mouse .enemy-sprite .map-enemy_40x40-legs
+{
+	background-position-y: -1280px;
+}
+
+	/*PLATYPUS*/
+
+.enemy_platypus .enemy-sprite .map-enemy_40x40-head
+{
+	background-position-y: -1320px;
+}
+
+.enemy_platypus .enemy-sprite .map-enemy_40x40-hand-L
+{
+	background-position-y: -1360px;
+}
+
+.enemy_platypus .enemy-sprite .map-enemy_40x40-hand-R
+{
+	background-position-y: -1360px;
+}
+
+.enemy_platypus .enemy-sprite .map-enemy_40x40-body
+{
+	background-position-y: -1320px;
+}
+
+.enemy_platypus .enemy-sprite .map-enemy_40x40-legs
+{
+	background-position-y: -1400px;
+}
+
+	/*SHOEBILL*/
+
+.enemy_shoebill .enemy-sprite .map-enemy_40x40-head
+{
+	background-position-y: -1440px;
+}
+
+.enemy_shoebill .enemy-sprite .map-enemy_40x40-hand-L
+{
+	background-position-y: -1480px;
+}
+
+.enemy_shoebill .enemy-sprite .map-enemy_40x40-hand-R
+{
+	background-position-y: -1480px;
+}
+
+.enemy_shoebill .enemy-sprite .map-enemy_40x40-body
+{
+	background-position-y: -1440px;
+}
+
+.enemy_shoebill .enemy-sprite .map-enemy_40x40-legs
+{
+	background-position-y: -1520px;
+}
 
 	.map-enemy_40x40_head_default
 	{
@@ -4564,6 +4837,61 @@
 	.battleNav-player-head-goat, .battleNav-player-head-zombie
 	{
 		background-position: -120px -330px;
+	}
+
+	.battleNav-player-head-ape
+	{
+		background-position: -180px -330px;
+	}
+
+	.battleNav-player-head-bear
+	{
+		background-position: -240px -330px;
+	}
+
+	.battleNav-player-head-bull
+	{
+		background-position: -300px -330px;
+	}
+
+	.battleNav-player-head-cat
+	{
+		background-position: 0px -390px;
+	}
+
+	.battleNav-player-head-fox
+	{
+		background-position: -60px -390px;
+	}
+
+	.battleNav-player-head-frog
+	{
+		background-position: -120px -390px;
+	}
+
+	.battleNav-player-head-jackal
+	{
+		background-position: -180px -390px;
+	}
+
+	.battleNav-player-head-mouse
+	{
+		background-position: -240px -390px;
+	}
+
+	.battleNav-player-head-platypus
+	{
+		background-position: -300px -390px;
+	}
+
+	.battleNav-player-head-shoebill
+	{
+		background-position: 0px -450px;
+	}
+
+	.battleNav-player-head-boss
+	{
+		background-position: -60px -450px;
 	}
 
 /* ----------------------------------------------------------------------- BATTLE NAV HEADS */
