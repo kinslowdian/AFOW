@@ -470,7 +470,7 @@
 					"y": 4,
 					"w": 1,
 					"h": 1,
-					"level": 17,
+					"level": 1994,
 					"exit": 0,
 					"direction": "UP",
 					"spawn": 0,
@@ -3248,7 +3248,7 @@
 				"y": 15,
 				"w": 1,
 				"h": 1,
-				"level": 99,
+				"level": 1994,
 				"exit": 0,
 				"direction": "LEFT",
 				"spawn": 9,
@@ -6179,6 +6179,182 @@
 				"spawn": 17,
 				"bossLevel": false,
 				"p": "portal_top_underground"
+				}
+			],
+
+			"sound_level":
+			[
+
+			],
+
+			"sound_trigger":
+			[
+
+			]
+		},
+
+		"level1994":
+		{
+			"levelSettings":
+			{
+				"n": 1994,
+				"weather": "SNOW",
+				"mist": true,
+				"land": "snow",
+				"floor": "field-floor-stone",
+				"entry_fall": false,
+				"fall_x": 0,
+				"fall_y": 0,
+				"fall_d": "DOWN",
+				"title_top": "lesson of gates",
+				"levelFunctions":
+				{
+
+				}
+			},
+
+			"texture":
+			{
+				"WALLS" :
+				[
+					{"x": 0, "y": 10, "w": 0.5, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 3.5, "y": 10, "w": 0.5, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 1, "y": 0, "w": 0.5, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 2.5, "y": 0, "w": 0.5, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 0, "y": 1, "w": 0.5, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 3.5, "y": 1, "w": 0.5, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 0, "y": 0, "w": 1, "h": 1, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 3, "y": 0, "w": 1, "h": 1, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 0, "y": 10.5, "w": 1, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 3, "y": 10.5, "w": 1, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 0, "y": 11, "w": 1.5, "h": 14, "p": "pixels_boulder_stone collideCheck-field"},
+					{"x": 2.5, "y": 11, "w": 1.5, "h": 14, "p": "pixels_boulder_stone collideCheck-field"},
+
+					{"x": 0.5, "y": 3.5, "w": 0.5, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 3, "y": 3.5, "w": 0.5, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 0.5, "y": 6, "w": 0.5, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 3, "y": 6, "w": 0.5, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 0.5, "y": 8.5, "w": 0.5, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 3, "y": 8.5, "w": 0.5, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 1.5, "y": 2.5, "w": 1, "h": 1.5, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 1, "y": 3, "w": 0.5, "h": 1, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 2.5, "y": 3, "w": 0.5, "h": 1, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 1.5, "y": 5, "w": 1, "h": 1.5, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 1, "y": 5.5, "w": 0.5, "h": 1, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 2.5, "y": 5.5, "w": 0.5, "h": 1, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 1.5, "y": 7.5, "w": 1, "h": 1.5, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 1, "y": 8, "w": 0.5, "h": 1, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 2.5, "y": 8, "w": 0.5, "h": 1, "p": "pixels_stoneForest collideCheck-field"}
+				],
+
+				"PLANTS":
+				[
+					{"x": 0, "y": 3.5, "w": 0.5, "h": 0.5, "p": "pixels_stoneFlowerHeavy"},
+					{"x": 3.5, "y": 3.5, "w": 0.5, "h": 0.5, "p": "pixels_stoneFlowerHeavy"},
+					{"x": 0, "y": 6, "w": 0.5, "h": 0.5, "p": "pixels_stoneFlowerHeavy"},
+					{"x": 3.5, "y": 6, "w": 0.5, "h": 0.5, "p": "pixels_stoneFlowerHeavy"},
+					{"x": 0, "y": 8.5, "w": 0.5, "h": 0.5, "p": "pixels_stoneFlowerHeavy"},
+					{"x": 3.5, "y": 8.5, "w": 0.5, "h": 0.5, "p": "pixels_stoneFlowerHeavy"},
+					{"x": 1.5, "y": 0, "w": 1, "h": 0.5, "p": "pixels_stoneFlowerHeavy"},
+					{"x": 1, "y": 0.5, "w": 2, "h": 0.5, "p": "pixels_stoneFlowerHeavy"},
+					{"x": 0.5, "y": 1, "w": 3, "h": 0.5, "p": "pixels_stoneFlowerHeavy"},
+					{"x": 0, "y": 1.5, "w": 4, "h": 1, "p": "pixels_stoneFlowerHeavy"},
+					{"x": 0, "y": 2.5, "w": 1.5, "h": 0.5, "p": "pixels_stoneFlowerHeavy"},
+					{"x": 2.5, "y": 2.5, "w": 1.5, "h": 0.5, "p": "pixels_stoneFlowerHeavy"},
+					{"x": 0, "y": 3, "w": 1, "h": 0.5, "p": "pixels_stoneFlowerHeavy"},
+					{"x": 3, "y": 3, "w": 1, "h": 0.5, "p": "pixels_stoneFlowerHeavy"},
+					{"x": 0, "y": 4, "w": 4, "h": 1, "p": "pixels_stoneFlowerHeavy"},
+					{"x": 0, "y": 5, "w": 1.5, "h": 0.5, "p": "pixels_stoneFlowerHeavy"},
+					{"x": 2.5, "y": 5, "w": 1.5, "h": 0.5, "p": "pixels_stoneFlowerHeavy"},
+					{"x": 0, "y": 5.5, "w": 1, "h": 0.5, "p": "pixels_stoneFlowerHeavy"},
+					{"x": 3, "y": 5.5, "w": 1, "h": 0.5, "p": "pixels_stoneFlowerHeavy"},
+					{"x": 0, "y": 6.5, "w": 4, "h": 1, "p": "pixels_stoneFlowerHeavy"},
+					{"x": 0, "y": 7.5, "w": 1.5, "h": 0.5, "p": "pixels_stoneFlowerHeavy"},
+					{"x": 2.5, "y": 7.5, "w": 1.5, "h": 0.5, "p": "pixels_stoneFlowerHeavy"},
+					{"x": 0, "y": 8, "w": 1, "h": 0.5, "p": "pixels_stoneFlowerHeavy"},
+					{"x": 3, "y": 8, "w": 1, "h": 0.5, "p": "pixels_stoneFlowerHeavy"},
+					{"x": 0, "y": 9, "w": 4, "h": 1, "p": "pixels_stoneFlowerHeavy"},
+					{"x": 0.5, "y": 10, "w": 3, "h": 0.5, "p": "pixels_stoneFlowerHeavy"},
+					{"x": 1, "y": 10.5, "w": 2, "h": 0.5, "p": "pixels_stoneFlowerHeavy"},
+					{"x": 1.5, "y": 11, "w": 1, "h": 13, "p": "pixels_stoneFlowerHeavy"}
+				],
+
+				"CLEARING":
+				[
+
+				],
+
+				"OUTER":
+				{
+					"class_LR": "pixels_stoneForestMassLR",
+					"class_TB": "pixels_stoneForestMassTB"
+				}
+			},
+
+			"water":
+			{
+				"EDGE":
+				[
+
+				],
+
+				"BASE":
+				[
+
+				],
+
+				"FISH":
+				[
+
+				]
+			},
+
+			"enemyPlayers":
+			[
+
+			],
+
+			"friendPlayers":
+			[
+				{
+					"x": 1.75,
+					"y": 1,
+					"w": 0.5,
+					"h": 0.5,
+					"n": "level1994_friend0",
+					"customFog": false,
+					"customDarkness": false,
+					"customHaze": false,
+					"customFill": false,
+					"bg": "pixels_behindWorld_good",
+					"grass": "pixels_stoneFlowerHeavy",
+					"once": false,
+					"character": "_player_friend_40x40",
+					"spawn": 1994,
+					"hint": "nowhere to go? remove the guards to open the gates that block your path",
+					"time": 4.6
+				}
+			],
+
+			"gates":
+			[
+
+			],
+
+			"portal":
+			[
+				{
+				"num": 0,
+				"x": 1.5,
+				"y": 24,
+				"w": 1,
+				"h": 1,
+				"level": 9,
+				"exit": 15,
+				"direction": "UP",
+				"spawn": 1994,
+				"bossLevel": false,
+				"p": "portal_top_stone"
 				}
 			],
 
