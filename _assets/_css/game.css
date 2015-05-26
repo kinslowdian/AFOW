@@ -2239,6 +2239,46 @@
 	background: #e5eaa4;
 }
 
+.field-floor-late
+{
+	background: #cbcfb4;
+}
+
+.field-floor-twilight
+{
+	background: #507373;
+}
+
+.field-floor-early
+{
+	background: #e7ffb2;
+}
+
+.field-floor-morning0
+{
+	background: #dad8a7;
+}
+
+.field-floor-morning1
+{
+	background: #f7efa2;
+}
+
+.field-floor-swamp
+{
+	background: #e3ffcc;
+}
+
+.field-floor-heath
+{
+	background: #fbffe5;
+}
+
+.field-floor-dry
+{
+	background: #ffd9bf;
+}
+
 /* ----------------------------------------------------------------------- LEVEL_GAME_TEXTURES */
 
 
