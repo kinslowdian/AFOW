@@ -17,7 +17,7 @@
 	background-position: -160px 0px;
 }
 
-.portal_top_underground
+.portal_top_underground, .portal_top_yesno
 {
 	background-position: -240px 0px;
 }
@@ -590,6 +590,23 @@
 	background-size: 320px 320px;
 }
 
+/*yesno*/
+
+.pixels_forest_yesno
+{
+	background-image: url(../_img/tile_no_1x.png);
+	background-repeat: repeat;
+	background-size: 80px 80px;
+}
+
+.pixels_flowerLight_yesno
+{
+	background-image: url(../_img/tile_yes_1x.png);
+	background-position: 0 0;
+	background-repeat: repeat;
+	background-size: 80px 80px;
+}
+
 
 @media all and (-webkit-min-device-pixel-ratio: 1), all and (min-device-pixel-ratio: 1)
 {
@@ -901,6 +918,16 @@
 	.pixels_forestMassTB_twilight
 	{
 		background-image: url(../_img/tile_pineTreesMassTB_twilight_1x.png);
+	}
+
+	.pixels_forest_yesno
+	{
+		background-image: url(../_img/tile_no_1x.png);
+	}
+
+	.pixels_flowerLight_yesno
+	{
+		background-image: url(../_img/tile_yes_1x.png);
 	}
 }
 
@@ -1214,5 +1241,15 @@
 	.pixels_forestMassTB_twilight
 	{
 		background-image: url(../_img/tile_pineTreesMassTB_twilight_2x.png);
+	}
+
+	.pixels_forest_yesno
+	{
+		background-image: url(../_img/tile_no_2x.png);
+	}
+
+	.pixels_flowerLight_yesno
+	{
+		background-image: url(../_img/tile_yes_2x.png);
 	}
 }

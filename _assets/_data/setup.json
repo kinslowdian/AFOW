@@ -470,7 +470,7 @@
 					"y": 4,
 					"w": 1,
 					"h": 1,
-					"level": 27,
+					"level": 39,
 					"exit": 0,
 					"direction": "UP",
 					"spawn": 0,
@@ -1803,8 +1803,8 @@
 					"y": 0,
 					"w": 1,
 					"h": 1,
-					"level": 4,
-					"exit": 5,
+					"level": 40,
+					"exit": 0,
 					"direction": "DOWN",
 					"spawn": 5,
 					"bossLevel": false,
@@ -9805,11 +9805,3981 @@
 				"w": 1,
 				"h": 1,
 				"level": 28,
-				"exit": 0,
+				"exit": 6,
 				"direction": "UP",
 				"spawn": 27,
 				"bossLevel": false,
 				"p": "portal_top_morning1"
+				}
+			],
+
+			"sound_level":
+			[
+
+			],
+
+			"sound_trigger":
+			[
+
+			]
+		},
+
+		"level28":
+		{
+			"levelSettings":
+			{
+				"n": 28,
+				"weather": "RAIN",
+				"mist": false,
+				"land": "morning1",
+				"floor": "field-floor-swamp",
+				"entry_fall": false,
+				"fall_x": 0,
+				"fall_y": 0,
+				"fall_d": "DOWN",
+				"title_top": "the swamp kingdom",
+				"levelFunctions":
+				{
+					"gate28_unlock":
+					[
+						{
+							"call_funct"	: "levelGate_checkStatus",
+							"call_params"	: ["level28_gate0", ["level28_frog0", "level28_frog1", "level28_frog2", "level28_frog3"]]
+						}
+					]
+				}
+			},
+
+			"texture":
+			{
+				"WALLS" :
+				[
+					{"x": 1, "y": 0, "w": 2, "h": 2, "p": "pixels_forest_swamp collideCheck-field"},
+					{"x": 0.5, "y": 2, "w": 3, "h": 1.5, "p": "pixels_forest_swamp collideCheck-field"},
+					{"x": 0, "y": 3.5, "w": 4, "h": 1, "p": "pixels_forest_swamp collideCheck-field"},
+					{"x": 1, "y": 4.5, "w": 2, "h": 2, "p": "pixels_forest_swamp collideCheck-field"},
+					{"x": 0.5, "y": 6.5, "w": 3, "h": 1.5, "p": "pixels_forest_swamp collideCheck-field"},
+					{"x": 0, "y": 8, "w": 4, "h": 1, "p": "pixels_forest_swamp collideCheck-field"},
+					{"x": 1, "y": 9, "w": 2, "h": 0.5, "p": "pixels_forest_swamp collideCheck-field"},
+					{"x": 0, "y": 23, "w": 1.5, "h": 2, "p": "pixels_forest_swamp collideCheck-field"},
+					{"x": 2.5, "y": 23, "w": 1.5, "h": 2, "p": "pixels_forest_swamp collideCheck-field"}
+				],
+
+				"PLANTS":
+				[
+					{"x": 0, "y": 1, "w": 1, "h": 1, "p": "pixels_flowerLight_swamp"},
+					{"x": 3, "y": 1, "w": 1, "h": 1, "p": "pixels_flowerLight_swamp"},
+					{"x": 0, "y": 2, "w": 0.5, "h": 1.5, "p": "pixels_flowerLight_swamp"},
+					{"x": 3.5, "y": 2, "w": 0.5, "h": 1.5, "p": "pixels_flowerLight_swamp"},
+					{"x": 0, "y": 5.5, "w": 1, "h": 1, "p": "pixels_flowerLight_swamp"},
+					{"x": 3, "y": 5.5, "w": 1, "h": 1, "p": "pixels_flowerLight_swamp"},
+					{"x": 0, "y": 6.5, "w": 0.5, "h": 1.5, "p": "pixels_flowerLight_swamp"},
+					{"x": 3.5, "y": 6.5, "w": 0.5, "h": 1.5, "p": "pixels_flowerLight_swamp"},
+					{"x": 1, "y": 11, "w": 2, "h": 7.5, "p": "pixels_flowerLight_swamp"},
+					{"x": 0.5, "y": 18.5, "w": 3, "h": 0.5, "p": "pixels_flowerLight_swamp"},
+					{"x": 0, "y": 19, "w": 1.5, "h": 1, "p": "pixels_flowerLight_swamp"},
+					{"x": 2.5, "y": 19, "w": 1.5, "h": 1, "p": "pixels_flowerLight_swamp"},
+					{"x": 0, "y": 20, "w": 4, "h": 1, "p": "pixels_flowerLight_swamp"},
+
+					{"x": 1.5, "y": 23, "w": 1, "h": 1, "p": "pixels_flowerHeavy_swamp"}
+				],
+
+				"CLEARING":
+				[
+
+				],
+
+				"OUTER":
+				{
+					"class_LR": "pixels_forestMassLR_swamp",
+					"class_TB": "pixels_forestMassTB_swamp"
+				}
+			},
+
+			"water":
+			{
+				"EDGE":
+				[
+					{"x": 0, "y": 9, "w": 1, "h": 0.5, "p": "pixels_waterEdge waterEdge tween-waterEdge"},
+					{"x": 3, "y": 9, "w": 1, "h": 0.5, "p": "pixels_waterEdge waterEdge tween-waterEdge"},
+					{"x": 1, "y": 9.5, "w": 2, "h": 0.5, "p": "pixels_waterEdge waterEdge tween-waterEdge"}
+				],
+
+				"BASE":
+				[
+					{"x": 3.5, "y": 18.5, "w": 0.5, "h": 0.5, "p": "pixels_waterBase waterPool collideCheck-field"},
+					{"x": 0, "y": 18.5, "w": 0.5, "h": 0.5, "p": "pixels_waterBase waterPool collideCheck-field"},
+					{"x": 0, "y": 9, "w": 1, "h": 0.5, "p": "pixels_waterBase waterPool collideCheck-field"},
+					{"x": 3, "y": 9, "w": 1, "h": 0.5, "p": "pixels_waterBase waterPool collideCheck-field"},
+					{"x": 0, "y": 9.5, "w": 4, "h": 0.5, "p": "pixels_waterBase waterPool collideCheck-field"},
+					{"x": 0, "y": 10, "w": 1, "h": 8.5, "p": "pixels_waterBase waterPool collideCheck-field"},
+					{"x": 3, "y": 10, "w": 1, "h": 8.5, "p": "pixels_waterBase waterPool collideCheck-field"}
+				],
+
+				"FISH":
+				[
+
+				]
+			},
+
+			"enemyPlayers":
+			[
+				{
+				"x": 0,
+				"y": 3,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level28_frog0",
+				"t": "frog",
+				"l": 84,
+				"known": "an overweight tadpole",
+				"spawn": 28,
+				"defeat":	{
+										"link_funct": "gate28_unlock"
+									}
+				},
+
+				{
+				"x": 3.5,
+				"y": 3,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level28_frog1",
+				"t": "frog",
+				"l": 84,
+				"known": "an overweight tadpole",
+				"spawn": 28,
+				"defeat":	{
+										"link_funct": "gate28_unlock"
+									}
+				},
+
+				{
+				"x": 0,
+				"y": 7.5,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level28_frog2",
+				"t": "frog",
+				"l": 96,
+				"known": "a bullfrog",
+				"spawn": 28,
+				"defeat":	{
+										"link_funct": "gate28_unlock"
+									}
+				},
+
+				{
+				"x": 3.5,
+				"y": 7.5,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level28_frog3",
+				"t": "frog",
+				"l": 96,
+				"known": "a bullfrog",
+				"spawn": 28,
+				"defeat":	{
+										"link_funct": "gate28_unlock"
+									}
+				}
+			],
+
+			"friendPlayers":
+			[
+
+			],
+
+			"gates":
+			[
+				{
+				"x": 0,
+				"y": 21,
+				"w": 4,
+				"h": 2,
+				"c_cl": "layer-field-gate-area",
+				"n": "level28_gate0",
+				"spawn": 28
+				}
+			],
+
+			"portal":
+			[
+				{
+				"num": 0,
+				"x": 0,
+				"y": 0,
+				"w": 1,
+				"h": 1,
+				"level": 28,
+				"exit": 2,
+				"direction": "DOWN",
+				"spawn": 28,
+				"bossLevel": false,
+				"p": "portal_top_swamp"
+				},
+
+				{
+				"num": 1,
+				"x": 3,
+				"y": 0,
+				"w": 1,
+				"h": 1,
+				"level": 28,
+				"exit": 3,
+				"direction": "DOWN",
+				"spawn": 28,
+				"bossLevel": false,
+				"p": "portal_top_swamp"
+				},
+
+				{
+				"num": 2,
+				"x": 0,
+				"y": 4.5,
+				"w": 1,
+				"h": 1,
+				"level": 28,
+				"exit": 5,
+				"direction": "DOWN",
+				"spawn": 28,
+				"bossLevel": false,
+				"p": "portal_top_swamp"
+				},
+
+				{
+				"num": 3,
+				"x": 3,
+				"y": 4.5,
+				"w": 1,
+				"h": 1,
+				"level": 28,
+				"exit": 4,
+				"direction": "DOWN",
+				"spawn": 28,
+				"bossLevel": false,
+				"p": "portal_top_swamp"
+				},
+
+				{
+				"num": 4,
+				"x": 1,
+				"y": 10,
+				"w": 1,
+				"h": 1,
+				"level": 28,
+				"exit": 1,
+				"direction": "DOWN",
+				"spawn": 28,
+				"bossLevel": false,
+				"p": "portal_top_swamp"
+				},
+
+				{
+				"num": 5,
+				"x": 2,
+				"y": 10,
+				"w": 1,
+				"h": 1,
+				"level": 28,
+				"exit": 0,
+				"direction": "DOWN",
+				"spawn": 28,
+				"bossLevel": false,
+				"p": "portal_top_swamp"
+				},
+
+				{
+				"num": 6,
+				"x": 1.5,
+				"y": 19,
+				"w": 1,
+				"h": 1,
+				"level": 27,
+				"exit": 1,
+				"direction": "UP",
+				"spawn": 28,
+				"bossLevel": false,
+				"p": "portal_top_swamp"
+				},
+
+				{
+				"num": 7,
+				"x": 1.5,
+				"y": 24,
+				"w": 1,
+				"h": 1,
+				"level": 29,
+				"exit": 0,
+				"direction": "UP",
+				"spawn": 28,
+				"bossLevel": false,
+				"p": "portal_top_swamp"
+				}
+			],
+
+			"sound_level":
+			[
+
+			],
+
+			"sound_trigger":
+			[
+
+			]
+		},
+
+		"level29":
+		{
+			"levelSettings":
+			{
+				"n": 29,
+				"weather": "RAIN",
+				"mist": false,
+				"land": "swamp",
+				"floor": "field-floor-swamp",
+				"entry_fall": false,
+				"fall_x": 0,
+				"fall_y": 0,
+				"fall_d": "DOWN",
+				"title_top": "the royal guard of frogs",
+				"levelFunctions":
+				{
+
+				}
+			},
+
+			"texture":
+			{
+				"WALLS" :
+				[
+					{"x": 0, "y": 0, "w": 0.5, "h": 5.5, "p": "pixels_forest_swamp collideCheck-field"},
+					{"x": 3.5, "y": 0, "w": 0.5, "h": 5.5, "p": "pixels_forest_swamp collideCheck-field"},
+					{"x": 1, "y": 0.5, "w": 2, "h": 7, "p": "pixels_forest_swamp collideCheck-field"},
+					{"x": 0, "y": 7.5, "w": 3, "h": 2, "p": "pixels_forest_swamp collideCheck-field"},
+					{"x": 2, "y": 10, "w": 1, "h": 1.5, "p": "pixels_forest_swamp collideCheck-field"},
+					{"x": 0, "y": 10.5, "w": 2, "h": 1, "p": "pixels_forest_swamp collideCheck-field"},
+					{"x": 0, "y": 12.5, "w": 2, "h": 1, "p": "pixels_forest_swamp collideCheck-field"},
+					{"x": 2, "y": 12, "w": 1, "h": 1.5, "p": "pixels_forest_swamp collideCheck-field"},
+					{"x": 3.5, "y": 7.5, "w": 0.5, "h": 7.5, "p": "pixels_forest_swamp collideCheck-field"},
+					{"x": 3, "y": 15, "w": 1, "h": 0.5, "p": "pixels_forest_swamp collideCheck-field"},
+					{"x": 2, "y": 14, "w": 1, "h": 0.5, "p": "pixels_forest_swamp collideCheck-field"},
+					{"x": 0, "y": 14.5, "w": 3, "h": 1, "p": "pixels_forest_swamp collideCheck-field"},
+					{"x": 1, "y": 15.5, "w": 2, "h": 8.5, "p": "pixels_forest_swamp collideCheck-field"},
+					{"x": 1, "y": 24, "w": 0.5, "h": 1, "p": "pixels_forest_swamp collideCheck-field"},
+					{"x": 0, "y": 17.5, "w": 0.5, "h": 7.5, "p": "pixels_forest_swamp collideCheck-field"},
+					{"x": 3.5, "y": 17.5, "w": 0.5, "h": 7.5, "p": "pixels_forest_swamp collideCheck-field"}
+				],
+
+				"PLANTS":
+				[
+					{"x": 0, "y": 5.5, "w": 1, "h": 1, "p": "pixels_flowerLight_swamp"},
+					{"x": 0.5, "y": 0, "w": 0.5, "h": 5.5, "p": "pixels_flowerLight_swamp"},
+					{"x": 3, "y": 0, "w": 0.5, "h": 5.5, "p": "pixels_flowerLight_swamp"},
+					{"x": 1, "y": 0, "w": 2, "h": 0.5, "p": "pixels_flowerLight_swamp"},
+					{"x": 3, "y": 5.5, "w": 1, "h": 2, "p": "pixels_flowerLight_swamp"},
+					{"x": 3, "y": 7.5, "w": 0.5, "h": 7.5, "p": "pixels_flowerLight_swamp"},
+					{"x": 1, "y": 9.5, "w": 1, "h": 1, "p": "pixels_flowerLight_swamp"},
+					{"x": 2, "y": 9.5, "w": 1, "h": 0.5, "p": "pixels_flowerLight_swamp"},
+					{"x": 1, "y": 11.5, "w": 1, "h": 1, "p": "pixels_flowerLight_swamp"},
+					{"x": 2, "y": 11.5, "w": 1, "h": 0.5, "p": "pixels_flowerLight_swamp"},
+					{"x": 1, "y": 13.5, "w": 1, "h": 1, "p": "pixels_flowerLight_swamp"},
+					{"x": 2, "y": 13.5, "w": 1, "h": 0.5, "p": "pixels_flowerLight_swamp"},
+
+					{"x": 0, "y": 16.5, "w": 1, "h": 1, "p": "pixels_flowerHeavy_swamp"},
+					{"x": 3, "y": 16.5, "w": 1, "h": 1, "p": "pixels_flowerHeavy_swamp"},
+					{"x": 2.5, "y": 24, "w": 1, "h": 1, "p": "pixels_flowerHeavy_swamp"},
+					{"x": 3, "y": 17.5, "w": 0.5, "h": 6.5, "p": "pixels_flowerHeavy_swamp"},
+					{"x": 0.5, "y": 17.5, "w": 0.5, "h": 7.5, "p": "pixels_flowerHeavy_swamp"}
+				],
+
+				"CLEARING":
+				[
+
+				],
+
+				"OUTER":
+				{
+					"class_LR": "pixels_forestMassLR_swamp",
+					"class_TB": "pixels_forestMassTB_swamp"
+				}
+			},
+
+			"water":
+			{
+				"EDGE":
+				[
+
+				],
+
+				"BASE":
+				[
+
+				],
+
+				"FISH":
+				[
+
+				]
+			},
+
+			"enemyPlayers":
+			[
+				{
+				"x": 3,
+				"y": 6.5,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level29_frog0",
+				"t": "frog",
+				"l": 84,
+				"known": "an overweight tadpole",
+				"spawn": 29
+				},
+
+				{
+				"x": 3.5,
+				"y": 6.5,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level29_frog1",
+				"t": "frog",
+				"l": 84,
+				"known": "an overweight tadpole",
+				"spawn": 29
+				},
+
+				{
+				"x": 3,
+				"y": 7,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level29_frog2",
+				"t": "frog",
+				"l": 84,
+				"known": "an overweight tadpole",
+				"spawn": 29
+				},
+
+				{
+				"x": 3.5,
+				"y": 7,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level29_frog3",
+				"t": "frog",
+				"l": 84,
+				"known": "an overweight tadpole",
+				"spawn": 29
+				},
+
+				{
+				"x": 2.5,
+				"y": 9.5,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level29_frog4",
+				"t": "frog",
+				"l": 96,
+				"known": "a bullfrog",
+				"spawn": 29
+				},
+
+				{
+				"x": 2.5,
+				"y": 11.5,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level29_frog5",
+				"t": "frog",
+				"l": 96,
+				"known": "a bullfrog",
+				"spawn": 29
+				},
+
+				{
+				"x": 2.5,
+				"y": 13.5,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level29_frog6",
+				"t": "frog",
+				"l": 96,
+				"known": "a bullfrog",
+				"spawn": 29
+				},
+
+				{
+				"x": 0.5,
+				"y": 24.5,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level29_frog7",
+				"t": "frog",
+				"l": 118,
+				"known": "the bullfrog lord",
+				"spawn": 29
+				}
+			],
+
+			"friendPlayers":
+			[
+
+			],
+
+			"gates":
+			[
+
+			],
+
+			"portal":
+			[
+				{
+				"num": 0,
+				"x": 0,
+				"y": 6.5,
+				"w": 1,
+				"h": 1,
+				"level": 28,
+				"exit": 7,
+				"direction": "UP",
+				"spawn": 29,
+				"bossLevel": false,
+				"p": "portal_top_swamp"
+				},
+
+				{
+				"num": 1,
+				"x": 0,
+				"y": 9.5,
+				"w": 1,
+				"h": 1,
+				"level": 29,
+				"exit": 4,
+				"direction": "RIGHT",
+				"spawn": 29,
+				"bossLevel": false,
+				"p": "portal_top_swamp"
+				},
+
+				{
+				"num": 2,
+				"x": 0,
+				"y": 11.5,
+				"w": 1,
+				"h": 1,
+				"level": 29,
+				"exit": 4,
+				"direction": "RIGHT",
+				"spawn": 29,
+				"bossLevel": false,
+				"p": "portal_top_swamp"
+				},
+
+				{
+				"num": 3,
+				"x": 0,
+				"y": 13.5,
+				"w": 1,
+				"h": 1,
+				"level": 29,
+				"exit": 5,
+				"direction": "RIGHT",
+				"spawn": 29,
+				"bossLevel": false,
+				"p": "portal_top_swamp"
+				},
+
+				{
+				"num": 4,
+				"x": 0,
+				"y": 15.5,
+				"w": 1,
+				"h": 1,
+				"level": 29,
+				"exit": 0,
+				"direction": "DOWN",
+				"spawn": 29,
+				"bossLevel": false,
+				"p": "portal_top_swamp"
+				},
+
+				{
+				"num": 5,
+				"x": 3,
+				"y": 15.5,
+				"w": 1,
+				"h": 1,
+				"level": 29,
+				"exit": 3,
+				"direction": "DOWN",
+				"spawn": 29,
+				"bossLevel": false,
+				"p": "portal_top_swamp"
+				},
+
+				{
+				"num": 6,
+				"x": 1.5,
+				"y": 24,
+				"w": 1,
+				"h": 1,
+				"level": 30,
+				"exit": 0,
+				"direction": "RIGHT",
+				"spawn": 29,
+				"bossLevel": false,
+				"p": "portal_top_swamp"
+				}
+			],
+
+			"sound_level":
+			[
+
+			],
+
+			"sound_trigger":
+			[
+
+			]
+		},
+
+		"level30":
+		{
+			"levelSettings":
+			{
+				"n": 30,
+				"weather": "",
+				"mist": false,
+				"land": "heath",
+				"floor": "field-floor-heath",
+				"entry_fall": false,
+				"fall_x": 0,
+				"fall_y": 0,
+				"fall_d": "DOWN",
+				"title_top": "the fields of roaming",
+				"levelFunctions":
+				{
+
+				}
+			},
+
+			"texture":
+			{
+				"WALLS" :
+				[
+					{"x": 0.5, "y": 3, "w": 0.5, "h": 0.5, "p": "pixels_forest_heath collideCheck-field"},
+					{"x": 3, "y": 3, "w": 0.5, "h": 0.5, "p": "pixels_forest_heath collideCheck-field"},
+					{"x": 0.5, "y": 5.5, "w": 0.5, "h": 0.5, "p": "pixels_forest_heath collideCheck-field"},
+					{"x": 3, "y": 5.5, "w": 0.5, "h": 0.5, "p": "pixels_forest_heath collideCheck-field"},
+					{"x": 0.5, "y": 7, "w": 0.5, "h": 0.5, "p": "pixels_forest_heath collideCheck-field"},
+					{"x": 3, "y": 7, "w": 0.5, "h": 0.5, "p": "pixels_forest_heath collideCheck-field"},
+					{"x": 0.5, "y": 9.5, "w": 0.5, "h": 0.5, "p": "pixels_forest_heath collideCheck-field"},
+					{"x": 3, "y": 9.5, "w": 0.5, "h": 0.5, "p": "pixels_forest_heath collideCheck-field"},
+					{"x": 0.5, "y": 11, "w": 0.5, "h": 0.5, "p": "pixels_forest_heath collideCheck-field"},
+					{"x": 3, "y": 11, "w": 0.5, "h": 0.5, "p": "pixels_forest_heath collideCheck-field"},
+					{"x": 0.5, "y": 13.5, "w": 0.5, "h": 0.5, "p": "pixels_forest_heath collideCheck-field"},
+					{"x": 3, "y": 13.5, "w": 0.5, "h": 0.5, "p": "pixels_forest_heath collideCheck-field"},
+					{"x": 0.5, "y": 15, "w": 0.5, "h": 0.5, "p": "pixels_forest_heath collideCheck-field"},
+					{"x": 3, "y": 15, "w": 0.5, "h": 0.5, "p": "pixels_forest_heath collideCheck-field"},
+					{"x": 0.5, "y": 17.5, "w": 0.5, "h": 0.5, "p": "pixels_forest_heath collideCheck-field"},
+					{"x": 3, "y": 17.5, "w": 0.5, "h": 0.5, "p": "pixels_forest_heath collideCheck-field"},
+					{"x": 0.5, "y": 19, "w": 0.5, "h": 0.5, "p": "pixels_forest_heath collideCheck-field"},
+					{"x": 3, "y": 19, "w": 0.5, "h": 0.5, "p": "pixels_forest_heath collideCheck-field"},
+					{"x": 0.5, "y": 21.5, "w": 0.5, "h": 0.5, "p": "pixels_forest_heath collideCheck-field"},
+					{"x": 3, "y": 21.5, "w": 0.5, "h": 0.5, "p": "pixels_forest_heath collideCheck-field"},
+					{"x": 0.5, "y": 3.5, "w": 1, "h": 0.5, "p": "pixels_forest_heath collideCheck-field"},
+					{"x": 2.5, "y": 3.5, "w": 1, "h": 0.5, "p": "pixels_forest_heath collideCheck-field"},
+					{"x": 0.5, "y": 5, "w": 1, "h": 0.5, "p": "pixels_forest_heath collideCheck-field"},
+					{"x": 2.5, "y": 5, "w": 1, "h": 0.5, "p": "pixels_forest_heath collideCheck-field"},
+					{"x": 0.5, "y": 7.5, "w": 1, "h": 0.5, "p": "pixels_forest_heath collideCheck-field"},
+					{"x": 2.5, "y": 7.5, "w": 1, "h": 0.5, "p": "pixels_forest_heath collideCheck-field"},
+					{"x": 0.5, "y": 9, "w": 1, "h": 0.5, "p": "pixels_forest_heath collideCheck-field"},
+					{"x": 2.5, "y": 9, "w": 1, "h": 0.5, "p": "pixels_forest_heath collideCheck-field"},
+					{"x": 0.5, "y": 11.5, "w": 1, "h": 0.5, "p": "pixels_forest_heath collideCheck-field"},
+					{"x": 2.5, "y": 11.5, "w": 1, "h": 0.5, "p": "pixels_forest_heath collideCheck-field"},
+					{"x": 0.5, "y": 13, "w": 1, "h": 0.5, "p": "pixels_forest_heath collideCheck-field"},
+					{"x": 2.5, "y": 13, "w": 1, "h": 0.5, "p": "pixels_forest_heath collideCheck-field"},
+					{"x": 0.5, "y": 15.5, "w": 1, "h": 0.5, "p": "pixels_forest_heath collideCheck-field"},
+					{"x": 2.5, "y": 15.5, "w": 1, "h": 0.5, "p": "pixels_forest_heath collideCheck-field"},
+					{"x": 0.5, "y": 17, "w": 1, "h": 0.5, "p": "pixels_forest_heath collideCheck-field"},
+					{"x": 2.5, "y": 17, "w": 1, "h": 0.5, "p": "pixels_forest_heath collideCheck-field"},
+					{"x": 0.5, "y": 19.5, "w": 1, "h": 0.5, "p": "pixels_forest_heath collideCheck-field"},
+					{"x": 2.5, "y": 19.5, "w": 1, "h": 0.5, "p": "pixels_forest_heath collideCheck-field"},
+					{"x": 0.5, "y": 21, "w": 1, "h": 0.5, "p": "pixels_forest_heath collideCheck-field"},
+					{"x": 2.5, "y": 21, "w": 1, "h": 0.5, "p": "pixels_forest_heath collideCheck-field"}
+				],
+
+				"PLANTS":
+				[
+					{"x": 1.5, "y": 2, "w": 1, "h": 21, "p": "pixels_flowerLight_heath"},
+
+					{"x": 1, "y": 3, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavy_heath"},
+					{"x": 2.5, "y": 3, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavy_heath"},
+					{"x": 1, "y": 19, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavy_heath"},
+					{"x": 1, "y": 21.5, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavy_heath"},
+					{"x": 2.5, "y": 19, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavy_heath"},
+					{"x": 2.5, "y": 21.5, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavy_heath"},
+					{"x": 1, "y": 17.5, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavy_heath"},
+					{"x": 2.5, "y": 17.5, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavy_heath"},
+					{"x": 1, "y": 13.5, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavy_heath"},
+					{"x": 1, "y": 15, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavy_heath"},
+					{"x": 2.5, "y": 15, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavy_heath"},
+					{"x": 2.5, "y": 13.5, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavy_heath"},
+					{"x": 1, "y": 9.5, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavy_heath"},
+					{"x": 1, "y": 11, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavy_heath"},
+					{"x": 2.5, "y": 11, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavy_heath"},
+					{"x": 2.5, "y": 9.5, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavy_heath"},
+					{"x": 1, "y": 5.5, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavy_heath"},
+					{"x": 1, "y": 7, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavy_heath"},
+					{"x": 2.5, "y": 5.5, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavy_heath"},
+					{"x": 2.5, "y": 7, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavy_heath"},
+					{"x": 0, "y": 0, "w": 4, "h": 1, "p": "pixels_flowerHeavy_heath"},
+					{"x": 0, "y": 1, "w": 1.5, "h": 2, "p": "pixels_flowerHeavy_heath"},
+					{"x": 2.5, "y": 1, "w": 1.5, "h": 2, "p": "pixels_flowerHeavy_heath"},
+					{"x": 0, "y": 3, "w": 0.5, "h": 1, "p": "pixels_flowerHeavy_heath"},
+					{"x": 3.5, "y": 3, "w": 0.5, "h": 1, "p": "pixels_flowerHeavy_heath"},
+					{"x": 0, "y": 4, "w": 1.5, "h": 1, "p": "pixels_flowerHeavy_heath"},
+					{"x": 2.5, "y": 4, "w": 1.5, "h": 1, "p": "pixels_flowerHeavy_heath"},
+					{"x": 0, "y": 5, "w": 0.5, "h": 1, "p": "pixels_flowerHeavy_heath"},
+					{"x": 3.5, "y": 5, "w": 0.5, "h": 1, "p": "pixels_flowerHeavy_heath"},
+					{"x": 0, "y": 6, "w": 1.5, "h": 1, "p": "pixels_flowerHeavy_heath"},
+					{"x": 2.5, "y": 6, "w": 1.5, "h": 1, "p": "pixels_flowerHeavy_heath"},
+					{"x": 0, "y": 7, "w": 0.5, "h": 1, "p": "pixels_flowerHeavy_heath"},
+					{"x": 3.5, "y": 7, "w": 0.5, "h": 1, "p": "pixels_flowerHeavy_heath"},
+					{"x": 0, "y": 8, "w": 1.5, "h": 1, "p": "pixels_flowerHeavy_heath"},
+					{"x": 2.5, "y": 8, "w": 1.5, "h": 1, "p": "pixels_flowerHeavy_heath"},
+					{"x": 0, "y": 9, "w": 0.5, "h": 1, "p": "pixels_flowerHeavy_heath"},
+					{"x": 3.5, "y": 9, "w": 0.5, "h": 1, "p": "pixels_flowerHeavy_heath"},
+					{"x": 0, "y": 10, "w": 1.5, "h": 1, "p": "pixels_flowerHeavy_heath"},
+					{"x": 2.5, "y": 10, "w": 1.5, "h": 1, "p": "pixels_flowerHeavy_heath"},
+					{"x": 0, "y": 11, "w": 0.5, "h": 1, "p": "pixels_flowerHeavy_heath"},
+					{"x": 3.5, "y": 11, "w": 0.5, "h": 1, "p": "pixels_flowerHeavy_heath"},
+					{"x": 0, "y": 12, "w": 1.5, "h": 1, "p": "pixels_flowerHeavy_heath"},
+					{"x": 2.5, "y": 12, "w": 1.5, "h": 1, "p": "pixels_flowerHeavy_heath"},
+					{"x": 0, "y": 13, "w": 0.5, "h": 1, "p": "pixels_flowerHeavy_heath"},
+					{"x": 3.5, "y": 13, "w": 0.5, "h": 1, "p": "pixels_flowerHeavy_heath"},
+					{"x": 0, "y": 14, "w": 1.5, "h": 1, "p": "pixels_flowerHeavy_heath"},
+					{"x": 2.5, "y": 14, "w": 1.5, "h": 1, "p": "pixels_flowerHeavy_heath"},
+					{"x": 0, "y": 15, "w": 0.5, "h": 1, "p": "pixels_flowerHeavy_heath"},
+					{"x": 3.5, "y": 15, "w": 0.5, "h": 1, "p": "pixels_flowerHeavy_heath"},
+					{"x": 0, "y": 16, "w": 1.5, "h": 1, "p": "pixels_flowerHeavy_heath"},
+					{"x": 2.5, "y": 16, "w": 1.5, "h": 1, "p": "pixels_flowerHeavy_heath"},
+					{"x": 0, "y": 17, "w": 0.5, "h": 1, "p": "pixels_flowerHeavy_heath"},
+					{"x": 3.5, "y": 17, "w": 0.5, "h": 1, "p": "pixels_flowerHeavy_heath"},
+					{"x": 0, "y": 18, "w": 1.5, "h": 1, "p": "pixels_flowerHeavy_heath"},
+					{"x": 2.5, "y": 18, "w": 1.5, "h": 1, "p": "pixels_flowerHeavy_heath"},
+					{"x": 0, "y": 19, "w": 0.5, "h": 1, "p": "pixels_flowerHeavy_heath"},
+					{"x": 3.5, "y": 19, "w": 0.5, "h": 1, "p": "pixels_flowerHeavy_heath"},
+					{"x": 0, "y": 20, "w": 1.5, "h": 1, "p": "pixels_flowerHeavy_heath"},
+					{"x": 2.5, "y": 20, "w": 1.5, "h": 1, "p": "pixels_flowerHeavy_heath"},
+					{"x": 0, "y": 21, "w": 0.5, "h": 1, "p": "pixels_flowerHeavy_heath"},
+					{"x": 3.5, "y": 21, "w": 0.5, "h": 1, "p": "pixels_flowerHeavy_heath"},
+					{"x": 0, "y": 22, "w": 1.5, "h": 2, "p": "pixels_flowerHeavy_heath"},
+					{"x": 2.5, "y": 22, "w": 1.5, "h": 2, "p": "pixels_flowerHeavy_heath"},
+					{"x": 0, "y": 24, "w": 4, "h": 1, "p": "pixels_flowerHeavy_heath"}
+				],
+
+				"CLEARING":
+				[
+
+				],
+
+				"OUTER":
+				{
+					"class_LR": "pixels_forestMassLR_heath",
+					"class_TB": "pixels_forestMassTB_heath"
+				}
+			},
+
+			"water":
+			{
+				"EDGE":
+				[
+
+				],
+
+				"BASE":
+				[
+
+				],
+
+				"FISH":
+				[
+
+				]
+			},
+
+			"enemyPlayers":
+			[
+				{
+				"x": 0,
+				"y": 5,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level30_bull0",
+				"t": "bull",
+				"l": 96,
+				"known": "a grazing bull",
+				"spawn": 30
+				},
+
+				{
+				"x": 1.5,
+				"y": 5,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level30_bull1",
+				"t": "bull",
+				"l": 96,
+				"known": "a grazing bull",
+				"spawn": 30
+				},
+
+				{
+				"x": 2,
+				"y": 5,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level30_bull2",
+				"t": "bull",
+				"l": 96,
+				"known": "a grazing bull",
+				"spawn": 30
+				},
+
+				{
+				"x": 3.5,
+				"y": 5,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level30_bull3",
+				"t": "bull",
+				"l": 96,
+				"known": "a grazing bull",
+				"spawn": 30
+				},
+
+				{
+				"x": 0,
+				"y": 19.5,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level30_bull4",
+				"t": "bull",
+				"l": 118,
+				"known": "an aggressive bull",
+				"spawn": 30
+				},
+
+				{
+				"x": 1.5,
+				"y": 19.5,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level30_bull5",
+				"t": "bull",
+				"l": 118,
+				"known": "an aggressive bull",
+				"spawn": 30
+				},
+
+				{
+				"x": 2,
+				"y": 19.5,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level30_bull6",
+				"t": "bull",
+				"l": 118,
+				"known": "an aggressive bull",
+				"spawn": 30
+				},
+
+				{
+				"x": 3.5,
+				"y": 19.5,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level30_bull7",
+				"t": "bull",
+				"l": 118,
+				"known": "an aggressive bull",
+				"spawn": 30
+				}
+			],
+
+			"friendPlayers":
+			[
+
+			],
+
+			"gates":
+			[
+
+			],
+
+			"portal":
+			[
+				{
+				"num": 0,
+				"x": 1.5,
+				"y": 1,
+				"w": 1,
+				"h": 1,
+				"level": 29,
+				"exit": 6,
+				"direction": "DOWN",
+				"spawn": 30,
+				"bossLevel": false,
+				"p": "portal_top_heath"
+				},
+
+				{
+				"num": 1,
+				"x": 1.5,
+				"y": 23,
+				"w": 1,
+				"h": 1,
+				"level": 31,
+				"exit": 0,
+				"direction": "UP",
+				"spawn": 30,
+				"bossLevel": false,
+				"p": "portal_top_heath"
+				}
+			],
+
+			"sound_level":
+			[
+
+			],
+
+			"sound_trigger":
+			[
+
+			]
+		},
+
+		"level31":
+		{
+			"levelSettings":
+			{
+				"n": 31,
+				"weather": "",
+				"mist": false,
+				"land": "heath",
+				"floor": "field-floor-heath",
+				"entry_fall": false,
+				"fall_x": 0,
+				"fall_y": 0,
+				"fall_d": "DOWN",
+				"title_top": "the gate of horns",
+				"levelFunctions":
+				{
+					"gate31_unlock":
+					[
+						{
+							"call_funct"	: "levelGate_checkStatus",
+							"call_params"	: ["level31_gate0", ["level31_bull0", "level31_bull1", "level31_bull2", "level31_bull3"]]
+						}
+					]
+				}
+			},
+
+			"texture":
+			{
+				"WALLS" :
+				[
+					{"x": 0, "y": 9.5, "w": 0.5, "h": 0.5, "p": "pixels_forest_heath collideCheck-field"},
+					{"x": 3.5, "y": 9.5, "w": 0.5, "h": 0.5, "p": "pixels_forest_heath collideCheck-field"},
+					{"x": 0, "y": 15, "w": 0.5, "h": 0.5, "p": "pixels_forest_heath collideCheck-field"},
+					{"x": 3.5, "y": 15, "w": 0.5, "h": 0.5, "p": "pixels_forest_heath collideCheck-field"},
+					{"x": 0, "y": 0, "w": 0.5, "h": 1.5, "p": "pixels_forest_heath collideCheck-field"},
+					{"x": 0.5, "y": 0.5, "w": 1, "h": 0.5, "p": "pixels_forest_heath collideCheck-field"},
+					{"x": 2.5, "y": 0.5, "w": 1, "h": 0.5, "p": "pixels_forest_heath collideCheck-field"},
+					{"x": 3.5, "y": 0, "w": 0.5, "h": 1.5, "p": "pixels_forest_heath collideCheck-field"},
+					{"x": 0, "y": 10.5, "w": 1.5, "h": 1, "p": "pixels_forest_heath collideCheck-field"},
+					{"x": 0, "y": 10, "w": 1, "h": 0.5, "p": "pixels_forest_heath collideCheck-field"},
+					{"x": 2.5, "y": 10.5, "w": 1.5, "h": 1, "p": "pixels_forest_heath collideCheck-field"},
+					{"x": 3, "y": 10, "w": 1, "h": 0.5, "p": "pixels_forest_heath collideCheck-field"},
+					{"x": 0, "y": 13.5, "w": 1.5, "h": 1, "p": "pixels_forest_heath collideCheck-field"},
+					{"x": 2.5, "y": 13.5, "w": 1.5, "h": 1, "p": "pixels_forest_heath collideCheck-field"},
+					{"x": 0, "y": 14.5, "w": 1, "h": 0.5, "p": "pixels_forest_heath collideCheck-field"},
+					{"x": 3, "y": 14.5, "w": 1, "h": 0.5, "p": "pixels_forest_heath collideCheck-field"},
+					{"x": 0, "y": 23.5, "w": 0.5, "h": 1.5, "p": "pixels_forest_heath collideCheck-field"},
+					{"x": 0.5, "y": 24, "w": 1, "h": 0.5, "p": "pixels_forest_heath collideCheck-field"},
+					{"x": 2.5, "y": 24, "w": 1, "h": 0.5, "p": "pixels_forest_heath collideCheck-field"},
+					{"x": 3.5, "y": 23.5, "w": 0.5, "h": 1.5, "p": "pixels_forest_heath collideCheck-field"}
+				],
+
+				"PLANTS":
+				[
+					{"x": 0.5, "y": 0, "w": 3, "h": 0.5, "p": "pixels_flowerLight_heath"},
+					{"x": 1.5, "y": 0.5, "w": 1, "h": 1.5, "p": "pixels_flowerLight_heath"},
+					{"x": 1.5, "y": 3, "w": 1, "h": 8.5, "p": "pixels_flowerLight_heath"},
+					{"x": 1.5, "y": 13.5, "w": 1, "h": 8.5, "p": "pixels_flowerLight_heath"},
+					{"x": 1.5, "y": 23, "w": 1, "h": 2, "p": "pixels_flowerLight_heath"},
+					{"x": 0.5, "y": 24.5, "w": 1, "h": 0.5, "p": "pixels_flowerLight_heath"},
+					{"x": 2.5, "y": 24.5, "w": 1, "h": 0.5, "p": "pixels_flowerLight_heath"},
+
+					{"x": 1, "y": 10, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavy_heath"},
+					{"x": 2.5, "y": 10, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavy_heath"},
+					{"x": 1, "y": 14.5, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavy_heath"},
+					{"x": 2.5, "y": 14.5, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavy_heath"},
+					{"x": 2.5, "y": 15, "w": 1, "h": 0.5, "p": "pixels_flowerHeavy_heath"},
+					{"x": 0.5, "y": 15, "w": 1, "h": 0.5, "p": "pixels_flowerHeavy_heath"},
+					{"x": 0, "y": 15.5, "w": 1.5, "h": 8, "p": "pixels_flowerHeavy_heath"},
+					{"x": 0.5, "y": 23.5, "w": 1, "h": 0.5, "p": "pixels_flowerHeavy_heath"},
+					{"x": 2.5, "y": 23.5, "w": 1, "h": 0.5, "p": "pixels_flowerHeavy_heath"},
+					{"x": 2.5, "y": 15.5, "w": 1.5, "h": 8, "p": "pixels_flowerHeavy_heath"},
+					{"x": 0.5, "y": 9.5, "w": 1, "h": 0.5, "p": "pixels_flowerHeavy_heath"},
+					{"x": 2.5, "y": 9.5, "w": 1, "h": 0.5, "p": "pixels_flowerHeavy_heath"},
+					{"x": 0.5, "y": 1, "w": 1, "h": 0.5, "p": "pixels_flowerHeavy_heath"},
+					{"x": 2.5, "y": 1, "w": 1, "h": 0.5, "p": "pixels_flowerHeavy_heath"},
+					{"x": 2.5, "y": 1.5, "w": 1.5, "h": 8, "p": "pixels_flowerHeavy_heath"},
+					{"x": 0, "y": 1.5, "w": 1.5, "h": 8, "p": "pixels_flowerHeavy_heath"}
+				],
+
+				"CLEARING":
+				[
+
+				],
+
+				"OUTER":
+				{
+					"class_LR": "pixels_forestMassLR_heath",
+					"class_TB": "pixels_forestMassTB_heath"
+				}
+			},
+
+			"water":
+			{
+				"EDGE":
+				[
+
+				],
+
+				"BASE":
+				[
+
+				],
+
+				"FISH":
+				[
+
+				]
+			},
+
+			"enemyPlayers":
+			[
+				{
+				"x": 0.5,
+				"y": 0,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level31_bull0",
+				"t": "bull",
+				"l": 96,
+				"known": "a sneaky bull",
+				"spawn": 31,
+				"defeat":	{
+								"link_funct": "gate31_unlock"
+							}
+				},
+
+				{
+				"x": 3,
+				"y": 0,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level31_bull1",
+				"t": "bull",
+				"l": 96,
+				"known": "a sneaky bull",
+				"spawn": 31,
+				"defeat":	{
+								"link_funct": "gate31_unlock"
+							}
+				},
+
+				{
+				"x": 1.5,
+				"y": 11,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level31_bull2",
+				"t": "bull",
+				"l": 118,
+				"known": "an aggressive bull",
+				"spawn": 31,
+				"defeat":	{
+								"link_funct": "gate31_unlock"
+							}
+				},
+
+				{
+				"x": 2,
+				"y": 11,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level31_bull3",
+				"t": "bull",
+				"l": 118,
+				"known": "an aggressive bull",
+				"spawn": 31,
+				"defeat":	{
+								"link_funct": "gate31_unlock"
+							}
+				},
+
+				{
+				"x": 1.5,
+				"y": 13.5,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level31_bull4",
+				"t": "bull",
+				"l": 118,
+				"known": "an aggressive bull",
+				"spawn": 31
+				},
+
+				{
+				"x": 2,
+				"y": 13.5,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level31_bull5",
+				"t": "bull",
+				"l": 118,
+				"known": "an aggressive bull",
+				"spawn": 31
+				},
+
+				{
+				"x": 0.5,
+				"y": 24.5,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level31_bull6",
+				"t": "bull",
+				"l": 96,
+				"known": "a sneaky bull",
+				"spawn": 31
+				},
+
+				{
+				"x": 3,
+				"y": 24.5,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level31_bull7",
+				"t": "bull",
+				"l": 96,
+				"known": "a sneaky bull",
+				"spawn": 31
+				}
+			],
+
+			"friendPlayers":
+			[
+
+			],
+
+			"gates":
+			[
+				{
+				"x": 0,
+				"y": 11.5,
+				"w": 4,
+				"h": 2,
+				"c_cl": "layer-field-gate-area",
+				"n": "level31_gate0",
+				"spawn": 31
+				}
+			],
+
+			"portal":
+			[
+				{
+				"num": 0,
+				"x": 1.5,
+				"y": 2,
+				"w": 1,
+				"h": 1,
+				"level": 30,
+				"exit": 1,
+				"direction": "DOWN",
+				"spawn": 31,
+				"bossLevel": false,
+				"p": "portal_top_heath"
+				},
+
+				{
+				"num": 1,
+				"x": 1.5,
+				"y": 22,
+				"w": 1,
+				"h": 1,
+				"level": 32,
+				"exit": 1,
+				"direction": "UP",
+				"spawn": 31,
+				"bossLevel": false,
+				"p": "portal_top_heath"
+				}
+			],
+
+			"sound_level":
+			[
+
+			],
+
+			"sound_trigger":
+			[
+
+			]
+		},
+
+		"level32":
+		{
+			"levelSettings":
+			{
+				"n": 32,
+				"weather": "WIND",
+				"mist": false,
+				"land": "dry",
+				"floor": "field-floor-dry",
+				"entry_fall": false,
+				"fall_x": 0,
+				"fall_y": 0,
+				"fall_d": "DOWN",
+				"title_top": "the path into the wilderness",
+				"levelFunctions":
+				{
+
+				}
+			},
+
+			"texture":
+			{
+				"WALLS" :
+				[
+					{"x": 1, "y": 0, "w": 0.5, "h": 11, "p": "pixels_forest_dry collideCheck-field"},
+					{"x": 2.5, "y": 0, "w": 0.5, "h": 11, "p": "pixels_forest_dry collideCheck-field"},
+					{"x": 0, "y": 11, "w": 1.5, "h": 0.5, "p": "pixels_forest_dry collideCheck-field"},
+					{"x": 2.5, "y": 11, "w": 1.5, "h": 0.5, "p": "pixels_forest_dry collideCheck-field"},
+					{"x": 0, "y": 11.5, "w": 1, "h": 0.5, "p": "pixels_forest_dry collideCheck-field"},
+					{"x": 3, "y": 11.5, "w": 1, "h": 0.5, "p": "pixels_forest_dry collideCheck-field"},
+					{"x": 0, "y": 12, "w": 0.5, "h": 1, "p": "pixels_forest_dry collideCheck-field"},
+					{"x": 3.5, "y": 12, "w": 0.5, "h": 1, "p": "pixels_forest_dry collideCheck-field"},
+					{"x": 0, "y": 13, "w": 1, "h": 0.5, "p": "pixels_forest_dry collideCheck-field"},
+					{"x": 3, "y": 13, "w": 1, "h": 0.5, "p": "pixels_forest_dry collideCheck-field"},
+					{"x": 0, "y": 13.5, "w": 1.5, "h": 4, "p": "pixels_forest_dry collideCheck-field"},
+					{"x": 2.5, "y": 13.5, "w": 1.5, "h": 4, "p": "pixels_forest_dry collideCheck-field"},
+					{"x": 0, "y": 18.5, "w": 4, "h": 1, "p": "pixels_forest_dry collideCheck-field"},
+					{"x": 0, "y": 19.5, "w": 1.5, "h": 1, "p": "pixels_forest_dry collideCheck-field"},
+					{"x": 2.5, "y": 19.5, "w": 1.5, "h": 1, "p": "pixels_forest_dry collideCheck-field"},
+					{"x": 0, "y": 21.5, "w": 4, "h": 2.5, "p": "pixels_forest_dry collideCheck-field"}
+				],
+
+				"PLANTS":
+				[
+					{"x": 0, "y": 1, "w": 1, "h": 9, "p": "pixels_flowerLight_dry"},
+					{"x": 3, "y": 1, "w": 1, "h": 9, "p": "pixels_flowerLight_dry"},
+					{"x": 1.5, "y": 1, "w": 1, "h": 10.5, "p": "pixels_flowerLight_dry"},
+					{"x": 1, "y": 11.5, "w": 2, "h": 0.5, "p": "pixels_flowerLight_dry"},
+					{"x": 0.5, "y": 12, "w": 1, "h": 1, "p": "pixels_flowerLight_dry"},
+					{"x": 2.5, "y": 12, "w": 1, "h": 1, "p": "pixels_flowerLight_dry"},
+					{"x": 1, "y": 13, "w": 2, "h": 0.5, "p": "pixels_flowerLight_dry"},
+					{"x": 1.5, "y": 13.5, "w": 1, "h": 4, "p": "pixels_flowerLight_dry"},
+					{"x": 1, "y": 17.5, "w": 2, "h": 1, "p": "pixels_flowerLight_dry"},
+
+					{"x": 1, "y": 20.5, "w": 2, "h": 1, "p": "pixels_flowerHeavy_dry"},
+					{"x": 1, "y": 24, "w": 2, "h": 1, "p": "pixels_flowerHeavy_dry"}
+				],
+
+				"CLEARING":
+				[
+
+				],
+
+				"OUTER":
+				{
+					"class_LR": "pixels_forestMassLR_heath",
+					"class_TB": "pixels_forestMassTB_heath"
+				}
+			},
+
+			"water":
+			{
+				"EDGE":
+				[
+
+				],
+
+				"BASE":
+				[
+
+				],
+
+				"FISH":
+				[
+
+				]
+			},
+
+			"enemyPlayers":
+			[
+				{
+				"x": 0,
+				"y": 8.5,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level32_jackal0",
+				"t": "jackal",
+				"l": 118,
+				"known": "a hungry jackal",
+				"spawn": 32
+				},
+
+				{
+				"x": 0.5,
+				"y": 8.5,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level32_jackal1",
+				"t": "jackal",
+				"l": 118,
+				"known": "a hungry jackal",
+				"spawn": 32
+				},
+
+				{
+				"x": 3,
+				"y": 8.5,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level32_jackal2",
+				"t": "jackal",
+				"l": 118,
+				"known": "a hungry jackal",
+				"spawn": 32
+				},
+
+				{
+				"x": 3.5,
+				"y": 8.5,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level32_jackal3",
+				"t": "jackal",
+				"l": 118,
+				"known": "a hungry jackal",
+				"spawn": 32
+				},
+
+				{
+				"x": 0,
+				"y": 9,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level32_jackal4",
+				"t": "jackal",
+				"l": 118,
+				"known": "a hungry jackal",
+				"spawn": 32
+				},
+
+				{
+				"x": 0.5,
+				"y": 9,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level32_jackal5",
+				"t": "jackal",
+				"l": 118,
+				"known": "a hungry jackal",
+				"spawn": 32
+				},
+
+				{
+				"x": 1.5,
+				"y": 9,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level32_jackal6",
+				"t": "jackal",
+				"l": 118,
+				"known": "a hungry jackal",
+				"spawn": 32
+				},
+
+				{
+				"x": 2,
+				"y": 9,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level32_jackal7",
+				"t": "jackal",
+				"l": 118,
+				"known": "a hungry jackal",
+				"spawn": 32
+				},
+
+				{
+				"x": 3,
+				"y": 9,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level32_jackal8",
+				"t": "jackal",
+				"l": 118,
+				"known": "a hungry jackal",
+				"spawn": 32
+				},
+
+				{
+				"x": 3.5,
+				"y": 9,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level32_jackal9",
+				"t": "jackal",
+				"l": 118,
+				"known": "a hungry jackal",
+				"spawn": 32
+				},
+
+				{
+				"x": 0,
+				"y": 9.5,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level32_jackal10",
+				"t": "jackal",
+				"l": 118,
+				"known": "a hungry jackal",
+				"spawn": 32
+				},
+
+				{
+				"x": 0.5,
+				"y": 9.5,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level32_jackal11",
+				"t": "jackal",
+				"l": 118,
+				"known": "a hungry jackal",
+				"spawn": 32
+				},
+
+				{
+				"x": 1.5,
+				"y": 9.5,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level32_jackal12",
+				"t": "jackal",
+				"l": 118,
+				"known": "a hungry jackal",
+				"spawn": 32
+				},
+
+				{
+				"x": 2,
+				"y": 9.5,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level32_jackal13",
+				"t": "jackal",
+				"l": 118,
+				"known": "a hungry jackal",
+				"spawn": 32
+				},
+
+				{
+				"x": 3,
+				"y": 9.5,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level32_jackal14",
+				"t": "jackal",
+				"l": 118,
+				"known": "a hungry jackal",
+				"spawn": 32
+				},
+
+				{
+				"x": 3.5,
+				"y": 9.5,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level32_jackal15",
+				"t": "jackal",
+				"l": 118,
+				"known": "a hungry jackal",
+				"spawn": 32
+				},
+
+				{
+				"x": 1.5,
+				"y": 14.5,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level32_jackal16",
+				"t": "jackal",
+				"l": 130,
+				"known": "the jackal of danger",
+				"spawn": 32
+				},
+
+				{
+				"x": 2,
+				"y": 14.5,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level32_jackal17",
+				"t": "jackal",
+				"l": 130,
+				"known": "the jackal of danger",
+				"spawn": 32
+				},
+
+				{
+				"x": 1.5,
+				"y": 16,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level32_jackal18",
+				"t": "jackal",
+				"l": 130,
+				"known": "the jackal of danger",
+				"spawn": 32
+				},
+
+				{
+				"x": 2,
+				"y": 16,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level32_jackal19",
+				"t": "jackal",
+				"l": 130,
+				"known": "the jackal of danger",
+				"spawn": 32
+				}
+			],
+
+			"friendPlayers":
+			[
+
+			],
+
+			"gates":
+			[
+
+			],
+
+			"portal":
+			[
+				{
+				"num": 0,
+				"x": 0,
+				"y": 0,
+				"w": 1,
+				"h": 1,
+				"level": 32,
+				"exit": 1,
+				"direction": "DOWN",
+				"spawn": 32,
+				"bossLevel": false,
+				"p": "portal_top_dry"
+				},
+
+				{
+				"num": 1,
+				"x": 1.5,
+				"y": 0,
+				"w": 1,
+				"h": 1,
+				"level": 31,
+				"exit": 1,
+				"direction": "DOWN",
+				"spawn": 32,
+				"bossLevel": false,
+				"p": "portal_top_dry"
+				},
+
+				{
+				"num": 2,
+				"x": 3,
+				"y": 0,
+				"w": 1,
+				"h": 1,
+				"level": 32,
+				"exit": 2,
+				"direction": "UP",
+				"spawn": 32,
+				"bossLevel": false,
+				"p": "portal_top_dry"
+				},
+
+				{
+				"num": 3,
+				"x": 0,
+				"y": 10,
+				"w": 1,
+				"h": 1,
+				"level": 32,
+				"exit": 9,
+				"direction": "UP",
+				"spawn": 32,
+				"bossLevel": false,
+				"p": "portal_top_dry"
+				},
+
+				{
+				"num": 4,
+				"x": 3,
+				"y": 10,
+				"w": 1,
+				"h": 1,
+				"level": 32,
+				"exit": 1,
+				"direction": "UP",
+				"spawn": 32,
+				"bossLevel": false,
+				"p": "portal_top_dry"
+				},
+
+				{
+				"num": 5,
+				"x": 1.5,
+				"y": 12,
+				"w": 1,
+				"h": 1,
+				"level": 0,
+				"exit": 0,
+				"direction": "null",
+				"spawn": 32,
+				"bossLevel": false,
+				"p": "portal_top_dry"
+				},
+
+				{
+				"num": 6,
+				"x": 0,
+				"y": 17.5,
+				"w": 1,
+				"h": 1,
+				"level": 32,
+				"exit": 0,
+				"direction": "RIGHT",
+				"spawn": 32,
+				"bossLevel": false,
+				"p": "portal_top_dry"
+				},
+
+				{
+				"num": 7,
+				"x": 3,
+				"y": 17.5,
+				"w": 1,
+				"h": 1,
+				"level": 32,
+				"exit": 1,
+				"direction": "LEFT",
+				"spawn": 32,
+				"bossLevel": false,
+				"p": "portal_top_dry"
+				},
+
+				{
+				"num": 8,
+				"x": 1.5,
+				"y": 19.5,
+				"w": 1,
+				"h": 1,
+				"level": 32,
+				"exit": 2,
+				"direction": "DOWN",
+				"spawn": 32,
+				"bossLevel": false,
+				"p": "portal_top_dry"
+				},
+
+				{
+				"num": 9,
+				"x": 0,
+				"y": 20.5,
+				"w": 1,
+				"h": 1,
+				"level": 32,
+				"exit": 2,
+				"direction": "RIGHT",
+				"spawn": 32,
+				"bossLevel": false,
+				"p": "portal_top_dry"
+				},
+
+				{
+				"num": 10,
+				"x": 3,
+				"y": 20.5,
+				"w": 1,
+				"h": 1,
+				"level": 32,
+				"exit": 11,
+				"direction": "LEFT",
+				"spawn": 32,
+				"bossLevel": false,
+				"p": "portal_top_dry"
+				},
+
+				{
+				"num": 11,
+				"x": 0,
+				"y": 24,
+				"w": 1,
+				"h": 1,
+				"level": 32,
+				"exit": 0,
+				"direction": "RIGHT",
+				"spawn": 32,
+				"bossLevel": false,
+				"p": "portal_top_dry"
+				},
+
+				{
+				"num": 12,
+				"x": 3,
+				"y": 24,
+				"w": 1,
+				"h": 1,
+				"level": 33,
+				"exit": 0,
+				"direction": "LEFT",
+				"spawn": 32,
+				"bossLevel": false,
+				"p": "portal_top_dry"
+				}
+			],
+
+			"sound_level":
+			[
+
+			],
+
+			"sound_trigger":
+			[
+
+			]
+		},
+
+		"level33":
+		{
+			"levelSettings":
+			{
+				"n": 33,
+				"weather": "WIND",
+				"mist": false,
+				"land": "dry",
+				"floor": "field-floor-dry",
+				"entry_fall": false,
+				"fall_x": 0,
+				"fall_y": 0,
+				"fall_d": "DOWN",
+				"title_top": "the sandy forest",
+				"levelFunctions":
+				{
+
+				}
+			},
+
+			"texture":
+			{
+				"WALLS" :
+				[
+					{"x": 2, "y": 6, "w": 0.5, "h": 0.5, "p": "pixels_forest_dry collideCheck-field"},
+					{"x": 0, "y": 1, "w": 3, "h": 1, "p": "pixels_forest_dry collideCheck-field"},
+					{"x": 1, "y": 2, "w": 2, "h": 1, "p": "pixels_forest_dry collideCheck-field"},
+					{"x": 1, "y": 3, "w": 3, "h": 1.5, "p": "pixels_forest_dry collideCheck-field"},
+					{"x": 0, "y": 4.5, "w": 3, "h": 1.5, "p": "pixels_forest_dry collideCheck-field"},
+					{"x": 0, "y": 6, "w": 2, "h": 1, "p": "pixels_forest_dry collideCheck-field"},
+					{"x": 0, "y": 7, "w": 1.5, "h": 0.5, "p": "pixels_forest_dry collideCheck-field"},
+					{"x": 0, "y": 7.5, "w": 1, "h": 1.5, "p": "pixels_forest_dry collideCheck-field"},
+					{"x": 1, "y": 8, "w": 2.5, "h": 1, "p": "pixels_forest_dry collideCheck-field"},
+					{"x": 0.5, "y": 9.5, "w": 3.5, "h": 1, "p": "pixels_forest_dry collideCheck-field"},
+					{"x": 0, "y": 11, "w": 1.5, "h": 1, "p": "pixels_forest_dry collideCheck-field"},
+					{"x": 2.5, "y": 11, "w": 1.5, "h": 1, "p": "pixels_forest_dry collideCheck-field"},
+					{"x": 0, "y": 14, "w": 1.5, "h": 1, "p": "pixels_forest_dry collideCheck-field"},
+					{"x": 2.5, "y": 14, "w": 1.5, "h": 1, "p": "pixels_forest_dry collideCheck-field"},
+					{"x": 0, "y": 15, "w": 4, "h": 1, "p": "pixels_forest_dry collideCheck-field"},
+					{"x": 0, "y": 16, "w": 1.5, "h": 1, "p": "pixels_forest_dry collideCheck-field"},
+					{"x": 2.5, "y": 16, "w": 1.5, "h": 1, "p": "pixels_forest_dry collideCheck-field"},
+					{"x": 1, "y": 17, "w": 0.5, "h": 6.5, "p": "pixels_forest_dry collideCheck-field"},
+					{"x": 1, "y": 23.5, "w": 1.5, "h": 0.5, "p": "pixels_forest_dry collideCheck-field"},
+					{"x": 2.5, "y": 17, "w": 0.5, "h": 8, "p": "pixels_forest_dry collideCheck-field"},
+					{"x": 0, "y": 19, "w": 0.5, "h": 6, "p": "pixels_forest_dry collideCheck-field"},
+					{"x": 3.5, "y": 19, "w": 0.5, "h": 6, "p": "pixels_forest_dry collideCheck-field"}
+				],
+
+				"PLANTS":
+				[
+					{"x": 1, "y": 7.5, "w": 0.5, "h": 0.5, "p": "pixels_flowerLight_dry"},
+					{"x": 1, "y": 0, "w": 3, "h": 1, "p": "pixels_flowerLight_dry"},
+					{"x": 3, "y": 1, "w": 1, "h": 1, "p": "pixels_flowerLight_dry"},
+					{"x": 0, "y": 3, "w": 1, "h": 1.5, "p": "pixels_flowerLight_dry"},
+					{"x": 2.5, "y": 6, "w": 1.5, "h": 2, "p": "pixels_flowerLight_dry"},
+					{"x": 3, "y": 5.5, "w": 1, "h": 0.5, "p": "pixels_flowerLight_dry"},
+					{"x": 2, "y": 6.5, "w": 0.5, "h": 1.5, "p": "pixels_flowerLight_dry"},
+					{"x": 1.5, "y": 7, "w": 0.5, "h": 1, "p": "pixels_flowerLight_dry"},
+					{"x": 3.5, "y": 8, "w": 0.5, "h": 1, "p": "pixels_flowerLight_dry"},
+					{"x": 0, "y": 9, "w": 4, "h": 0.5, "p": "pixels_flowerLight_dry"},
+					{"x": 0, "y": 9.5, "w": 0.5, "h": 1, "p": "pixels_flowerLight_dry"},
+					{"x": 0, "y": 10.5, "w": 4, "h": 0.5, "p": "pixels_flowerLight_dry"},
+					{"x": 1.5, "y": 11, "w": 1, "h": 1, "p": "pixels_flowerLight_dry"},
+					{"x": 0, "y": 12, "w": 4, "h": 1, "p": "pixels_flowerLight_dry"},
+					{"x": 1, "y": 13, "w": 2, "h": 1, "p": "pixels_flowerLight_dry"},
+					{"x": 1.5, "y": 17, "w": 1, "h": 5.5, "p": "pixels_flowerLight_dry"},
+					{"x": 3, "y": 18, "w": 1, "h": 1, "p": "pixels_flowerLight_dry"},
+					{"x": 3, "y": 19, "w": 0.5, "h": 6, "p": "pixels_flowerLight_dry"},
+
+					{"x": 0, "y": 18, "w": 1, "h": 1, "p": "pixels_flowerHeavy_dry"},
+					{"x": 0.5, "y": 19, "w": 0.5, "h": 5, "p": "pixels_flowerHeavy_dry"},
+					{"x": 0.5, "y": 24, "w": 1, "h": 1, "p": "pixels_flowerHeavy_dry"}
+				],
+
+				"CLEARING":
+				[
+
+				],
+
+				"OUTER":
+				{
+					"class_LR": "pixels_forestMassLR_dry",
+					"class_TB": "pixels_forestMassTB_dry"
+				}
+			},
+
+			"water":
+			{
+				"EDGE":
+				[
+
+				],
+
+				"BASE":
+				[
+
+				],
+
+				"FISH":
+				[
+
+				]
+			},
+
+			"enemyPlayers":
+			[
+				{
+				"x": 3.5,
+				"y": 8,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level33_jackal0",
+				"t": "jackal",
+				"l": 118,
+				"known": "a hungry jackal",
+				"spawn": 33
+				},
+
+				{
+				"x": 3.5,
+				"y": 8.5,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level33_jackal1",
+				"t": "jackal",
+				"l": 118,
+				"known": "a hungry jackal",
+				"spawn": 33
+				},
+
+				{
+				"x": 0,
+				"y": 9.5,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level33_jackal2",
+				"t": "jackal",
+				"l": 118,
+				"known": "a hungry jackal",
+				"spawn": 33
+				},
+
+				{
+				"x": 0,
+				"y": 10,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level33_jackal3",
+				"t": "jackal",
+				"l": 118,
+				"known": "a hungry jackal",
+				"spawn": 33
+				},
+
+				{
+				"x": 1.5,
+				"y": 20.5,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level33_jackal4",
+				"t": "jackal",
+				"l": 130,
+				"known": "the jackal of danger",
+				"spawn": 33
+				},
+
+				{
+				"x": 2,
+				"y": 20.5,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level33_jackal5",
+				"t": "jackal",
+				"l": 130,
+				"known": "the jackal of danger",
+				"spawn": 33
+				},
+
+				{
+				"x": 1.5,
+				"y": 21,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level33_jackal6",
+				"t": "jackal",
+				"l": 130,
+				"known": "the jackal of danger",
+				"spawn": 33
+				},
+
+				{
+				"x": 2,
+				"y": 21,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level33_jackal7",
+				"t": "jackal",
+				"l": 130,
+				"known": "the jackal of danger",
+				"spawn": 33
+				},
+
+				{
+				"x": 1.5,
+				"y": 21.5,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level33_jackal8",
+				"t": "jackal",
+				"l": 130,
+				"known": "the jackal of danger",
+				"spawn": 33
+				},
+
+				{
+				"x": 2,
+				"y": 21.5,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level33_jackal9",
+				"t": "jackal",
+				"l": 130,
+				"known": "the jackal of danger",
+				"spawn": 33
+				},
+
+				{
+				"x": 1.5,
+				"y": 22,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level33_jackal10",
+				"t": "jackal",
+				"l": 130,
+				"known": "the jackal of danger",
+				"spawn": 33
+				},
+
+				{
+				"x": 2,
+				"y": 22,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level33_jackal11",
+				"t": "jackal",
+				"l": 142,
+				"known": "the jackal of rage",
+				"spawn": 33
+				},
+
+				{
+				"x": 3,
+				"y": 24.5,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level33_jackal12",
+				"t": "jackal",
+				"l": 142,
+				"known": "the jackal of rage",
+				"spawn": 33
+				}
+			],
+
+			"friendPlayers":
+			[
+
+			],
+
+			"gates":
+			[
+
+			],
+
+			"portal":
+			[
+				{
+				"num": 0,
+				"x": 0,
+				"y": 0,
+				"w": 1,
+				"h": 1,
+				"level": 33,
+				"exit": 12,
+				"direction": "RIGHT",
+				"spawn": 33,
+				"bossLevel": false,
+				"p": "portal_top_dry"
+				},
+
+				{
+				"num": 1,
+				"x": 0,
+				"y": 2,
+				"w": 1,
+				"h": 1,
+				"level": 33,
+				"exit": 9,
+				"direction": "DOWN",
+				"spawn": 33,
+				"bossLevel": false,
+				"p": "portal_top_dry"
+				},
+
+				{
+				"num": 2,
+				"x": 3,
+				"y": 2,
+				"w": 1,
+				"h": 1,
+				"level": 33,
+				"exit": 4,
+				"direction": "UP",
+				"spawn": 33,
+				"bossLevel": false,
+				"p": "portal_top_dry"
+				},
+
+				{
+				"num": 3,
+				"x": 0,
+				"y": 4.5,
+				"w": 1,
+				"h": 1,
+				"level": 33,
+				"exit": 5,
+				"direction": "UP",
+				"spawn": 33,
+				"bossLevel": false,
+				"p": "portal_top_dry"
+				},
+
+				{
+				"num": 4,
+				"x": 3,
+				"y": 4.5,
+				"w": 1,
+				"h": 1,
+				"level": 33,
+				"exit": 2,
+				"direction": "DOWN",
+				"spawn": 33,
+				"bossLevel": false,
+				"p": "portal_top_dry"
+				},
+
+				{
+				"num": 5,
+				"x": 0,
+				"y": 13,
+				"w": 1,
+				"h": 1,
+				"level": 33,
+				"exit": 3,
+				"direction": "RIGHT",
+				"spawn": 33,
+				"bossLevel": false,
+				"p": "portal_top_dry"
+				},
+
+				{
+				"num": 6,
+				"x": 3,
+				"y": 13,
+				"w": 1,
+				"h": 1,
+				"level": 33,
+				"exit": 8,
+				"direction": "LEFT",
+				"spawn": 33,
+				"bossLevel": false,
+				"p": "portal_top_dry"
+				},
+
+				{
+				"num": 7,
+				"x": 1.5,
+				"y": 14,
+				"w": 1,
+				"h": 1,
+				"level": 33,
+				"exit": 10,
+				"direction": "UP",
+				"spawn": 33,
+				"bossLevel": false,
+				"p": "portal_top_dry"
+				},
+
+				{
+				"num": 8,
+				"x": 1.5,
+				"y": 16,
+				"w": 1,
+				"h": 1,
+				"level": 33,
+				"exit": 8,
+				"direction": "DOWN",
+				"spawn": 33,
+				"bossLevel": false,
+				"p": "portal_top_dry"
+				},
+
+				{
+				"num": 9,
+				"x": 0,
+				"y": 17,
+				"w": 1,
+				"h": 1,
+				"level": 33,
+				"exit": 1,
+				"direction": "DOWN",
+				"spawn": 33,
+				"bossLevel": false,
+				"p": "portal_top_dry"
+				},
+
+				{
+				"num": 10,
+				"x": 3,
+				"y": 17,
+				"w": 1,
+				"h": 1,
+				"level": 33,
+				"exit": 4,
+				"direction": "DOWN",
+				"spawn": 33,
+				"bossLevel": false,
+				"p": "portal_top_dry"
+				},
+
+				{
+				"num": 11,
+				"x": 1.5,
+				"y": 22.5,
+				"w": 1,
+				"h": 1,
+				"level": 33,
+				"exit": 4,
+				"direction": "UP",
+				"spawn": 33,
+				"bossLevel": false,
+				"p": "portal_top_dry"
+				},
+
+				{
+				"num": 12,
+				"x": 1.5,
+				"y": 24,
+				"w": 1,
+				"h": 1,
+				"level": 34,
+				"exit": 0,
+				"direction": "LEFT",
+				"spawn": 33,
+				"bossLevel": false,
+				"p": "portal_top_dry"
+				}
+			],
+
+			"sound_level":
+			[
+
+			],
+
+			"sound_trigger":
+			[
+
+			]
+		},
+
+		"level34":
+		{
+			"levelSettings":
+			{
+				"n": 34,
+				"weather": "SNOW",
+				"mist": false,
+				"land": "ice",
+				"floor": "field-floor-ice",
+				"entry_fall": false,
+				"fall_x": 0,
+				"fall_y": 0,
+				"fall_d": "DOWN",
+				"title_top": "the stone cold flow",
+				"levelFunctions":
+				{
+
+				}
+			},
+
+			"texture":
+			{
+				"WALLS" :
+				[
+					{"x": 3.5, "y": 0, "w": 0.5, "h": 0.5, "p": "pixels_forest_ice collideCheck-field"},
+					{"x": 0, "y": 0, "w": 0.5, "h": 0.5, "p": "pixels_forest_ice collideCheck-field"},
+					{"x": 0.5, "y": 0, "w": 1, "h": 1, "p": "pixels_forest_ice collideCheck-field"},
+					{"x": 2.5, "y": 0, "w": 1, "h": 1, "p": "pixels_forest_ice collideCheck-field"},
+					{"x": 1, "y": 1, "w": 0.5, "h": 1, "p": "pixels_forest_ice collideCheck-field"},
+					{"x": 2.5, "y": 1, "w": 0.5, "h": 1, "p": "pixels_forest_ice collideCheck-field"},
+					{"x": 1, "y": 3, "w": 0.5, "h": 1, "p": "pixels_forest_ice collideCheck-field"},
+					{"x": 2.5, "y": 3, "w": 0.5, "h": 1, "p": "pixels_forest_ice collideCheck-field"},
+					{"x": 0.5, "y": 4, "w": 1, "h": 0.5, "p": "pixels_forest_ice collideCheck-field"},
+					{"x": 2.5, "y": 4, "w": 1, "h": 0.5, "p": "pixels_forest_ice collideCheck-field"},
+					{"x": 0, "y": 4.5, "w": 1.5, "h": 2, "p": "pixels_forest_ice collideCheck-field"},
+					{"x": 2.5, "y": 4.5, "w": 1.5, "h": 2, "p": "pixels_forest_ice collideCheck-field"},
+					{"x": 1.5, "y": 5, "w": 1, "h": 1, "p": "pixels_forest_ice collideCheck-field"},
+					{"x": 0.5, "y": 6.5, "w": 1, "h": 0.5, "p": "pixels_forest_ice collideCheck-field"},
+					{"x": 2.5, "y": 6.5, "w": 1, "h": 0.5, "p": "pixels_forest_ice collideCheck-field"},
+					{"x": 1, "y": 7, "w": 0.5, "h": 1, "p": "pixels_forest_ice collideCheck-field"},
+					{"x": 2.5, "y": 7, "w": 0.5, "h": 1, "p": "pixels_forest_ice collideCheck-field"},
+					{"x": 1, "y": 9, "w": 0.5, "h": 1, "p": "pixels_forest_ice collideCheck-field"},
+					{"x": 2.5, "y": 9, "w": 0.5, "h": 1, "p": "pixels_forest_ice collideCheck-field"},
+					{"x": 0.5, "y": 10, "w": 1, "h": 0.5, "p": "pixels_forest_ice collideCheck-field"},
+					{"x": 2.5, "y": 10, "w": 1, "h": 0.5, "p": "pixels_forest_ice collideCheck-field"},
+					{"x": 0, "y": 10.5, "w": 1.5, "h": 1.5, "p": "pixels_forest_ice collideCheck-field"},
+					{"x": 1.5, "y": 11, "w": 1, "h": 1, "p": "pixels_forest_ice collideCheck-field"},
+					{"x": 2.5, "y": 10.5, "w": 1.5, "h": 1.5, "p": "pixels_forest_ice collideCheck-field"},
+					{"x": 2, "y": 12.5, "w": 1.5, "h": 1.5, "p": "pixels_forest_ice collideCheck-field"},
+					{"x": 0, "y": 13, "w": 2, "h": 1, "p": "pixels_forest_ice collideCheck-field"},
+					{"x": 2, "y": 14.5, "w": 2, "h": 1.5, "p": "pixels_forest_ice collideCheck-field"},
+					{"x": 0, "y": 15, "w": 2, "h": 1, "p": "pixels_forest_ice collideCheck-field"},
+					{"x": 0.5, "y": 16.5, "w": 1.5, "h": 1.5, "p": "pixels_forest_ice collideCheck-field"},
+					{"x": 2, "y": 17, "w": 2, "h": 1, "p": "pixels_forest_ice collideCheck-field"},
+					{"x": 0, "y": 18.5, "w": 2, "h": 2, "p": "pixels_forest_ice collideCheck-field"},
+					{"x": 2, "y": 19, "w": 2, "h": 1.5, "p": "pixels_forest_ice collideCheck-field"},
+					{"x": 2, "y": 21, "w": 1.5, "h": 1, "p": "pixels_forest_ice collideCheck-field"},
+					{"x": 0, "y": 21.5, "w": 2, "h": 0.5, "p": "pixels_forest_ice collideCheck-field"},
+					{"x": 0.5, "y": 22.5, "w": 3.5, "h": 0.5, "p": "pixels_forest_ice collideCheck-field"},
+					{"x": 0, "y": 23.5, "w": 3.5, "h": 0.5, "p": "pixels_forest_ice collideCheck-field"},
+					{"x": 2, "y": 24.5, "w": 2, "h": 0.5, "p": "pixels_forest_ice collideCheck-field"}
+				],
+
+				"PLANTS":
+				[
+					{"x": 0, "y": 0.5, "w": 0.5, "h": 0.5, "p": "pixels_flowerLight_ice"},
+					{"x": 0, "y": 4, "w": 0.5, "h": 0.5, "p": "pixels_flowerLight_ice"},
+					{"x": 3.5, "y": 0.5, "w": 0.5, "h": 0.5, "p": "pixels_flowerLight_ice"},
+					{"x": 3.5, "y": 4, "w": 0.5, "h": 0.5, "p": "pixels_flowerLight_ice"},
+					{"x": 0, "y": 22.5, "w": 0.5, "h": 0.5, "p": "pixels_flowerLight_ice"},
+					{"x": 3.5, "y": 23.5, "w": 0.5, "h": 0.5, "p": "pixels_flowerLight_ice"},
+					{"x": 1.5, "y": 1, "w": 1, "h": 3, "p": "pixels_flowerLight_ice"},
+					{"x": 1, "y": 2, "w": 0.5, "h": 1, "p": "pixels_flowerLight_ice"},
+					{"x": 2.5, "y": 2, "w": 0.5, "h": 1, "p": "pixels_flowerLight_ice"},
+					{"x": 0, "y": 1, "w": 1, "h": 3, "p": "pixels_flowerLight_ice"},
+					{"x": 3, "y": 1, "w": 1, "h": 3, "p": "pixels_flowerLight_ice"},
+					{"x": 1, "y": 12, "w": 1, "h": 1, "p": "pixels_flowerLight_ice"},
+					{"x": 2, "y": 12, "w": 2, "h": 0.5, "p": "pixels_flowerLight_ice"},
+					{"x": 3.5, "y": 12.5, "w": 0.5, "h": 1.5, "p": "pixels_flowerLight_ice"},
+					{"x": 1, "y": 14, "w": 1, "h": 1, "p": "pixels_flowerLight_ice"},
+					{"x": 2, "y": 14, "w": 2, "h": 0.5, "p": "pixels_flowerLight_ice"},
+					{"x": 2, "y": 16, "w": 1, "h": 1, "p": "pixels_flowerLight_ice"},
+					{"x": 2, "y": 18, "w": 1, "h": 1, "p": "pixels_flowerLight_ice"},
+					{"x": 0, "y": 16, "w": 2, "h": 0.5, "p": "pixels_flowerLight_ice"},
+					{"x": 0, "y": 16.5, "w": 0.5, "h": 1.5, "p": "pixels_flowerLight_ice"},
+					{"x": 0, "y": 18, "w": 2, "h": 0.5, "p": "pixels_flowerLight_ice"},
+					{"x": 1, "y": 20.5, "w": 1, "h": 1, "p": "pixels_flowerLight_ice"},
+					{"x": 2, "y": 20.5, "w": 2, "h": 0.5, "p": "pixels_flowerLight_ice"},
+					{"x": 3.5, "y": 21, "w": 0.5, "h": 1, "p": "pixels_flowerLight_ice"},
+					{"x": 0, "y": 22, "w": 4, "h": 0.5, "p": "pixels_flowerLight_ice"},
+					{"x": 0, "y": 23, "w": 4, "h": 0.5, "p": "pixels_flowerLight_ice"},
+					{"x": 1, "y": 24, "w": 1, "h": 1, "p": "pixels_flowerLight_ice"},
+					{"x": 2, "y": 24, "w": 2, "h": 0.5, "p": "pixels_flowerLight_ice"},
+
+					{"x": 3.5, "y": 6.5, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavy_ice"},
+					{"x": 0, "y": 6.5, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavy_ice"},
+					{"x": 0, "y": 10, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavy_ice"},
+					{"x": 3.5, "y": 10, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavy_ice"},
+					{"x": 1.5, "y": 7, "w": 1, "h": 3, "p": "pixels_flowerHeavy_ice"},
+					{"x": 1, "y": 8, "w": 0.5, "h": 1, "p": "pixels_flowerHeavy_ice"},
+					{"x": 2.5, "y": 8, "w": 0.5, "h": 1, "p": "pixels_flowerHeavy_ice"},
+					{"x": 0, "y": 7, "w": 1, "h": 3, "p": "pixels_flowerHeavy_ice"},
+					{"x": 3, "y": 7, "w": 1, "h": 3, "p": "pixels_flowerHeavy_ice"}
+				],
+
+				"CLEARING":
+				[
+
+				],
+
+				"OUTER":
+				{
+					"class_LR": "pixels_forestMassLR_ice",
+					"class_TB": "pixels_forestMassTB_ice"
+				}
+			},
+
+			"water":
+			{
+				"EDGE":
+				[
+
+				],
+
+				"BASE":
+				[
+
+				],
+
+				"FISH":
+				[
+
+				]
+			},
+
+			"enemyPlayers":
+			[
+				{
+				"x": 3.5,
+				"y": 12.5,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level34_bear0",
+				"t": "bear",
+				"l": 142,
+				"known": "a huge grizzly bear",
+				"spawn": 34
+				},
+
+				{
+				"x": 3.5,
+				"y": 13,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level34_bear1",
+				"t": "bear",
+				"l": 142,
+				"known": "a huge grizzly bear",
+				"spawn": 34
+				},
+
+				{
+				"x": 3.5,
+				"y": 13.5,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level34_bear2",
+				"t": "bear",
+				"l": 142,
+				"known": "a huge grizzly bear",
+				"spawn": 34
+				},
+
+				{
+				"x": 0,
+				"y": 16.5,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level34_bear3",
+				"t": "bear",
+				"l": 130,
+				"known": "a hungry bear",
+				"spawn": 34
+				},
+
+				{
+				"x": 0,
+				"y": 17,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level34_bear4",
+				"t": "bear",
+				"l": 130,
+				"known": "a hungry bear",
+				"spawn": 34
+				},
+
+				{
+				"x": 0,
+				"y": 17.5,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level34_bear5",
+				"t": "bear",
+				"l": 130,
+				"known": "a hungry bear",
+				"spawn": 34
+				},
+
+				{
+				"x": 3.5,
+				"y": 21,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level34_bear6",
+				"t": "bear",
+				"l": 130,
+				"known": "a hungry bear",
+				"spawn": 34
+				},
+
+				{
+				"x": 3.5,
+				"y": 21.5,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level34_bear7",
+				"t": "bear",
+				"l": 130,
+				"known": "a hungry bear",
+				"spawn": 34
+				}
+			],
+
+			"friendPlayers":
+			[
+
+			],
+
+			"gates":
+			[
+
+			],
+
+			"portal":
+			[
+				{
+				"num": 0,
+				"x": 1.5,
+				"y": 0,
+				"w": 1,
+				"h": 1,
+				"level": 33,
+				"exit": 12,
+				"direction": "DOWN",
+				"spawn": 34,
+				"bossLevel": false,
+				"p": "portal_top_ice"
+				},
+
+				{
+				"num": 1,
+				"x": 1.5,
+				"y": 4,
+				"w": 1,
+				"h": 1,
+				"level": 34,
+				"exit": 9,
+				"direction": "UP",
+				"spawn": 34,
+				"bossLevel": false,
+				"p": "portal_top_ice"
+				},
+
+				{
+				"num": 2,
+				"x": 1.5,
+				"y": 6,
+				"w": 1,
+				"h": 1,
+				"level": 34,
+				"exit": 1,
+				"direction": "DOWN",
+				"spawn": 34,
+				"bossLevel": false,
+				"p": "portal_top_ice"
+				},
+
+				{
+				"num": 3,
+				"x": 1.5,
+				"y": 10,
+				"w": 1,
+				"h": 1,
+				"level": 35,
+				"exit": 0,
+				"direction": "UP",
+				"spawn": 34,
+				"bossLevel": false,
+				"p": "portal_top_ice"
+				},
+
+				{
+				"num": 4,
+				"x": 0,
+				"y": 12,
+				"w": 1,
+				"h": 1,
+				"level": 34,
+				"exit": 4,
+				"direction": "RIGHT",
+				"spawn": 34,
+				"bossLevel": false,
+				"p": "portal_top_ice"
+				},
+
+				{
+				"num": 5,
+				"x": 0,
+				"y": 14,
+				"w": 1,
+				"h": 1,
+				"level": 34,
+				"exit": 2,
+				"direction": "RIGHT",
+				"spawn": 34,
+				"bossLevel": false,
+				"p": "portal_top_ice"
+				},
+
+				{
+				"num": 6,
+				"x": 3,
+				"y": 16,
+				"w": 1,
+				"h": 1,
+				"level": 34,
+				"exit": 6,
+				"direction": "LEFT",
+				"spawn": 34,
+				"bossLevel": false,
+				"p": "portal_top_ice"
+				},
+
+				{
+				"num": 7,
+				"x": 3,
+				"y": 18,
+				"w": 1,
+				"h": 1,
+				"level": 34,
+				"exit": 8,
+				"direction": "LEFT",
+				"spawn": 34,
+				"bossLevel": false,
+				"p": "portal_top_ice"
+				},
+
+				{
+				"num": 8,
+				"x": 0,
+				"y": 20.5,
+				"w": 1,
+				"h": 1,
+				"level": 34,
+				"exit": 6,
+				"direction": "RIGHT",
+				"spawn": 34,
+				"bossLevel": false,
+				"p": "portal_top_ice"
+				},
+
+				{
+				"num": 9,
+				"x": 0,
+				"y": 24,
+				"w": 1,
+				"h": 1,
+				"level": 34,
+				"exit": 4,
+				"direction": "RIGHT",
+				"spawn": 34,
+				"bossLevel": false,
+				"p": "portal_top_ice"
+				}
+			],
+
+			"sound_level":
+			[
+
+			],
+
+			"sound_trigger":
+			[
+
+			]
+		},
+
+		"level35":
+		{
+			"levelSettings":
+			{
+				"n": 35,
+				"weather": "SNOW",
+				"mist": false,
+				"land": "ice",
+				"floor": "field-floor-ice",
+				"entry_fall": false,
+				"fall_x": 0,
+				"fall_y": 0,
+				"fall_d": "DOWN",
+				"title_top": "the cold war",
+				"levelFunctions":
+				{
+					"gate35_unlock":
+					[
+						{
+							"call_funct"	: "levelGate_checkStatus",
+							"call_params"	: ["level35_gate0", ["level35_bear0", "level35_bear1", "level35_bear2", "level35_bear3", "level35_bear4", "level35_bear5", "level35_bear6", "level35_bear7", "level35_bear8", "level35_bear9", "level35_bear10", "level35_bear11", "level35_bear12", "level35_bear13", "level35_bear14", "level35_bear15", "level35_bear16", "level35_bear17", "level35_bear18", "level35_bear19"]]
+						}
+					]
+				}
+			},
+
+			"texture":
+			{
+				"WALLS" :
+				[
+					{"x": 0, "y": 9.5, "w": 0.5, "h": 0.5, "p": "pixels_forest_ice collideCheck-field"},
+					{"x": 3.5, "y": 9.5, "w": 0.5, "h": 0.5, "p": "pixels_forest_ice collideCheck-field"},
+					{"x": 3, "y": 8, "w": 0.5, "h": 0.5, "p": "pixels_forest_ice collideCheck-field"},
+					{"x": 0.5, "y": 8, "w": 0.5, "h": 0.5, "p": "pixels_forest_ice collideCheck-field"},
+					{"x": 0, "y": 6.5, "w": 0.5, "h": 0.5, "p": "pixels_forest_ice collideCheck-field"},
+					{"x": 3.5, "y": 6.5, "w": 0.5, "h": 0.5, "p": "pixels_forest_ice collideCheck-field"},
+					{"x": 0, "y": 4, "w": 0.5, "h": 0.5, "p": "pixels_forest_ice collideCheck-field"},
+					{"x": 3.5, "y": 4, "w": 0.5, "h": 0.5, "p": "pixels_forest_ice collideCheck-field"},
+					{"x": 0, "y": 4.5, "w": 1, "h": 2, "p": "pixels_forest_ice collideCheck-field"},
+					{"x": 1, "y": 5, "w": 0.5, "h": 1, "p": "pixels_forest_ice collideCheck-field"},
+					{"x": 2.5, "y": 5, "w": 0.5, "h": 1, "p": "pixels_forest_ice collideCheck-field"},
+					{"x": 3, "y": 4.5, "w": 1, "h": 2, "p": "pixels_forest_ice collideCheck-field"},
+					{"x": 1.5, "y": 7, "w": 1, "h": 2.5, "p": "pixels_forest_ice collideCheck-field"},
+					{"x": 1, "y": 7.5, "w": 0.5, "h": 1.5, "p": "pixels_forest_ice collideCheck-field"},
+					{"x": 2.5, "y": 7.5, "w": 0.5, "h": 1.5, "p": "pixels_forest_ice collideCheck-field"},
+					{"x": 0, "y": 10, "w": 1, "h": 1.5, "p": "pixels_forest_ice collideCheck-field"},
+					{"x": 1, "y": 10.5, "w": 0.5, "h": 1, "p": "pixels_forest_ice collideCheck-field"},
+					{"x": 2.5, "y": 10.5, "w": 0.5, "h": 1, "p": "pixels_forest_ice collideCheck-field"},
+					{"x": 3, "y": 10, "w": 1, "h": 1.5, "p": "pixels_forest_ice collideCheck-field"},
+					{"x": 0.5, "y": 12, "w": 3, "h": 2, "p": "pixels_forest_ice collideCheck-field"},
+					{"x": 0.5, "y": 14.5, "w": 3, "h": 0.5, "p": "pixels_forest_ice collideCheck-field"},
+					{"x": 0.5, "y": 17, "w": 3, "h": 0.5, "p": "pixels_forest_ice collideCheck-field"},
+					{"x": 0.5, "y": 18, "w": 3, "h": 2, "p": "pixels_forest_ice collideCheck-field"},
+					{"x": 0, "y": 20.5, "w": 3.5, "h": 0.5, "p": "pixels_forest_ice collideCheck-field"},
+					{"x": 0.5, "y": 21.5, "w": 3.5, "h": 0.5, "p": "pixels_forest_ice collideCheck-field"},
+					{"x": 0, "y": 22.5, "w": 3.5, "h": 0.5, "p": "pixels_forest_ice collideCheck-field"},
+					{"x": 0.5, "y": 23.5, "w": 3.5, "h": 0.5, "p": "pixels_forest_ice collideCheck-field"},
+					{"x": 0, "y": 24.5, "w": 2, "h": 0.5, "p": "pixels_forest_ice collideCheck-field"}
+				],
+
+				"PLANTS":
+				[
+					{"x": 1, "y": 7, "w": 0.5, "h": 0.5, "p": "pixels_flowerLight_ice"},
+					{"x": 0, "y": 8, "w": 0.5, "h": 0.5, "p": "pixels_flowerLight_ice"},
+					{"x": 2.5, "y": 7, "w": 0.5, "h": 0.5, "p": "pixels_flowerLight_ice"},
+					{"x": 3.5, "y": 8, "w": 0.5, "h": 0.5, "p": "pixels_flowerLight_ice"},
+					{"x": 1, "y": 9, "w": 0.5, "h": 0.5, "p": "pixels_flowerLight_ice"},
+					{"x": 2.5, "y": 9, "w": 0.5, "h": 0.5, "p": "pixels_flowerLight_ice"},
+					{"x": 0, "y": 14.5, "w": 0.5, "h": 0.5, "p": "pixels_flowerLight_ice"},
+					{"x": 3.5, "y": 14.5, "w": 0.5, "h": 0.5, "p": "pixels_flowerLight_ice"},
+					{"x": 0, "y": 0, "w": 4, "h": 1, "p": "pixels_flowerLight_ice"},
+					{"x": 0, "y": 1, "w": 1.5, "h": 1, "p": "pixels_flowerLight_ice"},
+					{"x": 2.5, "y": 1, "w": 1.5, "h": 1, "p": "pixels_flowerLight_ice"},
+					{"x": 0, "y": 2, "w": 4, "h": 2, "p": "pixels_flowerLight_ice"},
+					{"x": 0.5, "y": 4, "w": 3, "h": 0.5, "p": "pixels_flowerLight_ice"},
+					{"x": 1, "y": 4.5, "w": 2, "h": 0.5, "p": "pixels_flowerLight_ice"},
+					{"x": 1.5, "y": 5, "w": 1, "h": 1, "p": "pixels_flowerLight_ice"},
+					{"x": 1, "y": 6, "w": 2, "h": 0.5, "p": "pixels_flowerLight_ice"},
+					{"x": 0.5, "y": 6.5, "w": 3, "h": 0.5, "p": "pixels_flowerLight_ice"},
+					{"x": 0, "y": 7, "w": 1, "h": 1, "p": "pixels_flowerLight_ice"},
+					{"x": 3, "y": 7, "w": 1, "h": 1, "p": "pixels_flowerLight_ice"},
+					{"x": 0, "y": 8.5, "w": 1, "h": 1, "p": "pixels_flowerLight_ice"},
+					{"x": 3, "y": 8.5, "w": 1, "h": 1, "p": "pixels_flowerLight_ice"},
+					{"x": 0.5, "y": 9.5, "w": 3, "h": 0.5, "p": "pixels_flowerLight_ice"},
+					{"x": 1, "y": 10, "w": 2, "h": 0.5, "p": "pixels_flowerLight_ice"},
+					{"x": 1.5, "y": 10.5, "w": 1, "h": 1, "p": "pixels_flowerLight_ice"},
+					{"x": 0, "y": 11.5, "w": 4, "h": 0.5, "p": "pixels_flowerLight_ice"},
+					{"x": 0, "y": 12, "w": 0.5, "h": 2, "p": "pixels_flowerLight_ice"},
+					{"x": 3.5, "y": 12, "w": 0.5, "h": 2, "p": "pixels_flowerLight_ice"},
+					{"x": 0, "y": 14, "w": 4, "h": 0.5, "p": "pixels_flowerLight_ice"},
+
+					{"x": 0, "y": 17, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavy_ice"},
+					{"x": 3.5, "y": 17, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavy_ice"},
+					{"x": 3.5, "y": 20.5, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavy_ice"},
+					{"x": 0, "y": 21.5, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavy_ice"},
+					{"x": 3.5, "y": 22.5, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavy_ice"},
+					{"x": 0, "y": 23.5, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavy_ice"},
+					{"x": 0, "y": 17.5, "w": 4, "h": 0.5, "p": "pixels_flowerHeavy_ice"},
+					{"x": 0, "y": 18, "w": 0.5, "h": 2, "p": "pixels_flowerHeavy_ice"},
+					{"x": 3.5, "y": 18, "w": 0.5, "h": 2, "p": "pixels_flowerHeavy_ice"},
+					{"x": 0, "y": 20, "w": 4, "h": 0.5, "p": "pixels_flowerHeavy_ice"},
+					{"x": 0, "y": 21, "w": 4, "h": 0.5, "p": "pixels_flowerHeavy_ice"},
+					{"x": 0, "y": 22, "w": 4, "h": 0.5, "p": "pixels_flowerHeavy_ice"},
+					{"x": 0, "y": 23, "w": 4, "h": 0.5, "p": "pixels_flowerHeavy_ice"},
+					{"x": 0, "y": 24, "w": 2, "h": 0.5, "p": "pixels_flowerHeavy_ice"},
+					{"x": 2, "y": 24, "w": 1, "h": 1, "p": "pixels_flowerHeavy_ice"}
+				],
+
+				"CLEARING":
+				[
+
+				],
+
+				"OUTER":
+				{
+					"class_LR": "pixels_forestMassLR_ice",
+					"class_TB": "pixels_forestMassTB_ice"
+				}
+			},
+
+			"water":
+			{
+				"EDGE":
+				[
+
+				],
+
+				"BASE":
+				[
+
+				],
+
+				"FISH":
+				[
+
+				]
+			},
+
+			"enemyPlayers":
+			[
+				{
+				"x": 1.5,
+				"y": 5,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level35_bear0",
+				"t": "bear",
+				"l": 142,
+				"known": "a huge grizzly bear",
+				"spawn": 35,
+				"defeat":	{
+								"link_funct": "gate35_unlock"
+							}
+				},
+
+				{
+				"x": 2,
+				"y": 5,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level35_bear1",
+				"t": "bear",
+				"l": 142,
+				"known": "a huge grizzly bear",
+				"spawn": 35,
+				"defeat":	{
+								"link_funct": "gate35_unlock"
+							}
+				},
+
+				{
+				"x": 1.5,
+				"y": 5.5,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level35_bear2",
+				"t": "bear",
+				"l": 142,
+				"known": "a huge grizzly bear",
+				"spawn": 35,
+				"defeat":	{
+								"link_funct": "gate35_unlock"
+							}
+				},
+
+				{
+				"x": 2,
+				"y": 5.5,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level35_bear3",
+				"t": "bear",
+				"l": 142,
+				"known": "a huge grizzly bear",
+				"spawn": 35,
+				"defeat":	{
+								"link_funct": "gate35_unlock"
+							}
+				},
+
+				{
+				"x": 0,
+				"y": 8,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level35_bear4",
+				"t": "bear",
+				"l": 142,
+				"known": "a huge grizzly bear",
+				"spawn": 35,
+				"defeat":	{
+								"link_funct": "gate35_unlock"
+							}
+				},
+
+				{
+				"x": 3.5,
+				"y": 8,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level35_bear5",
+				"t": "bear",
+				"l": 142,
+				"known": "a huge grizzly bear",
+				"spawn": 35,
+				"defeat":	{
+								"link_funct": "gate35_unlock"
+							}
+				},
+
+				{
+				"x": 1.5,
+				"y": 10.5,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level35_bear6",
+				"t": "bear",
+				"l": 142,
+				"known": "a huge grizzly bear",
+				"spawn": 35,
+				"defeat":	{
+								"link_funct": "gate35_unlock"
+							}
+				},
+
+				{
+				"x": 2,
+				"y": 10.5,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level35_bear7",
+				"t": "bear",
+				"l": 142,
+				"known": "a huge grizzly bear",
+				"spawn": 35,
+				"defeat":	{
+								"link_funct": "gate35_unlock"
+							}
+				},
+
+				{
+				"x": 1.5,
+				"y": 11,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level35_bear8",
+				"t": "bear",
+				"l": 142,
+				"known": "a huge grizzly bear",
+				"spawn": 35,
+				"defeat":	{
+								"link_funct": "gate35_unlock"
+							}
+				},
+
+				{
+				"x": 2,
+				"y": 11,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level35_bear9",
+				"t": "bear",
+				"l": 142,
+				"known": "a huge grizzly bear",
+				"spawn": 35,
+				"defeat":	{
+								"link_funct": "gate35_unlock"
+							}
+				},
+
+				{
+				"x": 0,
+				"y": 12,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level35_bear10",
+				"t": "bear",
+				"l": 154,
+				"known": "a bear of death",
+				"spawn": 35,
+				"defeat":	{
+								"link_funct": "gate35_unlock"
+							}
+				},
+
+				{
+				"x": 3.5,
+				"y": 12,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level35_bear11",
+				"t": "bear",
+				"l": 154,
+				"known": "a bear of death",
+				"spawn": 35,
+				"defeat":	{
+								"link_funct": "gate35_unlock"
+							}
+				},
+
+				{
+				"x": 0,
+				"y": 12.5,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level35_bear12",
+				"t": "bear",
+				"l": 154,
+				"known": "a bear of death",
+				"spawn": 35,
+				"defeat":	{
+								"link_funct": "gate35_unlock"
+							}
+				},
+
+				{
+				"x": 3.5,
+				"y": 12.5,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level35_bear13",
+				"t": "bear",
+				"l": 154,
+				"known": "a bear of death",
+				"spawn": 35,
+				"defeat":	{
+								"link_funct": "gate35_unlock"
+							}
+				},
+
+				{
+				"x": 0,
+				"y": 13,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level35_bear14",
+				"t": "bear",
+				"l": 154,
+				"known": "a bear of death",
+				"spawn": 35,
+				"defeat":	{
+								"link_funct": "gate35_unlock"
+							}
+				},
+
+				{
+				"x": 3.5,
+				"y": 13,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level35_bear15",
+				"t": "bear",
+				"l": 154,
+				"known": "a bear of death",
+				"spawn": 35,
+				"defeat":	{
+								"link_funct": "gate35_unlock"
+							}
+				},
+
+				{
+				"x": 0,
+				"y": 13.5,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level35_bear16",
+				"t": "bear",
+				"l": 154,
+				"known": "the bear of danger",
+				"spawn": 35,
+				"defeat":	{
+								"link_funct": "gate35_unlock"
+							}
+				},
+
+				{
+				"x": 3.5,
+				"y": 13.5,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level35_bear17",
+				"t": "bear",
+				"l": 154,
+				"known": "the bear of danger",
+				"spawn": 35,
+				"defeat":	{
+								"link_funct": "gate35_unlock"
+							}
+				},
+
+				{
+				"x": 0,
+				"y": 14.5,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level35_bear18",
+				"t": "bear",
+				"l": 166,
+				"known": "a wormhole god",
+				"spawn": 35,
+				"defeat":	{
+								"link_funct": "gate35_unlock"
+							}
+				},
+
+				{
+				"x": 3.5,
+				"y": 14.5,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level35_bear19",
+				"t": "bear",
+				"l": 166,
+				"known": "a wormhole god",
+				"spawn": 35,
+				"defeat":	{
+								"link_funct": "gate35_unlock"
+							}
+				}
+			],
+
+			"friendPlayers":
+			[
+
+			],
+
+			"gates":
+			[
+				{
+				"x": 0,
+				"y": 15,
+				"w": 4,
+				"h": 2,
+				"c_cl": "layer-field-gate-area",
+				"n": "level35_gate0",
+				"spawn": 35
+				}
+			],
+
+			"portal":
+			[
+				{
+				"num": 0,
+				"x": 1.5,
+				"y": 1,
+				"w": 1,
+				"h": 1,
+				"level": 34,
+				"exit": 3,
+				"direction": "DOWN",
+				"spawn": 35,
+				"bossLevel": false,
+				"p": "portal_top_ice"
+				},
+
+				{
+				"num": 1,
+				"x": 3,
+				"y": 24,
+				"w": 1,
+				"h": 1,
+				"level": 36,
+				"exit": 0,
+				"direction": "LEFT",
+				"spawn": 35,
+				"bossLevel": false,
+				"p": "portal_top_ice"
+				}
+			],
+
+			"sound_level":
+			[
+
+			],
+
+			"sound_trigger":
+			[
+
+			]
+		},
+
+		"level36":
+		{
+			"levelSettings":
+			{
+				"n": 36,
+				"weather": "RAIN",
+				"mist": false,
+				"land": "evening0",
+				"floor": "field-floor-evening0",
+				"entry_fall": false,
+				"fall_x": 0,
+				"fall_y": 0,
+				"fall_d": "DOWN",
+				"title_top": "an open field",
+				"levelFunctions":
+				{
+
+				}
+			},
+
+			"texture":
+			{
+				"WALLS" :
+				[
+					{"x": 2.5, "y": 2.5, "w": 0.5, "h": 0.5, "p": "pixels_forestEvening0 collideCheck-field"},
+					{"x": 1, "y": 2.5, "w": 0.5, "h": 0.5, "p": "pixels_forestEvening0 collideCheck-field"},
+					{"x": 1, "y": 22, "w": 0.5, "h": 0.5, "p": "pixels_forestEvening0 collideCheck-field"},
+					{"x": 2.5, "y": 22, "w": 0.5, "h": 0.5, "p": "pixels_forestEvening0 collideCheck-field"},
+					{"x": 3.5, "y": 1.5, "w": 0.5, "h": 0.5, "p": "pixels_forestEvening0 collideCheck-field"},
+					{"x": 0, "y": 1.5, "w": 0.5, "h": 0.5, "p": "pixels_forestEvening0 collideCheck-field"},
+					{"x": 3.5, "y": 23, "w": 0.5, "h": 0.5, "p": "pixels_forestEvening0 collideCheck-field"},
+					{"x": 0, "y": 23, "w": 0.5, "h": 0.5, "p": "pixels_forestEvening0 collideCheck-field"},
+					{"x": 0, "y": 0, "w": 4, "h": 1.5, "p": "pixels_forestEvening0 collideCheck-field"},
+					{"x": 0.5, "y": 1.5, "w": 1, "h": 1, "p": "pixels_forestEvening0 collideCheck-field"},
+					{"x": 2.5, "y": 1.5, "w": 1, "h": 1, "p": "pixels_forestEvening0 collideCheck-field"},
+					{"x": 1.5, "y": 6, "w": 1.5, "h": 0.5, "p": "pixels_forestEvening0 collideCheck-field"},
+					{"x": 1.5, "y": 7, "w": 1, "h": 0.5, "p": "pixels_forestEvening0 collideCheck-field"},
+					{"x": 1, "y": 6, "w": 0.5, "h": 2.5, "p": "pixels_forestEvening0 collideCheck-field"},
+					{"x": 1, "y": 9.5, "w": 0.5, "h": 2.5, "p": "pixels_forestEvening0 collideCheck-field"},
+					{"x": 2.5, "y": 9.5, "w": 0.5, "h": 2.5, "p": "pixels_forestEvening0 collideCheck-field"},
+					{"x": 1.5, "y": 11.5, "w": 1, "h": 0.5, "p": "pixels_forestEvening0 collideCheck-field"},
+					{"x": 1, "y": 13, "w": 0.5, "h": 2.5, "p": "pixels_forestEvening0 collideCheck-field"},
+					{"x": 2.5, "y": 13, "w": 0.5, "h": 2.5, "p": "pixels_forestEvening0 collideCheck-field"},
+					{"x": 1.5, "y": 15, "w": 1, "h": 0.5, "p": "pixels_forestEvening0 collideCheck-field"},
+					{"x": 1, "y": 16.5, "w": 0.5, "h": 2.5, "p": "pixels_forestEvening0 collideCheck-field"},
+					{"x": 2.5, "y": 16.5, "w": 0.5, "h": 2.5, "p": "pixels_forestEvening0 collideCheck-field"},
+					{"x": 1.5, "y": 18.5, "w": 1, "h": 0.5, "p": "pixels_forestEvening0 collideCheck-field"},
+					{"x": 0.5, "y": 22.5, "w": 1, "h": 1, "p": "pixels_forestEvening0 collideCheck-field"},
+					{"x": 2.5, "y": 22.5, "w": 1, "h": 1, "p": "pixels_forestEvening0 collideCheck-field"},
+					{"x": 0, "y": 23.5, "w": 4, "h": 1.5, "p": "pixels_forestEvening0 collideCheck-field"}
+				],
+
+				"PLANTS":
+				[
+					{"x": 0, "y": 2, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 3.5, "y": 2, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 0, "y": 22.5, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 3.5, "y": 22.5, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 0, "y": 2.5, "w": 1, "h": 0.5, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 1.5, "y": 2.5, "w": 1, "h": 0.5, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 3, "y": 2.5, "w": 1, "h": 0.5, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 0, "y": 3, "w": 4, "h": 3, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 0, "y": 6, "w": 1, "h": 2.5, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 1.5, "y": 7.5, "w": 2.5, "h": 1, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 2.5, "y": 7, "w": 1.5, "h": 0.5, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 1.5, "y": 6.5, "w": 2.5, "h": 0.5, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 3, "y": 6, "w": 1, "h": 0.5, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 0, "y": 8.5, "w": 4, "h": 1, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 1.5, "y": 9.5, "w": 1, "h": 2, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 0, "y": 9.5, "w": 1, "h": 2.5, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 3, "y": 9.5, "w": 1, "h": 2.5, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 0, "y": 12, "w": 4, "h": 1, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 1.5, "y": 13, "w": 1, "h": 2, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 0, "y": 13, "w": 1, "h": 2.5, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 3, "y": 13, "w": 1, "h": 2.5, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 0, "y": 15.5, "w": 4, "h": 1, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 1.5, "y": 16.5, "w": 1, "h": 2, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 0, "y": 16.5, "w": 1, "h": 2.5, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 3, "y": 16.5, "w": 1, "h": 2.5, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 0, "y": 19, "w": 4, "h": 3, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 1.5, "y": 22, "w": 1, "h": 0.5, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 0, "y": 22, "w": 1, "h": 0.5, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 3, "y": 22, "w": 1, "h": 0.5, "p": "pixels_flowerHeavyEvening0"}
+				],
+
+				"CLEARING":
+				[
+
+				],
+
+				"OUTER":
+				{
+					"class_LR": "pixels_forestMassEvening0LR",
+					"class_TB": "pixels_forestMassEvening0TB"
+				}
+			},
+
+			"water":
+			{
+				"EDGE":
+				[
+
+				],
+
+				"BASE":
+				[
+
+				],
+
+				"FISH":
+				[
+
+				]
+			},
+
+			"enemyPlayers":
+			[
+
+			],
+
+			"friendPlayers":
+			[
+
+			],
+
+			"gates":
+			[
+
+			],
+
+			"portal":
+			[
+				{
+				"num": 0,
+				"x": 1.5,
+				"y": 1.5,
+				"w": 1,
+				"h": 1,
+				"level": 35,
+				"exit": 1,
+				"direction": "DOWN",
+				"spawn": 36,
+				"bossLevel": false,
+				"p": "portal_top_evening0"
+				},
+
+				{
+				"num": 1,
+				"x": 1.5,
+				"y": 22.5,
+				"w": 1,
+				"h": 1,
+				"level": 37,
+				"exit": 0,
+				"direction": "UP",
+				"spawn": 36,
+				"bossLevel": false,
+				"p": "portal_top_evening0"
+				}
+			],
+
+			"sound_level":
+			[
+
+			],
+
+			"sound_trigger":
+			[
+
+			]
+		},
+
+		"level37":
+		{
+			"levelSettings":
+			{
+				"n": 37,
+				"weather": "RAIN",
+				"mist": false,
+				"land": "evening0",
+				"floor": "field-floor-evening0",
+				"entry_fall": false,
+				"fall_x": 0,
+				"fall_y": 0,
+				"fall_d": "DOWN",
+				"title_top": "following a warchief",
+				"levelFunctions":
+				{
+					"gate37_unlock":
+					[
+						{
+							"call_funct"	: "levelGate_checkStatus",
+							"call_params"	: ["level37_gate0", ["level37_rabbit0"]]
+						}
+					]
+				}
+			},
+
+			"texture":
+			{
+				"WALLS" :
+				[
+					{"x": 2, "y": 0.5, "w": 1, "h": 1, "p": "pixels_forestEvening0 collideCheck-field"},
+					{"x": 1, "y": 2, "w": 2.5, "h": 0.5, "p": "pixels_forestEvening0 collideCheck-field"},
+					{"x": 3.5, "y": 0, "w": 0.5, "h": 21.5, "p": "pixels_forestEvening0 collideCheck-field"},
+					{"x": 0.5, "y": 1, "w": 1.5, "h": 0.5, "p": "pixels_forestEvening0 collideCheck-field"},
+					{"x": 0, "y": 1, "w": 0.5, "h": 20.5, "p": "pixels_forestEvening0 collideCheck-field"},
+					{"x": 0.5, "y": 3, "w": 2.5, "h": 0.5, "p": "pixels_forestEvening0 collideCheck-field"},
+					{"x": 1.5, "y": 4, "w": 2, "h": 0.5, "p": "pixels_forestEvening0 collideCheck-field"},
+					{"x": 1, "y": 4, "w": 0.5, "h": 15, "p": "pixels_forestEvening0 collideCheck-field"},
+					{"x": 2, "y": 5, "w": 1, "h": 6.5, "p": "pixels_forestEvening0 collideCheck-field"},
+					{"x": 2, "y": 11.5, "w": 1.5, "h": 1, "p": "pixels_forestEvening0 collideCheck-field"},
+					{"x": 2, "y": 13, "w": 1, "h": 6.5, "p": "pixels_forestEvening0 collideCheck-field"},
+					{"x": 0.5, "y": 19.5, "w": 2.5, "h": 1, "p": "pixels_forestEvening0 collideCheck-field"},
+					{"x": 1, "y": 21, "w": 2.5, "h": 0.5, "p": "pixels_forestEvening0 collideCheck-field"},
+					{"x": 1, "y": 23.5, "w": 3, "h": 0.5, "p": "pixels_forestEvening0 collideCheck-field"},
+					{"x": 0, "y": 23.5, "w": 0.5, "h": 1.5, "p": "pixels_forestEvening0 collideCheck-field"},
+					{"x": 0.5, "y": 24.5, "w": 1.5, "h": 0.5, "p": "pixels_forestEvening0 collideCheck-field"}
+				],
+
+				"PLANTS":
+				[
+					{"x": 0.5, "y": 2, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 3, "y": 3, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 0.5, "y": 21, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 0.5, "y": 23.5, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 1, "y": 0, "w": 1, "h": 1, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 2, "y": 0, "w": 1.5, "h": 0.5, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 3, "y": 0.5, "w": 0.5, "h": 1, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 0.5, "y": 1.5, "w": 3, "h": 0.5, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 0.5, "y": 2.5, "w": 3, "h": 0.5, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 0.5, "y": 3.5, "w": 3, "h": 0.5, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 0.5, "y": 4, "w": 0.5, "h": 15, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 0.5, "y": 19, "w": 1.5, "h": 0.5, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 1.5, "y": 5, "w": 0.5, "h": 14, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 1.5, "y": 4.5, "w": 2, "h": 0.5, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 3, "y": 5, "w": 0.5, "h": 6.5, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 2, "y": 12.5, "w": 1.5, "h": 0.5, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 3, "y": 13, "w": 0.5, "h": 7.5, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 0.5, "y": 20.5, "w": 3, "h": 0.5, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 0.5, "y": 24, "w": 1.5, "h": 0.5, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 2, "y": 24, "w": 1, "h": 1, "p": "pixels_flowerHeavyEvening0"}
+				],
+
+				"CLEARING":
+				[
+
+				],
+
+				"OUTER":
+				{
+					"class_LR": "pixels_forestMassEvening0LR",
+					"class_TB": "pixels_forestMassEvening0TB"
+				}
+			},
+
+			"water":
+			{
+				"EDGE":
+				[
+
+				],
+
+				"BASE":
+				[
+
+				],
+
+				"FISH":
+				[
+
+				]
+			},
+
+			"enemyPlayers":
+			[
+				{
+				"x": 3,
+				"y": 11,
+				"w": 0.5,
+				"h": 0.5,
+				"n": "level37_rabbit0",
+				"t": "rabbit",
+				"l": 200,
+				"known": "the rabbit warchief",
+				"spawn": 37,
+				"defeat":	{
+								"link_funct": "gate37_unlock"
+							}
+				}
+			],
+
+			"friendPlayers":
+			[
+
+			],
+
+			"gates":
+			[
+				{
+				"x": 0,
+				"y": 21.5,
+				"w": 4,
+				"h": 2,
+				"c_cl": "layer-field-gate-area",
+				"n": "level37_gate0",
+				"spawn": 37
+				}
+			],
+
+			"portal":
+			[
+				{
+				"num": 0,
+				"x": 0,
+				"y": 0,
+				"w": 1,
+				"h": 1,
+				"level": 36,
+				"exit": 1,
+				"direction": "RIGHT",
+				"spawn": 37,
+				"bossLevel": false,
+				"p": "portal_top_evening0"
+				},
+
+				{
+				"num": 1,
+				"x": 3,
+				"y": 24,
+				"w": 1,
+				"h": 1,
+				"level": 38,
+				"exit": 0,
+				"direction": "LEFT",
+				"spawn": 37,
+				"bossLevel": false,
+				"p": "portal_top_evening0"
+				}
+			],
+
+			"sound_level":
+			[
+
+			],
+
+			"sound_trigger":
+			[
+
+			]
+		},
+
+		"level38":
+		{
+			"levelSettings":
+			{
+				"n": 38,
+				"weather": "RAIN",
+				"mist": false,
+				"land": "evening0",
+				"floor": "field-floor-evening0",
+				"entry_fall": false,
+				"fall_x": 0,
+				"fall_y": 0,
+				"fall_d": "DOWN",
+				"title_top": "the final sea",
+				"levelFunctions":
+				{
+
+				}
+			},
+
+			"texture":
+			{
+				"WALLS" :
+				[
+					{"x": 1.5, "y": 9.5, "w": 1, "h": 1, "p": "pixels_forestEvening0 collideCheck-field"},
+					{"x": 1.5, "y": 14.5, "w": 1, "h": 1, "p": "pixels_forestEvening0 collideCheck-field"}
+				],
+
+				"PLANTS":
+				[
+					{"x": 1.5, "y": 6.5, "w": 1, "h": 0.5, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 1, "y": 7, "w": 2, "h": 0.5, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 1, "y": 7.5, "w": 0.5, "h": 1, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 2.5, "y": 7.5, "w": 0.5, "h": 1, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 0.5, "y": 8.5, "w": 3, "h": 1, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 0.5, "y": 9.5, "w": 1, "h": 1, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 2.5, "y": 9.5, "w": 1, "h": 1, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 0.5, "y": 10.5, "w": 3, "h": 1, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 1, "y": 11.5, "w": 2, "h": 0.5, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 1.5, "y": 12, "w": 1, "h": 1, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 1, "y": 13, "w": 2, "h": 0.5, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 0.5, "y": 13.5, "w": 3, "h": 1, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 0.5, "y": 14.5, "w": 1, "h": 1, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 2.5, "y": 14.5, "w": 1, "h": 1, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 0.5, "y": 15.5, "w": 3, "h": 1, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 1, "y": 16.5, "w": 0.5, "h": 1, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 2.5, "y": 16.5, "w": 0.5, "h": 1, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 1, "y": 17.5, "w": 2, "h": 0.5, "p": "pixels_flowerHeavyEvening0"},
+					{"x": 1.5, "y": 18, "w": 1, "h": 0.5, "p": "pixels_flowerHeavyEvening0"}
+				],
+
+				"CLEARING":
+				[
+
+				],
+
+				"OUTER":
+				{
+					"class_LR": "pixels_waterBase waterPool",
+					"class_TB": "pixels_waterBase waterPool"
+				}
+			},
+
+			"water":
+			{
+				"EDGE":
+				[
+					{"x": 0.5, "y": 11.5, "w": 0.5, "h": 0.5, "p": "pixels_waterEdge waterEdge tween-waterEdge"},
+					{"x": 1, "y": 12, "w": 0.5, "h": 0.5, "p": "pixels_waterEdge waterEdge tween-waterEdge"},
+					{"x": 2.5, "y": 12, "w": 0.5, "h": 0.5, "p": "pixels_waterEdge waterEdge tween-waterEdge"},
+					{"x": 3, "y": 11.5, "w": 0.5, "h": 0.5, "p": "pixels_waterEdge waterEdge tween-waterEdge"},
+					{"x": 0.5, "y": 16.5, "w": 0.5, "h": 0.5, "p": "pixels_waterEdge waterEdge tween-waterEdge"},
+					{"x": 3, "y": 16.5, "w": 0.5, "h": 0.5, "p": "pixels_waterEdge waterEdge tween-waterEdge"},
+					{"x": 1, "y": 18, "w": 0.5, "h": 0.5, "p": "pixels_waterEdge waterEdge tween-waterEdge"},
+					{"x": 2.5, "y": 18, "w": 0.5, "h": 0.5, "p": "pixels_waterEdge waterEdge tween-waterEdge"},
+					{"x": 1.5, "y": 18.5, "w": 1, "h": 0.5, "p": "pixels_waterEdge waterEdge tween-waterEdge"}
+
+				],
+
+				"BASE":
+				[
+					{"x": 1, "y": 6.5, "w": 0.5, "h": 0.5, "p": "pixels_waterBase waterPool collideCheck-field"},
+					{"x": 2.5, "y": 6.5, "w": 0.5, "h": 0.5, "p": "pixels_waterBase waterPool collideCheck-field"},
+					{"x": 0, "y": 6.5, "w": 1, "h": 2, "p": "pixels_waterBase waterPool collideCheck-field"},
+					{"x": 0, "y": 0, "w": 4, "h": 8.5, "p": "pixels_waterBase waterPool collideCheck-field"},
+					{"x": 0, "y": 8.5, "w": 0.5, "h": 3, "p": "pixels_waterBase waterPool collideCheck-field"},
+					{"x": 3.5, "y": 8.5, "w": 0.5, "h": 3, "p": "pixels_waterBase waterPool collideCheck-field"},
+					{"x": 0, "y": 11.5, "w": 1, "h": 2, "p": "pixels_waterBase waterPool collideCheck-field"},
+					{"x": 1, "y": 12, "w": 0.5, "h": 1, "p": "pixels_waterBase waterPool collideCheck-field"},
+					{"x": 2.5, "y": 12, "w": 0.5, "h": 1, "p": "pixels_waterBase waterPool collideCheck-field"},
+					{"x": 3, "y": 11.5, "w": 1, "h": 2, "p": "pixels_waterBase waterPool collideCheck-field"},
+					{"x": 0, "y": 13.5, "w": 0.5, "h": 3, "p": "pixels_waterBase waterPool collideCheck-field"},
+					{"x": 3.5, "y": 13.5, "w": 0.5, "h": 3, "p": "pixels_waterBase waterPool collideCheck-field"},
+					{"x": 0, "y": 16.5, "w": 1, "h": 1.5, "p": "pixels_waterBase waterPool collideCheck-field"},
+					{"x": 3, "y": 16.5, "w": 1, "h": 1.5, "p": "pixels_waterBase waterPool collideCheck-field"},
+					{"x": 0, "y": 18, "w": 1.5, "h": 0.5, "p": "pixels_waterBase waterPool collideCheck-field"},
+					{"x": 2.5, "y": 18, "w": 1.5, "h": 0.5, "p": "pixels_waterBase waterPool collideCheck-field"},
+					{"x": 0, "y": 18.5, "w": 4, "h": 6.5, "p": "pixels_waterBase waterPool collideCheck-field"}
+				],
+
+				"FISH":
+				[
+
+				]
+			},
+
+			"enemyPlayers":
+			[
+
+			],
+
+			"friendPlayers":
+			[
+
+			],
+
+			"gates":
+			[
+
+			],
+
+			"portal":
+			[
+				{
+				"num": 0,
+				"x": 1.5,
+				"y": 7.5,
+				"w": 1,
+				"h": 1,
+				"level": 37,
+				"exit": 1,
+				"direction": "DOWN",
+				"spawn": 38,
+				"bossLevel": false,
+				"p": "portal_top_evening0"
+				},
+
+				{
+				"num": 1,
+				"x": 1.5,
+				"y": 16.5,
+				"w": 1,
+				"h": 1,
+				"level": 39,
+				"exit": 0,
+				"direction": "UP",
+				"spawn": 38,
+				"bossLevel": false,
+				"p": "portal_top_evening0"
+				}
+			],
+
+			"sound_level":
+			[
+
+			],
+
+			"sound_trigger":
+			[
+
+			]
+		},
+
+		"level39":
+		{
+			"levelSettings":
+			{
+				"n": 39,
+				"weather": "SNOW",
+				"mist": false,
+				"land": "yesno",
+				"floor": "field-floor-yesno",
+				"entry_fall": false,
+				"fall_x": 0,
+				"fall_y": 0,
+				"fall_d": "DOWN",
+				"title_top": "a place of absolutes",
+				"levelFunctions":
+				{
+
+				}
+			},
+
+			"texture":
+			{
+				"WALLS" :
+				[
+					{"x": 0, "y": 0, "w": 4, "h": 0.5, "p": "pixels_forest_yesno collideCheck-field"},
+					{"x": 0, "y": 24.5, "w": 4, "h": 0.5, "p": "pixels_forest_yesno collideCheck-field"},
+					{"x": 0, "y": 0.5, "w": 0.5, "h": 24, "p": "pixels_forest_yesno collideCheck-field"},
+					{"x": 3.5, "y": 0.5, "w": 0.5, "h": 24, "p": "pixels_forest_yesno collideCheck-field"},
+					{"x": 1, "y": 1, "w": 0.5, "h": 1.5, "p": "pixels_forest_yesno collideCheck-field"},
+					{"x": 2.5, "y": 1, "w": 0.5, "h": 1.5, "p": "pixels_forest_yesno collideCheck-field"},
+					{"x": 1, "y": 22.5, "w": 0.5, "h": 1.5, "p": "pixels_forest_yesno collideCheck-field"},
+					{"x": 2.5, "y": 22.5, "w": 0.5, "h": 1.5, "p": "pixels_forest_yesno collideCheck-field"},
+					{"x": 1, "y": 2.5, "w": 2, "h": 8.5, "p": "pixels_forest_yesno collideCheck-field"},
+					{"x": 1, "y": 14, "w": 2, "h": 8.5, "p": "pixels_forest_yesno collideCheck-field"}
+				],
+
+				"PLANTS":
+				[
+					{"x": 0.5, "y": 0.5, "w": 3, "h": 0.5, "p": "pixels_flowerLight_yesno"},
+					{"x": 1.5, "y": 1, "w": 1, "h": 0.5, "p": "pixels_flowerLight_yesno"},
+					{"x": 0.5, "y": 24, "w": 3, "h": 0.5, "p": "pixels_flowerLight_yesno"},
+					{"x": 1.5, "y": 23.5, "w": 1, "h": 0.5, "p": "pixels_flowerLight_yesno"},
+					{"x": 0.5, "y": 14, "w": 0.5, "h": 10, "p": "pixels_flowerLight_yesno"},
+					{"x": 3, "y": 14, "w": 0.5, "h": 10, "p": "pixels_flowerLight_yesno"},
+					{"x": 0.5, "y": 13, "w": 3, "h": 1, "p": "pixels_flowerLight_yesno"},
+					{"x": 0.5, "y": 12, "w": 1, "h": 1, "p": "pixels_flowerLight_yesno"},
+					{"x": 2.5, "y": 12, "w": 1, "h": 1, "p": "pixels_flowerLight_yesno"},
+					{"x": 0.5, "y": 11, "w": 3, "h": 1, "p": "pixels_flowerLight_yesno"},
+					{"x": 0.5, "y": 1, "w": 0.5, "h": 10, "p": "pixels_flowerLight_yesno"},
+					{"x": 3, "y": 1, "w": 0.5, "h": 10, "p": "pixels_flowerLight_yesno"}
+				],
+
+				"CLEARING":
+				[
+
+				],
+
+				"OUTER":
+				{
+					"class_LR": "pixels_forest_yesno",
+					"class_TB": "pixels_forest_yesno"
+				}
+			},
+
+			"water":
+			{
+				"EDGE":
+				[
+
+				],
+
+				"BASE":
+				[
+
+				],
+
+				"FISH":
+				[
+
+				]
+			},
+
+			"enemyPlayers":
+			[
+
+			],
+
+			"friendPlayers":
+			[
+
+			],
+
+			"gates":
+			[
+
+			],
+
+			"portal":
+			[
+				{
+				"num": 0,
+				"x": 1.5,
+				"y": 1.5,
+				"w": 1,
+				"h": 1,
+				"level": 40,
+				"exit": 2,
+				"direction": "UP",
+				"spawn": 39,
+				"bossLevel": false,
+				"p": "portal_top_yesno"
+				},
+
+				{
+				"num": 1,
+				"x": 1.5,
+				"y": 12,
+				"w": 1,
+				"h": 1,
+				"level": 40,
+				"exit": 1,
+				"direction": "RIGHT",
+				"spawn": 39,
+				"bossLevel": false,
+				"p": "portal_top_yesno"
+				},
+
+				{
+				"num": 2,
+				"x": 1.5,
+				"y": 22.5,
+				"w": 1,
+				"h": 1,
+				"level": 40,
+				"exit": 4,
+				"direction": "DOWN",
+				"spawn": 39,
+				"bossLevel": false,
+				"p": "portal_top_yesno"
+				}
+			],
+
+			"sound_level":
+			[
+
+			],
+
+			"sound_trigger":
+			[
+
+			]
+		},
+
+		"level40":
+		{
+			"levelSettings":
+			{
+				"n": 40,
+				"weather": "SNOW",
+				"mist": false,
+				"land": "yesno",
+				"floor": "field-floor-yesno",
+				"entry_fall": false,
+				"fall_x": 0,
+				"fall_y": 0,
+				"fall_d": "DOWN",
+				"title_top": "do you know how close you are?",
+				"levelFunctions":
+				{
+
+				}
+			},
+
+			"texture":
+			{
+				"WALLS" :
+				[
+					{"x": 0, "y": 0, "w": 1.5, "h": 1, "p": "pixels_forest_yesno collideCheck-field"},
+					{"x": 2.5, "y": 0, "w": 1.5, "h": 1, "p": "pixels_forest_yesno collideCheck-field"},
+					{"x": 0.5, "y": 1, "w": 1, "h": 10.5, "p": "pixels_forest_yesno collideCheck-field"},
+					{"x": 2.5, "y": 1, "w": 1, "h": 10.5, "p": "pixels_forest_yesno collideCheck-field"},
+					{"x": 0.5, "y": 11.5, "w": 0.5, "h": 2, "p": "pixels_forest_yesno collideCheck-field"},
+					{"x": 3, "y": 11.5, "w": 0.5, "h": 2, "p": "pixels_forest_yesno collideCheck-field"},
+					{"x": 0.5, "y": 13.5, "w": 1, "h": 9.5, "p": "pixels_forest_yesno collideCheck-field"},
+					{"x": 2.5, "y": 13.5, "w": 1, "h": 9.5, "p": "pixels_forest_yesno collideCheck-field"},
+					{"x": 1, "y": 23, "w": 0.5, "h": 2, "p": "pixels_forest_yesno collideCheck-field"},
+					{"x": 2.5, "y": 23, "w": 0.5, "h": 2, "p": "pixels_forest_yesno collideCheck-field"}
+				],
+
+				"PLANTS":
+				[
+					{"x": 0, "y": 1, "w": 0.5, "h": 22, "p": "pixels_flowerLight_yesno"},
+					{"x": 0, "y": 23, "w": 1, "h": 1, "p": "pixels_flowerLight_yesno"},
+					{"x": 3, "y": 23, "w": 1, "h": 1, "p": "pixels_flowerLight_yesno"},
+					{"x": 3.5, "y": 1, "w": 0.5, "h": 22, "p": "pixels_flowerLight_yesno"},
+					{"x": 1.5, "y": 1, "w": 1, "h": 10.5, "p": "pixels_flowerLight_yesno"},
+					{"x": 1, "y": 11.5, "w": 2, "h": 0.5, "p": "pixels_flowerLight_yesno"},
+					{"x": 1, "y": 13, "w": 2, "h": 0.5, "p": "pixels_flowerLight_yesno"},
+					{"x": 1, "y": 12, "w": 0.5, "h": 1, "p": "pixels_flowerLight_yesno"},
+					{"x": 2.5, "y": 12, "w": 0.5, "h": 1, "p": "pixels_flowerLight_yesno"},
+					{"x": 1.5, "y": 13.5, "w": 1, "h": 10.5, "p": "pixels_flowerLight_yesno"}
+				],
+
+				"CLEARING":
+				[
+
+				],
+
+				"OUTER":
+				{
+					"class_LR": "pixels_forestMassEvening0LR",
+					"class_TB": "pixels_forestMassEvening0TB"
+				}
+			},
+
+			"water":
+			{
+				"EDGE":
+				[
+
+				],
+
+				"BASE":
+				[
+
+				],
+
+				"FISH":
+				[
+
+				]
+			},
+
+			"enemyPlayers":
+			[
+
+			],
+
+			"friendPlayers":
+			[
+
+			],
+
+			"gates":
+			[
+
+			],
+
+			"portal":
+			[
+				{
+				"num": 0,
+				"x": 1.5,
+				"y": 0,
+				"w": 1,
+				"h": 1,
+				"level": 5,
+				"exit": 0,
+				"direction": "DOWN",
+				"spawn": 40,
+				"bossLevel": false,
+				"p": "portal_top_yesno"
+				},
+
+				{
+				"num": 1,
+				"x": 1.5,
+				"y": 12,
+				"w": 1,
+				"h": 1,
+				"level": 37,
+				"exit": 1,
+				"direction": "DOWN",
+				"spawn": 40,
+				"bossLevel": false,
+				"p": "portal_top_yesno"
+				},
+
+				{
+				"num": 2,
+				"x": 0,
+				"y": 24,
+				"w": 1,
+				"h": 1,
+				"level": 37,
+				"exit": 1,
+				"direction": "UP",
+				"spawn": 40,
+				"bossLevel": false,
+				"p": "portal_top_yesno"
+				},
+
+				{
+				"num": 3,
+				"x": 1.5,
+				"y": 24,
+				"w": 1,
+				"h": 1,
+				"level": 37,
+				"exit": 1,
+				"direction": "UP",
+				"spawn": 40,
+				"bossLevel": true,
+				"p": "portal_top_yesno"
+				},
+
+				{
+				"num": 4,
+				"x": 3,
+				"y": 24,
+				"w": 1,
+				"h": 1,
+				"level": 37,
+				"exit": 1,
+				"direction": "UP",
+				"spawn": 40,
+				"bossLevel": false,
+				"p": "portal_top_yesno"
 				}
 			],
 
