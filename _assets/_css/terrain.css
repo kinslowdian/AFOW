@@ -17,7 +17,7 @@
 	background-position: -160px 0px;
 }
 
-.portal_top_underground, .portal_top_yesno
+.portal_top_underground
 {
 	background-position: -240px 0px;
 }
@@ -65,6 +65,11 @@
 .portal_top_dry
 {
 	background-position: 0px -240px;
+}
+
+.portal_top_yesno
+{
+	background-position: -80px -240px;
 }
 
 /*portals*/

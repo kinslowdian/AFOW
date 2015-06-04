@@ -1710,6 +1710,11 @@ function messageScreen_init()
 
 	$("#messageScreen .messageScreen_friend").html(friendTarget.buildData.html);
 
+	if(friendTarget.enemy)
+	{
+		$("#messageScreen .messageScreen_friend > div").html(enemyBodyHTML);
+	}
+
 	//OPTIMISED TARGETING
 	$("#messageScreen .messageScreen_friend > div").removeAttr("id");
 
@@ -1749,7 +1754,7 @@ function messageScreen_init()
 
 	if(friendTarget.flooring.customHaze)
 	{
-		// $("#messageScreen .messageScreen_haze").addClass(friendTarget.flooring.customHaze);
+		$("#messageScreen .messageScreen_haze").addClass(friendTarget.flooring.customHaze);
 	}
 
 	else

@@ -238,6 +238,7 @@ var friend = function(settings, container, num)
 	this.array_index					= num;
 	this.flooring							= {};
 	this.scene								= {};
+	this.enemy								= this.settings.enemy;
 };
 
 friend.prototype.create = function()
@@ -285,6 +286,11 @@ friend.prototype.build = function()
 	$(this.buildData.container + " #" + this.id).css(this.buildData.css);
 
 	$(this.buildData.container + " #" + this.id).attr("data-npc", "friend");
+
+	if(this.enemy)
+	{
+		$(this.buildData.container + " #" + this.id).html(enemyBodyHTML);
+	}
 
 	this.rendered = true;
 };

@@ -353,14 +353,15 @@
 					"w": 0.5,
 					"h": 0.5,
 					"n": "level0_friend0",
-					"customFog": false,
+					"customFog": "messageAll_fog",
 					"customDarkness": false,
-					"customHaze": false,
-					"customFill": false,
-					"bg": "pixels_behindWorld_good",
-					"grass": "pixels_stoneFlowerHeavy",
+					"customHaze": "messageAll_haze",
+					"customFill": "messageAll_fill",
+					"bg": "messageAll_fill",
+					"grass": "pixels_flowerLight_yesno",
 					"once": true,
 					"character": "_player_friend_40x40",
+					"enemy": false,
 					"spawn": 0,
 					"hint": "Our mountain goat community are concerned with these wormholes. Find their reason and source!",
 					"time": 5.2
@@ -373,14 +374,15 @@
 					"w": 0.5,
 					"h": 0.5,
 					"n": "level0_friend1",
-					"customFog": false,
+					"customFog": "messageAll_fog",
 					"customDarkness": false,
-					"customHaze": false,
-					"customFill": false,
-					"bg": "pixels_behindWorld_good",
-					"grass": "pixels_stoneFlowerHeavy",
+					"customHaze": "messageAll_haze",
+					"customFill": "messageAll_fill",
+					"bg": "messageAll_fill",
+					"grass": "pixels_flowerLight_yesno",
 					"once": true,
 					"character": "_player_friend_40x40",
+					"enemy": false,
 					"spawn": 0,
 					"hint": "beware of these mysterious wormholes, they dont always go where you’d expect...",
 					"time": 4.6
@@ -470,7 +472,7 @@
 					"y": 4,
 					"w": 1,
 					"h": 1,
-					"level": 39,
+					"level": 38,
 					"exit": 0,
 					"direction": "UP",
 					"spawn": 0,
@@ -514,15 +516,15 @@
 			{
 				"WALLS" :
 				[
-					{"x": 0, "y": 1.5, "w": 0.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
-					{"x": 0.5, "y": 1, "w": 0.5, "h": 1.5, "p": "pixels_forest collideCheck-field"},
-					{"x": 1, "y": 0.5, "w": 0.5, "h": 1, "p": "pixels_forest collideCheck-field"},
-					{"x": 1, "y": 2, "w": 0.5, "h": 1, "p": "pixels_forest collideCheck-field"},
+					{"x": 0, "y": 1.5, "w": 0.5, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 0.5, "y": 1, "w": 0.5, "h": 1.5, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 1, "y": 0.5, "w": 0.5, "h": 1, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 1, "y": 2, "w": 0.5, "h": 1, "p": "pixels_stoneForest collideCheck-field"},
 
-					{"x": 3.5, "y": 1.5, "w": 0.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
-					{"x": 3, "y": 1, "w": 0.5, "h": 1.5, "p": "pixels_forest collideCheck-field"},
-					{"x": 2.5, "y": 0.5, "w": 0.5, "h": 1, "p": "pixels_forest collideCheck-field"},
-					{"x": 2.5, "y": 2, "w": 0.5, "h": 1, "p": "pixels_forest collideCheck-field"},
+					{"x": 3.5, "y": 1.5, "w": 0.5, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 3, "y": 1, "w": 0.5, "h": 1.5, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 2.5, "y": 0.5, "w": 0.5, "h": 1, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 2.5, "y": 2, "w": 0.5, "h": 1, "p": "pixels_stoneForest collideCheck-field"},
 
 					{"x": 1.5, "y": 4.5, "w": 1, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
 
@@ -581,26 +583,26 @@
 					{"x": 3, "y": 21.5, "w": 0.5, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
 					{"x": 2.5, "y": 22, "w": 0.5, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
 
-					{"x": 0.5, "y": 23.5, "w": 0.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
-					{"x": 1, "y": 23, "w": 0.5, "h": 1.5, "p": "pixels_forest collideCheck-field"},
+					{"x": 0.5, "y": 23.5, "w": 0.5, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 1, "y": 23, "w": 0.5, "h": 1.5, "p": "pixels_stoneForest collideCheck-field"},
 
-					{"x": 3, "y": 23.5, "w": 0.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
-					{"x": 2.5, "y": 23, "w": 0.5, "h": 1.5, "p": "pixels_forest collideCheck-field"},
+					{"x": 3, "y": 23.5, "w": 0.5, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 2.5, "y": 23, "w": 0.5, "h": 1.5, "p": "pixels_stoneForest collideCheck-field"},
 
 
-					{"x": 1.5, "y": 8, "w": 1, "h": 0.5, "p": "pixels_forest collideCheck-field"},
-					{"x": 1, "y": 8.5, "w": 0.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
-					{"x": 2.5, "y": 8.5, "w": 0.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
-					{"x": 0.5, "y": 9, "w": 0.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
-					{"x": 0, "y": 9.5, "w": 0.5, "h": 1, "p": "pixels_forest collideCheck-field"},
-					{"x": 0.5, "y": 10.5, "w": 0.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
-					{"x": 1, "y": 11, "w": 0.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
-					{"x": 1.5, "y": 11.5, "w": 1, "h": 0.5, "p": "pixels_forest collideCheck-field"},
-					{"x": 2.5, "y": 11, "w": 0.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
-					{"x": 3, "y": 10.5, "w": 0.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
-					{"x": 3.5, "y": 9.5, "w": 0.5, "h": 1, "p": "pixels_forest collideCheck-field"},
-					{"x": 3, "y": 9, "w": 0.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
-					{"x": 2.5, "y": 8.5, "w": 0.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+					{"x": 1.5, "y": 8, "w": 1, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 1, "y": 8.5, "w": 0.5, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 2.5, "y": 8.5, "w": 0.5, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 0.5, "y": 9, "w": 0.5, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 0, "y": 9.5, "w": 0.5, "h": 1, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 0.5, "y": 10.5, "w": 0.5, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 1, "y": 11, "w": 0.5, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 1.5, "y": 11.5, "w": 1, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 2.5, "y": 11, "w": 0.5, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 3, "y": 10.5, "w": 0.5, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 3.5, "y": 9.5, "w": 0.5, "h": 1, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 3, "y": 9, "w": 0.5, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 2.5, "y": 8.5, "w": 0.5, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
 
 					{"x": 0, "y": 9, "w": 0.5, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
 					{"x": 0, "y": 10.5, "w": 0.5, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
@@ -667,18 +669,18 @@
 
 				"PLANTS":
 				[
-					{"x": 1.5, "y": 1, "w": 1, "h": 1.5, "p": "pixels_flowerLight"},
-					{"x": 1, "y": 1.5, "w": 0.5, "h": 0.5, "p": "pixels_flowerLight"},
-					{"x": 2.5, "y": 1.5, "w": 0.5, "h": 0.5, "p": "pixels_flowerLight"},
+					{"x": 1.5, "y": 1, "w": 1, "h": 1.5, "p": "pixels_stoneFlowerLight"},
+					{"x": 1, "y": 1.5, "w": 0.5, "h": 0.5, "p": "pixels_stoneFlowerLight"},
+					{"x": 2.5, "y": 1.5, "w": 0.5, "h": 0.5, "p": "pixels_stoneFlowerLight"},
 
-					{"x": 0.5, "y": 9.5, "w": 0.5, "h": 1, "p": "pixels_flowerHeavy"},
-					{"x": 1, "y": 9, "w": 0.5, "h": 2, "p": "pixels_flowerHeavy"},
-					{"x": 1.5, "y": 8.5, "w": 1, "h": 1, "p": "pixels_flowerHeavy"},
-					{"x": 1.5, "y": 10.5, "w": 1, "h": 1, "p": "pixels_flowerHeavy"},
-					{"x": 2.5, "y": 9, "w": 0.5, "h": 2, "p": "pixels_flowerHeavy"},
-					{"x": 3, "y": 9.5, "w": 0.5, "h": 1, "p": "pixels_flowerHeavy"},
+					{"x": 0.5, "y": 9.5, "w": 0.5, "h": 1, "p": "pixels_stoneFlowerHeavy"},
+					{"x": 1, "y": 9, "w": 0.5, "h": 2, "p": "pixels_stoneFlowerHeavy"},
+					{"x": 1.5, "y": 8.5, "w": 1, "h": 1, "p": "pixels_stoneFlowerHeavy"},
+					{"x": 1.5, "y": 10.5, "w": 1, "h": 1, "p": "pixels_stoneFlowerHeavy"},
+					{"x": 2.5, "y": 9, "w": 0.5, "h": 2, "p": "pixels_stoneFlowerHeavy"},
+					{"x": 3, "y": 9.5, "w": 0.5, "h": 1, "p": "pixels_stoneFlowerHeavy"},
 
-					{"x": 1.5, "y": 22.5, "w": 1, "h": 1.5, "p": "pixels_flowerLight"},
+					{"x": 1.5, "y": 22.5, "w": 1, "h": 1.5, "p": "pixels_stoneFlowerLight"},
 
 					{"x": 1, "y": 15.5, "w": 0.5, "h": 1, "p": "pixels_stoneFlowerLight"},
 					{"x": 1.5, "y": 15, "w": 1, "h": 2, "p": "pixels_stoneFlowerLight"},
@@ -717,14 +719,15 @@
 					"w": 0.5,
 					"h": 0.5,
 					"n": "level1_friend0",
-					"customFog": "foggyEdge-forest",
-					"customDarkness": "darkness-forest",
-					"customHaze": "haze-forest",
-					"customFill": "field-floor-forest",
-					"bg": "pixels_behindWorld_good",
-					"grass": "pixels_flowerHeavy",
+					"customFog": "messageAll_fog",
+					"customDarkness": false,
+					"customHaze": "messageAll_haze",
+					"customFill": "messageAll_fill",
+					"bg": "messageAll_fill",
+					"grass": "pixels_flowerLight_yesno",
 					"once": true,
 					"character": "_player_friend_40x40",
+					"enemy": false,
 					"spawn": 1,
 					"hint": "I got a little lost... Seems these wormholes travel to secret areas too.",
 					"time": 4.6
@@ -749,7 +752,7 @@
 					"direction": "DOWN",
 					"spawn": 1,
 					"bossLevel": false,
-					"p": "portal_top_forest"
+					"p": "portal_top_stone"
 				},
 
 				{
@@ -763,7 +766,7 @@
 					"direction": "UP",
 					"spawn": 1,
 					"bossLevel": false,
-					"p": "portal_top_forest"
+					"p": "portal_top_stone"
 				},
 
 				{
@@ -805,7 +808,7 @@
 					"direction": "DOWN",
 					"spawn": 1,
 					"bossLevel": false,
-					"p": "portal_top_forest"
+					"p": "portal_top_stone"
 				},
 
 				{
@@ -847,7 +850,7 @@
 					"direction": "UP",
 					"spawn": 1,
 					"bossLevel": false,
-					"p": "portal_top_forest"
+					"p": "portal_top_stone"
 				}
 			],
 
@@ -900,24 +903,24 @@
 					{"x": 0.5, "y": 13.5, "w": 0.5, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
 					{"x": 3, "y": 13.5, "w": 0.5, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
 
-					{"x": 1, "y": 14.5, "w": 0.5, "h": 4, "p": "pixels_forest collideCheck-field"},
-					{"x": 2.5, "y": 14.5, "w": 0.5, "h": 4, "p": "pixels_forest collideCheck-field"},
-					{"x": 0, "y": 19.5, "w": 1.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
-					{"x": 2.5, "y": 19.5, "w": 1.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
-					{"x": 0, "y": 21, "w": 4, "h": 0.5, "p": "pixels_forest collideCheck-field"},
-					{"x": 0, "y": 21.5, "w": 0.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
-					{"x": 3.5, "y": 21.5, "w": 0.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
-					{"x": 1, "y": 22, "w": 0.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
-					{"x": 2.5, "y": 22, "w": 0.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
-					{"x": 0.5, "y": 22.5, "w": 0.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
-					{"x": 3, "y": 22.5, "w": 0.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
-					{"x": 0, "y": 23, "w": 0.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
-					{"x": 1.5, "y": 23, "w": 1, "h": 0.5, "p": "pixels_forest collideCheck-field"},
-					{"x": 3.5, "y": 23, "w": 0.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
-					{"x": 0, "y": 24, "w": 0.5, "h": 1, "p": "pixels_forest collideCheck-field"},
-					{"x": 0.5, "y": 24.5, "w": 0.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
-					{"x": 3, "y": 24.5, "w": 0.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
-					{"x": 3.5, "y": 24, "w": 0.5, "h": 1, "p": "pixels_forest collideCheck-field"},
+					{"x": 1, "y": 14.5, "w": 0.5, "h": 4, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 2.5, "y": 14.5, "w": 0.5, "h": 4, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 0, "y": 19.5, "w": 1.5, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 2.5, "y": 19.5, "w": 1.5, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 0, "y": 21, "w": 4, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 0, "y": 21.5, "w": 0.5, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 3.5, "y": 21.5, "w": 0.5, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 1, "y": 22, "w": 0.5, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 2.5, "y": 22, "w": 0.5, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 0.5, "y": 22.5, "w": 0.5, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 3, "y": 22.5, "w": 0.5, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 0, "y": 23, "w": 0.5, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 1.5, "y": 23, "w": 1, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 3.5, "y": 23, "w": 0.5, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 0, "y": 24, "w": 0.5, "h": 1, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 0.5, "y": 24.5, "w": 0.5, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 3, "y": 24.5, "w": 0.5, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 3.5, "y": 24, "w": 0.5, "h": 1, "p": "pixels_stoneForest collideCheck-field"},
 
 					{"x": 0.5, "y": 0, "w": 1, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
 					{"x": 0, "y": 0.5, "w": 1, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
@@ -971,13 +974,13 @@
 					{"x": 1.5, "y": 14.5, "w": 1, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
 					{"x": 3, "y": 14.5, "w": 1, "h": 0.5, "p": "pixels_boulder_stone collideCheck-field"},
 
-					{"x": 0.5, "y": 21.5, "w": 1, "h": 0.5, "p": "pixels_forest collideCheck-field"},
-					{"x": 0, "y": 22, "w": 1, "h": 0.5, "p": "pixels_forest collideCheck-field"},
-					{"x": 0, "y": 22.5, "w": 0.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+					{"x": 0.5, "y": 21.5, "w": 1, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 0, "y": 22, "w": 1, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 0, "y": 22.5, "w": 0.5, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
 
-					{"x": 2.5, "y": 21.5, "w": 1, "h": 0.5, "p": "pixels_forest collideCheck-field"},
-					{"x": 3, "y": 22, "w": 1, "h": 0.5, "p": "pixels_forest collideCheck-field"},
-					{"x": 3.5, "y": 22.5, "w": 0.5, "h": 0.5, "p": "pixels_forest collideCheck-field"}
+					{"x": 2.5, "y": 21.5, "w": 1, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 3, "y": 22, "w": 1, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"},
+					{"x": 3.5, "y": 22.5, "w": 0.5, "h": 0.5, "p": "pixels_stoneForest collideCheck-field"}
 				],
 
 				"PLANTS":
@@ -1005,22 +1008,22 @@
 					{"x": 1, "y": 13, "w": 2, "h": 0.5, "p": "pixels_stoneFlowerLight"},
 					{"x": 1.5, "y": 13.5, "w": 1, "h": 0.5, "p": "pixels_stoneFlowerLight"},
 
-					{"x": 0, "y": 16, "w": 1, "h": 3.5, "p": "pixels_flowerLight"},
-					{"x": 1, "y": 18.5, "w": 0.5, "h": 1, "p": "pixels_flowerLight"},
-					{"x": 1, "y": 20, "w": 0.5, "h": 1, "p": "pixels_flowerLight"},
-					{"x": 1.5, "y": 16, "w": 1, "h": 5, "p": "pixels_flowerLight"},
-					{"x": 2.5, "y": 18.5, "w": 0.5, "h": 1, "p": "pixels_flowerLight"},
-					{"x": 2.5, "y": 20, "w": 0.5, "h": 1, "p": "pixels_flowerLight"},
-					{"x": 3, "y": 16, "w": 1, "h": 3.5, "p": "pixels_flowerLight"},
+					{"x": 0, "y": 16, "w": 1, "h": 3.5, "p": "pixels_stoneFlowerLight"},
+					{"x": 1, "y": 18.5, "w": 0.5, "h": 1, "p": "pixels_stoneFlowerLight"},
+					{"x": 1, "y": 20, "w": 0.5, "h": 1, "p": "pixels_stoneFlowerLight"},
+					{"x": 1.5, "y": 16, "w": 1, "h": 5, "p": "pixels_stoneFlowerLight"},
+					{"x": 2.5, "y": 18.5, "w": 0.5, "h": 1, "p": "pixels_stoneFlowerLight"},
+					{"x": 2.5, "y": 20, "w": 0.5, "h": 1, "p": "pixels_stoneFlowerLight"},
+					{"x": 3, "y": 16, "w": 1, "h": 3.5, "p": "pixels_stoneFlowerLight"},
 
-					{"x": 1, "y": 22.5, "w": 2, "h": 0.5, "p": "pixels_flowerHeavy"},
-					{"x": 0.5, "y": 23, "w": 1, "h": 0.5, "p": "pixels_flowerHeavy"},
-					{"x": 2.5, "y": 23, "w": 1, "h": 0.5, "p": "pixels_flowerHeavy"},
-					{"x": 0, "y": 23.5, "w": 4, "h": 0.5, "p": "pixels_flowerHeavy"},
-					{"x": 0.5, "y": 24, "w": 1, "h": 0.5, "p": "pixels_flowerHeavy"},
-					{"x": 1, "y": 24.5, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavy"},
-					{"x": 2.5, "y": 24, "w": 1, "h": 0.5, "p": "pixels_flowerHeavy"},
-					{"x": 2.5, "y": 24.5, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavy"}
+					{"x": 1, "y": 22.5, "w": 2, "h": 0.5, "p": "pixels_stoneFlowerHeavy"},
+					{"x": 0.5, "y": 23, "w": 1, "h": 0.5, "p": "pixels_stoneFlowerHeavy"},
+					{"x": 2.5, "y": 23, "w": 1, "h": 0.5, "p": "pixels_stoneFlowerHeavy"},
+					{"x": 0, "y": 23.5, "w": 4, "h": 0.5, "p": "pixels_stoneFlowerHeavy"},
+					{"x": 0.5, "y": 24, "w": 1, "h": 0.5, "p": "pixels_stoneFlowerHeavy"},
+					{"x": 1, "y": 24.5, "w": 0.5, "h": 0.5, "p": "pixels_stoneFlowerHeavy"},
+					{"x": 2.5, "y": 24, "w": 1, "h": 0.5, "p": "pixels_stoneFlowerHeavy"},
+					{"x": 2.5, "y": 24.5, "w": 0.5, "h": 0.5, "p": "pixels_stoneFlowerHeavy"}
 				],
 
 				"CLEARING":
@@ -1053,14 +1056,15 @@
 					"w": 0.5,
 					"h": 0.5,
 					"n": "level2_friend0",
-					"customFog": false,
+					"customFog": "messageAll_fog",
 					"customDarkness": false,
-					"customHaze": false,
-					"customFill": false,
-					"bg": "pixels_behindWorld_good",
-					"grass": "pixels_stoneFlowerHeavy",
+					"customHaze": "messageAll_haze",
+					"customFill": "messageAll_fill",
+					"bg": "messageAll_fill",
+					"grass": "pixels_flowerLight_yesno",
 					"once": false,
 					"character": "_player_friend_40x40",
+					"enemy": false,
 					"spawn": 2,
 					"hint": "you must find the route under this mountain, it's south of this mountain foot...",
 					"time": 4.6
@@ -1072,14 +1076,15 @@
 					"w": 0.5,
 					"h": 0.5,
 					"n": "level2_friend1",
-					"customFog": false,
+					"customFog": "messageAll_fog",
 					"customDarkness": false,
-					"customHaze": false,
-					"customFill": false,
-					"bg": "pixels_behindWorld_good",
-					"grass": "pixels_stoneFlowerHeavy",
+					"customHaze": "messageAll_haze",
+					"customFill": "messageAll_fill",
+					"bg": "messageAll_fill",
+					"grass": "pixels_flowerLight_yesno",
 					"once": false,
 					"character": "_player_friend_40x40",
+					"enemy": false,
 					"spawn": 2,
 					"hint": "you are lost like us, try another wormhole hurry!",
 					"time": 4.6
@@ -1146,7 +1151,7 @@
 					"direction": "DOWN",
 					"spawn": 2,
 					"bossLevel": false,
-					"p": "portal_top_forest"
+					"p": "portal_top_stone"
 				},
 
 				{
@@ -1160,7 +1165,7 @@
 					"direction": "DOWN",
 					"spawn": 2,
 					"bossLevel": false,
-					"p": "portal_top_forest"
+					"p": "portal_top_stone"
 				},
 
 				{
@@ -1174,7 +1179,7 @@
 					"direction": "DOWN",
 					"spawn": 2,
 					"bossLevel": false,
-					"p": "portal_top_forest"
+					"p": "portal_top_stone"
 				},
 
 				{
@@ -1188,7 +1193,7 @@
 					"direction": "RIGHT",
 					"spawn": 2,
 					"bossLevel": false,
-					"p": "portal_top_forest"
+					"p": "portal_top_stone"
 				},
 
 				{
@@ -1202,7 +1207,7 @@
 					"direction": "LEFT",
 					"spawn": 2,
 					"bossLevel": false,
-					"p": "portal_top_forest"
+					"p": "portal_top_stone"
 				},
 
 				{
@@ -1216,7 +1221,7 @@
 					"direction": "DOWN",
 					"spawn": 2,
 					"bossLevel": false,
-					"p": "portal_top_forest"
+					"p": "portal_top_stone"
 				},
 
 				{
@@ -1230,7 +1235,7 @@
 					"direction": "UP",
 					"spawn": 2,
 					"bossLevel": false,
-					"p": "portal_top_forest"
+					"p": "portal_top_stone"
 				}
 			],
 
@@ -1546,14 +1551,15 @@
 					"w": 0.5,
 					"h": 0.5,
 					"n": "level4_friend0",
-					"customFog": false,
+					"customFog": "messageAll_fog",
 					"customDarkness": false,
-					"customHaze": false,
-					"customFill": "pixels_undeground_floor",
-					"bg": "pixels_undergroundMass",
-					"grass": "pixels_undeground_floor",
+					"customHaze": "messageAll_haze",
+					"customFill": "messageAll_fill",
+					"bg": "messageAll_fill",
+					"grass": "pixels_flowerLight_yesno",
 					"once": true,
 					"character": "_player_friend_40x40",
+					"enemy": false,
 					"spawn": 4,
 					"hint": "the forest is up ahead... Be wary of others, may stone, paper, and scissors guide you.",
 					"time": 6
@@ -1776,14 +1782,15 @@
 					"w": 0.5,
 					"h": 0.5,
 					"n": "level5_friend0",
-					"customFog": false,
+					"customFog": "messageAll_fog",
 					"customDarkness": false,
-					"customHaze": false,
-					"customFill": false,
-					"bg": "pixels_behindWorld_good",
-					"grass": "pixels_flowerHeavy",
+					"customHaze": "messageAll_haze",
+					"customFill": "messageAll_fill",
+					"bg": "messageAll_fill",
+					"grass": "pixels_flowerLight_yesno",
 					"once": true,
 					"character": "_enemy_crow",
+					"enemy": true,
 					"spawn": 5,
 					"hint": "go back to the mountain, you shouldn't be here. if i see you again i'll kill you",
 					"time": 4.6
@@ -13383,7 +13390,7 @@
 					{"x": 1, "y": 6.5, "w": 0.5, "h": 0.5, "p": "pixels_waterBase waterPool collideCheck-field"},
 					{"x": 2.5, "y": 6.5, "w": 0.5, "h": 0.5, "p": "pixels_waterBase waterPool collideCheck-field"},
 					{"x": 0, "y": 6.5, "w": 1, "h": 2, "p": "pixels_waterBase waterPool collideCheck-field"},
-					{"x": 0, "y": 0, "w": 4, "h": 8.5, "p": "pixels_waterBase waterPool collideCheck-field"},
+					{"x": 0, "y": 0, "w": 4, "h": 6.5, "p": "pixels_waterBase waterPool collideCheck-field"},
 					{"x": 0, "y": 8.5, "w": 0.5, "h": 3, "p": "pixels_waterBase waterPool collideCheck-field"},
 					{"x": 3.5, "y": 8.5, "w": 0.5, "h": 3, "p": "pixels_waterBase waterPool collideCheck-field"},
 					{"x": 0, "y": 11.5, "w": 1, "h": 2, "p": "pixels_waterBase waterPool collideCheck-field"},
@@ -13396,7 +13403,8 @@
 					{"x": 3, "y": 16.5, "w": 1, "h": 1.5, "p": "pixels_waterBase waterPool collideCheck-field"},
 					{"x": 0, "y": 18, "w": 1.5, "h": 0.5, "p": "pixels_waterBase waterPool collideCheck-field"},
 					{"x": 2.5, "y": 18, "w": 1.5, "h": 0.5, "p": "pixels_waterBase waterPool collideCheck-field"},
-					{"x": 0, "y": 18.5, "w": 4, "h": 6.5, "p": "pixels_waterBase waterPool collideCheck-field"}
+					{"x": 0, "y": 18.5, "w": 4, "h": 6.5, "p": "pixels_waterBase waterPool collideCheck-field"},
+					{"x": 3, "y": 6.5, "w": 1, "h": 2, "p": "pixels_waterBase waterPool collideCheck-field"}
 				],
 
 				"FISH":
@@ -13628,7 +13636,7 @@
 				"fall_x": 0,
 				"fall_y": 0,
 				"fall_d": "DOWN",
-				"title_top": "do you know how close you are?",
+				"title_top": "i can hear you",
 				"levelFunctions":
 				{
 
@@ -13672,8 +13680,8 @@
 
 				"OUTER":
 				{
-					"class_LR": "pixels_forestMassEvening0LR",
-					"class_TB": "pixels_forestMassEvening0TB"
+					"class_LR": "pixels_forest_yesno",
+					"class_TB": "pixels_forest_yesno"
 				}
 			},
 
@@ -13923,12 +13931,12 @@
 					"w": 0.5,
 					"h": 0.5,
 					"n": "level1994_friend0",
-					"customFog": false,
+					"customFog": "messageAll_fog",
 					"customDarkness": false,
-					"customHaze": false,
-					"customFill": false,
-					"bg": "pixels_behindWorld_good",
-					"grass": "pixels_stoneFlowerHeavy",
+					"customHaze": "messageAll_haze",
+					"customFill": "messageAll_fill",
+					"bg": "messageAll_fill",
+					"grass": "pixels_flowerLight_yesno",
 					"once": false,
 					"character": "_player_friend_40x40",
 					"spawn": 1994,
