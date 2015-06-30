@@ -96,6 +96,44 @@ function timerList_destroy()
 	timerListMain = null;
 }
 
+
+function css_tween_new(arrayList, _event_animation, _event_target, _event_function)
+{
+	var css_tween = {};
+
+	css_tween._event_target = _event_target;
+	css_tween._event_function = _event_function;
+
+	if(_event_animation)
+	{
+		css_tween._event_webkit = "webkitAnimationEnd";
+		css_tween._event_default = "animationend";
+	}
+
+	else
+	{
+		css_tween._event_webkit = "webkitTransitionEnd";
+		css_tween._event_default = "transitionend";
+	}
+
+	arrayList.push(css_tween);
+}
+
+function css_tween_clear(arrayList)
+{
+	for(var i in arrayList)
+	{
+		var _event_target		= arrayList[i]._event_target;
+		var _event_webkit 	= arrayList[i]._event_webkit;
+		var _event_default 	= arrayList[i]._event_default;
+		var _event_function = window[arrayList[i]._event_function];
+
+		$(_event_target)[0].removeEventListener(_event_webkit, _event_function, false);
+		$(_event_target)[0].removeEventListener(_event_default, _event_function, false);
+	}
+}
+
+/*
 function animationEventManager(div, anim_t, anim_f)
 {
 	var dynamicFunction;
@@ -156,3 +194,4 @@ function animationEventKill(div)
 		$(dynamicName)[0].removeEventListener("animationend", dynamicFunction, false);
 	}
 }
+*/

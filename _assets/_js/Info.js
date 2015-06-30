@@ -640,6 +640,8 @@ function aboutOptions_btnSelected()
 	{
 		case "ABOUT_READ":
 		{
+			about_build();
+
 			screen_multiInfoUse.riseEndFunct = aboutOptions_actionRead;
 
 			break;
@@ -655,7 +657,7 @@ function aboutOptions_btnSelected()
 
 function aboutOptions_actionRead()
 {
-	window.open("http://www.simonkinslow.com", "menubar=yes, resizable=yes, scrollbars=yes, status=yes, titlebar=yes", "_blank");
+	about_run();
 }
 
 // -------- ABOUT

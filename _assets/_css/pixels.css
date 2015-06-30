@@ -117,6 +117,13 @@ div[class*='tween-']
 	background-repeat: no-repeat;
 }
 
+.vectors_aboutWarning
+{
+	background-image: url(../_img/about_warnings.svg);
+	background-repeat: no-repeat;
+	background-size: 80px 40px;
+}
+
 /* ----------------------------------------------------------------------- VECTOR */
 
 
@@ -724,6 +731,20 @@ div[class*='tween-']
 	background-size: 640px 320px;
 }
 
+.pixels_aboutSprite
+{
+	background-image: url(../_img/about_sprite_1x.png);
+	background-repeat: no-repeat;
+	background-size: 320px 530px;
+}
+
+.pixels_tileAbout
+{
+	background-image: url(../_img/tile_ok_1x.png);
+	background-repeat: repeat;
+	background-size: 80px 80px;
+}
+
 
 
 /* ----------------------------------------------------------------------- GENERAL */
@@ -1075,6 +1096,16 @@ div[class*='tween-']
 	.pixels_newPortalScreen
 	{
 		background-image: url(../_img/tile_newPortalScreen_1x.png);
+	}
+
+	.pixels_aboutSprite
+	{
+		background-image: url(../_img/about_sprite_1x.png);
+	}
+
+	.pixels_tileAbout
+	{
+		background-image: url(../_img/tile_ok_1x.png);
 	}
 }
 
@@ -1480,6 +1511,16 @@ div[class*='tween-']
 	.pixels_newPortalScreen
 	{
 		background-image: url(../_img/tile_newPortalScreen_2x.png);
+	}
+
+	.pixels_aboutSprite
+	{
+		background-image: url(../_img/about_sprite_2x.png);
+	}
+
+	.pixels_tileAbout
+	{
+		background-image: url(../_img/tile_ok_2x.png);
 	}
 }
 

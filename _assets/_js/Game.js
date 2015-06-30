@@ -232,6 +232,8 @@ function startGame_firstEntrance()
 	control_request();
 
 	display_centerLevel();
+
+	about_setup();
 }
 
 // DEFUNCT
