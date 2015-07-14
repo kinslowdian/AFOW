@@ -29,7 +29,7 @@
 		"nav_options":
 		{
 			"title_0" : "Options...",
-			"title_1" : "If confused read about how to play, <br>or enable / disable sound.",
+			"title_1" : "We all love choices, read about how to play, <br>or enable / disable sound.",
 			"btn_0"		: "about",
 			"btn_1"		: "sound"
 		},
@@ -37,8 +37,8 @@
 		"nav_about":
 		{
 			"title_0" : "To understand all of this...",
-			"title_1" : "For detailed information on this experience, <br>an indepth guide exists.",
-			"btn_0"		: "read",
+			"title_1" : "If youre finding life a struggle, <br>this guide may make things worse.",
+			"btn_0"		: "see",
 			"btn_1"		: "return"
 		},
 

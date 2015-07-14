@@ -745,6 +745,13 @@ div[class*='tween-']
 	background-size: 80px 80px;
 }
 
+.pixels_startIntro
+{
+	background-image: url(../_img/startIntroSprite_1x.png);
+	background-repeat: no-repeat;
+	background-size: 80px 160px;
+}
+
 
 
 /* ----------------------------------------------------------------------- GENERAL */
@@ -1106,6 +1113,11 @@ div[class*='tween-']
 	.pixels_tileAbout
 	{
 		background-image: url(../_img/tile_ok_1x.png);
+	}
+
+	.pixels_startIntro
+	{
+		background-image: url(../_img/startIntroSprite_1x.png);
 	}
 }
 
@@ -1521,6 +1533,11 @@ div[class*='tween-']
 	.pixels_tileAbout
 	{
 		background-image: url(../_img/tile_ok_2x.png);
+	}
+
+	.pixels_startIntro
+	{
+		background-image: url(../_img/startIntroSprite_2x.png);
 	}
 }
 

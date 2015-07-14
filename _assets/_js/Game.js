@@ -120,7 +120,9 @@ function init_mainGame()
 	// control_init();
 	// loop_init();
 
-	var temp = setTimeout(preloader_remove_step0, 1000);
+	// TODO REMOVE OLD PRELOADER
+	// var temp = setTimeout(preloader_remove_step0, 1000);
+	startIntro_init();
 
 	// newLevel();
 }

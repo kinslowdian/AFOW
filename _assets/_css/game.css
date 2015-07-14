@@ -10519,13 +10519,14 @@
 
 	overflow: hidden;
 
-	background: #b7e0ca;
+	/*background: #b7e0ca;*/
+	background: #cad7b2;
 }
 
 .tween-display_about
 {
-	-webkit-transition: 800ms ease-out;
-	transition: 800ms ease-out;
+	-webkit-transition: 600ms ease-in;
+	transition: 600ms ease-in;
 }
 
 .display_about_hide
@@ -10577,7 +10578,8 @@
 	width: 320px;
 	height: 320px;
 
-	background: #dfdfd5;
+	/*background: #dfdfd5;*/
+	background: #ebe3aa;
 
 	position: absolute;
 
