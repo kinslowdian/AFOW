@@ -394,6 +394,7 @@ function controlIntro_hint()
 {
 	var delay;
 
+	startIntro_destroy();
 
 	$("#options_wrapper .options-choice").html("");
 
