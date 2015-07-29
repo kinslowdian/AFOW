@@ -2,6 +2,7 @@ var ROM;
 
 
 // CALLED FIRST FROM index.html
+
 function gameFirstInit()
 {
 	ROM = {};
@@ -18,6 +19,7 @@ function gameFirstInit()
 	debug_init();
 	//////////// debug.js
 }
+
 // CALLED FIRST FROM index.html
 
 function gameData_found()
@@ -36,12 +38,8 @@ function gameData_found()
 	playerTarget = {};
 	playerTarget.rating = 0;
 
-		battleEngine = new BattleEngine();
+	battleEngine = new BattleEngine();
 	battleEngine.setDifficulty({e:diff.easy, m:diff.medium, h:diff.hard, s:diff.max});
-
-
-	// battleEngine.init(levelCount, diff.easy, diff.medium, diff.hard, diff.max);
-	// battleEngine.playerLevelSort(playerTarget);
 
 
 	html_lib_init(gameHTML_found);
@@ -49,43 +47,20 @@ function gameData_found()
 
 function gameHTML_found()
 {
-
-
-	// sound_init();
-
 	sound_init_entry(soundData_found);
 }
 
 function soundData_found()
 {
-	// BREAK
-	//display_init();
-
 	display_init();
 
-	init_startScreen();
-}
-
-function init_startScreen()
-{
-	// HACK
-	plug_intro();
-}
-
-function plug_intro()
-{
-	// HACK
-	init_intro();
-}
-
-function init_intro()
-{
-	// HACK
 	plug_mainGame();
 }
 
 function plug_mainGame()
 {
+	trace("$$ CHECK - plug_mainGame();");
+
 	var html_gameLevel;
 	var html_player;
 
@@ -102,88 +77,85 @@ function plug_mainGame()
 
 function init_mainGame()
 {
-	// BREAK
-	// mapPlayer_init("player-block", "tween-player-block", "tween-player-walkX", "tween-player-walkY", "tween-mapPlayerWalk_stop", "tween-mapPlayerWalk_loop", "map-goat", "preHitTest");
-	// BREAK
-
-	// trace(MAP_PLAYER);
-
 	level_init();
 
-	// BREAK
-	// controlSignal_init();
-
-	// BREAK
-	// screenUpdateInit(true);
-
-	// PUSHED BACK
-	// control_init();
-	// loop_init();
-
-	// TODO REMOVE OLD PRELOADER
-	// var temp = setTimeout(preloader_remove_step0, 1000);
 	startIntro_init();
-
-	// newLevel();
 }
 
-// NOT FINAL
-
-function preloader_remove_step0()
+function startIntro_init()
 {
-	$("#preload-wrapper .preloader-message-group").css("opacity", "1");
+	var delay;
 
-	$("#preload-wrapper .preloader-message-start")[0].addEventListener("touchend", preloader_remove_btnEvent, false);
-	$("#preload-wrapper .preloader-message-start")[0].addEventListener("click", preloader_remove_btnEvent, false);
+	delay = setTimeout(startIntro_show, 1 * 1000);
 }
 
-function preloader_remove_btnEvent(event)
+function startIntro_show()
 {
-	var html_screen_soundOptions = "";
-	var html_soundOptions = "";
+	$("#startScreen .tween-startScreen_text")[0].addEventListener("webkitTransitionEnd", startIntro_show_event, false);
+	$("#startScreen .tween-startScreen_text")[0].addEventListener("transitionend", startIntro_show_event, false);
 
-	$("#preload-wrapper .preloader-message-start")[0].removeEventListener("touchend", preloader_remove_btnEvent, false);
-	$("#preload-wrapper .preloader-message-start")[0].removeEventListener("click", preloader_remove_btnEvent, false);
-
-
-	multiUseInfoScreen_build("#options_wrapper .options-choice", "START_INTRO", false);
-
-
-	// QUICK BREAK
-	$(".tween-preload")[0].addEventListener("webkitTransitionEnd", test_soundOptions, false);
-	$(".tween-preload")[0].addEventListener("transitionend", test_soundOptions, false);
-
-	$("#preload-wrapper .preloader-message-group").css("opacity", "0");
+	$("#startScreen .startScreen_text").removeClass("startScreen_text_hide");
 
 }
 
-function test_soundOptions(event)
+function startIntro_show_event(event)
 {
-	$(".tween-preload")[0].removeEventListener("webkitTransitionEnd", test_soundOptions, false);
-	$(".tween-preload")[0].removeEventListener("transitionend", test_soundOptions, false);
+	$("#startScreen .tween-startScreen_text")[0].removeEventListener("webkitTransitionEnd", startIntro_show_event, false);
+	$("#startScreen .tween-startScreen_text")[0].removeEventListener("transitionend", startIntro_show_event, false);
 
-	multiUseInfoScreen_drop();
+	$("#startScreen .startScreen_hide").addClass("startScreen_hide_hide");
+
+	$("#startScreen .startScreen_footer").removeClass("startScreen_footer_hide");
+
+	startIntro_btn(true);
+
+}
+
+function startIntro_btn(run)
+{
+	if(run)
+	{
+		$("#startScreen_go")[0].addEventListener("click", startIntro_btn_event, false);
+	}
+
+	else
+	{
+		$("#startScreen_go")[0].removeEventListener("click", startIntro_btn_event, false);
+	}
+}
+
+function startIntro_btn_event(event)
+{
+	var delay;
+
+	startIntro_btn(false);
+
+	$("#startScreen .startScreen_all_hide").addClass("startScreen_hide_show");
+
+	$("#startScreen .startScreen_text").addClass("startScreen_text_hide");
+
+	$("#startScreen .startScreen_boss").addClass("startScreen_boss_show");
+
+	// TODO
+	intoGame_soundTest();
+
+	delay = setTimeout(intoGame_prepHint, 2 * 1000);
+
+}
+
+function startIntro_destroy()
+{
+	$("#startScreen").remove();
 }
 
 
 
+// TODO REROUTE
 
-
-
-
-function preload_removeNS(event)
+function intoGame_soundTest()
 {
-	$("#preload-wrapper .preloader-message-silence")[0].removeEventListener("touchend", preload_removeNS, false);
-	$("#preload-wrapper .preloader-message-silence")[0].removeEventListener("click", preload_removeNS, false);
-
+	// SOUND KILL
 	sound_dump();
-
-	preloader_remove1(null);
-}
-
-function preloader_remove1(event)
-{
-	// sound_prep();
 
 	if(soundEffects_pedal != null)
 	{
@@ -191,30 +163,28 @@ function preloader_remove1(event)
 		createjs.WebAudioPlugin.playEmptySound();
 		/////// HACK FOR iOS
 	}
-
-
-	$("#preload-wrapper .preloader-message-sound")[0].removeEventListener("touchend", preloader_remove1, false);
-	$("#preload-wrapper .preloader-message-sound")[0].removeEventListener("click", preloader_remove1, false);
-
-	$("#preload-wrapper")[0].addEventListener("webkitTransitionEnd", start_mainGame, false);
-	$("#preload-wrapper")[0].addEventListener("transitionend", start_mainGame, false);
-
-	$("#preload-wrapper").css("opacity", "0");
-
 }
+
+function intoGame_prepHint()
+{
+	var exitFrame;
+
+	var html_screen_soundOptions = "";
+	var html_soundOptions = "";
+
+	multiUseInfoScreen_build("#options_wrapper .options-choice", "START_INTRO", false);
+
+	exitFrame = setTimeout(multiUseInfoScreen_drop, 20);
+}
+
+
+
 
 // NOT FINAL
 
 function startGame_firstEntrance()
 {
 	$("#preload-wrapper").remove();
-
-	// FLOW CHANGE
-
-	// BREAK
-	// mapPlayer_entry();
-	// portalScreen_init();
-	// BREAK
 
 	portalScreen_init();
 
@@ -236,33 +206,4 @@ function startGame_firstEntrance()
 	display_centerLevel();
 
 	about_setup();
-}
-
-// DEFUNCT
-function start_mainGame(event)
-{
-	$("#preload-wrapper")[0].removeEventListener("webkitTransitionEnd", start_mainGame, false);
-	$("#preload-wrapper")[0].removeEventListener("transitionend", start_mainGame, false);
-
-	$("#preload-wrapper").remove();
-
-	// FLOW CHANGE
-
-	// BREAK
-	// mapPlayer_entry();
-	// portalScreen_init();
-	// BREAK
-
-	// FLOW CHANGE
-
-	if(soundEffects_pedal != null)
-	{
-		sound_level_background();
-	}
-
-	optionsTrigger_init();
-
-
-	// NOT FINAL
-	// sound_play("level_bg_forest");
 }
