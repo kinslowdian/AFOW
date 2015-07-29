@@ -8,7 +8,7 @@
 
 		<meta name="description" content="A mini game about the lost universe inside a forest... Designed and developed by Simon Kinslow. Built for modern web browsers. Supports touch screens.">
 		<meta name="keywords" content="Mini RPG, browswer game, HTML5 game, Simon Kinslow, Kinslowdian, Pixel Art" />
-		<meta name="revised" content="Simon Kinslow, 20/07/2015" />
+		<meta name="revised" content="Simon Kinslow, 29/07/2015" />
 
 		<title>A Forest of Wormholes. By Simon Kinslow 2013 - 2015</title>
 
@@ -228,18 +228,27 @@
 
 		<div id="debug"><p>test</p></div>
 
+		<script type="text/javascript">
+
+			// DEBUG = false
+			var errorCheck = false;
+			var allowTrace = false;
+			var richVersion = false;
+
+		</script>
+
 		<script type="text/javascript" src="_assets/_js/Debug.js"></script>
 
 		<script type="text/javascript" src="_assets/_js/_libs/_jquery/jquery-2.0.3.js"></script>
 		<script type="text/javascript" src="_assets/_js/_libs/_collision/jquery-collision.js"></script>
 
-		<script type="text/javascript" src="_assets/_js/_libs/_SoundJS/src/createjs/utils/Proxy.js"></script>
+<!-- 		<script type="text/javascript" src="_assets/_js/_libs/_SoundJS/src/createjs/utils/Proxy.js"></script>
 		<script type="text/javascript" src="_assets/_js/_libs/_SoundJS/src/createjs/utils/IndexOf.js"></script>
 		<script type="text/javascript" src="_assets/_js/_libs/_SoundJS/src/createjs/events/Event.js"></script>
 		<script type="text/javascript" src="_assets/_js/_libs/_SoundJS/src/createjs/events/EventDispatcher.js"></script>
 	  <script type="text/javascript" src="_assets/_js/_libs/_SoundJS/src/soundjs/Sound.js"></script>
 	  <script type="text/javascript" src="_assets/_js/_libs/_SoundJS/src/soundjs/WebAudioPlugin.js"></script>
-	  <script type="text/javascript" src="_assets/_js/_libs/_SoundJS/src/soundjs/HTMLAudioPlugin.js"></script>
+	  <script type="text/javascript" src="_assets/_js/_libs/_SoundJS/src/soundjs/HTMLAudioPlugin.js"></script> -->
 
 		<script type="text/javascript" src="_assets/_js/Game.js"></script>
 		<script type="text/javascript" src="_assets/_js/Game_Level.js"></script>
@@ -259,8 +268,6 @@
 
 		<script type="text/javascript">
 
-			// DEBUG = false
-			var errorCheck = false;
 			// START
 			gameFirstInit();
 

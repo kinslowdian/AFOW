@@ -186,21 +186,11 @@
 
 		"soundAssets":
 		[
-			{"src": "bg_forest.ogg", "id": "BGM_BG_FOREST"},
-			{"src": "bg_sea.ogg", "id": "BGM_BG_SEA"},
-			{"src": "fx_trees.ogg", "id": "BGM_FX_TREES"},
-			{"src": "fx_crow.ogg", "id": "BGM_FX_CROW"}
+
 		],
 
 		"soundList" :
 		[
-			{"name": "level_bg_forest", "id": "BGM_BG_FOREST", "loop": -1, "volume": 0, "paused": true, "storeInstance": true, "singleChannel": true},
-
-			{"name": "level_bg_sea", "id": "BGM_BG_SEA", "loop": -1, "volume": 0, "paused": true, "storeInstance": true, "singleChannel": true},
-
-			{"name": "fx_trees", "id": "BGM_FX_TREES", "loop": 0, "volume": 1, "paused": true, "storeInstance": true, "singleChannel": false},
-
-			{"name": "fx_crow", "id": "BGM_FX_CROW", "loop": 0, "volume": 1, "paused": true, "storeInstance": true, "singleChannel": false}
 
 		]
 	},
@@ -213,7 +203,7 @@
 			{
 				"n": 0,
 				"weather": "SNOW",
-				"mist": true,
+				"mist": false,
 				"land": "stone",
 				"floor": "field-floor-stone",
 				"entry_fall": true,
@@ -498,7 +488,7 @@
 			{
 				"n": 1,
 				"weather": "SNOW",
-				"mist": true,
+				"mist": false,
 				"land": "stone",
 				"floor": "field-floor-stone",
 				"entry_fall": false,
@@ -871,7 +861,7 @@
 			{
 				"n": 2,
 				"weather": "SNOW",
-				"mist": true,
+				"mist": false,
 				"land": "stone",
 				"floor": "field-floor-stone",
 				"entry_fall": false,
@@ -6943,7 +6933,7 @@
 			{
 				"n": 20,
 				"weather": "",
-				"mist": true,
+				"mist": false,
 				"land": "twilight",
 				"floor": "field-floor-twilight",
 				"entry_fall": false,
@@ -7163,7 +7153,7 @@
 			{
 				"n": 21,
 				"weather": "",
-				"mist": true,
+				"mist": false,
 				"land": "twilight",
 				"floor": "field-floor-twilight",
 				"entry_fall": false,
@@ -13808,7 +13798,7 @@
 			{
 				"n": 1994,
 				"weather": "SNOW",
-				"mist": true,
+				"mist": false,
 				"land": "snow",
 				"floor": "field-floor-stone",
 				"entry_fall": false,

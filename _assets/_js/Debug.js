@@ -2,7 +2,10 @@
 
 var trace = function(str)
 			{
-				console.log(str);
+				if(allowTrace)
+				{
+					console.log(str);
+				}
 			};
 
 var debug = {};

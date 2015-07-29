@@ -47,7 +47,19 @@ function gameData_found()
 
 function gameHTML_found()
 {
-	sound_init_entry(soundData_found);
+	// SOUND VERSION
+	if(richVersion)
+	{
+		sound_init_entry(soundData_found);
+	}
+
+	// NO SOUND VERSION
+	else
+	{
+		display_init();
+
+		plug_mainGame();
+	}
 }
 
 function soundData_found()
