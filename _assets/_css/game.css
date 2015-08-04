@@ -340,7 +340,7 @@
 
 	margin: auto;
 
-	font-size: 40px;
+	/*font-size: 40px;*/
 
 	color: #fff;
 }
@@ -355,8 +355,8 @@
 
 .tween-startScreen_text
 {
-	-webkit-transition: 2s ease-out;
-	transition: 2s ease-out;
+	-webkit-transition: -webkit-transform 2s ease-out, opacity 2.6s linear;
+	transition: transform 2s ease-out, opacity 2.6s linear;
 }
 
 .startScreen_portal_top, .startScreen_portal_btm
@@ -381,9 +381,9 @@
 .startScreen_title
 {
 	width: 90%;
-	height: 40px;
+	/*height: 40px;*/
 	position: relative;
-	margin: 40px auto;
+	/*margin: 40px auto;*/
 }
 
 .startScreen_title h1

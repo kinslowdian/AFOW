@@ -8,6 +8,18 @@
 /* if(screen.width >= 300 */
 @media screen and (min-width:300px)
 {
+	.startScreen_text
+	{
+		font-size: 26px;
+
+	}
+
+	.startScreen_title
+	{
+		height: 26px;
+		margin: 26px auto;
+	}
+
 	/* WALK ANIMATION DESKTOP ONLY */
 
 	/* INFO */
@@ -78,6 +90,18 @@
 /* if(screen.width >= 600) */
 @media screen and (min-width:600px)
 {
+	.startScreen_text
+	{
+		font-size: 32px;
+
+	}
+
+	.startScreen_title
+	{
+		height: 32px;
+		margin: 32px auto;
+	}
+
 	/* WALK ANIMATION DESKTOP ONLY */
 
 	/* INFO */
@@ -148,6 +172,18 @@
 /* if(screen.width >= 900) */
 @media screen and (min-width:900px)
 {
+	.startScreen_text
+	{
+		font-size: 40px;
+
+	}
+
+	.startScreen_title
+	{
+		height: 40px;
+		margin: 40px auto;
+	}
+
 	/* WALK ANIMATION DESKTOP ONLY */
 
 	/* INFO */
@@ -211,6 +247,18 @@
 /* if(screen.width >= 1200) */
 @media screen and (min-width:1200px)
 {
+	.startScreen_text
+	{
+		font-size: 40px;
+
+	}
+
+	.startScreen_title
+	{
+		height: 40px;
+		margin: 40px auto;
+	}
+
 	/* WALK ANIMATION DESKTOP ONLY */
 
 	/* INFO */
